@@ -1,0 +1,21 @@
+# SOAP Notes Phase 1 - minimal deps for pipeline with KB linking
+# Install in your venv (e.g. voice_tenor_analysis/venv313): pip install -r requirements.txt
+
+# Database (required for KB linking, local/global search, Phase 2)
+psycopg2-binary>=2.9.0
+
+# OpenAI / embeddings (SOAP_notes_phase1_experiment uses API_Key.txt)
+openai>=1.0.0
+
+# Lexical Harvester: ontology-based deterministic retrieval (Aho-Corasick / FlashText)
+flashtext>=2.7
+
+# Optional: phonetic/similarity fallback for ASR near-misses (noble -> Norberg angle)
+# rapidfuzz>=3.0.0
+
+# Optional: run harvester as transcript streams (TRANSCRIPTION_STREAMING=true)
+# websocket-client>=1.0.0
+
+# VetBERT (optional; same stack as voice_tenor_analysis)
+# transformers>=4.30.0
+# torch>=2.0.0
