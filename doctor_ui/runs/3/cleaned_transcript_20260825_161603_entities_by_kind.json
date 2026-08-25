@@ -1,0 +1,133 @@
+{
+  "ReasonForVisit": [
+    {
+      "span_text": "bitten by a street dog"
+    }
+  ],
+  "Medication": [
+    {
+      "span_text": "start him on antibiotics for 5 days"
+    },
+    {
+      "span_text": "ointment"
+    },
+    {
+      "span_text": "Bravecto"
+    },
+    {
+      "span_text": "deworming tablet"
+    },
+    {
+      "span_text": "pain medication"
+    },
+    {
+      "span_text": "antibiotic"
+    }
+  ],
+  "Procedure": [
+    {
+      "span_text": "dressing the wound area"
+    }
+  ],
+  "Diagnostic": [],
+  "VitalSign": [],
+  "Reminder": [
+    {
+      "span_text": "6 months"
+    },
+    {
+      "span_text": "follow-up consultation"
+    },
+    {
+      "span_text": "5 days"
+    }
+  ],
+  "Symptom": [
+    {
+      "span_text": "not bleeding"
+    },
+    {
+      "span_text": "bruised near his thigh"
+    },
+    {
+      "span_text": "wound healing"
+    },
+    {
+      "span_text": "symptoms"
+    },
+    {
+      "span_text": "worm burden"
+    }
+  ],
+  "Diagnosis": [
+    {
+      "span_text": "rabies"
+    },
+    {
+      "span_text": "rabies"
+    }
+  ],
+  "Anatomy": [
+    {
+      "span_text": "thigh"
+    },
+    {
+      "span_text": "wound"
+    },
+    {
+      "span_text": "ticks"
+    },
+    {
+      "span_text": "wound"
+    }
+  ],
+  "Diet": [],
+  "Preventive": [
+    {
+      "span_text": "five doses on 0th, 3rd, 7th, 14th, and 28th day"
+    },
+    {
+      "span_text": "not vaccinated"
+    },
+    {
+      "span_text": "anti-rabies vaccine"
+    },
+    {
+      "span_text": "anti-rabies vaccine"
+    },
+    {
+      "span_text": "vaccination"
+    },
+    {
+      "span_text": "vaccine"
+    },
+    {
+      "span_text": "second vaccine"
+    },
+    {
+      "span_text": "core vaccine"
+    },
+    {
+      "span_text": "MCV"
+    }
+  ],
+  "ParasiteControl": [
+    {
+      "span_text": "deworming"
+    },
+    {
+      "span_text": "tick and flea control"
+    }
+  ],
+  "Other": [
+    {
+      "span_text": "Oreo"
+    },
+    {
+      "span_text": "3 years old"
+    },
+    {
+      "span_text": "Labrador breed"
+    }
+  ]
+}

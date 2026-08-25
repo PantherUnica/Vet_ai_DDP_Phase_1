@@ -1,0 +1,14 @@
+{
+  "audio_file": "C:\\VetAI_Phase1\\input_audio_examples\\Test_1.wav",
+  "audio_slug": "test_1",
+  "asr_provider": "deepgram",
+  "asr_model": "nova-3",
+  "asr_run_label": "deepgram_nova-3",
+  "run_id": "test_1",
+  "mode": "asr-only",
+  "status": "error",
+  "latency_ms": null,
+  "artifacts": {},
+  "gemini_reference_path": "C:\\VetAI_Phase1\\benchmark_runs\\references\\gemini\\test_1.txt",
+  "error": "RuntimeError: Deepgram connection failed after 4 attempts (DNS/network). Check internet / VPN / DNS. Last error: HTTPSConnectionPool(host='api.deepgram.com', port=443): Max retries exceeded with url: /v1/listen?model=nova-3&smart_format=false&punctuate=true&language=multi (Caused by NameResolutionError(\"HTTPSConnection(host='api.deepgram.com', port=443): Failed to resolve 'api.deepgram.com' ([Errno 11001] getaddrinfo failed)\"))"
+}

@@ -1,0 +1,10 @@
+{
+  "provider": "manual",
+  "model": "n/a",
+  "latency_ms": 0,
+  "audio_path": "",
+  "char_count": 5112,
+  "word_count": 948,
+  "source": "typed",
+  "language": "multi"
+}

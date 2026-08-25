@@ -21,7 +21,7 @@ import time
 from typing import Any, Dict, List, Optional
 
 # Default model for CER. Override with CER_MODEL env if needed.
-CER_MODEL = (os.getenv("CER_MODEL") or "accounts/fireworks/models/llama-v3p3-70b-instruct").strip()
+CER_MODEL = (os.getenv("CER_MODEL") or os.getenv("SUPER_PASS_MODEL") or "gpt-4.1-mini").strip()
 
 # Kinds that are billing-relevant and kept by CER. Diagnosis and Reminder are excluded per requirement.
 CER_BILLABLE_KINDS = [

@@ -1,0 +1,1666 @@
+[
+  {
+    "span_text": "start him on antibiotics for 5 days",
+    "normalized_name": "antibiotic therapy",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Antibiotics prescribed",
+    "start_char": 1519,
+    "end_char": 1554,
+    "is_actionable": true,
+    "search_term": "antibiotic therapy",
+    "hints": [
+      "antibiotic therapy",
+      "antibiotics",
+      "antibiotic treatment"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E12",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Antibiotics prescribed",
+    "hint_probabilities": {
+      "antibiotic therapy": 1.0,
+      "antibiotics": 0.9,
+      "antibiotic treatment": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 3345
+  },
+  {
+    "span_text": "ointment",
+    "normalized_name": "topical antibiotic ointment",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Ointment prescribed for wound",
+    "start_char": 1897,
+    "end_char": 1905,
+    "is_actionable": true,
+    "search_term": "topical antibiotic ointment",
+    "hints": [
+      "ointment",
+      "topical ointment",
+      "antibiotic ointment"
+    ],
+    "family": null,
+    "domain": [
+      "dermatology"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E13",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Ointment prescribed for wound",
+    "hint_probabilities": {
+      "ointment": 1.0,
+      "topical ointment": 0.85,
+      "antibiotic ointment": 0.8
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 3345
+  },
+  {
+    "span_text": "Bravecto",
+    "normalized_name": "Bravecto tablet",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Prescribed Bravecto tablet for tick and flea",
+    "start_char": 3643,
+    "end_char": 3651,
+    "is_actionable": true,
+    "search_term": "Bravecto tablet",
+    "hints": [
+      "Bravecto tablet",
+      "Bravecto chewable",
+      "fluralaner tablet"
+    ],
+    "family": null,
+    "domain": [
+      "dermatology"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E9",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Prescribed Bravecto tablet for tick and flea",
+    "hint_probabilities": {
+      "Bravecto tablet": 1.0,
+      "Bravecto chewable": 0.9,
+      "fluralaner tablet": 0.7
+    },
+    "correctness_probability": 0.98,
+    "suggestion_probability": 0.98,
+    "query_expansion": [
+      "Bravecto",
+      "Bravecto chewable",
+      "Bravecto tablet"
+    ],
+    "_chunk_start": 2345,
+    "_chunk_end": 5191
+  },
+  {
+    "span_text": "deworming tablet",
+    "normalized_name": "deworming tablet",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Prescribed deworming tablet",
+    "start_char": 3700,
+    "end_char": 3716,
+    "is_actionable": true,
+    "search_term": "deworming tablet",
+    "hints": [
+      "deworming tablet",
+      "anthelmintic tablet",
+      "wormer tablet"
+    ],
+    "family": null,
+    "domain": [
+      "preventative_wellness"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E10",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Prescribed deworming tablet",
+    "hint_probabilities": {
+      "deworming tablet": 1.0,
+      "anthelmintic tablet": 0.9,
+      "wormer tablet": 0.7
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 2345,
+    "_chunk_end": 5191
+  },
+  {
+    "span_text": "pain medication",
+    "normalized_name": "pain medication",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Administered pain medication for wound pain",
+    "start_char": 3772,
+    "end_char": 3787,
+    "is_actionable": true,
+    "search_term": "pain medication",
+    "hints": [
+      "pain medication",
+      "analgesic",
+      "pain reliever"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E11",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Administered pain medication for wound pain",
+    "hint_probabilities": {
+      "pain medication": 1.0,
+      "analgesic": 0.9,
+      "pain reliever": 0.7
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 2345,
+    "_chunk_end": 5191
+  },
+  {
+    "span_text": "antibiotic",
+    "normalized_name": "antibiotic",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Prescribed antibiotic for a few days",
+    "start_char": 3874,
+    "end_char": 3884,
+    "is_actionable": true,
+    "search_term": "antibiotic",
+    "hints": [
+      "antibiotic",
+      "antibacterial drug",
+      "antimicrobial"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E13",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Prescribed antibiotic for a few days",
+    "hint_probabilities": {
+      "antibiotic": 1.0,
+      "antibacterial drug": 0.9,
+      "antimicrobial": 0.7
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 2345,
+    "_chunk_end": 5191
+  },
+  {
+    "span_text": "dressing the wound area",
+    "normalized_name": "wound dressing",
+    "kind": "Procedure",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Procedure performed on wound",
+    "start_char": 1750,
+    "end_char": 1773,
+    "is_actionable": true,
+    "search_term": "wound dressing",
+    "hints": [
+      "wound dressing",
+      "dressing wound",
+      "wound care"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E11",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Procedure performed on wound",
+    "hint_probabilities": {
+      "wound dressing": 1.0,
+      "dressing wound": 0.9,
+      "wound care": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 3345
+  },
+  {
+    "span_text": "rabies",
+    "normalized_name": "rabies",
+    "kind": "Diagnosis",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Disease diagnosis mentioned",
+    "start_char": 2122,
+    "end_char": 2128,
+    "is_actionable": true,
+    "search_term": "rabies",
+    "hints": [
+      "rabies",
+      "rabies infection",
+      "canine rabies"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E15",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Disease diagnosis mentioned",
+    "hint_probabilities": {
+      "rabies": 1.0,
+      "rabies infection": 0.9,
+      "canine rabies": 0.85
+    },
+    "correctness_probability": 1.0,
+    "suggestion_probability": 1.0,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 3345
+  },
+  {
+    "span_text": "rabies",
+    "normalized_name": "rabies",
+    "kind": "Diagnosis",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Risk of rabies infection before vaccine protection",
+    "start_char": 2492,
+    "end_char": 2498,
+    "is_actionable": true,
+    "search_term": "rabies",
+    "hints": [
+      "rabies",
+      "canine rabies",
+      "lyssavirus infection"
+    ],
+    "family": null,
+    "domain": [
+      "preventative_wellness"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E1",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Risk of rabies infection before vaccine protection",
+    "hint_probabilities": {
+      "rabies": 1.0,
+      "canine rabies": 0.9,
+      "lyssavirus infection": 0.7
+    },
+    "correctness_probability": 0.98,
+    "suggestion_probability": 0.98,
+    "query_expansion": [],
+    "_chunk_start": 2345,
+    "_chunk_end": 5191
+  },
+  {
+    "span_text": "five doses on 0th, 3rd, 7th, 14th, and 28th day",
+    "normalized_name": "anti-rabies vaccine dosing schedule",
+    "kind": "Preventive",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Vaccine dose schedule described",
+    "start_char": 1345,
+    "end_char": 1392,
+    "is_actionable": true,
+    "search_term": "anti-rabies vaccine dosing schedule",
+    "hints": [
+      "anti-rabies vaccine dosing schedule",
+      "vaccine schedule",
+      "dose timing"
+    ],
+    "family": null,
+    "domain": [
+      "preventative_wellness"
+    ],
+    "category": [
+      "Vaccines",
+      "Vaccination"
+    ],
+    "inventory_category": [
+      "Vaccines"
+    ],
+    "service_category": [
+      "Vaccination"
+    ],
+    "service_type": "medical",
+    "entity_id": "E10",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Vaccine dose schedule described",
+    "hint_probabilities": {
+      "anti-rabies vaccine dosing schedule": 1.0,
+      "vaccine schedule": 0.9,
+      "dose timing": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 3345
+  },
+  {
+    "span_text": "not vaccinated",
+    "normalized_name": "not vaccinated",
+    "kind": "Preventive",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Vaccination status",
+    "start_char": 1378,
+    "end_char": 1392,
+    "is_actionable": true,
+    "search_term": "not vaccinated",
+    "hints": [
+      "not vaccinated",
+      "no vaccination",
+      "unvaccinated"
+    ],
+    "family": null,
+    "domain": [
+      "preventative_wellness"
+    ],
+    "category": [
+      "Vaccines",
+      "Vaccination"
+    ],
+    "inventory_category": [
+      "Vaccines"
+    ],
+    "service_category": [
+      "Vaccination"
+    ],
+    "service_type": "medical",
+    "entity_id": "E8",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Vaccination status",
+    "hint_probabilities": {
+      "not vaccinated": 1.0,
+      "no vaccination": 0.9,
+      "unvaccinated": 0.85
+    },
+    "correctness_probability": 1.0,
+    "suggestion_probability": 1.0,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 3345
+  },
+  {
+    "span_text": "anti-rabies vaccine",
+    "normalized_name": "anti-rabies vaccine",
+    "kind": "Preventive",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Vaccine recommended",
+    "start_char": 1522,
+    "end_char": 1541,
+    "is_actionable": true,
+    "search_term": "anti-rabies vaccine",
+    "hints": [
+      "anti-rabies vaccine",
+      "rabies vaccine",
+      "post-exposure vaccine"
+    ],
+    "family": null,
+    "domain": [
+      "preventative_wellness"
+    ],
+    "category": [
+      "Vaccines",
+      "Vaccination"
+    ],
+    "inventory_category": [
+      "Vaccines"
+    ],
+    "service_category": [
+      "Vaccination"
+    ],
+    "service_type": "medical",
+    "entity_id": "E9",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Vaccine recommended",
+    "hint_probabilities": {
+      "anti-rabies vaccine": 1.0,
+      "rabies vaccine": 0.9,
+      "post-exposure vaccine": 0.85
+    },
+    "correctness_probability": 1.0,
+    "suggestion_probability": 1.0,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 3345
+  },
+  {
+    "span_text": "anti-rabies vaccine",
+    "normalized_name": "anti-rabies vaccine",
+    "kind": "Preventive",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Recommendation to take anti-rabies vaccine",
+    "start_char": 2777,
+    "end_char": 2796,
+    "is_actionable": true,
+    "search_term": "anti-rabies vaccine",
+    "hints": [
+      "anti-rabies vaccine",
+      "rabies vaccine",
+      "post-exposure vaccine"
+    ],
+    "family": null,
+    "domain": [
+      "preventative_wellness"
+    ],
+    "category": [
+      "Vaccines",
+      "Vaccination"
+    ],
+    "inventory_category": [
+      "Vaccines"
+    ],
+    "service_category": [
+      "Vaccination"
+    ],
+    "service_type": "medical",
+    "entity_id": "E2",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Recommendation to take anti-rabies vaccine",
+    "hint_probabilities": {
+      "anti-rabies vaccine": 1.0,
+      "rabies vaccine": 0.9,
+      "post-exposure vaccine": 0.7
+    },
+    "correctness_probability": 0.98,
+    "suggestion_probability": 0.98,
+    "query_expansion": [],
+    "_chunk_start": 2345,
+    "_chunk_end": 5191
+  },
+  {
+    "span_text": "vaccination",
+    "normalized_name": "vaccination",
+    "kind": "Preventive",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Vaccination important for protection",
+    "start_char": 4205,
+    "end_char": 4216,
+    "is_actionable": true,
+    "search_term": "vaccination",
+    "hints": [
+      "vaccination",
+      "vaccine administration",
+      "immunization"
+    ],
+    "family": null,
+    "domain": [
+      "preventative_wellness"
+    ],
+    "category": [
+      "Vaccines",
+      "Vaccination"
+    ],
+    "inventory_category": [
+      "Vaccines"
+    ],
+    "service_category": [
+      "Vaccination"
+    ],
+    "service_type": "medical",
+    "entity_id": "E17",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Vaccination important for protection",
+    "hint_probabilities": {
+      "vaccination": 1.0,
+      "vaccine administration": 0.9,
+      "immunization": 0.7
+    },
+    "correctness_probability": 0.98,
+    "suggestion_probability": 0.98,
+    "query_expansion": [],
+    "_chunk_start": 2345,
+    "_chunk_end": 5191
+  },
+  {
+    "span_text": "vaccine",
+    "normalized_name": "vaccine",
+    "kind": "Preventive",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Vaccine administration discussed",
+    "start_char": 4277,
+    "end_char": 4284,
+    "is_actionable": true,
+    "search_term": "vaccine",
+    "hints": [
+      "vaccine",
+      "immunization",
+      "preventive injection"
+    ],
+    "family": null,
+    "domain": [
+      "preventative_wellness"
+    ],
+    "category": [
+      "Vaccines",
+      "Vaccination"
+    ],
+    "inventory_category": [
+      "Vaccines"
+    ],
+    "service_category": [
+      "Vaccination"
+    ],
+    "service_type": "medical",
+    "entity_id": "E18",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Vaccine administration discussed",
+    "hint_probabilities": {
+      "vaccine": 1.0,
+      "immunization": 0.9,
+      "preventive injection": 0.7
+    },
+    "correctness_probability": 0.98,
+    "suggestion_probability": 0.98,
+    "query_expansion": [],
+    "_chunk_start": 2345,
+    "_chunk_end": 5191
+  },
+  {
+    "span_text": "second vaccine",
+    "normalized_name": "second vaccine",
+    "kind": "Preventive",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Second vaccine to be taken later",
+    "start_char": 4458,
+    "end_char": 4472,
+    "is_actionable": true,
+    "search_term": "second vaccine",
+    "hints": [
+      "second vaccine",
+      "booster vaccine",
+      "follow-up vaccine"
+    ],
+    "family": null,
+    "domain": [
+      "preventative_wellness"
+    ],
+    "category": [
+      "Vaccines",
+      "Vaccination"
+    ],
+    "inventory_category": [
+      "Vaccines"
+    ],
+    "service_category": [
+      "Vaccination"
+    ],
+    "service_type": "medical",
+    "entity_id": "E19",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Second vaccine to be taken later",
+    "hint_probabilities": {
+      "second vaccine": 1.0,
+      "booster vaccine": 0.9,
+      "follow-up vaccine": 0.7
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 2345,
+    "_chunk_end": 5191
+  },
+  {
+    "span_text": "core vaccine",
+    "normalized_name": "core vaccine",
+    "kind": "Preventive",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Core vaccine important for pets",
+    "start_char": 4575,
+    "end_char": 4587,
+    "is_actionable": true,
+    "search_term": "core vaccine",
+    "hints": [
+      "core vaccine",
+      "essential vaccine",
+      "primary vaccine"
+    ],
+    "family": null,
+    "domain": [
+      "preventative_wellness"
+    ],
+    "category": [
+      "Vaccines",
+      "Vaccination"
+    ],
+    "inventory_category": [
+      "Vaccines"
+    ],
+    "service_category": [
+      "Vaccination"
+    ],
+    "service_type": "medical",
+    "entity_id": "E20",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Core vaccine important for pets",
+    "hint_probabilities": {
+      "core vaccine": 1.0,
+      "essential vaccine": 0.9,
+      "primary vaccine": 0.7
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 2345,
+    "_chunk_end": 5191
+  },
+  {
+    "span_text": "MCV",
+    "normalized_name": "MCV vaccine",
+    "kind": "Preventive",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "MCV vaccine to be started after initial doses",
+    "start_char": 4683,
+    "end_char": 4686,
+    "is_actionable": true,
+    "search_term": "MCV vaccine",
+    "hints": [
+      "MCV vaccine",
+      "measles canine vaccine",
+      "canine distemper vaccine"
+    ],
+    "family": null,
+    "domain": [
+      "preventative_wellness"
+    ],
+    "category": [
+      "Vaccines",
+      "Vaccination"
+    ],
+    "inventory_category": [
+      "Vaccines"
+    ],
+    "service_category": [
+      "Vaccination"
+    ],
+    "service_type": "medical",
+    "entity_id": "E21",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "MCV vaccine to be started after initial doses",
+    "hint_probabilities": {
+      "MCV vaccine": 1.0,
+      "measles canine vaccine": 0.9,
+      "canine distemper vaccine": 0.7
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 2345,
+    "_chunk_end": 5191
+  },
+  {
+    "span_text": "deworming",
+    "normalized_name": "deworming",
+    "kind": "ParasiteControl",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Parasite control recommended",
+    "start_char": 3208,
+    "end_char": 3217,
+    "is_actionable": true,
+    "search_term": "deworming",
+    "hints": [
+      "deworming",
+      "anthelmintic treatment",
+      "parasite control"
+    ],
+    "family": null,
+    "domain": [
+      "preventative_wellness"
+    ],
+    "category": [
+      "Preventive & Parasite Control",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Preventive & Parasite Control"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E16",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Parasite control recommended",
+    "hint_probabilities": {
+      "deworming": 1.0,
+      "anthelmintic treatment": 0.9,
+      "parasite control": 0.85
+    },
+    "correctness_probability": 1.0,
+    "suggestion_probability": 1.0,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 3345
+  },
+  {
+    "span_text": "tick and flea control",
+    "normalized_name": "tick and flea control",
+    "kind": "ParasiteControl",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Tick and flea control needed",
+    "start_char": 3499,
+    "end_char": 3520,
+    "is_actionable": true,
+    "search_term": "tick and flea control",
+    "hints": [
+      "tick and flea control",
+      "flea and tick treatment",
+      "ectoparasite control"
+    ],
+    "family": null,
+    "domain": [
+      "dermatology",
+      "preventative_wellness"
+    ],
+    "category": [
+      "Preventive & Parasite Control",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Preventive & Parasite Control"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E7",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Tick and flea control needed",
+    "hint_probabilities": {
+      "tick and flea control": 1.0,
+      "flea and tick treatment": 0.9,
+      "ectoparasite control": 0.7
+    },
+    "correctness_probability": 0.98,
+    "suggestion_probability": 0.98,
+    "query_expansion": [],
+    "_chunk_start": 2345,
+    "_chunk_end": 5191
+  },
+  {
+    "span_text": "not bleeding",
+    "normalized_name": "no bleeding",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Negated symptom of bleeding",
+    "start_char": 0,
+    "end_char": 12,
+    "is_actionable": true,
+    "search_term": "no bleeding",
+    "hints": [
+      "no bleeding",
+      "absence of bleeding",
+      "not bleeding"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E7",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Negated symptom of bleeding",
+    "hint_probabilities": {
+      "no bleeding": 1.0,
+      "absence of bleeding": 0.9,
+      "not bleeding": 0.85
+    },
+    "correctness_probability": 1.0,
+    "suggestion_probability": 1.0,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 3345
+  },
+  {
+    "span_text": "bruised near his thigh",
+    "normalized_name": "bruise on thigh",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Bruising symptom described",
+    "start_char": 399,
+    "end_char": 421,
+    "is_actionable": true,
+    "search_term": "bruise on thigh",
+    "hints": [
+      "bruise on thigh",
+      "thigh bruise",
+      "bruising near thigh"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E5",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Bruising symptom described",
+    "hint_probabilities": {
+      "bruise on thigh": 1.0,
+      "thigh bruise": 0.9,
+      "bruising near thigh": 0.85
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 3345
+  },
+  {
+    "span_text": "wound healing",
+    "normalized_name": "wound healing",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Check wound healing at follow-up",
+    "start_char": 2345,
+    "end_char": 2358,
+    "is_actionable": true,
+    "search_term": "wound healing",
+    "hints": [
+      "wound healing",
+      "lesion recovery",
+      "tissue repair"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E16",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Check wound healing at follow-up",
+    "hint_probabilities": {
+      "wound healing": 1.0,
+      "lesion recovery": 0.9,
+      "tissue repair": 0.7
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 2345,
+    "_chunk_end": 5191
+  },
+  {
+    "span_text": "symptoms",
+    "normalized_name": "symptoms",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Observation for symptoms after vaccination",
+    "start_char": 3051,
+    "end_char": 3059,
+    "is_actionable": true,
+    "search_term": "symptoms",
+    "hints": [
+      "symptoms",
+      "clinical signs",
+      "manifestations"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E4",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Observation for symptoms after vaccination",
+    "hint_probabilities": {
+      "symptoms": 1.0,
+      "clinical signs": 0.9,
+      "manifestations": 0.7
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 2345,
+    "_chunk_end": 5191
+  },
+  {
+    "span_text": "worm burden",
+    "normalized_name": "worm burden",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "High worm burden may affect vaccine efficacy",
+    "start_char": 3292,
+    "end_char": 3303,
+    "is_actionable": true,
+    "search_term": "worm burden",
+    "hints": [
+      "worm burden",
+      "heavy worm load",
+      "parasitic infestation"
+    ],
+    "family": null,
+    "domain": [
+      "preventative_wellness"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E6",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "High worm burden may affect vaccine efficacy",
+    "hint_probabilities": {
+      "worm burden": 1.0,
+      "heavy worm load": 0.85,
+      "parasitic infestation": 0.7
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 2345,
+    "_chunk_end": 5191
+  },
+  {
+    "span_text": "thigh",
+    "normalized_name": "thigh",
+    "kind": "Anatomy",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Anatomical location mentioned",
+    "start_char": 416,
+    "end_char": 421,
+    "is_actionable": true,
+    "search_term": "thigh",
+    "hints": [
+      "thigh",
+      "upper leg",
+      "thigh region"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E6",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Anatomical location mentioned",
+    "hint_probabilities": {
+      "thigh": 1.0,
+      "upper leg": 0.9,
+      "thigh region": 0.85
+    },
+    "correctness_probability": 1.0,
+    "suggestion_probability": 1.0,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 3345
+  },
+  {
+    "span_text": "wound",
+    "normalized_name": "wound",
+    "kind": "Anatomy",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Anatomical injury site",
+    "start_char": 1984,
+    "end_char": 1989,
+    "is_actionable": true,
+    "search_term": "wound",
+    "hints": [
+      "wound",
+      "skin wound",
+      "injury site"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E14",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Anatomical injury site",
+    "hint_probabilities": {
+      "wound": 1.0,
+      "skin wound": 0.9,
+      "injury site": 0.85
+    },
+    "correctness_probability": 1.0,
+    "suggestion_probability": 1.0,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 3345
+  },
+  {
+    "span_text": "ticks",
+    "normalized_name": "ticks",
+    "kind": "Anatomy",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Ticks observed on body",
+    "start_char": 3531,
+    "end_char": 3536,
+    "is_actionable": true,
+    "search_term": "ticks",
+    "hints": [
+      "ticks",
+      "ectoparasites",
+      "flea and tick"
+    ],
+    "family": null,
+    "domain": [
+      "dermatology"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E8",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Ticks observed on body",
+    "hint_probabilities": {
+      "ticks": 1.0,
+      "ectoparasites": 0.9,
+      "flea and tick": 0.7
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 2345,
+    "_chunk_end": 5191
+  },
+  {
+    "span_text": "wound",
+    "normalized_name": "wound",
+    "kind": "Anatomy",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Pain from wound under control",
+    "start_char": 3828,
+    "end_char": 3833,
+    "is_actionable": true,
+    "search_term": "wound",
+    "hints": [
+      "wound",
+      "skin lesion",
+      "injury site"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E12",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Pain from wound under control",
+    "hint_probabilities": {
+      "wound": 1.0,
+      "skin lesion": 0.9,
+      "injury site": 0.7
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 2345,
+    "_chunk_end": 5191
+  },
+  {
+    "span_text": "Oreo",
+    "normalized_name": "Oreo",
+    "kind": "Other",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Pet's name mentioned",
+    "start_char": 143,
+    "end_char": 147,
+    "is_actionable": true,
+    "search_term": "Oreo",
+    "hints": [
+      "Oreo",
+      "pet name",
+      "dog name"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E1",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Pet's name mentioned",
+    "hint_probabilities": {
+      "Oreo": 1.0,
+      "pet name": 0.9,
+      "dog name": 0.85
+    },
+    "correctness_probability": 1.0,
+    "suggestion_probability": 1.0,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 3345
+  },
+  {
+    "span_text": "3 years old",
+    "normalized_name": "3 years old",
+    "kind": "Other",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Pet's age mentioned",
+    "start_char": 154,
+    "end_char": 165,
+    "is_actionable": true,
+    "search_term": "3 years old",
+    "hints": [
+      "3 years old",
+      "3 year age",
+      "three years"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E2",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Pet's age mentioned",
+    "hint_probabilities": {
+      "3 years old": 1.0,
+      "3 year age": 0.9,
+      "three years": 0.85
+    },
+    "correctness_probability": 1.0,
+    "suggestion_probability": 1.0,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 3345
+  },
+  {
+    "span_text": "Labrador breed",
+    "normalized_name": "Labrador Retriever",
+    "kind": "Other",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Breed of the dog",
+    "start_char": 174,
+    "end_char": 188,
+    "is_actionable": true,
+    "search_term": "Labrador Retriever",
+    "hints": [
+      "Labrador Retriever",
+      "Labrador breed",
+      "Labrador dog"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E3",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Breed of the dog",
+    "hint_probabilities": {
+      "Labrador Retriever": 1.0,
+      "Labrador breed": 0.9,
+      "Labrador dog": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 3345
+  },
+  {
+    "span_text": "6 months",
+    "normalized_name": "6 months",
+    "kind": "Reminder",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Observation period suggested for 6 months",
+    "start_char": 2981,
+    "end_char": 2989,
+    "is_actionable": true,
+    "search_term": "6 months",
+    "hints": [
+      "6 months",
+      "six months",
+      "half year"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E3",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Observation period suggested for 6 months",
+    "hint_probabilities": {
+      "6 months": 1.0,
+      "six months": 0.9,
+      "half year": 0.7
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 2345,
+    "_chunk_end": 5191
+  },
+  {
+    "span_text": "follow-up consultation",
+    "normalized_name": "follow-up consultation",
+    "kind": "Reminder",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Book follow-up consultation in one week",
+    "start_char": 3940,
+    "end_char": 3962,
+    "is_actionable": true,
+    "search_term": "follow-up consultation",
+    "hints": [
+      "follow-up consultation",
+      "return visit",
+      "check-up appointment"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E14",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Book follow-up consultation in one week",
+    "hint_probabilities": {
+      "follow-up consultation": 1.0,
+      "return visit": 0.9,
+      "check-up appointment": 0.7
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 2345,
+    "_chunk_end": 5191
+  },
+  {
+    "span_text": "5 days",
+    "normalized_name": "5 days",
+    "kind": "Reminder",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Antibiotics prescribed for 5 days",
+    "start_char": 3997,
+    "end_char": 4003,
+    "is_actionable": true,
+    "search_term": "5 days",
+    "hints": [
+      "5 days",
+      "five days",
+      "short term"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E15",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Antibiotics prescribed for 5 days",
+    "hint_probabilities": {
+      "5 days": 1.0,
+      "five days": 0.9,
+      "short term": 0.7
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 2345,
+    "_chunk_end": 5191
+  },
+  {
+    "span_text": "bitten by a street dog",
+    "normalized_name": "dog bite",
+    "kind": "ReasonForVisit",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Reason for visit is dog bite",
+    "start_char": 321,
+    "end_char": 343,
+    "is_actionable": true,
+    "search_term": "dog bite",
+    "hints": [
+      "dog bite",
+      "animal bite",
+      "street dog bite"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E4",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Reason for visit is dog bite",
+    "hint_probabilities": {
+      "dog bite": 1.0,
+      "animal bite": 0.9,
+      "street dog bite": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 3345
+  }
+]

@@ -1,0 +1,163 @@
+{
+  "ReasonForVisit": [
+    {
+      "span_text": "bitten by a street dog"
+    }
+  ],
+  "Medication": [
+    {
+      "span_text": "antirabies vaccine"
+    },
+    {
+      "span_text": "antibiotics"
+    },
+    {
+      "span_text": "ointment"
+    },
+    {
+      "span_text": "deworming"
+    },
+    {
+      "span_text": "pain medication"
+    },
+    {
+      "span_text": "antibiotic"
+    },
+    {
+      "span_text": "antibiotics"
+    }
+  ],
+  "Procedure": [
+    {
+      "span_text": "dressing the wound area"
+    },
+    {
+      "span_text": "observation"
+    },
+    {
+      "span_text": "deworming"
+    }
+  ],
+  "Diagnostic": [],
+  "VitalSign": [],
+  "Reminder": [
+    {
+      "span_text": "observation for six months"
+    },
+    {
+      "span_text": "five doses, zero, third, seventh, fourteenth, and twenty eighth day"
+    },
+    {
+      "span_text": "keep him inside"
+    },
+    {
+      "span_text": "six months"
+    },
+    {
+      "span_text": "follow-up consultation"
+    },
+    {
+      "span_text": "one week"
+    },
+    {
+      "span_text": "five days"
+    },
+    {
+      "span_text": "consultation"
+    },
+    {
+      "span_text": "five doses"
+    },
+    {
+      "span_text": "two weeks gap"
+    }
+  ],
+  "Symptom": [
+    {
+      "span_text": "bruised near his thigh"
+    },
+    {
+      "span_text": "small wound"
+    },
+    {
+      "span_text": "symptoms"
+    },
+    {
+      "span_text": "worm burden"
+    },
+    {
+      "span_text": "pain"
+    }
+  ],
+  "Diagnosis": [
+    {
+      "span_text": "rabies"
+    },
+    {
+      "span_text": "rabies"
+    }
+  ],
+  "Anatomy": [
+    {
+      "span_text": "thigh"
+    },
+    {
+      "span_text": "wound"
+    },
+    {
+      "span_text": "wound"
+    }
+  ],
+  "Diet": [],
+  "Preventive": [
+    {
+      "span_text": "vaccine"
+    },
+    {
+      "span_text": "anti rabies vaccine"
+    },
+    {
+      "span_text": "vaccine"
+    },
+    {
+      "span_text": "vaccination"
+    },
+    {
+      "span_text": "vaccine"
+    },
+    {
+      "span_text": "vaccination"
+    },
+    {
+      "span_text": "core vaccine"
+    },
+    {
+      "span_text": "MCV"
+    }
+  ],
+  "ParasiteControl": [
+    {
+      "span_text": "deworming"
+    },
+    {
+      "span_text": "tick and flea"
+    },
+    {
+      "span_text": "Bravecto"
+    }
+  ],
+  "Other": [
+    {
+      "span_text": "pet Oreo"
+    },
+    {
+      "span_text": "three years old"
+    },
+    {
+      "span_text": "Labrador breed"
+    },
+    {
+      "span_text": "antibodies"
+    }
+  ]
+}

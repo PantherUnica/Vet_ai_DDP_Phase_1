@@ -76,11 +76,11 @@ def _build_fireworks_speculative_kwargs(logger: Optional[logging.Logger] = None)
 
     return extra
 
-# Default Super-Pass model: Fireworks Llama v3p3 70B.
-# Override with SUPER_PASS_MODEL if needed.
+# Default Super-Pass model: OpenAI gpt-4.1-mini
+# (Fireworks llama-v3p3-70b retired / may be inaccessible). Override with SUPER_PASS_MODEL.
 SUPER_PASS_DEFAULT_MODEL = os.getenv(
     "SUPER_PASS_MODEL",
-    "accounts/fireworks/models/llama-v3p3-70b-instruct",
+    "gpt-4.1-mini",
 )
 # Default: speculative decoding OFF (deployments-only optimization; on-demand calls typically ignore/reject it)
 os.environ.setdefault("SUPER_PASS_SPECULATIVE", "false")

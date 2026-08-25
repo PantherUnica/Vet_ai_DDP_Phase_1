@@ -1,0 +1,13 @@
+{
+  "provider": "deepgram",
+  "model": "nova-3",
+  "latency_ms": 207242,
+  "audio_path": "C:\\VetAI_Phase1\\input_audio_examples\\Test_1.wav",
+  "char_count": 2352,
+  "word_count": 414,
+  "language": "multi",
+  "response_keys": [
+    "metadata",
+    "results"
+  ]
+}

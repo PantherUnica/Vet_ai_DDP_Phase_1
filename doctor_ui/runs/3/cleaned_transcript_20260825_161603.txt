@@ -1,0 +1,52 @@
+Pet Parent: Hi Shiksha, how are you doing?
+Veterinarian: I'm fine doctor, how are you?
+Pet Parent: Great.
+Veterinarian: So tell me, what happened?
+Pet Parent: This is my pet Oreo. He's 3 years old, a Labrador breed. I've recently adopted him; it's been two weeks. Today, out of my notice, he went out on the road and got bitten by a street dog. They got into a fight apparently. He's a little bruised near his thigh. He's not actually bleeding but there are marks. Can you please take a look at that?
+Veterinarian: Okay. So Oreo is how old?
+Pet Parent: 3 years.
+Veterinarian: And you have just adopted him?
+Pet Parent: Yes, just adopted.
+Veterinarian: Has he been vaccinated before?
+Pet Parent: No, no vaccinations have been done because I recently adopted him; it's still pending.
+Veterinarian: When did this bite happen?
+Pet Parent: I think it's been one hour or so.
+Veterinarian: One hour. Okay. Has deworming been done before?
+Pet Parent: No.
+Veterinarian: Tick and flea control?
+Pet Parent: No, nothing has been done.
+Veterinarian: Okay. Let me take a look at him.
+Pet Parent: Sure.
+Veterinarian: I just did an examination. There is a small wound. Two major things: because he was bitten by another street dog who is not vaccinated, and he is also not vaccinated, the risk of rabies is pretty high. You need to take an anti-rabies vaccine: five doses on 0th, 3rd, 7th, 14th, and 28th day. You must take anti-rabies vaccine post-exposure. Also, the wound needs to be taken care of. We will dress the wound area and start him on antibiotics for 5 days. I'll give you some ointments to apply on that area. You have to take good care of the wound and probably keep him inside only.
+Pet Parent: Sure, sure.
+Veterinarian: Even if we take the vaccine, there are chances that rabies can happen because he is not vaccinated before. Rabies is the only disease where you take a vaccine after the infectious event has happened because it takes some time to show up. The vaccine helps build antibodies in that time and provides protection. But still, there can be cases where rabies happens before protection is established. The chances are not that big but you should take care of the situation properly. It is always better to take the anti-rabies vaccine because you don't know if he'll get infected or not. You should keep him under observation for about 6 months to see if he has symptoms.
+Pet Parent: Okay.
+Veterinarian: Also, his deworming has not been done. You have to get him dewormed. If he has a lot of worm burden, this vaccine might not mount full effect.Veterinarian: The vaccine will help in between that time. It'll build antibodies in between that time and you'll get protected. But still, there can be cases wherein rabies happen before and you are not protected from the vaccine. What are the chances of that happening? Chances are not that big but you should take care of the situation properly.
+Pet Parent: Okay.
+Veterinarian: It is always better that you take the vaccine also, anti-rabies vaccine. Because you don't know, right, whether he'll get infected with rabies or not. So you are supposed to keep him under observation for the... there is not a lot of data supporting this but 6 months would be a fair time. You can see if he is having some symptoms or anything like that.
+Pet Parent: Okay.
+Veterinarian: Yeah, so it's better if you take vaccine, you have to take his vaccine also.
+Pet Parent: Okay, okay.
+Veterinarian: Another thing is his deworming has not been done. You have to get him dewormed. Again if he has a lot of worm burden, this vaccine might not mount full effect. So the animal should mount full effect against the vaccine. So deworming has to be done today itself.
+Pet Parent: Okay, okay doctor.
+Veterinarian: And tick and flea control. A lot of ticks are there on his body. Tick and flea control also need to be done. So I will prescribe a tablet called Bravecto for tick and flea problems and I'll prescribe a deworming tablet. Both you have to give today itself.
+Pet Parent: Okay.
+Veterinarian: I'll give a pain medication now so that this pain from the wound is under control. And I'll prescribe an antibiotic for a few days.
+Pet Parent: Okay.
+Veterinarian: So you have to book the follow-up consultation say one week down the line.
+Pet Parent: Okay.
+Veterinarian: Five days will be a good number because I'll be writing antibiotics for only 5 days. Five days down the line one more consultation need to be booked. We'll see how the wound is healing. Also in between vaccination dates will also be there. So you can either call me for the vaccine or you can take him to the nearest hospital for the vaccine.
+Pet Parent: Okay.
+Veterinarian: Again I'm telling you, very important vaccination is really important.
+Pet Parent: Sure I understand.
+Veterinarian: The second vaccine, another one more vaccine is there to be taken for him. We don't need to take it right now but it is a core vaccine. Means it is a kind of vaccine that is very important to be taken in case of pets. It's called MCV. Once these five doses are over, after a 2 weeks gap, we can start taking that also. So that he doesn't get infected with some other deadly infections that can happen.
+Pet Parent: Sure, okay.
+Veterinarian: Any doubts?
+Pet Parent: No, no no. I understood.
+Veterinarian: Okay then, so I'll take the vaccine.
+Pet Parent: I've taken the vaccine, taken given the injection also.
+Veterinarian: Yeah. I'm giving you the prescription.
+Pet Parent: Yeah, okay. If you have any doubt, keep me in the line. Keep me in the loop.
+Veterinarian: Sure, sure, okay.
+Pet Parent: Okay? Thank you, thank you doctor.
+Veterinarian: Okay.

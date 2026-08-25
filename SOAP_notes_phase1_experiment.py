@@ -72,9 +72,10 @@ except ImportError:
     logging.warning("soundfile not available. Some audio formats may require pydub/librosa/ffmpeg fallbacks.")
 import tempfile
 
-# Default Super-Pass model for cleaned transcript + Brain NER:
-# Fireworks Llama v3p3 70B. Override with SUPER_PASS_MODEL if needed.
-os.environ.setdefault("SUPER_PASS_MODEL", "accounts/fireworks/models/llama-v3p3-70b-instruct")
+# Default Super-Pass model for cleaned transcript + Brain NER.
+# OpenAI gpt-4.1-mini (Fireworks llama-v3p3-70b is retired / account may be suspended).
+# Override with SUPER_PASS_MODEL if needed.
+os.environ.setdefault("SUPER_PASS_MODEL", "gpt-4.1-mini")
 
 # Long transcript safety helpers (summary blocks + prompt-safe excerpts)
 try:
@@ -128,13 +129,13 @@ if (
 MODEL_PROVIDER = os.getenv("SOAP_MODEL_PROVIDER", "openai")
 MODEL_NAME = os.getenv("SOAP_MODEL", "gpt-4.1-mini")  # Step 3: SOAP Generation
 
-# Step 2 (Cleaning/NER): aligned with SUPER_PASS_MODEL default (Fireworks Llama v3p3 70B)
-STEP_2_CLEANING_MODEL = 'accounts/fireworks/models/llama-v3p3-70b-instruct'
-STEP_2_3_NORMALIZER_MODEL = 'accounts/fireworks/models/llama-v3p3-70b-instruct'
-STEP_2_5_NER_MODEL = 'accounts/fireworks/models/llama-v3p3-70b-instruct'
+# Step 2 (Cleaning/NER): aligned with SUPER_PASS_MODEL default (OpenAI)
+STEP_2_CLEANING_MODEL = os.getenv("SUPER_PASS_MODEL", "gpt-4.1-mini")
+STEP_2_3_NORMALIZER_MODEL = os.getenv("SUPER_PASS_MODEL", "gpt-4.1-mini")
+STEP_2_5_NER_MODEL = os.getenv("SUPER_PASS_MODEL", "gpt-4.1-mini")
 
 # Step 2 (Super-Pass): Combined Cleaning + NER in a single call
-SUPER_PASS_MODEL = os.getenv("SUPER_PASS_MODEL", "accounts/fireworks/models/llama-v3p3-70b-instruct")
+SUPER_PASS_MODEL = os.getenv("SUPER_PASS_MODEL", "gpt-4.1-mini")
 
 # Chunk-Parallel Factory: Enable parallel chunk processing for sub-60s latency
 # Set CHUNK_PARALLEL_ENABLED=true to enable chunk-parallel processing
@@ -4417,7 +4418,15 @@ async def generate_soap_note_from_audio_async(
                             if logger:
                                 logger.info(f"  ✅ Billing pipeline complete: {len(streaming_entity_manifest)} entities in manifest")
 
-                        billing_pipeline_task = asyncio.create_task(_run_billing_pipeline_async()) if not shadow_grounding_used else None
+                        billing_pipeline_task = (
+                            asyncio.create_task(_run_billing_pipeline_async())
+                            if not shadow_grounding_used
+                            and os.getenv("SKIP_BILLING_PIPELINE", "").lower()
+                            not in ("1", "true", "yes")
+                            else None
+                        )
+                        if os.getenv("SKIP_BILLING_PIPELINE", "").lower() in ("1", "true", "yes"):
+                            logger.info("⏩ SKIP_BILLING_PIPELINE=true — inventory grounding skipped")
                         if not shadow_grounding_used:
                             super_pass_stream_task = None
                 
@@ -4771,10 +4780,18 @@ async def generate_soap_note_from_audio_async(
     stage_marks["phase2_start"] = None
     stage_marks["phase2_done"] = None
     phase2_start_with_soap_ready = os.getenv("PHASE2_START_WITH_SOAP_READY", "true").lower() in ("1", "true", "yes")
+    skip_phase2 = os.getenv("SKIP_PHASE2", "").lower() in ("1", "true", "yes")
+    if skip_phase2:
+        logger.info("⏩ SKIP_PHASE2=true — Phase 2 knowledge atoms skipped")
 
     if entity_manifest:
         # Start Phase 2 as soon as manifest + SOAP are ready (parallel with injection) when enabled
-        if phase2_start_with_soap_ready and soap_note and soap_note.strip():
+        if (
+            not skip_phase2
+            and phase2_start_with_soap_ready
+            and soap_note
+            and soap_note.strip()
+        ):
             try:
                 from kb_phase2_integration import extract_knowledge_atoms_async
                 phase2_enable_billing = os.getenv("PHASE2_ENABLE_BILLING_MATCHING", "false").lower() in ("1", "true", "yes")
@@ -4825,7 +4842,13 @@ async def generate_soap_note_from_audio_async(
         logger.info("⏭️ Skipping post-SOAP injection; using Brain NER/grounded manifest output directly.")
 
         # Start Phase 2 only if not already started (pre-extraction above); otherwise use post-injection SOAP
-        if phase2_task is None and not phase2_start_with_soap_ready and soap_note and soap_note.strip():
+        if (
+            not skip_phase2
+            and phase2_task is None
+            and not phase2_start_with_soap_ready
+            and soap_note
+            and soap_note.strip()
+        ):
             try:
                 from kb_phase2_integration import extract_knowledge_atoms_async
                 phase2_enable_billing = os.getenv("PHASE2_ENABLE_BILLING_MATCHING", "false").lower() in ("1", "true", "yes")

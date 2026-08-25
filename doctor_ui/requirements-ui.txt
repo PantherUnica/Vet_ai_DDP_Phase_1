@@ -1,6 +1,7 @@
 streamlit>=1.32
 openpyxl
 jiwer
+python-dotenv
 
 # Full SOAP pipeline (Super-Pass + SOAP generation)
 openai>=1.0.0

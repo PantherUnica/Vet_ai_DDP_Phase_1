@@ -19,6 +19,28 @@ ROOT = Path(__file__).resolve().parent.parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+# Load .env before pipeline imports (API keys, SUPER_PASS_MODEL, etc.)
+_env_file = ROOT / ".env"
+if _env_file.exists():
+    try:
+        import os
+
+        from dotenv import load_dotenv
+
+        # override=True so SUPER_PASS_MODEL / keys in .env win over stale process defaults
+        load_dotenv(_env_file, override=True)
+        # Normalize alternate key names used in this repo's .env
+        if not (os.getenv("FIREWORKS_API_KEY") or "").strip():
+            fw = (os.getenv("fireworks_API") or os.getenv("FIREWORKS_API") or "").strip()
+            if fw:
+                os.environ["FIREWORKS_API_KEY"] = fw
+        if not (os.getenv("OPENAI_API_KEY") or "").strip():
+            oa = (os.getenv("OPENAI_KEY") or "").strip()
+            if oa:
+                os.environ["OPENAI_API_KEY"] = oa
+    except ImportError:
+        pass
+
 from doctor_ui import db  # noqa: E402
 from doctor_ui.components.soap_display import render_soap_template  # noqa: E402
 from doctor_ui.languages import (  # noqa: E402
