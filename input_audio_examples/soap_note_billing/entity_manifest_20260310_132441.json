@@ -1,0 +1,156 @@
+[
+  {
+    "span_text": "болевое ощущение",
+    "normalized_name": "болевое ощущение",
+    "display_name": "болевое ощущение",
+    "kind": "Symptom",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "non_billable_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "pain",
+      "discomfort",
+      "ache"
+    ],
+    "search_term": "pain"
+  },
+  {
+    "span_text": "больно при пальпации",
+    "normalized_name": "больно при пальпации",
+    "display_name": "больно при пальпации",
+    "kind": "Symptom",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "non_billable_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "painful on palpation",
+      "tender to palpation",
+      "pain on touching"
+    ],
+    "search_term": "painful on palpation"
+  },
+  {
+    "span_text": "воспаление ротовой полости",
+    "normalized_name": "воспаление ротовой полости",
+    "display_name": "воспаление ротовой полости",
+    "kind": "Symptom",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "non_billable_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "inflammation of the oral cavity",
+      "oral inflammation",
+      "gingivitis"
+    ],
+    "search_term": "inflammation of the oral cavity"
+  },
+  {
+    "span_text": "десна",
+    "normalized_name": "десна",
+    "display_name": "десна",
+    "kind": "Anatomy",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "non_billable_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "gums",
+      "gum tissue",
+      "gingiva"
+    ],
+    "search_term": "gums"
+  },
+  {
+    "span_text": "изделение из ротовой полости",
+    "normalized_name": "изделение из ротовой полости",
+    "display_name": "изделение из ротовой полости",
+    "kind": "Symptom",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "non_billable_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "lesion in the oral cavity",
+      "oral lesion",
+      "gingival lesion"
+    ],
+    "search_term": "lesion in the oral cavity"
+  },
+  {
+    "span_text": "кушает очень мало",
+    "normalized_name": "кушает очень мало",
+    "display_name": "кушает очень мало",
+    "kind": "Symptom",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "non_billable_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "eats very little",
+      "poor appetite",
+      "anorexia"
+    ],
+    "search_term": "eats very little"
+  },
+  {
+    "span_text": "перелом клика нижнего челюсти",
+    "normalized_name": "перелом клика нижнего челюсти",
+    "display_name": "перелом клика нижнего челюсти",
+    "kind": "Diagnosis",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Diagnosis",
+    "match_method": "note_only_below_threshold",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "fracture of the lower jaw",
+      "mandibular fracture",
+      "jaw fracture"
+    ],
+    "search_term": "fracture of the lower jaw"
+  },
+  {
+    "span_text": "покраснение",
+    "normalized_name": "покраснение",
+    "display_name": "покраснение",
+    "kind": "Symptom",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "non_billable_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "redness",
+      "erythema",
+      "inflammation"
+    ],
+    "search_term": "redness"
+  }
+]

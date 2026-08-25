@@ -1,0 +1,44 @@
+{
+  "entities": [
+    {
+      "name": "oreo",
+      "kind": "PATIENT"
+    },
+    {
+      "name": "labrador",
+      "kind": "BREED"
+    },
+    {
+      "name": "anti-rabies vaccine",
+      "kind": "PRODUCT"
+    },
+    {
+      "name": "rabies vaccine",
+      "kind": "PRODUCT"
+    },
+    {
+      "name": "antibiotics",
+      "kind": "PRODUCT"
+    },
+    {
+      "name": "deworming",
+      "kind": "PROCEDURE"
+    },
+    {
+      "name": "bravecto",
+      "kind": "PRODUCT"
+    },
+    {
+      "name": "tick and flea",
+      "kind": "CONDITION"
+    },
+    {
+      "name": "wound dressing",
+      "kind": "PROCEDURE"
+    },
+    {
+      "name": "follow-up",
+      "kind": "REMINDER"
+    }
+  ]
+}

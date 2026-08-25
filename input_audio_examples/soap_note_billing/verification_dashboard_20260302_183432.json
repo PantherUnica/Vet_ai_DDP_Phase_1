@@ -1,0 +1,144 @@
+{
+  "procedures_services": [],
+  "medications_administered": [],
+  "medications_prescribed": [],
+  "diagnostics": [],
+  "other_products_retail": [],
+  "reminders_follow_ups": [
+    {
+      "item_name": "Ear swab for culture and sensitivity",
+      "item_id": "[LABTEST-XXX]",
+      "due_date": "ASAP",
+      "remarks": "If no improvement, perform ear swab for culture and sensitivity to guide further therapy",
+      "intent_context": "Ordered",
+      "kind": "LabTest"
+    }
+  ],
+  "vitals": [],
+  "module_4_unlinked_entities": [
+    {
+      "item_name": "Cefpodoxime syrup",
+      "kind": "Medicine",
+      "intent_context": "Prescribed",
+      "intent": "Prescribed (Medicine)",
+      "status": "ACTION REQUIRED",
+      "reason": "MISSING_LOCAL_ID",
+      "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+      "suggestions": [],
+      "inventory_id": null,
+      "administered_prescribed": "Prescribed",
+      "fulfillment": "Internal",
+      "quantity": "",
+      "dosage": "3ml",
+      "duration": "5-7 days",
+      "frequency": "Custom",
+      "instructions": "",
+      "route": "oral"
+    },
+    {
+      "item_name": "Easotic ear drops",
+      "kind": "Medicine",
+      "intent_context": "Prescribed",
+      "intent": "Prescribed (Medicine)",
+      "status": "ACTION REQUIRED",
+      "reason": "MISSING_LOCAL_ID",
+      "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+      "suggestions": [],
+      "inventory_id": null,
+      "administered_prescribed": "Prescribed",
+      "fulfillment": "Internal",
+      "quantity": "",
+      "dosage": "",
+      "duration": "5 days",
+      "frequency": "Custom",
+      "instructions": "",
+      "route": ""
+    },
+    {
+      "item_name": "Ear cleaning",
+      "kind": "Procedure",
+      "intent_context": "Performed",
+      "intent": "Performed (Procedure)",
+      "status": "ACTION REQUIRED",
+      "reason": "MISSING_LOCAL_ID",
+      "remarks": "Mentioned as procedure; no matching inventory/service SKU found. Vet must select specific SKU for billing.",
+      "suggestions": [],
+      "service_id": null
+    }
+  ],
+  "module_5_clinical_history": [],
+  "streamlined_dashboard": {
+    "signalment_vitals": [],
+    "clinical_assessment": [],
+    "pharmacy_administered": [],
+    "pharmacy_prescribed": [
+      {
+        "name": "Cefpodoxime syrup",
+        "original_mention": "Cefpodoxime syrup",
+        "status": "ACTION_REQUIRED",
+        "linked_id": null,
+        "suggestions": [],
+        "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+        "reason": "MISSING_LOCAL_ID",
+        "dosage": "3ml",
+        "frequency": "Custom",
+        "duration": "5-7 days",
+        "quantity": "",
+        "instructions": "",
+        "required_fields": [
+          "frequency",
+          "duration"
+        ],
+        "label": "Prescribed (Home Care)"
+      },
+      {
+        "name": "Easotic ear drops",
+        "original_mention": "Easotic ear drops",
+        "status": "ACTION_REQUIRED",
+        "linked_id": null,
+        "suggestions": [],
+        "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+        "reason": "MISSING_LOCAL_ID",
+        "dosage": "",
+        "frequency": "Custom",
+        "duration": "5 days",
+        "quantity": "",
+        "instructions": "",
+        "required_fields": [
+          "frequency",
+          "duration"
+        ],
+        "label": "Prescribed (Home Care)"
+      }
+    ],
+    "diagnostics_labs_imaging": [],
+    "clinical_procedures_services": [
+      {
+        "name": "Ear cleaning",
+        "original_mention": "Ear cleaning",
+        "status": "ACTION_REQUIRED",
+        "linked_id": null,
+        "suggestions": [],
+        "remarks": "Mentioned as procedure; no matching inventory/service SKU found. Vet must select specific SKU for billing.",
+        "reason": "MISSING_LOCAL_ID"
+      }
+    ],
+    "other_products_retail": [],
+    "preventive": [],
+    "patient_reminders": [
+      {
+        "name": "Ear swab for culture and sensitivity",
+        "original_mention": "Ear swab for culture and sensitivity",
+        "status": "ACTION_REQUIRED",
+        "linked_id": "[LABTEST-XXX]",
+        "suggestions": [],
+        "due_date": "ASAP",
+        "remarks": "If no improvement, perform ear swab for culture and sensitivity to guide further therapy",
+        "is_operational": false,
+        "scheduling_data": null,
+        "label": "Patient Instruction"
+      }
+    ],
+    "clinical_follow_ups": []
+  }
+}

@@ -1,0 +1,87 @@
+[
+  {
+    "span_text": "bus inside the left ear",
+    "normalized_name": "bus inside the left ear",
+    "kind": "Diagnosis",
+    "route": "dual_sync",
+    "candidates": [],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "bus inside the left ear",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "note_only_below_threshold",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "yeast growth",
+    "normalized_name": "yeast growth",
+    "kind": "Diagnosis",
+    "route": "dual_sync",
+    "candidates": [],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "yeast growth",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "note_only_below_threshold",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "ear cleaning",
+    "normalized_name": "ear cleaning",
+    "kind": "Procedure",
+    "route": "dual_sync",
+    "candidates": [],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "ear cleaning",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "unlinked",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "Cefpet syrup 3ml",
+    "normalized_name": "Cefpet syrup 3ml",
+    "kind": "Medication",
+    "route": "dual_sync",
+    "candidates": [],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "Cefpodoxime",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "unlinked",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "exotic pump",
+    "normalized_name": "exotic pump",
+    "kind": "Medication",
+    "route": "dual_sync",
+    "candidates": [],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "Easotic",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "unlinked",
+      "similarity_score": null
+    }
+  }
+]

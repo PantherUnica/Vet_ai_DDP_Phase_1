@@ -1,0 +1,2045 @@
+{
+  "knowledge_atoms": [
+    {
+      "concept": "Lethargy and decreased playtime",
+      "kind": "Reason",
+      "assertion_id": "CONF",
+      "intent_context": "Presented",
+      "source_text": "Oreo, a 5-year-old male Labrador, has been lethargic and less playful for the past week",
+      "section": "Subjective",
+      "attributes": {
+        "chief_complaint": "lethargic and less playful for the past week",
+        "urgency": "Routine",
+        "duration": "past week",
+        "previous_history": null
+      },
+      "codes": {}
+    },
+    {
+      "concept": "Flea and Tick Control",
+      "kind": "ParasiteControl",
+      "assertion_id": "CONF",
+      "intent_context": "Prescribed",
+      "source_text": "Initiate flea and tick control with options including Florina (Bravitu), fibroblan and esmetopril, saralana, moxeduct imidogloprid, or salamitin; Florina preferred | Initiate flea and tick control with options including Florina (Bravitu)",
+      "section": "Plan",
+      "attributes": {
+        "dose": null,
+        "route": null,
+        "frequency": null,
+        "brand_name": "Florina",
+        "generic_name": null,
+        "suggestions": [
+          {
+            "name": "PAPA PAWSOME TICK OFF SHAMPOO 250ml",
+            "match_score": 0.6610822510822512,
+            "recommendation": "MEDIUM",
+            "inventory_id": 40527,
+            "stock_id": 40527
+          },
+          {
+            "name": "Natural Remedies NOMOTICKS ANTITICK & FLEA BODY SPRAY 100 ml",
+            "match_score": 0.6246031746031746,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42244,
+            "stock_id": 42244
+          },
+          {
+            "name": "Vetoquinol Fixotic Advance Spray Fipronil 0.25% w/v & (S)-Methoprene 0.22% w/v 100 ml",
+            "match_score": 0.6149596332785988,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42117,
+            "stock_id": 42117
+          },
+          {
+            "name": "Frontline Spray 0.250g",
+            "match_score": 0.5928030303030303,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42254,
+            "stock_id": 42254
+          },
+          {
+            "name": "FRONTLINE SPRAY 250 ML",
+            "match_score": 0.5928030303030303,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41213,
+            "stock_id": 41213
+          }
+        ],
+        "primary_local_suggestion": {
+          "name": "PAPA PAWSOME TICK OFF SHAMPOO 250ml",
+          "stock_id": 40527,
+          "service_id": null
+        }
+      },
+      "codes": {},
+      "kb_kind": "ParasiteControl",
+      "match_method": "dual_sync_judge_rejected"
+    },
+    {
+      "concept": "Fibroblan and Esmetopril",
+      "kind": "Medication",
+      "assertion_id": "CONF",
+      "intent_context": "Prescribed",
+      "source_text": "Initiate flea and tick control with options including Florina (Bravitu), fibroblan and esmetopril, saralana, moxeduct imidogloprid, or salamitin; Florina preferred",
+      "section": "Plan",
+      "attributes": {
+        "dose": null,
+        "route": null,
+        "frequency": null
+      },
+      "codes": {},
+      "kb_kind": "Medication",
+      "match_method": "unlinked"
+    },
+    {
+      "concept": "Radiographs for Norberg angle and hip/stifle joints plus spine",
+      "kind": "Diagnostic",
+      "assertion_id": "CONF",
+      "intent_context": "Ordered",
+      "source_text": "Schedule radiographs to measure Norberg angle and assess hip and stifle joints plus spine | Schedule radiographs to measure Norberg angle and assess hip and stifle joints plus spine.",
+      "section": "Plan",
+      "attributes": {
+        "modality": "X-Ray",
+        "site": "Hip, Stifle joints, Spine",
+        "views": "anteroposterior, lateral views"
+      },
+      "codes": {}
+    },
+    {
+      "concept": "Spirocoxin",
+      "kind": "Medication",
+      "assertion_id": "CONF",
+      "intent_context": "Prescribed",
+      "source_text": "Prescribe Spirocoxin for pain management | Prescribe Spirocoxin for pain management.",
+      "section": "Plan",
+      "attributes": {
+        "dose": null,
+        "route": null,
+        "frequency": null,
+        "suggestions": [
+          {
+            "name": "ONDANSETRON",
+            "match_score": 0.4661319073083779,
+            "recommendation": "MEDIUM",
+            "inventory_id": 40549,
+            "stock_id": 40549
+          }
+        ],
+        "primary_local_suggestion": {
+          "name": "ONDANSETRON",
+          "stock_id": 40549,
+          "service_id": null
+        }
+      },
+      "codes": {},
+      "kb_kind": "Medication",
+      "match_method": "dual_sync_judge_rejected"
+    },
+    {
+      "concept": "Contraway Force Etching",
+      "kind": "Medication",
+      "assertion_id": "CONF",
+      "intent_context": "Prescribed",
+      "source_text": "Prescribe Contraway Force Etching joint supplement and omega 3, omega 6 fatty acids to reduce inflammation and improve joint health",
+      "section": "Plan",
+      "attributes": {
+        "dose": null,
+        "route": null,
+        "frequency": null,
+        "suggestions": [
+          {
+            "name": "CONDROVET FORCE HA 590",
+            "match_score": 0.7823759332454985,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41559,
+            "stock_id": 41559
+          },
+          {
+            "name": "CONDROVET FORCE HA LARGE 1100",
+            "match_score": 0.7670885145662464,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41558,
+            "stock_id": 41558
+          },
+          {
+            "name": "Intas Livotas Syrup 200 ml Pet",
+            "match_score": 0.6101851851851853,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42158,
+            "stock_id": 42158
+          },
+          {
+            "name": "Intas Ondet 2 mg 20 x 5 ml Ampoules",
+            "match_score": 0.5801282051282052,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42341,
+            "stock_id": 42341
+          },
+          {
+            "name": "INTACEF TAZO PET",
+            "match_score": 0.5625,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41018,
+            "stock_id": 41018
+          }
+        ],
+        "primary_local_suggestion": {
+          "name": "CONDROVET FORCE HA 590",
+          "stock_id": 41559,
+          "service_id": null
+        }
+      },
+      "codes": {},
+      "kb_kind": "Medication",
+      "match_method": "dual_sync_judge_rejected"
+    },
+    {
+      "concept": "Omega 3 and Omega 6 fatty acids",
+      "kind": "Medication",
+      "assertion_id": "CONF",
+      "intent_context": "Prescribed",
+      "source_text": "Prescribe Contraway Force Etching joint supplement and omega 3, omega 6 fatty acids to reduce inflammation and improve joint health",
+      "section": "Plan",
+      "attributes": {
+        "dose": null,
+        "route": null,
+        "frequency": null
+      },
+      "codes": {},
+      "kb_kind": "Medication",
+      "match_method": "unlinked"
+    },
+    {
+      "concept": "Physiotherapy including sit-stand-step exercises and swimming",
+      "kind": "Procedure",
+      "assertion_id": "CONF",
+      "intent_context": "Scheduled",
+      "source_text": "Advise physiotherapy including sit-stand-step exercises and swimming; avoid high-impact activities",
+      "section": "Plan",
+      "attributes": {
+        "procedure_name": "Physiotherapy including sit-stand-step exercises and swimming"
+      },
+      "codes": {
+        "local_service_id": 1159
+      },
+      "local_service_id": 1159,
+      "kb_kind": "Procedure",
+      "match_method": "dual_sync_auto_bind_local"
+    },
+    {
+      "concept": "Femoral Head and Neck Ostectomy",
+      "kind": "Procedure",
+      "assertion_id": "CONF",
+      "intent_context": "Scheduled",
+      "source_text": "Consider surgical intervention (femoral head and neck ostectomy) if needed in future",
+      "section": "Plan",
+      "attributes": {
+        "procedure_name": "Femoral Head and Neck Ostectomy"
+      },
+      "codes": {
+        "local_service_id": 1181
+      },
+      "local_service_id": 1181,
+      "kb_kind": "Procedure",
+      "match_method": "dual_sync_local"
+    },
+    {
+      "concept": "Written physiotherapy instructions",
+      "kind": "Procedure",
+      "assertion_id": "CONF",
+      "intent_context": "Performed",
+      "source_text": "Provide written physiotherapy instructions | Provide written physiotherapy instructions.",
+      "section": "Plan",
+      "attributes": {
+        "procedure_name": "Written physiotherapy instructions"
+      },
+      "codes": {
+        "local_service_id": 1159
+      },
+      "local_service_id": 1159,
+      "kb_kind": "Procedure",
+      "match_method": "dual_sync_auto_bind_local"
+    },
+    {
+      "concept": "Follow-up reassessment and weight monitoring",
+      "kind": "Reminder",
+      "assertion_id": "CONF",
+      "intent_context": "Scheduled",
+      "source_text": "Follow up for reassessment and weight monitoring | Follow up for reassessment and weight monitoring.",
+      "section": "Plan",
+      "attributes": {
+        "due_on": null,
+        "action_item": "Reassessment and weight monitoring"
+      },
+      "codes": {}
+    },
+    {
+      "concept": "Lethargy and difficulty walking",
+      "kind": "Reason",
+      "assertion_id": "CONF",
+      "intent_context": "Presented",
+      "source_text": "Oreo, a 5-year-old male Labrador, has been lethargic and less playful for the past week. He shows reluctance to wake up and has difficulty walking, with an unusual posture and whining when moving. | Oreo, a 5-year-old male Labrador, has been lethargic and less playful for the past week. He shows reluctance to wake up and has difficulty walking",
+      "section": "Subjective",
+      "attributes": {
+        "chief_complaint": "lethargic and less playful for the past week, reluctance to wake up, difficulty walking, unusual posture, whining when moving",
+        "urgency": "Routine",
+        "duration": "past week",
+        "previous_history": null
+      },
+      "codes": {}
+    },
+    {
+      "concept": "Florina",
+      "kind": "Medication",
+      "assertion_id": "CONF",
+      "intent_context": "Prescribed",
+      "source_text": "Initiate flea and tick control with options including Florina (Bravitu), fibroblan and esmetopril, saralana, moxeduct imidogloprid, or salamitin; Florina preferred.",
+      "section": "Plan",
+      "attributes": {
+        "dose": null,
+        "route": null,
+        "frequency": null,
+        "suggestions": [
+          {
+            "name": "Candioli Florentero ACT 12 g 10 Tab Dogs Cats",
+            "match_score": 0.8345864661654134,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42085,
+            "stock_id": 42085
+          },
+          {
+            "name": "Florentero ACT 15 ml",
+            "match_score": 0.8314285714285714,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42084,
+            "stock_id": 42084
+          }
+        ],
+        "primary_local_suggestion": {
+          "name": "Candioli Florentero ACT 12 g 10 Tab Dogs Cats",
+          "stock_id": 42085,
+          "service_id": null
+        }
+      },
+      "codes": {},
+      "kb_kind": "Medication",
+      "match_method": "dual_sync_judge_rejected"
+    },
+    {
+      "concept": "Moxeduct imidogloprid",
+      "kind": "Medication",
+      "assertion_id": "CONF",
+      "intent_context": "Prescribed",
+      "source_text": "Initiate flea and tick control with options including Florina (Bravitu), fibroblan and esmetopril, saralana, moxeduct imidogloprid, or salamitin; Florina preferred. | Initiate flea and tick control with options including moxeduct imidogloprid",
+      "section": "Plan",
+      "attributes": {
+        "dose": null,
+        "route": null,
+        "frequency": null
+      },
+      "codes": {},
+      "kb_kind": "Medication",
+      "match_method": "unlinked"
+    },
+    {
+      "concept": "Radiographs",
+      "kind": "Diagnostic",
+      "assertion_id": "CONF",
+      "intent_context": "Ordered",
+      "source_text": "Schedule radiographs to measure Norberg angle and assess hip and stifle joints plus spine. | Schedule radiographs to measure Norberg angle and assess hip and stifle joints plus spine | Radiographs (anteroposterior, lateral views) and spine imaging recommended to confirm diagnosis and rule out spinal involvement",
+      "section": "Plan",
+      "attributes": {
+        "modality": "X-Ray",
+        "site": "Hip and stifle joints plus spine",
+        "views": "anteroposterior, lateral"
+      },
+      "codes": {}
+    },
+    {
+      "concept": "Contraway Force Etching joint supplement",
+      "kind": "Medication",
+      "assertion_id": "CONF",
+      "intent_context": "Prescribed",
+      "source_text": "Prescribe Contraway Force Etching joint supplement and omega 3, omega 6 fatty acids to reduce inflammation and improve joint health. | Prescribe Contraway Force Etching joint supplement",
+      "section": "Plan",
+      "attributes": {
+        "dose": null,
+        "route": null,
+        "frequency": null,
+        "suggestions": [
+          {
+            "name": "CONDROVET FORCE HA 590",
+            "match_score": 0.7823759332454985,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41559,
+            "stock_id": 41559
+          },
+          {
+            "name": "CONDROVET FORCE HA LARGE 1100",
+            "match_score": 0.7670885145662464,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41558,
+            "stock_id": 41558
+          },
+          {
+            "name": "Intas Livotas Syrup 200 ml Pet",
+            "match_score": 0.6101851851851853,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42158,
+            "stock_id": 42158
+          },
+          {
+            "name": "Intas Ondet 2 mg 20 x 5 ml Ampoules",
+            "match_score": 0.5801282051282052,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42341,
+            "stock_id": 42341
+          },
+          {
+            "name": "INTACEF TAZO PET",
+            "match_score": 0.5625,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41018,
+            "stock_id": 41018
+          }
+        ],
+        "primary_local_suggestion": {
+          "name": "CONDROVET FORCE HA 590",
+          "stock_id": 41559,
+          "service_id": null
+        }
+      },
+      "codes": {},
+      "kb_kind": "Medication",
+      "match_method": "dual_sync_judge_rejected"
+    },
+    {
+      "concept": "Omega 3 fatty acids",
+      "kind": "Medication",
+      "assertion_id": "CONF",
+      "intent_context": "Prescribed",
+      "source_text": "Prescribe Contraway Force Etching joint supplement and omega 3, omega 6 fatty acids to reduce inflammation and improve joint health. | Prescribe omega 3 fatty acids to reduce inflammation and improve joint health. | Prescribe omega 6 fatty acids to reduce inflammation and improve joint health. | Prescribe omega 3 fatty acids to reduce inflammation and improve joint health | Prescribe omega 6 fatty acids to reduce inflammation and improve joint health",
+      "section": "Plan",
+      "attributes": {
+        "dose": null,
+        "route": null,
+        "frequency": null
+      },
+      "codes": {},
+      "kb_kind": "Medication",
+      "match_method": "unlinked"
+    },
+    {
+      "concept": "Physiotherapy",
+      "kind": "Procedure",
+      "assertion_id": "CONF",
+      "intent_context": "Performed",
+      "source_text": "Advise physiotherapy including sit-stand-step exercises and swimming; avoid high-impact activities. | Advise physiotherapy including sit-stand-step exercises and swimming | Advise physiotherapy including sit-stand-step exercises and swimming; avoid high-impact activities",
+      "section": "Plan",
+      "attributes": {
+        "procedure_name": "Physiotherapy"
+      },
+      "codes": {
+        "local_service_id": 1159
+      },
+      "local_service_id": 1159,
+      "kb_kind": "Procedure",
+      "match_method": "dual_sync_auto_bind_local"
+    },
+    {
+      "concept": "Sit-stand-step exercises",
+      "kind": "Procedure",
+      "assertion_id": "CONF",
+      "intent_context": "Performed",
+      "source_text": "Advise physiotherapy including sit-stand-step exercises and swimming; avoid high-impact activities. | Advise physiotherapy including sit-stand-step exercises",
+      "section": "Plan",
+      "attributes": {
+        "procedure_name": "Sit-stand-step exercises",
+        "suggestions": [
+          {
+            "name": "PHYSIOTHERAPY",
+            "match_score": 0.892948717948718,
+            "recommendation": "MEDIUM",
+            "service_id": 1159
+          },
+          {
+            "name": "LASER THERAPY",
+            "match_score": 0.7536421911421911,
+            "recommendation": "MEDIUM",
+            "service_id": 1036
+          },
+          {
+            "name": "FLUID THERAPY",
+            "match_score": 0.6814102564102563,
+            "recommendation": "MEDIUM",
+            "service_id": 1028
+          }
+        ]
+      },
+      "codes": {}
+    },
+    {
+      "concept": "Swimming",
+      "kind": "Procedure",
+      "assertion_id": "CONF",
+      "intent_context": "Performed",
+      "source_text": "Advise physiotherapy including sit-stand-step exercises and swimming; avoid high-impact activities. | Advise physiotherapy including swimming",
+      "section": "Plan",
+      "attributes": {
+        "procedure_name": "Swimming",
+        "suggestions": [
+          {
+            "name": "PHYSIOTHERAPY",
+            "match_score": 0.8675213675213675,
+            "recommendation": "MEDIUM",
+            "service_id": 1159
+          }
+        ],
+        "primary_local_suggestion": {
+          "name": "PHYSIOTHERAPY",
+          "stock_id": null,
+          "service_id": 1159
+        }
+      },
+      "codes": {},
+      "kb_kind": "Procedure",
+      "match_method": "dual_sync_judge_rejected"
+    },
+    {
+      "concept": "Omega 3, omega 6 fatty acids",
+      "kind": "Medication",
+      "assertion_id": "CONF",
+      "intent_context": "Prescribed",
+      "source_text": "Prescribe omega 3, omega 6 fatty acids to reduce inflammation and improve joint health",
+      "section": "Plan",
+      "attributes": {
+        "dose": null,
+        "route": null,
+        "frequency": null
+      },
+      "codes": {},
+      "kb_kind": "Medication",
+      "match_method": "unlinked"
+    },
+    {
+      "concept": "Florina (Bravitu)",
+      "kind": "Medication",
+      "assertion_id": "CONF",
+      "intent_context": "Prescribed",
+      "source_text": "Initiate flea and tick control with options including Florina (Bravitu)",
+      "section": "Plan",
+      "attributes": {
+        "dose": null,
+        "route": null,
+        "frequency": null,
+        "suggestions": [
+          {
+            "name": "Candioli Florentero ACT 12 g 10 Tab Dogs Cats",
+            "match_score": 0.8345864661654134,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42085,
+            "stock_id": 42085
+          },
+          {
+            "name": "Florentero ACT 15 ml",
+            "match_score": 0.8314285714285714,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42084,
+            "stock_id": 42084
+          }
+        ],
+        "primary_local_suggestion": {
+          "name": "Candioli Florentero ACT 12 g 10 Tab Dogs Cats",
+          "stock_id": 42085,
+          "service_id": null
+        }
+      },
+      "codes": {},
+      "kb_kind": "Medication",
+      "match_method": "dual_sync_judge_rejected"
+    },
+    {
+      "concept": "fibroblan",
+      "kind": "Medication",
+      "assertion_id": "CONF",
+      "intent_context": "Prescribed",
+      "source_text": "Initiate flea and tick control with options including fibroblan",
+      "section": "Plan",
+      "attributes": {
+        "dose": null,
+        "route": null,
+        "frequency": null
+      },
+      "codes": {},
+      "kb_kind": "Medication",
+      "match_method": "unlinked"
+    },
+    {
+      "concept": "esmetopril",
+      "kind": "Medication",
+      "assertion_id": "CONF",
+      "intent_context": "Prescribed",
+      "source_text": "Initiate flea and tick control with options including esmetopril",
+      "section": "Plan",
+      "attributes": {
+        "dose": null,
+        "route": null,
+        "frequency": null
+      },
+      "codes": {},
+      "kb_kind": "Medication",
+      "match_method": "unlinked"
+    },
+    {
+      "concept": "saralana",
+      "kind": "Medication",
+      "assertion_id": "CONF",
+      "intent_context": "Prescribed",
+      "source_text": "Initiate flea and tick control with options including saralana",
+      "section": "Plan",
+      "attributes": {
+        "dose": null,
+        "route": null,
+        "frequency": null
+      },
+      "codes": {},
+      "kb_kind": "Medication",
+      "match_method": "unlinked"
+    },
+    {
+      "concept": "salamitin",
+      "kind": "Medication",
+      "assertion_id": "CONF",
+      "intent_context": "Prescribed",
+      "source_text": "Initiate flea and tick control with options including salamitin",
+      "section": "Plan",
+      "attributes": {
+        "dose": null,
+        "route": null,
+        "frequency": null
+      },
+      "codes": {},
+      "kb_kind": "Medication",
+      "match_method": "unlinked"
+    },
+    {
+      "concept": "Physiotherapy instructions",
+      "kind": "Procedure",
+      "assertion_id": "CONF",
+      "intent_context": "Performed",
+      "source_text": "Provide written physiotherapy instructions.",
+      "section": "Plan",
+      "attributes": {
+        "procedure_name": "physiotherapy instructions"
+      },
+      "codes": {
+        "local_service_id": 1159
+      },
+      "local_service_id": 1159,
+      "kb_kind": "Procedure",
+      "match_method": "dual_sync_auto_bind_local"
+    },
+    {
+      "concept": "Lethargy and less playful behavior",
+      "kind": "Reason",
+      "assertion_id": "CONF",
+      "intent_context": "Presented",
+      "source_text": "Oreo, a 5-year-old male Labrador, has been lethargic and less playful for the past week",
+      "section": "Subjective",
+      "attributes": {
+        "chief_complaint": "lethargic and less playful",
+        "urgency": "Routine",
+        "duration": "past week",
+        "previous_history": null
+      },
+      "codes": {}
+    },
+    {
+      "concept": "Vaccination and Deworming",
+      "kind": "Preventive",
+      "assertion_id": "CONF",
+      "intent_context": "Administered",
+      "source_text": "He is vaccinated and dewormed recently",
+      "section": "Subjective",
+      "attributes": {},
+      "codes": {
+        "local_service_id": 1009
+      },
+      "local_service_id": 1009,
+      "kb_kind": "Preventive",
+      "match_method": "dual_sync_local"
+    },
+    {
+      "concept": "Tick and Flea Control",
+      "kind": "ParasiteControl",
+      "assertion_id": "CONF",
+      "intent_context": "Declined",
+      "source_text": "has not had recent tick and flea control",
+      "section": "Subjective",
+      "attributes": {
+        "suggestions": [
+          {
+            "name": "PAPA PAWSOME TICK OFF SHAMPOO 250ml",
+            "match_score": 0.6610822510822512,
+            "recommendation": "MEDIUM",
+            "inventory_id": 40527,
+            "stock_id": 40527
+          },
+          {
+            "name": "Natural Remedies NOMOTICKS ANTITICK & FLEA BODY SPRAY 100 ml",
+            "match_score": 0.6246031746031746,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42244,
+            "stock_id": 42244
+          },
+          {
+            "name": "Vetoquinol Fixotic Advance Spray Fipronil 0.25% w/v & (S)-Methoprene 0.22% w/v 100 ml",
+            "match_score": 0.6149596332785988,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42117,
+            "stock_id": 42117
+          },
+          {
+            "name": "Frontline Spray 0.250g",
+            "match_score": 0.5928030303030303,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42254,
+            "stock_id": 42254
+          },
+          {
+            "name": "FRONTLINE SPRAY 250 ML",
+            "match_score": 0.5928030303030303,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41213,
+            "stock_id": 41213
+          }
+        ],
+        "primary_local_suggestion": {
+          "name": "PAPA PAWSOME TICK OFF SHAMPOO 250ml",
+          "stock_id": 40527,
+          "service_id": null
+        }
+      },
+      "codes": {},
+      "kb_kind": "ParasiteControl",
+      "match_method": "dual_sync_judge_rejected"
+    },
+    {
+      "concept": "Ultralining Test",
+      "kind": "Diagnostic",
+      "assertion_id": "CONF",
+      "intent_context": "Performed",
+      "source_text": "Ortolani test (ultralining test) was positive indicating hip joint laxity",
+      "section": "Objective",
+      "attributes": {
+        "at_body_part": "hip joint",
+        "has_modality": "Physical Test",
+        "has_views": "N/A",
+        "suggestions": [
+          {
+            "name": "HIP X RAY",
+            "match_score": 0.8344444444444444,
+            "recommendation": "MEDIUM",
+            "service_id": 975
+          },
+          {
+            "name": "HIP X RAY RESCUE",
+            "match_score": 0.8183333333333334,
+            "recommendation": "MEDIUM",
+            "service_id": 972
+          },
+          {
+            "name": "ULTRASOUND SCAN",
+            "match_score": 0.7991666666666667,
+            "recommendation": "MEDIUM",
+            "service_id": 966
+          },
+          {
+            "name": "HIP SCREENING WITH GA",
+            "match_score": 0.7501587301587301,
+            "recommendation": "MEDIUM",
+            "service_id": 974
+          }
+        ],
+        "primary_local_suggestion": {
+          "name": "HIP X RAY",
+          "stock_id": null,
+          "service_id": 975
+        }
+      },
+      "codes": {},
+      "kb_kind": "Diagnostic",
+      "match_method": "dual_sync_judge_rejected"
+    }
+  ],
+  "verification_dashboard": {
+    "procedures_services": [
+      {
+        "item_name": "PHYSIOTHERAPY",
+        "service_id": 1159,
+        "status": "DRAFT",
+        "remarks": "Written physiotherapy instructions | Physiotherapy | physiotherapy instructions"
+      }
+    ],
+    "medications_administered": [],
+    "medications_prescribed": [],
+    "diagnostics": [
+      {
+        "service_id": null,
+        "lab_radiology": "Radiology",
+        "test_name": "Radiographs for Norberg angle and hip/stifle joints plus spine",
+        "date_of_test": "TBD",
+        "done": "External",
+        "sample_collected": "No",
+        "remarks": "Generic diagnostic detected. Select a specific billing variant from the suggestions below. [Unlinked – ACTION REQUIRED: select service for billing]"
+      },
+      {
+        "service_id": null,
+        "lab_radiology": "Radiology",
+        "test_name": "Moxeduct imidogloprid",
+        "date_of_test": "TBD",
+        "done": "External",
+        "sample_collected": "No",
+        "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment. [Unlinked – ACTION REQUIRED: select service for billing]"
+      },
+      {
+        "service_id": null,
+        "lab_radiology": "Radiology",
+        "test_name": "Radiographs",
+        "date_of_test": "TBD",
+        "done": "External",
+        "sample_collected": "No",
+        "remarks": "Mentioned as diagnostic; no matching inventory/service SKU found. Vet must select specific SKU for billing. [Unlinked – ACTION REQUIRED: select service for billing]"
+      },
+      {
+        "service_id": null,
+        "lab_radiology": "LAB",
+        "test_name": "Ultralining Test",
+        "date_of_test": "TBD",
+        "done": "In-house",
+        "sample_collected": "Yes",
+        "remarks": "Generic diagnostic detected. Select a specific billing variant from the suggestions below. [Unlinked – ACTION REQUIRED: select service for billing]"
+      }
+    ],
+    "other_products_retail": [],
+    "reminders_follow_ups": [
+      {
+        "item_name": "Physiotherapy including sit-stand-step exercises and swimming",
+        "item_id": 1159,
+        "due_date": "ASAP",
+        "remarks": "Advise physiotherapy including sit-stand-step exercises and swimming; avoid high-impact activities",
+        "intent_context": "Scheduled",
+        "kind": "Procedure"
+      },
+      {
+        "item_name": "Femoral Head and Neck Ostectomy",
+        "item_id": 1181,
+        "due_date": "ASAP",
+        "remarks": "Consider surgical intervention (femoral head and neck ostectomy) if needed in future",
+        "intent_context": "Scheduled",
+        "kind": "Procedure"
+      },
+      {
+        "item_name": "Follow-up reassessment and weight monitoring",
+        "item_id": "[REMINDER-XXX]",
+        "due_date": "ASAP",
+        "remarks": "Reassessment and weight monitoring",
+        "intent_context": "Scheduled",
+        "kind": "Reminder"
+      },
+      {
+        "item_name": "Sit-stand-step exercises",
+        "item_id": "[PROCEDURE-XXX]",
+        "due_date": "ASAP",
+        "remarks": "Advise physiotherapy including sit-stand-step exercises and swimming; avoid high-impact activities. | Advise physiotherapy including sit-stand-step exercises",
+        "intent_context": "Performed",
+        "kind": "Procedure"
+      },
+      {
+        "item_name": "Swimming",
+        "item_id": "[PROCEDURE-XXX]",
+        "due_date": "ASAP",
+        "remarks": "Advise physiotherapy including sit-stand-step exercises and swimming; avoid high-impact activities. | Advise physiotherapy including swimming",
+        "intent_context": "Performed",
+        "kind": "Procedure"
+      }
+    ],
+    "vitals": [],
+    "module_4_unlinked_entities": [
+      {
+        "item_name": "Fibroblan and Esmetopril",
+        "kind": "Medicine",
+        "intent_context": "Prescribed",
+        "intent": "Prescribed (Medicine)",
+        "status": "ACTION REQUIRED",
+        "reason": "AMBIGUOUS_MATCH",
+        "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+        "suggestions": [
+          {
+            "name": "PAPA PAWSOME TICK OFF SHAMPOO 250ml",
+            "match_score": 0.6610822510822512,
+            "recommendation": "MEDIUM",
+            "inventory_id": 40527,
+            "stock_id": 40527
+          },
+          {
+            "name": "Natural Remedies NOMOTICKS ANTITICK & FLEA BODY SPRAY 100 ml",
+            "match_score": 0.6246031746031746,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42244,
+            "stock_id": 42244
+          },
+          {
+            "name": "Vetoquinol Fixotic Advance Spray Fipronil 0.25% w/v & (S)-Methoprene 0.22% w/v 100 ml",
+            "match_score": 0.6149596332785988,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42117,
+            "stock_id": 42117
+          },
+          {
+            "name": "Frontline Spray 0.250g",
+            "match_score": 0.5928030303030303,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42254,
+            "stock_id": 42254
+          },
+          {
+            "name": "FRONTLINE SPRAY 250 ML",
+            "match_score": 0.5928030303030303,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41213,
+            "stock_id": 41213
+          }
+        ],
+        "inventory_id": null,
+        "administered_prescribed": "Prescribed",
+        "fulfillment": "Internal",
+        "quantity": "",
+        "dosage": "",
+        "duration": "",
+        "frequency": "Custom",
+        "instructions": "",
+        "route": ""
+      },
+      {
+        "item_name": "Radiographs for Norberg angle and hip/stifle joints plus spine",
+        "kind": "Diagnostic",
+        "intent_context": "Ordered",
+        "intent": "Ordered (Diagnostic)",
+        "status": "ACTION REQUIRED",
+        "reason": "AMBIGUOUS_MATCH",
+        "remarks": "Generic diagnostic detected. Select a specific billing variant from the suggestions below.",
+        "suggestions": [
+          {
+            "name": "HIP X RAY",
+            "match_score": 0.8222222222222222,
+            "recommendation": "MEDIUM",
+            "service_id": 975
+          },
+          {
+            "name": "HIP X RAY RESCUE",
+            "match_score": 0.8083333333333333,
+            "recommendation": "MEDIUM",
+            "service_id": 972
+          },
+          {
+            "name": "HIP SCREENING WITH GA",
+            "match_score": 0.7793650793650794,
+            "recommendation": "MEDIUM",
+            "service_id": 974
+          }
+        ],
+        "service_id": null,
+        "lab_radiology": "Radiology",
+        "test_name": "Radiographs for Norberg angle and hip/stifle joints plus spine",
+        "date_of_test": "TBD",
+        "done": "External",
+        "sample_collected": "No"
+      },
+      {
+        "item_name": "Spirocoxin",
+        "kind": "Medicine",
+        "intent_context": "Prescribed",
+        "intent": "Prescribed (Medicine)",
+        "status": "ACTION REQUIRED",
+        "reason": "MISSING_LOCAL_ID",
+        "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+        "suggestions": [
+          {
+            "name": "ONDANSETRON",
+            "match_score": 0.4661319073083779,
+            "recommendation": "MEDIUM",
+            "inventory_id": 40549,
+            "stock_id": 40549
+          }
+        ],
+        "inventory_id": null,
+        "administered_prescribed": "Prescribed",
+        "fulfillment": "Internal",
+        "quantity": "",
+        "dosage": "",
+        "duration": "",
+        "frequency": "Custom",
+        "instructions": "",
+        "route": ""
+      },
+      {
+        "item_name": "Contraway Force Etching",
+        "kind": "Medicine",
+        "intent_context": "Prescribed",
+        "intent": "Prescribed (Medicine)",
+        "status": "ACTION REQUIRED",
+        "reason": "AMBIGUOUS_MATCH",
+        "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+        "suggestions": [
+          {
+            "name": "CONDROVET FORCE HA 590",
+            "match_score": 0.7823759332454985,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41559,
+            "stock_id": 41559
+          },
+          {
+            "name": "CONDROVET FORCE HA LARGE 1100",
+            "match_score": 0.7670885145662464,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41558,
+            "stock_id": 41558
+          },
+          {
+            "name": "Intas Livotas Syrup 200 ml Pet",
+            "match_score": 0.6101851851851853,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42158,
+            "stock_id": 42158
+          },
+          {
+            "name": "Intas Ondet 2 mg 20 x 5 ml Ampoules",
+            "match_score": 0.5801282051282052,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42341,
+            "stock_id": 42341
+          },
+          {
+            "name": "INTACEF TAZO PET",
+            "match_score": 0.5625,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41018,
+            "stock_id": 41018
+          }
+        ],
+        "inventory_id": null,
+        "administered_prescribed": "Prescribed",
+        "fulfillment": "Internal",
+        "quantity": "",
+        "dosage": "",
+        "duration": "",
+        "frequency": "Custom",
+        "instructions": "",
+        "route": ""
+      },
+      {
+        "item_name": "Omega 3 and Omega 6 fatty acids",
+        "kind": "Medicine",
+        "intent_context": "Prescribed",
+        "intent": "Prescribed (Medicine)",
+        "status": "ACTION REQUIRED",
+        "reason": "AMBIGUOUS_MATCH",
+        "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+        "suggestions": [
+          {
+            "name": "PAPA PAWSOME TICK OFF SHAMPOO 250ml",
+            "match_score": 0.6610822510822512,
+            "recommendation": "MEDIUM",
+            "inventory_id": 40527,
+            "stock_id": 40527
+          },
+          {
+            "name": "Natural Remedies NOMOTICKS ANTITICK & FLEA BODY SPRAY 100 ml",
+            "match_score": 0.6246031746031746,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42244,
+            "stock_id": 42244
+          },
+          {
+            "name": "Vetoquinol Fixotic Advance Spray Fipronil 0.25% w/v & (S)-Methoprene 0.22% w/v 100 ml",
+            "match_score": 0.6149596332785988,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42117,
+            "stock_id": 42117
+          },
+          {
+            "name": "Frontline Spray 0.250g",
+            "match_score": 0.5928030303030303,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42254,
+            "stock_id": 42254
+          },
+          {
+            "name": "FRONTLINE SPRAY 250 ML",
+            "match_score": 0.5928030303030303,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41213,
+            "stock_id": 41213
+          }
+        ],
+        "inventory_id": null,
+        "administered_prescribed": "Prescribed",
+        "fulfillment": "Internal",
+        "quantity": "",
+        "dosage": "",
+        "duration": "",
+        "frequency": "Custom",
+        "instructions": "",
+        "route": ""
+      },
+      {
+        "item_name": "Florina",
+        "kind": "Medicine",
+        "intent_context": "Prescribed",
+        "intent": "Prescribed (Medicine)",
+        "status": "ACTION REQUIRED",
+        "reason": "AMBIGUOUS_MATCH",
+        "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+        "suggestions": [
+          {
+            "name": "Candioli Florentero ACT 12 g 10 Tab Dogs Cats",
+            "match_score": 0.8345864661654134,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42085,
+            "stock_id": 42085
+          },
+          {
+            "name": "Florentero ACT 15 ml",
+            "match_score": 0.8314285714285714,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42084,
+            "stock_id": 42084
+          }
+        ],
+        "inventory_id": null,
+        "administered_prescribed": "Prescribed",
+        "fulfillment": "Internal",
+        "quantity": "",
+        "dosage": "",
+        "duration": "",
+        "frequency": "Custom",
+        "instructions": "",
+        "route": ""
+      },
+      {
+        "item_name": "Moxeduct imidogloprid",
+        "kind": "Medicine",
+        "intent_context": "Prescribed",
+        "intent": "Prescribed (Medicine)",
+        "status": "ACTION REQUIRED",
+        "reason": "MISSING_LOCAL_ID",
+        "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+        "suggestions": [],
+        "inventory_id": null,
+        "administered_prescribed": "Prescribed",
+        "fulfillment": "Internal",
+        "quantity": "",
+        "dosage": "",
+        "duration": "",
+        "frequency": "Custom",
+        "instructions": "",
+        "route": ""
+      },
+      {
+        "item_name": "Radiographs",
+        "kind": "Diagnostic",
+        "intent_context": "Ordered",
+        "intent": "Ordered (Diagnostic)",
+        "status": "ACTION REQUIRED",
+        "reason": "MISSING_LOCAL_ID",
+        "remarks": "Mentioned as diagnostic; no matching inventory/service SKU found. Vet must select specific SKU for billing.",
+        "suggestions": [],
+        "service_id": null,
+        "lab_radiology": "Radiology",
+        "test_name": "Radiographs",
+        "date_of_test": "TBD",
+        "done": "External",
+        "sample_collected": "No"
+      },
+      {
+        "item_name": "Contraway Force Etching joint supplement",
+        "kind": "Medicine",
+        "intent_context": "Prescribed",
+        "intent": "Prescribed (Medicine)",
+        "status": "ACTION REQUIRED",
+        "reason": "AMBIGUOUS_MATCH",
+        "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+        "suggestions": [
+          {
+            "name": "CONDROVET FORCE HA 590",
+            "match_score": 0.7823759332454985,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41559,
+            "stock_id": 41559
+          },
+          {
+            "name": "CONDROVET FORCE HA LARGE 1100",
+            "match_score": 0.7670885145662464,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41558,
+            "stock_id": 41558
+          },
+          {
+            "name": "Intas Livotas Syrup 200 ml Pet",
+            "match_score": 0.6101851851851853,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42158,
+            "stock_id": 42158
+          },
+          {
+            "name": "Intas Ondet 2 mg 20 x 5 ml Ampoules",
+            "match_score": 0.5801282051282052,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42341,
+            "stock_id": 42341
+          },
+          {
+            "name": "INTACEF TAZO PET",
+            "match_score": 0.5625,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41018,
+            "stock_id": 41018
+          }
+        ],
+        "inventory_id": null,
+        "administered_prescribed": "Prescribed",
+        "fulfillment": "Internal",
+        "quantity": "",
+        "dosage": "",
+        "duration": "",
+        "frequency": "Custom",
+        "instructions": "",
+        "route": ""
+      },
+      {
+        "item_name": "Omega 3 fatty acids",
+        "kind": "Medicine",
+        "intent_context": "Prescribed",
+        "intent": "Prescribed (Medicine)",
+        "status": "ACTION REQUIRED",
+        "reason": "MISSING_LOCAL_ID",
+        "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+        "suggestions": [],
+        "inventory_id": null,
+        "administered_prescribed": "Prescribed",
+        "fulfillment": "Internal",
+        "quantity": "",
+        "dosage": "",
+        "duration": "",
+        "frequency": "Custom",
+        "instructions": "",
+        "route": ""
+      },
+      {
+        "item_name": "Omega 3, omega 6 fatty acids",
+        "kind": "Medicine",
+        "intent_context": "Prescribed",
+        "intent": "Prescribed (Medicine)",
+        "status": "ACTION REQUIRED",
+        "reason": "MISSING_LOCAL_ID",
+        "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+        "suggestions": [],
+        "inventory_id": null,
+        "administered_prescribed": "Prescribed",
+        "fulfillment": "Internal",
+        "quantity": "",
+        "dosage": "",
+        "duration": "",
+        "frequency": "Custom",
+        "instructions": "",
+        "route": ""
+      },
+      {
+        "item_name": "Florina (Bravitu)",
+        "kind": "Medicine",
+        "intent_context": "Prescribed",
+        "intent": "Prescribed (Medicine)",
+        "status": "ACTION REQUIRED",
+        "reason": "AMBIGUOUS_MATCH",
+        "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+        "suggestions": [
+          {
+            "name": "Candioli Florentero ACT 12 g 10 Tab Dogs Cats",
+            "match_score": 0.8345864661654134,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42085,
+            "stock_id": 42085
+          },
+          {
+            "name": "Florentero ACT 15 ml",
+            "match_score": 0.8314285714285714,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42084,
+            "stock_id": 42084
+          }
+        ],
+        "inventory_id": null,
+        "administered_prescribed": "Prescribed",
+        "fulfillment": "Internal",
+        "quantity": "",
+        "dosage": "",
+        "duration": "",
+        "frequency": "Custom",
+        "instructions": "",
+        "route": ""
+      },
+      {
+        "item_name": "fibroblan",
+        "kind": "Medicine",
+        "intent_context": "Prescribed",
+        "intent": "Prescribed (Medicine)",
+        "status": "ACTION REQUIRED",
+        "reason": "MISSING_LOCAL_ID",
+        "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+        "suggestions": [],
+        "inventory_id": null,
+        "administered_prescribed": "Prescribed",
+        "fulfillment": "Internal",
+        "quantity": "",
+        "dosage": "",
+        "duration": "",
+        "frequency": "Custom",
+        "instructions": "",
+        "route": ""
+      },
+      {
+        "item_name": "esmetopril",
+        "kind": "Medicine",
+        "intent_context": "Prescribed",
+        "intent": "Prescribed (Medicine)",
+        "status": "ACTION REQUIRED",
+        "reason": "MISSING_LOCAL_ID",
+        "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+        "suggestions": [],
+        "inventory_id": null,
+        "administered_prescribed": "Prescribed",
+        "fulfillment": "Internal",
+        "quantity": "",
+        "dosage": "",
+        "duration": "",
+        "frequency": "Custom",
+        "instructions": "",
+        "route": ""
+      },
+      {
+        "item_name": "saralana",
+        "kind": "Medicine",
+        "intent_context": "Prescribed",
+        "intent": "Prescribed (Medicine)",
+        "status": "ACTION REQUIRED",
+        "reason": "MISSING_LOCAL_ID",
+        "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+        "suggestions": [],
+        "inventory_id": null,
+        "administered_prescribed": "Prescribed",
+        "fulfillment": "Internal",
+        "quantity": "",
+        "dosage": "",
+        "duration": "",
+        "frequency": "Custom",
+        "instructions": "",
+        "route": ""
+      },
+      {
+        "item_name": "salamitin",
+        "kind": "Medicine",
+        "intent_context": "Prescribed",
+        "intent": "Prescribed (Medicine)",
+        "status": "ACTION REQUIRED",
+        "reason": "MISSING_LOCAL_ID",
+        "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+        "suggestions": [],
+        "inventory_id": null,
+        "administered_prescribed": "Prescribed",
+        "fulfillment": "Internal",
+        "quantity": "",
+        "dosage": "",
+        "duration": "",
+        "frequency": "Custom",
+        "instructions": "",
+        "route": ""
+      },
+      {
+        "item_name": "Ultralining Test",
+        "kind": "Diagnostic",
+        "intent_context": "Performed",
+        "intent": "Performed (Diagnostic)",
+        "status": "ACTION REQUIRED",
+        "reason": "AMBIGUOUS_MATCH",
+        "remarks": "Generic diagnostic detected. Select a specific billing variant from the suggestions below.",
+        "suggestions": [
+          {
+            "name": "HIP X RAY",
+            "match_score": 0.8344444444444444,
+            "recommendation": "MEDIUM",
+            "service_id": 975
+          },
+          {
+            "name": "HIP X RAY RESCUE",
+            "match_score": 0.8183333333333334,
+            "recommendation": "MEDIUM",
+            "service_id": 972
+          },
+          {
+            "name": "ULTRASOUND SCAN",
+            "match_score": 0.7991666666666667,
+            "recommendation": "MEDIUM",
+            "service_id": 966
+          },
+          {
+            "name": "HIP SCREENING WITH GA",
+            "match_score": 0.7501587301587301,
+            "recommendation": "MEDIUM",
+            "service_id": 974
+          }
+        ],
+        "service_id": null,
+        "lab_radiology": "LAB",
+        "test_name": "Ultralining Test",
+        "date_of_test": "TBD",
+        "done": "In-house",
+        "sample_collected": "Yes"
+      }
+    ],
+    "module_5_clinical_history": [],
+    "streamlined_dashboard": {
+      "signalment_vitals": [],
+      "clinical_assessment": [],
+      "pharmacy_administered": [],
+      "pharmacy_prescribed": [
+        {
+          "name": "Fibroblan and Esmetopril",
+          "original_mention": "Fibroblan and Esmetopril",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [
+            {
+              "name": "PAPA PAWSOME TICK OFF SHAMPOO 250ml",
+              "match_score": 0.6610822510822512,
+              "recommendation": "MEDIUM",
+              "inventory_id": 40527,
+              "stock_id": 40527
+            },
+            {
+              "name": "Natural Remedies NOMOTICKS ANTITICK & FLEA BODY SPRAY 100 ml",
+              "match_score": 0.6246031746031746,
+              "recommendation": "MEDIUM",
+              "inventory_id": 42244,
+              "stock_id": 42244
+            },
+            {
+              "name": "Vetoquinol Fixotic Advance Spray Fipronil 0.25% w/v & (S)-Methoprene 0.22% w/v 100 ml",
+              "match_score": 0.6149596332785988,
+              "recommendation": "MEDIUM",
+              "inventory_id": 42117,
+              "stock_id": 42117
+            },
+            {
+              "name": "Frontline Spray 0.250g",
+              "match_score": 0.5928030303030303,
+              "recommendation": "MEDIUM",
+              "inventory_id": 42254,
+              "stock_id": 42254
+            },
+            {
+              "name": "FRONTLINE SPRAY 250 ML",
+              "match_score": 0.5928030303030303,
+              "recommendation": "MEDIUM",
+              "inventory_id": 41213,
+              "stock_id": 41213
+            }
+          ],
+          "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+          "reason": "AMBIGUOUS_MATCH",
+          "dosage": "",
+          "frequency": "Custom",
+          "duration": "",
+          "quantity": "",
+          "instructions": "",
+          "required_fields": [
+            "frequency",
+            "duration"
+          ],
+          "label": "Prescribed (Home Care)"
+        },
+        {
+          "name": "Spirocoxin",
+          "original_mention": "Spirocoxin",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [
+            {
+              "name": "ONDANSETRON",
+              "match_score": 0.4661319073083779,
+              "recommendation": "MEDIUM",
+              "inventory_id": 40549,
+              "stock_id": 40549
+            }
+          ],
+          "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+          "reason": "MISSING_LOCAL_ID",
+          "dosage": "",
+          "frequency": "Custom",
+          "duration": "",
+          "quantity": "",
+          "instructions": "",
+          "required_fields": [
+            "frequency",
+            "duration"
+          ],
+          "label": "Prescribed (Home Care)"
+        },
+        {
+          "name": "Contraway Force Etching",
+          "original_mention": "Contraway Force Etching",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [
+            {
+              "name": "CONDROVET FORCE HA 590",
+              "match_score": 0.7823759332454985,
+              "recommendation": "MEDIUM",
+              "inventory_id": 41559,
+              "stock_id": 41559
+            },
+            {
+              "name": "CONDROVET FORCE HA LARGE 1100",
+              "match_score": 0.7670885145662464,
+              "recommendation": "MEDIUM",
+              "inventory_id": 41558,
+              "stock_id": 41558
+            },
+            {
+              "name": "Intas Livotas Syrup 200 ml Pet",
+              "match_score": 0.6101851851851853,
+              "recommendation": "MEDIUM",
+              "inventory_id": 42158,
+              "stock_id": 42158
+            },
+            {
+              "name": "Intas Ondet 2 mg 20 x 5 ml Ampoules",
+              "match_score": 0.5801282051282052,
+              "recommendation": "MEDIUM",
+              "inventory_id": 42341,
+              "stock_id": 42341
+            },
+            {
+              "name": "INTACEF TAZO PET",
+              "match_score": 0.5625,
+              "recommendation": "MEDIUM",
+              "inventory_id": 41018,
+              "stock_id": 41018
+            }
+          ],
+          "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+          "reason": "AMBIGUOUS_MATCH",
+          "dosage": "",
+          "frequency": "Custom",
+          "duration": "",
+          "quantity": "",
+          "instructions": "",
+          "required_fields": [
+            "frequency",
+            "duration"
+          ],
+          "label": "Prescribed (Home Care)"
+        },
+        {
+          "name": "Omega 3 and Omega 6 fatty acids",
+          "original_mention": "Omega 3 and Omega 6 fatty acids",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [
+            {
+              "name": "PAPA PAWSOME TICK OFF SHAMPOO 250ml",
+              "match_score": 0.6610822510822512,
+              "recommendation": "MEDIUM",
+              "inventory_id": 40527,
+              "stock_id": 40527
+            },
+            {
+              "name": "Natural Remedies NOMOTICKS ANTITICK & FLEA BODY SPRAY 100 ml",
+              "match_score": 0.6246031746031746,
+              "recommendation": "MEDIUM",
+              "inventory_id": 42244,
+              "stock_id": 42244
+            },
+            {
+              "name": "Vetoquinol Fixotic Advance Spray Fipronil 0.25% w/v & (S)-Methoprene 0.22% w/v 100 ml",
+              "match_score": 0.6149596332785988,
+              "recommendation": "MEDIUM",
+              "inventory_id": 42117,
+              "stock_id": 42117
+            },
+            {
+              "name": "Frontline Spray 0.250g",
+              "match_score": 0.5928030303030303,
+              "recommendation": "MEDIUM",
+              "inventory_id": 42254,
+              "stock_id": 42254
+            },
+            {
+              "name": "FRONTLINE SPRAY 250 ML",
+              "match_score": 0.5928030303030303,
+              "recommendation": "MEDIUM",
+              "inventory_id": 41213,
+              "stock_id": 41213
+            }
+          ],
+          "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+          "reason": "AMBIGUOUS_MATCH",
+          "dosage": "",
+          "frequency": "Custom",
+          "duration": "",
+          "quantity": "",
+          "instructions": "",
+          "required_fields": [
+            "frequency",
+            "duration"
+          ],
+          "label": "Prescribed (Home Care)"
+        },
+        {
+          "name": "Florina",
+          "original_mention": "Florina",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [
+            {
+              "name": "Candioli Florentero ACT 12 g 10 Tab Dogs Cats",
+              "match_score": 0.8345864661654134,
+              "recommendation": "MEDIUM",
+              "inventory_id": 42085,
+              "stock_id": 42085
+            },
+            {
+              "name": "Florentero ACT 15 ml",
+              "match_score": 0.8314285714285714,
+              "recommendation": "MEDIUM",
+              "inventory_id": 42084,
+              "stock_id": 42084
+            }
+          ],
+          "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+          "reason": "AMBIGUOUS_MATCH",
+          "dosage": "",
+          "frequency": "Custom",
+          "duration": "",
+          "quantity": "",
+          "instructions": "",
+          "required_fields": [
+            "frequency",
+            "duration"
+          ],
+          "label": "Prescribed (Home Care)"
+        },
+        {
+          "name": "Moxeduct imidogloprid",
+          "original_mention": "Moxeduct imidogloprid",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [],
+          "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+          "reason": "MISSING_LOCAL_ID",
+          "dosage": "",
+          "frequency": "Custom",
+          "duration": "",
+          "quantity": "",
+          "instructions": "",
+          "required_fields": [
+            "frequency",
+            "duration"
+          ],
+          "label": "Prescribed (Home Care)"
+        },
+        {
+          "name": "Contraway Force Etching joint supplement",
+          "original_mention": "Contraway Force Etching joint supplement",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [
+            {
+              "name": "CONDROVET FORCE HA 590",
+              "match_score": 0.7823759332454985,
+              "recommendation": "MEDIUM",
+              "inventory_id": 41559,
+              "stock_id": 41559
+            },
+            {
+              "name": "CONDROVET FORCE HA LARGE 1100",
+              "match_score": 0.7670885145662464,
+              "recommendation": "MEDIUM",
+              "inventory_id": 41558,
+              "stock_id": 41558
+            },
+            {
+              "name": "Intas Livotas Syrup 200 ml Pet",
+              "match_score": 0.6101851851851853,
+              "recommendation": "MEDIUM",
+              "inventory_id": 42158,
+              "stock_id": 42158
+            },
+            {
+              "name": "Intas Ondet 2 mg 20 x 5 ml Ampoules",
+              "match_score": 0.5801282051282052,
+              "recommendation": "MEDIUM",
+              "inventory_id": 42341,
+              "stock_id": 42341
+            },
+            {
+              "name": "INTACEF TAZO PET",
+              "match_score": 0.5625,
+              "recommendation": "MEDIUM",
+              "inventory_id": 41018,
+              "stock_id": 41018
+            }
+          ],
+          "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+          "reason": "AMBIGUOUS_MATCH",
+          "dosage": "",
+          "frequency": "Custom",
+          "duration": "",
+          "quantity": "",
+          "instructions": "",
+          "required_fields": [
+            "frequency",
+            "duration"
+          ],
+          "label": "Prescribed (Home Care)"
+        },
+        {
+          "name": "Omega 3 fatty acids",
+          "original_mention": "Omega 3 fatty acids",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [],
+          "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+          "reason": "MISSING_LOCAL_ID",
+          "dosage": "",
+          "frequency": "Custom",
+          "duration": "",
+          "quantity": "",
+          "instructions": "",
+          "required_fields": [
+            "frequency",
+            "duration"
+          ],
+          "label": "Prescribed (Home Care)"
+        },
+        {
+          "name": "Omega 3, omega 6 fatty acids",
+          "original_mention": "Omega 3, omega 6 fatty acids",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [],
+          "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+          "reason": "MISSING_LOCAL_ID",
+          "dosage": "",
+          "frequency": "Custom",
+          "duration": "",
+          "quantity": "",
+          "instructions": "",
+          "required_fields": [
+            "frequency",
+            "duration"
+          ],
+          "label": "Prescribed (Home Care)"
+        },
+        {
+          "name": "Florina (Bravitu)",
+          "original_mention": "Florina (Bravitu)",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [
+            {
+              "name": "Candioli Florentero ACT 12 g 10 Tab Dogs Cats",
+              "match_score": 0.8345864661654134,
+              "recommendation": "MEDIUM",
+              "inventory_id": 42085,
+              "stock_id": 42085
+            },
+            {
+              "name": "Florentero ACT 15 ml",
+              "match_score": 0.8314285714285714,
+              "recommendation": "MEDIUM",
+              "inventory_id": 42084,
+              "stock_id": 42084
+            }
+          ],
+          "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+          "reason": "AMBIGUOUS_MATCH",
+          "dosage": "",
+          "frequency": "Custom",
+          "duration": "",
+          "quantity": "",
+          "instructions": "",
+          "required_fields": [
+            "frequency",
+            "duration"
+          ],
+          "label": "Prescribed (Home Care)"
+        },
+        {
+          "name": "fibroblan",
+          "original_mention": "fibroblan",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [],
+          "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+          "reason": "MISSING_LOCAL_ID",
+          "dosage": "",
+          "frequency": "Custom",
+          "duration": "",
+          "quantity": "",
+          "instructions": "",
+          "required_fields": [
+            "frequency",
+            "duration"
+          ],
+          "label": "Prescribed (Home Care)"
+        },
+        {
+          "name": "esmetopril",
+          "original_mention": "esmetopril",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [],
+          "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+          "reason": "MISSING_LOCAL_ID",
+          "dosage": "",
+          "frequency": "Custom",
+          "duration": "",
+          "quantity": "",
+          "instructions": "",
+          "required_fields": [
+            "frequency",
+            "duration"
+          ],
+          "label": "Prescribed (Home Care)"
+        },
+        {
+          "name": "saralana",
+          "original_mention": "saralana",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [],
+          "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+          "reason": "MISSING_LOCAL_ID",
+          "dosage": "",
+          "frequency": "Custom",
+          "duration": "",
+          "quantity": "",
+          "instructions": "",
+          "required_fields": [
+            "frequency",
+            "duration"
+          ],
+          "label": "Prescribed (Home Care)"
+        },
+        {
+          "name": "salamitin",
+          "original_mention": "salamitin",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [],
+          "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+          "reason": "MISSING_LOCAL_ID",
+          "dosage": "",
+          "frequency": "Custom",
+          "duration": "",
+          "quantity": "",
+          "instructions": "",
+          "required_fields": [
+            "frequency",
+            "duration"
+          ],
+          "label": "Prescribed (Home Care)"
+        }
+      ],
+      "diagnostics_labs_imaging": [
+        {
+          "name": "Radiographs for Norberg angle and hip/stifle joints plus spine",
+          "original_mention": "Radiographs for Norberg angle and hip/stifle joints plus spine",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [
+            {
+              "name": "HIP X RAY",
+              "match_score": 0.8222222222222222,
+              "recommendation": "MEDIUM",
+              "service_id": 975
+            },
+            {
+              "name": "HIP X RAY RESCUE",
+              "match_score": 0.8083333333333333,
+              "recommendation": "MEDIUM",
+              "service_id": 972
+            },
+            {
+              "name": "HIP SCREENING WITH GA",
+              "match_score": 0.7793650793650794,
+              "recommendation": "MEDIUM",
+              "service_id": 974
+            }
+          ],
+          "remarks": "Generic diagnostic detected. Select a specific billing variant from the suggestions below.",
+          "reason": "AMBIGUOUS_MATCH"
+        },
+        {
+          "name": "Radiographs",
+          "original_mention": "Radiographs",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [],
+          "remarks": "Mentioned as diagnostic; no matching inventory/service SKU found. Vet must select specific SKU for billing.",
+          "reason": "MISSING_LOCAL_ID"
+        },
+        {
+          "name": "Ultralining Test",
+          "original_mention": "Ultralining Test",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [
+            {
+              "name": "HIP X RAY",
+              "match_score": 0.8344444444444444,
+              "recommendation": "MEDIUM",
+              "service_id": 975
+            },
+            {
+              "name": "HIP X RAY RESCUE",
+              "match_score": 0.8183333333333334,
+              "recommendation": "MEDIUM",
+              "service_id": 972
+            },
+            {
+              "name": "ULTRASOUND SCAN",
+              "match_score": 0.7991666666666667,
+              "recommendation": "MEDIUM",
+              "service_id": 966
+            },
+            {
+              "name": "HIP SCREENING WITH GA",
+              "match_score": 0.7501587301587301,
+              "recommendation": "MEDIUM",
+              "service_id": 974
+            }
+          ],
+          "remarks": "Generic diagnostic detected. Select a specific billing variant from the suggestions below.",
+          "reason": "AMBIGUOUS_MATCH"
+        }
+      ],
+      "clinical_procedures_services": [
+        {
+          "name": "PHYSIOTHERAPY",
+          "original_mention": "PHYSIOTHERAPY",
+          "status": "CONFIRMED",
+          "linked_id": 1159,
+          "suggestions": [],
+          "remarks": "Written physiotherapy instructions | Physiotherapy | physiotherapy instructions"
+        }
+      ],
+      "other_products_retail": [],
+      "preventive": [],
+      "patient_reminders": [
+        {
+          "name": "Sit-stand-step exercises",
+          "original_mention": "Sit-stand-step exercises",
+          "status": "ACTION_REQUIRED",
+          "linked_id": "[PROCEDURE-XXX]",
+          "suggestions": [],
+          "due_date": "ASAP",
+          "remarks": "Advise physiotherapy including sit-stand-step exercises and swimming; avoid high-impact activities. | Advise physiotherapy including sit-stand-step exercises",
+          "is_operational": false,
+          "scheduling_data": null,
+          "label": "Patient Instruction"
+        },
+        {
+          "name": "Swimming",
+          "original_mention": "Swimming",
+          "status": "ACTION_REQUIRED",
+          "linked_id": "[PROCEDURE-XXX]",
+          "suggestions": [],
+          "due_date": "ASAP",
+          "remarks": "Advise physiotherapy including sit-stand-step exercises and swimming; avoid high-impact activities. | Advise physiotherapy including swimming",
+          "is_operational": false,
+          "scheduling_data": null,
+          "label": "Patient Instruction"
+        }
+      ],
+      "clinical_follow_ups": [
+        {
+          "name": "Physiotherapy including sit-stand-step exercises and swimming",
+          "original_mention": "Physiotherapy including sit-stand-step exercises and swimming",
+          "status": "CONFIRMED",
+          "linked_id": 1159,
+          "suggestions": [],
+          "due_date": "ASAP",
+          "remarks": "Advise physiotherapy including sit-stand-step exercises and swimming; avoid high-impact activities",
+          "is_operational": true,
+          "scheduling_data": {
+            "service_id": 1159,
+            "temporal_offset": "ASAP",
+            "recommended_date": null,
+            "priority": "Routine"
+          },
+          "label": "Clinical Follow-up"
+        },
+        {
+          "name": "Femoral Head and Neck Ostectomy",
+          "original_mention": "Femoral Head and Neck Ostectomy",
+          "status": "CONFIRMED",
+          "linked_id": 1181,
+          "suggestions": [],
+          "due_date": "ASAP",
+          "remarks": "Consider surgical intervention (femoral head and neck ostectomy) if needed in future",
+          "is_operational": true,
+          "scheduling_data": {
+            "service_id": 1181,
+            "temporal_offset": "ASAP",
+            "recommended_date": null,
+            "priority": "Routine"
+          },
+          "label": "Clinical Follow-up"
+        },
+        {
+          "name": "Follow-up reassessment and weight monitoring",
+          "original_mention": "Follow-up reassessment and weight monitoring",
+          "status": "DRAFTED",
+          "linked_id": "[REMINDER-XXX]",
+          "suggestions": [],
+          "due_date": "ASAP",
+          "remarks": "Reassessment and weight monitoring",
+          "is_operational": true,
+          "scheduling_data": {
+            "service_id": null,
+            "temporal_offset": "ASAP",
+            "recommended_date": null,
+            "priority": "Routine",
+            "item_id": "[REMINDER-XXX]"
+          },
+          "label": "Clinical Follow-up"
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "session_id": "e067ed23-b3f5-4199-b33d-71d3f3245585",
+    "visit_id": "e067ed23-b3f5-4199-b33d-71d3f3245585",
+    "clinic_id": 1,
+    "mode": "minimal_parallel",
+    "model_provider": "openai",
+    "model_name": "gpt-4.1-mini",
+    "attempted_models": [
+      "gpt-4.1-mini"
+    ],
+    "kb_schema_loaded": true,
+    "parallel_batches": 5
+  }
+}

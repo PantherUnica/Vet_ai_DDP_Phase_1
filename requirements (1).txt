@@ -16,6 +16,12 @@ flashtext>=2.7
 # Optional: run harvester as transcript streams (TRANSCRIPTION_STREAMING=true)
 # websocket-client>=1.0.0
 
+# ASR benchmark (WER/CER scoring)
+jiwer>=3.0.0
+
+# requests is used for Deepgram REST transcription (already pulled by openai stack in most envs)
+requests>=2.28.0
+
 # VetBERT (optional; same stack as voice_tenor_analysis)
 # transformers>=4.30.0
 # torch>=2.0.0

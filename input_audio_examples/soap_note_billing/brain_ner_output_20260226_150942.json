@@ -1,0 +1,2264 @@
+[
+  {
+    "span_text": "fibroblan and esmetopril",
+    "normalized_name": "fibroblan and esmetopril",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 2557,
+    "end_char": 2581,
+    "is_actionable": true,
+    "search_term": "fibroblan and esmetopril",
+    "hints": [
+      "fibroblan and esmetopril",
+      "parasite control medication",
+      "flea and tick medication"
+    ],
+    "family": null,
+    "domain": [
+      "preventative_wellness"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E9",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "fibroblan and esmetopril": 1.0,
+      "parasite control medication": 0.6,
+      "flea and tick medication": 0.55
+    },
+    "correctness_probability": 0.7,
+    "suggestion_probability": 0.7,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4311
+  },
+  {
+    "span_text": "floralana",
+    "normalized_name": "floralana",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 2653,
+    "end_char": 2662,
+    "is_actionable": true,
+    "search_term": "floralana",
+    "hints": [
+      "floralana",
+      "parasite control agent",
+      "flea and tick agent"
+    ],
+    "family": null,
+    "domain": [
+      "preventative_wellness"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E10",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "floralana": 1.0,
+      "parasite control agent": 0.6,
+      "flea and tick agent": 0.55
+    },
+    "correctness_probability": 0.7,
+    "suggestion_probability": 0.7,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4311
+  },
+  {
+    "span_text": "saralana",
+    "normalized_name": "saralana",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 2744,
+    "end_char": 2752,
+    "is_actionable": true,
+    "search_term": "saralana",
+    "hints": [
+      "saralana",
+      "parasite control medication",
+      "flea and tick medication"
+    ],
+    "family": null,
+    "domain": [
+      "preventative_wellness"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E11",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "saralana": 1.0,
+      "parasite control medication": 0.6,
+      "flea and tick medication": 0.55
+    },
+    "correctness_probability": 0.7,
+    "suggestion_probability": 0.7,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4311
+  },
+  {
+    "span_text": "moxeduct imidogloprid",
+    "normalized_name": "moxeduct imidogloprid",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 2818,
+    "end_char": 2839,
+    "is_actionable": true,
+    "search_term": "moxeduct imidogloprid",
+    "hints": [
+      "moxeduct imidogloprid",
+      "parasite control medication",
+      "flea and tick medication"
+    ],
+    "family": null,
+    "domain": [
+      "preventative_wellness"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E12",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "moxeduct imidogloprid": 1.0,
+      "parasite control medication": 0.6,
+      "flea and tick medication": 0.55
+    },
+    "correctness_probability": 0.7,
+    "suggestion_probability": 0.7,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4311
+  },
+  {
+    "span_text": "salamitin",
+    "normalized_name": "salamitin",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 2898,
+    "end_char": 2907,
+    "is_actionable": true,
+    "search_term": "salamitin",
+    "hints": [
+      "salamitin",
+      "parasite control medication",
+      "flea and tick medication"
+    ],
+    "family": null,
+    "domain": [
+      "preventative_wellness"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E13",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "salamitin": 1.0,
+      "parasite control medication": 0.6,
+      "flea and tick medication": 0.55
+    },
+    "correctness_probability": 0.7,
+    "suggestion_probability": 0.7,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4311
+  },
+  {
+    "span_text": "Florina also called Bravitu",
+    "normalized_name": "Bravecto",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 2989,
+    "end_char": 3016,
+    "is_actionable": true,
+    "search_term": "Bravecto",
+    "hints": [
+      "Bravecto",
+      "flea and tick control",
+      "parasite control"
+    ],
+    "family": null,
+    "domain": [
+      "preventative_wellness"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E14",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "Bravecto": 1.0,
+      "flea and tick control": 0.75,
+      "parasite control": 0.65
+    },
+    "correctness_probability": 0.8,
+    "suggestion_probability": 0.8,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4311
+  },
+  {
+    "span_text": "Contraway Force Etching",
+    "normalized_name": "Contraway Force Etching",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 7934,
+    "end_char": 7957,
+    "is_actionable": true,
+    "search_term": "Contraway Force Etching",
+    "hints": [
+      "Contraway Force Etching",
+      "joint supplement",
+      "glucosamine"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E3",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "Contraway Force Etching": 1.0,
+      "joint supplement": 0.7,
+      "glucosamine": 0.6
+    },
+    "correctness_probability": 0.8,
+    "suggestion_probability": 0.8,
+    "query_expansion": [],
+    "_chunk_start": 6622,
+    "_chunk_end": 10434
+  },
+  {
+    "span_text": "Spirocoxin",
+    "normalized_name": "Spirocoxin",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 7989,
+    "end_char": 7999,
+    "is_actionable": true,
+    "search_term": "Spirocoxin",
+    "hints": [
+      "Spirocoxin",
+      "NSAID",
+      "anti-inflammatory"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E2",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "Spirocoxin": 1.0,
+      "NSAID": 0.9,
+      "anti-inflammatory": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 6622,
+    "_chunk_end": 10434
+  },
+  {
+    "span_text": "omega 3, omega 6 fatty acids",
+    "normalized_name": "omega 3, omega 6 fatty acids",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 8181,
+    "end_char": 8209,
+    "is_actionable": true,
+    "search_term": "omega 3, omega 6 fatty acids",
+    "hints": [
+      "omega 3",
+      "omega 6 fatty acids",
+      "fish oil"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E4",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "omega 6 fatty acids": 1.0,
+      "fish oil": 0.8
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 6622,
+    "_chunk_end": 10434
+  },
+  {
+    "span_text": "physiotherapy",
+    "normalized_name": "physiotherapy",
+    "kind": "Procedure",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 8853,
+    "end_char": 8866,
+    "is_actionable": true,
+    "search_term": "physiotherapy",
+    "hints": [
+      "physiotherapy",
+      "physical therapy",
+      "rehabilitation"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [
+      "Consultation"
+    ],
+    "inventory_category": [],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E6",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "physiotherapy": 1.0,
+      "physical therapy": 0.8,
+      "rehabilitation": 0.7
+    },
+    "correctness_probability": 0.85,
+    "suggestion_probability": 0.85,
+    "query_expansion": [],
+    "_chunk_start": 6622,
+    "_chunk_end": 10434
+  },
+  {
+    "span_text": "swimming",
+    "normalized_name": "swimming",
+    "kind": "Procedure",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 8967,
+    "end_char": 8975,
+    "is_actionable": true,
+    "search_term": "swimming",
+    "hints": [
+      "swimming",
+      "hydrotherapy",
+      "low-impact exercise"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [
+      "Consultation"
+    ],
+    "inventory_category": [],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E7",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "swimming": 1.0,
+      "hydrotherapy": 0.7,
+      "low-impact exercise": 0.6
+    },
+    "correctness_probability": 0.8,
+    "suggestion_probability": 0.8,
+    "query_expansion": [],
+    "_chunk_start": 6622,
+    "_chunk_end": 10434
+  },
+  {
+    "span_text": "sit stand step exercise",
+    "normalized_name": "sit stand step exercise",
+    "kind": "Procedure",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 9632,
+    "end_char": 9655,
+    "is_actionable": true,
+    "search_term": "sit stand step exercise",
+    "hints": [
+      "sit stand step exercise",
+      "physical therapy exercise",
+      "mobility exercise"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [
+      "Consultation"
+    ],
+    "inventory_category": [],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E8",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "sit stand step exercise": 1.0,
+      "physical therapy exercise": 0.8,
+      "mobility exercise": 0.7
+    },
+    "correctness_probability": 0.85,
+    "suggestion_probability": 0.85,
+    "query_expansion": [],
+    "_chunk_start": 6622,
+    "_chunk_end": 10434
+  },
+  {
+    "span_text": "FHO",
+    "normalized_name": "FHO",
+    "kind": "Procedure",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 10053,
+    "end_char": 10056,
+    "is_actionable": true,
+    "search_term": "FHO",
+    "hints": [
+      "FHO",
+      "femoral head and neck ostectomy",
+      "surgical procedure"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [
+      "Consultation"
+    ],
+    "inventory_category": [],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E9",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "FHO": 1.0,
+      "femoral head and neck ostectomy": 0.9,
+      "surgical procedure": 0.8
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 6622,
+    "_chunk_end": 10434
+  },
+  {
+    "span_text": "ultralining test",
+    "normalized_name": "Ortolani test",
+    "kind": "Diagnostic",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Veterinarian: So there is a test called ultralining test which I did which came out to be positive.",
+    "start_char": 3441,
+    "end_char": 3457,
+    "is_actionable": true,
+    "search_term": "Ortolani test",
+    "hints": [
+      "Ortolani test",
+      "hip laxity test",
+      "Ortolani"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [
+      "Diagnostic",
+      "Diagnostic Imaging"
+    ],
+    "inventory_category": [
+      "Diagnostic"
+    ],
+    "service_category": [
+      "Diagnostic Imaging"
+    ],
+    "service_type": null,
+    "entity_id": "E15",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "Ortolani test": 0.92,
+      "hip laxity test": 0.85,
+      "Ortolani": 0.8
+    },
+    "correctness_probability": 0.75,
+    "suggestion_probability": 0.92,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4311
+  },
+  {
+    "span_text": "X-ray",
+    "normalized_name": "X-ray",
+    "kind": "Diagnostic",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Veterinarian: wherein we tried to measure an angle called the noble angle using an X-ray.",
+    "start_char": 3587,
+    "end_char": 3592,
+    "is_actionable": true,
+    "search_term": "X-ray",
+    "hints": [
+      "X-ray",
+      "radiograph",
+      "imaging test"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [
+      "Diagnostic",
+      "Diagnostic Imaging"
+    ],
+    "inventory_category": [
+      "Diagnostic"
+    ],
+    "service_category": [
+      "Diagnostic Imaging"
+    ],
+    "service_type": null,
+    "entity_id": "E17",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "X-ray": 1.0,
+      "radiograph": 0.9,
+      "imaging test": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4311
+  },
+  {
+    "span_text": "noble angle",
+    "normalized_name": "Norberg angle",
+    "kind": "Diagnostic",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Veterinarian: wherein we tried to measure an angle called the noble angle.",
+    "start_char": 3641,
+    "end_char": 3652,
+    "is_actionable": true,
+    "search_term": "Norberg angle",
+    "hints": [
+      "Norberg angle",
+      "Norberg angle measurement",
+      "hip angle"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [
+      "Diagnostic",
+      "Diagnostic Imaging"
+    ],
+    "inventory_category": [
+      "Diagnostic"
+    ],
+    "service_category": [
+      "Diagnostic Imaging"
+    ],
+    "service_type": null,
+    "entity_id": "E16",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "Norberg angle": 1.0,
+      "Norberg angle measurement": 0.9,
+      "hip angle": 0.7
+    },
+    "correctness_probability": 0.75,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4311
+  },
+  {
+    "span_text": "Antiloposteral",
+    "normalized_name": "Anteroposterior",
+    "kind": "Diagnostic",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Veterinarian: Antiloposteral also you need to done, lateral also you need to done.",
+    "start_char": 3959,
+    "end_char": 3973,
+    "is_actionable": true,
+    "search_term": "Anteroposterior",
+    "hints": [
+      "Anteroposterior",
+      "AP view",
+      "radiograph"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [
+      "Diagnostic",
+      "Diagnostic Imaging"
+    ],
+    "inventory_category": [
+      "Diagnostic"
+    ],
+    "service_category": [
+      "Diagnostic Imaging"
+    ],
+    "service_type": null,
+    "entity_id": "E7",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Veterinarian: Antiloposteral also you need to done, lateral also you need to done.",
+    "hint_probabilities": {
+      "Anteroposterior": 0.9,
+      "AP view": 0.85,
+      "radiograph": 0.8
+    },
+    "correctness_probability": 0.7,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 3311,
+    "_chunk_end": 7622
+  },
+  {
+    "span_text": "lateral",
+    "normalized_name": "lateral",
+    "kind": "Diagnostic",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Veterinarian: Antiloposteral also you need to done, lateral also you need to done.",
+    "start_char": 3997,
+    "end_char": 4004,
+    "is_actionable": true,
+    "search_term": "lateral",
+    "hints": [
+      "lateral",
+      "lateral view",
+      "radiograph"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [
+      "Diagnostic",
+      "Diagnostic Imaging"
+    ],
+    "inventory_category": [
+      "Diagnostic"
+    ],
+    "service_category": [
+      "Diagnostic Imaging"
+    ],
+    "service_type": null,
+    "entity_id": "E8",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Veterinarian: Antiloposteral also you need to done, lateral also you need to done.",
+    "hint_probabilities": {
+      "lateral": 1.0,
+      "lateral view": 0.9,
+      "radiograph": 0.8
+    },
+    "correctness_probability": 0.85,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 3311,
+    "_chunk_end": 7622
+  },
+  {
+    "span_text": "auto-lanternance",
+    "normalized_name": "Ortolani test",
+    "kind": "Diagnostic",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Veterinarian: So auto-lanternance is positive, which means high chances of hip dysplasia.",
+    "start_char": 7199,
+    "end_char": 7215,
+    "is_actionable": true,
+    "search_term": "Ortolani test",
+    "hints": [
+      "Ortolani test",
+      "hip laxity test",
+      "auto-lanternance"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [
+      "Diagnostic",
+      "Diagnostic Imaging"
+    ],
+    "inventory_category": [
+      "Diagnostic"
+    ],
+    "service_category": [
+      "Diagnostic Imaging"
+    ],
+    "service_type": null,
+    "entity_id": "E15",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Veterinarian: So auto-lanternance is positive, which means high chances of hip dysplasia.",
+    "hint_probabilities": {
+      "Ortolani test": 0.8,
+      "hip laxity test": 0.75,
+      "auto-lanternance": 0.7
+    },
+    "correctness_probability": 0.6,
+    "suggestion_probability": 0.8,
+    "query_expansion": [],
+    "_chunk_start": 3311,
+    "_chunk_end": 7622
+  },
+  {
+    "span_text": "patellar luxation",
+    "normalized_name": "patellar luxation",
+    "kind": "Diagnosis",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Veterinarian: The kind of symptoms that you said can be something related to something called patellar luxation.",
+    "start_char": 3891,
+    "end_char": 3908,
+    "is_actionable": true,
+    "search_term": "patellar luxation",
+    "hints": [
+      "patellar luxation",
+      "kneecap dislocation",
+      "patella luxation"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E20",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "patellar luxation": 1.0,
+      "kneecap dislocation": 0.85,
+      "patella luxation": 0.75
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4311
+  },
+  {
+    "span_text": "hip dysplasia",
+    "normalized_name": "hip dysplasia",
+    "kind": "Diagnosis",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Veterinarian: The condition that I am suspecting him of is something called hip dysplasia.",
+    "start_char": 6264,
+    "end_char": 6277,
+    "is_actionable": true,
+    "search_term": "hip dysplasia",
+    "hints": [
+      "hip dysplasia",
+      "canine hip dysplasia",
+      "CHD"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E10",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Veterinarian: The condition that I am suspecting him of is something called hip dysplasia.",
+    "hint_probabilities": {
+      "hip dysplasia": 1.0,
+      "canine hip dysplasia": 0.9,
+      "CHD": 0.8
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 3311,
+    "_chunk_end": 7622
+  },
+  {
+    "span_text": "arthritis",
+    "normalized_name": "arthritis",
+    "kind": "Diagnosis",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 8355,
+    "end_char": 8364,
+    "is_actionable": true,
+    "search_term": "arthritis",
+    "hints": [
+      "arthritis",
+      "osteoarthritis",
+      "joint disease"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E11",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "arthritis": 1.0,
+      "osteoarthritis": 0.8,
+      "joint disease": 0.7
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 6622,
+    "_chunk_end": 10434
+  },
+  {
+    "span_text": "vaccinated and dewormed",
+    "normalized_name": "vaccinated and dewormed",
+    "kind": "Preventive",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 1815,
+    "end_char": 1838,
+    "is_actionable": true,
+    "search_term": "vaccinated and dewormed",
+    "hints": [
+      "vaccinated and dewormed",
+      "preventive care",
+      "vaccination and deworming"
+    ],
+    "family": null,
+    "domain": [
+      "preventative_wellness"
+    ],
+    "category": [
+      "Vaccines",
+      "Preventive & Parasite Control",
+      "Vaccination",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Vaccines",
+      "Preventive & Parasite Control"
+    ],
+    "service_category": [
+      "Vaccination",
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E6",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "vaccinated and dewormed": 1.0,
+      "preventive care": 0.9,
+      "vaccination and deworming": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4311
+  },
+  {
+    "span_text": "tick and flee control",
+    "normalized_name": "tick and flea control",
+    "kind": "ParasiteControl",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 1951,
+    "end_char": 1972,
+    "is_actionable": true,
+    "search_term": "tick and flea control",
+    "hints": [
+      "tick and flea control",
+      "flea and tick prevention",
+      "parasite control"
+    ],
+    "family": null,
+    "domain": [
+      "preventative_wellness"
+    ],
+    "category": [
+      "Preventive & Parasite Control",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Preventive & Parasite Control"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E7",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "tick and flea control": 1.0,
+      "flea and tick prevention": 0.8,
+      "parasite control": 0.7
+    },
+    "correctness_probability": 0.85,
+    "suggestion_probability": 0.85,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4311
+  },
+  {
+    "span_text": "tachycine free control",
+    "normalized_name": "flea and tick control",
+    "kind": "ParasiteControl",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 2410,
+    "end_char": 2432,
+    "is_actionable": true,
+    "search_term": "flea and tick control",
+    "hints": [
+      "flea and tick control",
+      "parasite prevention",
+      "tick control"
+    ],
+    "family": null,
+    "domain": [
+      "preventative_wellness"
+    ],
+    "category": [
+      "Preventive & Parasite Control",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Preventive & Parasite Control"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E8",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "flea and tick control": 1.0,
+      "parasite prevention": 0.75,
+      "tick control": 0.65
+    },
+    "correctness_probability": 0.8,
+    "suggestion_probability": 0.8,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4311
+  },
+  {
+    "span_text": "home food",
+    "normalized_name": "home food",
+    "kind": "Diet",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Pet Parent: I generally feed him the home food like you know the rice and sambar usually.",
+    "start_char": 5698,
+    "end_char": 5707,
+    "is_actionable": true,
+    "search_term": "home food",
+    "hints": [
+      "home food",
+      "non-prescription diet",
+      "diet"
+    ],
+    "family": null,
+    "domain": [
+      "nutrition"
+    ],
+    "category": [
+      "Diet"
+    ],
+    "inventory_category": [
+      "Diet"
+    ],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E17",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Pet Parent: I generally feed him the home food like you know the rice and sambar usually.",
+    "hint_probabilities": {
+      "home food": 1.0,
+      "non-prescription diet": 0.85,
+      "diet": 0.8
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 3311,
+    "_chunk_end": 7622
+  },
+  {
+    "span_text": "rice and sambar",
+    "normalized_name": "rice and sambar",
+    "kind": "Diet",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Pet Parent: I generally feed him the home food like you know the rice and sambar usually.",
+    "start_char": 5726,
+    "end_char": 5741,
+    "is_actionable": true,
+    "search_term": "rice and sambar",
+    "hints": [
+      "rice and sambar",
+      "home-cooked diet",
+      "diet"
+    ],
+    "family": null,
+    "domain": [
+      "nutrition"
+    ],
+    "category": [
+      "Diet"
+    ],
+    "inventory_category": [
+      "Diet"
+    ],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E18",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Pet Parent: I generally feed him the home food like you know the rice and sambar usually.",
+    "hint_probabilities": {
+      "rice and sambar": 1.0,
+      "home-cooked diet": 0.9,
+      "diet": 0.8
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 3311,
+    "_chunk_end": 7622
+  },
+  {
+    "span_text": "egg whites",
+    "normalized_name": "egg whites",
+    "kind": "Diet",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Pet Parent: Once in a while I give him egg whites or something but basically it's just rice and sambar.",
+    "start_char": 5986,
+    "end_char": 5996,
+    "is_actionable": true,
+    "search_term": "egg whites",
+    "hints": [
+      "egg whites",
+      "protein supplement",
+      "dietary supplement"
+    ],
+    "family": null,
+    "domain": [
+      "nutrition"
+    ],
+    "category": [
+      "Diet"
+    ],
+    "inventory_category": [
+      "Diet"
+    ],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E19",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Pet Parent: Once in a while I give him egg whites or something but basically it's just rice and sambar.",
+    "hint_probabilities": {
+      "egg whites": 1.0,
+      "protein supplement": 0.85,
+      "dietary supplement": 0.8
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 3311,
+    "_chunk_end": 7622
+  },
+  {
+    "span_text": "obesity diet",
+    "normalized_name": "obesity diet",
+    "kind": "Diet",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 8568,
+    "end_char": 8580,
+    "is_actionable": true,
+    "search_term": "obesity diet",
+    "hints": [
+      "obesity diet",
+      "weight management diet",
+      "calorie-restricted diet"
+    ],
+    "family": null,
+    "domain": [
+      "nutrition"
+    ],
+    "category": [
+      "Diet",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Diet"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E5",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "obesity diet": 1.0,
+      "weight management diet": 0.9,
+      "calorie-restricted diet": 0.8
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 6622,
+    "_chunk_end": 10434
+  },
+  {
+    "span_text": "1 pound reduction in body weight",
+    "normalized_name": "1 pound weight reduction",
+    "kind": "VitalSign",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 7332,
+    "end_char": 7364,
+    "is_actionable": true,
+    "search_term": "1 pound weight reduction",
+    "hints": [
+      "weight reduction",
+      "weight loss",
+      "body weight"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E13",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "weight reduction": 1.0,
+      "weight loss": 0.9,
+      "body weight": 0.8
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 6622,
+    "_chunk_end": 10434
+  },
+  {
+    "span_text": "1 pound reduction",
+    "normalized_name": "1 pound weight loss",
+    "kind": "VitalSign",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Veterinarian: Even 1 pound reduction in body weight can give a massive relief when it comes to your dyspreciation.",
+    "start_char": 7332,
+    "end_char": 7349,
+    "is_actionable": true,
+    "search_term": "1 pound weight loss",
+    "hints": [
+      "1 pound weight loss",
+      "weight reduction",
+      "weight loss"
+    ],
+    "family": null,
+    "domain": [
+      "nutrition"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E16",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Veterinarian: Even 1 pound reduction in body weight can give a massive relief when it comes to your dyspreciation.",
+    "hint_probabilities": {
+      "1 pound weight loss": 0.9,
+      "weight reduction": 0.8,
+      "weight loss": 0.7
+    },
+    "correctness_probability": 0.8,
+    "suggestion_probability": 0.85,
+    "query_expansion": [],
+    "_chunk_start": 3311,
+    "_chunk_end": 7622
+  },
+  {
+    "span_text": "unusual posture",
+    "normalized_name": "unusual posture",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Like his posture is very, you know, unusual.",
+    "start_char": 0,
+    "end_char": 15,
+    "is_actionable": true,
+    "search_term": "unusual posture",
+    "hints": [
+      "unusual posture",
+      "abnormal posture",
+      "postural abnormality"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E21",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Like his posture is very, you know, unusual.",
+    "hint_probabilities": {
+      "unusual posture": 1.0,
+      "abnormal posture": 0.85,
+      "postural abnormality": 0.75
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4311
+  },
+  {
+    "span_text": "playful",
+    "normalized_name": "playfulness",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "He is a very playful dog.",
+    "start_char": 267,
+    "end_char": 274,
+    "is_actionable": true,
+    "search_term": "playfulness",
+    "hints": [
+      "playfulness",
+      "playful behavior",
+      "energy level"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E22",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "He is a very playful dog.",
+    "hint_probabilities": {
+      "playfulness": 1.0,
+      "playful behavior": 0.8,
+      "energy level": 0.7
+    },
+    "correctness_probability": 0.85,
+    "suggestion_probability": 0.85,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4311
+  },
+  {
+    "span_text": "lazy",
+    "normalized_name": "laziness",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 405,
+    "end_char": 409,
+    "is_actionable": true,
+    "search_term": "laziness",
+    "hints": [
+      "laziness",
+      "lack of energy",
+      "lethargy"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E3",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "laziness": 1.0,
+      "lack of energy": 0.85,
+      "lethargy": 0.75
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4311
+  },
+  {
+    "span_text": "not willing to wake up",
+    "normalized_name": "reluctance to wake up",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 562,
+    "end_char": 584,
+    "is_actionable": true,
+    "search_term": "reluctance to wake up",
+    "hints": [
+      "reluctance to wake up",
+      "difficulty waking",
+      "sleeping excessively"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E4",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "reluctance to wake up": 1.0,
+      "difficulty waking": 0.8,
+      "sleeping excessively": 0.7
+    },
+    "correctness_probability": 0.85,
+    "suggestion_probability": 0.85,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4311
+  },
+  {
+    "span_text": "walking problem",
+    "normalized_name": "walking difficulty",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 614,
+    "end_char": 629,
+    "is_actionable": true,
+    "search_term": "walking difficulty",
+    "hints": [
+      "walking difficulty",
+      "gait abnormality",
+      "limping"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E5",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "walking difficulty": 1.0,
+      "gait abnormality": 0.85,
+      "limping": 0.75
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4311
+  },
+  {
+    "span_text": "whining",
+    "normalized_name": "whining",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Yeah, yeah, right. I have been noticing that and also along with, you know, he's not, again, as I told, he's not able to walk properly.",
+    "start_char": 1527,
+    "end_char": 1534,
+    "is_actionable": true,
+    "search_term": "whining",
+    "hints": [
+      "whining",
+      "whimpering",
+      "whine"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E23",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Yeah, yeah, right. I have been noticing that and also along with, you know, he's not, again, as I told, he's not able to walk properly.",
+    "hint_probabilities": {
+      "whining": 1.0,
+      "whimpering": 0.75,
+      "whine": 0.65
+    },
+    "correctness_probability": 0.8,
+    "suggestion_probability": 0.8,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4311
+  },
+  {
+    "span_text": "stifled joint",
+    "normalized_name": "stiff joint",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Veterinarian: Also I am a little concerned about his stifled joint.",
+    "start_char": 3796,
+    "end_char": 3809,
+    "is_actionable": true,
+    "search_term": "stiff joint",
+    "hints": [
+      "stiff joint",
+      "joint stiffness",
+      "arthritic joint"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E6",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Veterinarian: Also I am a little concerned about his stifled joint.",
+    "hint_probabilities": {
+      "stiff joint": 0.9,
+      "joint stiffness": 0.8,
+      "arthritic joint": 0.7
+    },
+    "correctness_probability": 0.8,
+    "suggestion_probability": 0.85,
+    "query_expansion": [],
+    "_chunk_start": 3311,
+    "_chunk_end": 7622
+  },
+  {
+    "span_text": "obese",
+    "normalized_name": "obese",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Veterinarian: So the problem is that he is very obese.",
+    "start_char": 5634,
+    "end_char": 5639,
+    "is_actionable": true,
+    "search_term": "obese",
+    "hints": [
+      "obese",
+      "overweight",
+      "obesity"
+    ],
+    "family": null,
+    "domain": [
+      "nutrition"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E11",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Veterinarian: So the problem is that he is very obese.",
+    "hint_probabilities": {
+      "obese": 1.0,
+      "overweight": 0.9,
+      "obesity": 0.8
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 3311,
+    "_chunk_end": 7622
+  },
+  {
+    "span_text": "joint quality",
+    "normalized_name": "joint health",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 7860,
+    "end_char": 7873,
+    "is_actionable": true,
+    "search_term": "joint health",
+    "hints": [
+      "joint health",
+      "joint quality",
+      "articular health"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E17",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "joint health": 1.0,
+      "joint quality": 0.8,
+      "articular health": 0.7
+    },
+    "correctness_probability": 0.85,
+    "suggestion_probability": 0.85,
+    "query_expansion": [],
+    "_chunk_start": 6622,
+    "_chunk_end": 10434
+  },
+  {
+    "span_text": "inflammation",
+    "normalized_name": "inflammation",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 8280,
+    "end_char": 8292,
+    "is_actionable": true,
+    "search_term": "inflammation",
+    "hints": [
+      "inflammation",
+      "swelling",
+      "pain"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E18",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "inflammation": 1.0,
+      "swelling": 0.7,
+      "pain": 0.6
+    },
+    "correctness_probability": 0.8,
+    "suggestion_probability": 0.8,
+    "query_expansion": [],
+    "_chunk_start": 6622,
+    "_chunk_end": 10434
+  },
+  {
+    "span_text": "hip joint",
+    "normalized_name": "hip joint",
+    "kind": "Anatomy",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Veterinarian: But I have observed some problems in his hip joint.",
+    "start_char": 3404,
+    "end_char": 3413,
+    "is_actionable": true,
+    "search_term": "hip joint",
+    "hints": [
+      "hip joint",
+      "coxofemoral joint",
+      "joint"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E18",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "hip joint": 1.0,
+      "coxofemoral joint": 0.9,
+      "joint": 0.8
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4311
+  },
+  {
+    "span_text": "stifled joint",
+    "normalized_name": "stifle joint",
+    "kind": "Anatomy",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 3796,
+    "end_char": 3809,
+    "is_actionable": true,
+    "search_term": "stifle joint",
+    "hints": [
+      "stifle joint",
+      "knee joint",
+      "joint"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E19",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "stifle joint": 1.0,
+      "knee joint": 0.8,
+      "joint": 0.7
+    },
+    "correctness_probability": 0.85,
+    "suggestion_probability": 0.85,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4311
+  },
+  {
+    "span_text": "spine",
+    "normalized_name": "spine",
+    "kind": "Anatomy",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Veterinarian: But also spine also I just want to take, you to take.",
+    "start_char": 4037,
+    "end_char": 4042,
+    "is_actionable": true,
+    "search_term": "spine",
+    "hints": [
+      "spine",
+      "vertebral column",
+      "backbone"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E9",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Veterinarian: But also spine also I just want to take, you to take.",
+    "hint_probabilities": {
+      "spine": 1.0,
+      "vertebral column": 0.9,
+      "backbone": 0.8
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 3311,
+    "_chunk_end": 7622
+  },
+  {
+    "span_text": "ball and socket joints",
+    "normalized_name": "ball and socket joints",
+    "kind": "Anatomy",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Veterinarian: So our hip joint is also ball and socket joint.",
+    "start_char": 6315,
+    "end_char": 6337,
+    "is_actionable": true,
+    "search_term": "ball and socket joints",
+    "hints": [
+      "ball and socket joints",
+      "coxofemoral joint",
+      "joint"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E13",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Veterinarian: So our hip joint is also ball and socket joint.",
+    "hint_probabilities": {
+      "ball and socket joints": 1.0,
+      "coxofemoral joint": 0.9,
+      "joint": 0.8
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 3311,
+    "_chunk_end": 7622
+  },
+  {
+    "span_text": "socket coverage of the bone",
+    "normalized_name": "socket coverage",
+    "kind": "Anatomy",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 6711,
+    "end_char": 6738,
+    "is_actionable": true,
+    "search_term": "socket coverage",
+    "hints": [
+      "socket coverage",
+      "hip joint",
+      "acetabulum"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E14",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "socket coverage": 1.0,
+      "hip joint": 0.8,
+      "acetabulum": 0.7
+    },
+    "correctness_probability": 0.85,
+    "suggestion_probability": 0.85,
+    "query_expansion": [],
+    "_chunk_start": 6622,
+    "_chunk_end": 10434
+  },
+  {
+    "span_text": "ball in the balance of your joint",
+    "normalized_name": "femoral head",
+    "kind": "Anatomy",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 6890,
+    "end_char": 6923,
+    "is_actionable": true,
+    "search_term": "femoral head",
+    "hints": [
+      "femoral head",
+      "ball-and-socket joint",
+      "hip joint"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E15",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "femoral head": 1.0,
+      "ball-and-socket joint": 0.7,
+      "hip joint": 0.6
+    },
+    "correctness_probability": 0.8,
+    "suggestion_probability": 0.8,
+    "query_expansion": [],
+    "_chunk_start": 6622,
+    "_chunk_end": 10434
+  },
+  {
+    "span_text": "Oreo",
+    "normalized_name": "Oreo",
+    "kind": "Other",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 89,
+    "end_char": 93,
+    "is_actionable": true,
+    "search_term": "Oreo",
+    "hints": [
+      "Oreo",
+      "dog name",
+      "pet name"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E1",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "Oreo": 1.0,
+      "dog name": 0.9,
+      "pet name": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4311
+  },
+  {
+    "span_text": "5 year old male Labrador",
+    "normalized_name": "5-year-old male Labrador",
+    "kind": "Other",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 159,
+    "end_char": 183,
+    "is_actionable": true,
+    "search_term": "5-year-old male Labrador",
+    "hints": [
+      "5-year-old male Labrador",
+      "male dog",
+      "Laborador"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E2",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "5-year-old male Labrador": 1.0,
+      "male dog": 0.9,
+      "Laborador": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4311
+  },
+  {
+    "span_text": "Labrador",
+    "normalized_name": "Labrador",
+    "kind": "Other",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Veterinarian: So generally, Labrador's are obese.",
+    "start_char": 6111,
+    "end_char": 6119,
+    "is_actionable": true,
+    "search_term": "Labrador",
+    "hints": [
+      "Labrador",
+      "Labrador Retriever",
+      "breed"
+    ],
+    "family": null,
+    "domain": [],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E12",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Veterinarian: So generally, Labrador's are obese.",
+    "hint_probabilities": {
+      "Labrador": 1.0,
+      "Labrador Retriever": 0.9,
+      "breed": 0.8
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 3311,
+    "_chunk_end": 7622
+  }
+]

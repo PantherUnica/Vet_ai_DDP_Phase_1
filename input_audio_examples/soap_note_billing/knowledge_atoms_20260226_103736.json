@@ -1,0 +1,233 @@
+{
+  "knowledge_atoms": [
+    {
+      "concept": "Head shaking and head tilt",
+      "kind": "Reason",
+      "assertion_id": "CONF",
+      "intent_context": "Presented",
+      "source_text": "presented with head shaking and holding head tilted to the left side for 2-3 days",
+      "section": "Subjective",
+      "attributes": {
+        "chief_complaint": "head shaking and holding head tilted to the left side for 2-3 days",
+        "urgency": "Routine",
+        "duration": "2-3 days",
+        "previous_history": null
+      },
+      "codes": {}
+    },
+    {
+      "concept": "Cefpodoxime syrup",
+      "kind": "Medicine",
+      "assertion_id": "RECUR",
+      "intent_context": "Prescribed",
+      "source_text": "Continue Cefpodoxime syrup orally for another 5-7 days",
+      "section": "Plan",
+      "attributes": {
+        "dose": "3ml",
+        "route": "orally",
+        "frequency": null,
+        "duration": "5-7 days"
+      },
+      "codes": {}
+    },
+    {
+      "concept": "Easotic ear drops",
+      "kind": "Medication",
+      "assertion_id": "CONF",
+      "intent_context": "Prescribed",
+      "source_text": "Apply Easotic ear drops once daily for 5 days",
+      "section": "Plan",
+      "attributes": {
+        "dose": null,
+        "route": null,
+        "frequency": "once daily",
+        "duration": "5 days"
+      },
+      "codes": {
+        "local_stock_id": 41358
+      },
+      "local_stock_id": 41358,
+      "kb_kind": "Medication",
+      "match_method": "dual_sync_local"
+    },
+    {
+      "concept": "Ear cleaning",
+      "kind": "Procedure",
+      "assertion_id": "CONF",
+      "intent_context": "Performed",
+      "source_text": "Ear cleaning was performed",
+      "section": "Objective",
+      "attributes": {
+        "procedure_name": "EAR FLUSH UNDER GA",
+        "status": "Performed"
+      },
+      "codes": {
+        "local_service_id": 1015
+      },
+      "local_service_id": 1015,
+      "kb_kind": "Procedure",
+      "match_method": "dual_sync_local"
+    },
+    {
+      "concept": "Ear swab for culture and sensitivity",
+      "kind": "Diagnostic",
+      "assertion_id": "CONF",
+      "intent_context": "Ordered",
+      "source_text": "If no improvement, perform ear swab for culture and sensitivity to guide further therapy",
+      "section": "Plan",
+      "attributes": {
+        "test_name": "C&S BACTERIA",
+        "specimen_type": "ear swab"
+      },
+      "codes": {
+        "local_service_id": 919
+      },
+      "local_service_id": 919,
+      "kb_kind": "Diagnostic",
+      "match_method": "dual_sync_local"
+    }
+  ],
+  "extraction_summary": {
+    "total_atoms": 5,
+    "confirmed": 3,
+    "negated": 0,
+    "by_kind": {
+      "Reason": 1,
+      "Medicine": 2,
+      "Procedure": 1,
+      "Diagnostic": 1
+    }
+  },
+  "metadata": {
+    "postprocess_applied": true,
+    "session_id": "7107b687-d494-431b-9b0f-1fad76cc817f",
+    "visit_id": "7107b687-d494-431b-9b0f-1fad76cc817f",
+    "clinic_id": 1,
+    "mode": "minimal",
+    "model_provider": "openai",
+    "model_name": "gpt-4.1-mini",
+    "attempted_models": [
+      "gpt-4.1-mini"
+    ],
+    "kb_schema_loaded": true
+  },
+  "error": null,
+  "parse_error": null,
+  "raw": null,
+  "verification_dashboard": {
+    "procedures_services": [],
+    "medications_administered": [],
+    "medications_prescribed": [
+      {
+        "item_name": "EASOTIC 10ML",
+        "inventory_id": 41358,
+        "status": "DRAFT",
+        "administered_prescribed": "Prescribed",
+        "fulfillment": "Internal",
+        "quantity": "[Vet to Input: Quantity]",
+        "dosage": "",
+        "duration": "5 days",
+        "frequency": "Custom",
+        "instructions": "",
+        "remarks": "Product: EASOTIC 10ML EASOTIC 10ML. Generic: EASOTIC 10ML EASOTIC 10ML. Category: Medication / Ear Care. Specialty: dermatology. Use Case: EASOTIC 10ML is an ear medication used to treat ear infections and inflammations in animals in a veterinary clinic.."
+      }
+    ],
+    "diagnostics": [
+      {
+        "service_id": 919,
+        "lab_radiology": "Radiology",
+        "test_name": "C&S BACTERIA",
+        "date_of_test": "TBD",
+        "done": "External",
+        "sample_collected": "No",
+        "remarks": "If no improvement, perform ear swab for culture and sensitivity to guide further therapy"
+      }
+    ],
+    "other_products_retail": [],
+    "reminders_follow_ups": [],
+    "vitals": [],
+    "module_4_unlinked_entities": [
+      {
+        "item_name": "Cefpodoxime syrup",
+        "kind": "Medicine",
+        "intent_context": "Prescribed",
+        "intent": "Prescribed (Medicine)",
+        "status": "ACTION REQUIRED",
+        "reason": "MISSING_LOCAL_ID",
+        "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+        "suggestions": [],
+        "inventory_id": null,
+        "administered_prescribed": "Prescribed",
+        "fulfillment": "Internal",
+        "quantity": "",
+        "dosage": "3ml",
+        "duration": "5-7 days",
+        "frequency": "Custom",
+        "instructions": "",
+        "route": "orally"
+      }
+    ],
+    "module_5_clinical_history": [],
+    "streamlined_dashboard": {
+      "signalment_vitals": [],
+      "clinical_assessment": [],
+      "pharmacy_administered": [],
+      "pharmacy_prescribed": [
+        {
+          "name": "EASOTIC 10ML",
+          "original_mention": "EASOTIC 10ML",
+          "status": "DRAFTED",
+          "linked_id": 41358,
+          "suggestions": [],
+          "dosage": "",
+          "frequency": "Custom",
+          "duration": "5 days",
+          "quantity": "[Vet to Input: Quantity]",
+          "instructions": "",
+          "remarks": "Product: EASOTIC 10ML EASOTIC 10ML. Generic: EASOTIC 10ML EASOTIC 10ML. Category: Medication / Ear Care. Specialty: dermatology. Use Case: EASOTIC 10ML is an ear medication used to treat ear infections and inflammations in animals in a veterinary clinic..",
+          "required_fields": [
+            "frequency",
+            "duration"
+          ],
+          "label": "Prescribed (Home Care)"
+        },
+        {
+          "name": "Cefpodoxime syrup",
+          "original_mention": "Cefpodoxime syrup",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [],
+          "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+          "reason": "MISSING_LOCAL_ID",
+          "dosage": "3ml",
+          "frequency": "Custom",
+          "duration": "5-7 days",
+          "quantity": "",
+          "instructions": "",
+          "required_fields": [
+            "frequency",
+            "duration"
+          ],
+          "label": "Prescribed (Home Care)"
+        }
+      ],
+      "diagnostics_labs_imaging": [
+        {
+          "name": "C&S BACTERIA",
+          "original_mention": "C&S BACTERIA",
+          "status": "DRAFTED",
+          "linked_id": 919,
+          "suggestions": [],
+          "remarks": "If no improvement, perform ear swab for culture and sensitivity to guide further therapy",
+          "done": "External",
+          "sample_collected": "No"
+        }
+      ],
+      "clinical_procedures_services": [],
+      "other_products_retail": [],
+      "preventive": [],
+      "patient_reminders": [],
+      "clinical_follow_ups": []
+    }
+  }
+}

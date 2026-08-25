@@ -1,0 +1,322 @@
+[
+  {
+    "span_text": "воспаление ротовой полости",
+    "normalized_name": "inflammation of the oral cavity",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Veterinarian: Сильное воспаление ротовой полости.",
+    "start_char": 22,
+    "end_char": 48,
+    "is_actionable": true,
+    "search_term": "inflammation of the oral cavity",
+    "hints": [
+      "inflammation of the oral cavity",
+      "oral inflammation",
+      "gingivitis"
+    ],
+    "family": null,
+    "domain": [
+      "dentistry"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E1",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Veterinarian: Сильное воспаление ротовой полости.",
+    "hint_probabilities": {
+      "inflammation of the oral cavity": 1.0,
+      "oral inflammation": 0.9,
+      "gingivitis": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": []
+  },
+  {
+    "span_text": "десна",
+    "normalized_name": "gums",
+    "kind": "Anatomy",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Pet Parent: При осмотре обнаружили, что десна, покраснение, изделение из ротовой полости, перелом клика нижнего челюсти, больно при пальпации болевое ощущение идет, кушает очень мало.",
+    "start_char": 91,
+    "end_char": 96,
+    "is_actionable": true,
+    "search_term": "gums",
+    "hints": [
+      "gums",
+      "gum tissue",
+      "gingiva"
+    ],
+    "family": null,
+    "domain": [
+      "dentistry"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E2",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Pet Parent: При осмотре обнаружили, что десна, покраснение, изделение из ротовой полости, перелом клика нижнего челюсти, больно при пальпации болевое ощущение идет, кушает очень мало.",
+    "hint_probabilities": {
+      "gums": 1.0,
+      "gum tissue": 0.9,
+      "gingiva": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": []
+  },
+  {
+    "span_text": "покраснение",
+    "normalized_name": "redness",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Pet Parent: При осмотре обнаружили, что десна, покраснение, изделение из ротовой полости, перелом клика нижнего челюсти, больно при пальпации болевое ощущение идет, кушает очень мало.",
+    "start_char": 98,
+    "end_char": 109,
+    "is_actionable": true,
+    "search_term": "redness",
+    "hints": [
+      "redness",
+      "erythema",
+      "inflammation"
+    ],
+    "family": null,
+    "domain": [
+      "dentistry"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E3",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Pet Parent: При осмотре обнаружили, что десна, покраснение, изделение из ротовой полости, перелом клика нижнего челюсти, больно при пальпации болевое ощущение идет, кушает очень мало.",
+    "hint_probabilities": {
+      "redness": 1.0,
+      "erythema": 0.85,
+      "inflammation": 0.8
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": []
+  },
+  {
+    "span_text": "изделение из ротовой полости",
+    "normalized_name": "lesion in the oral cavity",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Pet Parent: При осмотре обнаружили, что десна, покраснение, изделение из ротовой полости, перелом клика нижнего челюсти, больно при пальпации болевое ощущение идет, кушает очень мало.",
+    "start_char": 111,
+    "end_char": 139,
+    "is_actionable": true,
+    "search_term": "lesion in the oral cavity",
+    "hints": [
+      "lesion in the oral cavity",
+      "oral lesion",
+      "gingival lesion"
+    ],
+    "family": null,
+    "domain": [
+      "dentistry"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E4",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Pet Parent: При осмотре обнаружили, что десна, покраснение, изделение из ротовой полости, перелом клика нижнего челюсти, больно при пальпации болевое ощущение идет, кушает очень мало.",
+    "hint_probabilities": {
+      "lesion in the oral cavity": 1.0,
+      "oral lesion": 0.85,
+      "gingival lesion": 0.75
+    },
+    "correctness_probability": 0.8,
+    "suggestion_probability": 0.85,
+    "query_expansion": []
+  },
+  {
+    "span_text": "перелом клика нижнего челюсти",
+    "normalized_name": "fracture of the lower jaw",
+    "kind": "Diagnosis",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Pet Parent: При осмотре обнаружили, что десна, покраснение, изделение из ротовой полости, перелом клика нижнего челюсти, больно при пальпации болевое ощущение идет, кушает очень мало.",
+    "start_char": 141,
+    "end_char": 170,
+    "is_actionable": true,
+    "search_term": "fracture of the lower jaw",
+    "hints": [
+      "fracture of the lower jaw",
+      "mandibular fracture",
+      "jaw fracture"
+    ],
+    "family": null,
+    "domain": [
+      "dentistry"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E5",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Pet Parent: При осмотре обнаружили, что десна, покраснение, изделение из ротовой полости, перелом клика нижнего челюсти, больно при пальпации болевое ощущение идет, кушает очень мало.",
+    "hint_probabilities": {
+      "fracture of the lower jaw": 1.0,
+      "mandibular fracture": 0.9,
+      "jaw fracture": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": []
+  },
+  {
+    "span_text": "больно при пальпации",
+    "normalized_name": "painful on palpation",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Pet Parent: При осмотре обнаружили, что десна, покраснение, изделение из ротовой полости, перелом клика нижнего челюсти, больно при пальпации болевое ощущение идет, кушает очень мало.",
+    "start_char": 172,
+    "end_char": 192,
+    "is_actionable": true,
+    "search_term": "painful on palpation",
+    "hints": [
+      "painful on palpation",
+      "tender to palpation",
+      "pain on touching"
+    ],
+    "family": null,
+    "domain": [
+      "dentistry"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E6",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Pet Parent: При осмотре обнаружили, что десна, покраснение, изделение из ротовой полости, перелом клика нижнего челюсти, больно при пальпации болевое ощущение идет, кушает очень мало.",
+    "hint_probabilities": {
+      "painful on palpation": 1.0,
+      "tender to palpation": 0.85,
+      "pain on touching": 0.8
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": []
+  },
+  {
+    "span_text": "болевое ощущение",
+    "normalized_name": "pain",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Pet Parent: При осмотре обнаружили, что десна, покраснение, изделение из ротовой полости, перелом клика нижнего челюсти, больно при пальпации болевое ощущение идет, кушает очень мало.",
+    "start_char": 193,
+    "end_char": 209,
+    "is_actionable": true,
+    "search_term": "pain",
+    "hints": [
+      "pain",
+      "discomfort",
+      "ache"
+    ],
+    "family": null,
+    "domain": [
+      "dentistry"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E7",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Pet Parent: При осмотре обнаружили, что десна, покраснение, изделение из ротовой полости, перелом клика нижнего челюсти, больно при пальпации болевое ощущение идет, кушает очень мало.",
+    "hint_probabilities": {
+      "pain": 1.0,
+      "discomfort": 0.9,
+      "ache": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": []
+  },
+  {
+    "span_text": "кушает очень мало",
+    "normalized_name": "eats very little",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Pet Parent: При осмотре обнаружили, что десна, покраснение, изделение из ротовой полости, перелом клика нижнего челюсти, больно при пальпации болевое ощущение идет, кушает очень мало.",
+    "start_char": 216,
+    "end_char": 233,
+    "is_actionable": true,
+    "search_term": "eats very little",
+    "hints": [
+      "eats very little",
+      "poor appetite",
+      "anorexia"
+    ],
+    "family": null,
+    "domain": [
+      "dentistry"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E8",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Pet Parent: При осмотре обнаружили, что десна, покраснение, изделение из ротовой полости, перелом клика нижнего челюсти, больно при пальпации болевое ощущение идет, кушает очень мало.",
+    "hint_probabilities": {
+      "eats very little": 1.0,
+      "poor appetite": 0.85,
+      "anorexia": 0.8
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": []
+  }
+]

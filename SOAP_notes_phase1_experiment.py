@@ -3223,15 +3223,17 @@ TRANSCRIBE_RETRY_ATTEMPTS = 3
 TRANSCRIBE_RETRY_BACKOFF_SEC = (2, 4, 8)
 
 
-def transcribe_audio(audio_file_path, output_dir=None, timestamp: str = None):
+def transcribe_audio(audio_file_path, output_dir=None, timestamp: str = None, model: str = None):
     """
     Canonical Fireworks one-shot transcription function.
     Replaces redundant transcribe_audio_fireworks_* variants.
     Retries on 502/503 with backoff; raises a short user-facing message (no HTML dump).
     """
     logger = logging.getLogger('soap_generator')
+    model_name = (model or os.getenv("ASR_MODEL") or FIREWORKS_MODEL_NAME).strip()
     logger.info("🎤 Starting ultra-fast audio transcription...")
     logger.info(f"📁 Audio file: {audio_file_path}")
+    logger.info(f"🔊 ASR model: {model_name}")
     api_key = load_fireworks_api_key()
     file_ext = Path(audio_file_path).suffix.lower()
     if not file_ext:
@@ -3243,7 +3245,7 @@ def transcribe_audio(audio_file_path, output_dir=None, timestamp: str = None):
     upload_filename = f"audio{file_ext}" if file_ext else "audio.wav"
     url = FIREWORKS_AUDIO_TRANSCRIPTION_URL
     headers = {"Authorization": f"Bearer {api_key}"}
-    data = {"model": FIREWORKS_MODEL_NAME, "temperature": "0"}
+    data = {"model": model_name, "temperature": "0"}
     file_size = os.path.getsize(audio_file_path)
     if file_size == 0:
         raise RuntimeError("Audio file is empty (0 bytes)")
@@ -3795,57 +3797,35 @@ def generate_soap_note_from_audio(audio_file_path=None, output_dir=None):
     return (result or {}).get("soap_note") or ""
 
 
-async def generate_soap_note_from_audio_async(audio_file_path=None, output_dir=None):
+async def generate_soap_note_from_audio_async(
+    audio_file_path=None,
+    output_dir=None,
+    *,
+    raw_transcription: Optional[str] = None,
+    source: str = "audio",
+    consultation_language: Optional[str] = None,
+    asr_language: Optional[str] = None,
+):
     """
     Async pipeline: default path only (chunk-parallel or sequential Super-Pass + local streaming grounding).
     Returns dict with soap_note, manifest, cleaned_text, etc.
+
+    Pass raw_transcription to skip ASR (typed/manual STEP1). audio_file_path optional in that mode.
     """
     pipeline_start_time = time.time()
     stage_perf_start = time.perf_counter()
     stage_marks: Dict[str, float] = {}
     logger = logging.getLogger('soap_generator')
-    logger.info("🎤 Async Audio to SOAP Note Generator")
+    skip_asr = raw_transcription is not None and raw_transcription.strip()
+    logger.info("🎤 Async SOAP Note Generator (%s input)", "transcript" if skip_asr else "audio")
     logger.info("=" * 50)
     logger.info(f"🕐 Pipeline started at {datetime.now().strftime('%H:%M:%S')}")
 
-    # Check audio dependencies
-    logger.info("Checking audio processing libraries...")
-    check_audio_dependencies()
-    logger.info("")
-
-    # If no audio file path provided, use the input folder
-    if audio_file_path is None:
-        input_folder = "/Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/input_audio"
-        if not os.path.exists(input_folder):
-            os.makedirs(input_folder, exist_ok=True)
-            raise RuntimeError(f"Input folder created: {input_folder}. Please place an audio file in this folder and run again.")
-
-        # Find audio files in the input folder
-        audio_extensions = ['.wav', '.mp3', '.m4a', '.flac', '.aac', '.ogg', '.webm']
-        audio_files = []
-        for file in os.listdir(input_folder):
-            if any(file.lower().endswith(ext) for ext in audio_extensions):
-                audio_files.append(file)
-
-        if not audio_files:
-            raise RuntimeError(f"No audio files found in {input_folder}. Supported formats: {', '.join(audio_extensions)}")
-
-        # Use the first audio file found
-        audio_file_path = os.path.join(input_folder, audio_files[0])
-        logger.info(f"Using audio file: {audio_files[0]}")
-
-        if len(audio_files) > 1:
-            logger.info(f"Multiple audio files found. Using: {audio_files[0]}")
-            logger.info(f"Other files: {', '.join(audio_files[1:])}")
-
-    # Validate audio file exists
-    if not os.path.exists(audio_file_path):
-        raise FileNotFoundError(f"Audio file not found: {audio_file_path}")
-
-    # Check file size
-    file_size = os.path.getsize(audio_file_path)
-    if file_size == 0:
-        raise RuntimeError(f"Audio file is empty: {audio_file_path}")
+    if not skip_asr:
+        # Check audio dependencies
+        logger.info("Checking audio processing libraries...")
+        check_audio_dependencies()
+        logger.info("")
 
     output_dir_path = Path(output_dir or DEFAULT_CONFIG.output_dir)
     output_dir_path.mkdir(parents=True, exist_ok=True)
@@ -3859,38 +3839,130 @@ async def generate_soap_note_from_audio_async(audio_file_path=None, output_dir=N
     if TARGET_60S:
         logger.info("⚡ TARGET_60S: nano + FORCE_PARALLEL_SUPER_PASS_CHUNKS + EARLY_START_SOAP + SOAP max_tokens=2500")
 
-    # STEP 1: Transcribe audio (sequential)
-    TRANSCRIPTION_STREAMING = os.getenv("TRANSCRIPTION_STREAMING", "false").strip().lower() in ("1", "true", "yes")
+    from asr_providers import TranscriptionResult, transcribe as asr_transcribe
+    from benchmark_utils import save_step1_artifacts
 
-    if TRANSCRIPTION_STREAMING:
-        logger.info("🎤 STEP 1: STREAMING TRANSCRIPTION")
-        raw_transcription = await loop.run_in_executor(
-            executor,
-            lambda: transcribe_audio_fireworks_streaming(
-                audio_file_path,
-                output_dir=output_dir_path,
-                timestamp=timestamp,
-                on_transcript_chunk=None,  # No harvester callback
-                logger=logger,
-            ),
-        )
-    else:
-        logger.info(f"🎤 STEP 1: AUDIO TRANSCRIPTION (Async pipeline)")
-        raw_transcription = await loop.run_in_executor(
-            executor,
-            transcribe_audio,
-            audio_file_path,
+    asr_result = None
+
+    if skip_asr:
+        raw_transcription = raw_transcription.strip()
+        logger.info("📝 STEP 1: Using provided transcript (%s, %d chars)", source, len(raw_transcription))
+        lang_meta = consultation_language or "manual"
+        raw_transcript_file = output_dir_path / f"raw_transcription_{timestamp}.txt"
+        save_output(raw_transcription, str(raw_transcript_file), logger)
+        save_step1_artifacts(
             output_dir_path,
-            timestamp,
+            TranscriptionResult(
+                text=raw_transcription,
+                provider="manual" if source == "typed" else "voice",
+                model="n/a",
+                latency_ms=0,
+                audio_path=audio_file_path or "",
+                metadata={"source": source, "language": lang_meta},
+            ),
+            audio_path=audio_file_path,
         )
+        stage_marks["transcription_done"] = time.perf_counter()
+    else:
+        # If no audio file path provided, use the input folder
+        if audio_file_path is None:
+            input_folder = "/Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/input_audio"
+            if not os.path.exists(input_folder):
+                os.makedirs(input_folder, exist_ok=True)
+                raise RuntimeError(f"Input folder created: {input_folder}. Please place an audio file in this folder and run again.")
 
-    if not raw_transcription:
-        raise RuntimeError("No transcription generated from audio.")
+            audio_extensions = ['.wav', '.mp3', '.m4a', '.flac', '.aac', '.ogg', '.webm']
+            audio_files = []
+            for file in os.listdir(input_folder):
+                if any(file.lower().endswith(ext) for ext in audio_extensions):
+                    audio_files.append(file)
 
-    # Save raw transcript
-    raw_transcript_file = output_dir_path / f"raw_transcription_{timestamp}.txt"
-    save_output(raw_transcription, str(raw_transcript_file), logger)
-    stage_marks["transcription_done"] = time.perf_counter()
+            if not audio_files:
+                raise RuntimeError(f"No audio files found in {input_folder}. Supported formats: {', '.join(audio_extensions)}")
+
+            audio_file_path = os.path.join(input_folder, audio_files[0])
+            logger.info(f"Using audio file: {audio_files[0]}")
+
+        if not os.path.exists(audio_file_path):
+            raise FileNotFoundError(f"Audio file not found: {audio_file_path}")
+
+        file_size = os.path.getsize(audio_file_path)
+        if file_size == 0:
+            raise RuntimeError(f"Audio file is empty: {audio_file_path}")
+
+        asr_provider = os.getenv("ASR_PROVIDER", "deepgram").strip().lower()
+        asr_model = os.getenv("ASR_MODEL", "").strip() or None
+        TRANSCRIPTION_STREAMING = os.getenv("TRANSCRIPTION_STREAMING", "false").strip().lower() in ("1", "true", "yes")
+
+        if TRANSCRIPTION_STREAMING and asr_provider == "fireworks":
+            logger.info("🎤 STEP 1: STREAMING TRANSCRIPTION (Fireworks)")
+            raw_transcription = await loop.run_in_executor(
+                executor,
+                lambda: transcribe_audio_fireworks_streaming(
+                    audio_file_path,
+                    output_dir=output_dir_path,
+                    timestamp=timestamp,
+                    on_transcript_chunk=None,
+                    logger=logger,
+                ),
+            )
+            asr_result = None
+        elif TRANSCRIPTION_STREAMING and asr_provider != "fireworks":
+            logger.warning(
+                "TRANSCRIPTION_STREAMING=true is Fireworks-only; using one-shot ASR for provider=%s",
+                asr_provider,
+            )
+            asr_result = await loop.run_in_executor(
+                executor,
+                lambda: asr_transcribe(
+                    audio_file_path,
+                    provider=asr_provider,
+                    model=asr_model,
+                    language=asr_language,
+                    logger=logger,
+                ),
+            )
+            raw_transcription = asr_result.text
+        else:
+            logger.info(
+                "🎤 STEP 1: AUDIO TRANSCRIPTION (provider=%s model=%s)",
+                asr_provider,
+                asr_model or "(provider default)",
+            )
+            asr_result = await loop.run_in_executor(
+                executor,
+                lambda: asr_transcribe(
+                    audio_file_path,
+                    provider=asr_provider,
+                    model=asr_model,
+                    language=asr_language,
+                    logger=logger,
+                ),
+            )
+            raw_transcription = asr_result.text
+
+        if not raw_transcription:
+            raise RuntimeError("No transcription generated from audio.")
+
+        raw_transcript_file = output_dir_path / f"raw_transcription_{timestamp}.txt"
+        save_output(raw_transcription, str(raw_transcript_file), logger)
+
+        if asr_result is not None:
+            save_step1_artifacts(output_dir_path, asr_result, audio_path=audio_file_path)
+        else:
+            save_step1_artifacts(
+                output_dir_path,
+                TranscriptionResult(
+                    text=raw_transcription,
+                    provider="fireworks",
+                    model=os.getenv("ASR_MODEL") or FIREWORKS_MODEL_NAME,
+                    latency_ms=0,
+                    audio_path=audio_file_path,
+                    metadata={"streaming": True},
+                ),
+                audio_path=audio_file_path,
+            )
+        stage_marks["transcription_done"] = time.perf_counter()
 
     # --------------------------------------------------------------------------
     # STREAMING SUPER-PASS GROUNDING needs these BEFORE super-pass starts
@@ -4945,6 +5017,37 @@ async def generate_soap_note_from_audio_async(audio_file_path=None, output_dir=N
         "cleaned_text": cleaned_transcription,
         "knowledge_atoms": knowledge_atoms_result  # Phase 2 results (if available)
     }
+
+
+async def generate_soap_note_from_transcript_async(
+    raw_transcription: str,
+    output_dir: str,
+    *,
+    source: str = "typed",
+    audio_path: Optional[str] = None,
+    consultation_language: Optional[str] = None,
+    asr_language: Optional[str] = None,
+) -> dict:
+    """Run pipeline from STEP1 text (typed or pre-transcribed voice). Skips ASR."""
+    return await generate_soap_note_from_audio_async(
+        audio_file_path=audio_path,
+        output_dir=output_dir,
+        raw_transcription=raw_transcription,
+        source=source,
+        consultation_language=consultation_language,
+        asr_language=asr_language,
+    )
+
+
+def generate_soap_note_from_transcript(
+    raw_transcription: str,
+    output_dir: str,
+    **kwargs,
+) -> dict:
+    """Sync wrapper for generate_soap_note_from_transcript_async."""
+    return asyncio.run(
+        generate_soap_note_from_transcript_async(raw_transcription, output_dir, **kwargs)
+    )
 
 # ==============================================================================
 # OPTIONAL: CLI ENTRY POINT

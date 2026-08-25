@@ -1,0 +1,344 @@
+2026-02-26 09:09:23,342 | INFO     | soap_generator | setup_logging:1050 | Logging initialized. Log file: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/soap_generator_20260226_090923.log
+2026-02-26 09:09:23,342 | INFO     | soap_generator | <module>:4924 | 🚀 Script started - logging initialized
+2026-02-26 09:09:23,342 | INFO     | soap_generator | <module>:4925 | 🕐 Script execution started at 09:09:23
+2026-02-26 09:09:23,343 | INFO     | soap_generator | <module>:4935 | 📋 Arguments parsed successfully
+2026-02-26 09:09:23,343 | INFO     | soap_generator | <module>:4961 | 🎤 Starting SOAP note generation from audio...
+2026-02-26 09:09:23,343 | INFO     | soap_generator | generate_soap_note_from_audio_async:3774 | 🎤 Async Audio to SOAP Note Generator
+2026-02-26 09:09:23,343 | INFO     | soap_generator | generate_soap_note_from_audio_async:3775 | ==================================================
+2026-02-26 09:09:23,343 | INFO     | soap_generator | generate_soap_note_from_audio_async:3776 | 🕐 Pipeline started at 09:09:23
+2026-02-26 09:09:23,343 | INFO     | soap_generator | generate_soap_note_from_audio_async:3779 | Checking audio processing libraries...
+2026-02-26 09:09:23,343 | WARNING  | soap_generator | check_audio_dependencies:2921 | ❌ soundfile not available
+2026-02-26 09:09:23,343 | WARNING  | soap_generator | check_audio_dependencies:2929 | ❌ pydub not available
+2026-02-26 09:09:23,343 | WARNING  | soap_generator | check_audio_dependencies:2937 | ❌ librosa not available
+2026-02-26 09:09:23,343 | WARNING  | soap_generator | check_audio_dependencies:2945 | ❌ ffmpeg-python not available
+2026-02-26 09:09:23,343 | WARNING  | soap_generator | check_audio_dependencies:2948 | ⚠️  Missing audio libraries: soundfile, pydub, librosa, ffmpeg-python
+2026-02-26 09:09:23,343 | INFO     | soap_generator | check_audio_dependencies:2949 | For better audio file support, install missing libraries:
+2026-02-26 09:09:23,343 | INFO     | soap_generator | check_audio_dependencies:2950 | pip install pydub librosa ffmpeg-python
+2026-02-26 09:09:23,343 | INFO     | soap_generator | check_audio_dependencies:2951 | Note: ffmpeg-python requires ffmpeg to be installed on your system
+2026-02-26 09:09:23,343 | INFO     | soap_generator | generate_soap_note_from_audio_async:3781 | 
+2026-02-26 09:09:23,343 | INFO     | soap_generator | generate_soap_note_from_audio_async:3802 | Using audio file: WhatsApp Audio 2026-02-21 at 16.02.19.wav
+2026-02-26 09:09:23,344 | INFO     | soap_generator | generate_soap_note_from_audio_async:3827 | ⚡ TARGET_60S: nano + FORCE_PARALLEL_SUPER_PASS_CHUNKS + EARLY_START_SOAP + SOAP max_tokens=2500
+2026-02-26 09:09:23,344 | INFO     | soap_generator | generate_soap_note_from_audio_async:3845 | 🎤 STEP 1: AUDIO TRANSCRIPTION (Async pipeline)
+2026-02-26 09:09:23,344 | INFO     | soap_generator | transcribe_audio:3217 | 🎤 Starting ultra-fast audio transcription...
+2026-02-26 09:09:23,344 | INFO     | soap_generator | transcribe_audio:3218 | 📁 Audio file: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/input_audio/WhatsApp Audio 2026-02-21 at 16.02.19.wav
+2026-02-26 09:09:27,476 | INFO     | soap_generator | save_output:1216 | Output saved successfully: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/raw_transcription_20260226_090923.txt (610 characters)
+2026-02-26 09:09:27,483 | INFO     | soap_generator | generate_soap_note_from_audio_async:3884 | 📋 Generated visit_id: feaf2570-d4e6-4cce-a249-707043b851e0
+2026-02-26 09:09:27,483 | INFO     | soap_generator | generate_soap_note_from_audio_async:3888 | 🏥 Using default clinic_id=1 (inventory and procedures location)
+2026-02-26 09:09:27,483 | INFO     | soap_generator | generate_soap_note_from_audio_async:3889 |    To use a different clinic_id, set CLINIC_ID environment variable
+2026-02-26 09:09:27,878 | INFO     | soap_generator | init_pg_pool:101 | ✅ Initialized Postgres pool (min=1, max=16)
+2026-02-26 09:09:27,878 | INFO     | soap_generator | generate_soap_note_from_audio_async:3934 | ⚡ STEP 2: DEFAULT PATH (Super-Pass non-streaming — single combined call, unified prompt)
+2026-02-26 09:09:27,878 | INFO     | soap_generator | generate_soap_note_from_audio_async:3935 |    - Step 2a: Unified prompt (cleaning + minimal NER). Step 2b: Brain NER (enrich with hints/probabilities)
+2026-02-26 09:09:27,878 | INFO     | soap_generator | generate_soap_note_from_audio_async:3936 |    - Local-only grounding for billable routes + parallel LLM judges where applicable
+2026-02-26 09:09:27,885 | INFO     | soap_generator | generate_soap_note_from_audio_async:3961 | ⚡ STEP 2: SUPER-PASS (unified prompt) → BRAIN NER (enrich with hints/probabilities)
+2026-02-26 09:09:27,885 | INFO     | soap_generator | generate_soap_note_from_audio_async:3966 | ⚡ Batch-parallel grounding: Brain NER (non-streaming) → local-only routing/search → parallel LLM judges → dispatch all entities
+2026-02-26 09:09:27,889 | INFO     | soap_generator | generate_soap_note_from_audio_async:3971 | ✅ Imported process_single_entity_async for streaming grounding
+2026-02-26 09:09:27,889 | INFO     | soap_generator | super_pass_cleaning_and_ner:3334 | ============================================================
+2026-02-26 09:09:27,889 | INFO     | soap_generator | super_pass_cleaning_and_ner:3335 | SUPER-PASS: Cleaning + NER Extraction (Combined)
+2026-02-26 09:09:27,889 | INFO     | soap_generator | super_pass_cleaning_and_ner:3336 | ============================================================
+2026-02-26 09:09:27,889 | INFO     | soap_generator | super_pass_cleaning_and_ner:3337 |   Model: accounts/fireworks/models/llama-v3p3-70b-instruct
+2026-02-26 09:09:27,889 | INFO     | soap_generator | super_pass_cleaning_and_ner:3338 |   Raw transcript length: 610 chars
+2026-02-26 09:09:32,630 | INFO     | soap_generator | super_pass_cleaning_and_ner:3638 |   ✅ Super-pass complete: 624 chars cleaned, 8 entities extracted, entities_by_kind (Pure NER)
+2026-02-26 09:09:32,631 | INFO     | soap_generator | run_brain_call:1342 | Brain call: Processing 8 pre-extracted entities from Super-Pass
+2026-02-26 09:09:32,631 | INFO     | soap_generator | run_brain_call:1418 | Brain call: auto-switching to streaming mode for Fireworks (max_tokens=8192 > 4096)
+2026-02-26 09:09:36,988 | INFO     | soap_generator | run_brain_call:1435 | Brain call (streaming fallback): entities=8 (offsets relative to raw), terms_not_grounded=0
+2026-02-26 09:09:36,990 | INFO     | soap_generator | generate_soap_note_from_audio_async:4188 |    📄 Brain NER output saved to: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/brain_ner_output_20260226_090923.json (8 entities)
+2026-02-26 09:09:36,990 | INFO     | soap_generator | generate_soap_note_from_audio_async:4195 |    ✅ Super-Pass (unified) + Brain NER (enriched): cleaned=624 chars, 8 entities with hints/probabilities
+2026-02-26 09:09:36,990 | INFO     | soap_generator | generate_soap_note_from_audio_async:4330 |    📄 Brain NER output saved (unconditional): /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/brain_ner_output_20260226_090923.json (8 entities)
+2026-02-26 09:09:36,990 | INFO     | soap_generator | generate_soap_note_from_audio_async:4345 | ✅ Shadow grounding complete: 624 chars cleaned, 8 entities extracted
+2026-02-26 09:09:36,991 | INFO     | soap_generator | save_output:1216 | Output saved successfully: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/cleaned_transcript_20260226_090923.txt (624 characters)
+2026-02-26 09:09:36,991 | INFO     | soap_generator | generate_soap_note_from_audio_async:4349 | ✅ Cleaned transcript saved: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/cleaned_transcript_20260226_090923.txt
+2026-02-26 09:09:36,991 | INFO     | soap_generator | generate_soap_note_from_audio_async:4350 | 📊 Input length: 610 characters
+2026-02-26 09:09:36,991 | INFO     | soap_generator | generate_soap_note_from_audio_async:4351 | 📊 Output length: 624 characters
+2026-02-26 09:09:36,992 | INFO     | soap_generator | generate_soap_note_from_audio_async:4361 |    📄 Brain NER output saved to: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/brain_ner_output_20260226_090923.json (8 entities)
+2026-02-26 09:09:36,992 | INFO     | soap_generator | generate_soap_note_from_audio_async:4374 |    📄 NER output by kind saved to: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/cleaned_transcript_20260226_090923_entities_by_kind.json
+2026-02-26 09:09:36,992 | INFO     | soap_generator | generate_soap_note_from_audio_async:4402 | ⚡ STEP 2.3: BATCH-PARALLEL GROUNDING (Brain NER non-streaming → local-only routing/search → parallel judges)
+2026-02-26 09:09:36,992 | INFO     | soap_generator | generate_soap_note_from_audio_async:4403 | 📋 STEP 3: SOAP NOTE GENERATION (uses cleaned transcript)
+2026-02-26 09:09:36,992 | INFO     | soap_generator | generate_soap_note_from_audio_async:4421 | 📋 STEP 3: SOAP NOTE GENERATION (uses cleaned transcript)
+2026-02-26 09:09:36,992 | INFO     | soap_generator | generate_soap_note_from_audio_async:4422 |    SOAP pipeline started (independent of billing)
+2026-02-26 09:09:36,992 | INFO     | soap_generator | build_detected_concepts_json_from_manifest:1448 | 📊 Built Brain NER SOAP payload (8 entities)
+2026-02-26 09:09:36,992 | INFO     | soap_generator | _run_billing_pipeline_async:4204 |   ⏩ CER skipped for short transcript (610 chars ≤ CER_SKIP_UNDER_CHARS=5000); using Brain NER entities for grounding
+2026-02-26 09:09:36,993 | DEBUG    | soap_generator | _dispatch_entity:4138 |    📝 Created grounding task for entity 'shaking the head' (total tasks: 1)
+2026-02-26 09:09:36,994 | DEBUG    | soap_generator | _dispatch_entity:4138 |    📝 Created grounding task for entity 'not eating the food properly' (total tasks: 2)
+2026-02-26 09:09:36,994 | DEBUG    | soap_generator | _dispatch_entity:4138 |    📝 Created grounding task for entity 'bus inside the left ear' (total tasks: 3)
+2026-02-26 09:09:36,994 | DEBUG    | soap_generator | _dispatch_entity:4138 |    📝 Created grounding task for entity 'yeast growth' (total tasks: 4)
+2026-02-26 09:09:36,994 | DEBUG    | soap_generator | _dispatch_entity:4138 |    📝 Created grounding task for entity 'ear cleaning' (total tasks: 5)
+2026-02-26 09:09:36,994 | DEBUG    | soap_generator | _dispatch_entity:4138 |    📝 Created grounding task for entity 'exotic pump' (total tasks: 6)
+2026-02-26 09:09:36,994 | DEBUG    | soap_generator | _dispatch_entity:4138 |    📝 Created grounding task for entity 'Cefpet syrup' (total tasks: 7)
+2026-02-26 09:09:36,994 | DEBUG    | soap_generator | _dispatch_entity:4138 |    📝 Created grounding task for entity 'ear swab for culture and sensitivity' (total tasks: 8)
+2026-02-26 09:09:36,994 | DEBUG    | soap_generator | _ground_one:4092 |    🔍 Grounding entity 1: 'shaking the head'
+2026-02-26 09:09:36,994 | INFO     | soap_generator | process_single_entity_async:693 | 🔍 [ASYNC] PROCESSING ENTITY 1/8: 'shaking the head'
+2026-02-26 09:09:36,994 | INFO     | soap_generator | process_single_entity_async:694 |    Kind: Symptom, KB Kind: Symptom, Source: N/A
+2026-02-26 09:09:36,994 | INFO     | soap_generator | process_single_entity_async:814 |    📍 Route Classification: skip_non_billable
+2026-02-26 09:09:36,994 | INFO     | soap_generator | process_single_entity_async:815 |    📝 Normalized name: 'shaking the head' (from span_text: 'shaking the head')
+2026-02-26 09:09:36,994 | DEBUG    | soap_generator | _ground_one:4120 |    ✅ Grounded entity 'shaking the head' → added to manifest (total: 1)
+2026-02-26 09:09:36,995 | DEBUG    | soap_generator | _ground_one:4092 |    🔍 Grounding entity 2: 'not eating the food properly'
+2026-02-26 09:09:36,995 | INFO     | soap_generator | process_single_entity_async:693 | 🔍 [ASYNC] PROCESSING ENTITY 2/8: 'not eating the food properly'
+2026-02-26 09:09:36,995 | INFO     | soap_generator | process_single_entity_async:694 |    Kind: Symptom, KB Kind: Symptom, Source: N/A
+2026-02-26 09:09:36,995 | INFO     | soap_generator | process_single_entity_async:814 |    📍 Route Classification: skip_non_billable
+2026-02-26 09:09:36,995 | INFO     | soap_generator | process_single_entity_async:815 |    📝 Normalized name: 'not eating the food properly' (from span_text: 'not eating the food properly')
+2026-02-26 09:09:36,995 | DEBUG    | soap_generator | _ground_one:4120 |    ✅ Grounded entity 'not eating the food properly' → added to manifest (total: 2)
+2026-02-26 09:09:36,995 | DEBUG    | soap_generator | _ground_one:4092 |    🔍 Grounding entity 3: 'bus inside the left ear'
+2026-02-26 09:09:36,995 | INFO     | soap_generator | process_single_entity_async:693 | 🔍 [ASYNC] PROCESSING ENTITY 3/8: 'bus inside the left ear'
+2026-02-26 09:09:36,995 | INFO     | soap_generator | process_single_entity_async:694 |    Kind: Diagnosis, KB Kind: Diagnosis, Source: N/A
+2026-02-26 09:09:36,995 | DEBUG    | soap_generator | _ground_one:4092 |    🔍 Grounding entity 4: 'yeast growth'
+2026-02-26 09:09:36,995 | DEBUG    | soap_generator | get_client_for_model:375 | 🔍 Model 'gpt-4.1-nano' → Provider: openai
+2026-02-26 09:09:36,996 | INFO     | soap_generator | process_single_entity_async:693 | 🔍 [ASYNC] PROCESSING ENTITY 4/8: 'yeast growth'
+2026-02-26 09:09:36,996 | INFO     | soap_generator | process_single_entity_async:694 |    Kind: Diagnosis, KB Kind: Diagnosis, Source: N/A
+2026-02-26 09:09:36,996 | DEBUG    | soap_generator | get_client_for_model:375 | 🔍 Model 'gpt-4.1-nano' → Provider: openai
+2026-02-26 09:09:36,996 | DEBUG    | soap_generator | get_client_for_model:375 | 🔍 Model 'gpt-4.1-nano' → Provider: openai
+2026-02-26 09:09:36,996 | INFO     | soap_generator | process_transcription:2821 | Reading transcription file...
+2026-02-26 09:09:36,996 | DEBUG    | soap_generator | _ground_one:4092 |    🔍 Grounding entity 5: 'ear cleaning'
+2026-02-26 09:09:36,997 | INFO     | soap_generator | process_single_entity_async:693 | 🔍 [ASYNC] PROCESSING ENTITY 5/8: 'ear cleaning'
+2026-02-26 09:09:36,997 | INFO     | soap_generator | process_transcription:2824 | Transcription loaded: 624 characters
+2026-02-26 09:09:36,997 | INFO     | soap_generator | process_single_entity_async:694 |    Kind: Procedure, KB Kind: Procedure, Source: N/A
+2026-02-26 09:09:36,997 | INFO     | soap_generator | process_transcription:2829 | Loading optional input files in parallel...
+2026-02-26 09:09:36,997 | DEBUG    | soap_generator | _ground_one:4092 |    🔍 Grounding entity 6: 'exotic pump'
+2026-02-26 09:09:36,998 | INFO     | soap_generator | process_single_entity_async:693 | 🔍 [ASYNC] PROCESSING ENTITY 6/8: 'exotic pump'
+2026-02-26 09:09:36,998 | INFO     | soap_generator | read_optional_file:1239 | Pre-appointment summary not provided (path is None)
+2026-02-26 09:09:36,998 | INFO     | soap_generator | read_optional_file:1239 | Protocols template not provided (path is None)
+2026-02-26 09:09:36,999 | INFO     | soap_generator | read_optional_file:1239 | Vitals template not provided (path is None)
+2026-02-26 09:09:36,998 | INFO     | soap_generator | process_single_entity_async:694 |    Kind: Medication, KB Kind: Medication, Source: N/A
+2026-02-26 09:09:36,999 | INFO     | soap_generator | process_single_entity_async:814 |    📍 Route Classification: dual_sync
+2026-02-26 09:09:36,999 | INFO     | soap_generator | process_single_entity_async:815 |    📝 Normalized name: 'exotic pump' (from span_text: 'exotic pump')
+2026-02-26 09:09:36,999 | INFO     | soap_generator | process_transcription:2842 | Generating SOAP note...
+2026-02-26 09:09:36,999 | INFO     | soap_generator | process_entity_by_route_async:1579 |   📦 Batch intent (default): using search_term 'Easotic ear drops'
+2026-02-26 09:09:36,999 | INFO     | soap_generator | process_transcription:2843 | Conversation length being sent to LLM: 624 characters
+2026-02-26 09:09:36,999 | INFO     | soap_generator | process_entity_by_route_async:1634 |   🔍 Starting LOCAL-ONLY search (local inventory + local services)
+2026-02-26 09:09:37,000 | INFO     | soap_generator | process_transcription:2844 | Estimated conversation tokens: 156 tokens
+2026-02-26 09:09:37,000 | INFO     | soap_generator | process_entity_by_route_async:1635 |      Search term: 'Easotic ear drops' (ASR-corrected: True)
+2026-02-26 09:09:37,000 | INFO     | soap_generator | generate_soap_note:2128 | 🕐 Starting SOAP note generation at 09:09:37
+2026-02-26 09:09:37,000 | DEBUG    | soap_generator | _ground_one:4092 |    🔍 Grounding entity 7: 'Cefpet syrup'
+2026-02-26 09:09:37,000 | INFO     | soap_generator | process_single_entity_async:693 | 🔍 [ASYNC] PROCESSING ENTITY 7/8: 'Cefpet syrup'
+2026-02-26 09:09:37,000 | INFO     | soap_generator | process_single_entity_async:694 |    Kind: Medication, KB Kind: Medication, Source: N/A
+2026-02-26 09:09:37,000 | INFO     | soap_generator | process_single_entity_async:814 |    📍 Route Classification: dual_sync
+2026-02-26 09:09:37,000 | INFO     | soap_generator | process_single_entity_async:815 |    📝 Normalized name: 'Cefpet syrup' (from span_text: 'Cefpet syrup')
+2026-02-26 09:09:37,000 | INFO     | soap_generator | process_entity_by_route_async:1579 |   📦 Batch intent (default): using search_term 'Cefpodoxime syrup'
+2026-02-26 09:09:37,000 | INFO     | soap_generator | process_entity_by_route_async:1634 |   🔍 Starting LOCAL-ONLY search (local inventory + local services)
+2026-02-26 09:09:37,001 | INFO     | soap_generator | process_entity_by_route_async:1635 |      Search term: 'Cefpodoxime syrup' (ASR-corrected: True)
+2026-02-26 09:09:37,000 | INFO     | soap_generator | generate_soap_note:2156 | 📊 Transcript tokens (prompt): ~156
+2026-02-26 09:09:37,001 | DEBUG    | soap_generator | _ground_one:4092 |    🔍 Grounding entity 8: 'ear swab for culture and sensitivity'
+2026-02-26 09:09:37,001 | INFO     | soap_generator | process_single_entity_async:693 | 🔍 [ASYNC] PROCESSING ENTITY 8/8: 'ear swab for culture and sensitivity'
+2026-02-26 09:09:37,001 | INFO     | soap_generator | process_single_entity_async:694 |    Kind: Diagnostic, KB Kind: Diagnostic, Source: N/A
+2026-02-26 09:09:37,001 | INFO     | soap_generator | generate_soap_note:2157 | 📊 Dynamic max_tokens: 2000 (min: 2000, max: 6000)
+2026-02-26 09:09:37,001 | INFO     | soap_generator | generate_soap_note:2203 | Sending request to OpenAI (attempt 1/2)
+2026-02-26 09:09:37,002 | DEBUG    | soap_generator | get_client_for_model:375 | 🔍 Model 'gpt-4.1-nano' → Provider: openai
+2026-02-26 09:09:37,007 | INFO     | soap_generator | get_client_for_model:401 | ✅ Created OpenAI client for 'gpt-4.1-nano' (OpenAI endpoint, key: sk-proj-xK...)
+2026-02-26 09:09:37,007 | DEBUG    | soap_generator | get_client_for_model:403 |    Client base_url: https://api.openai.com/v1/
+2026-02-26 09:09:37,008 | INFO     | soap_generator | get_client_for_model:401 | ✅ Created OpenAI client for 'gpt-4.1-nano' (OpenAI endpoint, key: sk-proj-xK...)
+2026-02-26 09:09:37,009 | DEBUG    | soap_generator | get_client_for_model:403 |    Client base_url: https://api.openai.com/v1/
+2026-02-26 09:09:37,008 | INFO     | soap_generator | get_client_for_model:401 | ✅ Created OpenAI client for 'gpt-4.1-nano' (OpenAI endpoint, key: sk-proj-xK...)
+2026-02-26 09:09:37,010 | DEBUG    | soap_generator | get_client_for_model:403 |    Client base_url: https://api.openai.com/v1/
+2026-02-26 09:09:37,012 | INFO     | soap_generator | get_client_for_model:401 | ✅ Created OpenAI client for 'gpt-4.1-nano' (OpenAI endpoint, key: sk-proj-xK...)
+2026-02-26 09:09:37,012 | DEBUG    | soap_generator | get_client_for_model:403 |    Client base_url: https://api.openai.com/v1/
+2026-02-26 09:09:37,014 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 09:09:37,026 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 09:09:37,032 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 09:09:37,035 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 09:09:37,421 | DEBUG    | soap_generator | search_local_services_topk:1228 |   📊 Vector embedding used for service 'Easotic ear drops' (cached or precomputed)
+2026-02-26 09:09:37,443 | DEBUG    | soap_generator | search_local_services_topk:1228 |   📊 Vector embedding used for service 'Cefpodoxime syrup' (cached or precomputed)
+2026-02-26 09:09:37,458 | DEBUG    | soap_generator | search_local_inventory_topk:627 |   📊 Vector embedding used for 'Cefpodoxime syrup' (cached or precomputed)
+2026-02-26 09:09:37,512 | DEBUG    | soap_generator | search_local_inventory_topk:627 |   📊 Vector embedding used for 'Easotic ear drops' (cached or precomputed)
+2026-02-26 09:09:37,529 | DEBUG    | soap_generator | search_local_inventory_topk:970 |   🔄 Replaced candidate for stock_id 41989: score 0.756 → 0.762 (search_term: 'Cefpodoxime')
+2026-02-26 09:09:37,529 | DEBUG    | soap_generator | search_local_inventory_topk:970 |   🔄 Replaced candidate for stock_id 41990: score 0.708 → 0.730 (search_term: 'Cefpodoxime')
+2026-02-26 09:09:37,543 | DEBUG    | soap_generator | search_local_inventory_topk:970 |   🔄 Replaced candidate for stock_id 41991: score 0.749 → 0.857 (search_term: 'Cefpet')
+2026-02-26 09:09:37,544 | DEBUG    | soap_generator | search_local_inventory_topk:970 |   🔄 Replaced candidate for stock_id 41989: score 0.762 → 0.886 (search_term: 'Cefpet')
+2026-02-26 09:09:37,544 | DEBUG    | soap_generator | search_local_inventory_topk:970 |   🔄 Replaced candidate for stock_id 41990: score 0.730 → 0.839 (search_term: 'Cefpet')
+2026-02-26 09:09:37,544 | DEBUG    | soap_generator | search_local_inventory_topk:970 |   🔄 Replaced candidate for stock_id 42000: score 0.825 → 0.855 (search_term: 'Cefpet')
+2026-02-26 09:09:37,550 | DEBUG    | soap_generator | search_local_inventory_topk:970 |   🔄 Replaced candidate for stock_id 41358: score 0.827 → 0.917 (search_term: 'Easotic')
+2026-02-26 09:09:37,557 | DEBUG    | soap_generator | apply_decision_flow:991 |   🔍 Decision Flow: 'Cefpet syrup' classified as SPECIFIC
+2026-02-26 09:09:37,557 | INFO     | soap_generator | apply_decision_flow:1023 |    📊 MATCHING SCORES BREAKDOWN (Top 5 candidates):
+2026-02-26 09:09:37,558 | INFO     | soap_generator | apply_decision_flow:1024 |       Vector matching: ✅ ENABLED
+2026-02-26 09:09:37,558 | INFO     | soap_generator | apply_decision_flow:1046 |       1. CeFET CLV 325 10 Tab Dogs Cats (ID: 41989)
+2026-02-26 09:09:37,558 | INFO     | soap_generator | apply_decision_flow:1047 |          Trigram: 0.500 | Phonetic: 0.8 | Vector: 0.483 | Match: 0.829 (MAX)
+2026-02-26 09:09:37,558 | INFO     | soap_generator | apply_decision_flow:1046 |       2. CefPET 100 mg 10 Tab Veterinary (ID: 41991)
+2026-02-26 09:09:37,558 | INFO     | soap_generator | apply_decision_flow:1047 |          Trigram: 0.368 | Phonetic: 0.8 | Vector: 0.507 | Match: 0.806 (MAX)
+2026-02-26 09:09:37,558 | INFO     | soap_generator | apply_decision_flow:1046 |       3. CefPET Dry Syrup 12.95 g/30 ml Veterinary (ID: 42000)
+2026-02-26 09:09:37,558 | INFO     | soap_generator | apply_decision_flow:1047 |          Trigram: 0.304 | Phonetic: 0.8 | Vector: 0.598 | Match: 0.804 (MAX)
+2026-02-26 09:09:37,558 | INFO     | soap_generator | apply_decision_flow:1046 |       4. Rudraksha Bioceuticals CefPET XL 200 mg 10 Tab Veterinary (ID: 41990)
+2026-02-26 09:09:37,558 | INFO     | soap_generator | apply_decision_flow:1047 |          Trigram: 0.292 | Phonetic: 0.8 | Vector: 0.443 | Match: 0.791 (MAX)
+2026-02-26 09:09:37,558 | INFO     | soap_generator | apply_decision_flow:1063 |    🎯 TOP CANDIDATES BY METHOD:
+2026-02-26 09:09:37,558 | INFO     | soap_generator | apply_decision_flow:1064 |       Top TRIGRAM: CeFET CLV 325 10 Tab Dogs Cats (ID: 41989, score: 0.500)
+2026-02-26 09:09:37,558 | INFO     | soap_generator | apply_decision_flow:1065 |       Top PHONETIC: CeFET CLV 325 10 Tab Dogs Cats (ID: 41989, score: 0.8)
+2026-02-26 09:09:37,558 | INFO     | soap_generator | apply_decision_flow:1067 |       Top VECTOR: CefPET Dry Syrup 12.95 g/30 ml Veterinary (ID: 42000, score: 0.598)
+2026-02-26 09:09:37,558 | INFO     | soap_generator | apply_decision_flow:1103 |    ❌ OPTION A (3/3 AGREEMENT): FAILED
+2026-02-26 09:09:37,558 | INFO     | soap_generator | apply_decision_flow:1104 |       Trigram ID: 41989, Phonetic ID: 41989, Vector ID: 42000
+2026-02-26 09:09:37,558 | INFO     | soap_generator | apply_decision_flow:1105 |       IDs do not match - cannot auto-accept
+2026-02-26 09:09:37,563 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 09:09:37,571 | DEBUG    | soap_generator | apply_decision_flow:991 |   🔍 Decision Flow: 'exotic pump' classified as SPECIFIC
+2026-02-26 09:09:37,571 | INFO     | soap_generator | apply_decision_flow:1023 |    📊 MATCHING SCORES BREAKDOWN (Top 5 candidates):
+2026-02-26 09:09:37,571 | INFO     | soap_generator | apply_decision_flow:1024 |       Vector matching: ✅ ENABLED
+2026-02-26 09:09:37,571 | INFO     | soap_generator | apply_decision_flow:1046 |       1. EASOTIC 10ML (ID: 41358)
+2026-02-26 09:09:37,571 | INFO     | soap_generator | apply_decision_flow:1047 |          Trigram: 0.615 | Phonetic: 0.8 | Vector: 0.699 | Match: 0.853 (MAX)
+2026-02-26 09:09:37,571 | INFO     | soap_generator | apply_decision_flow:1046 |       2. Veko Otikoo Ear Drops 0.3% 15 ml (ID: 42380)
+2026-02-26 09:09:37,571 | INFO     | soap_generator | apply_decision_flow:1047 |          Trigram: 0.588 | Phonetic: 0.6 | Vector: 0.540 | Match: 0.746 (MAX)
+2026-02-26 09:09:37,571 | INFO     | soap_generator | apply_decision_flow:1046 |       3. OTIREL EAR DROPS 15M (ID: 40538)
+2026-02-26 09:09:37,571 | INFO     | soap_generator | apply_decision_flow:1047 |          Trigram: 0.476 | Phonetic: 0.4 | Vector: 0.558 | Match: 0.707 (MAX)
+2026-02-26 09:09:37,571 | INFO     | soap_generator | apply_decision_flow:1046 |       4. LIV 52 DROPS (ID: 40885)
+2026-02-26 09:09:37,571 | INFO     | soap_generator | apply_decision_flow:1047 |          Trigram: 0.353 | Phonetic: 0.5 | Vector: 0.305 | Match: 0.698 (MAX)
+2026-02-26 09:09:37,571 | INFO     | soap_generator | apply_decision_flow:1046 |       5. Eversh Tears 10 ml (ID: 42331)
+2026-02-26 09:09:37,571 | INFO     | soap_generator | apply_decision_flow:1047 |          Trigram: 0.250 | Phonetic: 0.3 | Vector: 0.522 | Match: 0.669 (MAX)
+2026-02-26 09:09:37,571 | INFO     | soap_generator | apply_decision_flow:1063 |    🎯 TOP CANDIDATES BY METHOD:
+2026-02-26 09:09:37,571 | INFO     | soap_generator | apply_decision_flow:1064 |       Top TRIGRAM: EASOTIC 10ML (ID: 41358, score: 0.615)
+2026-02-26 09:09:37,571 | INFO     | soap_generator | apply_decision_flow:1065 |       Top PHONETIC: EASOTIC 10ML (ID: 41358, score: 0.8)
+2026-02-26 09:09:37,571 | INFO     | soap_generator | apply_decision_flow:1067 |       Top VECTOR: EASOTIC 10ML (ID: 41358, score: 0.699)
+2026-02-26 09:09:37,571 | INFO     | soap_generator | apply_decision_flow:1090 |    ❌ OPTION A (3/3 AGREEMENT): FAILED (hard floor) (max(trigram=0.615, vector=0.699) < 0.70)
+2026-02-26 09:09:37,576 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 09:09:37,790 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 09:09:37,807 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 09:09:38,027 | INFO     | soap_generator | apply_decision_flow:1171 |    🔍 OPTION B (DETERMINISTIC GATES):
+2026-02-26 09:09:38,027 | INFO     | soap_generator | apply_decision_flow:1172 |       Top candidate: 'EASOTIC 10ML' (score: 0.853)
+2026-02-26 09:09:38,027 | INFO     | soap_generator | apply_decision_flow:1174 |       Second candidate: 'Veko Otikoo Ear Drops 0.3% 15 ml' (score: 0.746)
+2026-02-26 09:09:38,027 | INFO     | soap_generator | apply_decision_flow:1175 |       Margin: 0.108
+2026-02-26 09:09:38,028 | INFO     | soap_generator | apply_decision_flow:1189 |    ❌ OPTION B1: FAILED (score 0.853 < 0.88)
+2026-02-26 09:09:38,028 | INFO     | soap_generator | apply_decision_flow:1260 |    ❌ OPTION B2: FAILED (hard floor) (max(trigram=0.615, vector=0.699) < 0.70)
+2026-02-26 09:09:38,028 | INFO     | soap_generator | apply_decision_flow:1290 |    ❌ OPTION B3: FAILED (score 0.853 < 0.88)
+2026-02-26 09:09:38,028 | INFO     | soap_generator | apply_decision_flow:1336 |    🧠 OPTION C (LLM JUDGE): All deterministic gates failed - calling LLM judge
+2026-02-26 09:09:38,028 | DEBUG    | soap_generator | disambiguate_local_match_v2:1570 |   🧠 LLM Judge (Option C): Disambiguating 'exotic pump' with 5 candidates
+2026-02-26 09:09:38,030 | INFO     | soap_generator | apply_decision_flow:1171 |    🔍 OPTION B (DETERMINISTIC GATES):
+2026-02-26 09:09:38,030 | INFO     | soap_generator | apply_decision_flow:1172 |       Top candidate: 'CeFET CLV 325 10 Tab Dogs Cats' (score: 0.829)
+2026-02-26 09:09:38,030 | INFO     | soap_generator | apply_decision_flow:1174 |       Second candidate: 'CefPET 100 mg 10 Tab Veterinary' (score: 0.806)
+2026-02-26 09:09:38,031 | INFO     | soap_generator | apply_decision_flow:1175 |       Margin: 0.023
+2026-02-26 09:09:38,031 | INFO     | soap_generator | apply_decision_flow:1189 |    ❌ OPTION B1: FAILED (score 0.829 < 0.88)
+2026-02-26 09:09:38,031 | INFO     | soap_generator | apply_decision_flow:1274 |    ❌ OPTION B2: FAILED (margin 0.023 < 0.08)
+2026-02-26 09:09:38,031 | INFO     | soap_generator | apply_decision_flow:1290 |    ❌ OPTION B3: FAILED (score 0.829 < 0.88)
+2026-02-26 09:09:38,031 | INFO     | soap_generator | apply_decision_flow:1336 |    🧠 OPTION C (LLM JUDGE): All deterministic gates failed - calling LLM judge
+2026-02-26 09:09:38,031 | DEBUG    | soap_generator | disambiguate_local_match_v2:1570 |   🧠 LLM Judge (Option C): Disambiguating 'Cefpet syrup' with 4 candidates
+2026-02-26 09:09:39,417 | INFO     | soap_generator | process_single_entity_async:814 |    📍 Route Classification: dual_sync
+2026-02-26 09:09:39,417 | INFO     | soap_generator | process_single_entity_async:815 |    📝 Normalized name: 'ear cleaning' (from span_text: 'ear cleaning')
+2026-02-26 09:09:39,417 | INFO     | soap_generator | process_entity_by_route_async:1579 |   📦 Batch intent (default): using search_term 'ear cleaning'
+2026-02-26 09:09:39,418 | INFO     | soap_generator | process_entity_by_route_async:1634 |   🔍 Starting LOCAL-ONLY search (local inventory + local services)
+2026-02-26 09:09:39,418 | INFO     | soap_generator | process_entity_by_route_async:1635 |      Search term: 'ear cleaning' (ASR-corrected: False)
+2026-02-26 09:09:39,429 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 09:09:39,436 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 09:09:39,488 | INFO     | soap_generator | disambiguate_local_match_v2:1771 |   ✅ LLM Judge SELECTED: 'exotic pump' → 'EASOTIC 10ML' (batched)
+2026-02-26 09:09:39,488 | INFO     | soap_generator | disambiguate_local_match_v2:1771 |   ✅ LLM Judge SELECTED: 'Cefpet syrup' → 'CeFET CLV 325 10 Tab Dogs Cats' (batched)
+2026-02-26 09:09:39,488 | DEBUG    | soap_generator | _ground_one:4120 |    ✅ Grounded entity 'exotic pump' → added to manifest (total: 3)
+2026-02-26 09:09:39,489 | DEBUG    | soap_generator | _ground_one:4120 |    ✅ Grounded entity 'Cefpet syrup' → added to manifest (total: 4)
+2026-02-26 09:09:39,657 | DEBUG    | soap_generator | search_local_inventory_topk:627 |   📊 Vector embedding used for 'ear cleaning' (cached or precomputed)
+2026-02-26 09:09:39,659 | DEBUG    | soap_generator | search_local_services_topk:1228 |   📊 Vector embedding used for service 'ear cleaning' (cached or precomputed)
+2026-02-26 09:09:39,688 | DEBUG    | soap_generator | apply_decision_flow:991 |   🔍 Decision Flow: 'ear cleaning' classified as SPECIFIC
+2026-02-26 09:09:39,688 | INFO     | soap_generator | apply_decision_flow:1023 |    📊 MATCHING SCORES BREAKDOWN (Top 5 candidates):
+2026-02-26 09:09:39,688 | INFO     | soap_generator | apply_decision_flow:1024 |       Vector matching: ✅ ENABLED
+2026-02-26 09:09:39,688 | INFO     | soap_generator | apply_decision_flow:1046 |       1. EYE FLUSH (ID: 1027)
+2026-02-26 09:09:39,688 | INFO     | soap_generator | apply_decision_flow:1047 |          Trigram: 0.538 | Phonetic: 0.6 | Vector: 0.327 | Match: 0.813 (MAX)
+2026-02-26 09:09:39,688 | INFO     | soap_generator | apply_decision_flow:1046 |       2. EAR FLUSH UNDER GA (ID: 1015)
+2026-02-26 09:09:39,688 | INFO     | soap_generator | apply_decision_flow:1047 |          Trigram: 0.143 | Phonetic: 0.8 | Vector: 0.461 | Match: 0.758 (MAX)
+2026-02-26 09:09:39,688 | INFO     | soap_generator | apply_decision_flow:1046 |       3. ENEMA WITH FLUSH (ID: 1026)
+2026-02-26 09:09:39,688 | INFO     | soap_generator | apply_decision_flow:1047 |          Trigram: 0.350 | Phonetic: 0.4 | Vector: 0.262 | Match: 0.698 (MAX)
+2026-02-26 09:09:39,688 | INFO     | soap_generator | apply_decision_flow:1046 |       4. ABSCESS FLUSH (ID: 1017)
+2026-02-26 09:09:39,688 | INFO     | soap_generator | apply_decision_flow:1047 |          Trigram: 0.333 | Phonetic: 0.3 | Vector: 0.329 | Match: 0.671 (MAX)
+2026-02-26 09:09:39,688 | INFO     | soap_generator | apply_decision_flow:1063 |    🎯 TOP CANDIDATES BY METHOD:
+2026-02-26 09:09:39,688 | INFO     | soap_generator | apply_decision_flow:1064 |       Top TRIGRAM: EYE FLUSH (ID: 1027, score: 0.538)
+2026-02-26 09:09:39,688 | INFO     | soap_generator | apply_decision_flow:1065 |       Top PHONETIC: EAR FLUSH UNDER GA (ID: 1015, score: 0.8)
+2026-02-26 09:09:39,688 | INFO     | soap_generator | apply_decision_flow:1067 |       Top VECTOR: EAR FLUSH UNDER GA (ID: 1015, score: 0.461)
+2026-02-26 09:09:39,689 | INFO     | soap_generator | apply_decision_flow:1103 |    ❌ OPTION A (3/3 AGREEMENT): FAILED
+2026-02-26 09:09:39,689 | INFO     | soap_generator | apply_decision_flow:1104 |       Trigram ID: 1027, Phonetic ID: 1015, Vector ID: 1015
+2026-02-26 09:09:39,689 | INFO     | soap_generator | apply_decision_flow:1105 |       IDs do not match - cannot auto-accept
+2026-02-26 09:09:39,698 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 09:09:39,699 | INFO     | soap_generator | process_single_entity_async:814 |    📍 Route Classification: dual_sync
+2026-02-26 09:09:39,700 | INFO     | soap_generator | process_single_entity_async:815 |    📝 Normalized name: 'yeast growth' (from span_text: 'yeast growth')
+2026-02-26 09:09:39,700 | INFO     | soap_generator | process_entity_by_route_async:1579 |   📦 Batch intent (default): using search_term 'yeast infection'
+2026-02-26 09:09:39,700 | INFO     | soap_generator | process_entity_by_route_async:1634 |   🔍 Starting LOCAL-ONLY search (local inventory + local services)
+2026-02-26 09:09:39,700 | INFO     | soap_generator | process_entity_by_route_async:1635 |      Search term: 'yeast infection' (ASR-corrected: True)
+2026-02-26 09:09:39,709 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 09:09:39,714 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 09:09:39,967 | INFO     | soap_generator | apply_decision_flow:1171 |    🔍 OPTION B (DETERMINISTIC GATES):
+2026-02-26 09:09:39,967 | INFO     | soap_generator | apply_decision_flow:1172 |       Top candidate: 'EYE FLUSH' (score: 0.813)
+2026-02-26 09:09:39,967 | INFO     | soap_generator | apply_decision_flow:1174 |       Second candidate: 'EAR FLUSH UNDER GA' (score: 0.758)
+2026-02-26 09:09:39,967 | INFO     | soap_generator | apply_decision_flow:1175 |       Margin: 0.056
+2026-02-26 09:09:39,967 | INFO     | soap_generator | apply_decision_flow:1189 |    ❌ OPTION B1: FAILED (score 0.813 < 0.92)
+2026-02-26 09:09:39,967 | INFO     | soap_generator | apply_decision_flow:1277 |    ❌ OPTION B2: FAILED (agreements: trigram, need 2+ with trigram/phonetic)
+2026-02-26 09:09:39,967 | INFO     | soap_generator | apply_decision_flow:1290 |    ❌ OPTION B3: FAILED (score 0.813 < 0.92)
+2026-02-26 09:09:39,968 | INFO     | soap_generator | apply_decision_flow:1336 |    🧠 OPTION C (LLM JUDGE): All deterministic gates failed - calling LLM judge
+2026-02-26 09:09:39,969 | DEBUG    | soap_generator | disambiguate_local_match_v2:1570 |   🧠 LLM Judge (Option C): Disambiguating 'ear cleaning' with 4 candidates
+2026-02-26 09:09:39,968 | DEBUG    | soap_generator | search_local_inventory_topk:627 |   📊 Vector embedding used for 'yeast infection' (cached or precomputed)
+2026-02-26 09:09:39,987 | DEBUG    | soap_generator | search_local_services_topk:1228 |   📊 Vector embedding used for service 'yeast infection' (cached or precomputed)
+2026-02-26 09:09:40,040 | INFO     | soap_generator | process_single_entity_async:814 |    📍 Route Classification: dual_sync
+2026-02-26 09:09:40,040 | INFO     | soap_generator | process_single_entity_async:815 |    📝 Normalized name: 'bus inside the left ear' (from span_text: 'bus inside the left ear')
+2026-02-26 09:09:40,041 | INFO     | soap_generator | process_entity_by_route_async:1579 |   📦 Batch intent (default): using search_term 'foreign body in ear'
+2026-02-26 09:09:40,041 | INFO     | soap_generator | process_entity_by_route_async:1634 |   🔍 Starting LOCAL-ONLY search (local inventory + local services)
+2026-02-26 09:09:40,041 | INFO     | soap_generator | process_entity_by_route_async:1635 |      Search term: 'foreign body in ear' (ASR-corrected: True)
+2026-02-26 09:09:40,052 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 09:09:40,054 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 09:09:40,115 | DEBUG    | soap_generator | search_local_inventory_topk:970 |   🔄 Replaced candidate for stock_id 42287: score 0.637 → 0.730 (search_term: 'fungal infection')
+2026-02-26 09:09:40,116 | INFO     | soap_generator | process_entity_by_route_async:1988 |   ⏭️ Skipped LLM judge for low-stakes kind 'Diagnosis' 'yeast growth' → selected best local match: 'AST KIT' (score: 0.602, includes domain + suggestion boost)
+2026-02-26 09:09:40,116 | DEBUG    | soap_generator | _ground_one:4120 |    ✅ Grounded entity 'yeast growth' → added to manifest (total: 5)
+2026-02-26 09:09:40,193 | INFO     | soap_generator | process_single_entity_async:814 |    📍 Route Classification: dual_sync
+2026-02-26 09:09:40,193 | INFO     | soap_generator | process_single_entity_async:815 |    📝 Normalized name: 'ear swab for culture and sensitivity' (from span_text: 'ear swab for culture and sensitivity')
+2026-02-26 09:09:40,193 | INFO     | soap_generator | process_entity_by_route_async:1579 |   📦 Batch intent (default): using search_term 'ear swab culture'
+2026-02-26 09:09:40,193 | INFO     | soap_generator | process_entity_by_route_async:1634 |   🔍 Starting LOCAL-ONLY search (local inventory + local services)
+2026-02-26 09:09:40,194 | INFO     | soap_generator | process_entity_by_route_async:1635 |      Search term: 'ear swab culture' (ASR-corrected: True)
+2026-02-26 09:09:40,203 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 09:09:40,206 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 09:09:40,283 | DEBUG    | soap_generator | search_local_inventory_topk:627 |   📊 Vector embedding used for 'foreign body in ear' (cached or precomputed)
+2026-02-26 09:09:40,452 | DEBUG    | soap_generator | search_local_services_topk:1228 |   📊 Vector embedding used for service 'foreign body in ear' (cached or precomputed)
+2026-02-26 09:09:40,454 | DEBUG    | soap_generator | search_local_services_topk:1228 |   📊 Vector embedding used for service 'ear swab culture' (cached or precomputed)
+2026-02-26 09:09:40,471 | INFO     | soap_generator | process_entity_by_route_async:1988 |   ⏭️ Skipped LLM judge for low-stakes kind 'Diagnosis' 'bus inside the left ear' → selected best local match: 'EAR CLEANING DOCTOR' (score: 0.646, includes domain + suggestion boost)
+2026-02-26 09:09:40,471 | DEBUG    | soap_generator | _ground_one:4120 |    ✅ Grounded entity 'bus inside the left ear' → added to manifest (total: 6)
+2026-02-26 09:09:40,591 | DEBUG    | soap_generator | search_local_inventory_topk:627 |   📊 Vector embedding used for 'ear swab culture' (cached or precomputed)
+2026-02-26 09:09:40,598 | DEBUG    | soap_generator | apply_decision_flow:991 |   🔍 Decision Flow: 'ear swab for culture and sensitivity' classified as SPECIFIC
+2026-02-26 09:09:40,598 | INFO     | soap_generator | apply_decision_flow:1023 |    📊 MATCHING SCORES BREAKDOWN (Top 5 candidates):
+2026-02-26 09:09:40,598 | INFO     | soap_generator | apply_decision_flow:1024 |       Vector matching: ✅ ENABLED
+2026-02-26 09:09:40,598 | INFO     | soap_generator | apply_decision_flow:1046 |       1. EAR MITE TEST (ID: 957)
+2026-02-26 09:09:40,598 | INFO     | soap_generator | apply_decision_flow:1047 |          Trigram: 0.148 | Phonetic: 0.8 | Vector: 0.484 | Match: 0.748 (MAX)
+2026-02-26 09:09:40,598 | INFO     | soap_generator | apply_decision_flow:1063 |    🎯 TOP CANDIDATES BY METHOD:
+2026-02-26 09:09:40,598 | INFO     | soap_generator | apply_decision_flow:1064 |       Top TRIGRAM: EAR MITE TEST (ID: 957, score: 0.148)
+2026-02-26 09:09:40,598 | INFO     | soap_generator | apply_decision_flow:1065 |       Top PHONETIC: EAR MITE TEST (ID: 957, score: 0.8)
+2026-02-26 09:09:40,598 | INFO     | soap_generator | apply_decision_flow:1067 |       Top VECTOR: EAR MITE TEST (ID: 957, score: 0.484)
+2026-02-26 09:09:40,598 | INFO     | soap_generator | apply_decision_flow:1090 |    ❌ OPTION A (3/3 AGREEMENT): FAILED (hard floor) (max(trigram=0.148, vector=0.484) < 0.70)
+2026-02-26 09:09:40,608 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 09:09:40,701 | INFO     | soap_generator | disambiguate_local_match_v2:1771 |   ✅ LLM Judge SELECTED: 'ear cleaning' → 'EAR FLUSH UNDER GA' (batched)
+2026-02-26 09:09:40,702 | DEBUG    | soap_generator | _ground_one:4120 |    ✅ Grounded entity 'ear cleaning' → added to manifest (total: 7)
+2026-02-26 09:09:40,850 | INFO     | soap_generator | apply_decision_flow:1171 |    🔍 OPTION B (DETERMINISTIC GATES):
+2026-02-26 09:09:40,851 | INFO     | soap_generator | apply_decision_flow:1172 |       Top candidate: 'EAR MITE TEST' (score: 0.748)
+2026-02-26 09:09:40,851 | INFO     | soap_generator | apply_decision_flow:1189 |    ❌ OPTION B1: FAILED (score 0.748 < 0.92)
+2026-02-26 09:09:40,851 | INFO     | soap_generator | apply_decision_flow:1260 |    ❌ OPTION B2: FAILED (hard floor) (max(trigram=0.148, vector=0.484) < 0.70)
+2026-02-26 09:09:40,851 | INFO     | soap_generator | apply_decision_flow:1290 |    ❌ OPTION B3: FAILED (score 0.748 < 0.92)
+2026-02-26 09:09:40,851 | INFO     | soap_generator | apply_decision_flow:1336 |    🧠 OPTION C (LLM JUDGE): All deterministic gates failed - calling LLM judge
+2026-02-26 09:09:40,851 | DEBUG    | soap_generator | disambiguate_local_match_v2:1570 |   🧠 LLM Judge (Option C): Disambiguating 'ear swab for culture and sensitivity' with 1 candidates
+2026-02-26 09:09:41,608 | INFO     | soap_generator | disambiguate_local_match_v2:1775 |   🚫 LLM Judge REJECTED: 'ear swab for culture and sensitivity' (batched NONE/NONE_GENERIC)
+2026-02-26 09:09:41,608 | WARNING  | soap_generator | process_entity_by_route_async:2081 |   🚫 Dual-Sync: local candidates rejected for 'ear swab for culture and sensitivity'. Preserving as unlinked (preventing global-only hallucination).
+2026-02-26 09:09:41,609 | INFO     | soap_generator | process_entity_by_route_async:2095 |   ✅ Captured 1 suggestions for 'ear swab for culture and sensitivity': ['EAR MITE TEST']
+2026-02-26 09:09:41,609 | DEBUG    | soap_generator | _ground_one:4120 |    ✅ Grounded entity 'ear swab for culture and sensitivity' → added to manifest (total: 8)
+2026-02-26 09:09:41,609 | INFO     | soap_generator | _run_billing_pipeline_async:4313 |   ✅ Billing pipeline complete: 8 entities in manifest
+2026-02-26 09:09:44,443 | INFO     | soap_generator | generate_soap_note:2227 | SOAP note generated successfully
+2026-02-26 09:09:44,444 | INFO     | soap_generator | generate_soap_note:2228 | ✅ SOAP note generation completed (took 7.44s)
+2026-02-26 09:09:44,444 | INFO     | soap_generator | generate_soap_note:2229 | 📊 Input length: 624 characters
+2026-02-26 09:09:44,444 | INFO     | soap_generator | generate_soap_note:2230 | 📊 Output length: 2140 characters
+2026-02-26 09:09:44,448 | INFO     | soap_generator | save_output:1216 | Output saved successfully: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/soap_note_20260226_090923.txt (2140 characters)
+2026-02-26 09:09:44,448 | INFO     | soap_generator | process_transcription:2869 | SOAP note generation completed successfully
+2026-02-26 09:09:44,449 | INFO     | soap_generator | process_transcription:2876 | SOAP note (JSON) saved to: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/soap_note_20260226_090923.json
+2026-02-26 09:09:44,450 | INFO     | soap_generator | generate_soap_note_from_audio_async:4447 | ✅ Billing pipeline (CER + grounding) completed
+2026-02-26 09:09:44,450 | INFO     | soap_generator | generate_soap_note_from_audio_async:4466 | ✅ Billing pipeline: 8 entities in manifest
+2026-02-26 09:09:44,452 | INFO     | soap_generator | generate_soap_note_from_audio_async:4473 |   📄 Grounding layer output: 6 records → /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/grounding_layer_output_20260226_090923.json
+2026-02-26 09:09:44,452 | INFO     | soap_generator | generate_soap_note_from_audio_async:4617 | ✅ SOAP note already saved to: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/soap_note_20260226_090923.txt
+2026-02-26 09:09:44,453 | INFO     | soap_generator | generate_soap_note_from_audio_async:4630 | ✅ SOAP note (JSON) saved to: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/soap_note_20260226_090923.json
+2026-02-26 09:09:44,454 | INFO     | soap_generator | generate_soap_note_from_audio_async:4651 | ✅ Entity manifest saved to: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/entity_manifest_20260226_090923.json (8 entities)
+2026-02-26 09:09:44,460 | INFO     | soap_generator | generate_soap_note_from_audio_async:4691 | 🧬 Phase 2 Knowledge Atom extraction started (pre-extraction: parallel with constraint injection)
+2026-02-26 09:09:44,460 | INFO     | soap_generator | generate_soap_note_from_audio_async:4720 | ⏭️ Skipping post-SOAP injection; using Brain NER/grounded manifest output directly.
+2026-02-26 09:09:44,461 | INFO     | soap_generator | generate_soap_note_from_audio_async:4788 | 🧬 Phase 2 running in background (non-blocking); SOAP pipeline will not wait.
+2026-02-26 09:09:44,461 | WARNING  | soap_generator | generate_soap_note_from_audio_async:4830 | ⚠️ Could not import SOAPTranscriptLoader: No module named 'soap_transcript_loader'
+2026-02-26 09:09:44,462 | INFO     | soap_generator | generate_soap_note_from_audio_async:4836 | ✅ Structured transcript (fallback) saved to: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/structured_transcript_20260226_090923.json
+2026-02-26 09:09:44,463 | INFO     | soap_generator | generate_soap_note_from_audio_async:4850 | ✅ Async pipeline completed in 21.12s
+2026-02-26 09:09:44,463 | INFO     | soap_generator | generate_soap_note_from_audio_async:4876 | ⏱️ Stage Wall-Clock (s): transcription=4.13, superpass=9.51, soap_pipeline=7.46, billing_pipeline=4.62, grounding_tail_after_soap=0.00, phase2=n/a, total=21.12
+2026-02-26 09:09:44,463 | INFO     | soap_generator | extract_knowledge_atoms_async:1546 | ============================================================
+2026-02-26 09:09:44,463 | INFO     | soap_generator | extract_knowledge_atoms_async:1547 | 🧬 PHASE 2: KNOWLEDGE ATOM EXTRACTION
+2026-02-26 09:09:44,463 | INFO     | soap_generator | extract_knowledge_atoms_async:1548 | ============================================================
+2026-02-26 09:09:44,463 | INFO     | soap_generator | extract_knowledge_atoms_async:1549 |   Model: gpt-4.1-mini (openai)
+2026-02-26 09:09:44,463 | INFO     | soap_generator | extract_knowledge_atoms_async:1550 |   Session ID: feaf2570-d4e6-4cce-a249-707043b851e0
+2026-02-26 09:09:44,463 | INFO     | soap_generator | extract_knowledge_atoms_async:1551 |   Entity manifest: 8 entities
+2026-02-26 09:09:44,463 | INFO     | soap_generator | extract_knowledge_atoms_async:1552 |   SOAP note length: 2140 chars
+2026-02-26 09:09:44,467 | INFO     | soap_generator | extract_knowledge_atoms_async:1565 |   ✅ Loaded KB schema: 6 assertion types, 15 kinds (cache_hit=False)
+2026-02-26 09:09:44,479 | DEBUG    | soap_generator | get_client_for_model:375 | 🔍 Model 'gpt-4.1-mini' → Provider: openai
+2026-02-26 09:09:44,489 | INFO     | soap_generator | get_client_for_model:401 | ✅ Created OpenAI client for 'gpt-4.1-mini' (OpenAI endpoint, key: sk-proj-xK...)
+2026-02-26 09:09:44,490 | DEBUG    | soap_generator | get_client_for_model:403 |    Client base_url: https://api.openai.com/v1/
+2026-02-26 09:09:44,490 | INFO     | soap_generator | extract_knowledge_atoms_async:1588 |   Provider resolved: openai
+2026-02-26 09:09:44,490 | INFO     | soap_generator | extract_knowledge_atoms_async:1633 |   📋 Phase 2 clinical core only: 837 chars (full SOAP 2140 chars)
+2026-02-26 09:09:44,490 | INFO     | soap_generator | extract_knowledge_atoms_async:1764 |   ⚡ Phase 2 minimal mode: single-call extraction (assertion + attributes)
+2026-02-26 09:09:44,490 | INFO     | soap_generator | extract_knowledge_atoms_async:1779 |   🧠 Phase 2 dynamic max_tokens=4800 (soap_chars=837, entities=8, floor=3200, ceil=10000)
+2026-02-26 09:09:50,911 | INFO     | soap_generator | extract_knowledge_atoms_async:1841 |   📊 Verification dashboard built: 14 items across 7 modules
+2026-02-26 09:09:50,913 | INFO     | soap_generator | extract_knowledge_atoms_async:1936 |   ✅ Knowledge atoms saved to: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/knowledge_atoms_20260226_090923.json
+2026-02-26 09:09:50,914 | INFO     | soap_generator | extract_knowledge_atoms_async:1945 |   ✅ Verification dashboard saved to: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/verification_dashboard_20260226_090923.json
+2026-02-26 09:09:50,914 | INFO     | soap_generator | extract_knowledge_atoms_async:1960 |   ✅ Phase 2 complete: 5 atoms extracted in 6.45s
+2026-02-26 09:09:50,914 | INFO     | soap_generator | _phase2_done_callback:4776 | ✅ Phase 2 complete (background): 5 knowledge atoms extracted
+2026-02-26 09:09:50,914 | INFO     | soap_generator | generate_soap_note_from_audio_async:4897 | ✅ Phase 2 background task completed before pipeline exit

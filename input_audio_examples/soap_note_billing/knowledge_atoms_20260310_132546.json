@@ -1,0 +1,188 @@
+{
+  "knowledge_atoms": [
+    {
+      "concept": "Dental Sanitation",
+      "kind": "Procedure",
+      "assertion_id": "CONF",
+      "intent_context": "Performed",
+      "source_text": "Performed dental sanitation",
+      "section": "Objective",
+      "attributes": {
+        "procedure_name": "dental sanitation",
+        "status": "Performed"
+      },
+      "codes": {
+        "local_service_id": 1161
+      },
+      "local_service_id": 1161,
+      "kb_kind": "Procedure",
+      "match_method": "dual_sync_auto_bind_local"
+    },
+    {
+      "concept": "Tooth Extraction",
+      "kind": "Procedure",
+      "assertion_id": "CONF",
+      "intent_context": "Performed",
+      "source_text": "tooth extraction under anesthesia. Four teeth were extracted",
+      "section": "Objective",
+      "attributes": {
+        "procedure_name": "tooth extraction",
+        "quantity_performed": 4,
+        "status": "Performed"
+      },
+      "codes": {
+        "local_service_id": 1163
+      },
+      "local_service_id": 1163,
+      "kb_kind": "Procedure",
+      "match_method": "dual_sync_auto_bind_local"
+    },
+    {
+      "concept": "Anesthesia",
+      "kind": "Procedure",
+      "assertion_id": "CONF",
+      "intent_context": "Performed",
+      "source_text": "under anesthesia",
+      "section": "Objective",
+      "attributes": {
+        "procedure_name": "anesthesia",
+        "status": "Performed"
+      },
+      "codes": {
+        "local_service_id": 1020
+      },
+      "local_service_id": 1020,
+      "kb_kind": "Procedure",
+      "match_method": "dual_sync_auto_bind_local"
+    },
+    {
+      "concept": "Blood Test",
+      "kind": "Diagnostic",
+      "assertion_id": "CONF",
+      "intent_context": "Performed",
+      "source_text": "blood test results were normal",
+      "section": "Subjective",
+      "attributes": {
+        "test_name": "blood test",
+        "status": "Performed"
+      },
+      "codes": {
+        "local_service_id": 912
+      },
+      "local_service_id": 912,
+      "kb_kind": "Diagnostic",
+      "match_method": "dual_sync_auto_bind_local"
+    },
+    {
+      "concept": "Follow-up Appointment",
+      "kind": "Reminder",
+      "assertion_id": "CONF",
+      "intent_context": "Scheduled",
+      "source_text": "Schedule follow-up appointment to assess healing and oral health",
+      "section": "Plan",
+      "attributes": {
+        "action_item": "assess healing and oral health",
+        "due_on": null
+      },
+      "codes": {}
+    }
+  ],
+  "extraction_summary": {
+    "total_atoms": 5,
+    "confirmed": 4,
+    "negated": 0,
+    "by_kind": {
+      "Procedure": 3,
+      "Diagnostic": 1,
+      "Reminder": 1
+    }
+  },
+  "metadata": {
+    "postprocess_applied": true,
+    "session_id": "cacfa5e7-062c-4980-939e-fbd0c80495e8",
+    "visit_id": "cacfa5e7-062c-4980-939e-fbd0c80495e8",
+    "clinic_id": 1,
+    "mode": "minimal",
+    "model_provider": "openai",
+    "model_name": "gpt-4.1-mini",
+    "attempted_models": [
+      "gpt-4.1-mini"
+    ],
+    "kb_schema_loaded": true
+  },
+  "error": null,
+  "parse_error": null,
+  "raw": null,
+  "verification_dashboard": {
+    "procedures_services": [],
+    "medications_administered": [],
+    "medications_prescribed": [],
+    "diagnostics": [
+      {
+        "service_id": 912,
+        "lab_radiology": "LAB",
+        "test_name": "BLOOD TEST T4",
+        "date_of_test": "TBD",
+        "done": "In-house",
+        "sample_collected": "Yes",
+        "remarks": "blood test results were normal"
+      }
+    ],
+    "other_products_retail": [],
+    "reminders_follow_ups": [
+      {
+        "item_name": "Follow-up Appointment",
+        "item_id": "[REMINDER-XXX]",
+        "due_date": "ASAP",
+        "remarks": "assess healing and oral health",
+        "intent_context": "Scheduled",
+        "kind": "Reminder"
+      }
+    ],
+    "vitals": [],
+    "module_4_unlinked_entities": [],
+    "module_5_clinical_history": [],
+    "streamlined_dashboard": {
+      "signalment_vitals": [],
+      "clinical_assessment": [],
+      "pharmacy_administered": [],
+      "pharmacy_prescribed": [],
+      "diagnostics_labs_imaging": [
+        {
+          "name": "BLOOD TEST T4",
+          "original_mention": "BLOOD TEST T4",
+          "status": "CONFIRMED",
+          "linked_id": 912,
+          "suggestions": [],
+          "remarks": "blood test results were normal",
+          "done": "In-house",
+          "sample_collected": "Yes"
+        }
+      ],
+      "clinical_procedures_services": [],
+      "other_products_retail": [],
+      "preventive": [],
+      "patient_reminders": [],
+      "clinical_follow_ups": [
+        {
+          "name": "Follow-up Appointment",
+          "original_mention": "Follow-up Appointment",
+          "status": "DRAFTED",
+          "linked_id": "[REMINDER-XXX]",
+          "suggestions": [],
+          "due_date": "ASAP",
+          "remarks": "assess healing and oral health",
+          "is_operational": true,
+          "scheduling_data": {
+            "service_id": null,
+            "temporal_offset": "ASAP",
+            "recommended_date": null,
+            "priority": "Routine",
+            "item_id": "[REMINDER-XXX]"
+          },
+          "label": "Clinical Follow-up"
+        }
+      ]
+    }
+  }
+}

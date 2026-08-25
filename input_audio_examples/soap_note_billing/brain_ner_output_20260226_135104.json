@@ -1,0 +1,2128 @@
+[
+  {
+    "span_text": "fibroblan and esmetopril",
+    "normalized_name": "fibroblan and esmetopril",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 2551,
+    "end_char": 2575,
+    "is_actionable": true,
+    "search_term": "fibroblan and esmetopril",
+    "hints": [
+      "fibroblan and esmetopril",
+      "medication",
+      "pharmaceutical"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E9",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "fibroblan and esmetopril": 1.0,
+      "medication": 0.75,
+      "pharmaceutical": 0.7
+    },
+    "correctness_probability": 0.8,
+    "suggestion_probability": 0.8,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4309
+  },
+  {
+    "span_text": "floralana",
+    "normalized_name": "floralana",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 2647,
+    "end_char": 2656,
+    "is_actionable": true,
+    "search_term": "floralana",
+    "hints": [
+      "floralana",
+      "medication",
+      "pharmaceutical"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E10",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "floralana": 1.0,
+      "medication": 0.75,
+      "pharmaceutical": 0.7
+    },
+    "correctness_probability": 0.8,
+    "suggestion_probability": 0.8,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4309
+  },
+  {
+    "span_text": "saralana",
+    "normalized_name": "saralana",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 2738,
+    "end_char": 2746,
+    "is_actionable": true,
+    "search_term": "saralana",
+    "hints": [
+      "saralana",
+      "medication",
+      "pharmaceutical"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E11",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "saralana": 1.0,
+      "medication": 0.75,
+      "pharmaceutical": 0.7
+    },
+    "correctness_probability": 0.8,
+    "suggestion_probability": 0.8,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4309
+  },
+  {
+    "span_text": "moxeduct imidogloprid",
+    "normalized_name": "moxeduct imidogloprid",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 2812,
+    "end_char": 2833,
+    "is_actionable": true,
+    "search_term": "moxeduct imidogloprid",
+    "hints": [
+      "moxeduct imidogloprid",
+      "medication",
+      "pharmaceutical"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E12",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "moxeduct imidogloprid": 1.0,
+      "medication": 0.75,
+      "pharmaceutical": 0.7
+    },
+    "correctness_probability": 0.8,
+    "suggestion_probability": 0.8,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4309
+  },
+  {
+    "span_text": "salamitin",
+    "normalized_name": "salamitin",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 2892,
+    "end_char": 2901,
+    "is_actionable": true,
+    "search_term": "salamitin",
+    "hints": [
+      "salamitin",
+      "medication",
+      "pharmaceutical"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E13",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "salamitin": 1.0,
+      "medication": 0.75,
+      "pharmaceutical": 0.7
+    },
+    "correctness_probability": 0.8,
+    "suggestion_probability": 0.8,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4309
+  },
+  {
+    "span_text": "Florina also called Bravitu",
+    "normalized_name": "Florina (Bravitu)",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 2983,
+    "end_char": 3010,
+    "is_actionable": true,
+    "search_term": "Florina (Bravitu)",
+    "hints": [
+      "Florina (Bravitu)",
+      "Bravitu",
+      "Florina"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E14",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "Florina (Bravitu)": 1.0,
+      "Bravitu": 0.8,
+      "Florina": 0.75
+    },
+    "correctness_probability": 0.85,
+    "suggestion_probability": 0.85,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4309
+  },
+  {
+    "span_text": "Contraway Force Etching",
+    "normalized_name": "Contraway Force Etching",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "I'll prescribe a supplement. The name of the supplement is Contraway Force Etching.",
+    "start_char": 7928,
+    "end_char": 7951,
+    "is_actionable": true,
+    "search_term": "Contraway Force Etching",
+    "hints": [
+      "Contraway Force Etching",
+      "joint supplement",
+      "glucosamine"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E3",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "I'll prescribe a supplement. The name of the supplement is Contraway Force Etching.",
+    "hint_probabilities": {
+      "Contraway Force Etching": 1.0,
+      "joint supplement": 0.7,
+      "glucosamine": 0.6
+    },
+    "correctness_probability": 0.8,
+    "suggestion_probability": 0.8,
+    "query_expansion": [],
+    "_chunk_start": 6618,
+    "_chunk_end": 10428
+  },
+  {
+    "span_text": "Spirocoxin",
+    "normalized_name": "Spirocoxin",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "I will prescribe you a certain medication for the pain management.",
+    "start_char": 7983,
+    "end_char": 7993,
+    "is_actionable": true,
+    "search_term": "Spirocoxin",
+    "hints": [
+      "Spirocoxin",
+      "NSAID",
+      "anti-inflammatory"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E2",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "I will prescribe you a certain medication for the pain management.",
+    "hint_probabilities": {
+      "Spirocoxin": 1.0,
+      "NSAID": 0.9,
+      "anti-inflammatory": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 6618,
+    "_chunk_end": 10428
+  },
+  {
+    "span_text": "omega 3, omega 6 fatty acids",
+    "normalized_name": "omega 3, omega 6 fatty acids",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "I'm going to prescribe you a supplement, another supplement, omega 3, omega 6 fatty acids.",
+    "start_char": 8175,
+    "end_char": 8203,
+    "is_actionable": true,
+    "search_term": "omega 3, omega 6 fatty acids",
+    "hints": [
+      "omega 3",
+      "omega 6 fatty acids",
+      "fish oil"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E4",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "I'm going to prescribe you a supplement, another supplement, omega 3, omega 6 fatty acids.",
+    "hint_probabilities": {
+      "omega 6 fatty acids": 1.0,
+      "fish oil": 0.8
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 6618,
+    "_chunk_end": 10428
+  },
+  {
+    "span_text": "anteroposterior",
+    "normalized_name": "anteroposterior view",
+    "kind": "Procedure",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 3960,
+    "end_char": 3975,
+    "is_actionable": true,
+    "search_term": "anteroposterior view",
+    "hints": [
+      "anteroposterior view",
+      "AP view",
+      "radiographic projection"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E7",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "anteroposterior view": 1.0,
+      "AP view": 0.9,
+      "radiographic projection": 0.85
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 3309,
+    "_chunk_end": 7618
+  },
+  {
+    "span_text": "lateral",
+    "normalized_name": "lateral view",
+    "kind": "Procedure",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 3991,
+    "end_char": 3998,
+    "is_actionable": true,
+    "search_term": "lateral view",
+    "hints": [
+      "lateral view",
+      "lateral radiograph",
+      "side view"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E8",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "lateral view": 1.0,
+      "lateral radiograph": 0.9,
+      "side view": 0.85
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 3309,
+    "_chunk_end": 7618
+  },
+  {
+    "span_text": "physiotherapy",
+    "normalized_name": "physiotherapy",
+    "kind": "Procedure",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "You will have to start doing physiotherapy also.",
+    "start_char": 8847,
+    "end_char": 8860,
+    "is_actionable": true,
+    "search_term": "physiotherapy",
+    "hints": [
+      "physiotherapy",
+      "physical therapy",
+      "rehabilitation"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [
+      "Consultation"
+    ],
+    "inventory_category": [],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E6",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "You will have to start doing physiotherapy also.",
+    "hint_probabilities": {
+      "physiotherapy": 1.0,
+      "physical therapy": 0.8,
+      "rehabilitation": 0.7
+    },
+    "correctness_probability": 0.85,
+    "suggestion_probability": 0.85,
+    "query_expansion": [],
+    "_chunk_start": 6618,
+    "_chunk_end": 10428
+  },
+  {
+    "span_text": "swimming",
+    "normalized_name": "swimming",
+    "kind": "Procedure",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "If you can take him for swimming it will be great.",
+    "start_char": 8961,
+    "end_char": 8969,
+    "is_actionable": true,
+    "search_term": "swimming",
+    "hints": [
+      "swimming",
+      "hydrotherapy",
+      "low-impact exercise"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [
+      "Consultation"
+    ],
+    "inventory_category": [],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E7",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "If you can take him for swimming it will be great.",
+    "hint_probabilities": {
+      "swimming": 1.0,
+      "hydrotherapy": 0.7,
+      "low-impact exercise": 0.6
+    },
+    "correctness_probability": 0.8,
+    "suggestion_probability": 0.8,
+    "query_expansion": [],
+    "_chunk_start": 6618,
+    "_chunk_end": 10428
+  },
+  {
+    "span_text": "sit stand step exercise",
+    "normalized_name": "sit stand step exercise",
+    "kind": "Procedure",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Make him sit, make him stand, make him step and give a treat.",
+    "start_char": 9626,
+    "end_char": 9649,
+    "is_actionable": true,
+    "search_term": "sit stand step exercise",
+    "hints": [
+      "sit stand step exercise",
+      "physical therapy",
+      "rehabilitation"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [
+      "Consultation"
+    ],
+    "inventory_category": [],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E8",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Make him sit, make him stand, make him step and give a treat.",
+    "hint_probabilities": {
+      "sit stand step exercise": 1.0,
+      "physical therapy": 0.8,
+      "rehabilitation": 0.7
+    },
+    "correctness_probability": 0.85,
+    "suggestion_probability": 0.85,
+    "query_expansion": [],
+    "_chunk_start": 6618,
+    "_chunk_end": 10428
+  },
+  {
+    "span_text": "FHO",
+    "normalized_name": "femoral head and neck ostectomy",
+    "kind": "Procedure",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "There is a surgical intervention that can be done which is called FHO.",
+    "start_char": 10047,
+    "end_char": 10050,
+    "is_actionable": true,
+    "search_term": "femoral head and neck ostectomy",
+    "hints": [
+      "femoral head and neck ostectomy",
+      "FHO",
+      "surgical procedure"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [
+      "Consultation"
+    ],
+    "inventory_category": [],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E9",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "There is a surgical intervention that can be done which is called FHO.",
+    "hint_probabilities": {
+      "femoral head and neck ostectomy": 1.0,
+      "FHO": 0.9,
+      "surgical procedure": 0.8
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 6618,
+    "_chunk_end": 10428
+  },
+  {
+    "span_text": "ultralining test",
+    "normalized_name": "Ortolani test",
+    "kind": "Diagnostic",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 3435,
+    "end_char": 3451,
+    "is_actionable": true,
+    "search_term": "Ortolani test",
+    "hints": [
+      "Ortolani test",
+      "hip laxity test",
+      "ultralining test"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [
+      "Diagnostic",
+      "Diagnostic Imaging"
+    ],
+    "inventory_category": [
+      "Diagnostic"
+    ],
+    "service_category": [
+      "Diagnostic Imaging"
+    ],
+    "service_type": null,
+    "entity_id": "E15",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "Ortolani test": 0.85,
+      "hip laxity test": 0.8,
+      "ultralining test": 0.75
+    },
+    "correctness_probability": 0.7,
+    "suggestion_probability": 0.85,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4309
+  },
+  {
+    "span_text": "X-ray",
+    "normalized_name": "X-ray",
+    "kind": "Diagnostic",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 3581,
+    "end_char": 3586,
+    "is_actionable": true,
+    "search_term": "X-ray",
+    "hints": [
+      "X-ray",
+      "radiograph",
+      "imaging"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [
+      "Diagnostic",
+      "Diagnostic Imaging"
+    ],
+    "inventory_category": [
+      "Diagnostic"
+    ],
+    "service_category": [
+      "Diagnostic Imaging"
+    ],
+    "service_type": null,
+    "entity_id": "E16",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "X-ray": 1.0,
+      "radiograph": 0.9,
+      "imaging": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4309
+  },
+  {
+    "span_text": "noble angle",
+    "normalized_name": "Norberg angle",
+    "kind": "Diagnostic",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 3635,
+    "end_char": 3646,
+    "is_actionable": true,
+    "search_term": "Norberg angle",
+    "hints": [
+      "Norberg angle",
+      "hip angle",
+      "noble angle"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [
+      "Diagnostic",
+      "Diagnostic Imaging"
+    ],
+    "inventory_category": [
+      "Diagnostic"
+    ],
+    "service_category": [
+      "Diagnostic Imaging"
+    ],
+    "service_type": null,
+    "entity_id": "E17",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "Norberg angle": 0.85,
+      "hip angle": 0.8,
+      "noble angle": 0.75
+    },
+    "correctness_probability": 0.75,
+    "suggestion_probability": 0.85,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4309
+  },
+  {
+    "span_text": "auto-lanternance",
+    "normalized_name": "Ortolani test",
+    "kind": "Diagnostic",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "auto-lanternance is positive, which means high chances of hip dysplasia.",
+    "start_char": 7193,
+    "end_char": 7209,
+    "is_actionable": true,
+    "search_term": "Ortolani test",
+    "hints": [
+      "Ortolani test",
+      "hip laxity test",
+      "Ortolani"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [
+      "Diagnostic",
+      "Diagnostic Imaging"
+    ],
+    "inventory_category": [
+      "Diagnostic"
+    ],
+    "service_category": [
+      "Diagnostic Imaging"
+    ],
+    "service_type": null,
+    "entity_id": "E12",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "auto-lanternance is positive, which means high chances of hip dysplasia.",
+    "hint_probabilities": {
+      "Ortolani test": 0.92,
+      "hip laxity test": 0.85,
+      "Ortolani": 0.8
+    },
+    "correctness_probability": 0.7,
+    "suggestion_probability": 0.92,
+    "query_expansion": [],
+    "_chunk_start": 6618,
+    "_chunk_end": 10428
+  },
+  {
+    "span_text": "patellar luxation",
+    "normalized_name": "patellar luxation",
+    "kind": "Diagnosis",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 3885,
+    "end_char": 3902,
+    "is_actionable": true,
+    "search_term": "patellar luxation",
+    "hints": [
+      "patellar luxation",
+      "kneecap dislocation",
+      "patella luxation"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E20",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "patellar luxation": 1.0,
+      "kneecap dislocation": 0.85,
+      "patella luxation": 0.8
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4309
+  },
+  {
+    "span_text": "hip dysplasia",
+    "normalized_name": "hip dysplasia",
+    "kind": "Diagnosis",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 6258,
+    "end_char": 6271,
+    "is_actionable": true,
+    "search_term": "hip dysplasia",
+    "hints": [
+      "hip dysplasia",
+      "canine hip dysplasia",
+      "CHD"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E11",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "hip dysplasia": 1.0,
+      "canine hip dysplasia": 0.9,
+      "CHD": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 3309,
+    "_chunk_end": 7618
+  },
+  {
+    "span_text": "hip dysplasia",
+    "normalized_name": "hip dysplasia",
+    "kind": "Diagnosis",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "The X-ray shows hip displasia.",
+    "start_char": 7023,
+    "end_char": 7036,
+    "is_actionable": true,
+    "search_term": "hip dysplasia",
+    "hints": [
+      "hip dysplasia",
+      "canine hip dysplasia",
+      "CHD"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E1",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "The X-ray shows hip displasia.",
+    "hint_probabilities": {
+      "hip dysplasia": 1.0,
+      "canine hip dysplasia": 0.9,
+      "CHD": 0.7
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 6618,
+    "_chunk_end": 10428
+  },
+  {
+    "span_text": "arthritis",
+    "normalized_name": "arthritis",
+    "kind": "Diagnosis",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "This thing if not properly managed can turn into arthritis also.",
+    "start_char": 8349,
+    "end_char": 8358,
+    "is_actionable": true,
+    "search_term": "arthritis",
+    "hints": [
+      "arthritis",
+      "degenerative joint disease",
+      "osteoarthritis"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E11",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "This thing if not properly managed can turn into arthritis also.",
+    "hint_probabilities": {
+      "arthritis": 1.0,
+      "degenerative joint disease": 0.9,
+      "osteoarthritis": 0.8
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 6618,
+    "_chunk_end": 10428
+  },
+  {
+    "span_text": "vaccinated and dewormed",
+    "normalized_name": "vaccination and deworming",
+    "kind": "Preventive",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 1809,
+    "end_char": 1832,
+    "is_actionable": true,
+    "search_term": "vaccination and deworming",
+    "hints": [
+      "vaccination and deworming",
+      "vaccinated",
+      "dewormed"
+    ],
+    "family": null,
+    "domain": [
+      "preventative_wellness"
+    ],
+    "category": [
+      "Vaccines",
+      "Preventive & Parasite Control",
+      "Vaccination",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Vaccines",
+      "Preventive & Parasite Control"
+    ],
+    "service_category": [
+      "Vaccination",
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E6",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "vaccination and deworming": 1.0,
+      "vaccinated": 0.9,
+      "dewormed": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4309
+  },
+  {
+    "span_text": "tick and flee control",
+    "normalized_name": "tick and flea control",
+    "kind": "ParasiteControl",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 1945,
+    "end_char": 1966,
+    "is_actionable": true,
+    "search_term": "tick and flea control",
+    "hints": [
+      "tick and flea control",
+      "flea and tick prevention",
+      "parasite control"
+    ],
+    "family": null,
+    "domain": [
+      "preventative_wellness"
+    ],
+    "category": [
+      "Preventive & Parasite Control",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Preventive & Parasite Control"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E7",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "tick and flea control": 1.0,
+      "flea and tick prevention": 0.85,
+      "parasite control": 0.8
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4309
+  },
+  {
+    "span_text": "tachycine free control",
+    "normalized_name": "flea and tick control",
+    "kind": "ParasiteControl",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 2404,
+    "end_char": 2426,
+    "is_actionable": true,
+    "search_term": "flea and tick control",
+    "hints": [
+      "flea and tick control",
+      "parasite control",
+      "tick control"
+    ],
+    "family": null,
+    "domain": [
+      "preventative_wellness"
+    ],
+    "category": [
+      "Preventive & Parasite Control",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Preventive & Parasite Control"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E8",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "flea and tick control": 1.0,
+      "parasite control": 0.8,
+      "tick control": 0.75
+    },
+    "correctness_probability": 0.85,
+    "suggestion_probability": 0.85,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4309
+  },
+  {
+    "span_text": "home food",
+    "normalized_name": "home-made diet",
+    "kind": "Diet",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 5692,
+    "end_char": 5701,
+    "is_actionable": true,
+    "search_term": "home-made diet",
+    "hints": [
+      "home-made diet",
+      "custom diet",
+      "non-commercial food"
+    ],
+    "family": null,
+    "domain": [
+      "nutrition"
+    ],
+    "category": [
+      "Diet",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Diet"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E13",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "home-made diet": 0.8,
+      "custom diet": 0.7,
+      "non-commercial food": 0.6
+    },
+    "correctness_probability": 0.8,
+    "suggestion_probability": 0.8,
+    "query_expansion": [],
+    "_chunk_start": 3309,
+    "_chunk_end": 7618
+  },
+  {
+    "span_text": "rice and sambar",
+    "normalized_name": "rice and sambar diet",
+    "kind": "Diet",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 5720,
+    "end_char": 5735,
+    "is_actionable": true,
+    "search_term": "rice and sambar diet",
+    "hints": [
+      "rice and sambar diet",
+      "home-cooked meal",
+      "traditional diet"
+    ],
+    "family": null,
+    "domain": [
+      "nutrition"
+    ],
+    "category": [
+      "Diet",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Diet"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E14",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "rice and sambar diet": 0.8,
+      "home-cooked meal": 0.7,
+      "traditional diet": 0.6
+    },
+    "correctness_probability": 0.8,
+    "suggestion_probability": 0.8,
+    "query_expansion": [],
+    "_chunk_start": 3309,
+    "_chunk_end": 7618
+  },
+  {
+    "span_text": "obesity diet",
+    "normalized_name": "obesity diet",
+    "kind": "Diet",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "I'll prescribe you an obesity diet.",
+    "start_char": 8562,
+    "end_char": 8574,
+    "is_actionable": true,
+    "search_term": "obesity diet",
+    "hints": [
+      "obesity diet",
+      "weight management diet",
+      "calorie-restricted diet"
+    ],
+    "family": null,
+    "domain": [
+      "nutrition"
+    ],
+    "category": [
+      "Diet",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Diet"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E5",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "I'll prescribe you an obesity diet.",
+    "hint_probabilities": {
+      "obesity diet": 1.0,
+      "weight management diet": 0.9,
+      "calorie-restricted diet": 0.8
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 6618,
+    "_chunk_end": 10428
+  },
+  {
+    "span_text": "body weight",
+    "normalized_name": "body weight",
+    "kind": "VitalSign",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Controlling obesity is important.",
+    "start_char": 7308,
+    "end_char": 7319,
+    "is_actionable": true,
+    "search_term": "body weight",
+    "hints": [
+      "body weight",
+      "weight",
+      "body mass"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E17",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Controlling obesity is important.",
+    "hint_probabilities": {
+      "body weight": 1.0,
+      "weight": 0.9,
+      "body mass": 0.8
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 6618,
+    "_chunk_end": 10428
+  },
+  {
+    "span_text": "1 pound reduction in body weight",
+    "normalized_name": "1 pound weight loss",
+    "kind": "VitalSign",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Even 1 pound reduction in body weight can give a massive relief.",
+    "start_char": 7326,
+    "end_char": 7358,
+    "is_actionable": true,
+    "search_term": "1 pound weight loss",
+    "hints": [
+      "weight loss",
+      "weight reduction",
+      "body weight"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E13",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Even 1 pound reduction in body weight can give a massive relief.",
+    "hint_probabilities": {
+      "weight loss": 1.0,
+      "weight reduction": 0.9,
+      "body weight": 0.8
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 6618,
+    "_chunk_end": 10428
+  },
+  {
+    "span_text": "unusual posture",
+    "normalized_name": "abnormal posture",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Like his posture is very, you know, unusual.",
+    "start_char": 0,
+    "end_char": 15,
+    "is_actionable": true,
+    "search_term": "abnormal posture",
+    "hints": [
+      "abnormal posture",
+      "posture abnormality",
+      "unusual posture"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E21",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Like his posture is very, you know, unusual.",
+    "hint_probabilities": {
+      "abnormal posture": 1.0,
+      "posture abnormality": 0.85,
+      "unusual posture": 0.8
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4309
+  },
+  {
+    "span_text": "lazy",
+    "normalized_name": "laziness",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 399,
+    "end_char": 403,
+    "is_actionable": true,
+    "search_term": "laziness",
+    "hints": [
+      "laziness",
+      "lack of energy",
+      "lethargy"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E3",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "laziness": 1.0,
+      "lack of energy": 0.85,
+      "lethargy": 0.8
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4309
+  },
+  {
+    "span_text": "not willing to wake up",
+    "normalized_name": "reluctance to wake up",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 555,
+    "end_char": 577,
+    "is_actionable": true,
+    "search_term": "reluctance to wake up",
+    "hints": [
+      "reluctance to wake up",
+      "difficulty waking",
+      "lethargy"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E4",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "reluctance to wake up": 1.0,
+      "difficulty waking": 0.8,
+      "lethargy": 0.75
+    },
+    "correctness_probability": 0.85,
+    "suggestion_probability": 0.85,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4309
+  },
+  {
+    "span_text": "walking problem",
+    "normalized_name": "walking difficulty",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 606,
+    "end_char": 621,
+    "is_actionable": true,
+    "search_term": "walking difficulty",
+    "hints": [
+      "walking difficulty",
+      "gait abnormality",
+      "limping"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E5",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "walking difficulty": 1.0,
+      "gait abnormality": 0.85,
+      "limping": 0.8
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4309
+  },
+  {
+    "span_text": "whining",
+    "normalized_name": "whining",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Is he showing some whining or something like that while just getting up and walking?",
+    "start_char": 1521,
+    "end_char": 1528,
+    "is_actionable": true,
+    "search_term": "whining",
+    "hints": [
+      "whining",
+      "vocalization",
+      "whimpering"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E22",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Is he showing some whining or something like that while just getting up and walking?",
+    "hint_probabilities": {
+      "whining": 1.0,
+      "vocalization": 0.8,
+      "whimpering": 0.75
+    },
+    "correctness_probability": 0.85,
+    "suggestion_probability": 0.85,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4309
+  },
+  {
+    "span_text": "stifled joint",
+    "normalized_name": "stiff joint",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 3790,
+    "end_char": 3803,
+    "is_actionable": true,
+    "search_term": "stiff joint",
+    "hints": [
+      "stiff joint",
+      "joint stiffness",
+      "arthritic joint"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E6",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "stiff joint": 0.85,
+      "joint stiffness": 0.8,
+      "arthritic joint": 0.7
+    },
+    "correctness_probability": 0.85,
+    "suggestion_probability": 0.85,
+    "query_expansion": [],
+    "_chunk_start": 3309,
+    "_chunk_end": 7618
+  },
+  {
+    "span_text": "obese",
+    "normalized_name": "obesity",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 5628,
+    "end_char": 5633,
+    "is_actionable": true,
+    "search_term": "obesity",
+    "hints": [
+      "obesity",
+      "overweight",
+      "excess weight"
+    ],
+    "family": null,
+    "domain": [
+      "nutrition"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E10",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "obesity": 0.9,
+      "overweight": 0.85,
+      "excess weight": 0.8
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 3309,
+    "_chunk_end": 7618
+  },
+  {
+    "span_text": "high impact exercises",
+    "normalized_name": "high-impact activities",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "High impact exercises should be avoided.",
+    "start_char": 8994,
+    "end_char": 9015,
+    "is_actionable": true,
+    "search_term": "high-impact activities",
+    "hints": [
+      "high-impact activities",
+      "jumping",
+      "running"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E18",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "High impact exercises should be avoided.",
+    "hint_probabilities": {
+      "high-impact activities": 1.0,
+      "jumping": 0.8,
+      "running": 0.7
+    },
+    "correctness_probability": 0.85,
+    "suggestion_probability": 0.85,
+    "query_expansion": [],
+    "_chunk_start": 6618,
+    "_chunk_end": 10428
+  },
+  {
+    "span_text": "hip joint",
+    "normalized_name": "hip joint",
+    "kind": "Anatomy",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 3398,
+    "end_char": 3407,
+    "is_actionable": true,
+    "search_term": "hip joint",
+    "hints": [
+      "hip joint",
+      "coxofemoral joint",
+      "joint"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E18",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "hip joint": 1.0,
+      "coxofemoral joint": 0.9,
+      "joint": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4309
+  },
+  {
+    "span_text": "stifled joint",
+    "normalized_name": "stifle joint",
+    "kind": "Anatomy",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 3790,
+    "end_char": 3803,
+    "is_actionable": true,
+    "search_term": "stifle joint",
+    "hints": [
+      "stifle joint",
+      "knee joint",
+      "joint"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E19",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "stifle joint": 1.0,
+      "knee joint": 0.8,
+      "joint": 0.75
+    },
+    "correctness_probability": 0.85,
+    "suggestion_probability": 0.85,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4309
+  },
+  {
+    "span_text": "spine",
+    "normalized_name": "spine",
+    "kind": "Anatomy",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 4031,
+    "end_char": 4036,
+    "is_actionable": true,
+    "search_term": "spine",
+    "hints": [
+      "spine",
+      "vertebral column",
+      "backbone"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E9",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "spine": 1.0,
+      "vertebral column": 0.9,
+      "backbone": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 3309,
+    "_chunk_end": 7618
+  },
+  {
+    "span_text": "socket coverage of the bone",
+    "normalized_name": "socket coverage",
+    "kind": "Anatomy",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "The socket of the bone and socket joint socket is getting lesser.",
+    "start_char": 6705,
+    "end_char": 6732,
+    "is_actionable": true,
+    "search_term": "socket coverage",
+    "hints": [
+      "socket coverage",
+      "acetabular coverage",
+      "hip joint"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E15",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "The socket of the bone and socket joint socket is getting lesser.",
+    "hint_probabilities": {
+      "socket coverage": 1.0,
+      "acetabular coverage": 0.8,
+      "hip joint": 0.7
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 6618,
+    "_chunk_end": 10428
+  },
+  {
+    "span_text": "joint",
+    "normalized_name": "joint",
+    "kind": "Anatomy",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "The ball in the balance of your joint will start fumbling around.",
+    "start_char": 6912,
+    "end_char": 6917,
+    "is_actionable": true,
+    "search_term": "joint",
+    "hints": [
+      "joint",
+      "hip joint",
+      "coxofemoral joint"
+    ],
+    "family": null,
+    "domain": [
+      "orthopedic"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E16",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "The ball in the balance of your joint will start fumbling around.",
+    "hint_probabilities": {
+      "joint": 1.0,
+      "hip joint": 0.9,
+      "coxofemoral joint": 0.8
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 6618,
+    "_chunk_end": 10428
+  },
+  {
+    "span_text": "Oreo",
+    "normalized_name": "Oreo",
+    "kind": "Other",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 89,
+    "end_char": 93,
+    "is_actionable": true,
+    "search_term": "Oreo",
+    "hints": [
+      "Oreo",
+      "pet name",
+      "animal name"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E1",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "Oreo": 1.0,
+      "pet name": 0.9,
+      "animal name": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4309
+  },
+  {
+    "span_text": "5 year old male Labrador",
+    "normalized_name": "5-year-old male Labrador",
+    "kind": "Other",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 159,
+    "end_char": 183,
+    "is_actionable": true,
+    "search_term": "5-year-old male Labrador",
+    "hints": [
+      "5-year-old male Labrador",
+      "male Labrador",
+      "Laborador Retriever"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E2",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "5-year-old male Labrador": 1.0,
+      "male Labrador": 0.9,
+      "Laborador Retriever": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 4309
+  },
+  {
+    "span_text": "Labrador",
+    "normalized_name": "Labrador",
+    "kind": "Other",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "",
+    "start_char": 6105,
+    "end_char": 6113,
+    "is_actionable": true,
+    "search_term": "Labrador",
+    "hints": [
+      "Labrador",
+      "Labrador Retriever",
+      "breed"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E12",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": null,
+    "hint_probabilities": {
+      "Labrador": 1.0,
+      "Labrador Retriever": 0.9,
+      "breed": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 3309,
+    "_chunk_end": 7618
+  }
+]

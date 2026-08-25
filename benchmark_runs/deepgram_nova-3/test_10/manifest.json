@@ -1,0 +1,17 @@
+{
+  "audio_file": "C:\\VetAI_Phase1\\input_audio_examples\\Test_10.wav",
+  "audio_slug": "test_10",
+  "asr_provider": "deepgram",
+  "asr_model": "nova-3",
+  "asr_run_label": "deepgram_nova-3",
+  "run_id": "test_10",
+  "mode": "asr-only",
+  "status": "success",
+  "latency_ms": 176839,
+  "artifacts": {
+    "step1_raw_transcription": "step1_raw_transcription.txt",
+    "step1_asr_metadata": "step1_asr_metadata.json"
+  },
+  "gemini_reference_path": "C:\\VetAI_Phase1\\benchmark_runs\\references\\gemini\\test_10.txt",
+  "error": null
+}

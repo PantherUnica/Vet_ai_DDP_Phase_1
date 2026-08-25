@@ -1,0 +1,255 @@
+{
+  "count": 50,
+  "rows": [
+    {
+      "id": "row_001",
+      "tag": "Osteoarthritis",
+      "file": "row_001.json"
+    },
+    {
+      "id": "row_002",
+      "tag": "Unknown-Not specified",
+      "file": "row_002.json"
+    },
+    {
+      "id": "row_003",
+      "tag": "Unknown-Not specified",
+      "file": "row_003.json"
+    },
+    {
+      "id": "row_004",
+      "tag": "Unknown-Not specified",
+      "file": "row_004.json"
+    },
+    {
+      "id": "row_005",
+      "tag": "Dermatology-Otitis Externa",
+      "file": "row_005.json"
+    },
+    {
+      "id": "row_006",
+      "tag": "Unknown-Not specified",
+      "file": "row_006.json"
+    },
+    {
+      "id": "row_007",
+      "tag": "Hip dysplasia",
+      "file": "row_007.json"
+    },
+    {
+      "id": "row_008",
+      "tag": "Neurology-Rabies Infection",
+      "file": "row_008.json"
+    },
+    {
+      "id": "row_009",
+      "tag": "Dermatology-Skin Problem (unspecified)",
+      "file": "row_009.json"
+    },
+    {
+      "id": "row_010",
+      "tag": "Preventive Care-Vaccination and Deworming",
+      "file": "row_010.json"
+    },
+    {
+      "id": "row_011",
+      "tag": "Dermatology-Chronic Dermatitis",
+      "file": "row_011.json"
+    },
+    {
+      "id": "row_012",
+      "tag": "Dermatology-Atopic Dermatitis",
+      "file": "row_012.json"
+    },
+    {
+      "id": "row_013",
+      "tag": "Dermatology-Skin Problem",
+      "file": "row_013.json"
+    },
+    {
+      "id": "row_014",
+      "tag": "Oncology-Cancer with Metabolic Complications",
+      "file": "row_014.json"
+    },
+    {
+      "id": "row_015",
+      "tag": "Behavioral-Aggression and Vaccine Reaction",
+      "file": "row_015.json"
+    },
+    {
+      "id": "row_016",
+      "tag": "Dermatology-Skin Problem (unspecified)",
+      "file": "row_016.json"
+    },
+    {
+      "id": "row_017",
+      "tag": "Respiratory-Aspiration Pneumonia",
+      "file": "row_017.json"
+    },
+    {
+      "id": "row_018",
+      "tag": "Dermatology-Ringworm",
+      "file": "row_018.json"
+    },
+    {
+      "id": "row_019",
+      "tag": "Unknown-Not specified",
+      "file": "row_019.json"
+    },
+    {
+      "id": "row_020",
+      "tag": "Gastrointestinal-Gastrointestinal Bleeding and Endocrine Disorder",
+      "file": "row_020.json"
+    },
+    {
+      "id": "row_021",
+      "tag": "Preventive Care-Vaccination Visit",
+      "file": "row_021.json"
+    },
+    {
+      "id": "row_022",
+      "tag": "Orthopedic-Joint Disease",
+      "file": "row_022.json"
+    },
+    {
+      "id": "row_023",
+      "tag": "Orthopedic-Joint Pain and Muscle Weakness",
+      "file": "row_023.json"
+    },
+    {
+      "id": "row_024",
+      "tag": "Gastrointestinal-Gastroenteritis",
+      "file": "row_024.json"
+    },
+    {
+      "id": "row_025",
+      "tag": "Unknown-Not specified",
+      "file": "row_025.json"
+    },
+    {
+      "id": "row_026",
+      "tag": "Preventive Care-Vaccination and Deworming",
+      "file": "row_026.json"
+    },
+    {
+      "id": "row_027",
+      "tag": "Unknown-Not specified",
+      "file": "row_027.json"
+    },
+    {
+      "id": "row_028",
+      "tag": "Preventive Care-Vaccination and Deworming",
+      "file": "row_028.json"
+    },
+    {
+      "id": "row_029",
+      "tag": "Preventive Care-Vaccination and Deworming",
+      "file": "row_029.json"
+    },
+    {
+      "id": "row_030",
+      "tag": "Gastrointestinal-Vomiting and Weight Loss in Geriatric Dog",
+      "file": "row_030.json"
+    },
+    {
+      "id": "row_031",
+      "tag": "Unknown-Not specified",
+      "file": "row_031.json"
+    },
+    {
+      "id": "row_032",
+      "tag": "Behavioral-Activity and Anxiety",
+      "file": "row_032.json"
+    },
+    {
+      "id": "row_033",
+      "tag": "Preventive Care-Vaccination and Deworming",
+      "file": "row_033.json"
+    },
+    {
+      "id": "row_034",
+      "tag": "Gastrointestinal-Vomiting",
+      "file": "row_034.json"
+    },
+    {
+      "id": "row_035",
+      "tag": "Orthopedic-Arthritis",
+      "file": "row_035.json"
+    },
+    {
+      "id": "row_036",
+      "tag": "Unknown-Not specified",
+      "file": "row_036.json"
+    },
+    {
+      "id": "row_037",
+      "tag": "Preventive Care-Vaccination Follow-up",
+      "file": "row_037.json"
+    },
+    {
+      "id": "row_038",
+      "tag": "Dermatology-Skin Problem (unspecified)",
+      "file": "row_038.json"
+    },
+    {
+      "id": "row_039",
+      "tag": "Gastrointestinal-Gastroenteritis",
+      "file": "row_039.json"
+    },
+    {
+      "id": "row_040",
+      "tag": "Unknown-Not specified",
+      "file": "row_040.json"
+    },
+    {
+      "id": "row_041",
+      "tag": "Dermatology-Skin Infection and Dermatitis",
+      "file": "row_041.json"
+    },
+    {
+      "id": "row_042",
+      "tag": "Behavioral-Anxiety",
+      "file": "row_042.json"
+    },
+    {
+      "id": "row_043",
+      "tag": "Gastrointestinal-Inflammatory Bowel Disease",
+      "file": "row_043.json"
+    },
+    {
+      "id": "row_044",
+      "tag": "Nutrition-Dietary Preference",
+      "file": "row_044.json"
+    },
+    {
+      "id": "row_045",
+      "tag": "Infectious Disease-Tick Fever",
+      "file": "row_045.json"
+    },
+    {
+      "id": "row_046",
+      "tag": "Dermatology-Skin Problem",
+      "file": "row_046.json"
+    },
+    {
+      "id": "row_047",
+      "tag": "Gastrointestinal-Intestinal Obstruction/Intussusception",
+      "file": "row_047.json"
+    },
+    {
+      "id": "row_048",
+      "tag": "Gastrointestinal-Intestinal Obstruction/Intussusception",
+      "file": "row_048.json"
+    },
+    {
+      "id": "row_049",
+      "tag": "Gastrointestinal-Intestinal Obstruction/Intussusception",
+      "file": "row_049.json"
+    },
+    {
+      "id": "row_050",
+      "tag": "Gastrointestinal-Intestinal Obstruction/Intussusception",
+      "file": "row_050.json"
+    }
+  ]
+}

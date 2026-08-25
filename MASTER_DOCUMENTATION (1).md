@@ -35,7 +35,7 @@
 The pipeline turns **raw audio** of veterinary consultations into **grounded SOAP notes** with entity linking to **local inventory** and **local services** only (no global KB in production).
 
 **Flow (default):**
-1. **Transcription** – Fireworks Whisper v3 Turbo (16 kHz).
+1. **Transcription** – Pluggable ASR via `ASR_PROVIDER` / `ASR_MODEL` (default: Deepgram **nova-3**; Fireworks **whisper-v3-turbo** available). See `docs/ASR_BENCHMARK.md` and `asr_providers.py`.
 2. **Super-Pass** – One LLM call: clean transcript + extract entities; outputs `inventory_category`, `service_category`, and **`service_type`** (medical | non-medical) per entity. Default model: **accounts/fireworks/models/llama-v3p3-70b-instruct**. Brain NER prompt in `docs/BRAIN_NER_PROMPT_UPDATED.md` and `UNIFIED_CLEANING_AND_NER_PROMPT.md`.
 3. **CER (Clinical Entity Resolver)** – Consolidates entities to billing-only; default model **accounts/fireworks/models/llama-v3p3-70b-instruct**. On Fireworks, streaming path when output may exceed 4096 tokens; OpenAI non-streaming only. JSON repair for streamed output (trailing commas, truncation).
 4. **Batch Intent** – One LLM call: assign `search_term` and `family` per entity (ASR correction, category). Category-Locked Guard: family must not contradict kind for PRODUCT/PROCEDURE.
@@ -61,7 +61,7 @@ The pipeline turns **raw audio** of veterinary consultations into **grounded SOA
 ## Complete Pipeline Flow
 
 ```
-Step 1: Audio → Raw transcript (Fireworks Whisper v3 Turbo, 16 kHz)
+Step 1: Audio → Raw transcript (ASR_PROVIDER / ASR_MODEL; default Deepgram nova-3)
 Step 2: Super-Pass → Cleaned transcript + extracted_entities (inventory_category, service_category, service_type per entity; default model Llama v3p3 70B)
 Step 2a: CER (optional) → Resolve to billing entities (streaming when Fireworks + large output; JSON repair)
 Step 2b: Batch Intent → search_term + family per entity
@@ -78,7 +78,7 @@ Step 5: Phase 2 → Knowledge atoms (default gpt-4.1-mini), dedupe, locus routin
 ## Default Execution Path
 
 1. **Startup:** Postgres pool init, `clinic_id` / `visit_id` from env (`CLINIC_ID`, `VISIT_ID`; default `clinic_id=1`).
-2. **Step 1:** `transcribe_audio()` or `transcribe_audio_fireworks_streaming()` → raw transcript (Fireworks Whisper; retries on 502/503).
+2. **Step 1:** `asr_providers.transcribe()` (default Deepgram nova-3) or Fireworks streaming when `TRANSCRIPTION_STREAMING=true` + `ASR_PROVIDER=fireworks` → raw transcript; saves `step1_raw_transcription.txt` + `step1_asr_metadata.json`.
 3. **Step 2 – Super-Pass (streaming default):** `super_pass_cleaning_and_ner_streaming()`; entities with `inventory_category`, `service_category`, `service_type`; default model Llama v3p3 70B; per chunk: batch embed → Batch Intent → dispatch to streaming grounding.
 4. **Step 2.3 – Grounding:** `process_single_entity_async()` (streaming) or `run_step_2_3_normalization()` (non-streaming). Dual-sync: `search_local_inventory_topk(..., category_hints=...)` and `search_local_services_topk(..., category_hints=..., service_type=entity_service_type)` in parallel; vector retrieval (batch + on-demand embed); merge; auto-bind or LLM Judge; domain consultation fallback for high-stakes unlinked.
 5. **Step 3 – SOAP:** `generate_soap_with_grounding()`; manifest with anchor_id (E1, E2, …) when `ANCHOR_MAPPING_SOAP=true`.

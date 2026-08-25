@@ -1,0 +1,116 @@
+{
+  "procedures_services": [],
+  "medications_administered": [],
+  "medications_prescribed": [
+    {
+      "item_name": "EASOTIC 10ML",
+      "inventory_id": 41358,
+      "status": "DRAFT",
+      "administered_prescribed": "Prescribed",
+      "fulfillment": "Internal",
+      "quantity": "[Vet to Input: Quantity]",
+      "dosage": "",
+      "duration": "5 days",
+      "frequency": "Custom",
+      "instructions": "",
+      "remarks": "Product: EASOTIC 10ML EASOTIC 10ML. Generic: EASOTIC 10ML EASOTIC 10ML. Category: Medication / Ear Care. Specialty: dermatology. Use Case: EASOTIC 10ML is an ear medication used to treat ear infections and inflammations in animals in a veterinary clinic.."
+    }
+  ],
+  "diagnostics": [
+    {
+      "service_id": 919,
+      "lab_radiology": "Radiology",
+      "test_name": "C&S BACTERIA",
+      "date_of_test": "TBD",
+      "done": "External",
+      "sample_collected": "No",
+      "remarks": "If no improvement, perform ear swab for culture and sensitivity to guide further therapy"
+    }
+  ],
+  "other_products_retail": [],
+  "reminders_follow_ups": [],
+  "vitals": [],
+  "module_4_unlinked_entities": [
+    {
+      "item_name": "Cefpodoxime syrup",
+      "kind": "Medicine",
+      "intent_context": "Prescribed",
+      "intent": "Prescribed (Medicine)",
+      "status": "ACTION REQUIRED",
+      "reason": "MISSING_LOCAL_ID",
+      "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+      "suggestions": [],
+      "inventory_id": null,
+      "administered_prescribed": "Prescribed",
+      "fulfillment": "Internal",
+      "quantity": "",
+      "dosage": "3ml",
+      "duration": "5-7 days",
+      "frequency": "Custom",
+      "instructions": "",
+      "route": "orally"
+    }
+  ],
+  "module_5_clinical_history": [],
+  "streamlined_dashboard": {
+    "signalment_vitals": [],
+    "clinical_assessment": [],
+    "pharmacy_administered": [],
+    "pharmacy_prescribed": [
+      {
+        "name": "EASOTIC 10ML",
+        "original_mention": "EASOTIC 10ML",
+        "status": "DRAFTED",
+        "linked_id": 41358,
+        "suggestions": [],
+        "dosage": "",
+        "frequency": "Custom",
+        "duration": "5 days",
+        "quantity": "[Vet to Input: Quantity]",
+        "instructions": "",
+        "remarks": "Product: EASOTIC 10ML EASOTIC 10ML. Generic: EASOTIC 10ML EASOTIC 10ML. Category: Medication / Ear Care. Specialty: dermatology. Use Case: EASOTIC 10ML is an ear medication used to treat ear infections and inflammations in animals in a veterinary clinic..",
+        "required_fields": [
+          "frequency",
+          "duration"
+        ],
+        "label": "Prescribed (Home Care)"
+      },
+      {
+        "name": "Cefpodoxime syrup",
+        "original_mention": "Cefpodoxime syrup",
+        "status": "ACTION_REQUIRED",
+        "linked_id": null,
+        "suggestions": [],
+        "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+        "reason": "MISSING_LOCAL_ID",
+        "dosage": "3ml",
+        "frequency": "Custom",
+        "duration": "5-7 days",
+        "quantity": "",
+        "instructions": "",
+        "required_fields": [
+          "frequency",
+          "duration"
+        ],
+        "label": "Prescribed (Home Care)"
+      }
+    ],
+    "diagnostics_labs_imaging": [
+      {
+        "name": "C&S BACTERIA",
+        "original_mention": "C&S BACTERIA",
+        "status": "DRAFTED",
+        "linked_id": 919,
+        "suggestions": [],
+        "remarks": "If no improvement, perform ear swab for culture and sensitivity to guide further therapy",
+        "done": "External",
+        "sample_collected": "No"
+      }
+    ],
+    "clinical_procedures_services": [],
+    "other_products_retail": [],
+    "preventive": [],
+    "patient_reminders": [],
+    "clinical_follow_ups": []
+  }
+}

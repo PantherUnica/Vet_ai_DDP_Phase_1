@@ -1,0 +1,137 @@
+[
+  {
+    "span_text": "bus inside the left ear",
+    "normalized_name": "bus inside the left ear",
+    "display_name": "bus inside the left ear",
+    "kind": "Diagnosis",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Diagnosis",
+    "match_method": "note_only_below_threshold",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "0.95"
+    ],
+    "search_term": "foreign body in ear"
+  },
+  {
+    "span_text": "Cefpet syrup 3ml",
+    "normalized_name": "Cefpet syrup 3ml",
+    "display_name": "Cefpodoxime",
+    "kind": "Medication",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Medication",
+    "match_method": "unlinked",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "Cefpodoxime",
+      "Cefpet",
+      "antibiotic"
+    ],
+    "search_term": "Cefpodoxime Syrup"
+  },
+  {
+    "span_text": "ear cleaning",
+    "normalized_name": "ear cleaning",
+    "display_name": "ear cleaning",
+    "kind": "Procedure",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Procedure",
+    "match_method": "unlinked",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "ear cleaning",
+      "ear flush",
+      "otoclean"
+    ],
+    "search_term": "ear cleaning"
+  },
+  {
+    "span_text": "exotic pump",
+    "normalized_name": "exotic pump",
+    "display_name": "Easotic",
+    "kind": "Medication",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Medication",
+    "match_method": "unlinked",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "Easotic",
+      "ear drops",
+      "antifungal ear"
+    ],
+    "search_term": "Easotic ear drops"
+  },
+  {
+    "span_text": "not eating the food properly",
+    "normalized_name": "not eating the food properly",
+    "display_name": "not eating the food properly",
+    "kind": "Symptom",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "non_billable_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "anorexia",
+      "decreased appetite",
+      "not eating"
+    ],
+    "search_term": "anorexia"
+  },
+  {
+    "span_text": "shaking the head",
+    "normalized_name": "shaking the head",
+    "display_name": "shaking the head",
+    "kind": "Symptom",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "non_billable_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "head shaking",
+      "abnormal movement",
+      "tremor"
+    ],
+    "search_term": "head shaking"
+  },
+  {
+    "span_text": "yeast growth",
+    "normalized_name": "yeast growth",
+    "display_name": "yeast growth",
+    "kind": "Diagnosis",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Diagnosis",
+    "match_method": "note_only_below_threshold",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "yeast infection",
+      "otomycosis",
+      "fungal infection"
+    ],
+    "search_term": "yeast infection"
+  }
+]

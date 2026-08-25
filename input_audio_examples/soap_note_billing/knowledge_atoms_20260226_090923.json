@@ -1,0 +1,270 @@
+{
+  "knowledge_atoms": [
+    {
+      "concept": "Head shaking and head tilt",
+      "kind": "Reason",
+      "assertion_id": "CONF",
+      "intent_context": "Presented",
+      "source_text": "presented with symptoms of head shaking and holding the head tilted to the left side for 2-3 days",
+      "section": "Subjective",
+      "attributes": {
+        "chief_complaint": "head shaking and holding the head tilted to the left side for 2-3 days",
+        "urgency": "Routine",
+        "duration": "2-3 days",
+        "previous_history": null
+      },
+      "codes": {}
+    },
+    {
+      "concept": "Cefpodoxime syrup",
+      "kind": "Medicine",
+      "assertion_id": "CONF",
+      "intent_context": "Administered",
+      "source_text": "The patient is currently receiving Cefpodoxime syrup 3ml orally",
+      "section": "Plan",
+      "attributes": {
+        "dose": "3ml",
+        "route": "orally",
+        "frequency": null,
+        "duration": "5-7 days"
+      },
+      "codes": {}
+    },
+    {
+      "concept": "Easotic ear drops",
+      "kind": "Medication",
+      "assertion_id": "CONF",
+      "intent_context": "Prescribed",
+      "source_text": "Use Easotic ear drops once daily for 5 days",
+      "section": "Plan",
+      "attributes": {
+        "dose": null,
+        "route": null,
+        "frequency": "once daily",
+        "duration": "5 days"
+      },
+      "codes": {
+        "local_stock_id": 41358
+      },
+      "local_stock_id": 41358,
+      "kb_kind": "Medication",
+      "match_method": "dual_sync_local"
+    },
+    {
+      "concept": "Ear cleaning",
+      "kind": "Procedure",
+      "assertion_id": "CONF",
+      "intent_context": "Performed",
+      "source_text": "Ear cleaning was performed",
+      "section": "Objective",
+      "attributes": {
+        "procedure_name": "EAR FLUSH UNDER GA",
+        "status": "Performed"
+      },
+      "codes": {
+        "local_service_id": 1015
+      },
+      "local_service_id": 1015,
+      "kb_kind": "Procedure",
+      "match_method": "dual_sync_local"
+    },
+    {
+      "concept": "Ear swab for culture and sensitivity",
+      "kind": "Diagnostic",
+      "assertion_id": "CONF",
+      "intent_context": "Ordered",
+      "source_text": "If symptoms persist, perform ear swab for culture and sensitivity to guide further therapy",
+      "section": "Plan",
+      "attributes": {
+        "test_name": "ear swab for culture and sensitivity",
+        "status": "Ordered",
+        "suggestions": [
+          {
+            "name": "EAR MITE TEST",
+            "match_score": 0.7855769230769232,
+            "recommendation": "MEDIUM",
+            "service_id": 957
+          }
+        ],
+        "primary_local_suggestion": {
+          "name": "EAR MITE TEST",
+          "stock_id": null,
+          "service_id": 957
+        }
+      },
+      "codes": {},
+      "kb_kind": "Diagnostic",
+      "match_method": "dual_sync_judge_rejected"
+    }
+  ],
+  "extraction_summary": {
+    "total_atoms": 5,
+    "confirmed": 4,
+    "negated": 0,
+    "by_kind": {
+      "Reason": 1,
+      "Medicine": 2,
+      "Procedure": 1,
+      "Diagnostic": 1
+    }
+  },
+  "metadata": {
+    "postprocess_applied": true,
+    "session_id": "feaf2570-d4e6-4cce-a249-707043b851e0",
+    "visit_id": "feaf2570-d4e6-4cce-a249-707043b851e0",
+    "clinic_id": 1,
+    "mode": "minimal",
+    "model_provider": "openai",
+    "model_name": "gpt-4.1-mini",
+    "attempted_models": [
+      "gpt-4.1-mini"
+    ],
+    "kb_schema_loaded": true
+  },
+  "error": null,
+  "parse_error": null,
+  "raw": null,
+  "verification_dashboard": {
+    "procedures_services": [],
+    "medications_administered": [],
+    "medications_prescribed": [
+      {
+        "item_name": "EASOTIC 10ML",
+        "inventory_id": 41358,
+        "status": "DRAFT",
+        "administered_prescribed": "Prescribed",
+        "fulfillment": "Internal",
+        "quantity": "[Vet to Input: Quantity]",
+        "dosage": "",
+        "duration": "5 days",
+        "frequency": "Custom",
+        "instructions": "",
+        "remarks": "Product: EASOTIC 10ML EASOTIC 10ML. Generic: EASOTIC 10ML EASOTIC 10ML. Category: Medication / Ear Care. Specialty: dermatology. Use Case: EASOTIC 10ML is an ear medication used to treat ear infections and inflammations in animals in a veterinary clinic.."
+      }
+    ],
+    "diagnostics": [
+      {
+        "service_id": null,
+        "lab_radiology": "LAB",
+        "test_name": "Ear swab for culture and sensitivity",
+        "date_of_test": "TBD",
+        "done": "External",
+        "sample_collected": "No",
+        "remarks": "Generic diagnostic detected. Select a specific billing variant from the suggestions below. [Unlinked – ACTION REQUIRED: select service for billing]"
+      }
+    ],
+    "other_products_retail": [],
+    "reminders_follow_ups": [],
+    "vitals": [],
+    "module_4_unlinked_entities": [
+      {
+        "item_name": "Cefpodoxime syrup",
+        "kind": "Medicine",
+        "intent_context": "Administered",
+        "intent": "Administered (Medicine)",
+        "status": "ACTION REQUIRED",
+        "reason": "MISSING_LOCAL_ID",
+        "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+        "suggestions": [],
+        "inventory_id": null,
+        "administered_prescribed": "Administered",
+        "fulfillment": "Internal",
+        "quantity": "",
+        "dosage": "3ml",
+        "duration": "5-7 days",
+        "frequency": "Custom",
+        "instructions": "",
+        "route": "orally"
+      },
+      {
+        "item_name": "Ear swab for culture and sensitivity",
+        "kind": "Diagnostic",
+        "intent_context": "Ordered",
+        "intent": "Ordered (Diagnostic)",
+        "status": "ACTION REQUIRED",
+        "reason": "MISSING_LOCAL_ID",
+        "remarks": "Generic diagnostic detected. Select a specific billing variant from the suggestions below.",
+        "suggestions": [
+          {
+            "name": "EAR MITE TEST",
+            "match_score": 0.7855769230769232,
+            "recommendation": "MEDIUM",
+            "service_id": 957
+          }
+        ],
+        "service_id": null,
+        "lab_radiology": "LAB",
+        "test_name": "Ear swab for culture and sensitivity",
+        "date_of_test": "TBD",
+        "done": "External",
+        "sample_collected": "No"
+      }
+    ],
+    "module_5_clinical_history": [],
+    "streamlined_dashboard": {
+      "signalment_vitals": [],
+      "clinical_assessment": [],
+      "pharmacy_administered": [
+        {
+          "name": "Cefpodoxime syrup",
+          "original_mention": "Cefpodoxime syrup",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [],
+          "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+          "reason": "MISSING_LOCAL_ID",
+          "dosage": "3ml",
+          "route": "orally",
+          "required_fields": [
+            "dosage",
+            "route"
+          ],
+          "label": "Administered (In-Clinic)"
+        }
+      ],
+      "pharmacy_prescribed": [
+        {
+          "name": "EASOTIC 10ML",
+          "original_mention": "EASOTIC 10ML",
+          "status": "DRAFTED",
+          "linked_id": 41358,
+          "suggestions": [],
+          "dosage": "",
+          "frequency": "Custom",
+          "duration": "5 days",
+          "quantity": "[Vet to Input: Quantity]",
+          "instructions": "",
+          "remarks": "Product: EASOTIC 10ML EASOTIC 10ML. Generic: EASOTIC 10ML EASOTIC 10ML. Category: Medication / Ear Care. Specialty: dermatology. Use Case: EASOTIC 10ML is an ear medication used to treat ear infections and inflammations in animals in a veterinary clinic..",
+          "required_fields": [
+            "frequency",
+            "duration"
+          ],
+          "label": "Prescribed (Home Care)"
+        }
+      ],
+      "diagnostics_labs_imaging": [
+        {
+          "name": "Ear swab for culture and sensitivity",
+          "original_mention": "Ear swab for culture and sensitivity",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [
+            {
+              "name": "EAR MITE TEST",
+              "match_score": 0.7855769230769232,
+              "recommendation": "MEDIUM",
+              "service_id": 957
+            }
+          ],
+          "remarks": "Generic diagnostic detected. Select a specific billing variant from the suggestions below.",
+          "reason": "MISSING_LOCAL_ID"
+        }
+      ],
+      "clinical_procedures_services": [],
+      "other_products_retail": [],
+      "preventive": [],
+      "patient_reminders": [],
+      "clinical_follow_ups": []
+    }
+  }
+}

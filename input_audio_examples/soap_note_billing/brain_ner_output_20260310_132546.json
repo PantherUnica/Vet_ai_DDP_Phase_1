@@ -1,0 +1,230 @@
+[
+  {
+    "span_text": "санацию ротовой полости",
+    "normalized_name": "dental sanitation",
+    "kind": "Procedure",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Veterinarian recommends dental sanitation.",
+    "start_char": 26,
+    "end_char": 49,
+    "is_actionable": true,
+    "search_term": "dental sanitation",
+    "hints": [
+      "dental sanitation",
+      "dental procedure",
+      "oral surgery"
+    ],
+    "family": null,
+    "domain": [
+      "dentistry"
+    ],
+    "category": [
+      "Medical Supplies",
+      "Dental"
+    ],
+    "inventory_category": [
+      "Medical Supplies"
+    ],
+    "service_category": [
+      "Dental"
+    ],
+    "service_type": null,
+    "entity_id": "E1",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Veterinarian recommends dental sanitation.",
+    "hint_probabilities": {
+      "dental sanitation": 1.0,
+      "dental procedure": 0.9,
+      "oral surgery": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": []
+  },
+  {
+    "span_text": "удалением зубов",
+    "normalized_name": "tooth extraction",
+    "kind": "Procedure",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Tooth extraction was performed.",
+    "start_char": 52,
+    "end_char": 67,
+    "is_actionable": true,
+    "search_term": "tooth extraction",
+    "hints": [
+      "tooth extraction",
+      "dental extraction",
+      "tooth removal"
+    ],
+    "family": null,
+    "domain": [
+      "dentistry"
+    ],
+    "category": [
+      "Medical Supplies",
+      "Dental"
+    ],
+    "inventory_category": [
+      "Medical Supplies"
+    ],
+    "service_category": [
+      "Dental"
+    ],
+    "service_type": null,
+    "entity_id": "E2",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Tooth extraction was performed.",
+    "hint_probabilities": {
+      "tooth extraction": 1.0,
+      "dental extraction": 0.9,
+      "tooth removal": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": []
+  },
+  {
+    "span_text": "анализ крови",
+    "normalized_name": "blood test",
+    "kind": "Diagnostic",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Blood test results were normal.",
+    "start_char": 0,
+    "end_char": 12,
+    "is_actionable": true,
+    "search_term": "blood test",
+    "hints": [
+      "blood test",
+      "blood analysis",
+      "lab test"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [
+      "Diagnostic",
+      "Lab Tests"
+    ],
+    "inventory_category": [
+      "Diagnostic"
+    ],
+    "service_category": [
+      "Lab Tests"
+    ],
+    "service_type": null,
+    "entity_id": "E3",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Blood test results were normal.",
+    "hint_probabilities": {
+      "blood test": 1.0,
+      "blood analysis": 0.9,
+      "lab test": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": []
+  },
+  {
+    "span_text": "наркозом",
+    "normalized_name": "anesthesia",
+    "kind": "Procedure",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Procedure was performed under anesthesia.",
+    "start_char": 72,
+    "end_char": 80,
+    "is_actionable": true,
+    "search_term": "anesthesia",
+    "hints": [
+      "anesthesia",
+      "general anesthesia",
+      "sedation"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [
+      "Medical Supplies",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medical Supplies"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E4",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Procedure was performed under anesthesia.",
+    "hint_probabilities": {
+      "anesthesia": 1.0,
+      "general anesthesia": 0.85,
+      "sedation": 0.75
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": []
+  },
+  {
+    "span_text": "4 зубов",
+    "normalized_name": "4 teeth",
+    "kind": "Anatomy",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "4 teeth were extracted.",
+    "start_char": 248,
+    "end_char": 255,
+    "is_actionable": true,
+    "search_term": "4 teeth",
+    "hints": [
+      "4 teeth",
+      "teeth",
+      "dental structure"
+    ],
+    "family": null,
+    "domain": [
+      "dentistry"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E5",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "4 teeth were extracted.",
+    "hint_probabilities": {
+      "4 teeth": 1.0,
+      "teeth": 0.9,
+      "dental structure": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": []
+  }
+]

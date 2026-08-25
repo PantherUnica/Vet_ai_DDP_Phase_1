@@ -1,0 +1,44 @@
+{
+  "ReasonForVisit": [],
+  "Medication": [
+    {
+      "span_text": "exotic pump"
+    },
+    {
+      "span_text": "Cefpet syrup"
+    }
+  ],
+  "Procedure": [
+    {
+      "span_text": "ear cleaning"
+    }
+  ],
+  "Diagnostic": [
+    {
+      "span_text": "ear swab for culture and sensitivity"
+    }
+  ],
+  "VitalSign": [],
+  "Reminder": [],
+  "Symptom": [
+    {
+      "span_text": "shaking the head"
+    },
+    {
+      "span_text": "not eating the food properly"
+    }
+  ],
+  "Diagnosis": [
+    {
+      "span_text": "bus inside the left ear"
+    },
+    {
+      "span_text": "yeast growth"
+    }
+  ],
+  "Anatomy": [],
+  "Diet": [],
+  "Preventive": [],
+  "ParasiteControl": [],
+  "Other": []
+}

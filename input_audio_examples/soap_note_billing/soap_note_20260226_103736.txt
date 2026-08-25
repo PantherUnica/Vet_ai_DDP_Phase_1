@@ -1,0 +1,14 @@
+{
+  "Subjective": "Ishidzu, a one and a half year old, presented with head shaking and holding head tilted to the left side for 2-3 days. The owner reports decreased appetite during this period.",
+  "Objective": "Physical examination revealed a foreign body in the left ear and yeast infection in the right ear. Ear cleaning was performed. Current medications include Cefpodoxime syrup 3ml orally, continued from prior treatment.",
+  "Assessment": "Foreign body in left ear with concurrent yeast infection in right ear causing otitis externa. Symptoms include head shaking, head tilt, and decreased appetite likely due to ear discomfort and infection.",
+  "Plan": "Continue Cefpodoxime syrup orally for another 5-7 days. Apply Easotic ear drops once daily for 5 days. Monitor response to treatment. If no improvement, perform ear swab for culture and sensitivity to guide further therapy.",
+  "Conclusion": "Ishidzu is being treated for bilateral ear issues with foreign body and yeast infection. Treatment plan includes antimicrobial and antifungal therapy with follow-up evaluation.",
+  "DifferentialDiagnosis": "Otitis externa due to foreign body and yeast infection; possible secondary bacterial infection; consider otitis media if symptoms persist or worsen.",
+  "KeyIssues": "Foreign body in left ear, yeast infection in right ear, head shaking, head tilt, decreased appetite.",
+  "AbnormalFindings": "Foreign body detected in left ear; yeast growth in right ear; head tilt to left side; decreased appetite.",
+  "CustomerInstructions": "Administer Cefpodoxime syrup 3ml orally as directed for 5-7 more days. Apply Easotic ear drops once daily for 5 days. Avoid water in ears during treatment. Observe for improvement in head shaking and appetite. Return for recheck or if symptoms worsen.",
+  "Protocols": "Ear cleaning performed. Continue antimicrobial and antifungal therapy. If no improvement, proceed with ear swab culture and sensitivity testing.",
+  "Vitals": "",
+  "Reminders": "Monitor for signs of worsening infection or systemic illness. Schedule follow-up appointment after completion of medication course. Consider further diagnostics if no response to treatment."
+}

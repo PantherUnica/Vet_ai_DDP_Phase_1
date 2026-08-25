@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-08-25T14:44:28",
+  "hypothesis_root": "C:\\VetAI_Phase1\\benchmark_runs\\deepgram_nova-3",
+  "reference_root": "C:\\VetAI_Phase1\\benchmark_runs\\references\\full",
+  "gemini_fallback_dir": "C:\\VetAI_Phase1\\benchmark_runs\\references\\gemini",
+  "summary": {
+    "files_scored": 0,
+    "mean_step1_wer": null,
+    "mean_step1_cer": null,
+    "mean_step2_wer": null,
+    "mean_step2_cer": null,
+    "mean_entity_f1": null,
+    "mean_soap_fact_recall": null
+  },
+  "rows": [],
+  "missing_references": [],
+  "missing_hypotheses": [
+    "test_1",
+    "test_10",
+    "test_11",
+    "test_2_long_audio",
+    "test_3",
+    "test_4",
+    "test_5",
+    "test_6",
+    "test_7",
+    "test_8",
+    "test_9"
+  ],
+  "skipped_no_gold_pack": []
+}

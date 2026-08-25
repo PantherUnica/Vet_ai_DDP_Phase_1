@@ -1,0 +1,177 @@
+{
+  "knowledge_atoms": [
+    {
+      "concept": "Oral Discomfort",
+      "kind": "Reason",
+      "assertion_id": "CONF",
+      "intent_context": "Presented",
+      "source_text": "Pet presents with signs of oral discomfort including eating very little and pain on palpation of the mouth area.",
+      "section": "Subjective",
+      "attributes": {
+        "chief_complaint": "oral discomfort including eating very little and pain on palpation of the mouth area",
+        "urgency": "Routine",
+        "duration": null,
+        "previous_history": null
+      },
+      "codes": {}
+    },
+    {
+      "concept": "Pain Management",
+      "kind": "Procedure",
+      "assertion_id": "CONF",
+      "intent_context": "Performed",
+      "source_text": "Provide pain management and anti-inflammatory treatment.",
+      "section": "Plan",
+      "attributes": {
+        "procedure_name": "Pain Management",
+        "status": "Performed"
+      },
+      "codes": {}
+    },
+    {
+      "concept": "Anti-inflammatory Treatment",
+      "kind": "Procedure",
+      "assertion_id": "CONF",
+      "intent_context": "Performed",
+      "source_text": "Provide pain management and anti-inflammatory treatment.",
+      "section": "Plan",
+      "attributes": {
+        "procedure_name": "Anti-inflammatory Treatment",
+        "status": "Performed"
+      },
+      "codes": {}
+    },
+    {
+      "concept": "Follow-up for Fracture Healing Assessment",
+      "kind": "Reminder",
+      "assertion_id": "CONF",
+      "intent_context": "Scheduled",
+      "source_text": "Schedule follow-up for fracture healing assessment and possible surgical intervention.",
+      "section": "Plan",
+      "attributes": {
+        "due_on": null,
+        "action_item": "Fracture healing assessment and possible surgical intervention"
+      },
+      "codes": {}
+    }
+  ],
+  "extraction_summary": {
+    "total_atoms": 4,
+    "confirmed": 4,
+    "negated": 0,
+    "by_kind": {
+      "Reason": 1,
+      "Procedure": 2,
+      "Reminder": 1
+    }
+  },
+  "metadata": {
+    "postprocess_applied": true,
+    "session_id": "bf95ac12-e7db-450e-9633-27a3cb1e4236",
+    "visit_id": "bf95ac12-e7db-450e-9633-27a3cb1e4236",
+    "clinic_id": 1,
+    "mode": "minimal",
+    "model_provider": "openai",
+    "model_name": "gpt-4.1-mini",
+    "attempted_models": [
+      "gpt-4.1-mini"
+    ],
+    "kb_schema_loaded": true
+  },
+  "error": null,
+  "parse_error": null,
+  "raw": null,
+  "verification_dashboard": {
+    "procedures_services": [],
+    "medications_administered": [],
+    "medications_prescribed": [],
+    "diagnostics": [],
+    "other_products_retail": [],
+    "reminders_follow_ups": [
+      {
+        "item_name": "Follow-up for Fracture Healing Assessment",
+        "item_id": "[REMINDER-XXX]",
+        "due_date": "ASAP",
+        "remarks": "Fracture healing assessment and possible surgical intervention",
+        "intent_context": "Scheduled",
+        "kind": "Reminder"
+      }
+    ],
+    "vitals": [],
+    "module_4_unlinked_entities": [
+      {
+        "item_name": "Pain Management",
+        "kind": "Procedure",
+        "intent_context": "Performed",
+        "intent": "Performed (Procedure)",
+        "status": "ACTION REQUIRED",
+        "reason": "MISSING_LOCAL_ID",
+        "remarks": "Mentioned as procedure; no matching inventory/service SKU found. Vet must select specific SKU for billing.",
+        "suggestions": [],
+        "service_id": null
+      },
+      {
+        "item_name": "Anti-inflammatory Treatment",
+        "kind": "Procedure",
+        "intent_context": "Performed",
+        "intent": "Performed (Procedure)",
+        "status": "ACTION REQUIRED",
+        "reason": "MISSING_LOCAL_ID",
+        "remarks": "Mentioned as procedure; no matching inventory/service SKU found. Vet must select specific SKU for billing.",
+        "suggestions": [],
+        "service_id": null
+      }
+    ],
+    "module_5_clinical_history": [],
+    "streamlined_dashboard": {
+      "signalment_vitals": [],
+      "clinical_assessment": [],
+      "pharmacy_administered": [],
+      "pharmacy_prescribed": [],
+      "diagnostics_labs_imaging": [],
+      "clinical_procedures_services": [
+        {
+          "name": "Pain Management",
+          "original_mention": "Pain Management",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [],
+          "remarks": "Mentioned as procedure; no matching inventory/service SKU found. Vet must select specific SKU for billing.",
+          "reason": "MISSING_LOCAL_ID"
+        },
+        {
+          "name": "Anti-inflammatory Treatment",
+          "original_mention": "Anti-inflammatory Treatment",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [],
+          "remarks": "Mentioned as procedure; no matching inventory/service SKU found. Vet must select specific SKU for billing.",
+          "reason": "MISSING_LOCAL_ID"
+        }
+      ],
+      "other_products_retail": [],
+      "preventive": [],
+      "patient_reminders": [],
+      "clinical_follow_ups": [
+        {
+          "name": "Follow-up for Fracture Healing Assessment",
+          "original_mention": "Follow-up for Fracture Healing Assessment",
+          "status": "DRAFTED",
+          "linked_id": "[REMINDER-XXX]",
+          "suggestions": [],
+          "due_date": "ASAP",
+          "remarks": "Fracture healing assessment and possible surgical intervention",
+          "is_operational": true,
+          "scheduling_data": {
+            "service_id": null,
+            "temporal_offset": "ASAP",
+            "recommended_date": null,
+            "priority": "Routine",
+            "item_id": "[REMINDER-XXX]"
+          },
+          "label": "Clinical Follow-up"
+        }
+      ]
+    }
+  }
+}

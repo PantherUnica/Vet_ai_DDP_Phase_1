@@ -1,0 +1,176 @@
+{
+  "ReasonForVisit": [],
+  "Medication": [
+    {
+      "span_text": "fibroblan and esmetopril"
+    },
+    {
+      "span_text": "floralana"
+    },
+    {
+      "span_text": "saralana"
+    },
+    {
+      "span_text": "moxeduct imidogloprid"
+    },
+    {
+      "span_text": "salamitin"
+    },
+    {
+      "span_text": "Florina also called Bravitu"
+    },
+    {
+      "span_text": "Contraway Force Etching"
+    },
+    {
+      "span_text": "Spirocoxin"
+    },
+    {
+      "span_text": "omega 3, omega 6 fatty acids"
+    }
+  ],
+  "Procedure": [
+    {
+      "span_text": "physiotherapy"
+    },
+    {
+      "span_text": "swimming"
+    },
+    {
+      "span_text": "sit stand step exercise"
+    },
+    {
+      "span_text": "FHO"
+    }
+  ],
+  "Diagnostic": [
+    {
+      "span_text": "ultralining test"
+    },
+    {
+      "span_text": "X-ray"
+    },
+    {
+      "span_text": "noble angle"
+    },
+    {
+      "span_text": "Antiloposteral"
+    },
+    {
+      "span_text": "lateral"
+    },
+    {
+      "span_text": "auto-lanternance"
+    }
+  ],
+  "VitalSign": [
+    {
+      "span_text": "1 pound reduction in body weight"
+    },
+    {
+      "span_text": "1 pound reduction"
+    }
+  ],
+  "Reminder": [],
+  "Symptom": [
+    {
+      "span_text": "unusual posture"
+    },
+    {
+      "span_text": "playful"
+    },
+    {
+      "span_text": "lazy"
+    },
+    {
+      "span_text": "not willing to wake up"
+    },
+    {
+      "span_text": "walking problem"
+    },
+    {
+      "span_text": "whining"
+    },
+    {
+      "span_text": "stifled joint"
+    },
+    {
+      "span_text": "obese"
+    },
+    {
+      "span_text": "joint quality"
+    },
+    {
+      "span_text": "inflammation"
+    }
+  ],
+  "Diagnosis": [
+    {
+      "span_text": "patellar luxation"
+    },
+    {
+      "span_text": "hip dysplasia"
+    },
+    {
+      "span_text": "arthritis"
+    }
+  ],
+  "Anatomy": [
+    {
+      "span_text": "hip joint"
+    },
+    {
+      "span_text": "stifled joint"
+    },
+    {
+      "span_text": "spine"
+    },
+    {
+      "span_text": "ball and socket joints"
+    },
+    {
+      "span_text": "socket coverage of the bone"
+    },
+    {
+      "span_text": "ball in the balance of your joint"
+    }
+  ],
+  "Diet": [
+    {
+      "span_text": "home food"
+    },
+    {
+      "span_text": "rice and sambar"
+    },
+    {
+      "span_text": "egg whites"
+    },
+    {
+      "span_text": "obesity diet"
+    }
+  ],
+  "Preventive": [
+    {
+      "span_text": "vaccinated and dewormed"
+    }
+  ],
+  "ParasiteControl": [
+    {
+      "span_text": "tick and flee control"
+    },
+    {
+      "span_text": "tachycine free control"
+    }
+  ],
+  "Other": [
+    {
+      "span_text": "Oreo"
+    },
+    {
+      "span_text": "5 year old male Labrador"
+    },
+    {
+      "span_text": "Labrador"
+    }
+  ]
+}

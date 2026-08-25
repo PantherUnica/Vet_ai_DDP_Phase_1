@@ -1,0 +1,933 @@
+[
+  {
+    "span_text": "Antiloposteral",
+    "normalized_name": "Antiloposteral",
+    "display_name": "Anteroposterior",
+    "kind": "Diagnostic",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Diagnostic",
+    "match_method": "unlinked",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "Anteroposterior",
+      "AP view",
+      "radiograph"
+    ],
+    "search_term": "Anteroposterior"
+  },
+  {
+    "span_text": "auto-lanternance",
+    "normalized_name": "auto-lanternance",
+    "display_name": "auto-lanternance",
+    "kind": "Diagnostic",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Diagnostic",
+    "match_method": "dual_sync_judge_rejected",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {
+      "suggestions": [
+        {
+          "name": "HIP X RAY",
+          "match_score": 0.8344444444444444,
+          "recommendation": "MEDIUM",
+          "service_id": 975
+        },
+        {
+          "name": "HIP X RAY RESCUE",
+          "match_score": 0.8183333333333334,
+          "recommendation": "MEDIUM",
+          "service_id": 972
+        },
+        {
+          "name": "HIP SCREENING WITH GA",
+          "match_score": 0.7501587301587301,
+          "recommendation": "MEDIUM",
+          "service_id": 974
+        }
+      ],
+      "primary_local_suggestion": {
+        "name": "HIP X RAY",
+        "stock_id": null,
+        "service_id": 975
+      }
+    },
+    "hints": [
+      "Ortolani test",
+      "hip laxity test",
+      "auto-lanternance"
+    ],
+    "search_term": "Ortolani test"
+  },
+  {
+    "span_text": "Contraway Force Etching",
+    "normalized_name": "Contraway Force Etching",
+    "display_name": "Contraway Force Etching",
+    "kind": "Medication",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Medication",
+    "match_method": "dual_sync_judge_rejected",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {
+      "suggestions": [
+        {
+          "name": "CONDROVET FORCE HA 590",
+          "match_score": 0.7823759332454985,
+          "recommendation": "MEDIUM",
+          "inventory_id": 41559,
+          "stock_id": 41559
+        },
+        {
+          "name": "CONDROVET FORCE HA LARGE 1100",
+          "match_score": 0.7670885145662464,
+          "recommendation": "MEDIUM",
+          "inventory_id": 41558,
+          "stock_id": 41558
+        },
+        {
+          "name": "Intas Livotas Syrup 200 ml Pet",
+          "match_score": 0.6101851851851853,
+          "recommendation": "MEDIUM",
+          "inventory_id": 42158,
+          "stock_id": 42158
+        },
+        {
+          "name": "Intas Ondet 2 mg 20 x 5 ml Ampoules",
+          "match_score": 0.5801282051282052,
+          "recommendation": "MEDIUM",
+          "inventory_id": 42341,
+          "stock_id": 42341
+        },
+        {
+          "name": "INTACEF TAZO PET",
+          "match_score": 0.5625,
+          "recommendation": "MEDIUM",
+          "inventory_id": 41018,
+          "stock_id": 41018
+        }
+      ],
+      "primary_local_suggestion": {
+        "name": "CONDROVET FORCE HA 590",
+        "stock_id": 41559,
+        "service_id": null
+      }
+    },
+    "hints": [
+      "Contraway Force Etching",
+      "joint supplement",
+      "glucosamine"
+    ],
+    "search_term": "Contraway Force Etching"
+  },
+  {
+    "span_text": "egg whites",
+    "normalized_name": "egg whites",
+    "display_name": "egg whites",
+    "kind": "Diet",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "VitalSign",
+    "match_method": "vital_sign_structured",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "egg whites",
+      "protein supplement",
+      "dietary supplement"
+    ],
+    "search_term": "egg whites"
+  },
+  {
+    "span_text": "FHO",
+    "normalized_name": "FHO",
+    "display_name": "SURGERY-FHO",
+    "kind": "Procedure",
+    "kb_concept_id": null,
+    "kb_preferred_name": "SURGERY-FHO",
+    "kb_kind": "Procedure",
+    "match_method": "dual_sync_local",
+    "is_verified": true,
+    "similarity_score": 0.6648242349870277,
+    "local_stock_id": null,
+    "local_service_id": 1181,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "FHO",
+      "femoral head and neck ostectomy",
+      "surgical procedure"
+    ],
+    "search_term": "FHO"
+  },
+  {
+    "span_text": "fibroblan and esmetopril",
+    "normalized_name": "fibroblan and esmetopril",
+    "display_name": "fibroblan and esmetopril",
+    "kind": "Medication",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Medication",
+    "match_method": "dual_sync_judge_rejected",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {
+      "suggestions": [
+        {
+          "name": "FELI D SUSPENSION 15ML",
+          "match_score": 0.6480519480519481,
+          "recommendation": "MEDIUM",
+          "inventory_id": 41298,
+          "stock_id": 41298
+        }
+      ],
+      "primary_local_suggestion": {
+        "name": "FELI D SUSPENSION 15ML",
+        "stock_id": 41298,
+        "service_id": null
+      }
+    },
+    "hints": [
+      "fibroblan and esmetopril",
+      "parasite control medication",
+      "flea and tick medication"
+    ],
+    "search_term": "fibroblan and esmetopril"
+  },
+  {
+    "span_text": "floralana",
+    "normalized_name": "floralana",
+    "display_name": "floralana",
+    "kind": "Medication",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Medication",
+    "match_method": "dual_sync_judge_rejected",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {
+      "suggestions": [
+        {
+          "name": "FELI D SUSPENSION 15ML",
+          "match_score": 0.6145933014354066,
+          "recommendation": "MEDIUM",
+          "inventory_id": 41298,
+          "stock_id": 41298
+        }
+      ],
+      "primary_local_suggestion": {
+        "name": "FELI D SUSPENSION 15ML",
+        "stock_id": 41298,
+        "service_id": null
+      }
+    },
+    "hints": [
+      "floralana",
+      "parasite control agent",
+      "flea and tick agent"
+    ],
+    "search_term": "floralana"
+  },
+  {
+    "span_text": "Florina also called Bravitu",
+    "normalized_name": "Florina also called Bravitu",
+    "display_name": "Florina also called Bravitu",
+    "kind": "Medication",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Medication",
+    "match_method": "dual_sync_judge_rejected",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {
+      "suggestions": [
+        {
+          "name": "FELI D SUSPENSION 15ML",
+          "match_score": 0.6350649350649351,
+          "recommendation": "MEDIUM",
+          "inventory_id": 41298,
+          "stock_id": 41298
+        },
+        {
+          "name": "PROVICAL PET 200 ML",
+          "match_score": 0.6287593984962406,
+          "recommendation": "MEDIUM",
+          "inventory_id": 40246,
+          "stock_id": 40246
+        },
+        {
+          "name": "PROVICAL PET 500 ML",
+          "match_score": 0.6287593984962406,
+          "recommendation": "MEDIUM",
+          "inventory_id": 40245,
+          "stock_id": 40245
+        }
+      ],
+      "primary_local_suggestion": {
+        "name": "FELI D SUSPENSION 15ML",
+        "stock_id": 41298,
+        "service_id": null
+      }
+    },
+    "hints": [
+      "Bravecto",
+      "flea and tick control",
+      "parasite control"
+    ],
+    "search_term": "Bravecto"
+  },
+  {
+    "span_text": "home food",
+    "normalized_name": "home food",
+    "display_name": "home food",
+    "kind": "Diet",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "VitalSign",
+    "match_method": "vital_sign_structured",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "home food",
+      "non-prescription diet",
+      "diet"
+    ],
+    "search_term": "home food"
+  },
+  {
+    "span_text": "lateral",
+    "normalized_name": "lateral",
+    "display_name": "lateral",
+    "kind": "Diagnostic",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Diagnostic",
+    "match_method": "unlinked",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "lateral",
+      "lateral view",
+      "radiograph"
+    ],
+    "search_term": "lateral"
+  },
+  {
+    "span_text": "moxeduct imidogloprid",
+    "normalized_name": "moxeduct imidogloprid",
+    "display_name": "moxeduct imidogloprid",
+    "kind": "Medication",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Medication",
+    "match_method": "dual_sync_judge_rejected",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {
+      "suggestions": [
+        {
+          "name": "FELI D SUSPENSION 15ML",
+          "match_score": 0.6480519480519481,
+          "recommendation": "MEDIUM",
+          "inventory_id": 41298,
+          "stock_id": 41298
+        }
+      ],
+      "primary_local_suggestion": {
+        "name": "FELI D SUSPENSION 15ML",
+        "stock_id": 41298,
+        "service_id": null
+      }
+    },
+    "hints": [
+      "moxeduct imidogloprid",
+      "parasite control medication",
+      "flea and tick medication"
+    ],
+    "search_term": "moxeduct imidogloprid"
+  },
+  {
+    "span_text": "noble angle",
+    "normalized_name": "noble angle",
+    "display_name": "noble angle",
+    "kind": "Diagnostic",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Diagnostic",
+    "match_method": "dual_sync_judge_rejected",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {
+      "suggestions": [
+        {
+          "name": "HIP X RAY",
+          "match_score": 0.8222222222222222,
+          "recommendation": "MEDIUM",
+          "service_id": 975
+        },
+        {
+          "name": "HIP X RAY RESCUE",
+          "match_score": 0.8083333333333333,
+          "recommendation": "MEDIUM",
+          "service_id": 972
+        },
+        {
+          "name": "HIP SCREENING WITH GA",
+          "match_score": 0.7793650793650794,
+          "recommendation": "MEDIUM",
+          "service_id": 974
+        }
+      ],
+      "primary_local_suggestion": {
+        "name": "HIP X RAY",
+        "stock_id": null,
+        "service_id": 975
+      }
+    },
+    "hints": [
+      "Norberg angle",
+      "Norberg angle measurement",
+      "hip angle"
+    ],
+    "search_term": "Norberg angle"
+  },
+  {
+    "span_text": "obesity diet",
+    "normalized_name": "obesity diet",
+    "display_name": "obesity diet",
+    "kind": "Diet",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "VitalSign",
+    "match_method": "vital_sign_structured",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "obesity diet",
+      "weight management diet",
+      "calorie-restricted diet"
+    ],
+    "search_term": "obesity diet"
+  },
+  {
+    "span_text": "omega 3, omega 6 fatty acids",
+    "normalized_name": "omega 3, omega 6 fatty acids",
+    "display_name": "omega 3",
+    "kind": "Medication",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Medication",
+    "match_method": "unlinked",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "omega 3",
+      "omega 6 fatty acids",
+      "fish oil"
+    ],
+    "search_term": "omega 3, omega 6 fatty acids"
+  },
+  {
+    "span_text": "physiotherapy",
+    "normalized_name": "physiotherapy",
+    "display_name": "PHYSIOTHERAPY",
+    "kind": "Procedure",
+    "kb_concept_id": null,
+    "kb_preferred_name": "PHYSIOTHERAPY",
+    "kb_kind": "Procedure",
+    "match_method": "dual_sync_auto_bind_local",
+    "is_verified": true,
+    "similarity_score": 1.0,
+    "local_stock_id": null,
+    "local_service_id": 1159,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "physiotherapy",
+      "physical therapy",
+      "rehabilitation"
+    ],
+    "search_term": "physiotherapy"
+  },
+  {
+    "span_text": "rice and sambar",
+    "normalized_name": "rice and sambar",
+    "display_name": "rice and sambar",
+    "kind": "Status_Constant",
+    "kb_concept_id": null,
+    "kb_preferred_name": "rice and sambar",
+    "kb_kind": null,
+    "match_method": "status_constant_preserved",
+    "is_verified": true,
+    "similarity_score": 1.0,
+    "assertion_id": "CONF",
+    "attributes": {
+      "observation_type": "StatusConstant",
+      "source_text": "rice and sambar"
+    },
+    "hints": [
+      "rice and sambar",
+      "home-cooked diet",
+      "diet"
+    ],
+    "search_term": "rice and sambar"
+  },
+  {
+    "span_text": "salamitin",
+    "normalized_name": "salamitin",
+    "display_name": "salamitin",
+    "kind": "Medication",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Medication",
+    "match_method": "dual_sync_judge_rejected",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {
+      "suggestions": [
+        {
+          "name": "FELI D SUSPENSION 15ML",
+          "match_score": 0.6480519480519481,
+          "recommendation": "MEDIUM",
+          "inventory_id": 41298,
+          "stock_id": 41298
+        }
+      ],
+      "primary_local_suggestion": {
+        "name": "FELI D SUSPENSION 15ML",
+        "stock_id": 41298,
+        "service_id": null
+      }
+    },
+    "hints": [
+      "salamitin",
+      "parasite control medication",
+      "flea and tick medication"
+    ],
+    "search_term": "salamitin"
+  },
+  {
+    "span_text": "saralana",
+    "normalized_name": "saralana",
+    "display_name": "saralana",
+    "kind": "Medication",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Medication",
+    "match_method": "dual_sync_judge_rejected",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {
+      "suggestions": [
+        {
+          "name": "FELI D SUSPENSION 15ML",
+          "match_score": 0.6480519480519481,
+          "recommendation": "MEDIUM",
+          "inventory_id": 41298,
+          "stock_id": 41298
+        }
+      ],
+      "primary_local_suggestion": {
+        "name": "FELI D SUSPENSION 15ML",
+        "stock_id": 41298,
+        "service_id": null
+      }
+    },
+    "hints": [
+      "saralana",
+      "parasite control medication",
+      "flea and tick medication"
+    ],
+    "search_term": "saralana"
+  },
+  {
+    "span_text": "sit stand step exercise",
+    "normalized_name": "sit stand step exercise",
+    "display_name": "sit stand step exercise",
+    "kind": "Procedure",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Procedure",
+    "match_method": "dual_sync_judge_rejected",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {
+      "suggestions": [
+        {
+          "name": "PHYSIOTHERAPY",
+          "match_score": 0.838948717948718,
+          "recommendation": "MEDIUM",
+          "service_id": 1159
+        }
+      ],
+      "primary_local_suggestion": {
+        "name": "PHYSIOTHERAPY",
+        "stock_id": null,
+        "service_id": 1159
+      }
+    },
+    "hints": [
+      "sit stand step exercise",
+      "physical therapy exercise",
+      "mobility exercise"
+    ],
+    "search_term": "sit stand step exercise"
+  },
+  {
+    "span_text": "Spirocoxin",
+    "normalized_name": "Spirocoxin",
+    "display_name": "Spirocoxin",
+    "kind": "Medication",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Medication",
+    "match_method": "dual_sync_judge_rejected",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {
+      "suggestions": [
+        {
+          "name": "ONDANSETRON",
+          "match_score": 0.4661319073083779,
+          "recommendation": "MEDIUM",
+          "inventory_id": 40549,
+          "stock_id": 40549
+        }
+      ],
+      "primary_local_suggestion": {
+        "name": "ONDANSETRON",
+        "stock_id": 40549,
+        "service_id": null
+      }
+    },
+    "hints": [
+      "Spirocoxin",
+      "NSAID",
+      "anti-inflammatory"
+    ],
+    "search_term": "Spirocoxin"
+  },
+  {
+    "span_text": "swimming",
+    "normalized_name": "swimming",
+    "display_name": "swimming",
+    "kind": "Procedure",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Procedure",
+    "match_method": "dual_sync_judge_rejected",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {
+      "suggestions": [
+        {
+          "name": "PHYSIOTHERAPY",
+          "match_score": 0.8675213675213675,
+          "recommendation": "MEDIUM",
+          "service_id": 1159
+        }
+      ],
+      "primary_local_suggestion": {
+        "name": "PHYSIOTHERAPY",
+        "stock_id": null,
+        "service_id": 1159
+      }
+    },
+    "hints": [
+      "swimming",
+      "hydrotherapy",
+      "low-impact exercise"
+    ],
+    "search_term": "swimming"
+  },
+  {
+    "span_text": "tachycine free control",
+    "normalized_name": "tachycine free control",
+    "display_name": "tachycine free control",
+    "kind": "ParasiteControl",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "ParasiteControl",
+    "match_method": "dual_sync_judge_rejected",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {
+      "suggestions": [
+        {
+          "name": "FRONTLINE SPRAY 250 ML",
+          "match_score": 0.6476023976023977,
+          "recommendation": "MEDIUM",
+          "inventory_id": 41213,
+          "stock_id": 41213
+        },
+        {
+          "name": "NAYFLEE PLUS 10 TO 20KG",
+          "match_score": 0.5662802964103509,
+          "recommendation": "MEDIUM",
+          "inventory_id": 40674,
+          "stock_id": 40674
+        },
+        {
+          "name": "NAYFLEE PLUS 40 TO 60KG",
+          "match_score": 0.5648804812026477,
+          "recommendation": "MEDIUM",
+          "inventory_id": 40673,
+          "stock_id": 40673
+        },
+        {
+          "name": "Nayflee PLUS 9.8% w/v 8.8% w/v 0.67 ml Dog",
+          "match_score": 0.5626881625671555,
+          "recommendation": "MEDIUM",
+          "inventory_id": 42258,
+          "stock_id": 42258
+        },
+        {
+          "name": "Nayflee PLUS 2.68 ml Dog",
+          "match_score": 0.5602329445162956,
+          "recommendation": "MEDIUM",
+          "inventory_id": 42257,
+          "stock_id": 42257
+        }
+      ],
+      "primary_local_suggestion": {
+        "name": "FRONTLINE SPRAY 250 ML",
+        "stock_id": 41213,
+        "service_id": null
+      }
+    },
+    "hints": [
+      "flea and tick control",
+      "parasite prevention",
+      "tick control"
+    ],
+    "search_term": "flea and tick control"
+  },
+  {
+    "span_text": "tick and flee control",
+    "normalized_name": "tick and flee control",
+    "display_name": "tick and flee control",
+    "kind": "ParasiteControl",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "ParasiteControl",
+    "match_method": "dual_sync_judge_rejected",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {
+      "suggestions": [
+        {
+          "name": "PAPA PAWSOME TICK OFF SHAMPOO 250ml",
+          "match_score": 0.6610822510822512,
+          "recommendation": "MEDIUM",
+          "inventory_id": 40527,
+          "stock_id": 40527
+        },
+        {
+          "name": "Natural Remedies NOMOTICKS ANTITICK & FLEA BODY SPRAY 100 ml",
+          "match_score": 0.6246031746031746,
+          "recommendation": "MEDIUM",
+          "inventory_id": 42244,
+          "stock_id": 42244
+        },
+        {
+          "name": "Vetoquinol Fixotic Advance Spray Fipronil 0.25% w/v & (S)-Methoprene 0.22% w/v 100 ml",
+          "match_score": 0.6149596332785988,
+          "recommendation": "MEDIUM",
+          "inventory_id": 42117,
+          "stock_id": 42117
+        },
+        {
+          "name": "Frontline Spray 0.250g",
+          "match_score": 0.5928030303030303,
+          "recommendation": "MEDIUM",
+          "inventory_id": 42254,
+          "stock_id": 42254
+        },
+        {
+          "name": "FRONTLINE SPRAY 250 ML",
+          "match_score": 0.5928030303030303,
+          "recommendation": "MEDIUM",
+          "inventory_id": 41213,
+          "stock_id": 41213
+        }
+      ],
+      "primary_local_suggestion": {
+        "name": "PAPA PAWSOME TICK OFF SHAMPOO 250ml",
+        "stock_id": 40527,
+        "service_id": null
+      }
+    },
+    "hints": [
+      "tick and flea control",
+      "flea and tick prevention",
+      "parasite control"
+    ],
+    "search_term": "tick and flea control"
+  },
+  {
+    "span_text": "ultralining test",
+    "normalized_name": "ultralining test",
+    "display_name": "ultralining test",
+    "kind": "Diagnostic",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Diagnostic",
+    "match_method": "dual_sync_judge_rejected",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {
+      "suggestions": [
+        {
+          "name": "HIP X RAY",
+          "match_score": 0.8344444444444444,
+          "recommendation": "MEDIUM",
+          "service_id": 975
+        },
+        {
+          "name": "HIP X RAY RESCUE",
+          "match_score": 0.8183333333333334,
+          "recommendation": "MEDIUM",
+          "service_id": 972
+        },
+        {
+          "name": "HIP SCREENING WITH GA",
+          "match_score": 0.7501587301587301,
+          "recommendation": "MEDIUM",
+          "service_id": 974
+        }
+      ],
+      "primary_local_suggestion": {
+        "name": "HIP X RAY",
+        "stock_id": null,
+        "service_id": 975
+      }
+    },
+    "hints": [
+      "Ortolani test",
+      "hip laxity test",
+      "Ortolani"
+    ],
+    "search_term": "Ortolani test"
+  },
+  {
+    "span_text": "vaccinated and dewormed",
+    "normalized_name": "vaccinated and dewormed",
+    "display_name": "VACCINATION CRP",
+    "kind": "Preventive",
+    "kb_concept_id": null,
+    "kb_preferred_name": "VACCINATION CRP",
+    "kb_kind": "Preventive",
+    "match_method": "dual_sync_local",
+    "is_verified": true,
+    "similarity_score": 0.8218666666666666,
+    "local_stock_id": null,
+    "local_service_id": 1009,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "vaccinated and dewormed",
+      "preventive care",
+      "vaccination and deworming"
+    ],
+    "search_term": "vaccinated and dewormed"
+  },
+  {
+    "span_text": "X-ray",
+    "normalized_name": "X-ray",
+    "display_name": "X-ray",
+    "kind": "Diagnostic",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Diagnostic",
+    "match_method": "dual_sync_judge_rejected",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {
+      "suggestions": [
+        {
+          "name": "XRAY",
+          "match_score": 0.94,
+          "recommendation": "MEDIUM",
+          "service_id": 1185
+        },
+        {
+          "name": "X RAY WITH PRINT",
+          "match_score": 0.7149999999999999,
+          "recommendation": "MEDIUM",
+          "service_id": 952
+        },
+        {
+          "name": "X RAY WITHOUT PRINT",
+          "match_score": 0.7031578947368421,
+          "recommendation": "MEDIUM",
+          "service_id": 953
+        },
+        {
+          "name": "X RAY UNDER ANESTHESIA",
+          "match_score": 0.6945454545454546,
+          "recommendation": "MEDIUM",
+          "service_id": 970
+        },
+        {
+          "name": "HIP X RAY",
+          "match_score": 0.6,
+          "recommendation": "MEDIUM",
+          "service_id": 975
+        }
+      ],
+      "primary_local_suggestion": {
+        "name": "XRAY",
+        "stock_id": null,
+        "service_id": 1185
+      }
+    },
+    "hints": [
+      "X-ray",
+      "radiograph",
+      "imaging test"
+    ],
+    "search_term": "X-ray"
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "Subjective": "Ishidzu, a one and a half year old dog, presented with symptoms of head shaking and holding the head tilted to the left side for 2-3 days. The owner reports decreased appetite and not eating food properly.",
+  "Objective": "Physical examination revealed a foreign body (bus) inside the left ear and yeast infection in the right ear. Ear cleaning was performed. The patient is currently on oral Cefpodoxime syrup 3ml.",
+  "Assessment": "Foreign body in the left ear and yeast infection (otomycosis) in the right ear causing discomfort and anorexia.",
+  "Plan": "Continue oral Cefpodoxime syrup 3ml for another 5-7 days. Apply Easotic ear drops once daily for 5 days. Monitor response to treatment. If no improvement, perform ear swab for culture and sensitivity to guide further therapy.",
+  "Conclusion": "The patient is being treated for bilateral ear issues: foreign body removal and yeast infection. Follow-up is necessary to ensure resolution.",
+  "DifferentialDiagnosis": "Other causes of head shaking and anorexia could include otitis externa from other pathogens, ear mites, or neurological causes, but current findings support foreign body and yeast infection.",
+  "KeyIssues": "Foreign body in left ear, yeast infection in right ear, head shaking, anorexia.",
+  "AbnormalFindings": "Foreign body in left ear canal, yeast growth in right ear canal.",
+  "CustomerInstructions": "Administer oral Cefpodoxime syrup 3ml as directed for 5-7 more days. Apply Easotic ear drops once daily for 5 days. Observe for improvement in head shaking and appetite. Return for recheck if no improvement or worsening occurs.",
+  "Protocols": "Ear cleaning performed. Medication protocol includes oral antibiotic (Cefpodoxime) and topical antifungal ear drops (Easotic). Culture and sensitivity planned if no response.",
+  "Vitals": "Not documented in transcript.",
+  "Reminders": "Schedule follow-up appointment after completion of medication course. Consider ear swab culture if symptoms persist."
+}

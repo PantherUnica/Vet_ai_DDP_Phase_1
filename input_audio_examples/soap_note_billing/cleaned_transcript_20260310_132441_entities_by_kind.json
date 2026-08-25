@@ -1,0 +1,42 @@
+{
+  "ReasonForVisit": [],
+  "Medication": [],
+  "Procedure": [],
+  "Diagnostic": [],
+  "VitalSign": [],
+  "Reminder": [],
+  "Symptom": [
+    {
+      "span_text": "воспаление ротовой полости"
+    },
+    {
+      "span_text": "покраснение"
+    },
+    {
+      "span_text": "изделение из ротовой полости"
+    },
+    {
+      "span_text": "больно при пальпации"
+    },
+    {
+      "span_text": "болевое ощущение"
+    },
+    {
+      "span_text": "кушает очень мало"
+    }
+  ],
+  "Diagnosis": [
+    {
+      "span_text": "перелом клика нижнего челюсти"
+    }
+  ],
+  "Anatomy": [
+    {
+      "span_text": "десна"
+    }
+  ],
+  "Diet": [],
+  "Preventive": [],
+  "ParasiteControl": [],
+  "Other": []
+}

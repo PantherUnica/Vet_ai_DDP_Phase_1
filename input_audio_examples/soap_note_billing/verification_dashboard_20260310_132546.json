@@ -1,0 +1,72 @@
+{
+  "procedures_services": [],
+  "medications_administered": [],
+  "medications_prescribed": [],
+  "diagnostics": [
+    {
+      "service_id": 912,
+      "lab_radiology": "LAB",
+      "test_name": "BLOOD TEST T4",
+      "date_of_test": "TBD",
+      "done": "In-house",
+      "sample_collected": "Yes",
+      "remarks": "blood test results were normal"
+    }
+  ],
+  "other_products_retail": [],
+  "reminders_follow_ups": [
+    {
+      "item_name": "Follow-up Appointment",
+      "item_id": "[REMINDER-XXX]",
+      "due_date": "ASAP",
+      "remarks": "assess healing and oral health",
+      "intent_context": "Scheduled",
+      "kind": "Reminder"
+    }
+  ],
+  "vitals": [],
+  "module_4_unlinked_entities": [],
+  "module_5_clinical_history": [],
+  "streamlined_dashboard": {
+    "signalment_vitals": [],
+    "clinical_assessment": [],
+    "pharmacy_administered": [],
+    "pharmacy_prescribed": [],
+    "diagnostics_labs_imaging": [
+      {
+        "name": "BLOOD TEST T4",
+        "original_mention": "BLOOD TEST T4",
+        "status": "CONFIRMED",
+        "linked_id": 912,
+        "suggestions": [],
+        "remarks": "blood test results were normal",
+        "done": "In-house",
+        "sample_collected": "Yes"
+      }
+    ],
+    "clinical_procedures_services": [],
+    "other_products_retail": [],
+    "preventive": [],
+    "patient_reminders": [],
+    "clinical_follow_ups": [
+      {
+        "name": "Follow-up Appointment",
+        "original_mention": "Follow-up Appointment",
+        "status": "DRAFTED",
+        "linked_id": "[REMINDER-XXX]",
+        "suggestions": [],
+        "due_date": "ASAP",
+        "remarks": "assess healing and oral health",
+        "is_operational": true,
+        "scheduling_data": {
+          "service_id": null,
+          "temporal_offset": "ASAP",
+          "recommended_date": null,
+          "priority": "Routine",
+          "item_id": "[REMINDER-XXX]"
+        },
+        "label": "Clinical Follow-up"
+      }
+    ]
+  }
+}

@@ -1,0 +1,244 @@
+[
+  {
+    "span_text": "анализ крови",
+    "normalized_name": "анализ крови",
+    "kind": "Diagnostic",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "BLOOD TEST T4",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "endocrinology",
+        "definition": null,
+        "score": 0.9538461538461538
+      },
+      {
+        "rank": 2,
+        "source": "local",
+        "preferred_name": "BLOOD TEST CBC",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "diagnostic_lab",
+        "definition": null,
+        "score": 0.9428571428571428
+      },
+      {
+        "rank": 3,
+        "source": "local",
+        "preferred_name": "BLOOD TEST TSH",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "endocrinology",
+        "definition": null,
+        "score": 0.9428571428571428
+      },
+      {
+        "rank": 4,
+        "source": "local",
+        "preferred_name": "BLOOD TEST ACTH",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "endocrinology",
+        "definition": null,
+        "score": 0.9333333333333333
+      },
+      {
+        "rank": 5,
+        "source": "local",
+        "preferred_name": "BLOOD TEST-ALLERGY TEST",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "dermatology",
+        "definition": null,
+        "score": 0.8869565217391304
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": {
+      "selected_display_name": "BLOOD TEST T4",
+      "selected_concept_id": null,
+      "selected_kind": null,
+      "justification": null
+    },
+    "final_binding": {
+      "display_name": "BLOOD TEST T4",
+      "kb_concept_id": null,
+      "local_service_id": 912,
+      "local_stock_id": null,
+      "match_method": "dual_sync_auto_bind_local",
+      "similarity_score": 0.9538461538461538
+    }
+  },
+  {
+    "span_text": "удалением зубов",
+    "normalized_name": "удалением зубов",
+    "kind": "Procedure",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "TOOTH EXTRACTION",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "dentistry",
+        "definition": null,
+        "score": 1.0
+      },
+      {
+        "rank": 2,
+        "source": "local",
+        "preferred_name": "DENTAL SCALING DOG",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "dentistry",
+        "definition": null,
+        "score": 0.8411764705882353
+      },
+      {
+        "rank": 3,
+        "source": "local",
+        "preferred_name": "DENTAL SCALING CAT",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "dentistry",
+        "definition": null,
+        "score": 0.8411764705882353
+      },
+      {
+        "rank": 4,
+        "source": "local",
+        "preferred_name": "SURGERY-TUMOR REMOVAL",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "orthopedic",
+        "definition": null,
+        "score": 0.6484737484737485
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": {
+      "selected_display_name": "TOOTH EXTRACTION",
+      "selected_concept_id": null,
+      "selected_kind": null,
+      "justification": null
+    },
+    "final_binding": {
+      "display_name": "TOOTH EXTRACTION",
+      "kb_concept_id": null,
+      "local_service_id": 1163,
+      "local_stock_id": null,
+      "match_method": "dual_sync_auto_bind_local",
+      "similarity_score": 1.0
+    }
+  },
+  {
+    "span_text": "наркозом",
+    "normalized_name": "наркозом",
+    "kind": "Procedure",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "ANESTHESIA",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "anesthesia_analgesia",
+        "definition": null,
+        "score": 1.0
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": {
+      "selected_display_name": "ANESTHESIA",
+      "selected_concept_id": null,
+      "selected_kind": null,
+      "justification": null
+    },
+    "final_binding": {
+      "display_name": "ANESTHESIA",
+      "kb_concept_id": null,
+      "local_service_id": 1020,
+      "local_stock_id": null,
+      "match_method": "dual_sync_auto_bind_local",
+      "similarity_score": 1.0
+    }
+  },
+  {
+    "span_text": "санацию ротовой полости",
+    "normalized_name": "санацию ротовой полости",
+    "kind": "Procedure",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "DENTAL SCALING CAT",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "dentistry",
+        "definition": null,
+        "score": 0.8666163901458019
+      },
+      {
+        "rank": 2,
+        "source": "local",
+        "preferred_name": "DENTAL SCALING DOG",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "dentistry",
+        "definition": null,
+        "score": 0.8578431372549019
+      },
+      {
+        "rank": 3,
+        "source": "local",
+        "preferred_name": "ANAL SAC SURGERY ",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "soft_tissue_surgery",
+        "definition": null,
+        "score": 0.8194444444444445
+      },
+      {
+        "rank": 4,
+        "source": "local",
+        "preferred_name": "MEDICAL PROCEDURE & TREATMENT",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "general",
+        "definition": null,
+        "score": 0.6787766830870279
+      },
+      {
+        "rank": 5,
+        "source": "local",
+        "preferred_name": "SURGERY- HERNIA",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "orthopedic",
+        "definition": null,
+        "score": 0.6166666666666667
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": {
+      "selected_display_name": "DENTAL SCALING CAT",
+      "selected_concept_id": null,
+      "selected_kind": null,
+      "justification": null
+    },
+    "final_binding": {
+      "display_name": "DENTAL SCALING CAT",
+      "kb_concept_id": null,
+      "local_service_id": 1161,
+      "local_stock_id": null,
+      "match_method": "dual_sync_auto_bind_local",
+      "similarity_score": 0.8666163901458019
+    }
+  }
+]

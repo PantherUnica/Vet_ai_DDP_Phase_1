@@ -55,6 +55,8 @@ MODEL_PROVIDER_MAP: Dict[str, str] = {
     "accounts/fireworks/models/gpt-oss-120b": "fireworks",
     "accounts/fireworks/models/qwen3-8b": "fireworks",
     "whisper-v3-turbo": "fireworks",
+    "nova-3": "deepgram",
+    "nova-2": "deepgram",
 }
 
 # Phase-to-Model Configuration
@@ -119,7 +121,24 @@ def get_phase_config(phase_key: str) -> Dict[str, str]:
         #     "description": "Fast entity mention extraction..."
         # }
     """
+    if phase_key == "step_1_transcription":
+        return get_step1_transcription_config()
     return PHASE_CONFIG.get(phase_key, {})
+
+
+def get_step1_transcription_config() -> Dict[str, str]:
+    """Runtime Step-1 config from ASR_PROVIDER / ASR_MODEL env."""
+    from asr_providers import resolve_model, resolve_provider
+
+    provider = resolve_provider()
+    model = resolve_model(provider)
+    base = dict(PHASE_CONFIG.get("step_1_transcription", {}))
+    base["provider"] = provider
+    base["model"] = model
+    base["description"] = (
+        f"Speech-to-text via {provider} ({model}); override with ASR_PROVIDER / ASR_MODEL"
+    )
+    return base
 
 def get_all_phase_configs() -> Dict[str, Dict[str, str]]:
     """

@@ -1,0 +1,119 @@
+{
+  "ok": [
+    {
+      "audio": "kannada_english_lipika.wav",
+      "slug": "kannada_english_lipika",
+      "gemini_ref": "C:\\VetAI_Phase1\\benchmark_runs\\references\\gemini\\kannada_english_lipika.txt",
+      "gemini_words": 511,
+      "status": "ok",
+      "run_dir": "benchmark_runs\\deepgram_nova-3\\kannada_english_lipika\\20260820_171811",
+      "nova3_words": 350,
+      "flat_copy": "C:\\VetAI_Phase1\\benchmark_runs\\hypotheses\\deepgram_nova-3\\kannada_english_lipika.txt"
+    },
+    {
+      "audio": "long_audio.wav",
+      "slug": "long_audio",
+      "gemini_ref": "C:\\VetAI_Phase1\\benchmark_runs\\references\\gemini\\long_audio.txt",
+      "gemini_words": 2098,
+      "status": "ok",
+      "run_dir": "benchmark_runs\\deepgram_nova-3\\long_audio\\20260820_180127",
+      "nova3_words": 1971,
+      "flat_copy": "C:\\VetAI_Phase1\\benchmark_runs\\hypotheses\\deepgram_nova-3\\long_audio.txt"
+    },
+    {
+      "audio": "notes_075a2067-de61-4267-9f76-798a86ba2b11.wav",
+      "slug": "notes_075a2067-de61-4267-9f76-798a86ba2b11",
+      "gemini_ref": "C:\\VetAI_Phase1\\benchmark_runs\\references\\gemini\\notes_075a2067-de61-4267-9f76-798a86ba2b11.txt",
+      "gemini_words": 503,
+      "status": "ok",
+      "run_dir": "benchmark_runs\\deepgram_nova-3\\notes_075a2067-de61-4267-9f76-798a86ba2b11\\20260820_180623",
+      "nova3_words": 380,
+      "flat_copy": "C:\\VetAI_Phase1\\benchmark_runs\\hypotheses\\deepgram_nova-3\\notes_075a2067-de61-4267-9f76-798a86ba2b11.txt"
+    },
+    {
+      "audio": "notes_19d571cf-ee3f-4546-bf10-485e14e6af3b.wav",
+      "slug": "notes_19d571cf-ee3f-4546-bf10-485e14e6af3b",
+      "gemini_ref": "C:\\VetAI_Phase1\\benchmark_runs\\references\\gemini\\notes_19d571cf-ee3f-4546-bf10-485e14e6af3b.txt",
+      "gemini_words": 886,
+      "status": "ok",
+      "run_dir": "benchmark_runs\\deepgram_nova-3\\notes_19d571cf-ee3f-4546-bf10-485e14e6af3b\\20260820_180928",
+      "nova3_words": 315,
+      "flat_copy": "C:\\VetAI_Phase1\\benchmark_runs\\hypotheses\\deepgram_nova-3\\notes_19d571cf-ee3f-4546-bf10-485e14e6af3b.txt"
+    },
+    {
+      "audio": "notes_54df5e56-dd2f-4d3a-aba0-d385266e6fec.wav",
+      "slug": "notes_54df5e56-dd2f-4d3a-aba0-d385266e6fec",
+      "gemini_ref": "C:\\VetAI_Phase1\\benchmark_runs\\references\\gemini\\notes_54df5e56-dd2f-4d3a-aba0-d385266e6fec.txt",
+      "gemini_words": 2080,
+      "status": "ok",
+      "run_dir": "benchmark_runs\\deepgram_nova-3\\notes_54df5e56-dd2f-4d3a-aba0-d385266e6fec\\20260820_181137",
+      "nova3_words": 1818,
+      "flat_copy": "C:\\VetAI_Phase1\\benchmark_runs\\hypotheses\\deepgram_nova-3\\notes_54df5e56-dd2f-4d3a-aba0-d385266e6fec.txt"
+    },
+    {
+      "audio": "notes_87f1a4de-dff1-4440-8061-08ef89b9f7e7.wav",
+      "slug": "notes_87f1a4de-dff1-4440-8061-08ef89b9f7e7",
+      "gemini_ref": "C:\\VetAI_Phase1\\benchmark_runs\\references\\gemini\\notes_87f1a4de-dff1-4440-8061-08ef89b9f7e7.txt",
+      "gemini_words": 73,
+      "status": "ok",
+      "run_dir": "benchmark_runs\\deepgram_nova-3\\notes_87f1a4de-dff1-4440-8061-08ef89b9f7e7\\20260820_181356",
+      "nova3_words": 72,
+      "flat_copy": "C:\\VetAI_Phase1\\benchmark_runs\\hypotheses\\deepgram_nova-3\\notes_87f1a4de-dff1-4440-8061-08ef89b9f7e7.txt"
+    },
+    {
+      "audio": "notes_dc96fd5c-5c66-42d8-8d31-e8cee6f1f761.wav",
+      "slug": "notes_dc96fd5c-5c66-42d8-8d31-e8cee6f1f761",
+      "gemini_ref": "C:\\VetAI_Phase1\\benchmark_runs\\references\\gemini\\notes_dc96fd5c-5c66-42d8-8d31-e8cee6f1f761.txt",
+      "gemini_words": 38,
+      "status": "ok",
+      "run_dir": "benchmark_runs\\deepgram_nova-3\\notes_dc96fd5c-5c66-42d8-8d31-e8cee6f1f761\\20260820_181402",
+      "nova3_words": 37,
+      "flat_copy": "C:\\VetAI_Phase1\\benchmark_runs\\hypotheses\\deepgram_nova-3\\notes_dc96fd5c-5c66-42d8-8d31-e8cee6f1f761.txt"
+    },
+    {
+      "audio": "notes_f45c7339-446e-49eb-b0e4-5ede756fbc15.wav",
+      "slug": "notes_f45c7339-446e-49eb-b0e4-5ede756fbc15",
+      "gemini_ref": "C:\\VetAI_Phase1\\benchmark_runs\\references\\gemini\\notes_f45c7339-446e-49eb-b0e4-5ede756fbc15.txt",
+      "gemini_words": 68,
+      "status": "ok",
+      "run_dir": "benchmark_runs\\deepgram_nova-3\\notes_f45c7339-446e-49eb-b0e4-5ede756fbc15\\20260820_181407",
+      "nova3_words": 70,
+      "flat_copy": "C:\\VetAI_Phase1\\benchmark_runs\\hypotheses\\deepgram_nova-3\\notes_f45c7339-446e-49eb-b0e4-5ede756fbc15.txt"
+    },
+    {
+      "audio": "soap_testing.wav",
+      "slug": "soap_testing",
+      "gemini_ref": "C:\\VetAI_Phase1\\benchmark_runs\\references\\gemini\\soap_testing.txt",
+      "gemini_words": 987,
+      "status": "ok",
+      "run_dir": "benchmark_runs\\deepgram_nova-3\\soap_testing\\20260820_171223",
+      "nova3_words": 965,
+      "flat_copy": "C:\\VetAI_Phase1\\benchmark_runs\\hypotheses\\deepgram_nova-3\\soap_testing.txt"
+    },
+    {
+      "audio": "WhatsApp Audio 2025-11-19 at 13.34.25.wav",
+      "slug": "whatsapp_audio_2025-11-19_at_13_34_25",
+      "gemini_ref": "C:\\VetAI_Phase1\\benchmark_runs\\references\\gemini\\whatsapp_audio_2025-11-19_at_13_34_25.txt",
+      "gemini_words": 228,
+      "status": "ok",
+      "run_dir": "benchmark_runs\\deepgram_nova-3\\whatsapp_audio_2025-11-19_at_13_34_25\\20260820_181412",
+      "nova3_words": 29,
+      "flat_copy": "C:\\VetAI_Phase1\\benchmark_runs\\hypotheses\\deepgram_nova-3\\whatsapp_audio_2025-11-19_at_13_34_25.txt"
+    }
+  ],
+  "missing_nova3": [
+    {
+      "audio": "notes_2b84d945-e774-4b48-83b6-8817acf41ef9.wav",
+      "slug": "notes_2b84d945-e774-4b48-83b6-8817acf41ef9",
+      "gemini_ref": "C:\\VetAI_Phase1\\benchmark_runs\\references\\gemini\\notes_2b84d945-e774-4b48-83b6-8817acf41ef9.txt",
+      "gemini_words": 640,
+      "status": "missing_nova3",
+      "run_dir": null,
+      "nova3_words": 0,
+      "reason": "Deepgram returns empty transcript. Audio is ~4.9s / 8kHz stereo (~156KB) while Gemini ref is ~640 words \u2014 audio file is likely truncated/corrupt or Gemini text belongs to a different recording. Exclude from ASR scoring until replaced."
+    }
+  ],
+  "notes": [
+    "Deepgram returns empty transcript. Audio is ~4.9s / 8kHz stereo (~156KB) while Gemini ref is ~640 words \u2014 audio file is likely truncated/corrupt or Gemini text belongs to a different recording. Exclude from ASR scoring until replaced."
+  ]
+}

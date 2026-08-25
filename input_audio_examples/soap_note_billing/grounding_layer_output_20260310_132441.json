@@ -1,0 +1,50 @@
+[
+  {
+    "span_text": "перелом клика нижнего челюсти",
+    "normalized_name": "перелом клика нижнего челюсти",
+    "kind": "Diagnosis",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "SURGERY- FRACTURE REPAIR",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "orthopedic",
+        "definition": null,
+        "score": 0.5601851851851852
+      },
+      {
+        "rank": 2,
+        "source": "local",
+        "preferred_name": "IV SERVICE CHARGE",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "operational_consumables",
+        "definition": null,
+        "score": 0.5065359477124183
+      },
+      {
+        "rank": 3,
+        "source": "local",
+        "preferred_name": "IV CONSUMABLES",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "operational_consumables",
+        "definition": null,
+        "score": 0.4912698412698413
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "перелом клика нижнего челюсти",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "note_only_below_threshold",
+      "similarity_score": null
+    }
+  }
+]

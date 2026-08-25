@@ -1,0 +1,372 @@
+[
+  {
+    "span_text": "shaking the head",
+    "normalized_name": "head shaking",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Presented with complaint of shaking the head",
+    "start_char": 82,
+    "end_char": 98,
+    "is_actionable": true,
+    "search_term": "head shaking",
+    "hints": [
+      "head shaking",
+      "abnormal movement",
+      "tremors"
+    ],
+    "family": null,
+    "domain": [
+      "neurology"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E1",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Presented with complaint of shaking the head",
+    "hint_probabilities": {
+      "head shaking": 1.0,
+      "abnormal movement": 0.85,
+      "tremors": 0.75
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": []
+  },
+  {
+    "span_text": "not eating the food properly",
+    "normalized_name": "decreased appetite",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Not eating the food properly",
+    "start_char": 173,
+    "end_char": 201,
+    "is_actionable": true,
+    "search_term": "decreased appetite",
+    "hints": [
+      "decreased appetite",
+      "anorexia",
+      "poor appetite"
+    ],
+    "family": null,
+    "domain": [
+      "gastroenterology"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E2",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Not eating the food properly",
+    "hint_probabilities": {
+      "decreased appetite": 1.0,
+      "anorexia": 0.85,
+      "poor appetite": 0.75
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": []
+  },
+  {
+    "span_text": "bus inside the left ear",
+    "normalized_name": "foreign body in ear",
+    "kind": "Diagnosis",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Bus inside the left ear",
+    "start_char": 262,
+    "end_char": 285,
+    "is_actionable": true,
+    "search_term": "foreign body in ear",
+    "hints": [
+      "foreign body in ear",
+      "ear infection",
+      "otitis externa"
+    ],
+    "family": null,
+    "domain": [
+      "dermatology"
+    ],
+    "category": [
+      "Preventive & Parasite Control",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Preventive & Parasite Control"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E3",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Bus inside the left ear",
+    "hint_probabilities": {
+      "foreign body in ear": 1.0,
+      "ear infection": 0.85,
+      "otitis externa": 0.75
+    },
+    "correctness_probability": 0.8,
+    "suggestion_probability": 0.95,
+    "query_expansion": []
+  },
+  {
+    "span_text": "yeast growth",
+    "normalized_name": "yeast infection",
+    "kind": "Diagnosis",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Yeast growth in right ear",
+    "start_char": 317,
+    "end_char": 329,
+    "is_actionable": true,
+    "search_term": "yeast infection",
+    "hints": [
+      "yeast infection",
+      "fungal infection",
+      "otomycosis"
+    ],
+    "family": null,
+    "domain": [
+      "dermatology"
+    ],
+    "category": [
+      "Preventive & Parasite Control",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Preventive & Parasite Control"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E4",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Yeast growth in right ear",
+    "hint_probabilities": {
+      "yeast infection": 1.0,
+      "fungal infection": 0.85,
+      "otomycosis": 0.75
+    },
+    "correctness_probability": 0.85,
+    "suggestion_probability": 0.95,
+    "query_expansion": []
+  },
+  {
+    "span_text": "ear cleaning",
+    "normalized_name": "ear cleaning",
+    "kind": "Procedure",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Performed ear cleaning",
+    "start_char": 352,
+    "end_char": 364,
+    "is_actionable": true,
+    "search_term": "ear cleaning",
+    "hints": [
+      "ear cleaning",
+      "ear flush",
+      "otitis treatment"
+    ],
+    "family": null,
+    "domain": [
+      "dermatology"
+    ],
+    "category": [
+      "Medical Supplies",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medical Supplies"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E5",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Performed ear cleaning",
+    "hint_probabilities": {
+      "ear cleaning": 1.0,
+      "ear flush": 0.85,
+      "otitis treatment": 0.75
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": []
+  },
+  {
+    "span_text": "exotic pump",
+    "normalized_name": "Easotic ear drops",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Dispensed exotic pump",
+    "start_char": 379,
+    "end_char": 390,
+    "is_actionable": true,
+    "search_term": "Easotic ear drops",
+    "hints": [
+      "Easotic",
+      "ear drops",
+      "antifungal ear"
+    ],
+    "family": null,
+    "domain": [
+      "dermatology"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E6",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Dispensed exotic pump",
+    "hint_probabilities": {
+      "Easotic": 0.9,
+      "ear drops": 0.85,
+      "antifungal ear": 0.75
+    },
+    "correctness_probability": 0.65,
+    "suggestion_probability": 0.88,
+    "query_expansion": [
+      "Easotic",
+      "Easotic 10ml",
+      "Virbac Easotic"
+    ]
+  },
+  {
+    "span_text": "Cefpet syrup",
+    "normalized_name": "Cefpodoxime Syrup",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Already giving Cefpet syrup",
+    "start_char": 461,
+    "end_char": 473,
+    "is_actionable": true,
+    "search_term": "Cefpodoxime Syrup",
+    "hints": [
+      "Cefpodoxime",
+      "Cefpet",
+      "antibiotic"
+    ],
+    "family": null,
+    "domain": [
+      "gastroenterology"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": null,
+    "entity_id": "E7",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Already giving Cefpet syrup",
+    "hint_probabilities": {
+      "Cefpodoxime": 1.0,
+      "Cefpet": 0.9,
+      "antibiotic": 0.85
+    },
+    "correctness_probability": 0.8,
+    "suggestion_probability": 0.92,
+    "query_expansion": [
+      "Cefpodoxime",
+      "Cefpodoxime Syrup",
+      "CefPET"
+    ]
+  },
+  {
+    "span_text": "ear swab for culture and sensitivity",
+    "normalized_name": "ear swab culture",
+    "kind": "Diagnostic",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Will send ear swab for culture",
+    "start_char": 587,
+    "end_char": 623,
+    "is_actionable": true,
+    "search_term": "ear swab culture",
+    "hints": [
+      "ear swab culture",
+      "otitis media",
+      "cytology"
+    ],
+    "family": null,
+    "domain": [
+      "dermatology"
+    ],
+    "category": [
+      "Diagnostic",
+      "Diagnostic Imaging"
+    ],
+    "inventory_category": [
+      "Diagnostic"
+    ],
+    "service_category": [
+      "Diagnostic Imaging"
+    ],
+    "service_type": null,
+    "entity_id": "E8",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Will send ear swab for culture",
+    "hint_probabilities": {
+      "ear swab culture": 1.0,
+      "otitis media": 0.85,
+      "cytology": 0.75
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.95,
+    "query_expansion": []
+  }
+]

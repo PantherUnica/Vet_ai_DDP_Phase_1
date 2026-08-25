@@ -1,0 +1,262 @@
+[
+  {
+    "span_text": "bus inside the left ear",
+    "normalized_name": "bus inside the left ear",
+    "display_name": "bus inside the left ear",
+    "kind": "Diagnosis",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Diagnosis",
+    "match_method": "note_only_below_threshold",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "foreign body in ear",
+      "ear infection",
+      "otitis externa"
+    ],
+    "search_term": "foreign body in ear"
+  },
+  {
+    "span_text": "Cefpet syrup",
+    "normalized_name": "Cefpodoxime Syrup",
+    "display_name": "CefPET Dry Syrup 12.95 g/30 ml Veterinary",
+    "kind": "Medication",
+    "kb_concept_id": null,
+    "kb_preferred_name": "CefPET Dry Syrup 12.95 g/30 ml Veterinary",
+    "kb_kind": "Medication",
+    "match_method": "dual_sync_local",
+    "is_verified": true,
+    "similarity_score": 0.8036363636363636,
+    "local_stock_id": 42000,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "Cefpodoxime",
+      "antibiotic",
+      "Cefpet"
+    ],
+    "search_term": "Cefpodoxime Syrup"
+  },
+  {
+    "span_text": "ear cleaning",
+    "normalized_name": "ear cleaning",
+    "display_name": "ear cleaning",
+    "kind": "Procedure",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Procedure",
+    "match_method": "dual_sync_judge_rejected",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {
+      "suggestions": [
+        {
+          "name": "EYE FLUSH",
+          "match_score": 0.8666666666666666,
+          "recommendation": "MEDIUM",
+          "service_id": 1027
+        },
+        {
+          "name": "EAR FLUSH UNDER GA",
+          "match_score": 0.7972222222222223,
+          "recommendation": "MEDIUM",
+          "service_id": 1015
+        },
+        {
+          "name": "ENEMA WITH FLUSH",
+          "match_score": 0.7229166666666667,
+          "recommendation": "MEDIUM",
+          "service_id": 1026
+        },
+        {
+          "name": "ABSCESS FLUSH",
+          "match_score": 0.6889245014245015,
+          "recommendation": "MEDIUM",
+          "service_id": 1017
+        },
+        {
+          "name": "RECTAL WASH TREATMENT",
+          "match_score": 0.6349206349206349,
+          "recommendation": "MEDIUM",
+          "service_id": 1032
+        }
+      ],
+      "primary_local_suggestion": {
+        "name": "EYE FLUSH",
+        "stock_id": null,
+        "service_id": 1027
+      }
+    },
+    "hints": [
+      "ear cleaning",
+      "ear flush",
+      "otitis treatment"
+    ],
+    "search_term": "ear cleaning"
+  },
+  {
+    "span_text": "ear swab for culture and sensitivity",
+    "normalized_name": "ear swab for culture and sensitivity",
+    "display_name": "ear swab for culture and sensitivity",
+    "kind": "Diagnostic",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Diagnostic",
+    "match_method": "dual_sync_judge_rejected",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {
+      "suggestions": [
+        {
+          "name": "EAR MITE TEST",
+          "match_score": 0.7855769230769232,
+          "recommendation": "MEDIUM",
+          "service_id": 957
+        }
+      ],
+      "primary_local_suggestion": {
+        "name": "EAR MITE TEST",
+        "stock_id": null,
+        "service_id": 957
+      }
+    },
+    "hints": [
+      "ear swab culture",
+      "otitis media culture",
+      "ear infection test"
+    ],
+    "search_term": "ear swab culture"
+  },
+  {
+    "span_text": "exotic pump",
+    "normalized_name": "exotic pump",
+    "display_name": "exotic pump",
+    "kind": "Medication",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Medication",
+    "match_method": "dual_sync_judge_rejected",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {
+      "suggestions": [
+        {
+          "name": "EASOTIC 10ML",
+          "match_score": 0.9166666666666667,
+          "recommendation": "MEDIUM",
+          "inventory_id": 41358,
+          "stock_id": 41358
+        },
+        {
+          "name": "Veko Otikoo Ear Drops 0.3% 15 ml",
+          "match_score": 0.7821455505279035,
+          "recommendation": "MEDIUM",
+          "inventory_id": 42380,
+          "stock_id": 42380
+        },
+        {
+          "name": "OTIREL EAR DROPS 15M",
+          "match_score": 0.7340336134453782,
+          "recommendation": "MEDIUM",
+          "inventory_id": 40538,
+          "stock_id": 40538
+        },
+        {
+          "name": "LIV 52 DROPS",
+          "match_score": 0.7222222222222222,
+          "recommendation": "MEDIUM",
+          "inventory_id": 40885,
+          "stock_id": 40885
+        },
+        {
+          "name": "Eversh Tears 10 ml",
+          "match_score": 0.6859836757669575,
+          "recommendation": "MEDIUM",
+          "inventory_id": 42331,
+          "stock_id": 42331
+        }
+      ],
+      "primary_local_suggestion": {
+        "name": "EASOTIC 10ML",
+        "stock_id": 41358,
+        "service_id": null
+      }
+    },
+    "hints": [
+      "Easotic",
+      "ear drops",
+      "antifungal ear"
+    ],
+    "search_term": "Easotic ear drops"
+  },
+  {
+    "span_text": "not eating the food properly",
+    "normalized_name": "not eating the food properly",
+    "display_name": "not eating the food properly",
+    "kind": "Symptom",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "non_billable_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "decreased appetite",
+      "anorexia",
+      "poor appetite"
+    ],
+    "search_term": "decreased appetite"
+  },
+  {
+    "span_text": "shaking the head",
+    "normalized_name": "shaking the head",
+    "display_name": "shaking the head",
+    "kind": "Symptom",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "non_billable_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "head shaking",
+      "abnormal movement",
+      "tremors"
+    ],
+    "search_term": "head shaking"
+  },
+  {
+    "span_text": "yeast growth",
+    "normalized_name": "yeast growth",
+    "display_name": "yeast growth",
+    "kind": "Diagnosis",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Diagnosis",
+    "match_method": "note_only_below_threshold",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "yeast infection",
+      "fungal infection",
+      "otomycosis"
+    ],
+    "search_term": "yeast infection"
+  }
+]

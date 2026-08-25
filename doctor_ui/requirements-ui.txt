@@ -1,0 +1,10 @@
+streamlit>=1.32
+openpyxl
+jiwer
+
+# Full SOAP pipeline (Super-Pass + SOAP generation)
+openai>=1.0.0
+requests>=2.28.0
+psycopg2-binary>=2.9.0
+flashtext>=2.7
+numpy

@@ -1,0 +1,185 @@
+[
+  {
+    "span_text": "bus inside the left ear",
+    "normalized_name": "EAR CLEANING DOCTOR",
+    "display_name": "EAR CLEANING DOCTOR",
+    "kind": "Diagnosis",
+    "kb_concept_id": null,
+    "kb_preferred_name": "EAR CLEANING DOCTOR",
+    "kb_kind": "Diagnosis",
+    "match_method": "dual_sync_local",
+    "is_verified": true,
+    "similarity_score": 0.6462679425837322,
+    "local_stock_id": 43269,
+    "local_service_id": 992,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "foreign body in ear",
+      "ear foreign body",
+      "object in ear"
+    ],
+    "search_term": "foreign body in ear"
+  },
+  {
+    "span_text": "Cefpet syrup",
+    "normalized_name": "CeFET CLV 325 10 Tab Dogs Cats",
+    "display_name": "CeFET CLV 325 10 Tab Dogs Cats",
+    "kind": "Medication",
+    "kb_concept_id": null,
+    "kb_preferred_name": "CeFET CLV 325 10 Tab Dogs Cats",
+    "kb_kind": "Medication",
+    "match_method": "dual_sync_local",
+    "is_verified": true,
+    "similarity_score": 0.8285714285714286,
+    "local_stock_id": 41989,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "Cefpodoxime",
+      "Cefpet",
+      "antibiotic"
+    ],
+    "search_term": "Cefpodoxime syrup"
+  },
+  {
+    "span_text": "ear cleaning",
+    "normalized_name": "EAR FLUSH UNDER GA",
+    "display_name": "EAR FLUSH UNDER GA",
+    "kind": "Procedure",
+    "kb_concept_id": null,
+    "kb_preferred_name": "EAR FLUSH UNDER GA",
+    "kb_kind": "Procedure",
+    "match_method": "dual_sync_local",
+    "is_verified": true,
+    "similarity_score": 0.7577777777777779,
+    "local_stock_id": null,
+    "local_service_id": 1015,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "ear cleaning",
+      "ear flush",
+      "otoclean"
+    ],
+    "search_term": "ear cleaning"
+  },
+  {
+    "span_text": "ear swab for culture and sensitivity",
+    "normalized_name": "ear swab for culture and sensitivity",
+    "display_name": "ear swab for culture and sensitivity",
+    "kind": "Diagnostic",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Diagnostic",
+    "match_method": "dual_sync_judge_rejected",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {
+      "suggestions": [
+        {
+          "name": "EAR MITE TEST",
+          "match_score": 0.7855769230769232,
+          "recommendation": "MEDIUM",
+          "service_id": 957
+        }
+      ],
+      "primary_local_suggestion": {
+        "name": "EAR MITE TEST",
+        "stock_id": null,
+        "service_id": 957
+      }
+    },
+    "hints": [
+      "ear swab culture",
+      "otitis media culture",
+      "ear infection culture"
+    ],
+    "search_term": "ear swab culture"
+  },
+  {
+    "span_text": "exotic pump",
+    "normalized_name": "EASOTIC 10ML",
+    "display_name": "EASOTIC 10ML",
+    "kind": "Medication",
+    "kb_concept_id": null,
+    "kb_preferred_name": "EASOTIC 10ML",
+    "kb_kind": "Medication",
+    "match_method": "dual_sync_local",
+    "is_verified": true,
+    "similarity_score": 0.8533333333333334,
+    "local_stock_id": 41358,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "Easotic",
+      "ear drops",
+      "antifungal ear"
+    ],
+    "search_term": "Easotic ear drops"
+  },
+  {
+    "span_text": "not eating the food properly",
+    "normalized_name": "not eating the food properly",
+    "display_name": "not eating the food properly",
+    "kind": "Symptom",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "non_billable_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "poor appetite",
+      "anorexia",
+      "decreased appetite"
+    ],
+    "search_term": "poor appetite"
+  },
+  {
+    "span_text": "shaking the head",
+    "normalized_name": "shaking the head",
+    "display_name": "shaking the head",
+    "kind": "Symptom",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "non_billable_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "head shaking",
+      "abnormal movement",
+      "tremor"
+    ],
+    "search_term": "head shaking"
+  },
+  {
+    "span_text": "yeast growth",
+    "normalized_name": "AST KIT",
+    "display_name": "AST KIT",
+    "kind": "Diagnosis",
+    "kb_concept_id": null,
+    "kb_preferred_name": "AST KIT",
+    "kb_kind": "Diagnosis",
+    "match_method": "dual_sync_local",
+    "is_verified": true,
+    "similarity_score": 0.6019047619047619,
+    "local_stock_id": 41893,
+    "local_service_id": 1088,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "yeast infection",
+      "otomycosis",
+      "fungal infection"
+    ],
+    "search_term": "yeast infection"
+  }
+]

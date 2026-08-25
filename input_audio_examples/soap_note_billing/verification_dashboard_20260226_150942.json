@@ -1,0 +1,1424 @@
+{
+  "procedures_services": [
+    {
+      "item_name": "PHYSIOTHERAPY",
+      "service_id": 1159,
+      "status": "DRAFT",
+      "remarks": "Physiotherapy"
+    }
+  ],
+  "medications_administered": [],
+  "medications_prescribed": [],
+  "diagnostics": [
+    {
+      "service_id": null,
+      "lab_radiology": "Radiology",
+      "test_name": "Norberg angle measurement and spinal X-rays",
+      "date_of_test": "TBD",
+      "done": "External",
+      "sample_collected": "No",
+      "remarks": "Generic diagnostic detected. Select a specific billing variant from the suggestions below. [Unlinked – ACTION REQUIRED: select service for billing]"
+    },
+    {
+      "service_id": null,
+      "lab_radiology": "Radiology",
+      "test_name": "Moxeduct imidogloprid",
+      "date_of_test": "TBD",
+      "done": "External",
+      "sample_collected": "No",
+      "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below. [Unlinked – ACTION REQUIRED: select service for billing]"
+    },
+    {
+      "service_id": null,
+      "lab_radiology": "Radiology",
+      "test_name": "X-rays including Norberg angle measurement and spinal views",
+      "date_of_test": "TBD",
+      "done": "External",
+      "sample_collected": "No",
+      "remarks": "Generic diagnostic detected. Select a specific billing variant from the suggestions below. [Unlinked – ACTION REQUIRED: select service for billing]"
+    },
+    {
+      "service_id": null,
+      "lab_radiology": "Radiology",
+      "test_name": "Confirmatory diagnostic imaging",
+      "date_of_test": "TBD",
+      "done": "External",
+      "sample_collected": "No",
+      "remarks": "Mentioned as diagnostic; no matching inventory/service SKU found. Vet must select specific SKU for billing. [Unlinked – ACTION REQUIRED: select service for billing]"
+    },
+    {
+      "service_id": null,
+      "lab_radiology": "Radiology",
+      "test_name": "Spinal X-ray",
+      "date_of_test": "TBD",
+      "done": "External",
+      "sample_collected": "No",
+      "remarks": "Generic diagnostic detected. Select a specific billing variant from the suggestions below. [Unlinked – ACTION REQUIRED: select service for billing]"
+    },
+    {
+      "service_id": null,
+      "lab_radiology": "Radiology",
+      "test_name": "X-ray",
+      "date_of_test": "TBD",
+      "done": "External",
+      "sample_collected": "No",
+      "remarks": "Generic diagnostic detected. Select a specific billing variant from the suggestions below. [Unlinked – ACTION REQUIRED: select service for billing]"
+    },
+    {
+      "service_id": null,
+      "lab_radiology": "Radiology",
+      "test_name": "Norberg angle measurement",
+      "date_of_test": "TBD",
+      "done": "External",
+      "sample_collected": "No",
+      "remarks": "Generic diagnostic detected. Select a specific billing variant from the suggestions below. [Unlinked – ACTION REQUIRED: select service for billing]"
+    },
+    {
+      "service_id": null,
+      "lab_radiology": "Radiology",
+      "test_name": "Spinal imaging",
+      "date_of_test": "TBD",
+      "done": "External",
+      "sample_collected": "No",
+      "remarks": "Mentioned as diagnostic; no matching inventory/service SKU found. Vet must select specific SKU for billing. [Unlinked – ACTION REQUIRED: select service for billing]"
+    }
+  ],
+  "other_products_retail": [],
+  "reminders_follow_ups": [
+    {
+      "item_name": "FHO surgery",
+      "item_id": 1181,
+      "due_date": "ASAP",
+      "remarks": "Potential surgical intervention (FHO) if conservative management fails",
+      "intent_context": "Scheduled",
+      "kind": "Procedure"
+    },
+    {
+      "item_name": "Home physiotherapy exercises",
+      "item_id": "[REMINDER-XXX]",
+      "due_date": "ASAP",
+      "remarks": "Home physiotherapy exercises",
+      "intent_context": "Scheduled",
+      "kind": "Reminder"
+    },
+    {
+      "item_name": "Follow-up to monitor response and weight loss",
+      "item_id": "[REMINDER-XXX]",
+      "due_date": "ASAP",
+      "remarks": "Follow-up to monitor response to treatment and weight loss progress",
+      "intent_context": "Scheduled",
+      "kind": "Reminder"
+    },
+    {
+      "item_name": "Sit-stand-step exercises",
+      "item_id": "[PROCEDURE-XXX]",
+      "due_date": "ASAP",
+      "remarks": "Advise physiotherapy including sit-stand-step exercises",
+      "intent_context": "Performed",
+      "kind": "Procedure"
+    },
+    {
+      "item_name": "Swimming",
+      "item_id": "[PROCEDURE-XXX]",
+      "due_date": "ASAP",
+      "remarks": "Advise physiotherapy including swimming",
+      "intent_context": "Performed",
+      "kind": "Procedure"
+    },
+    {
+      "item_name": "Walking on soft surfaces",
+      "item_id": "[PROCEDURE-XXX]",
+      "due_date": "ASAP",
+      "remarks": "Advise physiotherapy including walking on soft surfaces like sand or lawns | Advise walking on soft surfaces like sand or lawns",
+      "intent_context": "Performed",
+      "kind": "Procedure"
+    },
+    {
+      "item_name": "Follow-up to monitor response to treatment and weight loss progress",
+      "item_id": "[REMINDER-XXX]",
+      "due_date": "ASAP",
+      "remarks": "follow-up to monitor response to treatment and weight loss progress",
+      "intent_context": "Scheduled",
+      "kind": "Reminder"
+    },
+    {
+      "item_name": "Bravecto (Florina)",
+      "item_id": "[PREVENTIVE-XXX]",
+      "due_date": "ASAP",
+      "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+      "intent_context": "Recommended",
+      "kind": "Preventive"
+    }
+  ],
+  "vitals": [],
+  "module_4_unlinked_entities": [
+    {
+      "item_name": "Spirocoxin",
+      "kind": "Medicine",
+      "intent_context": "Prescribed",
+      "intent": "Prescribed (Medicine)",
+      "status": "ACTION REQUIRED",
+      "reason": "MISSING_LOCAL_ID",
+      "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+      "suggestions": [
+        {
+          "name": "ONDANSETRON",
+          "match_score": 0.4661319073083779,
+          "recommendation": "MEDIUM",
+          "inventory_id": 40549,
+          "stock_id": 40549
+        }
+      ],
+      "inventory_id": null,
+      "administered_prescribed": "Prescribed",
+      "fulfillment": "Internal",
+      "quantity": "",
+      "dosage": "",
+      "duration": "",
+      "frequency": "Custom",
+      "instructions": "",
+      "route": ""
+    },
+    {
+      "item_name": "Contraway Force Etching",
+      "kind": "Medicine",
+      "intent_context": "Prescribed",
+      "intent": "Prescribed (Medicine)",
+      "status": "ACTION REQUIRED",
+      "reason": "AMBIGUOUS_MATCH",
+      "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+      "suggestions": [
+        {
+          "name": "CONDROVET FORCE HA 590",
+          "match_score": 0.7823759332454985,
+          "recommendation": "MEDIUM",
+          "inventory_id": 41559,
+          "stock_id": 41559
+        },
+        {
+          "name": "CONDROVET FORCE HA LARGE 1100",
+          "match_score": 0.7670885145662464,
+          "recommendation": "MEDIUM",
+          "inventory_id": 41558,
+          "stock_id": 41558
+        },
+        {
+          "name": "Intas Livotas Syrup 200 ml Pet",
+          "match_score": 0.6101851851851853,
+          "recommendation": "MEDIUM",
+          "inventory_id": 42158,
+          "stock_id": 42158
+        },
+        {
+          "name": "Intas Ondet 2 mg 20 x 5 ml Ampoules",
+          "match_score": 0.5801282051282052,
+          "recommendation": "MEDIUM",
+          "inventory_id": 42341,
+          "stock_id": 42341
+        },
+        {
+          "name": "INTACEF TAZO PET",
+          "match_score": 0.5625,
+          "recommendation": "MEDIUM",
+          "inventory_id": 41018,
+          "stock_id": 41018
+        }
+      ],
+      "inventory_id": null,
+      "administered_prescribed": "Prescribed",
+      "fulfillment": "Internal",
+      "quantity": "",
+      "dosage": "",
+      "duration": "",
+      "frequency": "Custom",
+      "instructions": "",
+      "route": ""
+    },
+    {
+      "item_name": "Omega 3 and Omega 6 fatty acids",
+      "kind": "Medicine",
+      "intent_context": "Prescribed",
+      "intent": "Prescribed (Medicine)",
+      "status": "ACTION REQUIRED",
+      "reason": "MISSING_LOCAL_ID",
+      "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+      "suggestions": [
+        {
+          "name": "FELI D SUSPENSION 15ML",
+          "match_score": 0.6480519480519481,
+          "recommendation": "MEDIUM",
+          "inventory_id": 41298,
+          "stock_id": 41298
+        }
+      ],
+      "inventory_id": null,
+      "administered_prescribed": "Prescribed",
+      "fulfillment": "Internal",
+      "quantity": "",
+      "dosage": "",
+      "duration": "",
+      "frequency": "Custom",
+      "instructions": "",
+      "route": ""
+    },
+    {
+      "item_name": "Norberg angle measurement and spinal X-rays",
+      "kind": "Diagnostic",
+      "intent_context": "Ordered",
+      "intent": "Ordered (Diagnostic)",
+      "status": "ACTION REQUIRED",
+      "reason": "AMBIGUOUS_MATCH",
+      "remarks": "Generic diagnostic detected. Select a specific billing variant from the suggestions below.",
+      "suggestions": [
+        {
+          "name": "XRAY",
+          "match_score": 0.94,
+          "recommendation": "MEDIUM",
+          "service_id": 1185
+        },
+        {
+          "name": "X RAY WITH PRINT",
+          "match_score": 0.7149999999999999,
+          "recommendation": "MEDIUM",
+          "service_id": 952
+        },
+        {
+          "name": "X RAY WITHOUT PRINT",
+          "match_score": 0.7031578947368421,
+          "recommendation": "MEDIUM",
+          "service_id": 953
+        },
+        {
+          "name": "X RAY UNDER ANESTHESIA",
+          "match_score": 0.6945454545454546,
+          "recommendation": "MEDIUM",
+          "service_id": 970
+        },
+        {
+          "name": "HIP X RAY",
+          "match_score": 0.6,
+          "recommendation": "MEDIUM",
+          "service_id": 975
+        }
+      ],
+      "service_id": null,
+      "lab_radiology": "Radiology",
+      "test_name": "Norberg angle measurement and spinal X-rays",
+      "date_of_test": "TBD",
+      "done": "External",
+      "sample_collected": "No"
+    },
+    {
+      "item_name": "Bravecto (Florina)",
+      "kind": "Medicine",
+      "intent_context": "Prescribed",
+      "intent": "Prescribed (Medicine)",
+      "status": "ACTION REQUIRED",
+      "reason": "MISSING_LOCAL_ID",
+      "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+      "suggestions": [],
+      "inventory_id": null,
+      "administered_prescribed": "Prescribed",
+      "fulfillment": "Internal",
+      "quantity": "",
+      "dosage": "",
+      "duration": "",
+      "frequency": "Custom",
+      "instructions": "",
+      "route": ""
+    },
+    {
+      "item_name": "Fibroblan",
+      "kind": "Medicine",
+      "intent_context": "Prescribed",
+      "intent": "Prescribed (Medicine)",
+      "status": "ACTION REQUIRED",
+      "reason": "MISSING_LOCAL_ID",
+      "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+      "suggestions": [
+        {
+          "name": "FELI D SUSPENSION 15ML",
+          "match_score": 0.6480519480519481,
+          "recommendation": "MEDIUM",
+          "inventory_id": 41298,
+          "stock_id": 41298
+        }
+      ],
+      "inventory_id": null,
+      "administered_prescribed": "Prescribed",
+      "fulfillment": "Internal",
+      "quantity": "",
+      "dosage": "",
+      "duration": "",
+      "frequency": "Custom",
+      "instructions": "",
+      "route": ""
+    },
+    {
+      "item_name": "Esmetopril",
+      "kind": "Medicine",
+      "intent_context": "Prescribed",
+      "intent": "Prescribed (Medicine)",
+      "status": "ACTION REQUIRED",
+      "reason": "MISSING_LOCAL_ID",
+      "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+      "suggestions": [
+        {
+          "name": "FELI D SUSPENSION 15ML",
+          "match_score": 0.6480519480519481,
+          "recommendation": "MEDIUM",
+          "inventory_id": 41298,
+          "stock_id": 41298
+        }
+      ],
+      "inventory_id": null,
+      "administered_prescribed": "Prescribed",
+      "fulfillment": "Internal",
+      "quantity": "",
+      "dosage": "",
+      "duration": "",
+      "frequency": "Custom",
+      "instructions": "",
+      "route": ""
+    },
+    {
+      "item_name": "Saralana",
+      "kind": "Medicine",
+      "intent_context": "Prescribed",
+      "intent": "Prescribed (Medicine)",
+      "status": "ACTION REQUIRED",
+      "reason": "MISSING_LOCAL_ID",
+      "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+      "suggestions": [
+        {
+          "name": "FELI D SUSPENSION 15ML",
+          "match_score": 0.6480519480519481,
+          "recommendation": "MEDIUM",
+          "inventory_id": 41298,
+          "stock_id": 41298
+        }
+      ],
+      "inventory_id": null,
+      "administered_prescribed": "Prescribed",
+      "fulfillment": "Internal",
+      "quantity": "",
+      "dosage": "",
+      "duration": "",
+      "frequency": "Custom",
+      "instructions": "",
+      "route": ""
+    },
+    {
+      "item_name": "Moxeduct imidogloprid",
+      "kind": "Medicine",
+      "intent_context": "Prescribed",
+      "intent": "Prescribed (Medicine)",
+      "status": "ACTION REQUIRED",
+      "reason": "MISSING_LOCAL_ID",
+      "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+      "suggestions": [
+        {
+          "name": "FELI D SUSPENSION 15ML",
+          "match_score": 0.6480519480519481,
+          "recommendation": "MEDIUM",
+          "inventory_id": 41298,
+          "stock_id": 41298
+        }
+      ],
+      "inventory_id": null,
+      "administered_prescribed": "Prescribed",
+      "fulfillment": "Internal",
+      "quantity": "",
+      "dosage": "",
+      "duration": "",
+      "frequency": "Custom",
+      "instructions": "",
+      "route": ""
+    },
+    {
+      "item_name": "Salamitin",
+      "kind": "Medicine",
+      "intent_context": "Prescribed",
+      "intent": "Prescribed (Medicine)",
+      "status": "ACTION REQUIRED",
+      "reason": "MISSING_LOCAL_ID",
+      "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+      "suggestions": [
+        {
+          "name": "FELI D SUSPENSION 15ML",
+          "match_score": 0.6480519480519481,
+          "recommendation": "MEDIUM",
+          "inventory_id": 41298,
+          "stock_id": 41298
+        }
+      ],
+      "inventory_id": null,
+      "administered_prescribed": "Prescribed",
+      "fulfillment": "Internal",
+      "quantity": "",
+      "dosage": "",
+      "duration": "",
+      "frequency": "Custom",
+      "instructions": "",
+      "route": ""
+    },
+    {
+      "item_name": "Contraway Force Etching joint supplement",
+      "kind": "Medicine",
+      "intent_context": "Prescribed",
+      "intent": "Prescribed (Medicine)",
+      "status": "ACTION REQUIRED",
+      "reason": "AMBIGUOUS_MATCH",
+      "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+      "suggestions": [
+        {
+          "name": "CONDROVET FORCE HA 590",
+          "match_score": 0.7823759332454985,
+          "recommendation": "MEDIUM",
+          "inventory_id": 41559,
+          "stock_id": 41559
+        },
+        {
+          "name": "CONDROVET FORCE HA LARGE 1100",
+          "match_score": 0.7670885145662464,
+          "recommendation": "MEDIUM",
+          "inventory_id": 41558,
+          "stock_id": 41558
+        },
+        {
+          "name": "Intas Livotas Syrup 200 ml Pet",
+          "match_score": 0.6101851851851853,
+          "recommendation": "MEDIUM",
+          "inventory_id": 42158,
+          "stock_id": 42158
+        },
+        {
+          "name": "Intas Ondet 2 mg 20 x 5 ml Ampoules",
+          "match_score": 0.5801282051282052,
+          "recommendation": "MEDIUM",
+          "inventory_id": 42341,
+          "stock_id": 42341
+        },
+        {
+          "name": "INTACEF TAZO PET",
+          "match_score": 0.5625,
+          "recommendation": "MEDIUM",
+          "inventory_id": 41018,
+          "stock_id": 41018
+        }
+      ],
+      "inventory_id": null,
+      "administered_prescribed": "Prescribed",
+      "fulfillment": "Internal",
+      "quantity": "",
+      "dosage": "",
+      "duration": "",
+      "frequency": "Custom",
+      "instructions": "",
+      "route": ""
+    },
+    {
+      "item_name": "Omega 3 fatty acids",
+      "kind": "Medicine",
+      "intent_context": "Prescribed",
+      "intent": "Prescribed (Medicine)",
+      "status": "ACTION REQUIRED",
+      "reason": "MISSING_LOCAL_ID",
+      "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+      "suggestions": [],
+      "inventory_id": null,
+      "administered_prescribed": "Prescribed",
+      "fulfillment": "Internal",
+      "quantity": "",
+      "dosage": "",
+      "duration": "",
+      "frequency": "Custom",
+      "instructions": "",
+      "route": ""
+    },
+    {
+      "item_name": "X-rays including Norberg angle measurement and spinal views",
+      "kind": "Diagnostic",
+      "intent_context": "Ordered",
+      "intent": "Ordered (Diagnostic)",
+      "status": "ACTION REQUIRED",
+      "reason": "AMBIGUOUS_MATCH",
+      "remarks": "Generic diagnostic detected. Select a specific billing variant from the suggestions below.",
+      "suggestions": [
+        {
+          "name": "XRAY",
+          "match_score": 0.94,
+          "recommendation": "MEDIUM",
+          "service_id": 1185
+        },
+        {
+          "name": "X RAY WITH PRINT",
+          "match_score": 0.7149999999999999,
+          "recommendation": "MEDIUM",
+          "service_id": 952
+        },
+        {
+          "name": "X RAY WITHOUT PRINT",
+          "match_score": 0.7031578947368421,
+          "recommendation": "MEDIUM",
+          "service_id": 953
+        },
+        {
+          "name": "X RAY UNDER ANESTHESIA",
+          "match_score": 0.6945454545454546,
+          "recommendation": "MEDIUM",
+          "service_id": 970
+        },
+        {
+          "name": "HIP X RAY",
+          "match_score": 0.6,
+          "recommendation": "MEDIUM",
+          "service_id": 975
+        }
+      ],
+      "service_id": null,
+      "lab_radiology": "Radiology",
+      "test_name": "X-rays including Norberg angle measurement and spinal views",
+      "date_of_test": "TBD",
+      "done": "External",
+      "sample_collected": "No"
+    },
+    {
+      "item_name": "Confirmatory diagnostic imaging",
+      "kind": "Diagnostic",
+      "intent_context": "Ordered",
+      "intent": "Ordered (Diagnostic)",
+      "status": "ACTION REQUIRED",
+      "reason": "MISSING_LOCAL_ID",
+      "remarks": "Mentioned as diagnostic; no matching inventory/service SKU found. Vet must select specific SKU for billing.",
+      "suggestions": [],
+      "service_id": null,
+      "lab_radiology": "Radiology",
+      "test_name": "Confirmatory diagnostic imaging",
+      "date_of_test": "TBD",
+      "done": "External",
+      "sample_collected": "No"
+    },
+    {
+      "item_name": "Spinal X-ray",
+      "kind": "Diagnostic",
+      "intent_context": "Ordered",
+      "intent": "Ordered (Diagnostic)",
+      "status": "ACTION REQUIRED",
+      "reason": "AMBIGUOUS_MATCH",
+      "remarks": "Generic diagnostic detected. Select a specific billing variant from the suggestions below.",
+      "suggestions": [
+        {
+          "name": "XRAY",
+          "match_score": 0.94,
+          "recommendation": "MEDIUM",
+          "service_id": 1185
+        },
+        {
+          "name": "X RAY WITH PRINT",
+          "match_score": 0.7149999999999999,
+          "recommendation": "MEDIUM",
+          "service_id": 952
+        },
+        {
+          "name": "X RAY WITHOUT PRINT",
+          "match_score": 0.7031578947368421,
+          "recommendation": "MEDIUM",
+          "service_id": 953
+        },
+        {
+          "name": "X RAY UNDER ANESTHESIA",
+          "match_score": 0.6945454545454546,
+          "recommendation": "MEDIUM",
+          "service_id": 970
+        },
+        {
+          "name": "HIP X RAY",
+          "match_score": 0.6,
+          "recommendation": "MEDIUM",
+          "service_id": 975
+        }
+      ],
+      "service_id": null,
+      "lab_radiology": "Radiology",
+      "test_name": "Spinal X-ray",
+      "date_of_test": "TBD",
+      "done": "External",
+      "sample_collected": "No"
+    },
+    {
+      "item_name": "X-ray",
+      "kind": "Diagnostic",
+      "intent_context": "Ordered",
+      "intent": "Ordered (Diagnostic)",
+      "status": "ACTION REQUIRED",
+      "reason": "AMBIGUOUS_MATCH",
+      "remarks": "Generic diagnostic detected. Select a specific billing variant from the suggestions below.",
+      "suggestions": [
+        {
+          "name": "XRAY",
+          "match_score": 0.94,
+          "recommendation": "MEDIUM",
+          "service_id": 1185
+        },
+        {
+          "name": "X RAY WITH PRINT",
+          "match_score": 0.7149999999999999,
+          "recommendation": "MEDIUM",
+          "service_id": 952
+        },
+        {
+          "name": "X RAY WITHOUT PRINT",
+          "match_score": 0.7031578947368421,
+          "recommendation": "MEDIUM",
+          "service_id": 953
+        },
+        {
+          "name": "X RAY UNDER ANESTHESIA",
+          "match_score": 0.6945454545454546,
+          "recommendation": "MEDIUM",
+          "service_id": 970
+        },
+        {
+          "name": "HIP X RAY",
+          "match_score": 0.6,
+          "recommendation": "MEDIUM",
+          "service_id": 975
+        }
+      ],
+      "service_id": null,
+      "lab_radiology": "Radiology",
+      "test_name": "X-ray",
+      "date_of_test": "TBD",
+      "done": "External",
+      "sample_collected": "No"
+    },
+    {
+      "item_name": "Norberg angle measurement",
+      "kind": "Diagnostic",
+      "intent_context": "Ordered",
+      "intent": "Ordered (Diagnostic)",
+      "status": "ACTION REQUIRED",
+      "reason": "AMBIGUOUS_MATCH",
+      "remarks": "Generic diagnostic detected. Select a specific billing variant from the suggestions below.",
+      "suggestions": [
+        {
+          "name": "HIP X RAY",
+          "match_score": 0.8222222222222222,
+          "recommendation": "MEDIUM",
+          "service_id": 975
+        },
+        {
+          "name": "HIP X RAY RESCUE",
+          "match_score": 0.8083333333333333,
+          "recommendation": "MEDIUM",
+          "service_id": 972
+        },
+        {
+          "name": "HIP SCREENING WITH GA",
+          "match_score": 0.7793650793650794,
+          "recommendation": "MEDIUM",
+          "service_id": 974
+        }
+      ],
+      "service_id": null,
+      "lab_radiology": "LAB",
+      "test_name": "Norberg angle measurement",
+      "date_of_test": "TBD",
+      "done": "External",
+      "sample_collected": "No"
+    },
+    {
+      "item_name": "Spinal imaging",
+      "kind": "Diagnostic",
+      "intent_context": "Ordered",
+      "intent": "Ordered (Diagnostic)",
+      "status": "ACTION REQUIRED",
+      "reason": "MISSING_LOCAL_ID",
+      "remarks": "Mentioned as diagnostic; no matching inventory/service SKU found. Vet must select specific SKU for billing.",
+      "suggestions": [],
+      "service_id": null,
+      "lab_radiology": "Radiology",
+      "test_name": "Spinal imaging",
+      "date_of_test": "TBD",
+      "done": "External",
+      "sample_collected": "No"
+    }
+  ],
+  "module_5_clinical_history": [],
+  "streamlined_dashboard": {
+    "signalment_vitals": [],
+    "clinical_assessment": [],
+    "pharmacy_administered": [],
+    "pharmacy_prescribed": [
+      {
+        "name": "Spirocoxin",
+        "original_mention": "Spirocoxin",
+        "status": "ACTION_REQUIRED",
+        "linked_id": null,
+        "suggestions": [
+          {
+            "name": "ONDANSETRON",
+            "match_score": 0.4661319073083779,
+            "recommendation": "MEDIUM",
+            "inventory_id": 40549,
+            "stock_id": 40549
+          }
+        ],
+        "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+        "reason": "MISSING_LOCAL_ID",
+        "dosage": "",
+        "frequency": "Custom",
+        "duration": "",
+        "quantity": "",
+        "instructions": "",
+        "required_fields": [
+          "frequency",
+          "duration"
+        ],
+        "label": "Prescribed (Home Care)"
+      },
+      {
+        "name": "Contraway Force Etching",
+        "original_mention": "Contraway Force Etching",
+        "status": "ACTION_REQUIRED",
+        "linked_id": null,
+        "suggestions": [
+          {
+            "name": "CONDROVET FORCE HA 590",
+            "match_score": 0.7823759332454985,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41559,
+            "stock_id": 41559
+          },
+          {
+            "name": "CONDROVET FORCE HA LARGE 1100",
+            "match_score": 0.7670885145662464,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41558,
+            "stock_id": 41558
+          },
+          {
+            "name": "Intas Livotas Syrup 200 ml Pet",
+            "match_score": 0.6101851851851853,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42158,
+            "stock_id": 42158
+          },
+          {
+            "name": "Intas Ondet 2 mg 20 x 5 ml Ampoules",
+            "match_score": 0.5801282051282052,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42341,
+            "stock_id": 42341
+          },
+          {
+            "name": "INTACEF TAZO PET",
+            "match_score": 0.5625,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41018,
+            "stock_id": 41018
+          }
+        ],
+        "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+        "reason": "AMBIGUOUS_MATCH",
+        "dosage": "",
+        "frequency": "Custom",
+        "duration": "",
+        "quantity": "",
+        "instructions": "",
+        "required_fields": [
+          "frequency",
+          "duration"
+        ],
+        "label": "Prescribed (Home Care)"
+      },
+      {
+        "name": "Omega 3 and Omega 6 fatty acids",
+        "original_mention": "Omega 3 and Omega 6 fatty acids",
+        "status": "ACTION_REQUIRED",
+        "linked_id": null,
+        "suggestions": [
+          {
+            "name": "FELI D SUSPENSION 15ML",
+            "match_score": 0.6480519480519481,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41298,
+            "stock_id": 41298
+          }
+        ],
+        "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+        "reason": "MISSING_LOCAL_ID",
+        "dosage": "",
+        "frequency": "Custom",
+        "duration": "",
+        "quantity": "",
+        "instructions": "",
+        "required_fields": [
+          "frequency",
+          "duration"
+        ],
+        "label": "Prescribed (Home Care)"
+      },
+      {
+        "name": "Bravecto (Florina)",
+        "original_mention": "Bravecto (Florina)",
+        "status": "ACTION_REQUIRED",
+        "linked_id": null,
+        "suggestions": [],
+        "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+        "reason": "MISSING_LOCAL_ID",
+        "dosage": "",
+        "frequency": "Custom",
+        "duration": "",
+        "quantity": "",
+        "instructions": "",
+        "required_fields": [
+          "frequency",
+          "duration"
+        ],
+        "label": "Prescribed (Home Care)"
+      },
+      {
+        "name": "Fibroblan",
+        "original_mention": "Fibroblan",
+        "status": "ACTION_REQUIRED",
+        "linked_id": null,
+        "suggestions": [
+          {
+            "name": "FELI D SUSPENSION 15ML",
+            "match_score": 0.6480519480519481,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41298,
+            "stock_id": 41298
+          }
+        ],
+        "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+        "reason": "MISSING_LOCAL_ID",
+        "dosage": "",
+        "frequency": "Custom",
+        "duration": "",
+        "quantity": "",
+        "instructions": "",
+        "required_fields": [
+          "frequency",
+          "duration"
+        ],
+        "label": "Prescribed (Home Care)"
+      },
+      {
+        "name": "Esmetopril",
+        "original_mention": "Esmetopril",
+        "status": "ACTION_REQUIRED",
+        "linked_id": null,
+        "suggestions": [
+          {
+            "name": "FELI D SUSPENSION 15ML",
+            "match_score": 0.6480519480519481,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41298,
+            "stock_id": 41298
+          }
+        ],
+        "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+        "reason": "MISSING_LOCAL_ID",
+        "dosage": "",
+        "frequency": "Custom",
+        "duration": "",
+        "quantity": "",
+        "instructions": "",
+        "required_fields": [
+          "frequency",
+          "duration"
+        ],
+        "label": "Prescribed (Home Care)"
+      },
+      {
+        "name": "Saralana",
+        "original_mention": "Saralana",
+        "status": "ACTION_REQUIRED",
+        "linked_id": null,
+        "suggestions": [
+          {
+            "name": "FELI D SUSPENSION 15ML",
+            "match_score": 0.6480519480519481,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41298,
+            "stock_id": 41298
+          }
+        ],
+        "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+        "reason": "MISSING_LOCAL_ID",
+        "dosage": "",
+        "frequency": "Custom",
+        "duration": "",
+        "quantity": "",
+        "instructions": "",
+        "required_fields": [
+          "frequency",
+          "duration"
+        ],
+        "label": "Prescribed (Home Care)"
+      },
+      {
+        "name": "Moxeduct imidogloprid",
+        "original_mention": "Moxeduct imidogloprid",
+        "status": "ACTION_REQUIRED",
+        "linked_id": null,
+        "suggestions": [
+          {
+            "name": "FELI D SUSPENSION 15ML",
+            "match_score": 0.6480519480519481,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41298,
+            "stock_id": 41298
+          }
+        ],
+        "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+        "reason": "MISSING_LOCAL_ID",
+        "dosage": "",
+        "frequency": "Custom",
+        "duration": "",
+        "quantity": "",
+        "instructions": "",
+        "required_fields": [
+          "frequency",
+          "duration"
+        ],
+        "label": "Prescribed (Home Care)"
+      },
+      {
+        "name": "Salamitin",
+        "original_mention": "Salamitin",
+        "status": "ACTION_REQUIRED",
+        "linked_id": null,
+        "suggestions": [
+          {
+            "name": "FELI D SUSPENSION 15ML",
+            "match_score": 0.6480519480519481,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41298,
+            "stock_id": 41298
+          }
+        ],
+        "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+        "reason": "MISSING_LOCAL_ID",
+        "dosage": "",
+        "frequency": "Custom",
+        "duration": "",
+        "quantity": "",
+        "instructions": "",
+        "required_fields": [
+          "frequency",
+          "duration"
+        ],
+        "label": "Prescribed (Home Care)"
+      },
+      {
+        "name": "Contraway Force Etching joint supplement",
+        "original_mention": "Contraway Force Etching joint supplement",
+        "status": "ACTION_REQUIRED",
+        "linked_id": null,
+        "suggestions": [
+          {
+            "name": "CONDROVET FORCE HA 590",
+            "match_score": 0.7823759332454985,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41559,
+            "stock_id": 41559
+          },
+          {
+            "name": "CONDROVET FORCE HA LARGE 1100",
+            "match_score": 0.7670885145662464,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41558,
+            "stock_id": 41558
+          },
+          {
+            "name": "Intas Livotas Syrup 200 ml Pet",
+            "match_score": 0.6101851851851853,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42158,
+            "stock_id": 42158
+          },
+          {
+            "name": "Intas Ondet 2 mg 20 x 5 ml Ampoules",
+            "match_score": 0.5801282051282052,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42341,
+            "stock_id": 42341
+          },
+          {
+            "name": "INTACEF TAZO PET",
+            "match_score": 0.5625,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41018,
+            "stock_id": 41018
+          }
+        ],
+        "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+        "reason": "AMBIGUOUS_MATCH",
+        "dosage": "",
+        "frequency": "Custom",
+        "duration": "",
+        "quantity": "",
+        "instructions": "",
+        "required_fields": [
+          "frequency",
+          "duration"
+        ],
+        "label": "Prescribed (Home Care)"
+      },
+      {
+        "name": "Omega 3 fatty acids",
+        "original_mention": "Omega 3 fatty acids",
+        "status": "ACTION_REQUIRED",
+        "linked_id": null,
+        "suggestions": [],
+        "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+        "reason": "MISSING_LOCAL_ID",
+        "dosage": "",
+        "frequency": "Custom",
+        "duration": "",
+        "quantity": "",
+        "instructions": "",
+        "required_fields": [
+          "frequency",
+          "duration"
+        ],
+        "label": "Prescribed (Home Care)"
+      }
+    ],
+    "diagnostics_labs_imaging": [
+      {
+        "name": "Norberg angle measurement and spinal X-rays",
+        "original_mention": "Norberg angle measurement and spinal X-rays",
+        "status": "ACTION_REQUIRED",
+        "linked_id": null,
+        "suggestions": [
+          {
+            "name": "XRAY",
+            "match_score": 0.94,
+            "recommendation": "MEDIUM",
+            "service_id": 1185
+          },
+          {
+            "name": "X RAY WITH PRINT",
+            "match_score": 0.7149999999999999,
+            "recommendation": "MEDIUM",
+            "service_id": 952
+          },
+          {
+            "name": "X RAY WITHOUT PRINT",
+            "match_score": 0.7031578947368421,
+            "recommendation": "MEDIUM",
+            "service_id": 953
+          },
+          {
+            "name": "X RAY UNDER ANESTHESIA",
+            "match_score": 0.6945454545454546,
+            "recommendation": "MEDIUM",
+            "service_id": 970
+          },
+          {
+            "name": "HIP X RAY",
+            "match_score": 0.6,
+            "recommendation": "MEDIUM",
+            "service_id": 975
+          }
+        ],
+        "remarks": "Generic diagnostic detected. Select a specific billing variant from the suggestions below.",
+        "reason": "AMBIGUOUS_MATCH"
+      },
+      {
+        "name": "X-rays including Norberg angle measurement and spinal views",
+        "original_mention": "X-rays including Norberg angle measurement and spinal views",
+        "status": "ACTION_REQUIRED",
+        "linked_id": null,
+        "suggestions": [
+          {
+            "name": "XRAY",
+            "match_score": 0.94,
+            "recommendation": "MEDIUM",
+            "service_id": 1185
+          },
+          {
+            "name": "X RAY WITH PRINT",
+            "match_score": 0.7149999999999999,
+            "recommendation": "MEDIUM",
+            "service_id": 952
+          },
+          {
+            "name": "X RAY WITHOUT PRINT",
+            "match_score": 0.7031578947368421,
+            "recommendation": "MEDIUM",
+            "service_id": 953
+          },
+          {
+            "name": "X RAY UNDER ANESTHESIA",
+            "match_score": 0.6945454545454546,
+            "recommendation": "MEDIUM",
+            "service_id": 970
+          },
+          {
+            "name": "HIP X RAY",
+            "match_score": 0.6,
+            "recommendation": "MEDIUM",
+            "service_id": 975
+          }
+        ],
+        "remarks": "Generic diagnostic detected. Select a specific billing variant from the suggestions below.",
+        "reason": "AMBIGUOUS_MATCH"
+      },
+      {
+        "name": "Confirmatory diagnostic imaging",
+        "original_mention": "Confirmatory diagnostic imaging",
+        "status": "ACTION_REQUIRED",
+        "linked_id": null,
+        "suggestions": [],
+        "remarks": "Mentioned as diagnostic; no matching inventory/service SKU found. Vet must select specific SKU for billing.",
+        "reason": "MISSING_LOCAL_ID"
+      },
+      {
+        "name": "Spinal X-ray",
+        "original_mention": "Spinal X-ray",
+        "status": "ACTION_REQUIRED",
+        "linked_id": null,
+        "suggestions": [
+          {
+            "name": "XRAY",
+            "match_score": 0.94,
+            "recommendation": "MEDIUM",
+            "service_id": 1185
+          },
+          {
+            "name": "X RAY WITH PRINT",
+            "match_score": 0.7149999999999999,
+            "recommendation": "MEDIUM",
+            "service_id": 952
+          },
+          {
+            "name": "X RAY WITHOUT PRINT",
+            "match_score": 0.7031578947368421,
+            "recommendation": "MEDIUM",
+            "service_id": 953
+          },
+          {
+            "name": "X RAY UNDER ANESTHESIA",
+            "match_score": 0.6945454545454546,
+            "recommendation": "MEDIUM",
+            "service_id": 970
+          },
+          {
+            "name": "HIP X RAY",
+            "match_score": 0.6,
+            "recommendation": "MEDIUM",
+            "service_id": 975
+          }
+        ],
+        "remarks": "Generic diagnostic detected. Select a specific billing variant from the suggestions below.",
+        "reason": "AMBIGUOUS_MATCH"
+      },
+      {
+        "name": "X-ray",
+        "original_mention": "X-ray",
+        "status": "ACTION_REQUIRED",
+        "linked_id": null,
+        "suggestions": [
+          {
+            "name": "XRAY",
+            "match_score": 0.94,
+            "recommendation": "MEDIUM",
+            "service_id": 1185
+          },
+          {
+            "name": "X RAY WITH PRINT",
+            "match_score": 0.7149999999999999,
+            "recommendation": "MEDIUM",
+            "service_id": 952
+          },
+          {
+            "name": "X RAY WITHOUT PRINT",
+            "match_score": 0.7031578947368421,
+            "recommendation": "MEDIUM",
+            "service_id": 953
+          },
+          {
+            "name": "X RAY UNDER ANESTHESIA",
+            "match_score": 0.6945454545454546,
+            "recommendation": "MEDIUM",
+            "service_id": 970
+          },
+          {
+            "name": "HIP X RAY",
+            "match_score": 0.6,
+            "recommendation": "MEDIUM",
+            "service_id": 975
+          }
+        ],
+        "remarks": "Generic diagnostic detected. Select a specific billing variant from the suggestions below.",
+        "reason": "AMBIGUOUS_MATCH"
+      },
+      {
+        "name": "Norberg angle measurement",
+        "original_mention": "Norberg angle measurement",
+        "status": "ACTION_REQUIRED",
+        "linked_id": null,
+        "suggestions": [
+          {
+            "name": "HIP X RAY",
+            "match_score": 0.8222222222222222,
+            "recommendation": "MEDIUM",
+            "service_id": 975
+          },
+          {
+            "name": "HIP X RAY RESCUE",
+            "match_score": 0.8083333333333333,
+            "recommendation": "MEDIUM",
+            "service_id": 972
+          },
+          {
+            "name": "HIP SCREENING WITH GA",
+            "match_score": 0.7793650793650794,
+            "recommendation": "MEDIUM",
+            "service_id": 974
+          }
+        ],
+        "remarks": "Generic diagnostic detected. Select a specific billing variant from the suggestions below.",
+        "reason": "AMBIGUOUS_MATCH"
+      },
+      {
+        "name": "Spinal imaging",
+        "original_mention": "Spinal imaging",
+        "status": "ACTION_REQUIRED",
+        "linked_id": null,
+        "suggestions": [],
+        "remarks": "Mentioned as diagnostic; no matching inventory/service SKU found. Vet must select specific SKU for billing.",
+        "reason": "MISSING_LOCAL_ID"
+      }
+    ],
+    "clinical_procedures_services": [
+      {
+        "name": "PHYSIOTHERAPY",
+        "original_mention": "PHYSIOTHERAPY",
+        "status": "CONFIRMED",
+        "linked_id": 1159,
+        "suggestions": [],
+        "remarks": "Physiotherapy"
+      }
+    ],
+    "other_products_retail": [],
+    "preventive": [],
+    "patient_reminders": [
+      {
+        "name": "Sit-stand-step exercises",
+        "original_mention": "Sit-stand-step exercises",
+        "status": "ACTION_REQUIRED",
+        "linked_id": "[PROCEDURE-XXX]",
+        "suggestions": [],
+        "due_date": "ASAP",
+        "remarks": "Advise physiotherapy including sit-stand-step exercises",
+        "is_operational": false,
+        "scheduling_data": null,
+        "label": "Patient Instruction"
+      },
+      {
+        "name": "Swimming",
+        "original_mention": "Swimming",
+        "status": "ACTION_REQUIRED",
+        "linked_id": "[PROCEDURE-XXX]",
+        "suggestions": [],
+        "due_date": "ASAP",
+        "remarks": "Advise physiotherapy including swimming",
+        "is_operational": false,
+        "scheduling_data": null,
+        "label": "Patient Instruction"
+      },
+      {
+        "name": "Walking on soft surfaces",
+        "original_mention": "Walking on soft surfaces",
+        "status": "ACTION_REQUIRED",
+        "linked_id": "[PROCEDURE-XXX]",
+        "suggestions": [],
+        "due_date": "ASAP",
+        "remarks": "Advise physiotherapy including walking on soft surfaces like sand or lawns | Advise walking on soft surfaces like sand or lawns",
+        "is_operational": false,
+        "scheduling_data": null,
+        "label": "Patient Instruction"
+      }
+    ],
+    "clinical_follow_ups": [
+      {
+        "name": "FHO surgery",
+        "original_mention": "FHO surgery",
+        "status": "CONFIRMED",
+        "linked_id": 1181,
+        "suggestions": [],
+        "due_date": "ASAP",
+        "remarks": "Potential surgical intervention (FHO) if conservative management fails",
+        "is_operational": true,
+        "scheduling_data": {
+          "service_id": 1181,
+          "temporal_offset": "ASAP",
+          "recommended_date": null,
+          "priority": "Routine"
+        },
+        "label": "Clinical Follow-up"
+      },
+      {
+        "name": "Home physiotherapy exercises",
+        "original_mention": "Home physiotherapy exercises",
+        "status": "DRAFTED",
+        "linked_id": "[REMINDER-XXX]",
+        "suggestions": [],
+        "due_date": "ASAP",
+        "remarks": "Home physiotherapy exercises",
+        "is_operational": true,
+        "scheduling_data": {
+          "service_id": null,
+          "temporal_offset": "ASAP",
+          "recommended_date": null,
+          "priority": "Routine",
+          "item_id": "[REMINDER-XXX]"
+        },
+        "label": "Clinical Follow-up"
+      },
+      {
+        "name": "Follow-up to monitor response and weight loss",
+        "original_mention": "Follow-up to monitor response and weight loss",
+        "status": "DRAFTED",
+        "linked_id": "[REMINDER-XXX]",
+        "suggestions": [],
+        "due_date": "ASAP",
+        "remarks": "Follow-up to monitor response to treatment and weight loss progress",
+        "is_operational": true,
+        "scheduling_data": {
+          "service_id": null,
+          "temporal_offset": "ASAP",
+          "recommended_date": null,
+          "priority": "Routine",
+          "item_id": "[REMINDER-XXX]"
+        },
+        "label": "Clinical Follow-up"
+      },
+      {
+        "name": "Follow-up to monitor response to treatment and weight loss progress",
+        "original_mention": "Follow-up to monitor response to treatment and weight loss progress",
+        "status": "DRAFTED",
+        "linked_id": "[REMINDER-XXX]",
+        "suggestions": [],
+        "due_date": "ASAP",
+        "remarks": "follow-up to monitor response to treatment and weight loss progress",
+        "is_operational": true,
+        "scheduling_data": {
+          "service_id": null,
+          "temporal_offset": "ASAP",
+          "recommended_date": null,
+          "priority": "Routine",
+          "item_id": "[REMINDER-XXX]"
+        },
+        "label": "Clinical Follow-up"
+      }
+    ]
+  }
+}

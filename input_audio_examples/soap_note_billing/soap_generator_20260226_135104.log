@@ -1,0 +1,808 @@
+2026-02-26 13:51:04,086 | INFO     | soap_generator | setup_logging:1050 | Logging initialized. Log file: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/soap_generator_20260226_135104.log
+2026-02-26 13:51:04,086 | INFO     | soap_generator | <module>:4958 | 🚀 Script started - logging initialized
+2026-02-26 13:51:04,086 | INFO     | soap_generator | <module>:4959 | 🕐 Script execution started at 13:51:04
+2026-02-26 13:51:04,087 | INFO     | soap_generator | <module>:4969 | 📋 Arguments parsed successfully
+2026-02-26 13:51:04,087 | INFO     | soap_generator | <module>:4995 | 🎤 Starting SOAP note generation from audio...
+2026-02-26 13:51:04,087 | INFO     | soap_generator | generate_soap_note_from_audio_async:3807 | 🎤 Async Audio to SOAP Note Generator
+2026-02-26 13:51:04,087 | INFO     | soap_generator | generate_soap_note_from_audio_async:3808 | ==================================================
+2026-02-26 13:51:04,087 | INFO     | soap_generator | generate_soap_note_from_audio_async:3809 | 🕐 Pipeline started at 13:51:04
+2026-02-26 13:51:04,087 | INFO     | soap_generator | generate_soap_note_from_audio_async:3812 | Checking audio processing libraries...
+2026-02-26 13:51:04,087 | WARNING  | soap_generator | check_audio_dependencies:2930 | ❌ soundfile not available
+2026-02-26 13:51:04,087 | WARNING  | soap_generator | check_audio_dependencies:2938 | ❌ pydub not available
+2026-02-26 13:51:04,087 | WARNING  | soap_generator | check_audio_dependencies:2946 | ❌ librosa not available
+2026-02-26 13:51:04,087 | WARNING  | soap_generator | check_audio_dependencies:2954 | ❌ ffmpeg-python not available
+2026-02-26 13:51:04,087 | WARNING  | soap_generator | check_audio_dependencies:2957 | ⚠️  Missing audio libraries: soundfile, pydub, librosa, ffmpeg-python
+2026-02-26 13:51:04,087 | INFO     | soap_generator | check_audio_dependencies:2958 | For better audio file support, install missing libraries:
+2026-02-26 13:51:04,087 | INFO     | soap_generator | check_audio_dependencies:2959 | pip install pydub librosa ffmpeg-python
+2026-02-26 13:51:04,087 | INFO     | soap_generator | check_audio_dependencies:2960 | Note: ffmpeg-python requires ffmpeg to be installed on your system
+2026-02-26 13:51:04,087 | INFO     | soap_generator | generate_soap_note_from_audio_async:3814 | 
+2026-02-26 13:51:04,087 | INFO     | soap_generator | generate_soap_note_from_audio_async:3835 | Using audio file: long_audio.wav
+2026-02-26 13:51:04,087 | INFO     | soap_generator | generate_soap_note_from_audio_async:3860 | ⚡ TARGET_60S: nano + FORCE_PARALLEL_SUPER_PASS_CHUNKS + EARLY_START_SOAP + SOAP max_tokens=2500
+2026-02-26 13:51:04,087 | INFO     | soap_generator | generate_soap_note_from_audio_async:3878 | 🎤 STEP 1: AUDIO TRANSCRIPTION (Async pipeline)
+2026-02-26 13:51:04,088 | INFO     | soap_generator | transcribe_audio:3233 | 🎤 Starting ultra-fast audio transcription...
+2026-02-26 13:51:04,088 | INFO     | soap_generator | transcribe_audio:3234 | 📁 Audio file: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/input_audio/long_audio.wav
+2026-02-26 13:51:16,834 | INFO     | soap_generator | save_output:1216 | Output saved successfully: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/raw_transcription_20260226_135104.txt (10428 characters)
+2026-02-26 13:51:16,840 | INFO     | soap_generator | generate_soap_note_from_audio_async:3917 | 📋 Generated visit_id: e067ed23-b3f5-4199-b33d-71d3f3245585
+2026-02-26 13:51:16,840 | INFO     | soap_generator | generate_soap_note_from_audio_async:3921 | 🏥 Using default clinic_id=1 (inventory and procedures location)
+2026-02-26 13:51:16,840 | INFO     | soap_generator | generate_soap_note_from_audio_async:3922 |    To use a different clinic_id, set CLINIC_ID environment variable
+2026-02-26 13:51:17,116 | INFO     | soap_generator | init_pg_pool:101 | ✅ Initialized Postgres pool (min=1, max=16)
+2026-02-26 13:51:17,116 | INFO     | soap_generator | generate_soap_note_from_audio_async:3967 | ⚡ STEP 2: DEFAULT PATH (Super-Pass non-streaming — single combined call, unified prompt)
+2026-02-26 13:51:17,116 | INFO     | soap_generator | generate_soap_note_from_audio_async:3968 |    - Step 2a: Unified prompt (cleaning + minimal NER). Step 2b: Brain NER (enrich with hints/probabilities)
+2026-02-26 13:51:17,116 | INFO     | soap_generator | generate_soap_note_from_audio_async:3969 |    - Local-only grounding for billable routes + parallel LLM judges where applicable
+2026-02-26 13:51:17,121 | INFO     | soap_generator | generate_soap_note_from_audio_async:3994 | ⚡ STEP 2: SUPER-PASS (unified prompt) → BRAIN NER (enrich with hints/probabilities)
+2026-02-26 13:51:17,121 | INFO     | soap_generator | generate_soap_note_from_audio_async:3999 | ⚡ Batch-parallel grounding: Brain NER (non-streaming) → local-only routing/search → parallel LLM judges → dispatch all entities
+2026-02-26 13:51:17,125 | INFO     | soap_generator | generate_soap_note_from_audio_async:4004 | ✅ Imported process_single_entity_async for streaming grounding
+2026-02-26 13:51:17,125 | INFO     | soap_generator | generate_soap_note_from_audio_async:4178 | 🚀 CHUNK-PARALLEL MODE: Processing raw transcript in parallel chunks
+2026-02-26 13:51:17,128 | INFO     | soap_generator | process_chunks_parallel:671 | ============================================================
+2026-02-26 13:51:17,128 | INFO     | soap_generator | process_chunks_parallel:672 | CHUNK-PARALLEL FACTORY: Processing
+2026-02-26 13:51:17,128 | INFO     | soap_generator | process_chunks_parallel:673 | ============================================================
+2026-02-26 13:51:17,128 | INFO     | soap_generator | process_chunks_parallel:674 |   Raw transcript length: 10428 chars
+2026-02-26 13:51:17,129 | INFO     | soap_generator | process_chunks_parallel:679 |   📋 Extracted signalment: Patient: Oreo, 5yo, male, Labrador
+2026-02-26 13:51:17,129 | INFO     | soap_generator | process_chunks_parallel:686 |   📐 Adaptive chunking: 10428 chars → chunk_size=3809, ~3 chunk(s)
+2026-02-26 13:51:17,129 | INFO     | soap_generator | process_chunks_parallel:693 |   ✂️ Split into 3 chunks with 500-char overlap
+2026-02-26 13:51:17,129 | INFO     | soap_generator | process_chunks_parallel:695 |      Chunk 1: chars 0-4309 (4309 chars)
+2026-02-26 13:51:17,129 | INFO     | soap_generator | process_chunks_parallel:695 |      Chunk 2: chars 3309-7618 (4309 chars)
+2026-02-26 13:51:17,129 | INFO     | soap_generator | process_chunks_parallel:695 |      Chunk 3: chars 6618-10428 (3810 chars)
+2026-02-26 13:51:17,129 | INFO     | soap_generator | process_chunks_parallel:699 |   🚀 Launching 3 parallel workers...
+2026-02-26 13:51:17,129 | INFO     | soap_generator | process_chunk_worker:224 |   🔄 Processing chunk: chars 0-4309 (4309 chars) [PARALLEL START]
+2026-02-26 13:51:17,129 | INFO     | soap_generator | process_chunk_worker:224 |   🔄 Processing chunk: chars 3309-7618 (4309 chars) [PARALLEL START]
+2026-02-26 13:51:17,129 | INFO     | soap_generator | process_chunk_worker:224 |   🔄 Processing chunk: chars 6618-10428 (3810 chars) [PARALLEL START]
+2026-02-26 13:51:17,129 | INFO     | soap_generator | super_pass_cleaning_and_ner:3335 | ============================================================
+2026-02-26 13:51:17,129 | INFO     | soap_generator | super_pass_cleaning_and_ner:3335 | ============================================================
+2026-02-26 13:51:17,129 | INFO     | soap_generator | super_pass_cleaning_and_ner:3336 | SUPER-PASS: Cleaning + NER Extraction (Combined)
+2026-02-26 13:51:17,129 | INFO     | soap_generator | super_pass_cleaning_and_ner:3335 | ============================================================
+2026-02-26 13:51:17,129 | INFO     | soap_generator | super_pass_cleaning_and_ner:3336 | SUPER-PASS: Cleaning + NER Extraction (Combined)
+2026-02-26 13:51:17,129 | INFO     | soap_generator | super_pass_cleaning_and_ner:3337 | ============================================================
+2026-02-26 13:51:17,130 | INFO     | soap_generator | super_pass_cleaning_and_ner:3337 | ============================================================
+2026-02-26 13:51:17,130 | INFO     | soap_generator | super_pass_cleaning_and_ner:3338 |   Model: accounts/fireworks/models/llama-v3p3-70b-instruct
+2026-02-26 13:51:17,130 | INFO     | soap_generator | super_pass_cleaning_and_ner:3338 |   Model: accounts/fireworks/models/llama-v3p3-70b-instruct
+2026-02-26 13:51:17,130 | INFO     | soap_generator | super_pass_cleaning_and_ner:3339 |   Raw transcript length: 4345 chars
+2026-02-26 13:51:17,130 | INFO     | soap_generator | super_pass_cleaning_and_ner:3336 | SUPER-PASS: Cleaning + NER Extraction (Combined)
+2026-02-26 13:51:17,130 | INFO     | soap_generator | super_pass_cleaning_and_ner:3339 |   Raw transcript length: 4345 chars
+2026-02-26 13:51:17,130 | INFO     | soap_generator | super_pass_cleaning_and_ner:3337 | ============================================================
+2026-02-26 13:51:17,130 | INFO     | soap_generator | super_pass_cleaning_and_ner:3338 |   Model: accounts/fireworks/models/llama-v3p3-70b-instruct
+2026-02-26 13:51:17,130 | INFO     | soap_generator | super_pass_cleaning_and_ner:3339 |   Raw transcript length: 3846 chars
+2026-02-26 13:51:23,987 | INFO     | soap_generator | super_pass_cleaning_and_ner:3639 |   ✅ Super-pass complete: 1478 chars cleaned, 12 entities extracted, entities_by_kind (Pure NER)
+2026-02-26 13:51:23,987 | INFO     | soap_generator | process_chunk_worker:243 |   📋 Chunk 3309-7618: Super-Pass complete (12 entities) → Brain NER starting
+2026-02-26 13:51:23,988 | INFO     | soap_generator | run_brain_call:1343 | Brain call: Processing 12 pre-extracted entities from Super-Pass
+2026-02-26 13:51:23,988 | INFO     | soap_generator | run_brain_call:1419 | Brain call: auto-switching to streaming mode for Fireworks (max_tokens=8192 > 4096)
+2026-02-26 13:51:26,180 | INFO     | soap_generator | super_pass_cleaning_and_ner:3639 |   ✅ Super-pass complete: 3861 chars cleaned, 14 entities extracted, entities_by_kind (Pure NER)
+2026-02-26 13:51:26,181 | INFO     | soap_generator | process_chunk_worker:243 |   📋 Chunk 6618-10428: Super-Pass complete (14 entities) → Brain NER starting
+2026-02-26 13:51:26,182 | INFO     | soap_generator | run_brain_call:1343 | Brain call: Processing 14 pre-extracted entities from Super-Pass
+2026-02-26 13:51:26,182 | INFO     | soap_generator | run_brain_call:1419 | Brain call: auto-switching to streaming mode for Fireworks (max_tokens=8192 > 4096)
+2026-02-26 13:51:30,288 | INFO     | soap_generator | run_brain_call:1436 | Brain call (streaming fallback): entities=14 (offsets relative to raw), terms_not_grounded=0
+2026-02-26 13:51:30,288 | INFO     | soap_generator | process_chunk_worker:295 |   ✅ Chunk 3309-7618: 14 enriched entities
+2026-02-26 13:51:31,401 | INFO     | soap_generator | super_pass_cleaning_and_ner:3639 |   ✅ Super-pass complete: 6503 chars cleaned, 20 entities extracted, entities_by_kind (Pure NER)
+2026-02-26 13:51:31,402 | INFO     | soap_generator | process_chunk_worker:243 |   📋 Chunk 0-4309: Super-Pass complete (20 entities) → Brain NER starting
+2026-02-26 13:51:31,403 | INFO     | soap_generator | run_brain_call:1343 | Brain call: Processing 20 pre-extracted entities from Super-Pass
+2026-02-26 13:51:31,403 | INFO     | soap_generator | run_brain_call:1419 | Brain call: auto-switching to streaming mode for Fireworks (max_tokens=8192 > 4096)
+2026-02-26 13:51:37,447 | INFO     | soap_generator | run_brain_call:1436 | Brain call (streaming fallback): entities=19 (offsets relative to raw), terms_not_grounded=0
+2026-02-26 13:51:37,448 | INFO     | soap_generator | process_chunk_worker:295 |   ✅ Chunk 6618-10428: 19 enriched entities
+2026-02-26 13:51:44,233 | INFO     | soap_generator | run_brain_call:1436 | Brain call (streaming fallback): entities=22 (offsets relative to raw), terms_not_grounded=0
+2026-02-26 13:51:44,234 | INFO     | soap_generator | process_chunk_worker:295 |   ✅ Chunk 0-4309: 22 enriched entities
+2026-02-26 13:51:44,236 | INFO     | soap_generator | process_chunks_parallel:742 |   🔗 Merged cleaned transcript: 11842 chars
+2026-02-26 13:51:44,245 | INFO     | soap_generator | process_chunks_parallel:748 |   🔍 Deduplicated entities: 55 → 48
+2026-02-26 13:51:44,245 | DEBUG    | soap_generator | filter_non_actionable_entities:565 |   🚫 Filtered severity-only: 'grade 3' (kind=diagnostic)
+2026-02-26 13:51:44,245 | INFO     | soap_generator | process_chunks_parallel:763 |   🚫 Filtered non-actionable: 48 → 47
+2026-02-26 13:51:44,245 | INFO     | soap_generator | process_chunks_parallel:782 |   ✅ Chunk-parallel processing complete
+2026-02-26 13:51:44,246 | INFO     | soap_generator | generate_soap_note_from_audio_async:4192 | ✅ Chunk-parallel complete: cleaned=11842 chars, 47 entities
+2026-02-26 13:51:44,250 | INFO     | soap_generator | generate_soap_note_from_audio_async:4221 |    📄 Brain NER output saved to: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/brain_ner_output_20260226_135104.json (47 entities)
+2026-02-26 13:51:44,250 | INFO     | soap_generator | generate_soap_note_from_audio_async:4228 |    ✅ Super-Pass (unified) + Brain NER (enriched): cleaned=11842 chars, 47 entities with hints/probabilities
+2026-02-26 13:51:44,252 | INFO     | soap_generator | generate_soap_note_from_audio_async:4363 |    📄 Brain NER output saved (unconditional): /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/brain_ner_output_20260226_135104.json (47 entities)
+2026-02-26 13:51:44,252 | INFO     | soap_generator | generate_soap_note_from_audio_async:4378 | ✅ Shadow grounding complete: 11842 chars cleaned, 47 entities extracted
+2026-02-26 13:51:44,253 | INFO     | soap_generator | save_output:1216 | Output saved successfully: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/cleaned_transcript_20260226_135104.txt (11842 characters)
+2026-02-26 13:51:44,253 | INFO     | soap_generator | generate_soap_note_from_audio_async:4382 | ✅ Cleaned transcript saved: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/cleaned_transcript_20260226_135104.txt
+2026-02-26 13:51:44,253 | INFO     | soap_generator | generate_soap_note_from_audio_async:4383 | 📊 Input length: 10428 characters
+2026-02-26 13:51:44,253 | INFO     | soap_generator | generate_soap_note_from_audio_async:4384 | 📊 Output length: 11842 characters
+2026-02-26 13:51:44,255 | INFO     | soap_generator | generate_soap_note_from_audio_async:4394 |    📄 Brain NER output saved to: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/brain_ner_output_20260226_135104.json (47 entities)
+2026-02-26 13:51:44,256 | INFO     | soap_generator | generate_soap_note_from_audio_async:4407 |    📄 NER output by kind saved to: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/cleaned_transcript_20260226_135104_entities_by_kind.json
+2026-02-26 13:51:44,256 | INFO     | soap_generator | generate_soap_note_from_audio_async:4435 | ⚡ STEP 2.3: BATCH-PARALLEL GROUNDING (Brain NER non-streaming → local-only routing/search → parallel judges)
+2026-02-26 13:51:44,256 | INFO     | soap_generator | generate_soap_note_from_audio_async:4436 | 📋 STEP 3: SOAP NOTE GENERATION (uses cleaned transcript)
+2026-02-26 13:51:44,256 | INFO     | soap_generator | generate_soap_note_from_audio_async:4454 | 📋 STEP 3: SOAP NOTE GENERATION (uses cleaned transcript)
+2026-02-26 13:51:44,256 | INFO     | soap_generator | generate_soap_note_from_audio_async:4455 |    SOAP pipeline started (independent of billing)
+2026-02-26 13:51:44,257 | INFO     | soap_generator | build_detected_concepts_json_from_manifest:1457 | 📊 Built Brain NER SOAP payload (47 entities)
+2026-02-26 13:51:44,258 | DEBUG    | soap_generator | get_client_for_model:375 | 🔍 Model 'accounts/fireworks/models/llama-v3p3-70b-instruct' → Provider: fireworks
+2026-02-26 13:51:44,259 | INFO     | soap_generator | process_transcription:2830 | Reading transcription file...
+2026-02-26 13:51:44,259 | INFO     | soap_generator | process_transcription:2833 | Transcription loaded: 11842 characters
+2026-02-26 13:51:44,259 | INFO     | soap_generator | process_transcription:2838 | Loading optional input files in parallel...
+2026-02-26 13:51:44,259 | INFO     | soap_generator | read_optional_file:1239 | Pre-appointment summary not provided (path is None)
+2026-02-26 13:51:44,259 | INFO     | soap_generator | read_optional_file:1239 | Vitals template not provided (path is None)
+2026-02-26 13:51:44,259 | INFO     | soap_generator | read_optional_file:1239 | Protocols template not provided (path is None)
+2026-02-26 13:51:44,259 | INFO     | soap_generator | process_transcription:2851 | Generating SOAP note...
+2026-02-26 13:51:44,259 | INFO     | soap_generator | process_transcription:2852 | Conversation length being sent to LLM: 11842 characters
+2026-02-26 13:51:44,259 | INFO     | soap_generator | process_transcription:2853 | Estimated conversation tokens: 2960 tokens
+2026-02-26 13:51:44,259 | INFO     | soap_generator | generate_soap_note:2137 | 🕐 Starting SOAP note generation at 13:51:44
+2026-02-26 13:51:44,259 | INFO     | soap_generator | generate_soap_note:2165 | 📊 Transcript tokens (prompt): ~2960
+2026-02-26 13:51:44,259 | INFO     | soap_generator | generate_soap_note:2166 | 📊 Dynamic max_tokens: 2500 (min: 2000, max: 6000)
+2026-02-26 13:51:44,259 | INFO     | soap_generator | generate_soap_note:2212 | Sending request to OpenAI (attempt 1/2)
+2026-02-26 13:51:44,264 | DEBUG    | soap_generator | get_client_for_model:446 | ✅ Created Fireworks client for 'accounts/fireworks/models/llama-v3p3-70b-instruct'
+2026-02-26 13:51:44,264 | INFO     | soap_generator | run_clinical_entity_resolver:276 |   CER: Fireworks with large output → auto-switching to streaming mode
+2026-02-26 13:51:58,612 | INFO     | soap_generator | generate_soap_note:2236 | SOAP note generated successfully
+2026-02-26 13:51:58,613 | INFO     | soap_generator | generate_soap_note:2237 | ✅ SOAP note generation completed (took 14.35s)
+2026-02-26 13:51:58,613 | INFO     | soap_generator | generate_soap_note:2238 | 📊 Input length: 11842 characters
+2026-02-26 13:51:58,613 | INFO     | soap_generator | generate_soap_note:2239 | 📊 Output length: 4085 characters
+2026-02-26 13:51:58,615 | INFO     | soap_generator | save_output:1216 | Output saved successfully: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/soap_note_20260226_135104.txt (4085 characters)
+2026-02-26 13:51:58,615 | INFO     | soap_generator | process_transcription:2878 | SOAP note generation completed successfully
+2026-02-26 13:51:58,616 | INFO     | soap_generator | process_transcription:2885 | SOAP note (JSON) saved to: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/soap_note_20260226_135104.json
+2026-02-26 13:52:08,309 | INFO     | soap_generator | run_clinical_entity_resolver:281 |   ⏱️ CER LLM call (streaming): 24.0s (47 entities)
+2026-02-26 13:52:08,310 | INFO     | soap_generator | run_clinical_entity_resolver:313 |   ✅ CER: 47 → 25 consolidated → 25 billing-only (removed Reminder/Diagnosis/customer-instruction/non-billing)
+2026-02-26 13:52:08,314 | DEBUG    | soap_generator | _dispatch_entity:4171 |    📝 Created grounding task for entity 'fibroblan and esmetopril' (total tasks: 1)
+2026-02-26 13:52:08,314 | DEBUG    | soap_generator | _dispatch_entity:4171 |    📝 Created grounding task for entity 'floralana' (total tasks: 2)
+2026-02-26 13:52:08,314 | DEBUG    | soap_generator | _dispatch_entity:4171 |    📝 Created grounding task for entity 'saralana' (total tasks: 3)
+2026-02-26 13:52:08,314 | DEBUG    | soap_generator | _dispatch_entity:4171 |    📝 Created grounding task for entity 'moxeduct imidogloprid' (total tasks: 4)
+2026-02-26 13:52:08,314 | DEBUG    | soap_generator | _dispatch_entity:4171 |    📝 Created grounding task for entity 'salamitin' (total tasks: 5)
+2026-02-26 13:52:08,314 | DEBUG    | soap_generator | _dispatch_entity:4171 |    📝 Created grounding task for entity 'Florina also called Bravitu' (total tasks: 6)
+2026-02-26 13:52:08,314 | DEBUG    | soap_generator | _dispatch_entity:4171 |    📝 Created grounding task for entity 'Contraway Force Etching' (total tasks: 7)
+2026-02-26 13:52:08,315 | DEBUG    | soap_generator | _dispatch_entity:4171 |    📝 Created grounding task for entity 'Spirocoxin' (total tasks: 8)
+2026-02-26 13:52:08,315 | DEBUG    | soap_generator | _dispatch_entity:4171 |    📝 Created grounding task for entity 'omega 3, omega 6 fatty acids' (total tasks: 9)
+2026-02-26 13:52:08,315 | DEBUG    | soap_generator | _dispatch_entity:4171 |    📝 Created grounding task for entity 'anteroposterior' (total tasks: 10)
+2026-02-26 13:52:08,315 | DEBUG    | soap_generator | _dispatch_entity:4171 |    📝 Created grounding task for entity 'lateral' (total tasks: 11)
+2026-02-26 13:52:08,315 | DEBUG    | soap_generator | _dispatch_entity:4171 |    📝 Created grounding task for entity 'physiotherapy' (total tasks: 12)
+2026-02-26 13:52:08,315 | DEBUG    | soap_generator | _dispatch_entity:4171 |    📝 Created grounding task for entity 'swimming' (total tasks: 13)
+2026-02-26 13:52:08,315 | DEBUG    | soap_generator | _dispatch_entity:4171 |    📝 Created grounding task for entity 'sit stand step exercise' (total tasks: 14)
+2026-02-26 13:52:08,315 | DEBUG    | soap_generator | _dispatch_entity:4171 |    📝 Created grounding task for entity 'FHO' (total tasks: 15)
+2026-02-26 13:52:08,315 | DEBUG    | soap_generator | _dispatch_entity:4171 |    📝 Created grounding task for entity 'ultralining test' (total tasks: 16)
+2026-02-26 13:52:08,315 | DEBUG    | soap_generator | _dispatch_entity:4171 |    📝 Created grounding task for entity 'X-ray' (total tasks: 17)
+2026-02-26 13:52:08,315 | DEBUG    | soap_generator | _dispatch_entity:4171 |    📝 Created grounding task for entity 'noble angle' (total tasks: 18)
+2026-02-26 13:52:08,316 | DEBUG    | soap_generator | _dispatch_entity:4171 |    📝 Created grounding task for entity 'auto-lanternance' (total tasks: 19)
+2026-02-26 13:52:08,316 | DEBUG    | soap_generator | _dispatch_entity:4171 |    📝 Created grounding task for entity 'vaccinated and dewormed' (total tasks: 20)
+2026-02-26 13:52:08,316 | DEBUG    | soap_generator | _dispatch_entity:4171 |    📝 Created grounding task for entity 'tick and flee control' (total tasks: 21)
+2026-02-26 13:52:08,316 | DEBUG    | soap_generator | _dispatch_entity:4171 |    📝 Created grounding task for entity 'tachycine free control' (total tasks: 22)
+2026-02-26 13:52:08,316 | DEBUG    | soap_generator | _dispatch_entity:4171 |    📝 Created grounding task for entity 'home food' (total tasks: 23)
+2026-02-26 13:52:08,316 | DEBUG    | soap_generator | _dispatch_entity:4171 |    📝 Created grounding task for entity 'rice and sambar' (total tasks: 24)
+2026-02-26 13:52:08,316 | DEBUG    | soap_generator | _dispatch_entity:4171 |    📝 Created grounding task for entity 'obesity diet' (total tasks: 25)
+2026-02-26 13:52:08,316 | DEBUG    | soap_generator | _ground_one:4125 |    🔍 Grounding entity 1: 'fibroblan and esmetopril'
+2026-02-26 13:52:08,316 | INFO     | soap_generator | process_single_entity_async:708 | 🔍 [ASYNC] PROCESSING ENTITY 1/47: 'fibroblan and esmetopril'
+2026-02-26 13:52:08,316 | INFO     | soap_generator | process_single_entity_async:709 |    Kind: Medication, KB Kind: Medication, Source: N/A
+2026-02-26 13:52:08,316 | INFO     | soap_generator | process_single_entity_async:829 |    📍 Route Classification: dual_sync
+2026-02-26 13:52:08,317 | INFO     | soap_generator | process_single_entity_async:830 |    📝 Normalized name: 'fibroblan and esmetopril' (from span_text: 'fibroblan and esmetopril')
+2026-02-26 13:52:08,317 | INFO     | soap_generator | process_entity_by_route_async:1605 |   📦 Batch intent (default): using search_term 'fibroblan and esmetopril'
+2026-02-26 13:52:08,317 | INFO     | soap_generator | process_entity_by_route_async:1659 |   🔍 Starting LOCAL-ONLY search (local inventory + local services)
+2026-02-26 13:52:08,317 | INFO     | soap_generator | process_entity_by_route_async:1660 |      Search term: 'fibroblan and esmetopril' (ASR-corrected: False)
+2026-02-26 13:52:08,317 | DEBUG    | soap_generator | _ground_one:4125 |    🔍 Grounding entity 2: 'floralana'
+2026-02-26 13:52:08,317 | INFO     | soap_generator | process_single_entity_async:708 | 🔍 [ASYNC] PROCESSING ENTITY 2/47: 'floralana'
+2026-02-26 13:52:08,317 | INFO     | soap_generator | process_single_entity_async:709 |    Kind: Medication, KB Kind: Medication, Source: N/A
+2026-02-26 13:52:08,317 | INFO     | soap_generator | process_single_entity_async:829 |    📍 Route Classification: dual_sync
+2026-02-26 13:52:08,317 | INFO     | soap_generator | process_single_entity_async:830 |    📝 Normalized name: 'floralana' (from span_text: 'floralana')
+2026-02-26 13:52:08,318 | INFO     | soap_generator | process_entity_by_route_async:1605 |   📦 Batch intent (default): using search_term 'floralana'
+2026-02-26 13:52:08,318 | INFO     | soap_generator | process_entity_by_route_async:1659 |   🔍 Starting LOCAL-ONLY search (local inventory + local services)
+2026-02-26 13:52:08,318 | INFO     | soap_generator | process_entity_by_route_async:1660 |      Search term: 'floralana' (ASR-corrected: False)
+2026-02-26 13:52:08,318 | DEBUG    | soap_generator | _ground_one:4125 |    🔍 Grounding entity 3: 'saralana'
+2026-02-26 13:52:08,318 | INFO     | soap_generator | process_single_entity_async:708 | 🔍 [ASYNC] PROCESSING ENTITY 3/47: 'saralana'
+2026-02-26 13:52:08,318 | INFO     | soap_generator | process_single_entity_async:709 |    Kind: Medication, KB Kind: Medication, Source: N/A
+2026-02-26 13:52:08,318 | INFO     | soap_generator | process_single_entity_async:829 |    📍 Route Classification: dual_sync
+2026-02-26 13:52:08,318 | INFO     | soap_generator | process_single_entity_async:830 |    📝 Normalized name: 'saralana' (from span_text: 'saralana')
+2026-02-26 13:52:08,318 | INFO     | soap_generator | process_entity_by_route_async:1605 |   📦 Batch intent (default): using search_term 'saralana'
+2026-02-26 13:52:08,318 | INFO     | soap_generator | process_entity_by_route_async:1659 |   🔍 Starting LOCAL-ONLY search (local inventory + local services)
+2026-02-26 13:52:08,318 | INFO     | soap_generator | process_entity_by_route_async:1660 |      Search term: 'saralana' (ASR-corrected: False)
+2026-02-26 13:52:08,319 | DEBUG    | soap_generator | _ground_one:4125 |    🔍 Grounding entity 4: 'moxeduct imidogloprid'
+2026-02-26 13:52:08,319 | INFO     | soap_generator | process_single_entity_async:708 | 🔍 [ASYNC] PROCESSING ENTITY 4/47: 'moxeduct imidogloprid'
+2026-02-26 13:52:08,319 | INFO     | soap_generator | process_single_entity_async:709 |    Kind: Medication, KB Kind: Medication, Source: N/A
+2026-02-26 13:52:08,319 | INFO     | soap_generator | process_single_entity_async:829 |    📍 Route Classification: dual_sync
+2026-02-26 13:52:08,319 | INFO     | soap_generator | process_single_entity_async:830 |    📝 Normalized name: 'moxeduct imidogloprid' (from span_text: 'moxeduct imidogloprid')
+2026-02-26 13:52:08,319 | INFO     | soap_generator | process_entity_by_route_async:1605 |   📦 Batch intent (default): using search_term 'moxeduct imidogloprid'
+2026-02-26 13:52:08,319 | INFO     | soap_generator | process_entity_by_route_async:1659 |   🔍 Starting LOCAL-ONLY search (local inventory + local services)
+2026-02-26 13:52:08,319 | INFO     | soap_generator | process_entity_by_route_async:1660 |      Search term: 'moxeduct imidogloprid' (ASR-corrected: False)
+2026-02-26 13:52:08,319 | DEBUG    | soap_generator | _ground_one:4125 |    🔍 Grounding entity 5: 'salamitin'
+2026-02-26 13:52:08,319 | INFO     | soap_generator | process_single_entity_async:708 | 🔍 [ASYNC] PROCESSING ENTITY 5/47: 'salamitin'
+2026-02-26 13:52:08,319 | INFO     | soap_generator | process_single_entity_async:709 |    Kind: Medication, KB Kind: Medication, Source: N/A
+2026-02-26 13:52:08,320 | INFO     | soap_generator | process_single_entity_async:829 |    📍 Route Classification: dual_sync
+2026-02-26 13:52:08,320 | INFO     | soap_generator | process_single_entity_async:830 |    📝 Normalized name: 'salamitin' (from span_text: 'salamitin')
+2026-02-26 13:52:08,320 | INFO     | soap_generator | process_entity_by_route_async:1605 |   📦 Batch intent (default): using search_term 'salamitin'
+2026-02-26 13:52:08,320 | INFO     | soap_generator | process_entity_by_route_async:1659 |   🔍 Starting LOCAL-ONLY search (local inventory + local services)
+2026-02-26 13:52:08,320 | INFO     | soap_generator | process_entity_by_route_async:1660 |      Search term: 'salamitin' (ASR-corrected: False)
+2026-02-26 13:52:08,320 | DEBUG    | soap_generator | _ground_one:4125 |    🔍 Grounding entity 6: 'Florina also called Bravitu'
+2026-02-26 13:52:08,320 | INFO     | soap_generator | process_single_entity_async:708 | 🔍 [ASYNC] PROCESSING ENTITY 6/47: 'Florina also called Bravitu'
+2026-02-26 13:52:08,320 | INFO     | soap_generator | process_single_entity_async:709 |    Kind: Medication, KB Kind: Medication, Source: N/A
+2026-02-26 13:52:08,320 | INFO     | soap_generator | process_single_entity_async:829 |    📍 Route Classification: dual_sync
+2026-02-26 13:52:08,320 | INFO     | soap_generator | process_single_entity_async:830 |    📝 Normalized name: 'Florina also called Bravitu' (from span_text: 'Florina also called Bravitu')
+2026-02-26 13:52:08,321 | INFO     | soap_generator | process_entity_by_route_async:1605 |   📦 Batch intent (default): using search_term 'Florina (Bravitu)'
+2026-02-26 13:52:08,321 | INFO     | soap_generator | process_entity_by_route_async:1659 |   🔍 Starting LOCAL-ONLY search (local inventory + local services)
+2026-02-26 13:52:08,321 | INFO     | soap_generator | process_entity_by_route_async:1660 |      Search term: 'Florina (Bravitu)' (ASR-corrected: True)
+2026-02-26 13:52:08,321 | DEBUG    | soap_generator | _ground_one:4125 |    🔍 Grounding entity 7: 'Contraway Force Etching'
+2026-02-26 13:52:08,321 | INFO     | soap_generator | process_single_entity_async:708 | 🔍 [ASYNC] PROCESSING ENTITY 7/47: 'Contraway Force Etching'
+2026-02-26 13:52:08,321 | INFO     | soap_generator | process_single_entity_async:709 |    Kind: Medication, KB Kind: Medication, Source: N/A
+2026-02-26 13:52:08,321 | INFO     | soap_generator | process_single_entity_async:829 |    📍 Route Classification: dual_sync
+2026-02-26 13:52:08,321 | INFO     | soap_generator | process_single_entity_async:830 |    📝 Normalized name: 'Contraway Force Etching' (from span_text: 'Contraway Force Etching')
+2026-02-26 13:52:08,321 | INFO     | soap_generator | process_entity_by_route_async:1605 |   📦 Batch intent (default): using search_term 'Contraway Force Etching'
+2026-02-26 13:52:08,321 | INFO     | soap_generator | process_entity_by_route_async:1659 |   🔍 Starting LOCAL-ONLY search (local inventory + local services)
+2026-02-26 13:52:08,321 | INFO     | soap_generator | process_entity_by_route_async:1660 |      Search term: 'Contraway Force Etching' (ASR-corrected: False)
+2026-02-26 13:52:08,321 | DEBUG    | soap_generator | _ground_one:4125 |    🔍 Grounding entity 8: 'Spirocoxin'
+2026-02-26 13:52:08,322 | INFO     | soap_generator | process_single_entity_async:708 | 🔍 [ASYNC] PROCESSING ENTITY 8/47: 'Spirocoxin'
+2026-02-26 13:52:08,322 | INFO     | soap_generator | process_single_entity_async:709 |    Kind: Medication, KB Kind: Medication, Source: N/A
+2026-02-26 13:52:08,322 | INFO     | soap_generator | process_single_entity_async:829 |    📍 Route Classification: dual_sync
+2026-02-26 13:52:08,322 | INFO     | soap_generator | process_single_entity_async:830 |    📝 Normalized name: 'Spirocoxin' (from span_text: 'Spirocoxin')
+2026-02-26 13:52:08,322 | INFO     | soap_generator | process_entity_by_route_async:1605 |   📦 Batch intent (default): using search_term 'Spirocoxin'
+2026-02-26 13:52:08,322 | INFO     | soap_generator | process_entity_by_route_async:1659 |   🔍 Starting LOCAL-ONLY search (local inventory + local services)
+2026-02-26 13:52:08,322 | INFO     | soap_generator | process_entity_by_route_async:1660 |      Search term: 'Spirocoxin' (ASR-corrected: False)
+2026-02-26 13:52:08,322 | DEBUG    | soap_generator | _ground_one:4125 |    🔍 Grounding entity 9: 'omega 3, omega 6 fatty acids'
+2026-02-26 13:52:08,322 | INFO     | soap_generator | process_single_entity_async:708 | 🔍 [ASYNC] PROCESSING ENTITY 9/47: 'omega 3, omega 6 fatty acids'
+2026-02-26 13:52:08,322 | INFO     | soap_generator | process_single_entity_async:709 |    Kind: Medication, KB Kind: Medication, Source: N/A
+2026-02-26 13:52:08,322 | INFO     | soap_generator | process_single_entity_async:829 |    📍 Route Classification: dual_sync
+2026-02-26 13:52:08,322 | INFO     | soap_generator | process_single_entity_async:830 |    📝 Normalized name: 'omega 3, omega 6 fatty acids' (from span_text: 'omega 3, omega 6 fatty acids')
+2026-02-26 13:52:08,323 | INFO     | soap_generator | process_entity_by_route_async:1605 |   📦 Batch intent (default): using search_term 'omega 3, omega 6 fatty acids'
+2026-02-26 13:52:08,323 | INFO     | soap_generator | process_entity_by_route_async:1659 |   🔍 Starting LOCAL-ONLY search (local inventory + local services)
+2026-02-26 13:52:08,323 | INFO     | soap_generator | process_entity_by_route_async:1660 |      Search term: 'omega 3, omega 6 fatty acids' (ASR-corrected: False)
+2026-02-26 13:52:08,323 | DEBUG    | soap_generator | _ground_one:4125 |    🔍 Grounding entity 10: 'anteroposterior'
+2026-02-26 13:52:08,323 | INFO     | soap_generator | process_single_entity_async:708 | 🔍 [ASYNC] PROCESSING ENTITY 10/47: 'anteroposterior'
+2026-02-26 13:52:08,323 | INFO     | soap_generator | process_single_entity_async:709 |    Kind: Procedure, KB Kind: Procedure, Source: N/A
+2026-02-26 13:52:08,323 | DEBUG    | soap_generator | _ground_one:4125 |    🔍 Grounding entity 11: 'lateral'
+2026-02-26 13:52:08,323 | INFO     | soap_generator | process_single_entity_async:708 | 🔍 [ASYNC] PROCESSING ENTITY 11/47: 'lateral'
+2026-02-26 13:52:08,324 | INFO     | soap_generator | process_single_entity_async:709 |    Kind: Procedure, KB Kind: Procedure, Source: N/A
+2026-02-26 13:52:08,324 | DEBUG    | soap_generator | _ground_one:4125 |    🔍 Grounding entity 12: 'physiotherapy'
+2026-02-26 13:52:08,324 | INFO     | soap_generator | process_single_entity_async:708 | 🔍 [ASYNC] PROCESSING ENTITY 12/47: 'physiotherapy'
+2026-02-26 13:52:08,324 | INFO     | soap_generator | process_single_entity_async:709 |    Kind: Procedure, KB Kind: Procedure, Source: N/A
+2026-02-26 13:52:08,323 | DEBUG    | soap_generator | get_client_for_model:375 | 🔍 Model 'gpt-4.1-nano' → Provider: openai
+2026-02-26 13:52:08,324 | DEBUG    | soap_generator | get_client_for_model:375 | 🔍 Model 'gpt-4.1-nano' → Provider: openai
+2026-02-26 13:52:08,324 | DEBUG    | soap_generator | get_client_for_model:375 | 🔍 Model 'gpt-4.1-nano' → Provider: openai
+2026-02-26 13:52:08,324 | DEBUG    | soap_generator | get_client_for_model:375 | 🔍 Model 'gpt-4.1-nano' → Provider: openai
+2026-02-26 13:52:08,324 | DEBUG    | soap_generator | get_client_for_model:375 | 🔍 Model 'gpt-4.1-nano' → Provider: openai
+2026-02-26 13:52:08,325 | DEBUG    | soap_generator | get_client_for_model:375 | 🔍 Model 'gpt-4.1-nano' → Provider: openai
+2026-02-26 13:52:08,341 | INFO     | soap_generator | get_client_for_model:401 | ✅ Created OpenAI client for 'gpt-4.1-nano' (OpenAI endpoint, key: sk-proj-xK...)
+2026-02-26 13:52:08,341 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:08,341 | DEBUG    | soap_generator | get_client_for_model:403 |    Client base_url: https://api.openai.com/v1/
+2026-02-26 13:52:08,342 | INFO     | soap_generator | get_client_for_model:401 | ✅ Created OpenAI client for 'gpt-4.1-nano' (OpenAI endpoint, key: sk-proj-xK...)
+2026-02-26 13:52:08,342 | INFO     | soap_generator | get_client_for_model:401 | ✅ Created OpenAI client for 'gpt-4.1-nano' (OpenAI endpoint, key: sk-proj-xK...)
+2026-02-26 13:52:08,341 | INFO     | soap_generator | get_client_for_model:401 | ✅ Created OpenAI client for 'gpt-4.1-nano' (OpenAI endpoint, key: sk-proj-xK...)
+2026-02-26 13:52:08,343 | INFO     | soap_generator | get_client_for_model:401 | ✅ Created OpenAI client for 'gpt-4.1-nano' (OpenAI endpoint, key: sk-proj-xK...)
+2026-02-26 13:52:08,344 | DEBUG    | soap_generator | get_client_for_model:403 |    Client base_url: https://api.openai.com/v1/
+2026-02-26 13:52:08,344 | DEBUG    | soap_generator | get_client_for_model:403 |    Client base_url: https://api.openai.com/v1/
+2026-02-26 13:52:08,344 | DEBUG    | soap_generator | get_client_for_model:403 |    Client base_url: https://api.openai.com/v1/
+2026-02-26 13:52:08,344 | INFO     | soap_generator | get_client_for_model:401 | ✅ Created OpenAI client for 'gpt-4.1-nano' (OpenAI endpoint, key: sk-proj-xK...)
+2026-02-26 13:52:08,344 | DEBUG    | soap_generator | get_client_for_model:403 |    Client base_url: https://api.openai.com/v1/
+2026-02-26 13:52:08,346 | DEBUG    | soap_generator | get_client_for_model:403 |    Client base_url: https://api.openai.com/v1/
+2026-02-26 13:52:08,356 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:08,360 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:08,365 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:08,370 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:08,373 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:08,378 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:08,382 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:08,594 | DEBUG    | soap_generator | search_local_inventory_topk:633 |   📊 Vector embedding used for 'fibroblan and esmetopril' (cached or precomputed)
+2026-02-26 13:52:08,604 | DEBUG    | soap_generator | search_local_inventory_topk:633 |   📊 Vector embedding used for 'floralana' (cached or precomputed)
+2026-02-26 13:52:08,626 | DEBUG    | soap_generator | search_local_services_topk:1234 |   📊 Vector embedding used for service 'saralana' (cached or precomputed)
+2026-02-26 13:52:08,627 | DEBUG    | soap_generator | search_local_services_topk:1234 |   📊 Vector embedding used for service 'floralana' (cached or precomputed)
+2026-02-26 13:52:08,631 | DEBUG    | soap_generator | search_local_services_topk:1234 |   📊 Vector embedding used for service 'fibroblan and esmetopril' (cached or precomputed)
+2026-02-26 13:52:08,639 | DEBUG    | soap_generator | search_local_inventory_topk:633 |   📊 Vector embedding used for 'saralana' (cached or precomputed)
+2026-02-26 13:52:08,643 | DEBUG    | soap_generator | search_local_services_topk:1234 |   📊 Vector embedding used for service 'moxeduct imidogloprid' (cached or precomputed)
+2026-02-26 13:52:08,646 | DEBUG    | soap_generator | search_local_inventory_topk:633 |   📊 Vector embedding used for 'moxeduct imidogloprid' (cached or precomputed)
+2026-02-26 13:52:08,648 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:08,649 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:08,649 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:08,658 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:08,659 | INFO     | soap_generator | process_entity_by_route_async:2529 |   💡 Ungrounded entity 'fibroblan and esmetopril': using highest probability hint 'fibroblan and esmetopril' as display_name
+2026-02-26 13:52:08,659 | DEBUG    | soap_generator | _ground_one:4153 |    ✅ Grounded entity 'fibroblan and esmetopril' → added to manifest (total: 1)
+2026-02-26 13:52:08,660 | DEBUG    | soap_generator | _ground_one:4125 |    🔍 Grounding entity 13: 'swimming'
+2026-02-26 13:52:08,660 | INFO     | soap_generator | process_single_entity_async:708 | 🔍 [ASYNC] PROCESSING ENTITY 13/47: 'swimming'
+2026-02-26 13:52:08,660 | INFO     | soap_generator | process_single_entity_async:709 |    Kind: Procedure, KB Kind: Procedure, Source: N/A
+2026-02-26 13:52:08,660 | INFO     | soap_generator | process_entity_by_route_async:2529 |   💡 Ungrounded entity 'floralana': using highest probability hint 'floralana' as display_name
+2026-02-26 13:52:08,660 | DEBUG    | soap_generator | _ground_one:4153 |    ✅ Grounded entity 'floralana' → added to manifest (total: 2)
+2026-02-26 13:52:08,660 | DEBUG    | soap_generator | _ground_one:4125 |    🔍 Grounding entity 14: 'sit stand step exercise'
+2026-02-26 13:52:08,661 | INFO     | soap_generator | process_single_entity_async:708 | 🔍 [ASYNC] PROCESSING ENTITY 14/47: 'sit stand step exercise'
+2026-02-26 13:52:08,661 | INFO     | soap_generator | process_single_entity_async:709 |    Kind: Procedure, KB Kind: Procedure, Source: N/A
+2026-02-26 13:52:08,666 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:08,666 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:08,678 | INFO     | soap_generator | process_entity_by_route_async:2529 |   💡 Ungrounded entity 'saralana': using highest probability hint 'saralana' as display_name
+2026-02-26 13:52:08,678 | DEBUG    | soap_generator | _ground_one:4153 |    ✅ Grounded entity 'saralana' → added to manifest (total: 3)
+2026-02-26 13:52:08,678 | DEBUG    | soap_generator | _ground_one:4125 |    🔍 Grounding entity 15: 'FHO'
+2026-02-26 13:52:08,679 | INFO     | soap_generator | process_single_entity_async:708 | 🔍 [ASYNC] PROCESSING ENTITY 15/47: 'FHO'
+2026-02-26 13:52:08,679 | INFO     | soap_generator | process_single_entity_async:709 |    Kind: Procedure, KB Kind: Procedure, Source: N/A
+2026-02-26 13:52:08,684 | INFO     | soap_generator | process_entity_by_route_async:2529 |   💡 Ungrounded entity 'moxeduct imidogloprid': using highest probability hint 'moxeduct imidogloprid' as display_name
+2026-02-26 13:52:08,684 | DEBUG    | soap_generator | _ground_one:4153 |    ✅ Grounded entity 'moxeduct imidogloprid' → added to manifest (total: 4)
+2026-02-26 13:52:08,684 | DEBUG    | soap_generator | _ground_one:4125 |    🔍 Grounding entity 16: 'ultralining test'
+2026-02-26 13:52:08,684 | INFO     | soap_generator | process_single_entity_async:708 | 🔍 [ASYNC] PROCESSING ENTITY 16/47: 'ultralining test'
+2026-02-26 13:52:08,684 | INFO     | soap_generator | process_single_entity_async:709 |    Kind: Diagnostic, KB Kind: Diagnostic, Source: N/A
+2026-02-26 13:52:08,685 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:08,688 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:08,874 | DEBUG    | soap_generator | search_local_inventory_topk:633 |   📊 Vector embedding used for 'salamitin' (cached or precomputed)
+2026-02-26 13:52:08,877 | DEBUG    | soap_generator | search_local_services_topk:1234 |   📊 Vector embedding used for service 'salamitin' (cached or precomputed)
+2026-02-26 13:52:08,882 | DEBUG    | soap_generator | search_local_services_topk:1234 |   📊 Vector embedding used for service 'Contraway Force Etching' (cached or precomputed)
+2026-02-26 13:52:08,884 | DEBUG    | soap_generator | search_local_inventory_topk:633 |   📊 Vector embedding used for 'Florina (Bravitu)' (cached or precomputed)
+2026-02-26 13:52:08,896 | DEBUG    | soap_generator | search_local_inventory_topk:633 |   📊 Vector embedding used for 'Contraway Force Etching' (cached or precomputed)
+2026-02-26 13:52:08,899 | DEBUG    | soap_generator | search_local_services_topk:1234 |   📊 Vector embedding used for service 'Florina (Bravitu)' (cached or precomputed)
+2026-02-26 13:52:08,900 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:08,906 | DEBUG    | soap_generator | search_local_services_topk:1234 |   📊 Vector embedding used for service 'Spirocoxin' (cached or precomputed)
+2026-02-26 13:52:08,906 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:08,909 | DEBUG    | soap_generator | get_client_for_model:375 | 🔍 Model 'gpt-4.1-nano' → Provider: openai
+2026-02-26 13:52:08,914 | DEBUG    | soap_generator | search_local_inventory_topk:633 |   📊 Vector embedding used for 'Spirocoxin' (cached or precomputed)
+2026-02-26 13:52:08,919 | INFO     | soap_generator | get_client_for_model:401 | ✅ Created OpenAI client for 'gpt-4.1-nano' (OpenAI endpoint, key: sk-proj-xK...)
+2026-02-26 13:52:08,919 | DEBUG    | soap_generator | get_client_for_model:403 |    Client base_url: https://api.openai.com/v1/
+2026-02-26 13:52:08,944 | DEBUG    | soap_generator | search_local_inventory_topk:976 |   🔄 Replaced candidate for stock_id 42084: score 0.758 → 0.831 (search_term: 'Florina')
+2026-02-26 13:52:08,944 | DEBUG    | soap_generator | search_local_inventory_topk:976 |   🔄 Replaced candidate for stock_id 42085: score 0.800 → 0.835 (search_term: 'Florina')
+2026-02-26 13:52:08,948 | DEBUG    | soap_generator | apply_decision_flow:1015 |   🔍 Decision Flow: 'Florina also called Bravitu' classified as SPECIFIC
+2026-02-26 13:52:08,948 | INFO     | soap_generator | apply_decision_flow:1047 |    📊 MATCHING SCORES BREAKDOWN (Top 5 candidates):
+2026-02-26 13:52:08,949 | INFO     | soap_generator | apply_decision_flow:1048 |       Vector matching: ✅ ENABLED
+2026-02-26 13:52:08,949 | INFO     | soap_generator | apply_decision_flow:1070 |       1. Candioli Florentero ACT 12 g 10 Tab Dogs Cats (ID: 42085)
+2026-02-26 13:52:08,949 | INFO     | soap_generator | process_entity_by_route_async:2529 |   💡 Ungrounded entity 'salamitin': using highest probability hint 'salamitin' as display_name
+2026-02-26 13:52:08,949 | INFO     | soap_generator | apply_decision_flow:1071 |          Trigram: 0.167 | Phonetic: 0.5 | Vector: 0.251 | Match: 0.788 (MAX)
+2026-02-26 13:52:08,949 | DEBUG    | soap_generator | _ground_one:4153 |    ✅ Grounded entity 'salamitin' → added to manifest (total: 5)
+2026-02-26 13:52:08,949 | INFO     | soap_generator | apply_decision_flow:1070 |       2. Florentero ACT 15 ml (ID: 42084)
+2026-02-26 13:52:08,949 | DEBUG    | soap_generator | _ground_one:4125 |    🔍 Grounding entity 17: 'X-ray'
+2026-02-26 13:52:08,949 | INFO     | soap_generator | process_single_entity_async:708 | 🔍 [ASYNC] PROCESSING ENTITY 17/47: 'X-ray'
+2026-02-26 13:52:08,949 | INFO     | soap_generator | process_single_entity_async:709 |    Kind: Diagnostic, KB Kind: Diagnostic, Source: N/A
+2026-02-26 13:52:08,949 | INFO     | soap_generator | apply_decision_flow:1071 |          Trigram: 0.160 | Phonetic: 0.5 | Vector: 0.311 | Match: 0.785 (MAX)
+2026-02-26 13:52:08,949 | DEBUG    | soap_generator | get_client_for_model:375 | 🔍 Model 'gpt-4.1-nano' → Provider: openai
+2026-02-26 13:52:08,949 | INFO     | soap_generator | apply_decision_flow:1087 |    🎯 TOP CANDIDATES BY METHOD:
+2026-02-26 13:52:08,949 | INFO     | soap_generator | apply_decision_flow:1088 |       Top TRIGRAM: Candioli Florentero ACT 12 g 10 Tab Dogs Cats (ID: 42085, score: 0.167)
+2026-02-26 13:52:08,949 | INFO     | soap_generator | apply_decision_flow:1089 |       Top PHONETIC: Candioli Florentero ACT 12 g 10 Tab Dogs Cats (ID: 42085, score: 0.5)
+2026-02-26 13:52:08,950 | INFO     | soap_generator | apply_decision_flow:1091 |       Top VECTOR: Florentero ACT 15 ml (ID: 42084, score: 0.311)
+2026-02-26 13:52:08,950 | INFO     | soap_generator | apply_decision_flow:1127 |    ❌ OPTION A (3/3 AGREEMENT): FAILED
+2026-02-26 13:52:08,950 | INFO     | soap_generator | apply_decision_flow:1128 |       Trigram ID: 42085, Phonetic ID: 42085, Vector ID: 42084
+2026-02-26 13:52:08,950 | INFO     | soap_generator | apply_decision_flow:1129 |       IDs do not match - cannot auto-accept
+2026-02-26 13:52:08,951 | DEBUG    | soap_generator | apply_decision_flow:1015 |   🔍 Decision Flow: 'Contraway Force Etching' classified as SPECIFIC
+2026-02-26 13:52:08,951 | INFO     | soap_generator | apply_decision_flow:1047 |    📊 MATCHING SCORES BREAKDOWN (Top 5 candidates):
+2026-02-26 13:52:08,951 | INFO     | soap_generator | apply_decision_flow:1048 |       Vector matching: ✅ ENABLED
+2026-02-26 13:52:08,951 | INFO     | soap_generator | apply_decision_flow:1070 |       1. CONDROVET FORCE HA 590 (ID: 41559)
+2026-02-26 13:52:08,951 | INFO     | soap_generator | apply_decision_flow:1071 |          Trigram: 0.237 | Phonetic: 0.5 | Vector: 0.176 | Match: 0.746 (MAX)
+2026-02-26 13:52:08,951 | INFO     | soap_generator | apply_decision_flow:1070 |       2. CONDROVET FORCE HA LARGE 1100 (ID: 41558)
+2026-02-26 13:52:08,951 | INFO     | soap_generator | apply_decision_flow:1071 |          Trigram: 0.200 | Phonetic: 0.5 | Vector: 0.186 | Match: 0.734 (MAX)
+2026-02-26 13:52:08,951 | INFO     | soap_generator | apply_decision_flow:1070 |       3. Intas Livotas Syrup 200 ml Pet (ID: 42158)
+2026-02-26 13:52:08,951 | INFO     | soap_generator | apply_decision_flow:1071 |          Trigram: 0.047 | Phonetic: 0.4 | Vector: 0.018 | Match: 0.608 (MAX)
+2026-02-26 13:52:08,951 | INFO     | soap_generator | apply_decision_flow:1070 |       4. Intas Ondet 2 mg 20 x 5 ml Ampoules (ID: 42341)
+2026-02-26 13:52:08,951 | INFO     | soap_generator | apply_decision_flow:1071 |          Trigram: 0.020 | Phonetic: 0.3 | Vector: 0.105 | Match: 0.584 (MAX)
+2026-02-26 13:52:08,951 | INFO     | soap_generator | apply_decision_flow:1070 |       5. INTACEF TAZO PET (ID: 41018)
+2026-02-26 13:52:08,952 | INFO     | soap_generator | apply_decision_flow:1071 |          Trigram: 0.031 | Phonetic: 0.4 | Vector: 0.103 | Match: 0.570 (MAX)
+2026-02-26 13:52:08,952 | INFO     | soap_generator | apply_decision_flow:1087 |    🎯 TOP CANDIDATES BY METHOD:
+2026-02-26 13:52:08,952 | INFO     | soap_generator | apply_decision_flow:1088 |       Top TRIGRAM: CONDROVET FORCE HA 590 (ID: 41559, score: 0.237)
+2026-02-26 13:52:08,952 | INFO     | soap_generator | apply_decision_flow:1089 |       Top PHONETIC: CONDROVET FORCE HA 590 (ID: 41559, score: 0.5)
+2026-02-26 13:52:08,952 | INFO     | soap_generator | apply_decision_flow:1091 |       Top VECTOR: CONDROVET FORCE HA LARGE 1100 (ID: 41558, score: 0.186)
+2026-02-26 13:52:08,952 | INFO     | soap_generator | apply_decision_flow:1127 |    ❌ OPTION A (3/3 AGREEMENT): FAILED
+2026-02-26 13:52:08,952 | INFO     | soap_generator | apply_decision_flow:1128 |       Trigram ID: 41559, Phonetic ID: 41559, Vector ID: 41558
+2026-02-26 13:52:08,952 | INFO     | soap_generator | apply_decision_flow:1129 |       IDs do not match - cannot auto-accept
+2026-02-26 13:52:08,954 | INFO     | soap_generator | get_client_for_model:401 | ✅ Created OpenAI client for 'gpt-4.1-nano' (OpenAI endpoint, key: sk-proj-xK...)
+2026-02-26 13:52:08,954 | DEBUG    | soap_generator | get_client_for_model:403 |    Client base_url: https://api.openai.com/v1/
+2026-02-26 13:52:08,956 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:08,956 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:08,957 | DEBUG    | soap_generator | apply_decision_flow:1015 |   🔍 Decision Flow: 'Spirocoxin' classified as GENERIC
+2026-02-26 13:52:08,957 | INFO     | soap_generator | apply_decision_flow:1047 |    📊 MATCHING SCORES BREAKDOWN (Top 5 candidates):
+2026-02-26 13:52:08,957 | INFO     | soap_generator | apply_decision_flow:1048 |       Vector matching: ✅ ENABLED
+2026-02-26 13:52:08,957 | INFO     | soap_generator | apply_decision_flow:1070 |       1. ONDANSETRON (ID: 40549)
+2026-02-26 13:52:08,957 | INFO     | soap_generator | apply_decision_flow:1071 |          Trigram: 0.000 | Phonetic: 0.4 | Vector: 0.183 | Match: 0.493 (MAX)
+2026-02-26 13:52:08,957 | INFO     | soap_generator | apply_decision_flow:1087 |    🎯 TOP CANDIDATES BY METHOD:
+2026-02-26 13:52:08,957 | INFO     | soap_generator | apply_decision_flow:1088 |       Top TRIGRAM: ONDANSETRON (ID: 40549, score: 0.000)
+2026-02-26 13:52:08,957 | INFO     | soap_generator | apply_decision_flow:1089 |       Top PHONETIC: ONDANSETRON (ID: 40549, score: 0.4)
+2026-02-26 13:52:08,957 | INFO     | soap_generator | apply_decision_flow:1091 |       Top VECTOR: ONDANSETRON (ID: 40549, score: 0.183)
+2026-02-26 13:52:08,963 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:09,118 | DEBUG    | soap_generator | search_local_inventory_topk:633 |   📊 Vector embedding used for 'omega 3, omega 6 fatty acids' (cached or precomputed)
+2026-02-26 13:52:09,161 | DEBUG    | soap_generator | search_local_services_topk:1234 |   📊 Vector embedding used for service 'omega 3, omega 6 fatty acids' (cached or precomputed)
+2026-02-26 13:52:09,175 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:09,178 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:09,186 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:09,201 | INFO     | soap_generator | process_entity_by_route_async:2529 |   💡 Ungrounded entity 'omega 3, omega 6 fatty acids': using highest probability hint 'omega 3' as display_name
+2026-02-26 13:52:09,201 | DEBUG    | soap_generator | _ground_one:4153 |    ✅ Grounded entity 'omega 3, omega 6 fatty acids' → added to manifest (total: 6)
+2026-02-26 13:52:09,202 | DEBUG    | soap_generator | _ground_one:4125 |    🔍 Grounding entity 18: 'noble angle'
+2026-02-26 13:52:09,202 | INFO     | soap_generator | process_single_entity_async:708 | 🔍 [ASYNC] PROCESSING ENTITY 18/47: 'noble angle'
+2026-02-26 13:52:09,202 | INFO     | soap_generator | process_single_entity_async:709 |    Kind: Diagnostic, KB Kind: Diagnostic, Source: N/A
+2026-02-26 13:52:09,202 | DEBUG    | soap_generator | get_client_for_model:375 | 🔍 Model 'gpt-4.1-nano' → Provider: openai
+2026-02-26 13:52:09,210 | INFO     | soap_generator | get_client_for_model:401 | ✅ Created OpenAI client for 'gpt-4.1-nano' (OpenAI endpoint, key: sk-proj-xK...)
+2026-02-26 13:52:09,210 | DEBUG    | soap_generator | get_client_for_model:403 |    Client base_url: https://api.openai.com/v1/
+2026-02-26 13:52:09,387 | INFO     | soap_generator | apply_decision_flow:1195 |    🔍 OPTION B (DETERMINISTIC GATES):
+2026-02-26 13:52:09,387 | INFO     | soap_generator | apply_decision_flow:1196 |       Top candidate: 'Candioli Florentero ACT 12 g 10 Tab Dogs Cats' (score: 0.788)
+2026-02-26 13:52:09,388 | INFO     | soap_generator | apply_decision_flow:1198 |       Second candidate: 'Florentero ACT 15 ml' (score: 0.785)
+2026-02-26 13:52:09,388 | INFO     | soap_generator | apply_decision_flow:1199 |       Margin: 0.003
+2026-02-26 13:52:09,388 | INFO     | soap_generator | apply_decision_flow:1213 |    ❌ OPTION B1: FAILED (score 0.788 < 0.88)
+2026-02-26 13:52:09,388 | INFO     | soap_generator | apply_decision_flow:1298 |    ❌ OPTION B2: FAILED (margin 0.003 < 0.08)
+2026-02-26 13:52:09,388 | INFO     | soap_generator | apply_decision_flow:1314 |    ❌ OPTION B3: FAILED (score 0.788 < 0.88)
+2026-02-26 13:52:09,388 | INFO     | soap_generator | apply_decision_flow:1360 |    🧠 OPTION C (LLM JUDGE): All deterministic gates failed - calling LLM judge
+2026-02-26 13:52:09,388 | DEBUG    | soap_generator | disambiguate_local_match_v2:1594 |   🧠 LLM Judge (Option C): Disambiguating 'Florina also called Bravitu' with 2 candidates
+2026-02-26 13:52:09,400 | INFO     | soap_generator | apply_decision_flow:1195 |    🔍 OPTION B (DETERMINISTIC GATES):
+2026-02-26 13:52:09,400 | INFO     | soap_generator | apply_decision_flow:1196 |       Top candidate: 'CONDROVET FORCE HA 590' (score: 0.746)
+2026-02-26 13:52:09,400 | INFO     | soap_generator | apply_decision_flow:1198 |       Second candidate: 'CONDROVET FORCE HA LARGE 1100' (score: 0.734)
+2026-02-26 13:52:09,400 | INFO     | soap_generator | apply_decision_flow:1199 |       Margin: 0.012
+2026-02-26 13:52:09,400 | INFO     | soap_generator | apply_decision_flow:1213 |    ❌ OPTION B1: FAILED (score 0.746 < 0.88)
+2026-02-26 13:52:09,401 | INFO     | soap_generator | apply_decision_flow:1298 |    ❌ OPTION B2: FAILED (margin 0.012 < 0.08)
+2026-02-26 13:52:09,401 | INFO     | soap_generator | apply_decision_flow:1314 |    ❌ OPTION B3: FAILED (score 0.746 < 0.88)
+2026-02-26 13:52:09,401 | INFO     | soap_generator | apply_decision_flow:1360 |    🧠 OPTION C (LLM JUDGE): All deterministic gates failed - calling LLM judge
+2026-02-26 13:52:09,401 | DEBUG    | soap_generator | disambiguate_local_match_v2:1594 |   🧠 LLM Judge (Option C): Disambiguating 'Contraway Force Etching' with 5 candidates
+2026-02-26 13:52:09,412 | INFO     | soap_generator | apply_decision_flow:1195 |    🔍 OPTION B (DETERMINISTIC GATES):
+2026-02-26 13:52:09,413 | INFO     | soap_generator | apply_decision_flow:1196 |       Top candidate: 'ONDANSETRON' (score: 0.493)
+2026-02-26 13:52:09,413 | INFO     | soap_generator | apply_decision_flow:1211 |    ❌ OPTION B1: SKIPPED (mention is generic)
+2026-02-26 13:52:09,413 | INFO     | soap_generator | apply_decision_flow:1312 |    ❌ OPTION B3: SKIPPED (mention is generic)
+2026-02-26 13:52:09,413 | INFO     | soap_generator | apply_decision_flow:1360 |    🧠 OPTION C (LLM JUDGE): All deterministic gates failed - calling LLM judge
+2026-02-26 13:52:09,413 | DEBUG    | soap_generator | disambiguate_local_match_v2:1594 |   🧠 LLM Judge (Option C): Disambiguating 'Spirocoxin' with 1 candidates
+2026-02-26 13:52:09,874 | INFO     | soap_generator | process_single_entity_async:829 |    📍 Route Classification: dual_sync
+2026-02-26 13:52:09,874 | INFO     | soap_generator | process_single_entity_async:830 |    📝 Normalized name: 'anteroposterior' (from span_text: 'anteroposterior')
+2026-02-26 13:52:09,875 | INFO     | soap_generator | process_entity_by_route_async:1605 |   📦 Batch intent (default): using search_term 'anteroposterior view'
+2026-02-26 13:52:09,875 | INFO     | soap_generator | process_entity_by_route_async:1659 |   🔍 Starting LOCAL-ONLY search (local inventory + local services)
+2026-02-26 13:52:09,875 | INFO     | soap_generator | process_entity_by_route_async:1660 |      Search term: 'anteroposterior view' (ASR-corrected: True)
+2026-02-26 13:52:09,889 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:09,894 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:09,926 | INFO     | soap_generator | process_single_entity_async:829 |    📍 Route Classification: dual_sync
+2026-02-26 13:52:09,927 | INFO     | soap_generator | process_single_entity_async:830 |    📝 Normalized name: 'swimming' (from span_text: 'swimming')
+2026-02-26 13:52:09,927 | INFO     | soap_generator | process_entity_by_route_async:1605 |   📦 Batch intent (default): using search_term 'swimming'
+2026-02-26 13:52:09,927 | INFO     | soap_generator | process_entity_by_route_async:1659 |   🔍 Starting LOCAL-ONLY search (local inventory + local services)
+2026-02-26 13:52:09,927 | INFO     | soap_generator | process_entity_by_route_async:1660 |      Search term: 'swimming' (ASR-corrected: False)
+2026-02-26 13:52:09,946 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:09,951 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:10,185 | DEBUG    | soap_generator | search_local_services_topk:1234 |   📊 Vector embedding used for service 'swimming' (cached or precomputed)
+2026-02-26 13:52:10,187 | DEBUG    | soap_generator | search_local_inventory_topk:633 |   📊 Vector embedding used for 'anteroposterior view' (cached or precomputed)
+2026-02-26 13:52:10,200 | DEBUG    | soap_generator | search_local_services_topk:1234 |   📊 Vector embedding used for service 'anteroposterior view' (cached or precomputed)
+2026-02-26 13:52:10,204 | DEBUG    | soap_generator | search_local_inventory_topk:633 |   📊 Vector embedding used for 'swimming' (cached or precomputed)
+2026-02-26 13:52:10,222 | INFO     | soap_generator | process_entity_by_route_async:2230 |   📌 Procedure/Diagnostic with intent hint: using global threshold 0.5 for 'anteroposterior'
+2026-02-26 13:52:10,223 | INFO     | soap_generator | process_entity_by_route_async:2529 |   💡 Ungrounded entity 'anteroposterior': using highest probability hint 'anteroposterior view' as display_name
+2026-02-26 13:52:10,223 | DEBUG    | soap_generator | _ground_one:4153 |    ✅ Grounded entity 'anteroposterior' → added to manifest (total: 7)
+2026-02-26 13:52:10,223 | DEBUG    | soap_generator | _ground_one:4125 |    🔍 Grounding entity 19: 'auto-lanternance'
+2026-02-26 13:52:10,223 | INFO     | soap_generator | process_single_entity_async:708 | 🔍 [ASYNC] PROCESSING ENTITY 19/47: 'auto-lanternance'
+2026-02-26 13:52:10,223 | INFO     | soap_generator | process_single_entity_async:709 |    Kind: Diagnostic, KB Kind: Diagnostic, Source: N/A
+2026-02-26 13:52:10,223 | DEBUG    | soap_generator | get_client_for_model:375 | 🔍 Model 'gpt-4.1-nano' → Provider: openai
+2026-02-26 13:52:10,227 | DEBUG    | soap_generator | apply_decision_flow:1015 |   🔍 Decision Flow: 'swimming' classified as GENERIC
+2026-02-26 13:52:10,227 | INFO     | soap_generator | apply_decision_flow:1047 |    📊 MATCHING SCORES BREAKDOWN (Top 5 candidates):
+2026-02-26 13:52:10,227 | INFO     | soap_generator | apply_decision_flow:1048 |       Vector matching: ✅ ENABLED
+2026-02-26 13:52:10,227 | INFO     | soap_generator | apply_decision_flow:1070 |       1. PHYSIOTHERAPY (ID: 1159)
+2026-02-26 13:52:10,227 | INFO     | soap_generator | apply_decision_flow:1071 |          Trigram: 0.350 | Phonetic: 0.5 | Vector: 0.258 | Match: 0.814 (MAX)
+2026-02-26 13:52:10,227 | INFO     | soap_generator | apply_decision_flow:1087 |    🎯 TOP CANDIDATES BY METHOD:
+2026-02-26 13:52:10,227 | INFO     | soap_generator | apply_decision_flow:1088 |       Top TRIGRAM: PHYSIOTHERAPY (ID: 1159, score: 0.350)
+2026-02-26 13:52:10,227 | INFO     | soap_generator | apply_decision_flow:1089 |       Top PHONETIC: PHYSIOTHERAPY (ID: 1159, score: 0.5)
+2026-02-26 13:52:10,227 | INFO     | soap_generator | apply_decision_flow:1091 |       Top VECTOR: PHYSIOTHERAPY (ID: 1159, score: 0.258)
+2026-02-26 13:52:10,235 | INFO     | soap_generator | get_client_for_model:401 | ✅ Created OpenAI client for 'gpt-4.1-nano' (OpenAI endpoint, key: sk-proj-xK...)
+2026-02-26 13:52:10,236 | DEBUG    | soap_generator | get_client_for_model:403 |    Client base_url: https://api.openai.com/v1/
+2026-02-26 13:52:10,239 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:10,320 | INFO     | soap_generator | disambiguate_local_match_v2:1799 |   🚫 LLM Judge REJECTED: 'Florina also called Bravitu' (batched NONE/NONE_GENERIC)
+2026-02-26 13:52:10,321 | INFO     | soap_generator | disambiguate_local_match_v2:1799 |   🚫 LLM Judge REJECTED: 'Spirocoxin' (batched NONE/NONE_GENERIC)
+2026-02-26 13:52:10,320 | INFO     | soap_generator | disambiguate_local_match_v2:1799 |   🚫 LLM Judge REJECTED: 'Contraway Force Etching' (batched NONE/NONE_GENERIC)
+2026-02-26 13:52:10,322 | WARNING  | soap_generator | process_entity_by_route_async:2163 |   🚫 Dual-Sync: local candidates rejected for 'Florina also called Bravitu'. Preserving as unlinked (preventing global-only hallucination).
+2026-02-26 13:52:10,322 | INFO     | soap_generator | process_entity_by_route_async:2177 |   ✅ Captured 2 suggestions for 'Florina also called Bravitu': ['Candioli Florentero ACT 12 g 10 Tab Dogs Cats', 'Florentero ACT 15 ml']
+2026-02-26 13:52:10,322 | DEBUG    | soap_generator | _ground_one:4153 |    ✅ Grounded entity 'Florina also called Bravitu' → added to manifest (total: 8)
+2026-02-26 13:52:10,322 | WARNING  | soap_generator | process_entity_by_route_async:2163 |   🚫 Dual-Sync: local candidates rejected for 'Spirocoxin'. Preserving as unlinked (preventing global-only hallucination).
+2026-02-26 13:52:10,322 | INFO     | soap_generator | process_entity_by_route_async:2177 |   ✅ Captured 1 suggestions for 'Spirocoxin': ['ONDANSETRON']
+2026-02-26 13:52:10,322 | DEBUG    | soap_generator | _ground_one:4153 |    ✅ Grounded entity 'Spirocoxin' → added to manifest (total: 9)
+2026-02-26 13:52:10,323 | DEBUG    | soap_generator | _ground_one:4125 |    🔍 Grounding entity 20: 'vaccinated and dewormed'
+2026-02-26 13:52:10,323 | INFO     | soap_generator | process_single_entity_async:708 | 🔍 [ASYNC] PROCESSING ENTITY 20/47: 'vaccinated and dewormed'
+2026-02-26 13:52:10,323 | INFO     | soap_generator | process_single_entity_async:709 |    Kind: Preventive, KB Kind: Preventive, Source: N/A
+2026-02-26 13:52:10,323 | INFO     | soap_generator | process_single_entity_async:829 |    📍 Route Classification: dual_sync
+2026-02-26 13:52:10,323 | INFO     | soap_generator | process_single_entity_async:830 |    📝 Normalized name: 'vaccinated and dewormed' (from span_text: 'vaccinated and dewormed')
+2026-02-26 13:52:10,323 | INFO     | soap_generator | process_entity_by_route_async:1605 |   📦 Batch intent (default): using search_term 'vaccination and deworming'
+2026-02-26 13:52:10,323 | INFO     | soap_generator | process_entity_by_route_async:1659 |   🔍 Starting LOCAL-ONLY search (local inventory + local services)
+2026-02-26 13:52:10,323 | INFO     | soap_generator | process_entity_by_route_async:1660 |      Search term: 'vaccination and deworming' (ASR-corrected: True)
+2026-02-26 13:52:10,323 | DEBUG    | soap_generator | _ground_one:4125 |    🔍 Grounding entity 21: 'tick and flee control'
+2026-02-26 13:52:10,323 | INFO     | soap_generator | process_single_entity_async:708 | 🔍 [ASYNC] PROCESSING ENTITY 21/47: 'tick and flee control'
+2026-02-26 13:52:10,323 | INFO     | soap_generator | process_single_entity_async:709 |    Kind: ParasiteControl, KB Kind: ParasiteControl, Source: N/A
+2026-02-26 13:52:10,324 | INFO     | soap_generator | process_single_entity_async:829 |    📍 Route Classification: dual_sync
+2026-02-26 13:52:10,324 | INFO     | soap_generator | process_single_entity_async:830 |    📝 Normalized name: 'tick and flee control' (from span_text: 'tick and flee control')
+2026-02-26 13:52:10,324 | INFO     | soap_generator | process_entity_by_route_async:1605 |   📦 Batch intent (default): using search_term 'tick and flea control'
+2026-02-26 13:52:10,324 | INFO     | soap_generator | process_entity_by_route_async:1659 |   🔍 Starting LOCAL-ONLY search (local inventory + local services)
+2026-02-26 13:52:10,324 | INFO     | soap_generator | process_entity_by_route_async:1660 |      Search term: 'tick and flea control' (ASR-corrected: True)
+2026-02-26 13:52:10,324 | WARNING  | soap_generator | process_entity_by_route_async:2163 |   🚫 Dual-Sync: local candidates rejected for 'Contraway Force Etching'. Preserving as unlinked (preventing global-only hallucination).
+2026-02-26 13:52:10,324 | INFO     | soap_generator | process_entity_by_route_async:2177 |   ✅ Captured 5 suggestions for 'Contraway Force Etching': ['CONDROVET FORCE HA 590', 'CONDROVET FORCE HA LARGE 1100', 'Intas Livotas Syrup 200 ml Pet', 'Intas Ondet 2 mg 20 x 5 ml Ampoules', 'INTACEF TAZO PET']
+2026-02-26 13:52:10,324 | DEBUG    | soap_generator | _ground_one:4153 |    ✅ Grounded entity 'Contraway Force Etching' → added to manifest (total: 10)
+2026-02-26 13:52:10,325 | DEBUG    | soap_generator | _ground_one:4125 |    🔍 Grounding entity 22: 'tachycine free control'
+2026-02-26 13:52:10,325 | INFO     | soap_generator | process_single_entity_async:708 | 🔍 [ASYNC] PROCESSING ENTITY 22/47: 'tachycine free control'
+2026-02-26 13:52:10,325 | INFO     | soap_generator | process_single_entity_async:709 |    Kind: ParasiteControl, KB Kind: ParasiteControl, Source: N/A
+2026-02-26 13:52:10,325 | INFO     | soap_generator | process_single_entity_async:829 |    📍 Route Classification: dual_sync
+2026-02-26 13:52:10,325 | INFO     | soap_generator | process_single_entity_async:830 |    📝 Normalized name: 'tachycine free control' (from span_text: 'tachycine free control')
+2026-02-26 13:52:10,326 | INFO     | soap_generator | process_entity_by_route_async:1605 |   📦 Batch intent (default): using search_term 'flea and tick control'
+2026-02-26 13:52:10,326 | INFO     | soap_generator | process_entity_by_route_async:1659 |   🔍 Starting LOCAL-ONLY search (local inventory + local services)
+2026-02-26 13:52:10,326 | INFO     | soap_generator | process_entity_by_route_async:1660 |      Search term: 'flea and tick control' (ASR-corrected: True)
+2026-02-26 13:52:10,337 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:10,341 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:10,346 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:10,350 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:10,364 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:10,474 | INFO     | soap_generator | apply_decision_flow:1195 |    🔍 OPTION B (DETERMINISTIC GATES):
+2026-02-26 13:52:10,474 | INFO     | soap_generator | apply_decision_flow:1196 |       Top candidate: 'PHYSIOTHERAPY' (score: 0.814)
+2026-02-26 13:52:10,474 | INFO     | soap_generator | apply_decision_flow:1211 |    ❌ OPTION B1: SKIPPED (mention is generic)
+2026-02-26 13:52:10,475 | INFO     | soap_generator | apply_decision_flow:1312 |    ❌ OPTION B3: SKIPPED (mention is generic)
+2026-02-26 13:52:10,475 | INFO     | soap_generator | apply_decision_flow:1360 |    🧠 OPTION C (LLM JUDGE): All deterministic gates failed - calling LLM judge
+2026-02-26 13:52:10,475 | DEBUG    | soap_generator | disambiguate_local_match_v2:1594 |   🧠 LLM Judge (Option C): Disambiguating 'swimming' with 1 candidates
+2026-02-26 13:52:10,558 | DEBUG    | soap_generator | search_local_inventory_topk:633 |   📊 Vector embedding used for 'vaccination and deworming' (cached or precomputed)
+2026-02-26 13:52:10,562 | DEBUG    | soap_generator | search_local_services_topk:1234 |   📊 Vector embedding used for service 'tick and flea control' (cached or precomputed)
+2026-02-26 13:52:10,563 | INFO     | soap_generator | process_single_entity_async:829 |    📍 Route Classification: dual_sync
+2026-02-26 13:52:10,563 | INFO     | soap_generator | process_single_entity_async:830 |    📝 Normalized name: 'FHO' (from span_text: 'FHO')
+2026-02-26 13:52:10,564 | INFO     | soap_generator | process_entity_by_route_async:1605 |   📦 Batch intent (default): using search_term 'femoral head and neck ostectomy'
+2026-02-26 13:52:10,564 | INFO     | soap_generator | process_entity_by_route_async:1659 |   🔍 Starting LOCAL-ONLY search (local inventory + local services)
+2026-02-26 13:52:10,564 | INFO     | soap_generator | process_entity_by_route_async:1660 |      Search term: 'femoral head and neck ostectomy' (ASR-corrected: True)
+2026-02-26 13:52:10,566 | DEBUG    | soap_generator | search_local_services_topk:1234 |   📊 Vector embedding used for service 'vaccination and deworming' (cached or precomputed)
+2026-02-26 13:52:10,572 | DEBUG    | soap_generator | search_local_inventory_topk:633 |   📊 Vector embedding used for 'flea and tick control' (cached or precomputed)
+2026-02-26 13:52:10,575 | DEBUG    | soap_generator | search_local_inventory_topk:633 |   📊 Vector embedding used for 'tick and flea control' (cached or precomputed)
+2026-02-26 13:52:10,577 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:10,591 | INFO     | soap_generator | process_entity_by_route_async:2059 |   ⏭️ Skipped LLM judge for low-stakes kind 'Preventive' 'vaccinated and dewormed' → selected best local match: 'VACCINATION CRP' (score: 0.822, includes domain + suggestion boost)
+2026-02-26 13:52:10,591 | DEBUG    | soap_generator | _ground_one:4153 |    ✅ Grounded entity 'vaccinated and dewormed' → added to manifest (total: 11)
+2026-02-26 13:52:10,591 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:10,592 | DEBUG    | soap_generator | _ground_one:4125 |    🔍 Grounding entity 23: 'home food'
+2026-02-26 13:52:10,592 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:10,592 | INFO     | soap_generator | process_single_entity_async:708 | 🔍 [ASYNC] PROCESSING ENTITY 23/47: 'home food'
+2026-02-26 13:52:10,593 | INFO     | soap_generator | process_single_entity_async:709 |    Kind: Diet, KB Kind: Diet, Source: N/A
+2026-02-26 13:52:10,593 | INFO     | soap_generator | process_single_entity_async:829 |    📍 Route Classification: skip_vitals
+2026-02-26 13:52:10,593 | INFO     | soap_generator | process_single_entity_async:830 |    📝 Normalized name: 'home food' (from span_text: 'home food')
+2026-02-26 13:52:10,594 | DEBUG    | soap_generator | _ground_one:4153 |    ✅ Grounded entity 'home food' → added to manifest (total: 12)
+2026-02-26 13:52:10,594 | DEBUG    | soap_generator | _ground_one:4125 |    🔍 Grounding entity 24: 'rice and sambar'
+2026-02-26 13:52:10,594 | INFO     | soap_generator | process_single_entity_async:708 | 🔍 [ASYNC] PROCESSING ENTITY 24/47: 'rice and sambar'
+2026-02-26 13:52:10,594 | INFO     | soap_generator | process_single_entity_async:709 |    Kind: Diet, KB Kind: Diet, Source: N/A
+2026-02-26 13:52:10,594 | INFO     | soap_generator | process_single_entity_async:829 |    📍 Route Classification: skip_vitals
+2026-02-26 13:52:10,594 | INFO     | soap_generator | process_single_entity_async:830 |    📝 Normalized name: 'rice and sambar' (from span_text: 'rice and sambar')
+2026-02-26 13:52:10,594 | INFO     | soap_generator | process_entity_by_route_async:1489 |   🛡️  Clinical Status Constant 'rice and sambar' - preserving verbatim
+2026-02-26 13:52:10,594 | DEBUG    | soap_generator | _ground_one:4153 |    ✅ Grounded entity 'rice and sambar' → added to manifest (total: 13)
+2026-02-26 13:52:10,594 | DEBUG    | soap_generator | _ground_one:4125 |    🔍 Grounding entity 25: 'obesity diet'
+2026-02-26 13:52:10,594 | INFO     | soap_generator | process_single_entity_async:708 | 🔍 [ASYNC] PROCESSING ENTITY 25/47: 'obesity diet'
+2026-02-26 13:52:10,594 | INFO     | soap_generator | process_single_entity_async:709 |    Kind: Diet, KB Kind: Diet, Source: N/A
+2026-02-26 13:52:10,594 | INFO     | soap_generator | process_single_entity_async:829 |    📍 Route Classification: skip_vitals
+2026-02-26 13:52:10,594 | INFO     | soap_generator | process_single_entity_async:830 |    📝 Normalized name: 'obesity diet' (from span_text: 'obesity diet')
+2026-02-26 13:52:10,594 | DEBUG    | soap_generator | _ground_one:4153 |    ✅ Grounded entity 'obesity diet' → added to manifest (total: 14)
+2026-02-26 13:52:10,615 | DEBUG    | soap_generator | search_local_inventory_topk:976 |   🔄 Replaced candidate for stock_id 42254: score 0.583 → 0.589 (search_term: 'flea and tick prevention')
+2026-02-26 13:52:10,616 | DEBUG    | soap_generator | search_local_inventory_topk:976 |   🔄 Replaced candidate for stock_id 41213: score 0.583 → 0.589 (search_term: 'flea and tick prevention')
+2026-02-26 13:52:10,620 | DEBUG    | soap_generator | search_local_inventory_topk:976 |   🔄 Replaced candidate for stock_id 42254: score 0.589 → 0.593 (search_term: 'parasite control')
+2026-02-26 13:52:10,621 | DEBUG    | soap_generator | search_local_inventory_topk:976 |   🔄 Replaced candidate for stock_id 41213: score 0.589 → 0.593 (search_term: 'parasite control')
+2026-02-26 13:52:10,621 | DEBUG    | soap_generator | search_local_inventory_topk:976 |   🔄 Replaced candidate for stock_id 40527: score 0.558 → 0.661 (search_term: 'parasite control')
+2026-02-26 13:52:10,621 | INFO     | soap_generator | process_entity_by_route_async:2065 |   🛡️ Category guard: ParasiteControl local match below threshold (0.179); skipping global auto-fallback for 'tick and flee control'
+2026-02-26 13:52:10,621 | DEBUG    | soap_generator | process_entity_by_route_async:2092 |   ⏭️ Skipped LLM judge for low-stakes kind 'ParasiteControl' 'tick and flee control' → no match above threshold
+2026-02-26 13:52:10,621 | WARNING  | soap_generator | process_entity_by_route_async:2163 |   🚫 Dual-Sync: local candidates rejected for 'tick and flee control'. Preserving as unlinked (preventing global-only hallucination).
+2026-02-26 13:52:10,621 | INFO     | soap_generator | process_entity_by_route_async:2177 |   ✅ Captured 5 suggestions for 'tick and flee control': ['PAPA PAWSOME TICK OFF SHAMPOO 250ml', 'Natural Remedies NOMOTICKS ANTITICK & FLEA BODY SPRAY 100 ml', 'Vetoquinol Fixotic Advance Spray Fipronil 0.25% w/v & (S)-Methoprene 0.22% w/v 100 ml', 'Frontline Spray 0.250g', 'FRONTLINE SPRAY 250 ML']
+2026-02-26 13:52:10,621 | DEBUG    | soap_generator | _ground_one:4153 |    ✅ Grounded entity 'tick and flee control' → added to manifest (total: 15)
+2026-02-26 13:52:10,765 | INFO     | soap_generator | process_single_entity_async:829 |    📍 Route Classification: dual_sync
+2026-02-26 13:52:10,765 | INFO     | soap_generator | process_single_entity_async:830 |    📝 Normalized name: 'sit stand step exercise' (from span_text: 'sit stand step exercise')
+2026-02-26 13:52:10,765 | INFO     | soap_generator | process_entity_by_route_async:1605 |   📦 Batch intent (default): using search_term 'sit stand step exercise'
+2026-02-26 13:52:10,765 | INFO     | soap_generator | process_entity_by_route_async:1659 |   🔍 Starting LOCAL-ONLY search (local inventory + local services)
+2026-02-26 13:52:10,766 | INFO     | soap_generator | process_entity_by_route_async:1660 |      Search term: 'sit stand step exercise' (ASR-corrected: False)
+2026-02-26 13:52:10,779 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:10,783 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:10,796 | DEBUG    | soap_generator | search_local_inventory_topk:633 |   📊 Vector embedding used for 'femoral head and neck ostectomy' (cached or precomputed)
+2026-02-26 13:52:10,942 | DEBUG    | soap_generator | search_local_services_topk:1234 |   📊 Vector embedding used for service 'flea and tick control' (cached or precomputed)
+2026-02-26 13:52:10,953 | DEBUG    | soap_generator | search_local_services_topk:1234 |   📊 Vector embedding used for service 'femoral head and neck ostectomy' (cached or precomputed)
+2026-02-26 13:52:10,970 | INFO     | soap_generator | process_entity_by_route_async:2065 |   🛡️ Category guard: ParasiteControl local match below threshold (0.168); skipping global auto-fallback for 'tachycine free control'
+2026-02-26 13:52:10,970 | DEBUG    | soap_generator | process_entity_by_route_async:2092 |   ⏭️ Skipped LLM judge for low-stakes kind 'ParasiteControl' 'tachycine free control' → no match above threshold
+2026-02-26 13:52:10,970 | WARNING  | soap_generator | process_entity_by_route_async:2163 |   🚫 Dual-Sync: local candidates rejected for 'tachycine free control'. Preserving as unlinked (preventing global-only hallucination).
+2026-02-26 13:52:10,970 | INFO     | soap_generator | process_entity_by_route_async:2177 |   ✅ Captured 5 suggestions for 'tachycine free control': ['FRONTLINE SPRAY 250 ML', 'NAYFLEE PLUS 10 TO 20KG', 'NAYFLEE PLUS 40 TO 60KG', 'Nayflee PLUS 9.8% w/v 8.8% w/v 0.67 ml Dog', 'Nayflee PLUS 2.68 ml Dog']
+2026-02-26 13:52:10,971 | DEBUG    | soap_generator | _ground_one:4153 |    ✅ Grounded entity 'tachycine free control' → added to manifest (total: 16)
+2026-02-26 13:52:10,974 | DEBUG    | soap_generator | apply_decision_flow:1015 |   🔍 Decision Flow: 'FHO' classified as GENERIC
+2026-02-26 13:52:10,974 | INFO     | soap_generator | apply_decision_flow:1047 |    📊 MATCHING SCORES BREAKDOWN (Top 5 candidates):
+2026-02-26 13:52:10,974 | INFO     | soap_generator | apply_decision_flow:1048 |       Vector matching: ✅ ENABLED
+2026-02-26 13:52:10,974 | INFO     | soap_generator | apply_decision_flow:1070 |       1. MEDICAL PROCEDURE & TREATMENT (ID: 1029)
+2026-02-26 13:52:10,974 | INFO     | soap_generator | apply_decision_flow:1071 |          Trigram: 0.382 | Phonetic: 0.5 | Vector: 0.214 | Match: 0.711 (MAX)
+2026-02-26 13:52:10,974 | INFO     | soap_generator | apply_decision_flow:1070 |       2. SURGERY-FHO (ID: 1181)
+2026-02-26 13:52:10,974 | INFO     | soap_generator | apply_decision_flow:1071 |          Trigram: 0.333 | Phonetic: 0.3 | Vector: 0.486 | Match: 0.509 (MAX)
+2026-02-26 13:52:10,974 | INFO     | soap_generator | apply_decision_flow:1087 |    🎯 TOP CANDIDATES BY METHOD:
+2026-02-26 13:52:10,974 | INFO     | soap_generator | apply_decision_flow:1088 |       Top TRIGRAM: MEDICAL PROCEDURE & TREATMENT (ID: 1029, score: 0.382)
+2026-02-26 13:52:10,974 | INFO     | soap_generator | apply_decision_flow:1089 |       Top PHONETIC: MEDICAL PROCEDURE & TREATMENT (ID: 1029, score: 0.5)
+2026-02-26 13:52:10,974 | INFO     | soap_generator | apply_decision_flow:1091 |       Top VECTOR: SURGERY-FHO (ID: 1181, score: 0.486)
+2026-02-26 13:52:10,977 | INFO     | soap_generator | process_single_entity_async:829 |    📍 Route Classification: dual_sync
+2026-02-26 13:52:10,977 | INFO     | soap_generator | process_single_entity_async:830 |    📝 Normalized name: 'ultralining test' (from span_text: 'ultralining test')
+2026-02-26 13:52:10,978 | INFO     | soap_generator | process_entity_by_route_async:1605 |   📦 Batch intent (default): using search_term 'Ortolani test'
+2026-02-26 13:52:10,978 | INFO     | soap_generator | process_entity_by_route_async:1659 |   🔍 Starting LOCAL-ONLY search (local inventory + local services)
+2026-02-26 13:52:10,978 | INFO     | soap_generator | process_entity_by_route_async:1660 |      Search term: 'Ortolani test' (ASR-corrected: True)
+2026-02-26 13:52:10,987 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:10,989 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:10,995 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:11,009 | DEBUG    | soap_generator | search_local_services_topk:1234 |   📊 Vector embedding used for service 'sit stand step exercise' (cached or precomputed)
+2026-02-26 13:52:11,039 | INFO     | soap_generator | process_single_entity_async:829 |    📍 Route Classification: dual_sync
+2026-02-26 13:52:11,039 | INFO     | soap_generator | process_single_entity_async:830 |    📝 Normalized name: 'lateral' (from span_text: 'lateral')
+2026-02-26 13:52:11,039 | INFO     | soap_generator | process_entity_by_route_async:1605 |   📦 Batch intent (default): using search_term 'lateral view'
+2026-02-26 13:52:11,040 | INFO     | soap_generator | process_entity_by_route_async:1659 |   🔍 Starting LOCAL-ONLY search (local inventory + local services)
+2026-02-26 13:52:11,040 | INFO     | soap_generator | process_entity_by_route_async:1660 |      Search term: 'lateral view' (ASR-corrected: True)
+2026-02-26 13:52:11,047 | DEBUG    | soap_generator | search_local_inventory_topk:633 |   📊 Vector embedding used for 'sit stand step exercise' (cached or precomputed)
+2026-02-26 13:52:11,056 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:11,060 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:11,066 | DEBUG    | soap_generator | apply_decision_flow:1015 |   🔍 Decision Flow: 'sit stand step exercise' classified as SPECIFIC
+2026-02-26 13:52:11,066 | INFO     | soap_generator | apply_decision_flow:1047 |    📊 MATCHING SCORES BREAKDOWN (Top 5 candidates):
+2026-02-26 13:52:11,066 | INFO     | soap_generator | apply_decision_flow:1048 |       Vector matching: ✅ ENABLED
+2026-02-26 13:52:11,066 | INFO     | soap_generator | apply_decision_flow:1070 |       1. PHYSIOTHERAPY (ID: 1159)
+2026-02-26 13:52:11,066 | INFO     | soap_generator | apply_decision_flow:1071 |          Trigram: 0.550 | Phonetic: 0.5 | Vector: 0.313 | Match: 0.834 (MAX)
+2026-02-26 13:52:11,066 | INFO     | soap_generator | apply_decision_flow:1070 |       2. LASER THERAPY (ID: 1036)
+2026-02-26 13:52:11,066 | INFO     | soap_generator | apply_decision_flow:1071 |          Trigram: 0.348 | Phonetic: 0.5 | Vector: 0.225 | Match: 0.723 (MAX)
+2026-02-26 13:52:11,066 | INFO     | soap_generator | apply_decision_flow:1070 |       3. FLUID THERAPY (ID: 1028)
+2026-02-26 13:52:11,066 | INFO     | soap_generator | apply_decision_flow:1071 |          Trigram: 0.348 | Phonetic: 0.5 | Vector: 0.251 | Match: 0.665 (MAX)
+2026-02-26 13:52:11,066 | INFO     | soap_generator | apply_decision_flow:1087 |    🎯 TOP CANDIDATES BY METHOD:
+2026-02-26 13:52:11,067 | INFO     | soap_generator | apply_decision_flow:1088 |       Top TRIGRAM: PHYSIOTHERAPY (ID: 1159, score: 0.550)
+2026-02-26 13:52:11,067 | INFO     | soap_generator | apply_decision_flow:1089 |       Top PHONETIC: PHYSIOTHERAPY (ID: 1159, score: 0.5)
+2026-02-26 13:52:11,067 | INFO     | soap_generator | apply_decision_flow:1091 |       Top VECTOR: PHYSIOTHERAPY (ID: 1159, score: 0.313)
+2026-02-26 13:52:11,067 | INFO     | soap_generator | apply_decision_flow:1114 |    ❌ OPTION A (3/3 AGREEMENT): FAILED (hard floor) (max(trigram=0.550, vector=0.313) < 0.70)
+2026-02-26 13:52:11,067 | INFO     | soap_generator | apply_decision_flow:1195 |    🔍 OPTION B (DETERMINISTIC GATES):
+2026-02-26 13:52:11,067 | INFO     | soap_generator | apply_decision_flow:1196 |       Top candidate: 'PHYSIOTHERAPY' (score: 0.834)
+2026-02-26 13:52:11,067 | INFO     | soap_generator | apply_decision_flow:1198 |       Second candidate: 'LASER THERAPY' (score: 0.723)
+2026-02-26 13:52:11,067 | INFO     | soap_generator | apply_decision_flow:1199 |       Margin: 0.111
+2026-02-26 13:52:11,067 | INFO     | soap_generator | apply_decision_flow:1213 |    ❌ OPTION B1: FAILED (score 0.834 < 0.92)
+2026-02-26 13:52:11,067 | INFO     | soap_generator | apply_decision_flow:1284 |    ❌ OPTION B2: FAILED (hard floor) (max(trigram=0.550, vector=0.313) < 0.70)
+2026-02-26 13:52:11,067 | INFO     | soap_generator | apply_decision_flow:1314 |    ❌ OPTION B3: FAILED (score 0.834 < 0.92)
+2026-02-26 13:52:11,067 | INFO     | soap_generator | apply_decision_flow:1360 |    🧠 OPTION C (LLM JUDGE): All deterministic gates failed - calling LLM judge
+2026-02-26 13:52:11,067 | DEBUG    | soap_generator | disambiguate_local_match_v2:1594 |   🧠 LLM Judge (Option C): Disambiguating 'sit stand step exercise' with 3 candidates
+2026-02-26 13:52:11,107 | INFO     | soap_generator | process_single_entity_async:829 |    📍 Route Classification: dual_sync
+2026-02-26 13:52:11,107 | INFO     | soap_generator | process_single_entity_async:830 |    📝 Normalized name: 'X-ray' (from span_text: 'X-ray')
+2026-02-26 13:52:11,107 | INFO     | soap_generator | process_entity_by_route_async:1605 |   📦 Batch intent (default): using search_term 'X-ray'
+2026-02-26 13:52:11,108 | INFO     | soap_generator | process_entity_by_route_async:1659 |   🔍 Starting LOCAL-ONLY search (local inventory + local services)
+2026-02-26 13:52:11,108 | INFO     | soap_generator | process_entity_by_route_async:1660 |      Search term: 'X-ray' (ASR-corrected: False)
+2026-02-26 13:52:11,117 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:11,123 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:11,191 | INFO     | soap_generator | apply_decision_flow:1195 |    🔍 OPTION B (DETERMINISTIC GATES):
+2026-02-26 13:52:11,191 | INFO     | soap_generator | apply_decision_flow:1196 |       Top candidate: 'MEDICAL PROCEDURE & TREATMENT' (score: 0.711)
+2026-02-26 13:52:11,191 | INFO     | soap_generator | apply_decision_flow:1198 |       Second candidate: 'SURGERY-FHO' (score: 0.509)
+2026-02-26 13:52:11,191 | INFO     | soap_generator | apply_decision_flow:1199 |       Margin: 0.202
+2026-02-26 13:52:11,191 | INFO     | soap_generator | apply_decision_flow:1211 |    ❌ OPTION B1: SKIPPED (mention is generic)
+2026-02-26 13:52:11,191 | INFO     | soap_generator | apply_decision_flow:1312 |    ❌ OPTION B3: SKIPPED (mention is generic)
+2026-02-26 13:52:11,191 | INFO     | soap_generator | apply_decision_flow:1360 |    🧠 OPTION C (LLM JUDGE): All deterministic gates failed - calling LLM judge
+2026-02-26 13:52:11,191 | INFO     | soap_generator | apply_decision_flow:1369 |   🚫 Option C (pre-judge): Generic mention 'FHO' with all specific candidates → NONE_GENERIC
+2026-02-26 13:52:11,192 | INFO     | soap_generator | process_entity_by_route_async:2108 |   ✅ FHO override: binding 'FHO' to local candidate 'SURGERY-FHO' (judge had rejected as generic)
+2026-02-26 13:52:11,192 | DEBUG    | soap_generator | _ground_one:4153 |    ✅ Grounded entity 'FHO' → added to manifest (total: 17)
+2026-02-26 13:52:11,210 | DEBUG    | soap_generator | search_local_services_topk:1234 |   📊 Vector embedding used for service 'Ortolani test' (cached or precomputed)
+2026-02-26 13:52:11,287 | DEBUG    | soap_generator | search_local_services_topk:1234 |   📊 Vector embedding used for service 'lateral view' (cached or precomputed)
+2026-02-26 13:52:11,290 | DEBUG    | soap_generator | search_local_inventory_topk:633 |   📊 Vector embedding used for 'lateral view' (cached or precomputed)
+2026-02-26 13:52:11,312 | INFO     | soap_generator | disambiguate_local_match_v2:1799 |   🚫 LLM Judge REJECTED: 'swimming' (batched NONE/NONE_GENERIC)
+2026-02-26 13:52:11,313 | WARNING  | soap_generator | process_entity_by_route_async:2163 |   🚫 Dual-Sync: local candidates rejected for 'swimming'. Preserving as unlinked (preventing global-only hallucination).
+2026-02-26 13:52:11,313 | INFO     | soap_generator | process_entity_by_route_async:2177 |   ✅ Captured 1 suggestions for 'swimming': ['PHYSIOTHERAPY']
+2026-02-26 13:52:11,313 | DEBUG    | soap_generator | _ground_one:4153 |    ✅ Grounded entity 'swimming' → added to manifest (total: 18)
+2026-02-26 13:52:11,314 | INFO     | soap_generator | process_entity_by_route_async:2230 |   📌 Procedure/Diagnostic with intent hint: using global threshold 0.5 for 'lateral'
+2026-02-26 13:52:11,314 | INFO     | soap_generator | process_entity_by_route_async:2529 |   💡 Ungrounded entity 'lateral': using highest probability hint 'lateral view' as display_name
+2026-02-26 13:52:11,314 | DEBUG    | soap_generator | _ground_one:4153 |    ✅ Grounded entity 'lateral' → added to manifest (total: 19)
+2026-02-26 13:52:11,354 | DEBUG    | soap_generator | search_local_services_topk:1234 |   📊 Vector embedding used for service 'X-ray' (cached or precomputed)
+2026-02-26 13:52:11,395 | DEBUG    | soap_generator | search_local_inventory_topk:633 |   📊 Vector embedding used for 'Ortolani test' (cached or precomputed)
+2026-02-26 13:52:11,421 | DEBUG    | soap_generator | apply_decision_flow:1015 |   🔍 Decision Flow: 'ultralining test' classified as SPECIFIC
+2026-02-26 13:52:11,421 | INFO     | soap_generator | apply_decision_flow:1047 |    📊 MATCHING SCORES BREAKDOWN (Top 5 candidates):
+2026-02-26 13:52:11,422 | INFO     | soap_generator | apply_decision_flow:1048 |       Vector matching: ✅ ENABLED
+2026-02-26 13:52:11,422 | INFO     | soap_generator | apply_decision_flow:1070 |       1. HIP X RAY (ID: 975)
+2026-02-26 13:52:11,422 | INFO     | soap_generator | apply_decision_flow:1071 |          Trigram: 0.182 | Phonetic: 0.8 | Vector: 0.210 | Match: 0.788 (MAX)
+2026-02-26 13:52:11,422 | INFO     | soap_generator | apply_decision_flow:1070 |       2. HIP X RAY RESCUE (ID: 972)
+2026-02-26 13:52:11,422 | INFO     | soap_generator | apply_decision_flow:1071 |          Trigram: 0.143 | Phonetic: 0.8 | Vector: 0.191 | Match: 0.775 (MAX)
+2026-02-26 13:52:11,422 | INFO     | soap_generator | apply_decision_flow:1070 |       3. ULTRASOUND SCAN (ID: 966)
+2026-02-26 13:52:11,422 | INFO     | soap_generator | apply_decision_flow:1071 |          Trigram: 0.179 | Phonetic: 0.5 | Vector: 0.249 | Match: 0.759 (MAX)
+2026-02-26 13:52:11,422 | INFO     | soap_generator | apply_decision_flow:1070 |       4. HIP SCREENING WITH GA (ID: 974)
+2026-02-26 13:52:11,422 | INFO     | soap_generator | apply_decision_flow:1071 |          Trigram: 0.118 | Phonetic: 0.8 | Vector: 0.255 | Match: 0.720 (MAX)
+2026-02-26 13:52:11,422 | INFO     | soap_generator | apply_decision_flow:1087 |    🎯 TOP CANDIDATES BY METHOD:
+2026-02-26 13:52:11,422 | INFO     | soap_generator | apply_decision_flow:1088 |       Top TRIGRAM: HIP X RAY (ID: 975, score: 0.182)
+2026-02-26 13:52:11,422 | INFO     | soap_generator | apply_decision_flow:1089 |       Top PHONETIC: HIP X RAY (ID: 975, score: 0.8)
+2026-02-26 13:52:11,422 | INFO     | soap_generator | apply_decision_flow:1091 |       Top VECTOR: HIP SCREENING WITH GA (ID: 974, score: 0.255)
+2026-02-26 13:52:11,422 | INFO     | soap_generator | apply_decision_flow:1127 |    ❌ OPTION A (3/3 AGREEMENT): FAILED
+2026-02-26 13:52:11,422 | INFO     | soap_generator | apply_decision_flow:1128 |       Trigram ID: 975, Phonetic ID: 975, Vector ID: 974
+2026-02-26 13:52:11,422 | INFO     | soap_generator | apply_decision_flow:1129 |       IDs do not match - cannot auto-accept
+2026-02-26 13:52:11,431 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:11,467 | INFO     | soap_generator | process_single_entity_async:829 |    📍 Route Classification: dual_sync
+2026-02-26 13:52:11,468 | INFO     | soap_generator | process_single_entity_async:830 |    📝 Normalized name: 'physiotherapy' (from span_text: 'physiotherapy')
+2026-02-26 13:52:11,468 | INFO     | soap_generator | process_entity_by_route_async:1605 |   📦 Batch intent (default): using search_term 'physiotherapy'
+2026-02-26 13:52:11,468 | INFO     | soap_generator | process_entity_by_route_async:1659 |   🔍 Starting LOCAL-ONLY search (local inventory + local services)
+2026-02-26 13:52:11,468 | INFO     | soap_generator | process_entity_by_route_async:1660 |      Search term: 'physiotherapy' (ASR-corrected: False)
+2026-02-26 13:52:11,483 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:11,488 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:11,494 | DEBUG    | soap_generator | search_local_inventory_topk:633 |   📊 Vector embedding used for 'X-ray' (cached or precomputed)
+2026-02-26 13:52:11,517 | DEBUG    | soap_generator | apply_decision_flow:1015 |   🔍 Decision Flow: 'X-ray' classified as GENERIC
+2026-02-26 13:52:11,517 | INFO     | soap_generator | apply_decision_flow:1047 |    📊 MATCHING SCORES BREAKDOWN (Top 5 candidates):
+2026-02-26 13:52:11,517 | INFO     | soap_generator | apply_decision_flow:1048 |       Vector matching: ✅ ENABLED
+2026-02-26 13:52:11,517 | INFO     | soap_generator | apply_decision_flow:1070 |       1. XRAY (ID: 1185)
+2026-02-26 13:52:11,517 | INFO     | soap_generator | apply_decision_flow:1071 |          Trigram: 0.375 | Phonetic: 0.8 | Vector: 0.592 | Match: 0.872 (MAX)
+2026-02-26 13:52:11,517 | INFO     | soap_generator | apply_decision_flow:1070 |       2. X RAY WITH PRINT (ID: 952)
+2026-02-26 13:52:11,517 | INFO     | soap_generator | apply_decision_flow:1071 |          Trigram: 0.353 | Phonetic: 0.4 | Vector: 0.537 | Match: 0.692 (MAX)
+2026-02-26 13:52:11,518 | INFO     | soap_generator | apply_decision_flow:1070 |       3. X RAY WITHOUT PRINT (ID: 953)
+2026-02-26 13:52:11,518 | INFO     | soap_generator | apply_decision_flow:1071 |          Trigram: 0.300 | Phonetic: 0.4 | Vector: 0.515 | Match: 0.683 (MAX)
+2026-02-26 13:52:11,518 | INFO     | soap_generator | apply_decision_flow:1070 |       4. X RAY UNDER ANESTHESIA (ID: 970)
+2026-02-26 13:52:11,518 | INFO     | soap_generator | apply_decision_flow:1071 |          Trigram: 0.261 | Phonetic: 0.4 | Vector: 0.531 | Match: 0.676 (MAX)
+2026-02-26 13:52:11,518 | INFO     | soap_generator | apply_decision_flow:1070 |       5. HIP X RAY (ID: 975)
+2026-02-26 13:52:11,518 | INFO     | soap_generator | apply_decision_flow:1071 |          Trigram: 0.600 | Phonetic: 0.3 | Vector: 0.489 | Match: 0.600 (TRIGRAM)
+2026-02-26 13:52:11,518 | INFO     | soap_generator | apply_decision_flow:1087 |    🎯 TOP CANDIDATES BY METHOD:
+2026-02-26 13:52:11,518 | INFO     | soap_generator | apply_decision_flow:1088 |       Top TRIGRAM: HIP X RAY (ID: 975, score: 0.600)
+2026-02-26 13:52:11,518 | INFO     | soap_generator | apply_decision_flow:1089 |       Top PHONETIC: XRAY (ID: 1185, score: 0.8)
+2026-02-26 13:52:11,518 | INFO     | soap_generator | apply_decision_flow:1091 |       Top VECTOR: XRAY (ID: 1185, score: 0.592)
+2026-02-26 13:52:11,526 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:11,675 | INFO     | soap_generator | apply_decision_flow:1195 |    🔍 OPTION B (DETERMINISTIC GATES):
+2026-02-26 13:52:11,676 | INFO     | soap_generator | apply_decision_flow:1196 |       Top candidate: 'HIP X RAY' (score: 0.788)
+2026-02-26 13:52:11,676 | INFO     | soap_generator | apply_decision_flow:1198 |       Second candidate: 'HIP X RAY RESCUE' (score: 0.775)
+2026-02-26 13:52:11,676 | INFO     | soap_generator | apply_decision_flow:1199 |       Margin: 0.013
+2026-02-26 13:52:11,676 | INFO     | soap_generator | apply_decision_flow:1213 |    ❌ OPTION B1: FAILED (score 0.788 < 0.92)
+2026-02-26 13:52:11,676 | INFO     | soap_generator | apply_decision_flow:1298 |    ❌ OPTION B2: FAILED (margin 0.013 < 0.08)
+2026-02-26 13:52:11,676 | INFO     | soap_generator | apply_decision_flow:1314 |    ❌ OPTION B3: FAILED (score 0.788 < 0.92)
+2026-02-26 13:52:11,676 | INFO     | soap_generator | apply_decision_flow:1360 |    🧠 OPTION C (LLM JUDGE): All deterministic gates failed - calling LLM judge
+2026-02-26 13:52:11,676 | DEBUG    | soap_generator | disambiguate_local_match_v2:1594 |   🧠 LLM Judge (Option C): Disambiguating 'ultralining test' with 4 candidates
+2026-02-26 13:52:11,693 | DEBUG    | soap_generator | search_local_services_topk:1234 |   📊 Vector embedding used for service 'physiotherapy' (cached or precomputed)
+2026-02-26 13:52:11,726 | DEBUG    | soap_generator | search_local_inventory_topk:633 |   📊 Vector embedding used for 'physiotherapy' (cached or precomputed)
+2026-02-26 13:52:11,730 | INFO     | soap_generator | apply_decision_flow:1195 |    🔍 OPTION B (DETERMINISTIC GATES):
+2026-02-26 13:52:11,730 | INFO     | soap_generator | apply_decision_flow:1196 |       Top candidate: 'XRAY' (score: 0.872)
+2026-02-26 13:52:11,730 | INFO     | soap_generator | apply_decision_flow:1198 |       Second candidate: 'X RAY WITH PRINT' (score: 0.692)
+2026-02-26 13:52:11,732 | INFO     | soap_generator | apply_decision_flow:1199 |       Margin: 0.180
+2026-02-26 13:52:11,732 | INFO     | soap_generator | apply_decision_flow:1211 |    ❌ OPTION B1: SKIPPED (mention is generic)
+2026-02-26 13:52:11,732 | INFO     | soap_generator | apply_decision_flow:1312 |    ❌ OPTION B3: SKIPPED (mention is generic)
+2026-02-26 13:52:11,732 | INFO     | soap_generator | apply_decision_flow:1360 |    🧠 OPTION C (LLM JUDGE): All deterministic gates failed - calling LLM judge
+2026-02-26 13:52:11,732 | DEBUG    | soap_generator | disambiguate_local_match_v2:1594 |   🧠 LLM Judge (Option C): Disambiguating 'X-ray' with 5 candidates
+2026-02-26 13:52:11,746 | INFO     | soap_generator | disambiguate_local_match_v2:1799 |   🚫 LLM Judge REJECTED: 'sit stand step exercise' (batched NONE/NONE_GENERIC)
+2026-02-26 13:52:11,747 | WARNING  | soap_generator | process_entity_by_route_async:2163 |   🚫 Dual-Sync: local candidates rejected for 'sit stand step exercise'. Preserving as unlinked (preventing global-only hallucination).
+2026-02-26 13:52:11,747 | INFO     | soap_generator | process_entity_by_route_async:2177 |   ✅ Captured 3 suggestions for 'sit stand step exercise': ['PHYSIOTHERAPY', 'LASER THERAPY', 'FLUID THERAPY']
+2026-02-26 13:52:11,747 | DEBUG    | soap_generator | _ground_one:4153 |    ✅ Grounded entity 'sit stand step exercise' → added to manifest (total: 20)
+2026-02-26 13:52:11,756 | DEBUG    | soap_generator | _ground_one:4153 |    ✅ Grounded entity 'physiotherapy' → added to manifest (total: 21)
+2026-02-26 13:52:12,387 | INFO     | soap_generator | disambiguate_local_match_v2:1799 |   🚫 LLM Judge REJECTED: 'ultralining test' (batched NONE/NONE_GENERIC)
+2026-02-26 13:52:12,387 | WARNING  | soap_generator | process_entity_by_route_async:2163 |   🚫 Dual-Sync: local candidates rejected for 'ultralining test'. Preserving as unlinked (preventing global-only hallucination).
+2026-02-26 13:52:12,387 | INFO     | soap_generator | process_entity_by_route_async:2177 |   ✅ Captured 4 suggestions for 'ultralining test': ['HIP X RAY', 'HIP X RAY RESCUE', 'ULTRASOUND SCAN', 'HIP SCREENING WITH GA']
+2026-02-26 13:52:12,387 | DEBUG    | soap_generator | _ground_one:4153 |    ✅ Grounded entity 'ultralining test' → added to manifest (total: 22)
+2026-02-26 13:52:12,470 | INFO     | soap_generator | disambiguate_local_match_v2:1799 |   🚫 LLM Judge REJECTED: 'X-ray' (batched NONE/NONE_GENERIC)
+2026-02-26 13:52:12,470 | WARNING  | soap_generator | process_entity_by_route_async:2163 |   🚫 Dual-Sync: local candidates rejected for 'X-ray'. Preserving as unlinked (preventing global-only hallucination).
+2026-02-26 13:52:12,470 | INFO     | soap_generator | process_entity_by_route_async:2177 |   ✅ Captured 5 suggestions for 'X-ray': ['XRAY', 'X RAY WITH PRINT', 'X RAY WITHOUT PRINT', 'X RAY UNDER ANESTHESIA', 'HIP X RAY']
+2026-02-26 13:52:12,471 | DEBUG    | soap_generator | _ground_one:4153 |    ✅ Grounded entity 'X-ray' → added to manifest (total: 23)
+2026-02-26 13:52:13,219 | INFO     | soap_generator | process_single_entity_async:829 |    📍 Route Classification: dual_sync
+2026-02-26 13:52:13,219 | INFO     | soap_generator | process_single_entity_async:830 |    📝 Normalized name: 'noble angle' (from span_text: 'noble angle')
+2026-02-26 13:52:13,220 | INFO     | soap_generator | process_entity_by_route_async:1605 |   📦 Batch intent (default): using search_term 'Norberg angle'
+2026-02-26 13:52:13,220 | INFO     | soap_generator | process_entity_by_route_async:1659 |   🔍 Starting LOCAL-ONLY search (local inventory + local services)
+2026-02-26 13:52:13,220 | INFO     | soap_generator | process_entity_by_route_async:1660 |      Search term: 'Norberg angle' (ASR-corrected: True)
+2026-02-26 13:52:13,233 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:13,238 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-02-26 13:52:13,446 | DEBUG    | soap_generator | search_local_inventory_topk:633 |   📊 Vector embedding used for 'Norberg angle' (cached or precomputed)
+2026-02-26 13:52:13,470 | DEBUG    | soap_generator | search_local_services_topk:1234 |   📊 Vector embedding used for service 'Norberg angle' (cached or precomputed)
+2026-02-26 13:52:13,496 | DEBUG    | soap_generator | apply_decision_flow:1015 |   🔍 Decision Flow: 'noble angle' classified as SPECIFIC
+2026-02-26 13:52:13,496 | INFO     | soap_generator | apply_decision_flow:1047 |    📊 MATCHING SCORES BREAKDOWN (Top 5 candidates):
+2026-02-26 13:52:13,496 | INFO     | soap_generator | apply_decision_flow:1048 |       Vector matching: ✅ ENABLED
+2026-02-26 13:52:13,496 | INFO     | soap_generator | apply_decision_flow:1070 |       1. HIP X RAY (ID: 975)
+2026-02-26 13:52:13,496 | INFO     | soap_generator | apply_decision_flow:1071 |          Trigram: 0.250 | Phonetic: 0.8 | Vector: 0.227 | Match: 0.778 (MAX)
+2026-02-26 13:52:13,496 | INFO     | soap_generator | apply_decision_flow:1070 |       2. HIP X RAY RESCUE (ID: 972)
+2026-02-26 13:52:13,496 | INFO     | soap_generator | apply_decision_flow:1071 |          Trigram: 0.182 | Phonetic: 0.8 | Vector: 0.189 | Match: 0.767 (MAX)
+2026-02-26 13:52:13,496 | INFO     | soap_generator | apply_decision_flow:1070 |       3. HIP SCREENING WITH GA (ID: 974)
+2026-02-26 13:52:13,496 | INFO     | soap_generator | apply_decision_flow:1071 |          Trigram: 0.143 | Phonetic: 0.8 | Vector: 0.266 | Match: 0.743 (MAX)
+2026-02-26 13:52:13,496 | INFO     | soap_generator | apply_decision_flow:1087 |    🎯 TOP CANDIDATES BY METHOD:
+2026-02-26 13:52:13,497 | INFO     | soap_generator | apply_decision_flow:1088 |       Top TRIGRAM: HIP X RAY (ID: 975, score: 0.250)
+2026-02-26 13:52:13,497 | INFO     | soap_generator | apply_decision_flow:1089 |       Top PHONETIC: HIP X RAY (ID: 975, score: 0.8)
+2026-02-26 13:52:13,497 | INFO     | soap_generator | apply_decision_flow:1091 |       Top VECTOR: HIP SCREENING WITH GA (ID: 974, score: 0.266)
+2026-02-26 13:52:13,497 | INFO     | soap_generator | apply_decision_flow:1127 |    ❌ OPTION A (3/3 AGREEMENT): FAILED
+2026-02-26 13:52:13,497 | INFO     | soap_generator | apply_decision_flow:1128 |       Trigram ID: 975, Phonetic ID: 975, Vector ID: 974
+2026-02-26 13:52:13,497 | INFO     | soap_generator | apply_decision_flow:1129 |       IDs do not match - cannot auto-accept
+2026-02-26 13:52:13,497 | INFO     | soap_generator | apply_decision_flow:1195 |    🔍 OPTION B (DETERMINISTIC GATES):
+2026-02-26 13:52:13,497 | INFO     | soap_generator | apply_decision_flow:1196 |       Top candidate: 'HIP X RAY' (score: 0.778)
+2026-02-26 13:52:13,497 | INFO     | soap_generator | apply_decision_flow:1198 |       Second candidate: 'HIP X RAY RESCUE' (score: 0.767)
+2026-02-26 13:52:13,497 | INFO     | soap_generator | apply_decision_flow:1199 |       Margin: 0.011
+2026-02-26 13:52:13,498 | INFO     | soap_generator | apply_decision_flow:1213 |    ❌ OPTION B1: FAILED (score 0.778 < 0.92)
+2026-02-26 13:52:13,498 | INFO     | soap_generator | apply_decision_flow:1298 |    ❌ OPTION B2: FAILED (margin 0.011 < 0.08)
+2026-02-26 13:52:13,498 | INFO     | soap_generator | apply_decision_flow:1314 |    ❌ OPTION B3: FAILED (score 0.778 < 0.92)
+2026-02-26 13:52:13,498 | INFO     | soap_generator | apply_decision_flow:1360 |    🧠 OPTION C (LLM JUDGE): All deterministic gates failed - calling LLM judge
+2026-02-26 13:52:13,498 | DEBUG    | soap_generator | disambiguate_local_match_v2:1594 |   🧠 LLM Judge (Option C): Disambiguating 'noble angle' with 3 candidates
+2026-02-26 13:52:13,918 | INFO     | soap_generator | process_single_entity_async:829 |    📍 Route Classification: dual_sync
+2026-02-26 13:52:13,918 | INFO     | soap_generator | process_single_entity_async:830 |    📝 Normalized name: 'auto-lanternance' (from span_text: 'auto-lanternance')
+2026-02-26 13:52:13,919 | INFO     | soap_generator | process_entity_by_route_async:1605 |   📦 Batch intent (default): using search_term 'Ortolani test'
+2026-02-26 13:52:13,919 | INFO     | soap_generator | process_entity_by_route_async:1659 |   🔍 Starting LOCAL-ONLY search (local inventory + local services)
+2026-02-26 13:52:13,919 | INFO     | soap_generator | process_entity_by_route_async:1660 |      Search term: 'Ortolani test' (ASR-corrected: True)
+2026-02-26 13:52:13,920 | DEBUG    | soap_generator | search_local_inventory_topk:633 |   📊 Vector embedding used for 'Ortolani test' (cached or precomputed)
+2026-02-26 13:52:13,928 | DEBUG    | soap_generator | search_local_services_topk:1234 |   📊 Vector embedding used for service 'Ortolani test' (cached or precomputed)
+2026-02-26 13:52:13,945 | DEBUG    | soap_generator | apply_decision_flow:1015 |   🔍 Decision Flow: 'auto-lanternance' classified as GENERIC
+2026-02-26 13:52:13,946 | INFO     | soap_generator | apply_decision_flow:1047 |    📊 MATCHING SCORES BREAKDOWN (Top 5 candidates):
+2026-02-26 13:52:13,946 | INFO     | soap_generator | apply_decision_flow:1048 |       Vector matching: ✅ ENABLED
+2026-02-26 13:52:13,946 | INFO     | soap_generator | apply_decision_flow:1070 |       1. HIP X RAY (ID: 975)
+2026-02-26 13:52:13,946 | INFO     | soap_generator | apply_decision_flow:1071 |          Trigram: 0.182 | Phonetic: 0.8 | Vector: 0.210 | Match: 0.788 (MAX)
+2026-02-26 13:52:13,946 | INFO     | soap_generator | apply_decision_flow:1070 |       2. HIP X RAY RESCUE (ID: 972)
+2026-02-26 13:52:13,946 | INFO     | soap_generator | apply_decision_flow:1071 |          Trigram: 0.143 | Phonetic: 0.8 | Vector: 0.191 | Match: 0.775 (MAX)
+2026-02-26 13:52:13,946 | INFO     | soap_generator | apply_decision_flow:1070 |       3. HIP SCREENING WITH GA (ID: 974)
+2026-02-26 13:52:13,946 | INFO     | soap_generator | apply_decision_flow:1071 |          Trigram: 0.118 | Phonetic: 0.8 | Vector: 0.255 | Match: 0.720 (MAX)
+2026-02-26 13:52:13,946 | INFO     | soap_generator | apply_decision_flow:1087 |    🎯 TOP CANDIDATES BY METHOD:
+2026-02-26 13:52:13,946 | INFO     | soap_generator | apply_decision_flow:1088 |       Top TRIGRAM: HIP X RAY (ID: 975, score: 0.182)
+2026-02-26 13:52:13,946 | INFO     | soap_generator | apply_decision_flow:1089 |       Top PHONETIC: HIP X RAY (ID: 975, score: 0.8)
+2026-02-26 13:52:13,946 | INFO     | soap_generator | apply_decision_flow:1091 |       Top VECTOR: HIP SCREENING WITH GA (ID: 974, score: 0.255)
+2026-02-26 13:52:13,947 | INFO     | soap_generator | apply_decision_flow:1195 |    🔍 OPTION B (DETERMINISTIC GATES):
+2026-02-26 13:52:13,947 | INFO     | soap_generator | apply_decision_flow:1196 |       Top candidate: 'HIP X RAY' (score: 0.788)
+2026-02-26 13:52:13,947 | INFO     | soap_generator | apply_decision_flow:1198 |       Second candidate: 'HIP X RAY RESCUE' (score: 0.775)
+2026-02-26 13:52:13,947 | INFO     | soap_generator | apply_decision_flow:1199 |       Margin: 0.013
+2026-02-26 13:52:13,947 | INFO     | soap_generator | apply_decision_flow:1211 |    ❌ OPTION B1: SKIPPED (mention is generic)
+2026-02-26 13:52:13,947 | INFO     | soap_generator | apply_decision_flow:1312 |    ❌ OPTION B3: SKIPPED (mention is generic)
+2026-02-26 13:52:13,947 | INFO     | soap_generator | apply_decision_flow:1360 |    🧠 OPTION C (LLM JUDGE): All deterministic gates failed - calling LLM judge
+2026-02-26 13:52:13,947 | INFO     | soap_generator | apply_decision_flow:1369 |   🚫 Option C (pre-judge): Generic mention 'auto-lanternance' with all specific candidates → NONE_GENERIC
+2026-02-26 13:52:13,947 | WARNING  | soap_generator | process_entity_by_route_async:2163 |   🚫 Dual-Sync: local candidates rejected for 'auto-lanternance'. Preserving as unlinked (preventing global-only hallucination).
+2026-02-26 13:52:13,948 | INFO     | soap_generator | process_entity_by_route_async:2177 |   ✅ Captured 3 suggestions for 'auto-lanternance': ['HIP X RAY', 'HIP X RAY RESCUE', 'HIP SCREENING WITH GA']
+2026-02-26 13:52:13,948 | DEBUG    | soap_generator | _ground_one:4153 |    ✅ Grounded entity 'auto-lanternance' → added to manifest (total: 24)
+2026-02-26 13:52:14,556 | INFO     | soap_generator | disambiguate_local_match_v2:1799 |   🚫 LLM Judge REJECTED: 'noble angle' (batched NONE/NONE_GENERIC)
+2026-02-26 13:52:14,557 | WARNING  | soap_generator | process_entity_by_route_async:2163 |   🚫 Dual-Sync: local candidates rejected for 'noble angle'. Preserving as unlinked (preventing global-only hallucination).
+2026-02-26 13:52:14,557 | INFO     | soap_generator | process_entity_by_route_async:2177 |   ✅ Captured 3 suggestions for 'noble angle': ['HIP X RAY', 'HIP X RAY RESCUE', 'HIP SCREENING WITH GA']
+2026-02-26 13:52:14,557 | DEBUG    | soap_generator | _ground_one:4153 |    ✅ Grounded entity 'noble angle' → added to manifest (total: 25)
+2026-02-26 13:52:14,557 | INFO     | soap_generator | _run_billing_pipeline_async:4346 |   ✅ Billing pipeline complete: 25 entities in manifest
+2026-02-26 13:52:14,558 | INFO     | soap_generator | generate_soap_note_from_audio_async:4480 | ✅ Billing pipeline (CER + grounding) completed
+2026-02-26 13:52:14,558 | INFO     | soap_generator | generate_soap_note_from_audio_async:4499 | ✅ Billing pipeline: 25 entities in manifest
+2026-02-26 13:52:14,561 | INFO     | soap_generator | generate_soap_note_from_audio_async:4506 |   📄 Grounding layer output: 22 records → /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/grounding_layer_output_20260226_135104.json
+2026-02-26 13:52:14,562 | INFO     | soap_generator | generate_soap_note_from_audio_async:4650 | ✅ SOAP note already saved to: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/soap_note_20260226_135104.txt
+2026-02-26 13:52:14,562 | INFO     | soap_generator | generate_soap_note_from_audio_async:4663 | ✅ SOAP note (JSON) saved to: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/soap_note_20260226_135104.json
+2026-02-26 13:52:14,565 | INFO     | soap_generator | generate_soap_note_from_audio_async:4684 | ✅ Entity manifest saved to: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/entity_manifest_20260226_135104.json (25 entities)
+2026-02-26 13:52:14,571 | INFO     | soap_generator | generate_soap_note_from_audio_async:4724 | 🧬 Phase 2 Knowledge Atom extraction started (pre-extraction: parallel with constraint injection)
+2026-02-26 13:52:14,571 | INFO     | soap_generator | generate_soap_note_from_audio_async:4753 | ⏭️ Skipping post-SOAP injection; using Brain NER/grounded manifest output directly.
+2026-02-26 13:52:14,571 | INFO     | soap_generator | generate_soap_note_from_audio_async:4821 | 🧬 Phase 2 running in background (non-blocking); SOAP pipeline will not wait.
+2026-02-26 13:52:14,572 | INFO     | soap_generator | generate_soap_note_from_audio_async:4864 | SOAPTranscriptLoader not available (No module named 'soap_transcript_loader'); using built-in structured transcript fallback.
+2026-02-26 13:52:14,573 | INFO     | soap_generator | generate_soap_note_from_audio_async:4870 | ✅ Structured transcript (fallback) saved to: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/structured_transcript_20260226_135104.json
+2026-02-26 13:52:14,573 | INFO     | soap_generator | generate_soap_note_from_audio_async:4884 | ✅ Async pipeline completed in 70.49s
+2026-02-26 13:52:14,573 | INFO     | soap_generator | generate_soap_note_from_audio_async:4910 | ⏱️ Stage Wall-Clock (s): transcription=12.75, superpass=27.42, soap_pipeline=14.36, billing_pipeline=30.30, grounding_tail_after_soap=15.94, phase2=n/a, total=70.49
+2026-02-26 13:52:14,573 | INFO     | soap_generator | extract_knowledge_atoms_async:1564 | ============================================================
+2026-02-26 13:52:14,573 | INFO     | soap_generator | extract_knowledge_atoms_async:1565 | 🧬 PHASE 2: KNOWLEDGE ATOM EXTRACTION
+2026-02-26 13:52:14,573 | INFO     | soap_generator | extract_knowledge_atoms_async:1566 | ============================================================
+2026-02-26 13:52:14,573 | INFO     | soap_generator | extract_knowledge_atoms_async:1567 |   Model: gpt-4.1-mini (openai)
+2026-02-26 13:52:14,573 | INFO     | soap_generator | extract_knowledge_atoms_async:1568 |   Session ID: e067ed23-b3f5-4199-b33d-71d3f3245585
+2026-02-26 13:52:14,573 | INFO     | soap_generator | extract_knowledge_atoms_async:1569 |   Entity manifest: 25 entities
+2026-02-26 13:52:14,573 | INFO     | soap_generator | extract_knowledge_atoms_async:1570 |   SOAP note length: 4085 chars
+2026-02-26 13:52:14,577 | INFO     | soap_generator | extract_knowledge_atoms_async:1583 |   ✅ Loaded KB schema: 6 assertion types, 15 kinds (cache_hit=False)
+2026-02-26 13:52:14,587 | DEBUG    | soap_generator | get_client_for_model:375 | 🔍 Model 'gpt-4.1-mini' → Provider: openai
+2026-02-26 13:52:14,597 | INFO     | soap_generator | get_client_for_model:401 | ✅ Created OpenAI client for 'gpt-4.1-mini' (OpenAI endpoint, key: sk-proj-xK...)
+2026-02-26 13:52:14,597 | DEBUG    | soap_generator | get_client_for_model:403 |    Client base_url: https://api.openai.com/v1/
+2026-02-26 13:52:14,597 | INFO     | soap_generator | extract_knowledge_atoms_async:1606 |   Provider resolved: openai
+2026-02-26 13:52:14,597 | INFO     | soap_generator | extract_knowledge_atoms_async:1651 |   📋 Phase 2 clinical core only: 1944 chars (full SOAP 4085 chars)
+2026-02-26 13:52:14,597 | INFO     | soap_generator | extract_knowledge_atoms_async:1675 |   ⚡ Phase 2 parallel atom extraction: 25 entities → 5 batches (~5 each)
+2026-02-26 13:52:14,597 | INFO     | soap_generator | extract_knowledge_atoms_async:1678 |   🧠 Phase 2 parallel: dynamic max_tokens per batch (min=2000, cap=8000, ~500 tokens/entity)
+2026-02-26 13:52:37,017 | DEBUG    | soap_generator | _build_verification_dashboard:2161 |   Locus gate: at-home activity → Reminders (not billing): 'Sit-stand-step exercises'
+2026-02-26 13:52:37,017 | DEBUG    | soap_generator | _build_verification_dashboard:2161 |   Locus gate: at-home activity → Reminders (not billing): 'Swimming'
+2026-02-26 13:52:37,018 | INFO     | soap_generator | extract_knowledge_atoms_async:1759 |   📊 Verification dashboard built: 37 items across 7 modules
+2026-02-26 13:52:37,019 | INFO     | soap_generator | extract_knowledge_atoms_async:1954 |   ✅ Knowledge atoms saved to: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/knowledge_atoms_20260226_135104.json
+2026-02-26 13:52:37,020 | INFO     | soap_generator | extract_knowledge_atoms_async:1963 |   ✅ Verification dashboard saved to: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/verification_dashboard_20260226_135104.json
+2026-02-26 13:52:37,020 | INFO     | soap_generator | extract_knowledge_atoms_async:1978 |   ✅ Phase 2 complete: 31 atoms extracted in 22.45s
+2026-02-26 13:52:37,020 | INFO     | soap_generator | _phase2_done_callback:4809 | ✅ Phase 2 complete (background): 31 knowledge atoms extracted
+2026-02-26 13:52:37,020 | INFO     | soap_generator | generate_soap_note_from_audio_async:4931 | ✅ Phase 2 background task completed before pipeline exit

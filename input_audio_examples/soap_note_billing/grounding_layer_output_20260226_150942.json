@@ -1,0 +1,910 @@
+[
+  {
+    "span_text": "omega 3, omega 6 fatty acids",
+    "normalized_name": "omega 3, omega 6 fatty acids",
+    "kind": "Medication",
+    "route": "dual_sync",
+    "candidates": [],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "omega 3",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "unlinked",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "salamitin",
+    "normalized_name": "salamitin",
+    "kind": "Medication",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "FELI D SUSPENSION 15ML",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "nutrition",
+        "definition": null,
+        "score": 0.6384415584415585
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "salamitin",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "dual_sync_judge_rejected",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "saralana",
+    "normalized_name": "saralana",
+    "kind": "Medication",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "FELI D SUSPENSION 15ML",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "nutrition",
+        "definition": null,
+        "score": 0.6384415584415585
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "saralana",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "dual_sync_judge_rejected",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "floralana",
+    "normalized_name": "floralana",
+    "kind": "Medication",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "FELI D SUSPENSION 15ML",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "nutrition",
+        "definition": null,
+        "score": 0.6116746411483253
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "floralana",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "dual_sync_judge_rejected",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "swimming",
+    "normalized_name": "swimming",
+    "kind": "Procedure",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "PHYSIOTHERAPY",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "orthopedic",
+        "definition": null,
+        "score": 0.8140170940170941
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "swimming",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "dual_sync_judge_rejected",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "Florina also called Bravitu",
+    "normalized_name": "Florina also called Bravitu",
+    "kind": "Medication",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "FELI D SUSPENSION 15ML",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "nutrition",
+        "definition": null,
+        "score": 0.6280519480519481
+      },
+      {
+        "rank": 2,
+        "source": "local",
+        "preferred_name": "PROVICAL PET 200 ML",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "nutrition",
+        "definition": null,
+        "score": 0.6230075187969926
+      },
+      {
+        "rank": 3,
+        "source": "local",
+        "preferred_name": "PROVICAL PET 500 ML",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "nutrition",
+        "definition": null,
+        "score": 0.6230075187969926
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "Florina also called Bravitu",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "dual_sync_judge_rejected",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "fibroblan and esmetopril",
+    "normalized_name": "fibroblan and esmetopril",
+    "kind": "Medication",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "FELI D SUSPENSION 15ML",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "nutrition",
+        "definition": null,
+        "score": 0.6384415584415585
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "fibroblan and esmetopril",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "dual_sync_judge_rejected",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "physiotherapy",
+    "normalized_name": "physiotherapy",
+    "kind": "Procedure",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "PHYSIOTHERAPY",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "orthopedic",
+        "definition": null,
+        "score": 1.0
+      },
+      {
+        "rank": 2,
+        "source": "local",
+        "preferred_name": "LASER THERAPY",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "multi_domain_medication",
+        "definition": null,
+        "score": 0.7536421911421911
+      },
+      {
+        "rank": 3,
+        "source": "local",
+        "preferred_name": "FLUID THERAPY",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "internal_medicine",
+        "definition": null,
+        "score": 0.6814102564102563
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": {
+      "selected_display_name": "PHYSIOTHERAPY",
+      "selected_concept_id": null,
+      "selected_kind": null,
+      "justification": null
+    },
+    "final_binding": {
+      "display_name": "PHYSIOTHERAPY",
+      "kb_concept_id": null,
+      "local_service_id": 1159,
+      "local_stock_id": null,
+      "match_method": "dual_sync_auto_bind_local",
+      "similarity_score": 1.0
+    }
+  },
+  {
+    "span_text": "FHO",
+    "normalized_name": "FHO",
+    "kind": "Procedure",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "MEDICAL PROCEDURE & TREATMENT",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "general",
+        "definition": null,
+        "score": 0.7112643678160919
+      },
+      {
+        "rank": 2,
+        "source": "local",
+        "preferred_name": "SURGERY-FHO",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "orthopedic",
+        "definition": null,
+        "score": 0.6648242349870277
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": {
+      "selected_display_name": "SURGERY-FHO",
+      "selected_concept_id": null,
+      "selected_kind": null,
+      "justification": null
+    },
+    "final_binding": {
+      "display_name": "SURGERY-FHO",
+      "kb_concept_id": null,
+      "local_service_id": 1181,
+      "local_stock_id": null,
+      "match_method": "dual_sync_local",
+      "similarity_score": 0.6648242349870277
+    }
+  },
+  {
+    "span_text": "vaccinated and dewormed",
+    "normalized_name": "vaccinated and dewormed",
+    "kind": "Preventive",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "VACCINATION CRP",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "preventative_wellness",
+        "definition": null,
+        "score": 0.8218666666666666
+      },
+      {
+        "rank": 2,
+        "source": "local",
+        "preferred_name": "VACCINATION C6 + R",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "preventative_wellness",
+        "definition": null,
+        "score": 0.8140444444444445
+      },
+      {
+        "rank": 3,
+        "source": "local",
+        "preferred_name": "VACCINATION CRP+R",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "preventative_wellness",
+        "definition": null,
+        "score": 0.8055529411764707
+      },
+      {
+        "rank": 4,
+        "source": "local",
+        "preferred_name": "VACCINATION DHPPI+L4",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "preventative_wellness",
+        "definition": null,
+        "score": 0.8016
+      },
+      {
+        "rank": 5,
+        "source": "local",
+        "preferred_name": "VACCINATION C4 + L4 + R",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "preventative_wellness",
+        "definition": null,
+        "score": 0.7869913043478262
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": {
+      "selected_display_name": "VACCINATION CRP",
+      "selected_concept_id": null,
+      "selected_kind": null,
+      "justification": null
+    },
+    "final_binding": {
+      "display_name": "VACCINATION CRP",
+      "kb_concept_id": null,
+      "local_service_id": 1009,
+      "local_stock_id": null,
+      "match_method": "dual_sync_local",
+      "similarity_score": 0.8218666666666666
+    }
+  },
+  {
+    "span_text": "tick and flee control",
+    "normalized_name": "tick and flee control",
+    "kind": "ParasiteControl",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "PAPA PAWSOME TICK OFF SHAMPOO 250ml",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "dermatology",
+        "definition": null,
+        "score": 0.17886580086580095
+      },
+      {
+        "rank": 2,
+        "source": "local",
+        "preferred_name": "Natural Remedies NOMOTICKS ANTITICK & FLEA BODY SPRAY 100 ml",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "preventative_wellness",
+        "definition": null,
+        "score": 0.14968253968253975
+      },
+      {
+        "rank": 3,
+        "source": "local",
+        "preferred_name": "Vetoquinol Fixotic Advance Spray Fipronil 0.25% w/v & (S)-Methoprene 0.22% w/v 100 ml",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "dermatology",
+        "definition": null,
+        "score": 0.1419677066228791
+      },
+      {
+        "rank": 4,
+        "source": "local",
+        "preferred_name": "Frontline Spray 0.250g",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "preventative_wellness",
+        "definition": null,
+        "score": 0.12424242424242427
+      },
+      {
+        "rank": 5,
+        "source": "local",
+        "preferred_name": "FRONTLINE SPRAY 250 ML",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "preventative_wellness",
+        "definition": null,
+        "score": 0.12424242424242427
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "tick and flee control",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "dual_sync_judge_rejected",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "tachycine free control",
+    "normalized_name": "tachycine free control",
+    "kind": "ParasiteControl",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "FRONTLINE SPRAY 250 ML",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "preventative_wellness",
+        "definition": null,
+        "score": 0.1680819180819182
+      },
+      {
+        "rank": 2,
+        "source": "local",
+        "preferred_name": "NAYFLEE PLUS 10 TO 20KG",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "dermatology",
+        "definition": null,
+        "score": 0.1030242371282808
+      },
+      {
+        "rank": 3,
+        "source": "local",
+        "preferred_name": "NAYFLEE PLUS 40 TO 60KG",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "dermatology",
+        "definition": null,
+        "score": 0.10190438496211818
+      },
+      {
+        "rank": 4,
+        "source": "local",
+        "preferred_name": "Nayflee PLUS 9.8% w/v 8.8% w/v 0.67 ml Dog",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "preventative_wellness",
+        "definition": null,
+        "score": 0.10015053005372443
+      },
+      {
+        "rank": 5,
+        "source": "local",
+        "preferred_name": "Nayflee PLUS 2.68 ml Dog",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "preventative_wellness",
+        "definition": null,
+        "score": 0.09818635561303651
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "tachycine free control",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "dual_sync_judge_rejected",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "Spirocoxin",
+    "normalized_name": "Spirocoxin",
+    "kind": "Medication",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "ONDANSETRON",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "gastroenterology",
+        "definition": null,
+        "score": 0.49290552584670233
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "Spirocoxin",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "dual_sync_judge_rejected",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "moxeduct imidogloprid",
+    "normalized_name": "moxeduct imidogloprid",
+    "kind": "Medication",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "FELI D SUSPENSION 15ML",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "nutrition",
+        "definition": null,
+        "score": 0.6384415584415585
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "moxeduct imidogloprid",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "dual_sync_judge_rejected",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "sit stand step exercise",
+    "normalized_name": "sit stand step exercise",
+    "kind": "Procedure",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "PHYSIOTHERAPY",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "orthopedic",
+        "definition": null,
+        "score": 0.7911589743589744
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "sit stand step exercise",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "dual_sync_judge_rejected",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "Contraway Force Etching",
+    "normalized_name": "Contraway Force Etching",
+    "kind": "Medication",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "CONDROVET FORCE HA 590",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "orthopedic",
+        "definition": null,
+        "score": 0.7459007465963988
+      },
+      {
+        "rank": 2,
+        "source": "local",
+        "preferred_name": "CONDROVET FORCE HA LARGE 1100",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "orthopedic",
+        "definition": null,
+        "score": 0.7336708116529972
+      },
+      {
+        "rank": 3,
+        "source": "local",
+        "preferred_name": "Intas Livotas Syrup 200 ml Pet",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "gastroenterology",
+        "definition": null,
+        "score": 0.6081481481481482
+      },
+      {
+        "rank": 4,
+        "source": "local",
+        "preferred_name": "Intas Ondet 2 mg 20 x 5 ml Ampoules",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "internal_medicine",
+        "definition": null,
+        "score": 0.5841025641025641
+      },
+      {
+        "rank": 5,
+        "source": "local",
+        "preferred_name": "INTACEF TAZO PET",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "internal_medicine",
+        "definition": null,
+        "score": 0.5700000000000001
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "Contraway Force Etching",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "dual_sync_judge_rejected",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "X-ray",
+    "normalized_name": "X-ray",
+    "kind": "Diagnostic",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "XRAY",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "radiology_imaging",
+        "definition": null,
+        "score": 0.872
+      },
+      {
+        "rank": 2,
+        "source": "local",
+        "preferred_name": "X RAY WITH PRINT",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "radiology_imaging",
+        "definition": null,
+        "score": 0.692
+      },
+      {
+        "rank": 3,
+        "source": "local",
+        "preferred_name": "X RAY WITHOUT PRINT",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "radiology_imaging",
+        "definition": null,
+        "score": 0.6825263157894736
+      },
+      {
+        "rank": 4,
+        "source": "local",
+        "preferred_name": "X RAY UNDER ANESTHESIA",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "radiology_imaging",
+        "definition": null,
+        "score": 0.6756363636363637
+      },
+      {
+        "rank": 5,
+        "source": "local",
+        "preferred_name": "HIP X RAY",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "radiology_imaging",
+        "definition": null,
+        "score": 0.6
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "X-ray",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "dual_sync_judge_rejected",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "lateral",
+    "normalized_name": "lateral",
+    "kind": "Diagnostic",
+    "route": "dual_sync",
+    "candidates": [],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "lateral",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "unlinked",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "Antiloposteral",
+    "normalized_name": "Antiloposteral",
+    "kind": "Diagnostic",
+    "route": "dual_sync",
+    "candidates": [],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "Anteroposterior",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "unlinked",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "auto-lanternance",
+    "normalized_name": "auto-lanternance",
+    "kind": "Diagnostic",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "HIP X RAY",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "radiology_imaging",
+        "definition": null,
+        "score": 0.7875555555555556
+      },
+      {
+        "rank": 2,
+        "source": "local",
+        "preferred_name": "HIP X RAY RESCUE",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "radiology_imaging",
+        "definition": null,
+        "score": 0.7746666666666667
+      },
+      {
+        "rank": 3,
+        "source": "local",
+        "preferred_name": "HIP SCREENING WITH GA",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "radiology_imaging",
+        "definition": null,
+        "score": 0.7201269841269842
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "auto-lanternance",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "dual_sync_judge_rejected",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "ultralining test",
+    "normalized_name": "ultralining test",
+    "kind": "Diagnostic",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "HIP X RAY",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "radiology_imaging",
+        "definition": null,
+        "score": 0.7875555555555556
+      },
+      {
+        "rank": 2,
+        "source": "local",
+        "preferred_name": "HIP X RAY RESCUE",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "radiology_imaging",
+        "definition": null,
+        "score": 0.7746666666666667
+      },
+      {
+        "rank": 3,
+        "source": "local",
+        "preferred_name": "HIP SCREENING WITH GA",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "radiology_imaging",
+        "definition": null,
+        "score": 0.7201269841269842
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "ultralining test",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "dual_sync_judge_rejected",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "noble angle",
+    "normalized_name": "noble angle",
+    "kind": "Diagnostic",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "HIP X RAY",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "radiology_imaging",
+        "definition": null,
+        "score": 0.7777777777777778
+      },
+      {
+        "rank": 2,
+        "source": "local",
+        "preferred_name": "HIP X RAY RESCUE",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "radiology_imaging",
+        "definition": null,
+        "score": 0.7666666666666667
+      },
+      {
+        "rank": 3,
+        "source": "local",
+        "preferred_name": "HIP SCREENING WITH GA",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "radiology_imaging",
+        "definition": null,
+        "score": 0.7434920634920635
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "noble angle",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "dual_sync_judge_rejected",
+      "similarity_score": null
+    }
+  }
+]

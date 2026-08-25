@@ -1,0 +1,33 @@
+{
+  "ReasonForVisit": [],
+  "Medication": [],
+  "Procedure": [
+    {
+      "span_text": "санацию ротовой полости"
+    },
+    {
+      "span_text": "удалением зубов"
+    },
+    {
+      "span_text": "наркозом"
+    }
+  ],
+  "Diagnostic": [
+    {
+      "span_text": "анализ крови"
+    }
+  ],
+  "VitalSign": [],
+  "Reminder": [],
+  "Symptom": [],
+  "Diagnosis": [],
+  "Anatomy": [
+    {
+      "span_text": "4 зубов"
+    }
+  ],
+  "Diet": [],
+  "Preventive": [],
+  "ParasiteControl": [],
+  "Other": []
+}

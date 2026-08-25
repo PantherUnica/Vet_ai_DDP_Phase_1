@@ -1,0 +1,380 @@
+[
+  {
+    "span_text": "Cefpet syrup",
+    "normalized_name": "Cefpet syrup",
+    "kind": "Medication",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "CeFET CLV 325 10 Tab Dogs Cats",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "internal_medicine",
+        "definition": null,
+        "score": 0.8285714285714286
+      },
+      {
+        "rank": 2,
+        "source": "local",
+        "preferred_name": "CefPET 100 mg 10 Tab Veterinary",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "internal_medicine",
+        "definition": null,
+        "score": 0.8057142857142857
+      },
+      {
+        "rank": 3,
+        "source": "local",
+        "preferred_name": "CefPET Dry Syrup 12.95 g/30 ml Veterinary",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "internal_medicine",
+        "definition": null,
+        "score": 0.8036363636363636
+      },
+      {
+        "rank": 4,
+        "source": "local",
+        "preferred_name": "Rudraksha Bioceuticals CefPET XL 200 mg 10 Tab Veterinary",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "internal_medicine",
+        "definition": null,
+        "score": 0.7909677419354838
+      },
+      {
+        "rank": 5,
+        "source": "local",
+        "preferred_name": "Cephavet 60 ml",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "internal_medicine",
+        "definition": null,
+        "score": 0.7473015873015875
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": {
+      "selected_display_name": "CefPET Dry Syrup 12.95 g/30 ml Veterinary",
+      "selected_concept_id": null,
+      "selected_kind": null,
+      "justification": null
+    },
+    "final_binding": {
+      "display_name": "CefPET Dry Syrup 12.95 g/30 ml Veterinary",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": 42000,
+      "match_method": "dual_sync_local",
+      "similarity_score": 0.8036363636363636
+    }
+  },
+  {
+    "span_text": "exotic pump",
+    "normalized_name": "exotic pump",
+    "kind": "Medication",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "EASOTIC 10ML",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "dermatology",
+        "definition": null,
+        "score": 0.8533333333333334
+      },
+      {
+        "rank": 2,
+        "source": "local",
+        "preferred_name": "Veko Otikoo Ear Drops 0.3% 15 ml",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "dermatology",
+        "definition": null,
+        "score": 0.7457164404223228
+      },
+      {
+        "rank": 3,
+        "source": "local",
+        "preferred_name": "OTIREL EAR DROPS 15M",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "dermatology",
+        "definition": null,
+        "score": 0.7072268907563026
+      },
+      {
+        "rank": 4,
+        "source": "local",
+        "preferred_name": "LIV 52 DROPS",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "internal_medicine",
+        "definition": null,
+        "score": 0.6977777777777778
+      },
+      {
+        "rank": 5,
+        "source": "local",
+        "preferred_name": "Eversh Tears 10 ml",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "ophthalmology",
+        "definition": null,
+        "score": 0.668786940613566
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": {
+      "selected_display_name": "EASOTIC 10ML",
+      "selected_concept_id": null,
+      "selected_kind": null,
+      "justification": null
+    },
+    "final_binding": {
+      "display_name": "EASOTIC 10ML",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": 41358,
+      "match_method": "dual_sync_local",
+      "similarity_score": 0.8533333333333334
+    }
+  },
+  {
+    "span_text": "yeast growth",
+    "normalized_name": "yeast growth",
+    "kind": "Diagnosis",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "INJECTION EFECTAL",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "gastroenterology",
+        "definition": null,
+        "score": 0.6686274509803921
+      },
+      {
+        "rank": 2,
+        "source": "local",
+        "preferred_name": "INJECTION T.T",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "preventative_wellness",
+        "definition": null,
+        "score": 0.6452991452991453
+      },
+      {
+        "rank": 3,
+        "source": "local",
+        "preferred_name": "INJECTION OTC",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "general",
+        "definition": null,
+        "score": 0.6452991452991453
+      },
+      {
+        "rank": 4,
+        "source": "local",
+        "preferred_name": "INJECTION FORCAN",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "internal_medicine",
+        "definition": null,
+        "score": 0.6401515151515151
+      },
+      {
+        "rank": 5,
+        "source": "local",
+        "preferred_name": "INJECTION K",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "internal_medicine",
+        "definition": null,
+        "score": 0.6393939393939394
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "yeast growth",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "note_only_below_threshold",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "bus inside the left ear",
+    "normalized_name": "bus inside the left ear",
+    "kind": "Diagnosis",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "EAR CLEANING DOCTOR",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "dermatology",
+        "definition": null,
+        "score": 0.8304747883695254
+      },
+      {
+        "rank": 2,
+        "source": "local",
+        "preferred_name": "EAR CLEANING WITH PYO OTO",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "dermatology",
+        "definition": null,
+        "score": 0.8222820512820512
+      },
+      {
+        "rank": 3,
+        "source": "local",
+        "preferred_name": "EAR CLEANING GROOMING",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "administrative_retail",
+        "definition": null,
+        "score": 0.8194472194472194
+      },
+      {
+        "rank": 4,
+        "source": "local",
+        "preferred_name": "EAR MITE TEST",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "diagnostic_lab",
+        "definition": null,
+        "score": 0.7868131868131868
+      },
+      {
+        "rank": 5,
+        "source": "local",
+        "preferred_name": "EAR FLUSH UNDER GA",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "anesthesia_analgesia",
+        "definition": null,
+        "score": 0.7568986568986569
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "bus inside the left ear",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "note_only_below_threshold",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "ear swab for culture and sensitivity",
+    "normalized_name": "ear swab for culture and sensitivity",
+    "kind": "Diagnostic",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "EAR MITE TEST",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "diagnostic_lab",
+        "definition": null,
+        "score": 0.7484615384615386
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "ear swab for culture and sensitivity",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "dual_sync_judge_rejected",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "ear cleaning",
+    "normalized_name": "ear cleaning",
+    "kind": "Procedure",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "EYE FLUSH",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "ophthalmology",
+        "definition": null,
+        "score": 0.8133333333333334
+      },
+      {
+        "rank": 2,
+        "source": "local",
+        "preferred_name": "EAR FLUSH UNDER GA",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "anesthesia_analgesia",
+        "definition": null,
+        "score": 0.7577777777777779
+      },
+      {
+        "rank": 3,
+        "source": "local",
+        "preferred_name": "ENEMA WITH FLUSH",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "gastroenterology",
+        "definition": null,
+        "score": 0.6983333333333334
+      },
+      {
+        "rank": 4,
+        "source": "local",
+        "preferred_name": "ABSCESS FLUSH",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "soft_tissue_surgery",
+        "definition": null,
+        "score": 0.6711396011396011
+      },
+      {
+        "rank": 5,
+        "source": "local",
+        "preferred_name": "RECTAL WASH TREATMENT",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "gastroenterology",
+        "definition": null,
+        "score": 0.6279365079365079
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "ear cleaning",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "dual_sync_judge_rejected",
+      "similarity_score": null
+    }
+  }
+]

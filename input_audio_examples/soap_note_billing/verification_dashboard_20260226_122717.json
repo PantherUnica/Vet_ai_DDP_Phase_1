@@ -1,0 +1,221 @@
+{
+  "procedures_services": [],
+  "medications_administered": [],
+  "medications_prescribed": [
+    {
+      "item_name": "CefPET Dry Syrup 12.95 g/30 ml Veterinary",
+      "inventory_id": 42000,
+      "status": "DRAFT",
+      "administered_prescribed": "Prescribed",
+      "fulfillment": "Internal",
+      "quantity": "[Vet to Input: Quantity]",
+      "dosage": "3ml",
+      "duration": "5-7 days",
+      "frequency": "Custom",
+      "instructions": "",
+      "remarks": "Product: CefPET Dry Syrup 12.95 g/30 ml Veterinary CefPET Dry Syrup 12.95 g/30 ml Veterinary. Generic: CEFPET 30 ML DRY SYRUP CEFPET 30 ML DRY SYRUP. Category: Medication / Antibiotic. Specialty: internal_medicine. Use Case: CefPET Dry Syrup 12.95 g/30 ml Veterinary is an anti-microbial medication containing Cefpodoxime Proxetil used as an oral suspension for veterinary use, marketed by Intas.. Ingredients: Cefpodoxime Proxetil."
+    },
+    {
+      "item_name": "EASOTIC 10ML",
+      "inventory_id": 41358,
+      "status": "DRAFT",
+      "administered_prescribed": "Prescribed",
+      "fulfillment": "Internal",
+      "quantity": "[Vet to Input: Quantity]",
+      "dosage": "",
+      "duration": "5 days",
+      "frequency": "Custom",
+      "instructions": "",
+      "remarks": "Product: EASOTIC 10ML EASOTIC 10ML. Generic: EASOTIC 10ML EASOTIC 10ML. Category: Medication / Ear Care. Specialty: dermatology. Use Case: EASOTIC 10ML is an ear medication used to treat ear infections and inflammations in animals in a veterinary clinic.."
+    }
+  ],
+  "diagnostics": [
+    {
+      "service_id": null,
+      "lab_radiology": "LAB",
+      "test_name": "ear swab for culture and sensitivity",
+      "date_of_test": "TBD",
+      "done": "External",
+      "sample_collected": "No",
+      "remarks": "Generic diagnostic detected. Select a specific billing variant from the suggestions below. [Unlinked – ACTION REQUIRED: select service for billing]"
+    }
+  ],
+  "other_products_retail": [],
+  "reminders_follow_ups": [],
+  "vitals": [],
+  "module_4_unlinked_entities": [
+    {
+      "item_name": "ear cleaning",
+      "kind": "Procedure",
+      "intent_context": "Performed",
+      "intent": "Performed (Procedure)",
+      "status": "ACTION REQUIRED",
+      "reason": "AMBIGUOUS_MATCH",
+      "remarks": "Generic procedure detected. Select a specific billing variant from the suggestions below.",
+      "suggestions": [
+        {
+          "name": "EYE FLUSH",
+          "match_score": 0.8666666666666666,
+          "recommendation": "MEDIUM",
+          "service_id": 1027
+        },
+        {
+          "name": "EAR FLUSH UNDER GA",
+          "match_score": 0.7972222222222223,
+          "recommendation": "MEDIUM",
+          "service_id": 1015
+        },
+        {
+          "name": "ENEMA WITH FLUSH",
+          "match_score": 0.7229166666666667,
+          "recommendation": "MEDIUM",
+          "service_id": 1026
+        },
+        {
+          "name": "ABSCESS FLUSH",
+          "match_score": 0.6889245014245015,
+          "recommendation": "MEDIUM",
+          "service_id": 1017
+        },
+        {
+          "name": "RECTAL WASH TREATMENT",
+          "match_score": 0.6349206349206349,
+          "recommendation": "MEDIUM",
+          "service_id": 1032
+        }
+      ],
+      "service_id": null
+    },
+    {
+      "item_name": "ear swab for culture and sensitivity",
+      "kind": "Diagnostic",
+      "intent_context": "Ordered",
+      "intent": "Ordered (Diagnostic)",
+      "status": "ACTION REQUIRED",
+      "reason": "MISSING_LOCAL_ID",
+      "remarks": "Generic diagnostic detected. Select a specific billing variant from the suggestions below.",
+      "suggestions": [
+        {
+          "name": "EAR MITE TEST",
+          "match_score": 0.7855769230769232,
+          "recommendation": "MEDIUM",
+          "service_id": 957
+        }
+      ],
+      "service_id": null,
+      "lab_radiology": "LAB",
+      "test_name": "ear swab for culture and sensitivity",
+      "date_of_test": "TBD",
+      "done": "External",
+      "sample_collected": "No"
+    }
+  ],
+  "module_5_clinical_history": [],
+  "streamlined_dashboard": {
+    "signalment_vitals": [],
+    "clinical_assessment": [],
+    "pharmacy_administered": [],
+    "pharmacy_prescribed": [
+      {
+        "name": "CefPET Dry Syrup 12.95 g/30 ml Veterinary",
+        "original_mention": "CefPET Dry Syrup 12.95 g/30 ml Veterinary",
+        "status": "DRAFTED",
+        "linked_id": 42000,
+        "suggestions": [],
+        "dosage": "3ml",
+        "frequency": "Custom",
+        "duration": "5-7 days",
+        "quantity": "[Vet to Input: Quantity]",
+        "instructions": "",
+        "remarks": "Product: CefPET Dry Syrup 12.95 g/30 ml Veterinary CefPET Dry Syrup 12.95 g/30 ml Veterinary. Generic: CEFPET 30 ML DRY SYRUP CEFPET 30 ML DRY SYRUP. Category: Medication / Antibiotic. Specialty: internal_medicine. Use Case: CefPET Dry Syrup 12.95 g/30 ml Veterinary is an anti-microbial medication containing Cefpodoxime Proxetil used as an oral suspension for veterinary use, marketed by Intas.. Ingredients: Cefpodoxime Proxetil.",
+        "required_fields": [
+          "frequency",
+          "duration"
+        ],
+        "label": "Prescribed (Home Care)"
+      },
+      {
+        "name": "EASOTIC 10ML",
+        "original_mention": "EASOTIC 10ML",
+        "status": "DRAFTED",
+        "linked_id": 41358,
+        "suggestions": [],
+        "dosage": "",
+        "frequency": "Custom",
+        "duration": "5 days",
+        "quantity": "[Vet to Input: Quantity]",
+        "instructions": "",
+        "remarks": "Product: EASOTIC 10ML EASOTIC 10ML. Generic: EASOTIC 10ML EASOTIC 10ML. Category: Medication / Ear Care. Specialty: dermatology. Use Case: EASOTIC 10ML is an ear medication used to treat ear infections and inflammations in animals in a veterinary clinic..",
+        "required_fields": [
+          "frequency",
+          "duration"
+        ],
+        "label": "Prescribed (Home Care)"
+      }
+    ],
+    "diagnostics_labs_imaging": [
+      {
+        "name": "ear swab for culture and sensitivity",
+        "original_mention": "ear swab for culture and sensitivity",
+        "status": "ACTION_REQUIRED",
+        "linked_id": null,
+        "suggestions": [
+          {
+            "name": "EAR MITE TEST",
+            "match_score": 0.7855769230769232,
+            "recommendation": "MEDIUM",
+            "service_id": 957
+          }
+        ],
+        "remarks": "Generic diagnostic detected. Select a specific billing variant from the suggestions below.",
+        "reason": "MISSING_LOCAL_ID"
+      }
+    ],
+    "clinical_procedures_services": [
+      {
+        "name": "ear cleaning",
+        "original_mention": "ear cleaning",
+        "status": "ACTION_REQUIRED",
+        "linked_id": null,
+        "suggestions": [
+          {
+            "name": "EYE FLUSH",
+            "match_score": 0.8666666666666666,
+            "recommendation": "MEDIUM",
+            "service_id": 1027
+          },
+          {
+            "name": "EAR FLUSH UNDER GA",
+            "match_score": 0.7972222222222223,
+            "recommendation": "MEDIUM",
+            "service_id": 1015
+          },
+          {
+            "name": "ENEMA WITH FLUSH",
+            "match_score": 0.7229166666666667,
+            "recommendation": "MEDIUM",
+            "service_id": 1026
+          },
+          {
+            "name": "ABSCESS FLUSH",
+            "match_score": 0.6889245014245015,
+            "recommendation": "MEDIUM",
+            "service_id": 1017
+          },
+          {
+            "name": "RECTAL WASH TREATMENT",
+            "match_score": 0.6349206349206349,
+            "recommendation": "MEDIUM",
+            "service_id": 1032
+          }
+        ],
+        "remarks": "Generic procedure detected. Select a specific billing variant from the suggestions below.",
+        "reason": "AMBIGUOUS_MATCH"
+      }
+    ],
+    "other_products_retail": [],
+    "preventive": [],
+    "patient_reminders": [],
+    "clinical_follow_ups": []
+  }
+}

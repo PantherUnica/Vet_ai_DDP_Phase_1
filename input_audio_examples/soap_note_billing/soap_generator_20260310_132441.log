@@ -1,0 +1,184 @@
+2026-03-10 13:24:41,500 | INFO     | soap_generator | setup_logging:1050 | Logging initialized. Log file: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/soap_generator_20260310_132441.log
+2026-03-10 13:24:41,500 | INFO     | soap_generator | <module>:4958 | 🚀 Script started - logging initialized
+2026-03-10 13:24:41,500 | INFO     | soap_generator | <module>:4959 | 🕐 Script execution started at 13:24:41
+2026-03-10 13:24:41,500 | INFO     | soap_generator | <module>:4969 | 📋 Arguments parsed successfully
+2026-03-10 13:24:41,500 | INFO     | soap_generator | <module>:4995 | 🎤 Starting SOAP note generation from audio...
+2026-03-10 13:24:41,500 | INFO     | soap_generator | generate_soap_note_from_audio_async:3807 | 🎤 Async Audio to SOAP Note Generator
+2026-03-10 13:24:41,500 | INFO     | soap_generator | generate_soap_note_from_audio_async:3808 | ==================================================
+2026-03-10 13:24:41,500 | INFO     | soap_generator | generate_soap_note_from_audio_async:3809 | 🕐 Pipeline started at 13:24:41
+2026-03-10 13:24:41,500 | INFO     | soap_generator | generate_soap_note_from_audio_async:3812 | Checking audio processing libraries...
+2026-03-10 13:24:41,500 | WARNING  | soap_generator | check_audio_dependencies:2930 | ❌ soundfile not available
+2026-03-10 13:24:41,500 | WARNING  | soap_generator | check_audio_dependencies:2938 | ❌ pydub not available
+2026-03-10 13:24:41,500 | WARNING  | soap_generator | check_audio_dependencies:2946 | ❌ librosa not available
+2026-03-10 13:24:41,500 | WARNING  | soap_generator | check_audio_dependencies:2954 | ❌ ffmpeg-python not available
+2026-03-10 13:24:41,501 | WARNING  | soap_generator | check_audio_dependencies:2957 | ⚠️  Missing audio libraries: soundfile, pydub, librosa, ffmpeg-python
+2026-03-10 13:24:41,501 | INFO     | soap_generator | check_audio_dependencies:2958 | For better audio file support, install missing libraries:
+2026-03-10 13:24:41,501 | INFO     | soap_generator | check_audio_dependencies:2959 | pip install pydub librosa ffmpeg-python
+2026-03-10 13:24:41,501 | INFO     | soap_generator | check_audio_dependencies:2960 | Note: ffmpeg-python requires ffmpeg to be installed on your system
+2026-03-10 13:24:41,501 | INFO     | soap_generator | generate_soap_note_from_audio_async:3814 | 
+2026-03-10 13:24:41,501 | INFO     | soap_generator | generate_soap_note_from_audio_async:3835 | Using audio file: russion_1.wav
+2026-03-10 13:24:41,501 | INFO     | soap_generator | generate_soap_note_from_audio_async:3860 | ⚡ TARGET_60S: nano + FORCE_PARALLEL_SUPER_PASS_CHUNKS + EARLY_START_SOAP + SOAP max_tokens=2500
+2026-03-10 13:24:41,501 | INFO     | soap_generator | generate_soap_note_from_audio_async:3878 | 🎤 STEP 1: AUDIO TRANSCRIPTION (Async pipeline)
+2026-03-10 13:24:41,501 | INFO     | soap_generator | transcribe_audio:3233 | 🎤 Starting ultra-fast audio transcription...
+2026-03-10 13:24:41,501 | INFO     | soap_generator | transcribe_audio:3234 | 📁 Audio file: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/input_audio/russion_1.wav
+2026-03-10 13:24:44,871 | INFO     | soap_generator | save_output:1216 | Output saved successfully: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/raw_transcription_20260310_132441.txt (207 characters)
+2026-03-10 13:24:44,875 | INFO     | soap_generator | generate_soap_note_from_audio_async:3917 | 📋 Generated visit_id: bf95ac12-e7db-450e-9633-27a3cb1e4236
+2026-03-10 13:24:44,875 | INFO     | soap_generator | generate_soap_note_from_audio_async:3921 | 🏥 Using default clinic_id=1 (inventory and procedures location)
+2026-03-10 13:24:44,875 | INFO     | soap_generator | generate_soap_note_from_audio_async:3922 |    To use a different clinic_id, set CLINIC_ID environment variable
+2026-03-10 13:24:45,527 | INFO     | soap_generator | init_pg_pool:101 | ✅ Initialized Postgres pool (min=1, max=16)
+2026-03-10 13:24:45,527 | INFO     | soap_generator | generate_soap_note_from_audio_async:3967 | ⚡ STEP 2: DEFAULT PATH (Super-Pass non-streaming — single combined call, unified prompt)
+2026-03-10 13:24:45,527 | INFO     | soap_generator | generate_soap_note_from_audio_async:3968 |    - Step 2a: Unified prompt (cleaning + minimal NER). Step 2b: Brain NER (enrich with hints/probabilities)
+2026-03-10 13:24:45,527 | INFO     | soap_generator | generate_soap_note_from_audio_async:3969 |    - Local-only grounding for billable routes + parallel LLM judges where applicable
+2026-03-10 13:24:45,542 | INFO     | soap_generator | generate_soap_note_from_audio_async:3994 | ⚡ STEP 2: SUPER-PASS (unified prompt) → BRAIN NER (enrich with hints/probabilities)
+2026-03-10 13:24:45,542 | INFO     | soap_generator | generate_soap_note_from_audio_async:3999 | ⚡ Batch-parallel grounding: Brain NER (non-streaming) → local-only routing/search → parallel LLM judges → dispatch all entities
+2026-03-10 13:24:45,548 | INFO     | soap_generator | generate_soap_note_from_audio_async:4004 | ✅ Imported process_single_entity_async for streaming grounding
+2026-03-10 13:24:45,548 | INFO     | soap_generator | super_pass_cleaning_and_ner:3335 | ============================================================
+2026-03-10 13:24:45,548 | INFO     | soap_generator | super_pass_cleaning_and_ner:3336 | SUPER-PASS: Cleaning + NER Extraction (Combined)
+2026-03-10 13:24:45,548 | INFO     | soap_generator | super_pass_cleaning_and_ner:3337 | ============================================================
+2026-03-10 13:24:45,548 | INFO     | soap_generator | super_pass_cleaning_and_ner:3338 |   Model: accounts/fireworks/models/llama-v3p3-70b-instruct
+2026-03-10 13:24:45,548 | INFO     | soap_generator | super_pass_cleaning_and_ner:3339 |   Raw transcript length: 207 chars
+2026-03-10 13:24:51,232 | INFO     | soap_generator | super_pass_cleaning_and_ner:3639 |   ✅ Super-pass complete: 248 chars cleaned, 8 entities extracted, entities_by_kind (Pure NER)
+2026-03-10 13:24:51,233 | INFO     | soap_generator | run_brain_call:1343 | Brain call: Processing 8 pre-extracted entities from Super-Pass
+2026-03-10 13:24:51,234 | INFO     | soap_generator | run_brain_call:1419 | Brain call: auto-switching to streaming mode for Fireworks (max_tokens=8192 > 4096)
+2026-03-10 13:24:58,322 | INFO     | soap_generator | run_brain_call:1436 | Brain call (streaming fallback): entities=8 (offsets relative to raw), terms_not_grounded=0
+2026-03-10 13:24:58,324 | INFO     | soap_generator | generate_soap_note_from_audio_async:4221 |    📄 Brain NER output saved to: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/brain_ner_output_20260310_132441.json (8 entities)
+2026-03-10 13:24:58,324 | INFO     | soap_generator | generate_soap_note_from_audio_async:4228 |    ✅ Super-Pass (unified) + Brain NER (enriched): cleaned=248 chars, 8 entities with hints/probabilities
+2026-03-10 13:24:58,325 | INFO     | soap_generator | generate_soap_note_from_audio_async:4363 |    📄 Brain NER output saved (unconditional): /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/brain_ner_output_20260310_132441.json (8 entities)
+2026-03-10 13:24:58,325 | INFO     | soap_generator | generate_soap_note_from_audio_async:4378 | ✅ Shadow grounding complete: 248 chars cleaned, 8 entities extracted
+2026-03-10 13:24:58,326 | INFO     | soap_generator | save_output:1216 | Output saved successfully: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/cleaned_transcript_20260310_132441.txt (248 characters)
+2026-03-10 13:24:58,326 | INFO     | soap_generator | generate_soap_note_from_audio_async:4382 | ✅ Cleaned transcript saved: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/cleaned_transcript_20260310_132441.txt
+2026-03-10 13:24:58,326 | INFO     | soap_generator | generate_soap_note_from_audio_async:4383 | 📊 Input length: 207 characters
+2026-03-10 13:24:58,326 | INFO     | soap_generator | generate_soap_note_from_audio_async:4384 | 📊 Output length: 248 characters
+2026-03-10 13:24:58,327 | INFO     | soap_generator | generate_soap_note_from_audio_async:4394 |    📄 Brain NER output saved to: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/brain_ner_output_20260310_132441.json (8 entities)
+2026-03-10 13:24:58,327 | INFO     | soap_generator | generate_soap_note_from_audio_async:4407 |    📄 NER output by kind saved to: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/cleaned_transcript_20260310_132441_entities_by_kind.json
+2026-03-10 13:24:58,328 | INFO     | soap_generator | generate_soap_note_from_audio_async:4435 | ⚡ STEP 2.3: BATCH-PARALLEL GROUNDING (Brain NER non-streaming → local-only routing/search → parallel judges)
+2026-03-10 13:24:58,328 | INFO     | soap_generator | generate_soap_note_from_audio_async:4436 | 📋 STEP 3: SOAP NOTE GENERATION (uses cleaned transcript)
+2026-03-10 13:24:58,328 | INFO     | soap_generator | generate_soap_note_from_audio_async:4454 | 📋 STEP 3: SOAP NOTE GENERATION (uses cleaned transcript)
+2026-03-10 13:24:58,328 | INFO     | soap_generator | generate_soap_note_from_audio_async:4455 |    SOAP pipeline started (independent of billing)
+2026-03-10 13:24:58,328 | INFO     | soap_generator | build_detected_concepts_json_from_manifest:1457 | 📊 Built Brain NER SOAP payload (8 entities)
+2026-03-10 13:24:58,328 | INFO     | soap_generator | _run_billing_pipeline_async:4237 |   ⏩ CER skipped for short transcript (207 chars ≤ CER_SKIP_UNDER_CHARS=5000); using Brain NER entities for grounding
+2026-03-10 13:24:58,330 | DEBUG    | soap_generator | _dispatch_entity:4171 |    📝 Created grounding task for entity 'воспаление ротовой полости' (total tasks: 1)
+2026-03-10 13:24:58,330 | DEBUG    | soap_generator | _dispatch_entity:4171 |    📝 Created grounding task for entity 'десна' (total tasks: 2)
+2026-03-10 13:24:58,330 | DEBUG    | soap_generator | _dispatch_entity:4171 |    📝 Created grounding task for entity 'покраснение' (total tasks: 3)
+2026-03-10 13:24:58,330 | DEBUG    | soap_generator | _dispatch_entity:4171 |    📝 Created grounding task for entity 'изделение из ротовой полости' (total tasks: 4)
+2026-03-10 13:24:58,330 | DEBUG    | soap_generator | _dispatch_entity:4171 |    📝 Created grounding task for entity 'перелом клика нижнего челюсти' (total tasks: 5)
+2026-03-10 13:24:58,330 | DEBUG    | soap_generator | _dispatch_entity:4171 |    📝 Created grounding task for entity 'больно при пальпации' (total tasks: 6)
+2026-03-10 13:24:58,330 | DEBUG    | soap_generator | _dispatch_entity:4171 |    📝 Created grounding task for entity 'болевое ощущение' (total tasks: 7)
+2026-03-10 13:24:58,330 | DEBUG    | soap_generator | _dispatch_entity:4171 |    📝 Created grounding task for entity 'кушает очень мало' (total tasks: 8)
+2026-03-10 13:24:58,330 | DEBUG    | soap_generator | _ground_one:4125 |    🔍 Grounding entity 1: 'воспаление ротовой полости'
+2026-03-10 13:24:58,330 | INFO     | soap_generator | process_single_entity_async:708 | 🔍 [ASYNC] PROCESSING ENTITY 1/8: 'воспаление ротовой полости'
+2026-03-10 13:24:58,330 | INFO     | soap_generator | process_single_entity_async:709 |    Kind: Symptom, KB Kind: Symptom, Source: N/A
+2026-03-10 13:24:58,330 | INFO     | soap_generator | process_single_entity_async:829 |    📍 Route Classification: skip_non_billable
+2026-03-10 13:24:58,331 | INFO     | soap_generator | process_single_entity_async:830 |    📝 Normalized name: 'воспаление ротовой полости' (from span_text: 'воспаление ротовой полости')
+2026-03-10 13:24:58,331 | DEBUG    | soap_generator | _ground_one:4153 |    ✅ Grounded entity 'воспаление ротовой полости' → added to manifest (total: 1)
+2026-03-10 13:24:58,331 | DEBUG    | soap_generator | _ground_one:4125 |    🔍 Grounding entity 2: 'десна'
+2026-03-10 13:24:58,331 | INFO     | soap_generator | process_single_entity_async:708 | 🔍 [ASYNC] PROCESSING ENTITY 2/8: 'десна'
+2026-03-10 13:24:58,331 | INFO     | soap_generator | process_single_entity_async:709 |    Kind: Anatomy, KB Kind: Anatomy, Source: N/A
+2026-03-10 13:24:58,331 | INFO     | soap_generator | process_single_entity_async:829 |    📍 Route Classification: skip_non_billable
+2026-03-10 13:24:58,331 | INFO     | soap_generator | process_single_entity_async:830 |    📝 Normalized name: 'десна' (from span_text: 'десна')
+2026-03-10 13:24:58,331 | DEBUG    | soap_generator | _ground_one:4153 |    ✅ Grounded entity 'десна' → added to manifest (total: 2)
+2026-03-10 13:24:58,331 | DEBUG    | soap_generator | _ground_one:4125 |    🔍 Grounding entity 3: 'покраснение'
+2026-03-10 13:24:58,331 | INFO     | soap_generator | process_single_entity_async:708 | 🔍 [ASYNC] PROCESSING ENTITY 3/8: 'покраснение'
+2026-03-10 13:24:58,331 | INFO     | soap_generator | process_single_entity_async:709 |    Kind: Symptom, KB Kind: Symptom, Source: N/A
+2026-03-10 13:24:58,332 | INFO     | soap_generator | process_single_entity_async:829 |    📍 Route Classification: skip_non_billable
+2026-03-10 13:24:58,332 | INFO     | soap_generator | process_single_entity_async:830 |    📝 Normalized name: 'покраснение' (from span_text: 'покраснение')
+2026-03-10 13:24:58,332 | DEBUG    | soap_generator | _ground_one:4153 |    ✅ Grounded entity 'покраснение' → added to manifest (total: 3)
+2026-03-10 13:24:58,332 | DEBUG    | soap_generator | _ground_one:4125 |    🔍 Grounding entity 4: 'изделение из ротовой полости'
+2026-03-10 13:24:58,332 | INFO     | soap_generator | process_single_entity_async:708 | 🔍 [ASYNC] PROCESSING ENTITY 4/8: 'изделение из ротовой полости'
+2026-03-10 13:24:58,332 | INFO     | soap_generator | process_single_entity_async:709 |    Kind: Symptom, KB Kind: Symptom, Source: N/A
+2026-03-10 13:24:58,332 | INFO     | soap_generator | process_single_entity_async:829 |    📍 Route Classification: skip_non_billable
+2026-03-10 13:24:58,332 | INFO     | soap_generator | process_single_entity_async:830 |    📝 Normalized name: 'изделение из ротовой полости' (from span_text: 'изделение из ротовой полости')
+2026-03-10 13:24:58,332 | DEBUG    | soap_generator | _ground_one:4153 |    ✅ Grounded entity 'изделение из ротовой полости' → added to manifest (total: 4)
+2026-03-10 13:24:58,332 | DEBUG    | soap_generator | _ground_one:4125 |    🔍 Grounding entity 5: 'перелом клика нижнего челюсти'
+2026-03-10 13:24:58,332 | INFO     | soap_generator | process_single_entity_async:708 | 🔍 [ASYNC] PROCESSING ENTITY 5/8: 'перелом клика нижнего челюсти'
+2026-03-10 13:24:58,333 | INFO     | soap_generator | process_single_entity_async:709 |    Kind: Diagnosis, KB Kind: Diagnosis, Source: N/A
+2026-03-10 13:24:58,333 | DEBUG    | soap_generator | _ground_one:4125 |    🔍 Grounding entity 6: 'больно при пальпации'
+2026-03-10 13:24:58,333 | DEBUG    | soap_generator | get_client_for_model:375 | 🔍 Model 'gpt-4.1-nano' → Provider: openai
+2026-03-10 13:24:58,333 | INFO     | soap_generator | process_single_entity_async:708 | 🔍 [ASYNC] PROCESSING ENTITY 6/8: 'больно при пальпации'
+2026-03-10 13:24:58,333 | INFO     | soap_generator | process_transcription:2830 | Reading transcription file...
+2026-03-10 13:24:58,333 | INFO     | soap_generator | process_single_entity_async:709 |    Kind: Symptom, KB Kind: Symptom, Source: N/A
+2026-03-10 13:24:58,333 | INFO     | soap_generator | process_transcription:2833 | Transcription loaded: 248 characters
+2026-03-10 13:24:58,333 | INFO     | soap_generator | process_single_entity_async:829 |    📍 Route Classification: skip_non_billable
+2026-03-10 13:24:58,334 | INFO     | soap_generator | process_transcription:2838 | Loading optional input files in parallel...
+2026-03-10 13:24:58,334 | INFO     | soap_generator | read_optional_file:1239 | Pre-appointment summary not provided (path is None)
+2026-03-10 13:24:58,334 | INFO     | soap_generator | read_optional_file:1239 | Vitals template not provided (path is None)
+2026-03-10 13:24:58,334 | INFO     | soap_generator | process_single_entity_async:830 |    📝 Normalized name: 'больно при пальпации' (from span_text: 'больно при пальпации')
+2026-03-10 13:24:58,334 | INFO     | soap_generator | read_optional_file:1239 | Protocols template not provided (path is None)
+2026-03-10 13:24:58,334 | DEBUG    | soap_generator | _ground_one:4153 |    ✅ Grounded entity 'больно при пальпации' → added to manifest (total: 5)
+2026-03-10 13:24:58,334 | DEBUG    | soap_generator | _ground_one:4125 |    🔍 Grounding entity 7: 'болевое ощущение'
+2026-03-10 13:24:58,335 | INFO     | soap_generator | process_single_entity_async:708 | 🔍 [ASYNC] PROCESSING ENTITY 7/8: 'болевое ощущение'
+2026-03-10 13:24:58,335 | INFO     | soap_generator | process_single_entity_async:709 |    Kind: Symptom, KB Kind: Symptom, Source: N/A
+2026-03-10 13:24:58,335 | INFO     | soap_generator | process_single_entity_async:829 |    📍 Route Classification: skip_non_billable
+2026-03-10 13:24:58,335 | INFO     | soap_generator | process_single_entity_async:830 |    📝 Normalized name: 'болевое ощущение' (from span_text: 'болевое ощущение')
+2026-03-10 13:24:58,336 | DEBUG    | soap_generator | _ground_one:4153 |    ✅ Grounded entity 'болевое ощущение' → added to manifest (total: 6)
+2026-03-10 13:24:58,336 | INFO     | soap_generator | process_transcription:2851 | Generating SOAP note...
+2026-03-10 13:24:58,336 | INFO     | soap_generator | process_transcription:2852 | Conversation length being sent to LLM: 248 characters
+2026-03-10 13:24:58,336 | INFO     | soap_generator | process_transcription:2853 | Estimated conversation tokens: 62 tokens
+2026-03-10 13:24:58,336 | INFO     | soap_generator | generate_soap_note:2137 | 🕐 Starting SOAP note generation at 13:24:58
+2026-03-10 13:24:58,336 | DEBUG    | soap_generator | _ground_one:4125 |    🔍 Grounding entity 8: 'кушает очень мало'
+2026-03-10 13:24:58,336 | INFO     | soap_generator | generate_soap_note:2165 | 📊 Transcript tokens (prompt): ~62
+2026-03-10 13:24:58,337 | INFO     | soap_generator | generate_soap_note:2166 | 📊 Dynamic max_tokens: 2000 (min: 2000, max: 6000)
+2026-03-10 13:24:58,337 | INFO     | soap_generator | process_single_entity_async:708 | 🔍 [ASYNC] PROCESSING ENTITY 8/8: 'кушает очень мало'
+2026-03-10 13:24:58,337 | INFO     | soap_generator | generate_soap_note:2212 | Sending request to OpenAI (attempt 1/2)
+2026-03-10 13:24:58,337 | INFO     | soap_generator | process_single_entity_async:709 |    Kind: Symptom, KB Kind: Symptom, Source: N/A
+2026-03-10 13:24:58,337 | INFO     | soap_generator | process_single_entity_async:829 |    📍 Route Classification: skip_non_billable
+2026-03-10 13:24:58,338 | INFO     | soap_generator | process_single_entity_async:830 |    📝 Normalized name: 'кушает очень мало' (from span_text: 'кушает очень мало')
+2026-03-10 13:24:58,338 | DEBUG    | soap_generator | _ground_one:4153 |    ✅ Grounded entity 'кушает очень мало' → added to manifest (total: 7)
+2026-03-10 13:24:58,344 | INFO     | soap_generator | get_client_for_model:401 | ✅ Created OpenAI client for 'gpt-4.1-nano' (OpenAI endpoint, key: sk-proj-xK...)
+2026-03-10 13:24:58,344 | DEBUG    | soap_generator | get_client_for_model:403 |    Client base_url: https://api.openai.com/v1/
+2026-03-10 13:25:00,460 | INFO     | soap_generator | process_single_entity_async:829 |    📍 Route Classification: dual_sync
+2026-03-10 13:25:00,460 | INFO     | soap_generator | process_single_entity_async:830 |    📝 Normalized name: 'перелом клика нижнего челюсти' (from span_text: 'перелом клика нижнего челюсти')
+2026-03-10 13:25:00,460 | INFO     | soap_generator | process_entity_by_route_async:1605 |   📦 Batch intent (default): using search_term 'fracture of the lower jaw'
+2026-03-10 13:25:00,460 | INFO     | soap_generator | process_entity_by_route_async:1659 |   🔍 Starting LOCAL-ONLY search (services only (Diagnosis/ReasonForVisit))
+2026-03-10 13:25:00,460 | INFO     | soap_generator | process_entity_by_route_async:1660 |      Search term: 'fracture of the lower jaw' (ASR-corrected: True)
+2026-03-10 13:25:00,471 | DEBUG    | soap_generator | _resolve_embedding_client:329 | ✅ Created OpenAI embedding client (key starts with: sk-proj-xK...)
+2026-03-10 13:25:01,781 | DEBUG    | soap_generator | search_local_services_topk:1235 |   📊 Vector embedding used for service 'fracture of the lower jaw' (cached or precomputed)
+2026-03-10 13:25:01,914 | INFO     | soap_generator | ensure_btree_index:519 | ✅ Created B-tree index: soap.idx_svc_name_metaphone on soap.service_master(name_metaphone)
+2026-03-10 13:25:01,918 | INFO     | soap_generator | ensure_btree_index:519 | ✅ Created B-tree index: soap.idx_svc_name_dmetaphone_1 on soap.service_master(name_dmetaphone_1)
+2026-03-10 13:25:01,920 | INFO     | soap_generator | ensure_btree_index:519 | ✅ Created B-tree index: soap.idx_svc_name_dmetaphone_2 on soap.service_master(name_dmetaphone_2)
+2026-03-10 13:25:01,922 | INFO     | soap_generator | ensure_btree_index:519 | ✅ Created B-tree index: soap.idx_svc_name_dmetaphone_1_first on soap.service_master(name_dmetaphone_1_first)
+2026-03-10 13:25:01,924 | INFO     | soap_generator | ensure_btree_index:519 | ✅ Created B-tree index: soap.idx_svc_name_dmetaphone_2_first on soap.service_master(name_dmetaphone_2_first)
+2026-03-10 13:25:01,924 | INFO     | soap_generator | ensure_soap_service_master_metaphone_columns:1098 | soap.service_master phonetic indexing ready (generated columns + indexes)
+2026-03-10 13:25:02,297 | DEBUG    | soap_generator | _ground_one:4153 |    ✅ Grounded entity 'перелом клика нижнего челюсти' → added to manifest (total: 8)
+2026-03-10 13:25:02,297 | INFO     | soap_generator | _run_billing_pipeline_async:4346 |   ✅ Billing pipeline complete: 8 entities in manifest
+2026-03-10 13:25:04,032 | INFO     | soap_generator | generate_soap_note:2236 | SOAP note generated successfully
+2026-03-10 13:25:04,032 | INFO     | soap_generator | generate_soap_note:2237 | ✅ SOAP note generation completed (took 5.70s)
+2026-03-10 13:25:04,032 | INFO     | soap_generator | generate_soap_note:2238 | 📊 Input length: 248 characters
+2026-03-10 13:25:04,032 | INFO     | soap_generator | generate_soap_note:2239 | 📊 Output length: 1973 characters
+2026-03-10 13:25:04,035 | INFO     | soap_generator | save_output:1216 | Output saved successfully: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/soap_note_20260310_132441.txt (1973 characters)
+2026-03-10 13:25:04,035 | INFO     | soap_generator | process_transcription:2878 | SOAP note generation completed successfully
+2026-03-10 13:25:04,036 | INFO     | soap_generator | process_transcription:2885 | SOAP note (JSON) saved to: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/soap_note_20260310_132441.json
+2026-03-10 13:25:04,036 | INFO     | soap_generator | generate_soap_note_from_audio_async:4480 | ✅ Billing pipeline (CER + grounding) completed
+2026-03-10 13:25:04,036 | INFO     | soap_generator | generate_soap_note_from_audio_async:4499 | ✅ Billing pipeline: 8 entities in manifest
+2026-03-10 13:25:04,037 | INFO     | soap_generator | generate_soap_note_from_audio_async:4506 |   📄 Grounding layer output: 1 records → /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/grounding_layer_output_20260310_132441.json
+2026-03-10 13:25:04,037 | INFO     | soap_generator | generate_soap_note_from_audio_async:4650 | ✅ SOAP note already saved to: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/soap_note_20260310_132441.txt
+2026-03-10 13:25:04,038 | INFO     | soap_generator | generate_soap_note_from_audio_async:4663 | ✅ SOAP note (JSON) saved to: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/soap_note_20260310_132441.json
+2026-03-10 13:25:04,038 | INFO     | soap_generator | generate_soap_note_from_audio_async:4684 | ✅ Entity manifest saved to: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/entity_manifest_20260310_132441.json (8 entities)
+2026-03-10 13:25:04,043 | INFO     | soap_generator | generate_soap_note_from_audio_async:4724 | 🧬 Phase 2 Knowledge Atom extraction started (pre-extraction: parallel with constraint injection)
+2026-03-10 13:25:04,043 | INFO     | soap_generator | generate_soap_note_from_audio_async:4753 | ⏭️ Skipping post-SOAP injection; using Brain NER/grounded manifest output directly.
+2026-03-10 13:25:04,043 | INFO     | soap_generator | generate_soap_note_from_audio_async:4821 | 🧬 Phase 2 running in background (non-blocking); SOAP pipeline will not wait.
+2026-03-10 13:25:04,044 | INFO     | soap_generator | generate_soap_note_from_audio_async:4864 | SOAPTranscriptLoader not available (No module named 'soap_transcript_loader'); using built-in structured transcript fallback.
+2026-03-10 13:25:04,044 | INFO     | soap_generator | generate_soap_note_from_audio_async:4870 | ✅ Structured transcript (fallback) saved to: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/structured_transcript_20260310_132441.json
+2026-03-10 13:25:04,045 | INFO     | soap_generator | generate_soap_note_from_audio_async:4884 | ✅ Async pipeline completed in 22.54s
+2026-03-10 13:25:04,045 | INFO     | soap_generator | generate_soap_note_from_audio_async:4910 | ⏱️ Stage Wall-Clock (s): transcription=3.37, superpass=13.46, soap_pipeline=5.71, billing_pipeline=3.97, grounding_tail_after_soap=0.00, phase2=n/a, total=22.54
+2026-03-10 13:25:04,045 | INFO     | soap_generator | extract_knowledge_atoms_async:1564 | ============================================================
+2026-03-10 13:25:04,045 | INFO     | soap_generator | extract_knowledge_atoms_async:1565 | 🧬 PHASE 2: KNOWLEDGE ATOM EXTRACTION
+2026-03-10 13:25:04,045 | INFO     | soap_generator | extract_knowledge_atoms_async:1566 | ============================================================
+2026-03-10 13:25:04,045 | INFO     | soap_generator | extract_knowledge_atoms_async:1567 |   Model: gpt-4.1-mini (openai)
+2026-03-10 13:25:04,045 | INFO     | soap_generator | extract_knowledge_atoms_async:1568 |   Session ID: bf95ac12-e7db-450e-9633-27a3cb1e4236
+2026-03-10 13:25:04,045 | INFO     | soap_generator | extract_knowledge_atoms_async:1569 |   Entity manifest: 8 entities
+2026-03-10 13:25:04,045 | INFO     | soap_generator | extract_knowledge_atoms_async:1570 |   SOAP note length: 1973 chars
+2026-03-10 13:25:04,056 | INFO     | soap_generator | extract_knowledge_atoms_async:1583 |   ✅ Loaded KB schema: 6 assertion types, 15 kinds (cache_hit=False)
+2026-03-10 13:25:04,089 | DEBUG    | soap_generator | get_client_for_model:375 | 🔍 Model 'gpt-4.1-mini' → Provider: openai
+2026-03-10 13:25:04,094 | INFO     | soap_generator | get_client_for_model:401 | ✅ Created OpenAI client for 'gpt-4.1-mini' (OpenAI endpoint, key: sk-proj-xK...)
+2026-03-10 13:25:04,094 | DEBUG    | soap_generator | get_client_for_model:403 |    Client base_url: https://api.openai.com/v1/
+2026-03-10 13:25:04,094 | INFO     | soap_generator | extract_knowledge_atoms_async:1606 |   Provider resolved: openai
+2026-03-10 13:25:04,094 | INFO     | soap_generator | extract_knowledge_atoms_async:1651 |   📋 Phase 2 clinical core only: 735 chars (full SOAP 1973 chars)
+2026-03-10 13:25:04,094 | INFO     | soap_generator | extract_knowledge_atoms_async:1782 |   ⚡ Phase 2 minimal mode: single-call extraction (assertion + attributes)
+2026-03-10 13:25:04,094 | INFO     | soap_generator | extract_knowledge_atoms_async:1797 |   🧠 Phase 2 dynamic max_tokens=4800 (soap_chars=735, entities=8, floor=3200, ceil=10000)
+2026-03-10 13:25:26,609 | INFO     | soap_generator | extract_knowledge_atoms_async:1859 |   📊 Verification dashboard built: 13 items across 7 modules
+2026-03-10 13:25:26,611 | INFO     | soap_generator | extract_knowledge_atoms_async:1954 |   ✅ Knowledge atoms saved to: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/knowledge_atoms_20260310_132441.json
+2026-03-10 13:25:26,612 | INFO     | soap_generator | extract_knowledge_atoms_async:1963 |   ✅ Verification dashboard saved to: /Users/vivek/VETINSTANT/wip/New folder/P.A.W.S/SOAP notes - voice to text/OP/soap_note_experiment/output/soap_notes/verification_dashboard_20260310_132441.json
+2026-03-10 13:25:26,612 | INFO     | soap_generator | extract_knowledge_atoms_async:1978 |   ✅ Phase 2 complete: 4 atoms extracted in 22.57s
+2026-03-10 13:25:26,612 | INFO     | soap_generator | _phase2_done_callback:4809 | ✅ Phase 2 complete (background): 4 knowledge atoms extracted
+2026-03-10 13:25:26,613 | INFO     | soap_generator | generate_soap_note_from_audio_async:4931 | ✅ Phase 2 background task completed before pipeline exit

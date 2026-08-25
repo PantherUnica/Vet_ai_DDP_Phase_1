@@ -1,0 +1,109 @@
+[
+  {
+    "span_text": "4 зубов",
+    "normalized_name": "4 зубов",
+    "display_name": "4 зубов",
+    "kind": "Anatomy",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "non_billable_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "4 teeth",
+      "teeth",
+      "dental structure"
+    ],
+    "search_term": "4 teeth"
+  },
+  {
+    "span_text": "анализ крови",
+    "normalized_name": "blood test",
+    "display_name": "BLOOD TEST T4",
+    "kind": "Diagnostic",
+    "kb_concept_id": null,
+    "kb_preferred_name": "BLOOD TEST T4",
+    "kb_kind": "Diagnostic",
+    "match_method": "dual_sync_auto_bind_local",
+    "is_verified": true,
+    "similarity_score": 0.9538461538461538,
+    "local_stock_id": null,
+    "local_service_id": 912,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "blood test",
+      "blood analysis",
+      "lab test"
+    ],
+    "search_term": "blood test"
+  },
+  {
+    "span_text": "наркозом",
+    "normalized_name": "anesthesia",
+    "display_name": "ANESTHESIA",
+    "kind": "Procedure",
+    "kb_concept_id": null,
+    "kb_preferred_name": "ANESTHESIA",
+    "kb_kind": "Procedure",
+    "match_method": "dual_sync_auto_bind_local",
+    "is_verified": true,
+    "similarity_score": 1.0,
+    "local_stock_id": null,
+    "local_service_id": 1020,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "anesthesia",
+      "general anesthesia",
+      "sedation"
+    ],
+    "search_term": "anesthesia"
+  },
+  {
+    "span_text": "санацию ротовой полости",
+    "normalized_name": "dental sanitation",
+    "display_name": "DENTAL SCALING CAT",
+    "kind": "Procedure",
+    "kb_concept_id": null,
+    "kb_preferred_name": "DENTAL SCALING CAT",
+    "kb_kind": "Procedure",
+    "match_method": "dual_sync_auto_bind_local",
+    "is_verified": true,
+    "similarity_score": 0.8666163901458019,
+    "local_stock_id": null,
+    "local_service_id": 1161,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "dental sanitation",
+      "dental procedure",
+      "oral surgery"
+    ],
+    "search_term": "dental sanitation"
+  },
+  {
+    "span_text": "удалением зубов",
+    "normalized_name": "tooth extraction",
+    "display_name": "TOOTH EXTRACTION",
+    "kind": "Procedure",
+    "kb_concept_id": null,
+    "kb_preferred_name": "TOOTH EXTRACTION",
+    "kb_kind": "Procedure",
+    "match_method": "dual_sync_auto_bind_local",
+    "is_verified": true,
+    "similarity_score": 1.0,
+    "local_stock_id": null,
+    "local_service_id": 1163,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "tooth extraction",
+      "dental extraction",
+      "tooth removal"
+    ],
+    "search_term": "tooth extraction"
+  }
+]

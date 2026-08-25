@@ -1,0 +1,14 @@
+{
+  "Subjective": "Pet parent reports that blood test results were normal and the cat is ready for the procedure.",
+  "Objective": "Performed dental sanitation and tooth extraction under anesthesia. Four teeth were extracted.",
+  "Assessment": "The cat underwent dental sanitation with removal of four teeth under general anesthesia. Blood tests prior to procedure were normal, indicating fitness for anesthesia and surgery.",
+  "Plan": "Continue monitoring the cat post-procedure for any signs of pain or infection. Provide appropriate pain management and oral care instructions. Schedule follow-up appointment to assess healing and oral health.",
+  "Conclusion": "Dental sanitation and tooth extraction were successfully completed under anesthesia with no immediate complications.",
+  "DifferentialDiagnosis": "",
+  "KeyIssues": "Dental disease requiring sanitation and tooth extraction; anesthesia management; post-operative care.",
+  "AbnormalFindings": "Four teeth required extraction during dental sanitation.",
+  "CustomerInstructions": "Monitor the cat for signs of discomfort, swelling, or infection. Administer prescribed medications as directed. Maintain oral hygiene and avoid hard foods until healing is confirmed. Contact clinic if any concerns arise.",
+  "Protocols": "Pre-anesthetic blood testing to ensure patient fitness. General anesthesia protocol for dental procedures. Post-operative pain management and infection prevention protocols.",
+  "Vitals": "",
+  "Reminders": "Schedule follow-up visit to evaluate oral healing and overall health."
+}
