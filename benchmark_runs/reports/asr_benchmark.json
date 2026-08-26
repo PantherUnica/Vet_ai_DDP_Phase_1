@@ -1,17 +1,32 @@
 {
-  "generated_at": "2026-08-25T16:12:52",
+  "generated_at": "2026-08-26T12:06:03",
   "hypothesis_root": "C:\\VetAI_Phase1\\benchmark_runs\\deepgram_nova-3",
   "reference_dir": "C:\\VetAI_Phase1\\benchmark_runs\\references\\gemini",
   "run_id_filter": null,
   "summary": {
-    "files_scored": 10,
-    "mean_wer": 0.4526838523016098,
-    "median_wer": 0.4899440055430281,
-    "mean_cer": 0.2872383901228271,
-    "median_cer": 0.2418967587034814,
-    "mean_latency_ms": 123657
+    "files_scored": 11,
+    "mean_wer": 0.36611765009617575,
+    "median_wer": 0.33783783783783783,
+    "mean_cer": 0.2384855960264434,
+    "median_cer": 0.14666666666666667,
+    "mean_latency_ms": 131255.63636363635
   },
   "rows": [
+    {
+      "audio_slug": "test_1",
+      "reference_path": "C:\\VetAI_Phase1\\benchmark_runs\\references\\gemini\\test_1.txt",
+      "hypothesis_path": "C:\\VetAI_Phase1\\benchmark_runs\\deepgram_nova-3\\test_1\\step1_raw_transcription.txt",
+      "run_dir": "C:\\VetAI_Phase1\\benchmark_runs\\deepgram_nova-3\\test_1",
+      "latency_ms": 207242,
+      "wer": 0.5076628352490421,
+      "cer": 0.41759319816873774,
+      "substitutions": 145,
+      "deletions": 114,
+      "insertions": 6,
+      "hits": 263,
+      "reference_words": 522,
+      "hypothesis_words": 414
+    },
     {
       "audio_slug": "test_10",
       "reference_path": "C:\\VetAI_Phase1\\benchmark_runs\\references\\gemini\\test_10.txt",
@@ -63,13 +78,13 @@
       "hypothesis_path": "C:\\VetAI_Phase1\\benchmark_runs\\deepgram_nova-3\\test_3\\step1_raw_transcription.txt",
       "run_dir": "C:\\VetAI_Phase1\\benchmark_runs\\deepgram_nova-3\\test_3",
       "latency_ms": 2236,
-      "wer": 0.6666666666666666,
-      "cer": 0.48148148148148145,
-      "substitutions": 2,
-      "deletions": 4,
+      "wer": 0.2,
+      "cer": 0.03333333333333333,
+      "substitutions": 1,
+      "deletions": 0,
       "insertions": 0,
-      "hits": 3,
-      "reference_words": 9,
+      "hits": 4,
+      "reference_words": 5,
       "hypothesis_words": 5
     },
     {
@@ -138,13 +153,13 @@
       "hypothesis_path": "C:\\VetAI_Phase1\\benchmark_runs\\deepgram_nova-3\\test_8\\step1_raw_transcription.txt",
       "run_dir": "C:\\VetAI_Phase1\\benchmark_runs\\deepgram_nova-3\\test_8",
       "latency_ms": 5009,
-      "wer": 0.5405405405405406,
-      "cer": 0.2184873949579832,
-      "substitutions": 16,
-      "deletions": 3,
-      "insertions": 1,
-      "hits": 18,
-      "reference_words": 37,
+      "wer": 0.0,
+      "cer": 0.0,
+      "substitutions": 0,
+      "deletions": 0,
+      "insertions": 0,
+      "hits": 35,
+      "reference_words": 35,
       "hypothesis_words": 35
     },
     {
@@ -164,7 +179,5 @@
     }
   ],
   "missing_references": [],
-  "missing_hypotheses": [
-    "test_1"
-  ]
+  "missing_hypotheses": []
 }
