@@ -1,0 +1,306 @@
+[
+  {
+    "span_text": "boiled chicken",
+    "normalized_name": "boiled chicken",
+    "display_name": "boiled chicken",
+    "kind": "Diet",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "VitalSign",
+    "match_method": "vital_sign_structured",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "boiled chicken",
+      "cooked chicken",
+      "plain chicken"
+    ],
+    "search_term": "boiled chicken"
+  },
+  {
+    "span_text": "cat",
+    "normalized_name": "cat",
+    "display_name": "cat",
+    "kind": "Other",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "other_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "cat",
+      "feline",
+      "domestic cat"
+    ],
+    "search_term": "cat"
+  },
+  {
+    "span_text": "changed her food only last week",
+    "normalized_name": "changed her food only last week",
+    "display_name": "changed her food only last week",
+    "kind": "Other",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "other_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "recent diet change",
+      "food change",
+      "diet modification"
+    ],
+    "search_term": "recent diet change"
+  },
+  {
+    "span_text": "chicken broth",
+    "normalized_name": "chicken broth",
+    "display_name": "chicken broth",
+    "kind": "Diet",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "VitalSign",
+    "match_method": "vital_sign_structured",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "chicken broth",
+      "broth",
+      "meat broth"
+    ],
+    "search_term": "chicken broth"
+  },
+  {
+    "span_text": "house was painted recently",
+    "normalized_name": "house was painted recently",
+    "display_name": "house was painted recently",
+    "kind": "Other",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "other_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "recent house painting",
+      "house painted",
+      "home painting"
+    ],
+    "search_term": "recent house painting"
+  },
+  {
+    "span_text": "lukewarm water",
+    "normalized_name": "lukewarm water",
+    "display_name": "lukewarm water",
+    "kind": "Diet",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "VitalSign",
+    "match_method": "vital_sign_structured",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "lukewarm water",
+      "warm water",
+      "tepid water"
+    ],
+    "search_term": "lukewarm water"
+  },
+  {
+    "span_text": "lying in one place",
+    "normalized_name": "lying in one place",
+    "display_name": "lying in one place",
+    "kind": "Symptom",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "non_billable_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "lying still",
+      "immobility",
+      "inactivity"
+    ],
+    "search_term": "lying still"
+  },
+  {
+    "span_text": "not drinking any water",
+    "normalized_name": "not drinking any water",
+    "display_name": "not drinking any water",
+    "kind": "Symptom",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "non_billable_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "not drinking water",
+      "not hydrated",
+      "refusing water"
+    ],
+    "search_term": "not drinking water"
+  },
+  {
+    "span_text": "not eating recently",
+    "normalized_name": "not eating recently",
+    "display_name": "not eating recently",
+    "kind": "Symptom",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "non_billable_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "anorexia",
+      "decreased appetite",
+      "loss of appetite"
+    ],
+    "search_term": "anorexia"
+  },
+  {
+    "span_text": "not vomiting",
+    "normalized_name": "not vomiting",
+    "display_name": "not vomiting",
+    "kind": "Symptom",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "non_billable_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "no vomiting",
+      "absence of vomiting",
+      "not throwing up"
+    ],
+    "search_term": "no vomiting"
+  },
+  {
+    "span_text": "quiet room",
+    "normalized_name": "quiet room",
+    "display_name": "quiet room",
+    "kind": "Other",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "other_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "quiet room",
+      "calm room",
+      "noise-free room"
+    ],
+    "search_term": "quiet room"
+  },
+  {
+    "span_text": "stopped eating",
+    "normalized_name": "stopped eating",
+    "display_name": "stopped eating",
+    "kind": "Symptom",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "non_billable_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "anorexia",
+      "loss of appetite",
+      "not eating"
+    ],
+    "search_term": "anorexia"
+  },
+  {
+    "span_text": "temperature",
+    "normalized_name": "temperature",
+    "display_name": "temperature",
+    "kind": "VitalSign",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "VitalSign",
+    "match_method": "vital_sign_structured",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "body temperature",
+      "temperature",
+      "fever measurement"
+    ],
+    "search_term": "body temperature"
+  },
+  {
+    "span_text": "very low since yesterday",
+    "normalized_name": "very low since yesterday",
+    "display_name": "very low since yesterday",
+    "kind": "Symptom",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "non_billable_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "lethargy",
+      "decreased activity",
+      "low energy"
+    ],
+    "search_term": "lethargy"
+  },
+  {
+    "span_text": "water",
+    "normalized_name": "water",
+    "display_name": "water",
+    "kind": "Diet",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "VitalSign",
+    "match_method": "vital_sign_structured",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "water",
+      "drinking water",
+      "hydration fluid"
+    ],
+    "search_term": "water"
+  },
+  {
+    "span_text": "wet food",
+    "normalized_name": "wet food",
+    "display_name": "wet food",
+    "kind": "Diet",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "VitalSign",
+    "match_method": "vital_sign_structured",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "wet food",
+      "moist food",
+      "soft food"
+    ],
+    "search_term": "wet food"
+  }
+]

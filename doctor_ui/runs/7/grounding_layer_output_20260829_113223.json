@@ -1,0 +1,319 @@
+[
+  {
+    "span_text": "fever injection",
+    "normalized_name": "fever injection",
+    "kind": "Medication",
+    "route": "dual_sync",
+    "candidates": [],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "fever injection",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "unlinked",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "appetite stimulant",
+    "normalized_name": "appetite stimulant",
+    "kind": "Medication",
+    "route": "dual_sync",
+    "candidates": [],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "appetite stimulant",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "unlinked",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "viral",
+    "normalized_name": "viral",
+    "kind": "Diagnosis",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "INJECTION EFECTAL",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "gastroenterology",
+        "definition": null,
+        "score": 0.6016339869281045
+      },
+      {
+        "rank": 2,
+        "source": "local",
+        "preferred_name": "INJECTION K",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "internal_medicine",
+        "definition": null,
+        "score": 0.6579124579124579
+      },
+      {
+        "rank": 3,
+        "source": "local",
+        "preferred_name": "INJECTION T.T",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "preventative_wellness",
+        "definition": null,
+        "score": 0.6159544159544159
+      },
+      {
+        "rank": 4,
+        "source": "local",
+        "preferred_name": "INJECTION VIN CHEMO",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "oncology",
+        "definition": null,
+        "score": 0.5809941520467836
+      },
+      {
+        "rank": 5,
+        "source": "local",
+        "preferred_name": "INJECTION VITAMIN K",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "general",
+        "definition": null,
+        "score": 0.5809941520467836
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "viral",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "note_only_below_threshold",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "liquid medicine",
+    "normalized_name": "liquid medicine",
+    "kind": "Medication",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "Lupin Lupic LD 5 mg+2 mg 15 ml Paediatric",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "respiratory",
+        "definition": null,
+        "score": 0.6468626110731374
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "liquid medicine",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "dual_sync_judge_rejected",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "drops",
+    "normalized_name": "drops",
+    "kind": "Medication",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "NASELINI DROPS",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "respiratory",
+        "definition": null,
+        "score": 0.7523809523809524
+      },
+      {
+        "rank": 2,
+        "source": "local",
+        "preferred_name": "LIV 52 DROPS",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "internal_medicine",
+        "definition": null,
+        "score": 0.7511111111111112
+      },
+      {
+        "rank": 3,
+        "source": "local",
+        "preferred_name": "VEROL DROPS 15ML",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "ophthalmology",
+        "definition": null,
+        "score": 0.747037037037037
+      },
+      {
+        "rank": 4,
+        "source": "local",
+        "preferred_name": "Veko Otikoo Ear Drops 0.3% 15 ml",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "dermatology",
+        "definition": null,
+        "score": 0.707
+      },
+      {
+        "rank": 5,
+        "source": "local",
+        "preferred_name": "Cipla Oflox 0.3% 5 ml Eye/Ear Drops",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "ophthalmology",
+        "definition": null,
+        "score": 0.7000000000000001
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "drops",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "dual_sync_judge_rejected",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "stress",
+    "normalized_name": "stress",
+    "kind": "Diagnosis",
+    "route": "dual_sync",
+    "candidates": [],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "stress",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "note_only_below_threshold",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "fever",
+    "normalized_name": "fever",
+    "kind": "Diagnosis",
+    "route": "dual_sync",
+    "candidates": [],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "fever",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "note_only_below_threshold",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "blood test",
+    "normalized_name": "blood test",
+    "kind": "Diagnostic",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "BLOOD TEST T4",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "endocrinology",
+        "definition": null,
+        "score": 0.8830769230769231
+      },
+      {
+        "rank": 2,
+        "source": "local",
+        "preferred_name": "BLOOD TEST CBC",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "diagnostic_lab",
+        "definition": null,
+        "score": 0.8742857142857143
+      },
+      {
+        "rank": 3,
+        "source": "local",
+        "preferred_name": "BLOOD TEST FSH",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "endocrinology",
+        "definition": null,
+        "score": 0.8742857142857143
+      },
+      {
+        "rank": 4,
+        "source": "local",
+        "preferred_name": "BLOOD TEST 4DX",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "diagnostic_lab",
+        "definition": null,
+        "score": 0.8742857142857143
+      },
+      {
+        "rank": 5,
+        "source": "local",
+        "preferred_name": "BLOOD TEST ACTH",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "endocrinology",
+        "definition": null,
+        "score": 0.8666666666666667
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "blood test",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "dual_sync_judge_rejected",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "syringe",
+    "normalized_name": "syringe",
+    "kind": "Procedure",
+    "route": "dual_sync",
+    "candidates": [],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "syringe",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "unlinked",
+      "similarity_score": null
+    }
+  }
+]

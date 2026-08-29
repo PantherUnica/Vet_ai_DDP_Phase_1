@@ -1,0 +1,114 @@
+[
+  {
+    "speaker": "U",
+    "text": "Veterinarian: Hi Rakesh, Bunny. How is your cat? She looks a little dull today."
+  },
+  {
+    "speaker": "U",
+    "text": "Pet Parent: Hi doctor. She has been very low since yesterday. She is not vomiting but she is lying in one place. She has been silent and not eating recently."
+  },
+  {
+    "speaker": "U",
+    "text": "Veterinarian: Actually, how is she? I changed her food only last week, but she was eating until two days ago. Suddenly she stopped eating."
+  },
+  {
+    "speaker": "U",
+    "text": "Pet Parent: Yes, doctor. Now I will check her temperature."
+  },
+  {
+    "speaker": "U",
+    "text": "Veterinarian: Okay."
+  },
+  {
+    "speaker": "U",
+    "text": "Pet Parent: It is 103.5 degrees Fahrenheit."
+  },
+  {
+    "speaker": "U",
+    "text": "Veterinarian: She has a fever."
+  },
+  {
+    "speaker": "U",
+    "text": "Pet Parent: Doctor, is it serious?"
+  },
+  {
+    "speaker": "U",
+    "text": "Veterinarian: Don't worry. Fever is common in cats. Sometimes it is viral, sometimes due to stress. It can be both. Have there been any changes at home recently or travel around your house?"
+  },
+  {
+    "speaker": "U",
+    "text": "Pet Parent: Yes, actually the house was painted recently. There was a full smell and sound, and maybe she got stressed because of that."
+  },
+  {
+    "speaker": "U",
+    "text": "Veterinarian: Yes, cats commonly get stressed by sudden changes. I will give her a fever injection and one appetite stimulant."
+  },
+  {
+    "speaker": "U",
+    "text": "Pet Parent: Sorry doctor, at home I have a humidifier."
+  },
+  {
+    "speaker": "U",
+    "text": "Veterinarian: You keep her in a quiet room. Because of the paint smell and noise, keep her in that room and give her wet food which has a strong smell. It might tempt her to eat and improve her appetite. Water is important."
+  },
+  {
+    "speaker": "U",
+    "text": "Pet Parent: I will make sure that she is always drinking water. She is not drinking any water."
+  },
+  {
+    "speaker": "U",
+    "text": "Veterinarian: The most important thing is lukewarm water or chicken broth. Add a little salt. Boil it well. If she is not drinking any kind of fluids, then we might have to put her on fluids immediately."
+  },
+  {
+    "speaker": "U",
+    "text": "Pet Parent: Okay, doctor."
+  },
+  {
+    "speaker": "U",
+    "text": "Veterinarian: Even boiled chicken is good."
+  },
+  {
+    "speaker": "U",
+    "text": "Pet Parent: Okay, that would be perfect. Even boiled chicken."
+  },
+  {
+    "speaker": "U",
+    "text": "Veterinarian: Are you giving her too much? Drastic changes might upset her stomach."
+  },
+  {
+    "speaker": "U",
+    "text": "Pet Parent: Sorry doctor, how about medicine?"
+  },
+  {
+    "speaker": "U",
+    "text": "Veterinarian: I will give you liquid medicine so that it is easy to give her. You can put the drops in the broth or lukewarm water."
+  },
+  {
+    "speaker": "U",
+    "text": "Pet Parent: Okay."
+  },
+  {
+    "speaker": "U",
+    "text": "Veterinarian: If she is not taking it, you can drop the chicken broth with medicine using a syringe and put it on the side of her mouth. In case she spits it out and has not taken any medication."
+  },
+  {
+    "speaker": "U",
+    "text": "Pet Parent: Okay."
+  },
+  {
+    "speaker": "U",
+    "text": "Veterinarian: If in two days the appetite is not back and she is very lethargic, then we will do a blood test and see if there is any other issue."
+  },
+  {
+    "speaker": "U",
+    "text": "Pet Parent: Sorry doctor, thank you so much."
+  },
+  {
+    "speaker": "U",
+    "text": "Veterinarian: No problem, bye."
+  },
+  {
+    "speaker": "U",
+    "text": "Pet Parent: Thank you."
+  }
+]

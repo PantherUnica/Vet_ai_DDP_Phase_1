@@ -1,0 +1,26 @@
+Veterinarian: Hi Rakesh, Bunny. How is your cat? She looks a little dull today.
+Pet Parent: Hi doctor. She has been very low since yesterday. She is not vomiting but she is lying in one place. She has been silent and not eating recently.
+Veterinarian: Actually, how is she? I changed her food only last week, but she was eating until two days ago. Suddenly she stopped eating.
+Pet Parent: Yes, doctor.
+Veterinarian: Let's check her temperature now.
+Pet Parent: Okay.
+Veterinarian: It is 103.5 degrees Fahrenheit. She has a fever.
+Pet Parent: Oh doctor, is it serious?
+Veterinarian: Don't worry. Fever is common in cats. Sometimes it is viral, sometimes due to stress. It can be both. Have there been any changes at home recently or travel around your house?
+Pet Parent: Yes, actually the house was painted recently. There was a full smell and sound, so maybe she got stressed.
+Veterinarian: Yes, cats commonly get stressed by sudden changes. I will give her a fever injection and one appetite stimulant.
+Pet Parent: Sorry doctor, at home I have a humidifier.
+Veterinarian: You keep her in a quiet room. Keep her away from paint smell and noise. Give her wet food which has a strong smell. It might tempt her to eat and improve her appetite. Water is important.
+Pet Parent: I will make sure she is always drinking water. She is not drinking any water now.
+Veterinarian: The most important is lukewarm water or chicken broth. Add a little salt. Boil it well. If she is not drinking any fluids, then we might have to put her on fluids immediately.
+Pet Parent: Okay doctor.
+Veterinarian: Even boiled chicken is good.
+Pet Parent: Okay, that would be perfect. Even boiled chicken.
+Veterinarian: Are you giving her too much? Drastic changes might upset her stomach.
+Pet Parent: Sorry doctor, I have medicine. I will give her liquid medicine so that it is easy to give by mouth. I will put drops in the broth.
+Veterinarian: Giving medicine in lukewarm water drops is fine. If she is not taking it, you can use a dropper or syringe to put it on the side of her mouth.
+Pet Parent: Okay doctor.
+Veterinarian: If in two days the appetite is not back and she is very lethargic, then we will do a blood test to see if there is any other issue.
+Pet Parent: Sorry doctor, thank you so much.
+Veterinarian: No problem, bye.
+Pet Parent: Thank you.

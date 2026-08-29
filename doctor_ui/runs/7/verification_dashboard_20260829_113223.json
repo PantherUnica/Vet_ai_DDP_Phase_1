@@ -1,0 +1,438 @@
+{
+  "procedures_services": [],
+  "medications_administered": [],
+  "medications_prescribed": [],
+  "diagnostics": [
+    {
+      "service_id": null,
+      "lab_radiology": "Radiology",
+      "test_name": "Fever Injection",
+      "date_of_test": "TBD",
+      "done": "External",
+      "sample_collected": "No",
+      "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment. [Unlinked – ACTION REQUIRED: select service for billing]"
+    },
+    {
+      "service_id": null,
+      "lab_radiology": "LAB",
+      "test_name": "Blood Test",
+      "date_of_test": "TBD",
+      "done": "External",
+      "sample_collected": "No",
+      "remarks": "Generic diagnostic detected. Select a specific billing variant from the suggestions below. [Unlinked – ACTION REQUIRED: select service for billing]"
+    }
+  ],
+  "other_products_retail": [],
+  "reminders_follow_ups": [
+    {
+      "item_name": "Quiet Room",
+      "item_id": "[REMINDER-XXX]",
+      "due_date": "ASAP",
+      "remarks": "Keep cat in a quiet room away from paint smell and noise",
+      "intent_context": "Scheduled",
+      "kind": "Reminder"
+    },
+    {
+      "item_name": "Monitor Appetite and Activity",
+      "item_id": "[REMINDER-XXX]",
+      "due_date": "2 days",
+      "remarks": "Monitor appetite and activity",
+      "intent_context": "Scheduled",
+      "kind": "Reminder"
+    }
+  ],
+  "vitals": [
+    {
+      "vital_name": "Temperature",
+      "value": "103.5 Fahrenheit"
+    }
+  ],
+  "module_4_unlinked_entities": [
+    {
+      "item_name": "Fever Injection",
+      "kind": "Medicine",
+      "intent_context": "Administered",
+      "intent": "Administered (Medicine)",
+      "status": "ACTION REQUIRED",
+      "reason": "MISSING_LOCAL_ID",
+      "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+      "suggestions": [],
+      "inventory_id": null,
+      "administered_prescribed": "Administered",
+      "fulfillment": "Internal",
+      "quantity": "",
+      "dosage": "",
+      "duration": "",
+      "frequency": "Custom",
+      "instructions": "",
+      "route": ""
+    },
+    {
+      "item_name": "Appetite Stimulant",
+      "kind": "Medicine",
+      "intent_context": "Administered",
+      "intent": "Administered (Medicine)",
+      "status": "ACTION REQUIRED",
+      "reason": "MISSING_LOCAL_ID",
+      "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+      "suggestions": [],
+      "inventory_id": null,
+      "administered_prescribed": "Administered",
+      "fulfillment": "Internal",
+      "quantity": "",
+      "dosage": "",
+      "duration": "",
+      "frequency": "Custom",
+      "instructions": "",
+      "route": "liquid"
+    },
+    {
+      "item_name": "Oral Drops",
+      "kind": "Medicine",
+      "intent_context": "Administered",
+      "intent": "Administered (Medicine)",
+      "status": "ACTION REQUIRED",
+      "reason": "AMBIGUOUS_MATCH",
+      "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+      "suggestions": [
+        {
+          "name": "NASELINI DROPS",
+          "match_score": 0.7904761904761904,
+          "recommendation": "MEDIUM",
+          "inventory_id": 40684,
+          "stock_id": 40684
+        },
+        {
+          "name": "LIV 52 DROPS",
+          "match_score": 0.7888888888888889,
+          "recommendation": "MEDIUM",
+          "inventory_id": 40885,
+          "stock_id": 40885
+        },
+        {
+          "name": "VEROL DROPS 15ML",
+          "match_score": 0.7837962962962962,
+          "recommendation": "MEDIUM",
+          "inventory_id": 39693,
+          "stock_id": 39693
+        },
+        {
+          "name": "Veko Otikoo Ear Drops 0.3% 15 ml",
+          "match_score": 0.7337499999999999,
+          "recommendation": "MEDIUM",
+          "inventory_id": 42380,
+          "stock_id": 42380
+        },
+        {
+          "name": "Cipla Oflox 0.3% 5 ml Eye/Ear Drops",
+          "match_score": 0.7250000000000001,
+          "recommendation": "MEDIUM",
+          "inventory_id": 42391,
+          "stock_id": 42391
+        }
+      ],
+      "inventory_id": null,
+      "administered_prescribed": "Administered",
+      "fulfillment": "Internal",
+      "quantity": "",
+      "dosage": "",
+      "duration": "",
+      "frequency": "Custom",
+      "instructions": "",
+      "route": "oral"
+    },
+    {
+      "item_name": "Blood Test",
+      "kind": "Diagnostic",
+      "intent_context": "Ordered",
+      "intent": "Ordered (Diagnostic)",
+      "status": "ACTION REQUIRED",
+      "reason": "AMBIGUOUS_MATCH",
+      "remarks": "Generic diagnostic detected. Select a specific billing variant from the suggestions below.",
+      "suggestions": [
+        {
+          "name": "BLOOD TEST T4",
+          "match_score": 0.9538461538461538,
+          "recommendation": "MEDIUM",
+          "service_id": 912
+        },
+        {
+          "name": "BLOOD TEST CBC",
+          "match_score": 0.9428571428571428,
+          "recommendation": "MEDIUM",
+          "service_id": 909
+        },
+        {
+          "name": "BLOOD TEST FSH",
+          "match_score": 0.9428571428571428,
+          "recommendation": "MEDIUM",
+          "service_id": 910
+        },
+        {
+          "name": "BLOOD TEST 4DX",
+          "match_score": 0.9428571428571428,
+          "recommendation": "MEDIUM",
+          "service_id": 907
+        },
+        {
+          "name": "BLOOD TEST ACTH",
+          "match_score": 0.9333333333333333,
+          "recommendation": "MEDIUM",
+          "service_id": 908
+        }
+      ],
+      "service_id": null,
+      "lab_radiology": "LAB",
+      "test_name": "Blood Test",
+      "date_of_test": "TBD",
+      "done": "External",
+      "sample_collected": "No"
+    },
+    {
+      "item_name": "Wet Food",
+      "kind": "Nutrition",
+      "intent_context": "Prescribed",
+      "intent": "Prescribed (Nutrition)",
+      "status": "ACTION REQUIRED",
+      "reason": "MISSING_LOCAL_ID",
+      "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+      "suggestions": [],
+      "inventory_id": null,
+      "administered_prescribed": "Prescribed",
+      "fulfillment": "Internal",
+      "quantity": "",
+      "dosage": "",
+      "duration": "",
+      "frequency": "Custom",
+      "instructions": "",
+      "route": ""
+    },
+    {
+      "item_name": "Syringe",
+      "kind": "Procedure",
+      "intent_context": "Performed",
+      "intent": "Performed (Procedure)",
+      "status": "ACTION REQUIRED",
+      "reason": "MISSING_LOCAL_ID",
+      "remarks": "Mentioned as procedure; no matching inventory/service SKU found. Vet must select specific SKU for billing.",
+      "suggestions": [],
+      "service_id": null
+    }
+  ],
+  "module_5_clinical_history": [],
+  "streamlined_dashboard": {
+    "signalment_vitals": [
+      {
+        "name": "Temperature",
+        "original_mention": "",
+        "status": "CONFIRMED",
+        "linked_id": null,
+        "suggestions": [],
+        "value": "103.5 Fahrenheit",
+        "label": "Vitals"
+      }
+    ],
+    "clinical_assessment": [],
+    "pharmacy_administered": [
+      {
+        "name": "Fever Injection",
+        "original_mention": "Fever Injection",
+        "status": "ACTION_REQUIRED",
+        "linked_id": null,
+        "suggestions": [],
+        "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+        "reason": "MISSING_LOCAL_ID",
+        "dosage": "",
+        "route": "",
+        "required_fields": [
+          "dosage",
+          "route"
+        ],
+        "label": "Administered (In-Clinic)"
+      },
+      {
+        "name": "Appetite Stimulant",
+        "original_mention": "Appetite Stimulant",
+        "status": "ACTION_REQUIRED",
+        "linked_id": null,
+        "suggestions": [],
+        "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+        "reason": "MISSING_LOCAL_ID",
+        "dosage": "",
+        "route": "liquid",
+        "required_fields": [
+          "dosage",
+          "route"
+        ],
+        "label": "Administered (In-Clinic)"
+      },
+      {
+        "name": "Oral Drops",
+        "original_mention": "Oral Drops",
+        "status": "ACTION_REQUIRED",
+        "linked_id": null,
+        "suggestions": [
+          {
+            "name": "NASELINI DROPS",
+            "match_score": 0.7904761904761904,
+            "recommendation": "MEDIUM",
+            "inventory_id": 40684,
+            "stock_id": 40684
+          },
+          {
+            "name": "LIV 52 DROPS",
+            "match_score": 0.7888888888888889,
+            "recommendation": "MEDIUM",
+            "inventory_id": 40885,
+            "stock_id": 40885
+          },
+          {
+            "name": "VEROL DROPS 15ML",
+            "match_score": 0.7837962962962962,
+            "recommendation": "MEDIUM",
+            "inventory_id": 39693,
+            "stock_id": 39693
+          },
+          {
+            "name": "Veko Otikoo Ear Drops 0.3% 15 ml",
+            "match_score": 0.7337499999999999,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42380,
+            "stock_id": 42380
+          },
+          {
+            "name": "Cipla Oflox 0.3% 5 ml Eye/Ear Drops",
+            "match_score": 0.7250000000000001,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42391,
+            "stock_id": 42391
+          }
+        ],
+        "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+        "reason": "AMBIGUOUS_MATCH",
+        "dosage": "",
+        "route": "oral",
+        "required_fields": [
+          "dosage",
+          "route"
+        ],
+        "label": "Administered (In-Clinic)"
+      }
+    ],
+    "pharmacy_prescribed": [
+      {
+        "name": "Wet Food",
+        "original_mention": "Wet Food",
+        "status": "ACTION_REQUIRED",
+        "linked_id": null,
+        "suggestions": [],
+        "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+        "reason": "MISSING_LOCAL_ID",
+        "dosage": "",
+        "frequency": "Custom",
+        "duration": "",
+        "quantity": "",
+        "instructions": "",
+        "required_fields": [
+          "frequency",
+          "duration"
+        ],
+        "label": "Prescribed (Home Care)"
+      }
+    ],
+    "diagnostics_labs_imaging": [
+      {
+        "name": "Blood Test",
+        "original_mention": "Blood Test",
+        "status": "ACTION_REQUIRED",
+        "linked_id": null,
+        "suggestions": [
+          {
+            "name": "BLOOD TEST T4",
+            "match_score": 0.9538461538461538,
+            "recommendation": "MEDIUM",
+            "service_id": 912
+          },
+          {
+            "name": "BLOOD TEST CBC",
+            "match_score": 0.9428571428571428,
+            "recommendation": "MEDIUM",
+            "service_id": 909
+          },
+          {
+            "name": "BLOOD TEST FSH",
+            "match_score": 0.9428571428571428,
+            "recommendation": "MEDIUM",
+            "service_id": 910
+          },
+          {
+            "name": "BLOOD TEST 4DX",
+            "match_score": 0.9428571428571428,
+            "recommendation": "MEDIUM",
+            "service_id": 907
+          },
+          {
+            "name": "BLOOD TEST ACTH",
+            "match_score": 0.9333333333333333,
+            "recommendation": "MEDIUM",
+            "service_id": 908
+          }
+        ],
+        "remarks": "Generic diagnostic detected. Select a specific billing variant from the suggestions below.",
+        "reason": "AMBIGUOUS_MATCH"
+      }
+    ],
+    "clinical_procedures_services": [
+      {
+        "name": "Syringe",
+        "original_mention": "Syringe",
+        "status": "ACTION_REQUIRED",
+        "linked_id": null,
+        "suggestions": [],
+        "remarks": "Mentioned as procedure; no matching inventory/service SKU found. Vet must select specific SKU for billing.",
+        "reason": "MISSING_LOCAL_ID"
+      }
+    ],
+    "other_products_retail": [],
+    "preventive": [],
+    "patient_reminders": [],
+    "clinical_follow_ups": [
+      {
+        "name": "Quiet Room",
+        "original_mention": "Quiet Room",
+        "status": "DRAFTED",
+        "linked_id": "[REMINDER-XXX]",
+        "suggestions": [],
+        "due_date": "ASAP",
+        "remarks": "Keep cat in a quiet room away from paint smell and noise",
+        "is_operational": true,
+        "scheduling_data": {
+          "service_id": null,
+          "temporal_offset": "ASAP",
+          "recommended_date": null,
+          "priority": "Routine",
+          "item_id": "[REMINDER-XXX]"
+        },
+        "label": "Clinical Follow-up"
+      },
+      {
+        "name": "Monitor Appetite and Activity",
+        "original_mention": "Monitor Appetite and Activity",
+        "status": "DRAFTED",
+        "linked_id": "[REMINDER-XXX]",
+        "suggestions": [],
+        "due_date": "2 days",
+        "remarks": "Monitor appetite and activity",
+        "is_operational": true,
+        "scheduling_data": {
+          "service_id": null,
+          "temporal_offset": "2 days",
+          "recommended_date": null,
+          "priority": "Routine",
+          "item_id": "[REMINDER-XXX]"
+        },
+        "label": "Clinical Follow-up"
+      }
+    ]
+  }
+}

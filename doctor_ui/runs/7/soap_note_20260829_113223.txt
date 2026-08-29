@@ -1,0 +1,14 @@
+{
+  "Subjective": "Cat presented with lethargy, anorexia, immobility, and not drinking water since yesterday. No vomiting reported. Recent diet change noted one week ago. Owner reports recent environmental change with house painting causing stress.",
+  "Objective": "Body temperature measured at 103.5°F indicating fever. Cat appears dull and lethargic, lying in one place, silent, and not eating.",
+  "Assessment": "Fever likely due to viral infection or stress from recent environmental changes. Anorexia and lethargy consistent with systemic illness or stress response. No vomiting observed. Differential diagnosis includes viral infection, stress-induced illness, or other underlying causes to be ruled out with further testing if no improvement.",
+  "Plan": "Administer fever injection (antipyretic) and appetite stimulant as liquid medication. Provide wet food with strong smell to encourage eating. Ensure hydration with lukewarm water or chicken broth with a little salt. Use syringe to administer oral drops if cat refuses medication in broth or water. Keep cat in a quiet room away from paint smell and noise. Monitor appetite and activity for two days. If no improvement, perform blood test to investigate further.",
+  "Conclusion": "Cat is febrile with lethargy and anorexia likely due to stress and/or viral infection. Supportive care initiated with medication and environmental management. Close monitoring required.",
+  "DifferentialDiagnosis": "Viral infection, stress-induced illness, other systemic infections or conditions causing fever and anorexia.",
+  "KeyIssues": "Fever, anorexia, lethargy, recent environmental stress, hydration status.",
+  "AbnormalFindings": "Elevated body temperature (103.5°F), lethargy, anorexia, not drinking water.",
+  "CustomerInstructions": "Keep cat in a quiet, calm room away from paint smell and noise. Offer wet food with strong smell and lukewarm water or chicken broth with a little salt. Administer prescribed liquid medication in broth or water or use syringe if needed. Monitor cat's appetite and activity closely. Ensure hydration. Return for blood test if no improvement in two days.",
+  "Protocols": "Administer antipyretic injection and appetite stimulant. Provide supportive care with diet and hydration. Environmental stress reduction. Follow-up blood test if no improvement.",
+  "Vitals": "Temperature: 103.5°F (fever)",
+  "Reminders": "Monitor for return of appetite and activity. Ensure hydration. Follow up in two days or sooner if condition worsens."
+}

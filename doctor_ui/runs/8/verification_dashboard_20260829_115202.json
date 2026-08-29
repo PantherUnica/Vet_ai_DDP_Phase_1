@@ -1,0 +1,530 @@
+{
+  "procedures_services": [],
+  "medications_administered": [],
+  "medications_prescribed": [],
+  "diagnostics": [],
+  "other_products_retail": [],
+  "reminders_follow_ups": [
+    {
+      "item_name": "Topical Ointment Application",
+      "item_id": "[PROCEDURE-XXX]",
+      "due_date": "ASAP",
+      "remarks": "Apply prescribed topical ointment to the affected tail area after gently wiping with pet wipes or a damp cloth | Apply prescribed topical ointment to the affected tail area",
+      "intent_context": "Scheduled",
+      "kind": "Procedure"
+    },
+    {
+      "item_name": "Hair Trimming",
+      "item_id": "[PROCEDURE-XXX]",
+      "due_date": "ASAP",
+      "remarks": "Trim hair around the affected area using a trimmer to allow better ointment application | Trim hair around the affected area using a trimmer",
+      "intent_context": "Scheduled",
+      "kind": "Procedure"
+    },
+    {
+      "item_name": "Cleaning",
+      "item_id": "[PROCEDURE-XXX]",
+      "due_date": "ASAP",
+      "remarks": "consider thorough cleaning and re-examination if infection persists",
+      "intent_context": "Scheduled",
+      "kind": "Procedure"
+    },
+    {
+      "item_name": "Regular Grooming",
+      "item_id": "[PROCEDURE-XXX]",
+      "due_date": "ASAP",
+      "remarks": "Continue regular grooming every two weeks with slight trimming rather than full shaving",
+      "intent_context": "Scheduled",
+      "kind": "Procedure"
+    },
+    {
+      "item_name": "Follow-up for Vaccination and Parasite Control",
+      "item_id": "[REMINDER-XXX]",
+      "due_date": "every 3 months",
+      "remarks": "vaccination and parasite control",
+      "intent_context": "Scheduled",
+      "kind": "Reminder"
+    },
+    {
+      "item_name": "Vaccination Follow-up",
+      "item_id": "[REMINDER-XXX]",
+      "due_date": "every 3 months",
+      "remarks": "vaccination and parasite control",
+      "intent_context": "Scheduled",
+      "kind": "Reminder"
+    },
+    {
+      "item_name": "Vaccination",
+      "item_id": "[PROCEDURE-XXX]",
+      "due_date": "ASAP",
+      "remarks": "Follow up as needed for vaccination every 3 months",
+      "intent_context": "Scheduled",
+      "kind": "Procedure"
+    },
+    {
+      "item_name": "Parasite control",
+      "item_id": "[PROCEDURE-XXX]",
+      "due_date": "ASAP",
+      "remarks": "Follow up as needed for parasite control every 3 months",
+      "intent_context": "Scheduled",
+      "kind": "Procedure"
+    },
+    {
+      "item_name": "Trimming",
+      "item_id": "[PROCEDURE-XXX]",
+      "due_date": "ASAP",
+      "remarks": "Trim hair around the affected area using a trimmer",
+      "intent_context": "Scheduled",
+      "kind": "Procedure"
+    }
+  ],
+  "vitals": [
+    {
+      "vital_name": "Weight",
+      "value": "5 kg"
+    },
+    {
+      "vital_name": "Temperature",
+      "value": "Mild fever"
+    }
+  ],
+  "module_4_unlinked_entities": [
+    {
+      "item_name": "Oral Tablet Medication",
+      "kind": "Medicine",
+      "intent_context": "Prescribed",
+      "intent": "Prescribed (Medicine)",
+      "status": "ACTION REQUIRED",
+      "reason": "AMBIGUOUS_MATCH",
+      "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+      "suggestions": [
+        {
+          "name": "LASIX TABLET",
+          "match_score": 0.8190235690235691,
+          "recommendation": "MEDIUM",
+          "inventory_id": 40900,
+          "stock_id": 40900
+        },
+        {
+          "name": "ALLERGIA TABLET",
+          "match_score": 0.7419191919191919,
+          "recommendation": "MEDIUM",
+          "inventory_id": 41928,
+          "stock_id": 41928
+        },
+        {
+          "name": "Devbhoomi Fexorise-M 120 mg 10 x 10 Tablets",
+          "match_score": 0.6714200831847891,
+          "recommendation": "MEDIUM",
+          "inventory_id": 42408,
+          "stock_id": 42408
+        },
+        {
+          "name": "CaniCare Fexorise-OD 120 mg 10 Tab",
+          "match_score": 0.6245791245791247,
+          "recommendation": "MEDIUM",
+          "inventory_id": 42407,
+          "stock_id": 42407
+        },
+        {
+          "name": "FECAL DETERENT TABLET",
+          "match_score": 0.608946608946609,
+          "recommendation": "MEDIUM",
+          "inventory_id": 41305,
+          "stock_id": 41305
+        }
+      ],
+      "inventory_id": null,
+      "administered_prescribed": "Prescribed",
+      "fulfillment": "Internal",
+      "quantity": "",
+      "dosage": "one tablet for 5 kg body weight",
+      "duration": "",
+      "frequency": "Custom",
+      "instructions": "",
+      "route": "oral"
+    },
+    {
+      "item_name": "Topical Ointment",
+      "kind": "Medicine",
+      "intent_context": "Prescribed",
+      "intent": "Prescribed (Medicine)",
+      "status": "ACTION REQUIRED",
+      "reason": "AMBIGUOUS_MATCH",
+      "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+      "suggestions": [
+        {
+          "name": "ICHMUNE T OINTMENT",
+          "match_score": 0.7566137566137566,
+          "recommendation": "MEDIUM",
+          "inventory_id": 41032,
+          "stock_id": 41032
+        },
+        {
+          "name": "ZOLE-F OINTMENT 15GM",
+          "match_score": 0.6958333333333333,
+          "recommendation": "MEDIUM",
+          "inventory_id": 39555,
+          "stock_id": 39555
+        },
+        {
+          "name": "Anglo-French Muropirin Ointment IP 2% 1 Tube",
+          "match_score": 0.662878787878788,
+          "recommendation": "MEDIUM",
+          "inventory_id": 42335,
+          "stock_id": 42335
+        },
+        {
+          "name": "Anglo-French Mupirocin Ointment IP 2% w/w",
+          "match_score": 0.662878787878788,
+          "recommendation": "MEDIUM",
+          "inventory_id": 42457,
+          "stock_id": 42457
+        },
+        {
+          "name": "CIPLADINE OINTMENT 20G",
+          "match_score": 0.6420454545454546,
+          "recommendation": "MEDIUM",
+          "inventory_id": 41610,
+          "stock_id": 41610
+        }
+      ],
+      "inventory_id": null,
+      "administered_prescribed": "Prescribed",
+      "fulfillment": "Internal",
+      "quantity": "",
+      "dosage": "",
+      "duration": "",
+      "frequency": "Custom",
+      "instructions": "",
+      "route": "Topical"
+    },
+    {
+      "item_name": "Grooming",
+      "kind": "Procedure",
+      "intent_context": "Performed",
+      "intent": "Performed (Procedure)",
+      "status": "ACTION REQUIRED",
+      "reason": "MISSING_LOCAL_ID",
+      "remarks": "Mentioned as procedure; no matching inventory/service SKU found. Vet must select specific SKU for billing.",
+      "suggestions": [],
+      "service_id": null
+    }
+  ],
+  "module_5_clinical_history": [],
+  "streamlined_dashboard": {
+    "signalment_vitals": [
+      {
+        "name": "Weight",
+        "original_mention": "",
+        "status": "CONFIRMED",
+        "linked_id": null,
+        "suggestions": [],
+        "value": "5 kg",
+        "label": "Vitals"
+      },
+      {
+        "name": "Temperature",
+        "original_mention": "",
+        "status": "CONFIRMED",
+        "linked_id": null,
+        "suggestions": [],
+        "value": "Mild fever",
+        "label": "Vitals"
+      }
+    ],
+    "clinical_assessment": [],
+    "pharmacy_administered": [],
+    "pharmacy_prescribed": [
+      {
+        "name": "Oral Tablet Medication",
+        "original_mention": "Oral Tablet Medication",
+        "status": "ACTION_REQUIRED",
+        "linked_id": null,
+        "suggestions": [
+          {
+            "name": "LASIX TABLET",
+            "match_score": 0.8190235690235691,
+            "recommendation": "MEDIUM",
+            "inventory_id": 40900,
+            "stock_id": 40900
+          },
+          {
+            "name": "ALLERGIA TABLET",
+            "match_score": 0.7419191919191919,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41928,
+            "stock_id": 41928
+          },
+          {
+            "name": "Devbhoomi Fexorise-M 120 mg 10 x 10 Tablets",
+            "match_score": 0.6714200831847891,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42408,
+            "stock_id": 42408
+          },
+          {
+            "name": "CaniCare Fexorise-OD 120 mg 10 Tab",
+            "match_score": 0.6245791245791247,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42407,
+            "stock_id": 42407
+          },
+          {
+            "name": "FECAL DETERENT TABLET",
+            "match_score": 0.608946608946609,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41305,
+            "stock_id": 41305
+          }
+        ],
+        "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+        "reason": "AMBIGUOUS_MATCH",
+        "dosage": "one tablet for 5 kg body weight",
+        "frequency": "Custom",
+        "duration": "",
+        "quantity": "",
+        "instructions": "",
+        "required_fields": [
+          "frequency",
+          "duration"
+        ],
+        "label": "Prescribed (Home Care)"
+      },
+      {
+        "name": "Topical Ointment",
+        "original_mention": "Topical Ointment",
+        "status": "ACTION_REQUIRED",
+        "linked_id": null,
+        "suggestions": [
+          {
+            "name": "ICHMUNE T OINTMENT",
+            "match_score": 0.7566137566137566,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41032,
+            "stock_id": 41032
+          },
+          {
+            "name": "ZOLE-F OINTMENT 15GM",
+            "match_score": 0.6958333333333333,
+            "recommendation": "MEDIUM",
+            "inventory_id": 39555,
+            "stock_id": 39555
+          },
+          {
+            "name": "Anglo-French Muropirin Ointment IP 2% 1 Tube",
+            "match_score": 0.662878787878788,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42335,
+            "stock_id": 42335
+          },
+          {
+            "name": "Anglo-French Mupirocin Ointment IP 2% w/w",
+            "match_score": 0.662878787878788,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42457,
+            "stock_id": 42457
+          },
+          {
+            "name": "CIPLADINE OINTMENT 20G",
+            "match_score": 0.6420454545454546,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41610,
+            "stock_id": 41610
+          }
+        ],
+        "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+        "reason": "AMBIGUOUS_MATCH",
+        "dosage": "",
+        "frequency": "Custom",
+        "duration": "",
+        "quantity": "",
+        "instructions": "",
+        "required_fields": [
+          "frequency",
+          "duration"
+        ],
+        "label": "Prescribed (Home Care)"
+      }
+    ],
+    "diagnostics_labs_imaging": [],
+    "clinical_procedures_services": [
+      {
+        "name": "Grooming",
+        "original_mention": "Grooming",
+        "status": "ACTION_REQUIRED",
+        "linked_id": null,
+        "suggestions": [],
+        "remarks": "Mentioned as procedure; no matching inventory/service SKU found. Vet must select specific SKU for billing.",
+        "reason": "MISSING_LOCAL_ID"
+      }
+    ],
+    "other_products_retail": [],
+    "preventive": [],
+    "patient_reminders": [],
+    "clinical_follow_ups": [
+      {
+        "name": "Topical Ointment Application",
+        "original_mention": "Topical Ointment Application",
+        "status": "DRAFTED",
+        "linked_id": "[PROCEDURE-XXX]",
+        "suggestions": [],
+        "due_date": "ASAP",
+        "remarks": "Apply prescribed topical ointment to the affected tail area after gently wiping with pet wipes or a damp cloth | Apply prescribed topical ointment to the affected tail area",
+        "is_operational": true,
+        "scheduling_data": {
+          "service_id": null,
+          "temporal_offset": "ASAP",
+          "recommended_date": null,
+          "priority": "Routine",
+          "item_id": "[PROCEDURE-XXX]"
+        },
+        "label": "Clinical Follow-up"
+      },
+      {
+        "name": "Hair Trimming",
+        "original_mention": "Hair Trimming",
+        "status": "DRAFTED",
+        "linked_id": "[PROCEDURE-XXX]",
+        "suggestions": [],
+        "due_date": "ASAP",
+        "remarks": "Trim hair around the affected area using a trimmer to allow better ointment application | Trim hair around the affected area using a trimmer",
+        "is_operational": true,
+        "scheduling_data": {
+          "service_id": null,
+          "temporal_offset": "ASAP",
+          "recommended_date": null,
+          "priority": "Routine",
+          "item_id": "[PROCEDURE-XXX]"
+        },
+        "label": "Clinical Follow-up"
+      },
+      {
+        "name": "Cleaning",
+        "original_mention": "Cleaning",
+        "status": "DRAFTED",
+        "linked_id": "[PROCEDURE-XXX]",
+        "suggestions": [],
+        "due_date": "ASAP",
+        "remarks": "consider thorough cleaning and re-examination if infection persists",
+        "is_operational": true,
+        "scheduling_data": {
+          "service_id": null,
+          "temporal_offset": "ASAP",
+          "recommended_date": null,
+          "priority": "Routine",
+          "item_id": "[PROCEDURE-XXX]"
+        },
+        "label": "Clinical Follow-up"
+      },
+      {
+        "name": "Regular Grooming",
+        "original_mention": "Regular Grooming",
+        "status": "DRAFTED",
+        "linked_id": "[PROCEDURE-XXX]",
+        "suggestions": [],
+        "due_date": "ASAP",
+        "remarks": "Continue regular grooming every two weeks with slight trimming rather than full shaving",
+        "is_operational": true,
+        "scheduling_data": {
+          "service_id": null,
+          "temporal_offset": "ASAP",
+          "recommended_date": null,
+          "priority": "Routine",
+          "item_id": "[PROCEDURE-XXX]"
+        },
+        "label": "Clinical Follow-up"
+      },
+      {
+        "name": "Follow-up for Vaccination and Parasite Control",
+        "original_mention": "Follow-up for Vaccination and Parasite Control",
+        "status": "DRAFTED",
+        "linked_id": "[REMINDER-XXX]",
+        "suggestions": [],
+        "due_date": "every 3 months",
+        "remarks": "vaccination and parasite control",
+        "is_operational": true,
+        "scheduling_data": {
+          "service_id": null,
+          "temporal_offset": "every 3 months",
+          "recommended_date": null,
+          "priority": "Routine",
+          "item_id": "[REMINDER-XXX]"
+        },
+        "label": "Clinical Follow-up"
+      },
+      {
+        "name": "Vaccination Follow-up",
+        "original_mention": "Vaccination Follow-up",
+        "status": "DRAFTED",
+        "linked_id": "[REMINDER-XXX]",
+        "suggestions": [],
+        "due_date": "every 3 months",
+        "remarks": "vaccination and parasite control",
+        "is_operational": true,
+        "scheduling_data": {
+          "service_id": null,
+          "temporal_offset": "every 3 months",
+          "recommended_date": null,
+          "priority": "Routine",
+          "item_id": "[REMINDER-XXX]"
+        },
+        "label": "Clinical Follow-up"
+      },
+      {
+        "name": "Vaccination",
+        "original_mention": "Vaccination",
+        "status": "DRAFTED",
+        "linked_id": "[PROCEDURE-XXX]",
+        "suggestions": [],
+        "due_date": "ASAP",
+        "remarks": "Follow up as needed for vaccination every 3 months",
+        "is_operational": true,
+        "scheduling_data": {
+          "service_id": null,
+          "temporal_offset": "ASAP",
+          "recommended_date": null,
+          "priority": "Routine",
+          "item_id": "[PROCEDURE-XXX]"
+        },
+        "label": "Clinical Follow-up"
+      },
+      {
+        "name": "Parasite control",
+        "original_mention": "Parasite control",
+        "status": "DRAFTED",
+        "linked_id": "[PROCEDURE-XXX]",
+        "suggestions": [],
+        "due_date": "ASAP",
+        "remarks": "Follow up as needed for parasite control every 3 months",
+        "is_operational": true,
+        "scheduling_data": {
+          "service_id": null,
+          "temporal_offset": "ASAP",
+          "recommended_date": null,
+          "priority": "Routine",
+          "item_id": "[PROCEDURE-XXX]"
+        },
+        "label": "Clinical Follow-up"
+      },
+      {
+        "name": "Trimming",
+        "original_mention": "Trimming",
+        "status": "DRAFTED",
+        "linked_id": "[PROCEDURE-XXX]",
+        "suggestions": [],
+        "due_date": "ASAP",
+        "remarks": "Trim hair around the affected area using a trimmer",
+        "is_operational": true,
+        "scheduling_data": {
+          "service_id": null,
+          "temporal_offset": "ASAP",
+          "recommended_date": null,
+          "priority": "Routine",
+          "item_id": "[PROCEDURE-XXX]"
+        },
+        "label": "Clinical Follow-up"
+      }
+    ]
+  }
+}

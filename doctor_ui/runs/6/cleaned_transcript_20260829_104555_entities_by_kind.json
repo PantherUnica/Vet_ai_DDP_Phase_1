@@ -1,0 +1,122 @@
+{
+  "ReasonForVisit": [],
+  "Medication": [
+    {
+      "span_text": "fever injection"
+    },
+    {
+      "span_text": "appetite stimulant"
+    },
+    {
+      "span_text": "liquid medicine"
+    },
+    {
+      "span_text": "drops in the broth or lukewarm water"
+    }
+  ],
+  "Procedure": [
+    {
+      "span_text": "boil it well"
+    },
+    {
+      "span_text": "put her on fluids"
+    },
+    {
+      "span_text": "drop the chicken broth with medicine using a syringe"
+    }
+  ],
+  "Diagnostic": [
+    {
+      "span_text": "blood test"
+    }
+  ],
+  "VitalSign": [
+    {
+      "span_text": "temperature"
+    }
+  ],
+  "Reminder": [],
+  "Symptom": [
+    {
+      "span_text": "very low since yesterday"
+    },
+    {
+      "span_text": "not vomiting"
+    },
+    {
+      "span_text": "lying in one place"
+    },
+    {
+      "span_text": "not eating recently"
+    },
+    {
+      "span_text": "stopped eating"
+    },
+    {
+      "span_text": "not drinking water"
+    },
+    {
+      "span_text": "appetite"
+    },
+    {
+      "span_text": "lethargic"
+    }
+  ],
+  "Diagnosis": [
+    {
+      "span_text": "fever"
+    },
+    {
+      "span_text": "viral"
+    },
+    {
+      "span_text": "stress"
+    }
+  ],
+  "Anatomy": [],
+  "Diet": [
+    {
+      "span_text": "wet food which has a strong smell"
+    },
+    {
+      "span_text": "water"
+    },
+    {
+      "span_text": "lukewarm water"
+    },
+    {
+      "span_text": "chicken broth"
+    },
+    {
+      "span_text": "little salt"
+    },
+    {
+      "span_text": "boiled chicken"
+    }
+  ],
+  "Preventive": [],
+  "ParasiteControl": [],
+  "Other": [
+    {
+      "span_text": "cat"
+    },
+    {
+      "span_text": "changed her food only last week"
+    },
+    {
+      "span_text": "house was painted recently"
+    },
+    {
+      "span_text": "full smell and sound"
+    },
+    {
+      "span_text": "humidifier"
+    },
+    {
+      "span_text": "quiet room"
+    },
+    {
+      "span_text": "paint smell and noise"
+    }
+  ]
+}

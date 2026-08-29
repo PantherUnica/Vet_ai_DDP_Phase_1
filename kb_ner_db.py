@@ -126,7 +126,7 @@ def release_pg_conn(conn) -> None:
     """
     Return a connection to the pool (if it originated from the pool); otherwise close it.
     """
-    global _pg_pool
+    global _pg_pool, _connection_cache
     if conn is None:
         return
     try:
@@ -135,10 +135,28 @@ def release_pg_conn(conn) -> None:
             return
     except Exception:
         pass
+    with _connection_lock:
+        if _connection_cache is conn:
+            _connection_cache = None
     try:
         conn.close()
     except Exception:
         pass
+
+
+def close_owned_pg_conn(conn) -> None:
+    """
+    Close a connection opened for a short-lived lookup.
+    Clears the process cache if this was the shared cached connection
+    (avoids 'cursor/connection already closed' for later grounding).
+    """
+    release_pg_conn(conn)
+
+
+def invalidate_vector_extension_cache() -> None:
+    """Force re-probe of pgvector availability (e.g. after install or cast failures)."""
+    global _VECTOR_EXT_CACHE
+    _VECTOR_EXT_CACHE = None
 
 
 @contextmanager
@@ -327,9 +345,23 @@ def ensure_vector_extension(conn, logger: Optional[logging.Logger] = None) -> bo
         if logger:
             logger.info("✅ Created vector (pgvector) extension")
     except Exception as e:
-        if logger:
+        msg = str(e).lower()
+        already = (
+            "already exists" in msg
+            or "duplicate key" in msg
+            or "pg_extension_name_index" in msg
+        )
+        if already:
+            try:
+                conn.rollback()
+            except Exception:
+                pass
+        elif logger:
             logger.warning(f"⚠️  Could not CREATE EXTENSION vector: {e}")
-            logger.warning("   This may require superuser privileges. Contact your database administrator.")
+            logger.warning(
+                "   Install pgvector for this Postgres major version (Master Doc). "
+                "Grounding continues with trigram + phonetic matching."
+            )
 
     try:
         with conn.cursor() as cur:
@@ -337,11 +369,29 @@ def ensure_vector_extension(conn, logger: Optional[logging.Logger] = None) -> bo
             is_available = cur.fetchone()[0]
             if is_available and logger:
                 logger.info("✅ vector extension verified and ready")
-            return is_available
+            return bool(is_available)
     except Exception as e:
         if logger:
             logger.debug(f"Could not verify vector extension: {e}")
     return False
+
+
+# Process-level cache so we do not probe CREATE EXTENSION on every entity.
+_VECTOR_EXT_CACHE: Optional[bool] = None
+
+
+def vector_extension_available(conn=None, logger: Optional[logging.Logger] = None) -> bool:
+    """True when pgvector is usable. Prefer vector path when available (Master Doc)."""
+    global _VECTOR_EXT_CACHE
+    if _VECTOR_EXT_CACHE is not None:
+        return _VECTOR_EXT_CACHE
+    try:
+        if conn is None:
+            conn = get_pg_conn()
+        _VECTOR_EXT_CACHE = bool(ensure_vector_extension(conn, logger=logger))
+    except Exception:
+        _VECTOR_EXT_CACHE = False
+    return bool(_VECTOR_EXT_CACHE)
 
 
 from typing import Dict
@@ -704,6 +754,14 @@ def ensure_fuzzystrmatch(conn, logger: Optional[logging.Logger] = None) -> bool:
     Returns True if available, False otherwise.
     CRITICAL: Required for phonetic matching (metaphone function).
     """
+    def _conn_dead(err: Exception) -> bool:
+        msg = str(err).lower()
+        return (
+            "already closed" in msg
+            or "connection is closed" in msg
+            or "cursor already closed" in msg
+        )
+
     # First check if it's already enabled
     try:
         with conn.cursor() as cur:
@@ -712,6 +770,13 @@ def ensure_fuzzystrmatch(conn, logger: Optional[logging.Logger] = None) -> bool:
                 # Extension already enabled - no need to log (called frequently)
                 return True
     except Exception as e:
+        if _conn_dead(e):
+            if logger:
+                logger.warning(
+                    "⚠️  fuzzystrmatch check skipped: DB connection already closed "
+                    "(another step closed the shared connection). Reopen and retry."
+                )
+            return False
         if logger:
             logger.debug(f"Could not check fuzzystrmatch extension: {e}")
 
@@ -719,13 +784,38 @@ def ensure_fuzzystrmatch(conn, logger: Optional[logging.Logger] = None) -> bool:
     try:
         with conn.cursor() as cur:
             cur.execute("CREATE EXTENSION IF NOT EXISTS fuzzystrmatch;")
-        conn.commit()
+        try:
+            conn.commit()
+        except Exception:
+            pass
         if logger:
             logger.info("✅ Created fuzzystrmatch extension")
     except Exception as e:
-        if logger:
-            logger.warning(f"⚠️  Could not CREATE EXTENSION fuzzystrmatch: {e}")
-            logger.warning("   This may require superuser privileges. Contact your database administrator.")
+        # Concurrent CREATE EXTENSION IF NOT EXISTS can race on pg_extension_name_index
+        # even when the extension already exists — treat as OK if a re-check succeeds.
+        msg = str(e).lower()
+        already = (
+            "already exists" in msg
+            or "duplicate key" in msg
+            or "pg_extension_name_index" in msg
+        )
+        if _conn_dead(e):
+            if logger:
+                logger.warning(
+                    "⚠️  Could not CREATE EXTENSION fuzzystrmatch: connection already closed"
+                )
+            return False
+        if already:
+            try:
+                conn.rollback()
+            except Exception:
+                pass
+            if logger:
+                logger.debug("fuzzystrmatch create raced / already present: %s", e)
+        else:
+            if logger:
+                logger.warning(f"⚠️  Could not CREATE EXTENSION fuzzystrmatch: {e}")
+                logger.warning("   This may require superuser privileges. Contact your database administrator.")
 
     # Verify it's now available
     try:
@@ -733,7 +823,7 @@ def ensure_fuzzystrmatch(conn, logger: Optional[logging.Logger] = None) -> bool:
             cur.execute("SELECT EXISTS(SELECT 1 FROM pg_extension WHERE extname = 'fuzzystrmatch');")
             is_available = cur.fetchone()[0]
             if is_available and logger:
-                logger.info("✅ fuzzystrmatch extension verified and ready")
+                logger.debug("✅ fuzzystrmatch extension verified and ready")
             return bool(is_available)
     except Exception as e:
         if logger:

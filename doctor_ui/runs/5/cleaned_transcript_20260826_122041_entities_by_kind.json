@@ -1,0 +1,94 @@
+{
+  "ReasonForVisit": [],
+  "Medication": [
+    {
+      "span_text": "fever injection"
+    },
+    {
+      "span_text": "appetite stimulant"
+    },
+    {
+      "span_text": "liquid medicine"
+    },
+    {
+      "span_text": "medicine in lukewarm water drops"
+    }
+  ],
+  "Procedure": [],
+  "Diagnostic": [
+    {
+      "span_text": "blood test"
+    }
+  ],
+  "VitalSign": [
+    {
+      "span_text": "temperature"
+    }
+  ],
+  "Reminder": [],
+  "Symptom": [
+    {
+      "span_text": "very low since yesterday"
+    },
+    {
+      "span_text": "not vomiting"
+    },
+    {
+      "span_text": "lying in one place"
+    },
+    {
+      "span_text": "not eating recently"
+    },
+    {
+      "span_text": "stopped eating"
+    },
+    {
+      "span_text": "not drinking any water"
+    }
+  ],
+  "Diagnosis": [
+    {
+      "span_text": "fever"
+    },
+    {
+      "span_text": "viral"
+    },
+    {
+      "span_text": "stress"
+    }
+  ],
+  "Anatomy": [],
+  "Diet": [
+    {
+      "span_text": "wet food"
+    },
+    {
+      "span_text": "water"
+    },
+    {
+      "span_text": "lukewarm water"
+    },
+    {
+      "span_text": "chicken broth"
+    },
+    {
+      "span_text": "boiled chicken"
+    }
+  ],
+  "Preventive": [],
+  "ParasiteControl": [],
+  "Other": [
+    {
+      "span_text": "cat"
+    },
+    {
+      "span_text": "changed her food only last week"
+    },
+    {
+      "span_text": "house was painted recently"
+    },
+    {
+      "span_text": "quiet room"
+    }
+  ]
+}

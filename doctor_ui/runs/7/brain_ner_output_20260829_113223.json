@@ -1,0 +1,1225 @@
+[
+  {
+    "span_text": "cat",
+    "normalized_name": "cat",
+    "kind": "Other",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Hi Rakesh, Bunny. How is your cat?",
+    "start_char": 44,
+    "end_char": 47,
+    "is_actionable": true,
+    "search_term": "cat",
+    "hints": [
+      "cat",
+      "feline",
+      "domestic cat"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E1",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Hi Rakesh, Bunny. How is your cat?",
+    "hint_probabilities": {
+      "cat": 1.0,
+      "feline": 0.85,
+      "domestic cat": 0.75
+    },
+    "correctness_probability": 0.98,
+    "suggestion_probability": 0.98,
+    "query_expansion": []
+  },
+  {
+    "span_text": "very low since yesterday",
+    "normalized_name": "lethargy",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "She has been very low since yesterday.",
+    "start_char": 116,
+    "end_char": 140,
+    "is_actionable": true,
+    "search_term": "lethargy",
+    "hints": [
+      "lethargy",
+      "low activity",
+      "decreased energy"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E2",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "She has been very low since yesterday.",
+    "hint_probabilities": {
+      "lethargy": 1.0,
+      "low activity": 0.85,
+      "decreased energy": 0.75
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": []
+  },
+  {
+    "span_text": "not vomiting",
+    "normalized_name": "no vomiting",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "She is not vomiting but she is lying in one place.",
+    "start_char": 149,
+    "end_char": 161,
+    "is_actionable": true,
+    "search_term": "no vomiting",
+    "hints": [
+      "no vomiting",
+      "absence of vomiting",
+      "not throwing up"
+    ],
+    "family": null,
+    "domain": [
+      "gastroenterology"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E3",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "She is not vomiting but she is lying in one place.",
+    "hint_probabilities": {
+      "no vomiting": 1.0,
+      "absence of vomiting": 0.9,
+      "not throwing up": 0.8
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": []
+  },
+  {
+    "span_text": "lying in one place",
+    "normalized_name": "immobility",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "She is lying in one place.",
+    "start_char": 173,
+    "end_char": 191,
+    "is_actionable": true,
+    "search_term": "immobility",
+    "hints": [
+      "immobility",
+      "lying still",
+      "not moving"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E4",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "She is lying in one place.",
+    "hint_probabilities": {
+      "immobility": 1.0,
+      "lying still": 0.85,
+      "not moving": 0.75
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": []
+  },
+  {
+    "span_text": "not eating",
+    "normalized_name": "anorexia",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "She is not eating recently.",
+    "start_char": 217,
+    "end_char": 227,
+    "is_actionable": true,
+    "search_term": "anorexia",
+    "hints": [
+      "anorexia",
+      "loss of appetite",
+      "not eating"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E5",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "She is not eating recently.",
+    "hint_probabilities": {
+      "anorexia": 1.0,
+      "loss of appetite": 0.9,
+      "not eating": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": []
+  },
+  {
+    "span_text": "changed her food only last week",
+    "normalized_name": "recent diet change",
+    "kind": "Other",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "I changed her food only last week.",
+    "start_char": 276,
+    "end_char": 307,
+    "is_actionable": true,
+    "search_term": "recent diet change",
+    "hints": [
+      "recent diet change",
+      "food change",
+      "diet modification"
+    ],
+    "family": null,
+    "domain": [
+      "nutrition"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E6",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "I changed her food only last week.",
+    "hint_probabilities": {
+      "recent diet change": 1.0,
+      "food change": 0.85,
+      "diet modification": 0.75
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": []
+  },
+  {
+    "span_text": "stopped eating",
+    "normalized_name": "anorexia",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Suddenly she stopped eating.",
+    "start_char": 361,
+    "end_char": 375,
+    "is_actionable": true,
+    "search_term": "anorexia",
+    "hints": [
+      "anorexia",
+      "loss of appetite",
+      "stopped eating"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E7",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Suddenly she stopped eating.",
+    "hint_probabilities": {
+      "anorexia": 1.0,
+      "loss of appetite": 0.9,
+      "stopped eating": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": []
+  },
+  {
+    "span_text": "temperature",
+    "normalized_name": "body temperature",
+    "kind": "VitalSign",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Let's check her temperature now.",
+    "start_char": 432,
+    "end_char": 443,
+    "is_actionable": true,
+    "search_term": "body temperature",
+    "hints": [
+      "body temperature",
+      "temperature",
+      "fever measurement"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E8",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Let's check her temperature now.",
+    "hint_probabilities": {
+      "body temperature": 1.0,
+      "temperature": 1.0,
+      "fever measurement": 0.9
+    },
+    "correctness_probability": 0.98,
+    "suggestion_probability": 0.98,
+    "query_expansion": []
+  },
+  {
+    "span_text": "fever",
+    "normalized_name": "fever",
+    "kind": "Diagnosis",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "She has a fever.",
+    "start_char": 523,
+    "end_char": 528,
+    "is_actionable": true,
+    "search_term": "fever",
+    "hints": [
+      "fever",
+      "pyrexia",
+      "high temperature"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E9",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "She has a fever.",
+    "hint_probabilities": {
+      "fever": 1.0,
+      "pyrexia": 0.9,
+      "high temperature": 0.85
+    },
+    "correctness_probability": 0.98,
+    "suggestion_probability": 0.98,
+    "query_expansion": []
+  },
+  {
+    "span_text": "viral",
+    "normalized_name": "viral infection",
+    "kind": "Diagnosis",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Sometimes it is viral.",
+    "start_char": 636,
+    "end_char": 641,
+    "is_actionable": true,
+    "search_term": "viral infection",
+    "hints": [
+      "viral infection",
+      "virus",
+      "viral disease"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [
+      "General"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E10",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Sometimes it is viral.",
+    "hint_probabilities": {
+      "viral infection": 1.0,
+      "virus": 0.8,
+      "viral disease": 0.7
+    },
+    "correctness_probability": 0.85,
+    "suggestion_probability": 0.85,
+    "query_expansion": []
+  },
+  {
+    "span_text": "stress",
+    "normalized_name": "stress",
+    "kind": "Diagnosis",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Sometimes due to stress.",
+    "start_char": 660,
+    "end_char": 666,
+    "is_actionable": true,
+    "search_term": "stress",
+    "hints": [
+      "stress",
+      "psychological stress",
+      "environmental stress"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [
+      "General"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E11",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Sometimes due to stress.",
+    "hint_probabilities": {
+      "stress": 1.0,
+      "psychological stress": 0.85,
+      "environmental stress": 0.75
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": []
+  },
+  {
+    "span_text": "house was painted recently",
+    "normalized_name": "recent environmental change",
+    "kind": "Other",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "The house was painted recently.",
+    "start_char": 788,
+    "end_char": 814,
+    "is_actionable": true,
+    "search_term": "recent environmental change",
+    "hints": [
+      "recent environmental change",
+      "house painted",
+      "new paint smell"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E12",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "The house was painted recently.",
+    "hint_probabilities": {
+      "recent environmental change": 1.0,
+      "house painted": 0.85,
+      "new paint smell": 0.75
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": []
+  },
+  {
+    "span_text": "fever injection",
+    "normalized_name": "fever injection",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "I will give her a fever injection.",
+    "start_char": 960,
+    "end_char": 975,
+    "is_actionable": true,
+    "search_term": "fever injection",
+    "hints": [
+      "fever injection",
+      "antipyretic injection",
+      "fever treatment injection"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E13",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "I will give her a fever injection.",
+    "hint_probabilities": {
+      "fever injection": 1.0,
+      "antipyretic injection": 0.85,
+      "fever treatment injection": 0.75
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": []
+  },
+  {
+    "span_text": "appetite stimulant",
+    "normalized_name": "appetite stimulant",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "One appetite stimulant.",
+    "start_char": 984,
+    "end_char": 1002,
+    "is_actionable": true,
+    "search_term": "appetite stimulant",
+    "hints": [
+      "appetite stimulant",
+      "anorectic agent",
+      "appetite enhancer"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E14",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "One appetite stimulant.",
+    "hint_probabilities": {
+      "appetite stimulant": 1.0,
+      "anorectic agent": 0.85,
+      "appetite enhancer": 0.75
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": []
+  },
+  {
+    "span_text": "humidifier",
+    "normalized_name": "humidifier",
+    "kind": "Other",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "At home I have a humidifier.",
+    "start_char": 1047,
+    "end_char": 1057,
+    "is_actionable": true,
+    "search_term": "humidifier",
+    "hints": [
+      "humidifier",
+      "air humidifier",
+      "room humidifier"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E15",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "At home I have a humidifier.",
+    "hint_probabilities": {
+      "humidifier": 1.0,
+      "air humidifier": 0.9,
+      "room humidifier": 0.8
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": []
+  },
+  {
+    "span_text": "quiet room",
+    "normalized_name": "quiet room",
+    "kind": "Other",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Keep her in a quiet room.",
+    "start_char": 1091,
+    "end_char": 1101,
+    "is_actionable": true,
+    "search_term": "quiet room",
+    "hints": [
+      "quiet room",
+      "calm room",
+      "noise-free room"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E16",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Keep her in a quiet room.",
+    "hint_probabilities": {
+      "quiet room": 1.0,
+      "calm room": 0.9,
+      "noise-free room": 0.8
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": []
+  },
+  {
+    "span_text": "wet food",
+    "normalized_name": "wet food",
+    "kind": "Diet",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Give her wet food.",
+    "start_char": 1154,
+    "end_char": 1162,
+    "is_actionable": true,
+    "search_term": "wet food",
+    "hints": [
+      "wet food",
+      "moist food",
+      "soft food"
+    ],
+    "family": null,
+    "domain": [
+      "nutrition"
+    ],
+    "category": [
+      "Diet",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Diet"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E17",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Give her wet food.",
+    "hint_probabilities": {
+      "wet food": 1.0,
+      "moist food": 0.9,
+      "soft food": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": []
+  },
+  {
+    "span_text": "water",
+    "normalized_name": "water",
+    "kind": "Diet",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Water is important.",
+    "start_char": 1313,
+    "end_char": 1318,
+    "is_actionable": true,
+    "search_term": "water",
+    "hints": [
+      "water",
+      "drinking water",
+      "fluid intake"
+    ],
+    "family": null,
+    "domain": [
+      "nutrition"
+    ],
+    "category": [
+      "Diet",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Diet"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E18",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Water is important.",
+    "hint_probabilities": {
+      "water": 1.0,
+      "drinking water": 0.9,
+      "fluid intake": 0.85
+    },
+    "correctness_probability": 0.98,
+    "suggestion_probability": 0.98,
+    "query_expansion": []
+  },
+  {
+    "span_text": "not drinking any water",
+    "normalized_name": "not drinking water",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "She is not drinking any water now.",
+    "start_char": 1327,
+    "end_char": 1349,
+    "is_actionable": true,
+    "search_term": "not drinking water",
+    "hints": [
+      "not drinking water",
+      "not drinking fluids",
+      "anorexia for water"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E19",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "She is not drinking any water now.",
+    "hint_probabilities": {
+      "not drinking water": 1.0,
+      "not drinking fluids": 0.9,
+      "anorexia for water": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": []
+  },
+  {
+    "span_text": "lukewarm water",
+    "normalized_name": "lukewarm water",
+    "kind": "Diet",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "The most important thing is lukewarm water.",
+    "start_char": 1397,
+    "end_char": 1411,
+    "is_actionable": true,
+    "search_term": "lukewarm water",
+    "hints": [
+      "lukewarm water",
+      "warm water",
+      "tepid water"
+    ],
+    "family": null,
+    "domain": [
+      "nutrition"
+    ],
+    "category": [
+      "Diet",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Diet"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E20",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "The most important thing is lukewarm water.",
+    "hint_probabilities": {
+      "lukewarm water": 1.0,
+      "warm water": 0.9,
+      "tepid water": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": []
+  },
+  {
+    "span_text": "chicken broth",
+    "normalized_name": "chicken broth",
+    "kind": "Diet",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Add a little salt to chicken broth.",
+    "start_char": 1415,
+    "end_char": 1428,
+    "is_actionable": true,
+    "search_term": "chicken broth",
+    "hints": [
+      "chicken broth",
+      "broth",
+      "meat broth"
+    ],
+    "family": null,
+    "domain": [
+      "nutrition"
+    ],
+    "category": [
+      "Diet",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Diet"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E21",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Add a little salt to chicken broth.",
+    "hint_probabilities": {
+      "chicken broth": 1.0,
+      "broth": 0.9,
+      "meat broth": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": []
+  },
+  {
+    "span_text": "a little salt",
+    "normalized_name": "salt",
+    "kind": "Diet",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Add a little salt.",
+    "start_char": 1434,
+    "end_char": 1447,
+    "is_actionable": true,
+    "search_term": "salt",
+    "hints": [
+      "salt",
+      "sodium chloride",
+      "table salt"
+    ],
+    "family": null,
+    "domain": [
+      "nutrition"
+    ],
+    "category": [
+      "Diet",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Diet"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E22",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Add a little salt.",
+    "hint_probabilities": {
+      "salt": 1.0,
+      "sodium chloride": 0.9,
+      "table salt": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": []
+  },
+  {
+    "span_text": "fluids",
+    "normalized_name": "fluids",
+    "kind": "Diet",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "If she is not drinking any fluids.",
+    "start_char": 1490,
+    "end_char": 1496,
+    "is_actionable": true,
+    "search_term": "fluids",
+    "hints": [
+      "fluids",
+      "fluid therapy",
+      "hydration"
+    ],
+    "family": null,
+    "domain": [
+      "nutrition"
+    ],
+    "category": [
+      "Diet",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Diet"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E23",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "If she is not drinking any fluids.",
+    "hint_probabilities": {
+      "fluids": 1.0,
+      "fluid therapy": 0.9,
+      "hydration": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": []
+  },
+  {
+    "span_text": "boiled chicken",
+    "normalized_name": "boiled chicken",
+    "kind": "Diet",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Even boiled chicken can be given.",
+    "start_char": 1595,
+    "end_char": 1609,
+    "is_actionable": true,
+    "search_term": "boiled chicken",
+    "hints": [
+      "boiled chicken",
+      "cooked chicken",
+      "chicken meat"
+    ],
+    "family": null,
+    "domain": [
+      "nutrition"
+    ],
+    "category": [
+      "Diet",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Diet"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E24",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Even boiled chicken can be given.",
+    "hint_probabilities": {
+      "boiled chicken": 1.0,
+      "cooked chicken": 0.9,
+      "chicken meat": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": []
+  },
+  {
+    "span_text": "liquid medicine",
+    "normalized_name": "liquid medicine",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "I will give her liquid medicine.",
+    "start_char": 1826,
+    "end_char": 1841,
+    "is_actionable": true,
+    "search_term": "liquid medicine",
+    "hints": [
+      "liquid medicine",
+      "oral liquid medication",
+      "liquid drug"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E25",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "I will give her liquid medicine.",
+    "hint_probabilities": {
+      "liquid medicine": 1.0,
+      "oral liquid medication": 0.9,
+      "liquid drug": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": []
+  },
+  {
+    "span_text": "drops",
+    "normalized_name": "oral drops",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "You can put the drops in the broth.",
+    "start_char": 1895,
+    "end_char": 1900,
+    "is_actionable": true,
+    "search_term": "oral drops",
+    "hints": [
+      "oral drops",
+      "liquid drops",
+      "medication drops"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E26",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "You can put the drops in the broth.",
+    "hint_probabilities": {
+      "oral drops": 1.0,
+      "liquid drops": 0.85,
+      "medication drops": 0.75
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": []
+  },
+  {
+    "span_text": "syringe",
+    "normalized_name": "syringe",
+    "kind": "Procedure",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Use a syringe to put medicine on the side of her mouth.",
+    "start_char": 2036,
+    "end_char": 2043,
+    "is_actionable": true,
+    "search_term": "syringe",
+    "hints": [
+      "syringe",
+      "oral syringe",
+      "medicine syringe"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [
+      "General"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E27",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Use a syringe to put medicine on the side of her mouth.",
+    "hint_probabilities": {
+      "syringe": 1.0,
+      "oral syringe": 0.9,
+      "medicine syringe": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": []
+  },
+  {
+    "span_text": "blood test",
+    "normalized_name": "blood test",
+    "kind": "Diagnostic",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "We will do a blood test if appetite is not back.",
+    "start_char": 2259,
+    "end_char": 2269,
+    "is_actionable": true,
+    "search_term": "blood test",
+    "hints": [
+      "blood test",
+      "blood panel",
+      "hematology test"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [
+      "Lab Consumables",
+      "Lab Tests"
+    ],
+    "inventory_category": [
+      "Lab Consumables"
+    ],
+    "service_category": [
+      "Lab Tests"
+    ],
+    "service_type": "medical",
+    "entity_id": "E28",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "We will do a blood test if appetite is not back.",
+    "hint_probabilities": {
+      "blood test": 1.0,
+      "blood panel": 0.9,
+      "hematology test": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": []
+  }
+]

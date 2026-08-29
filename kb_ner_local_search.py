@@ -13,7 +13,7 @@ import re
 import logging
 from typing import List, Dict, Any, Optional
 
-from kb_ner_db import ensure_fuzzystrmatch
+from kb_ner_db import ensure_fuzzystrmatch, vector_extension_available, invalidate_vector_extension_cache
 
 # Soft Gate for local: domain as boost (not hard filter). When True, do not filter by domain in SQL; apply boost in Python.
 USE_SOFT_GATE_LOCAL = os.getenv("SOFT_GATE_LOCAL", "true").lower() in ("1", "true", "yes")
@@ -628,7 +628,12 @@ def search_local_inventory_topk(
         if embedding and to_pgvector_literal:
             try:
                 vec_literal = to_pgvector_literal(embedding)
-                use_vector = bool(vec_literal and vec_literal.startswith("["))
+                # Master Doc: use vector when pgvector is installed; else trigram + phonetic only.
+                use_vector = bool(
+                    vec_literal
+                    and vec_literal.startswith("[")
+                    and vector_extension_available(logger=logger)
+                )
                 if logger and use_vector:
                     logger.debug(f"  📊 Vector embedding used for '{span_text}' (cached or precomputed)")
             except Exception:
@@ -1097,6 +1102,13 @@ def search_local_inventory_topk(
             return all_candidates[:top_k]
                 
     except Exception as e:
+        msg = str(e).lower()
+        if 'type "vector" does not exist' in msg or ("vector" in msg and "does not exist" in msg):
+            invalidate_vector_extension_cache()
+        try:
+            conn.rollback()
+        except Exception:
+            pass
         if logger:
             logger.warning(f"  ⚠️  Local inventory search failed: {e}")
         return []
@@ -1229,8 +1241,8 @@ def search_local_services_topk(
             try:
                 vec_literal = to_pgvector_literal(embedding)
                 if vec_literal and vec_literal.startswith("["):
-                    use_vector = True
-                    if logger:
+                    use_vector = bool(vector_extension_available(logger=logger))
+                    if logger and use_vector:
                         logger.debug(f"  📊 Vector embedding used for service '{span_text}' (cached or precomputed)")
             except Exception:
                 use_vector = False
@@ -1529,6 +1541,13 @@ def search_local_services_topk(
         return all_candidates[:top_k]
                 
     except Exception as e:
+        msg = str(e).lower()
+        if 'type "vector" does not exist' in msg or ("vector" in msg and "does not exist" in msg):
+            invalidate_vector_extension_cache()
+        try:
+            conn.rollback()
+        except Exception:
+            pass
         if logger:
             logger.warning(f"  ⚠️  Local service search failed: {e}")
         return []

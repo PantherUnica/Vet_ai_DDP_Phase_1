@@ -61,7 +61,7 @@ import threading
 try:
     # Prefer light imports to avoid pulling in the full Phase 1 linker.
     # Phase 2 only needs DB access + (optional) KB lookups for enrichment.
-    from kb_ner_db import get_pg_conn, pg_conn_ctx  # lightweight DB connector + context manager
+    from kb_ner_db import get_pg_conn, pg_conn_ctx, close_owned_pg_conn  # lightweight DB connector + context manager
     from kb_ner_global_search import kb_lookup_concept_exact, kb_lookup_concept_by_embedding
     from kb_ner_enrichment import get_attributes_for_kind
     KB_SCHEMA_AVAILABLE = True
@@ -69,11 +69,13 @@ except ImportError:
     KB_SCHEMA_AVAILABLE = False
     logging.warning("kb_ner_linker not available. KB schema features will be disabled.")
     # Fallback stubs
-    def get_pg_conn():
+    def get_pg_conn(*args, **kwargs):
         return None
-    def pg_conn_ctx():
+    def pg_conn_ctx(*args, **kwargs):
         from contextlib import nullcontext
         return nullcontext()
+    def close_owned_pg_conn(conn):
+        pass
 
 # ==============================================================================
 # KB SCHEMA LOADERS (Phase 2)
@@ -112,7 +114,8 @@ def get_vitals_registry_excerpt(
         should_close = False
         if conn is None:
             try:
-                conn = get_pg_conn()
+                # reuse=False: do not touch the shared grounding connection
+                conn = get_pg_conn(reuse=False)
                 should_close = True
             except Exception as e:
                 if logger:
@@ -167,7 +170,7 @@ def get_vitals_registry_excerpt(
         finally:
             if should_close and conn:
                 try:
-                    conn.close()
+                    close_owned_pg_conn(conn)
                 except Exception:
                     pass
 
@@ -180,7 +183,7 @@ def get_assertion_types(conn=None, logger: Optional[logging.Logger] = None) -> L
     should_close = False
     if conn is None:
         try:
-            conn = get_pg_conn()
+            conn = get_pg_conn(reuse=False)
             should_close = True
         except Exception as e:
             if logger:
@@ -210,7 +213,7 @@ def get_assertion_types(conn=None, logger: Optional[logging.Logger] = None) -> L
     finally:
         if should_close and conn:
             try:
-                conn.close()
+                close_owned_pg_conn(conn)
             except Exception:
                 pass
 
@@ -223,12 +226,12 @@ def get_all_attributes_schema(conn=None, logger: Optional[logging.Logger] = None
     should_close = False
     if conn is None:
         try:
-            conn = get_pg_conn()
+            conn = get_pg_conn(reuse=False)
             should_close = True
         except Exception as e:
             if logger:
                 logger.warning(f"Could not connect to DB for attributes_schema: {e}")
-        return {}
+            return {}
     try:
         with conn.cursor() as cur:
             cur.execute("""
@@ -253,7 +256,7 @@ def get_all_attributes_schema(conn=None, logger: Optional[logging.Logger] = None
     finally:
         if should_close and conn:
             try:
-                conn.close()
+                close_owned_pg_conn(conn)
             except Exception:
                 pass
 
@@ -286,7 +289,7 @@ def get_service_master_record(
     should_close = False
     if conn is None:
         try:
-            conn = get_pg_conn()
+            conn = get_pg_conn(reuse=False)
             should_close = True
         except Exception as e:
             if logger:
@@ -323,7 +326,7 @@ def get_service_master_record(
     finally:
         if should_close and conn:
             try:
-                conn.close()
+                close_owned_pg_conn(conn)
             except Exception:
                 pass
 
@@ -342,7 +345,7 @@ def lookup_service_id_by_name(
     should_close = False
     if conn is None:
         try:
-            conn = get_pg_conn()
+            conn = get_pg_conn(reuse=False)
             should_close = True
         except Exception as e:
             if logger:
@@ -376,7 +379,7 @@ def lookup_service_id_by_name(
     finally:
         if should_close and conn:
             try:
-                conn.close()
+                close_owned_pg_conn(conn)
             except Exception:
                 pass
 
@@ -419,7 +422,7 @@ def get_inventory_master_record(
     should_close = False
     if conn is None:
         try:
-            conn = get_pg_conn()
+            conn = get_pg_conn(reuse=False)
             should_close = True
         except Exception as e:
             if logger:
@@ -466,7 +469,7 @@ def get_inventory_master_record(
     finally:
         if should_close and conn:
             try:
-                conn.close()
+                close_owned_pg_conn(conn)
             except Exception:
                 pass
 

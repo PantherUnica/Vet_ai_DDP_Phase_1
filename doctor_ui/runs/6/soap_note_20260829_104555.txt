@@ -1,0 +1,14 @@
+{
+  "Subjective": "Cat presented with lethargy, anorexia, and inactive behavior since yesterday. No vomiting reported. Owner noted recent change in food last week and recent home painting causing paint smell and noise, possibly causing stress. Cat has not been drinking water.",
+  "Objective": "Temperature measured at 103.5°F indicating fever. No vomiting observed. Cat lying in one place, silent, and not eating. Owner has a humidifier at home. No other physical exam details provided.",
+  "Assessment": "Fever likely due to viral infection or environmental stress related to recent home painting. Anorexia and lethargy consistent with systemic illness or stress. Differential diagnosis includes viral infection, stress-induced anorexia, and possible dehydration due to not drinking water.",
+  "Plan": "Administer fever-reducing injection and appetite stimulant. Keep cat in a quiet room away from paint smell and noise. Provide strong smelling wet food to stimulate appetite. Encourage hydration with lukewarm water or chicken broth with a small amount of salt, boiled well. If cat refuses fluids, initiate fluid therapy. Provide liquid medicine to be given in broth or lukewarm water; if refused, administer with syringe at side of mouth. Monitor appetite and activity. If no improvement in two days or increased lethargy, perform blood test to investigate further.",
+  "Conclusion": "Cat is febrile with anorexia and lethargy likely due to viral infection or stress from environmental changes. Supportive care and monitoring recommended with follow-up if no improvement.",
+  "DifferentialDiagnosis": "Viral infection, stress-induced anorexia, dehydration, other systemic illness.",
+  "KeyIssues": "Fever, anorexia, lethargy, stress from environmental changes, dehydration risk.",
+  "AbnormalFindings": "Elevated body temperature (103.5°F), anorexia, lethargy, inactivity, not drinking water.",
+  "CustomerInstructions": "Keep cat in a quiet room away from paint smell and noise. Offer strong smelling wet food and lukewarm water or chicken broth with a little salt. Administer prescribed liquid medicine in broth or water or with syringe if needed. Monitor for appetite and activity. Ensure hydration. Return for blood test if no improvement in two days or if lethargy worsens.",
+  "Protocols": "Administer antipyretic injection and appetite stimulant. Use supportive care with diet modification and hydration. Monitor clinical signs closely. Prepare for blood testing if condition does not improve.",
+  "Vitals": "Temperature 103.5°F (fever). Other vitals not recorded.",
+  "Reminders": "Monitor hydration status closely. Avoid sudden diet changes. Minimize environmental stressors. Follow up in two days or sooner if condition worsens."
+}

@@ -1,0 +1,145 @@
+{
+  "ReasonForVisit": [],
+  "Medication": [
+    {
+      "span_text": "tablet"
+    },
+    {
+      "span_text": "ointment"
+    },
+    {
+      "span_text": "pet wipes"
+    },
+    {
+      "span_text": "copper and debo motor"
+    },
+    {
+      "span_text": "medicines"
+    }
+  ],
+  "Procedure": [
+    {
+      "span_text": "apply the appointment"
+    },
+    {
+      "span_text": "wipe it with the wet side"
+    },
+    {
+      "span_text": "trim"
+    },
+    {
+      "span_text": "heating finely"
+    },
+    {
+      "span_text": "remove the hair"
+    },
+    {
+      "span_text": "trimmer"
+    },
+    {
+      "span_text": "grooming"
+    },
+    {
+      "span_text": "trimming"
+    },
+    {
+      "span_text": "shaving off"
+    },
+    {
+      "span_text": "cleaning completely"
+    },
+    {
+      "span_text": "examine properly"
+    }
+  ],
+  "Diagnostic": [],
+  "VitalSign": [
+    {
+      "span_text": "temperature"
+    },
+    {
+      "span_text": "weight"
+    }
+  ],
+  "Reminder": [],
+  "Symptom": [
+    {
+      "span_text": "scratching"
+    },
+    {
+      "span_text": "mild fever"
+    },
+    {
+      "span_text": "drink much water"
+    }
+  ],
+  "Diagnosis": [
+    {
+      "span_text": "infection process"
+    },
+    {
+      "span_text": "infection"
+    },
+    {
+      "span_text": "excess oil secretion"
+    }
+  ],
+  "Anatomy": [
+    {
+      "span_text": "affected area"
+    },
+    {
+      "span_text": "tail"
+    }
+  ],
+  "Diet": [
+    {
+      "span_text": "feeding"
+    },
+    {
+      "span_text": "good food"
+    },
+    {
+      "span_text": "pure"
+    },
+    {
+      "span_text": "put some daan in it"
+    },
+    {
+      "span_text": "commercial them"
+    },
+    {
+      "span_text": "trees"
+    }
+  ],
+  "Preventive": [
+    {
+      "span_text": "yearly vaccination"
+    },
+    {
+      "span_text": "vaccine"
+    }
+  ],
+  "ParasiteControl": [
+    {
+      "span_text": "ticks"
+    }
+  ],
+  "Other": [
+    {
+      "span_text": "trimmer"
+    },
+    {
+      "span_text": "feeding"
+    },
+    {
+      "span_text": "feeder"
+    },
+    {
+      "span_text": "water fountain water"
+    },
+    {
+      "span_text": "yard"
+    }
+  ]
+}

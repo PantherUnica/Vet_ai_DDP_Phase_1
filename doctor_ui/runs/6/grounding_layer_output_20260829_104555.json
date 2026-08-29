@@ -1,0 +1,189 @@
+[
+  {
+    "span_text": "stress",
+    "normalized_name": "stress",
+    "kind": "Diagnosis",
+    "route": "dual_sync",
+    "candidates": [],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "stress",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "note_only_below_threshold",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "appetite stimulant",
+    "normalized_name": "appetite stimulant",
+    "kind": "Medication",
+    "route": "dual_sync",
+    "candidates": [],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "appetite stimulant",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "unlinked",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "fever injection",
+    "normalized_name": "fever injection",
+    "kind": "Medication",
+    "route": "dual_sync",
+    "candidates": [],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "fever injection",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "unlinked",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "drops in the broth or lukewarm water",
+    "normalized_name": "drops in the broth or lukewarm water",
+    "kind": "Medication",
+    "route": "dual_sync",
+    "candidates": [],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "medicine drops in broth or water",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "unlinked",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "liquid medicine",
+    "normalized_name": "liquid medicine",
+    "kind": "Medication",
+    "route": "dual_sync",
+    "candidates": [],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "liquid medicine",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "unlinked",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "fever",
+    "normalized_name": "fever",
+    "kind": "Diagnosis",
+    "route": "dual_sync",
+    "candidates": [],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "fever",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "note_only_below_threshold",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "blood test",
+    "normalized_name": "blood test",
+    "kind": "Diagnostic",
+    "route": "dual_sync",
+    "candidates": [],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "blood test",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "unlinked",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "viral",
+    "normalized_name": "viral",
+    "kind": "Diagnosis",
+    "route": "dual_sync",
+    "candidates": [],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "viral",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "note_only_below_threshold",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "boil it well",
+    "normalized_name": "boil it well",
+    "kind": "Procedure",
+    "route": "dual_sync",
+    "candidates": [],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "boiling procedure",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "unlinked",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "drop the chicken broth with medicine using a syringe",
+    "normalized_name": "drop the chicken broth with medicine using a syringe",
+    "kind": "Procedure",
+    "route": "dual_sync",
+    "candidates": [],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "administer medicine with syringe",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "unlinked",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "put her on fluids",
+    "normalized_name": "put her on fluids",
+    "kind": "Procedure",
+    "route": "dual_sync",
+    "candidates": [],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "fluid therapy",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "unlinked",
+      "similarity_score": null
+    }
+  }
+]

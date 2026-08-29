@@ -1,0 +1,10 @@
+{
+  "provider": "voice",
+  "model": "n/a",
+  "latency_ms": 0,
+  "audio_path": "C:\\Users\\Aditya\\AppData\\Local\\Temp\\vetai_upload_Test_1.wav",
+  "char_count": 2352,
+  "word_count": 414,
+  "source": "voice",
+  "language": "multi"
+}

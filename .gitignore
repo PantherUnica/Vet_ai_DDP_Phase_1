@@ -3,6 +3,8 @@ input_audio_examples
 .env
 SQL_dump-20260813T141733Z-1-001
 SQL_dump-20260813T141733Z-1-001.zip
+SQL_dump_extracted/
+.tmp_pgvector/
 fireworks_api.txt
 API_Key.docx
 

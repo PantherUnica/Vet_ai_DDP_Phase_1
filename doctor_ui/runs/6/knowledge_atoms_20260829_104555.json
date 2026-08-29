@@ -1,0 +1,686 @@
+{
+  "knowledge_atoms": [
+    {
+      "concept": "Lethargy, Anorexia, Inactive Behavior",
+      "kind": "Reason",
+      "assertion_id": "CONF",
+      "intent_context": "Presented",
+      "source_text": "Cat presented with lethargy, anorexia, and inactive behavior since yesterday",
+      "section": "Subjective",
+      "attributes": {
+        "chief_complaint": "lethargy, anorexia, and inactive behavior since yesterday",
+        "urgency": "Routine",
+        "duration": "since yesterday",
+        "previous_history": null
+      },
+      "codes": {}
+    },
+    {
+      "concept": "Fever-Reducing Injection",
+      "kind": "Medicine",
+      "assertion_id": "CONF",
+      "intent_context": "Administered",
+      "source_text": "Administer fever-reducing injection",
+      "section": "Plan",
+      "attributes": {
+        "dose": null,
+        "route": "injection"
+      },
+      "codes": {}
+    },
+    {
+      "concept": "Appetite Stimulant",
+      "kind": "Medication",
+      "assertion_id": "CONF",
+      "intent_context": "Administered",
+      "source_text": "Administer ... appetite stimulant | Administer fever-reducing injection and appetite stimulant | Administer appetite stimulant",
+      "section": "Plan",
+      "attributes": {
+        "dose": null,
+        "route": null
+      },
+      "codes": {},
+      "kb_kind": "Medication",
+      "match_method": "unlinked"
+    },
+    {
+      "concept": "Blood Test",
+      "kind": "Diagnostic",
+      "assertion_id": "CONF",
+      "intent_context": "Ordered",
+      "source_text": "If no improvement in two days or increased lethargy, perform blood test to investigate further",
+      "section": "Plan",
+      "attributes": {
+        "specimen_type": null
+      },
+      "codes": {},
+      "kb_kind": "Diagnostic",
+      "match_method": "unlinked"
+    },
+    {
+      "concept": "Fever",
+      "kind": "Reason",
+      "assertion_id": "CONF",
+      "intent_context": "Presented",
+      "source_text": "Cat presented with lethargy, anorexia, and inactive behavior since yesterday. No vomiting reported.",
+      "section": "Subjective",
+      "attributes": {
+        "chief_complaint": "fever",
+        "urgency": "Routine",
+        "duration": "since yesterday",
+        "previous_history": null
+      },
+      "codes": {}
+    },
+    {
+      "concept": "Lukewarm water",
+      "kind": "Diet",
+      "assertion_id": "CONF",
+      "intent_context": "Prescribed",
+      "source_text": "Encourage hydration with lukewarm water or chicken broth with a small amount of salt, boiled well",
+      "section": "Plan",
+      "attributes": {
+        "metric_name": "Hydration fluid",
+        "value": null,
+        "unit": null
+      },
+      "codes": {},
+      "kb_kind": "VitalSign",
+      "match_method": "vital_sign_structured"
+    },
+    {
+      "concept": "Chicken broth",
+      "kind": "Diet",
+      "assertion_id": "CONF",
+      "intent_context": "Prescribed",
+      "source_text": "Encourage hydration with lukewarm water or chicken broth with a small amount of salt, boiled well",
+      "section": "Plan",
+      "attributes": {
+        "metric_name": "Hydration fluid",
+        "value": null,
+        "unit": null
+      },
+      "codes": {},
+      "kb_kind": "VitalSign",
+      "match_method": "vital_sign_structured"
+    },
+    {
+      "concept": "Fluid therapy",
+      "kind": "Procedure",
+      "assertion_id": "CONF",
+      "intent_context": "Scheduled",
+      "source_text": "If cat refuses fluids, initiate fluid therapy",
+      "section": "Plan",
+      "attributes": {
+        "at_site": null
+      },
+      "codes": {},
+      "kb_kind": "Procedure",
+      "match_method": "unlinked"
+    },
+    {
+      "concept": "Liquid medicine",
+      "kind": "Medication",
+      "assertion_id": "CONF",
+      "intent_context": "Prescribed",
+      "source_text": "Provide liquid medicine to be given in broth or lukewarm water; if refused, administer with syringe at side of mouth",
+      "section": "Plan",
+      "attributes": {
+        "dose": null,
+        "route": "oral"
+      },
+      "codes": {},
+      "kb_kind": "Medication",
+      "match_method": "unlinked"
+    },
+    {
+      "concept": "Lethargy",
+      "kind": "Reason",
+      "assertion_id": "CONF",
+      "intent_context": "Presented",
+      "source_text": "Cat presented with lethargy, anorexia, and inactive behavior since yesterday",
+      "section": "Subjective",
+      "attributes": {
+        "chief_complaint": "lethargy",
+        "urgency": "Routine",
+        "duration": "since yesterday",
+        "previous_history": null
+      },
+      "codes": {}
+    },
+    {
+      "concept": "Anorexia",
+      "kind": "Reason",
+      "assertion_id": "CONF",
+      "intent_context": "Presented",
+      "source_text": "Cat presented with lethargy, anorexia, and inactive behavior since yesterday",
+      "section": "Subjective",
+      "attributes": {
+        "chief_complaint": "anorexia",
+        "urgency": "Routine",
+        "duration": "since yesterday",
+        "previous_history": null
+      },
+      "codes": {}
+    },
+    {
+      "concept": "Strong smelling wet food",
+      "kind": "Nutrition",
+      "assertion_id": "CONF",
+      "intent_context": "Prescribed",
+      "source_text": "Provide strong smelling wet food to stimulate appetite",
+      "section": "Plan",
+      "attributes": {},
+      "codes": {}
+    },
+    {
+      "concept": "Lukewarm water",
+      "kind": "Medication",
+      "assertion_id": "CONF",
+      "intent_context": "Prescribed",
+      "source_text": "Encourage hydration with lukewarm water or chicken broth with a small amount of salt, boiled well",
+      "section": "Plan",
+      "attributes": {},
+      "codes": {},
+      "kb_kind": "Medication",
+      "match_method": "unlinked"
+    },
+    {
+      "concept": "Chicken broth with a small amount of salt",
+      "kind": "Nutrition",
+      "assertion_id": "CONF",
+      "intent_context": "Prescribed",
+      "source_text": "Encourage hydration with lukewarm water or chicken broth with a small amount of salt, boiled well",
+      "section": "Plan",
+      "attributes": {},
+      "codes": {}
+    },
+    {
+      "concept": "Lethargy and Anorexia",
+      "kind": "Reason",
+      "assertion_id": "CONF",
+      "intent_context": "Presented",
+      "source_text": "Cat presented with lethargy, anorexia, and inactive behavior since yesterday",
+      "section": "Subjective",
+      "attributes": {
+        "chief_complaint": "lethargy, anorexia, and inactive behavior since yesterday",
+        "urgency": "Routine",
+        "duration": "since yesterday",
+        "previous_history": null
+      },
+      "codes": {}
+    },
+    {
+      "concept": "Temperature",
+      "kind": "VitalSign",
+      "assertion_id": "CONF",
+      "intent_context": "Measured",
+      "source_text": "Temperature measured at 103.5°F indicating fever",
+      "section": "Objective",
+      "attributes": {
+        "metric_name": "Temperature",
+        "value": "103.5",
+        "unit": "Fahrenheit",
+        "qualitative_flag": "High",
+        "measurement_type": null,
+        "reference_range": null
+      },
+      "codes": {},
+      "kb_kind": "VitalSign",
+      "match_method": "vital_sign_structured"
+    },
+    {
+      "concept": "Quiet room",
+      "kind": "Procedure",
+      "assertion_id": "CONF",
+      "intent_context": "Performed",
+      "source_text": "Keep cat in a quiet room away from paint smell and noise",
+      "section": "Plan",
+      "attributes": {
+        "at_site": null
+      },
+      "codes": {}
+    },
+    {
+      "concept": "Liquid medicine administration",
+      "kind": "Procedure",
+      "assertion_id": "CONF",
+      "intent_context": "Scheduled",
+      "source_text": "if refused, administer with syringe at side of mouth",
+      "section": "Plan",
+      "attributes": {
+        "at_site": "side of mouth"
+      },
+      "codes": {}
+    },
+    {
+      "concept": "Fever-Reducing Injection",
+      "kind": "Procedure",
+      "assertion_id": "CONF",
+      "intent_context": "Performed",
+      "source_text": "Administer fever-reducing injection",
+      "section": "Plan",
+      "attributes": {
+        "procedure_name": "fever-reducing injection",
+        "at_site": null
+      },
+      "codes": {}
+    }
+  ],
+  "verification_dashboard": {
+    "procedures_services": [],
+    "medications_administered": [],
+    "medications_prescribed": [],
+    "diagnostics": [
+      {
+        "service_id": null,
+        "lab_radiology": "Radiology",
+        "test_name": "Fever-Reducing Injection",
+        "date_of_test": "TBD",
+        "done": "External",
+        "sample_collected": "No",
+        "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment. [Unlinked – ACTION REQUIRED: select service for billing]"
+      },
+      {
+        "service_id": null,
+        "lab_radiology": "LAB",
+        "test_name": "Blood Test",
+        "date_of_test": "TBD",
+        "done": "External",
+        "sample_collected": "No",
+        "remarks": "Mentioned as diagnostic; no matching inventory/service SKU found. Vet must select specific SKU for billing. [Unlinked – ACTION REQUIRED: select service for billing]"
+      }
+    ],
+    "other_products_retail": [],
+    "reminders_follow_ups": [
+      {
+        "item_name": "Fluid therapy",
+        "item_id": "[PROCEDURE-XXX]",
+        "due_date": "ASAP",
+        "remarks": "If cat refuses fluids, initiate fluid therapy",
+        "intent_context": "Scheduled",
+        "kind": "Procedure"
+      },
+      {
+        "item_name": "Liquid medicine administration",
+        "item_id": "[PROCEDURE-XXX]",
+        "due_date": "ASAP",
+        "remarks": "if refused, administer with syringe at side of mouth",
+        "intent_context": "Scheduled",
+        "kind": "Procedure"
+      }
+    ],
+    "vitals": [
+      {
+        "vital_name": "Temperature",
+        "value": "103.5 Fahrenheit"
+      }
+    ],
+    "module_4_unlinked_entities": [
+      {
+        "item_name": "Fever-Reducing Injection",
+        "kind": "Medicine",
+        "intent_context": "Administered",
+        "intent": "Administered (Medicine)",
+        "status": "ACTION REQUIRED",
+        "reason": "MISSING_LOCAL_ID",
+        "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+        "suggestions": [],
+        "inventory_id": null,
+        "administered_prescribed": "Administered",
+        "fulfillment": "Internal",
+        "quantity": "",
+        "dosage": "",
+        "duration": "",
+        "frequency": "Custom",
+        "instructions": "",
+        "route": "injection"
+      },
+      {
+        "item_name": "Appetite Stimulant",
+        "kind": "Medicine",
+        "intent_context": "Administered",
+        "intent": "Administered (Medicine)",
+        "status": "ACTION REQUIRED",
+        "reason": "MISSING_LOCAL_ID",
+        "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+        "suggestions": [],
+        "inventory_id": null,
+        "administered_prescribed": "Administered",
+        "fulfillment": "Internal",
+        "quantity": "",
+        "dosage": "",
+        "duration": "",
+        "frequency": "Custom",
+        "instructions": "",
+        "route": ""
+      },
+      {
+        "item_name": "Blood Test",
+        "kind": "Diagnostic",
+        "intent_context": "Ordered",
+        "intent": "Ordered (Diagnostic)",
+        "status": "ACTION REQUIRED",
+        "reason": "MISSING_LOCAL_ID",
+        "remarks": "Mentioned as diagnostic; no matching inventory/service SKU found. Vet must select specific SKU for billing.",
+        "suggestions": [],
+        "service_id": null,
+        "lab_radiology": "LAB",
+        "test_name": "Blood Test",
+        "date_of_test": "TBD",
+        "done": "External",
+        "sample_collected": "No"
+      },
+      {
+        "item_name": "Liquid medicine",
+        "kind": "Medicine",
+        "intent_context": "Prescribed",
+        "intent": "Prescribed (Medicine)",
+        "status": "ACTION REQUIRED",
+        "reason": "MISSING_LOCAL_ID",
+        "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+        "suggestions": [],
+        "inventory_id": null,
+        "administered_prescribed": "Prescribed",
+        "fulfillment": "Internal",
+        "quantity": "",
+        "dosage": "",
+        "duration": "",
+        "frequency": "Custom",
+        "instructions": "",
+        "route": "oral"
+      },
+      {
+        "item_name": "Strong smelling wet food",
+        "kind": "Nutrition",
+        "intent_context": "Prescribed",
+        "intent": "Prescribed (Nutrition)",
+        "status": "ACTION REQUIRED",
+        "reason": "MISSING_LOCAL_ID",
+        "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+        "suggestions": [],
+        "inventory_id": null,
+        "administered_prescribed": "Prescribed",
+        "fulfillment": "Internal",
+        "quantity": "",
+        "dosage": "",
+        "duration": "",
+        "frequency": "Custom",
+        "instructions": "",
+        "route": ""
+      },
+      {
+        "item_name": "Lukewarm water",
+        "kind": "Medicine",
+        "intent_context": "Prescribed",
+        "intent": "Prescribed (Medicine)",
+        "status": "ACTION REQUIRED",
+        "reason": "MISSING_LOCAL_ID",
+        "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+        "suggestions": [],
+        "inventory_id": null,
+        "administered_prescribed": "Prescribed",
+        "fulfillment": "Internal",
+        "quantity": "",
+        "dosage": "",
+        "duration": "",
+        "frequency": "Custom",
+        "instructions": "",
+        "route": ""
+      },
+      {
+        "item_name": "Chicken broth with a small amount of salt",
+        "kind": "Nutrition",
+        "intent_context": "Prescribed",
+        "intent": "Prescribed (Nutrition)",
+        "status": "ACTION REQUIRED",
+        "reason": "MISSING_LOCAL_ID",
+        "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+        "suggestions": [],
+        "inventory_id": null,
+        "administered_prescribed": "Prescribed",
+        "fulfillment": "Internal",
+        "quantity": "",
+        "dosage": "",
+        "duration": "",
+        "frequency": "Custom",
+        "instructions": "",
+        "route": ""
+      },
+      {
+        "item_name": "Quiet room",
+        "kind": "Procedure",
+        "intent_context": "Performed",
+        "intent": "Performed (Procedure)",
+        "status": "ACTION REQUIRED",
+        "reason": "MISSING_LOCAL_ID",
+        "remarks": "Mentioned as procedure; no matching inventory/service SKU found. Vet must select specific SKU for billing.",
+        "suggestions": [],
+        "service_id": null
+      },
+      {
+        "item_name": "Fever-Reducing Injection",
+        "kind": "Procedure",
+        "intent_context": "Performed",
+        "intent": "Performed (Procedure)",
+        "status": "ACTION REQUIRED",
+        "reason": "MISSING_LOCAL_ID",
+        "remarks": "Mentioned as procedure; no matching inventory/service SKU found. Vet must select specific SKU for billing.",
+        "suggestions": [],
+        "service_id": null
+      }
+    ],
+    "module_5_clinical_history": [],
+    "streamlined_dashboard": {
+      "signalment_vitals": [
+        {
+          "name": "Temperature",
+          "original_mention": "",
+          "status": "CONFIRMED",
+          "linked_id": null,
+          "suggestions": [],
+          "value": "103.5 Fahrenheit",
+          "label": "Vitals"
+        }
+      ],
+      "clinical_assessment": [],
+      "pharmacy_administered": [
+        {
+          "name": "Fever-Reducing Injection",
+          "original_mention": "Fever-Reducing Injection",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [],
+          "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+          "reason": "MISSING_LOCAL_ID",
+          "dosage": "",
+          "route": "injection",
+          "required_fields": [
+            "dosage",
+            "route"
+          ],
+          "label": "Administered (In-Clinic)"
+        },
+        {
+          "name": "Appetite Stimulant",
+          "original_mention": "Appetite Stimulant",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [],
+          "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+          "reason": "MISSING_LOCAL_ID",
+          "dosage": "",
+          "route": "",
+          "required_fields": [
+            "dosage",
+            "route"
+          ],
+          "label": "Administered (In-Clinic)"
+        }
+      ],
+      "pharmacy_prescribed": [
+        {
+          "name": "Liquid medicine",
+          "original_mention": "Liquid medicine",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [],
+          "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+          "reason": "MISSING_LOCAL_ID",
+          "dosage": "",
+          "frequency": "Custom",
+          "duration": "",
+          "quantity": "",
+          "instructions": "",
+          "required_fields": [
+            "frequency",
+            "duration"
+          ],
+          "label": "Prescribed (Home Care)"
+        },
+        {
+          "name": "Strong smelling wet food",
+          "original_mention": "Strong smelling wet food",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [],
+          "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+          "reason": "MISSING_LOCAL_ID",
+          "dosage": "",
+          "frequency": "Custom",
+          "duration": "",
+          "quantity": "",
+          "instructions": "",
+          "required_fields": [
+            "frequency",
+            "duration"
+          ],
+          "label": "Prescribed (Home Care)"
+        },
+        {
+          "name": "Lukewarm water",
+          "original_mention": "Lukewarm water",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [],
+          "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+          "reason": "MISSING_LOCAL_ID",
+          "dosage": "",
+          "frequency": "Custom",
+          "duration": "",
+          "quantity": "",
+          "instructions": "",
+          "required_fields": [
+            "frequency",
+            "duration"
+          ],
+          "label": "Prescribed (Home Care)"
+        },
+        {
+          "name": "Chicken broth with a small amount of salt",
+          "original_mention": "Chicken broth with a small amount of salt",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [],
+          "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+          "reason": "MISSING_LOCAL_ID",
+          "dosage": "",
+          "frequency": "Custom",
+          "duration": "",
+          "quantity": "",
+          "instructions": "",
+          "required_fields": [
+            "frequency",
+            "duration"
+          ],
+          "label": "Prescribed (Home Care)"
+        }
+      ],
+      "diagnostics_labs_imaging": [
+        {
+          "name": "Blood Test",
+          "original_mention": "Blood Test",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [],
+          "remarks": "Mentioned as diagnostic; no matching inventory/service SKU found. Vet must select specific SKU for billing.",
+          "reason": "MISSING_LOCAL_ID"
+        }
+      ],
+      "clinical_procedures_services": [
+        {
+          "name": "Quiet room",
+          "original_mention": "Quiet room",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [],
+          "remarks": "Mentioned as procedure; no matching inventory/service SKU found. Vet must select specific SKU for billing.",
+          "reason": "MISSING_LOCAL_ID"
+        },
+        {
+          "name": "Fever-Reducing Injection",
+          "original_mention": "Fever-Reducing Injection",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [],
+          "remarks": "Mentioned as procedure; no matching inventory/service SKU found. Vet must select specific SKU for billing.",
+          "reason": "MISSING_LOCAL_ID"
+        }
+      ],
+      "other_products_retail": [],
+      "preventive": [],
+      "patient_reminders": [],
+      "clinical_follow_ups": [
+        {
+          "name": "Fluid therapy",
+          "original_mention": "Fluid therapy",
+          "status": "DRAFTED",
+          "linked_id": "[PROCEDURE-XXX]",
+          "suggestions": [],
+          "due_date": "ASAP",
+          "remarks": "If cat refuses fluids, initiate fluid therapy",
+          "is_operational": true,
+          "scheduling_data": {
+            "service_id": null,
+            "temporal_offset": "ASAP",
+            "recommended_date": null,
+            "priority": "Routine",
+            "item_id": "[PROCEDURE-XXX]"
+          },
+          "label": "Clinical Follow-up"
+        },
+        {
+          "name": "Liquid medicine administration",
+          "original_mention": "Liquid medicine administration",
+          "status": "DRAFTED",
+          "linked_id": "[PROCEDURE-XXX]",
+          "suggestions": [],
+          "due_date": "ASAP",
+          "remarks": "if refused, administer with syringe at side of mouth",
+          "is_operational": true,
+          "scheduling_data": {
+            "service_id": null,
+            "temporal_offset": "ASAP",
+            "recommended_date": null,
+            "priority": "Routine",
+            "item_id": "[PROCEDURE-XXX]"
+          },
+          "label": "Clinical Follow-up"
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "session_id": "51d6c38a-6bfb-4592-96ff-df5f8fe24492",
+    "visit_id": "51d6c38a-6bfb-4592-96ff-df5f8fe24492",
+    "clinic_id": 8,
+    "mode": "minimal_parallel",
+    "model_provider": "openai",
+    "model_name": "gpt-4.1-mini",
+    "attempted_models": [
+      "gpt-4.1-mini"
+    ],
+    "kb_schema_loaded": false,
+    "parallel_batches": 5
+  }
+}

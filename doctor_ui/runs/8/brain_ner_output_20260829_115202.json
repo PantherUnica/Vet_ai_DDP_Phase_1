@@ -1,0 +1,1857 @@
+[
+  {
+    "span_text": "tablet",
+    "normalized_name": "tablet",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "One tablet is fine.",
+    "start_char": 1209,
+    "end_char": 1215,
+    "is_actionable": true,
+    "search_term": "tablet",
+    "hints": [
+      "tablet",
+      "tablet medication",
+      "oral tablet"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E5",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "One tablet is fine.",
+    "hint_probabilities": {
+      "tablet": 1.0,
+      "tablet medication": 0.9,
+      "oral tablet": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 2912
+  },
+  {
+    "span_text": "ointment",
+    "normalized_name": "ointment",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Apply the ointment on the affected area.",
+    "start_char": 1997,
+    "end_char": 2005,
+    "is_actionable": true,
+    "search_term": "ointment",
+    "hints": [
+      "ointment",
+      "topical ointment",
+      "medicated ointment"
+    ],
+    "family": null,
+    "domain": [
+      "dermatology"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E6",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Apply the ointment on the affected area.",
+    "hint_probabilities": {
+      "ointment": 1.0,
+      "topical ointment": 0.9,
+      "medicated ointment": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 2912
+  },
+  {
+    "span_text": "pet wipes",
+    "normalized_name": "pet wipes",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Pet wipes are available.",
+    "start_char": 2107,
+    "end_char": 2116,
+    "is_actionable": true,
+    "search_term": "pet wipes",
+    "hints": [
+      "pet wipes",
+      "pet cleaning wipes",
+      "pet hygiene wipes"
+    ],
+    "family": null,
+    "domain": [
+      "dermatology"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E7",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Pet wipes are available.",
+    "hint_probabilities": {
+      "pet wipes": 1.0,
+      "pet cleaning wipes": 0.85,
+      "pet hygiene wipes": 0.8
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 2912
+  },
+  {
+    "span_text": "copper and debo motor",
+    "normalized_name": "copper and debo motor",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Or else you can take some copper and debo motor and wipe it.",
+    "start_char": 2169,
+    "end_char": 2190,
+    "is_actionable": true,
+    "search_term": "copper and debo motor",
+    "hints": [
+      "copper and debo motor",
+      "copper and debramotor",
+      "copper and debromotor"
+    ],
+    "family": null,
+    "domain": [
+      "dermatology"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E7",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Or else you can take some copper and debo motor and wipe it.",
+    "hint_probabilities": {
+      "copper and debo motor": 1.0,
+      "copper and debramotor": 0.5,
+      "copper and debromotor": 0.4
+    },
+    "correctness_probability": 0.6,
+    "suggestion_probability": 0.6,
+    "query_expansion": [],
+    "_chunk_start": 1912,
+    "_chunk_end": 4324
+  },
+  {
+    "span_text": "medicines",
+    "normalized_name": "medicines",
+    "kind": "Medication",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "He used one of the medicines when I had a cotton.",
+    "start_char": 4173,
+    "end_char": 4182,
+    "is_actionable": true,
+    "search_term": "medicines",
+    "hints": [
+      "medicines",
+      "medications",
+      "drugs"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E34",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "He used one of the medicines when I had a cotton.",
+    "hint_probabilities": {
+      "medicines": 1.0,
+      "medications": 0.9,
+      "drugs": 0.85
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 1912,
+    "_chunk_end": 4324
+  },
+  {
+    "span_text": "apply the appointment",
+    "normalized_name": "apply the ointment",
+    "kind": "Procedure",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "apply the appointment on the affected area.",
+    "start_char": 1984,
+    "end_char": 2005,
+    "is_actionable": true,
+    "search_term": "apply the ointment",
+    "hints": [
+      "apply the ointment",
+      "apply the appointment",
+      "apply the application"
+    ],
+    "family": null,
+    "domain": [
+      "dermatology"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E3",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "apply the appointment on the affected area.",
+    "hint_probabilities": {
+      "apply the ointment": 1.0,
+      "apply the appointment": 0.7,
+      "apply the application": 0.5
+    },
+    "correctness_probability": 0.75,
+    "suggestion_probability": 0.85,
+    "query_expansion": [],
+    "_chunk_start": 1912,
+    "_chunk_end": 4324
+  },
+  {
+    "span_text": "wipe it with the wet side",
+    "normalized_name": "wipe with wet side",
+    "kind": "Procedure",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "wipe it with a wet side.",
+    "start_char": 2080,
+    "end_char": 2105,
+    "is_actionable": true,
+    "search_term": "wipe with wet side",
+    "hints": [
+      "wipe it with the wet side",
+      "wipe with wet side",
+      "wipe with damp cloth"
+    ],
+    "family": null,
+    "domain": [
+      "dermatology"
+    ],
+    "category": [],
+    "inventory_category": [
+      "General"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E5",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "wipe it with a wet side.",
+    "hint_probabilities": {
+      "wipe it with the wet side": 1.0,
+      "wipe with wet side": 0.9,
+      "wipe with damp cloth": 0.8
+    },
+    "correctness_probability": 0.85,
+    "suggestion_probability": 0.85,
+    "query_expansion": [],
+    "_chunk_start": 1912,
+    "_chunk_end": 4324
+  },
+  {
+    "span_text": "trim",
+    "normalized_name": "trim",
+    "kind": "Procedure",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Also, if possible, you can trim and apply.",
+    "start_char": 2237,
+    "end_char": 2241,
+    "is_actionable": true,
+    "search_term": "trim",
+    "hints": [
+      "trim",
+      "trim hair",
+      "trim fur"
+    ],
+    "family": null,
+    "domain": [
+      "dermatology"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E8",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Also, if possible, you can trim and apply.",
+    "hint_probabilities": {
+      "trim": 1.0,
+      "trim hair": 0.85,
+      "trim fur": 0.8
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 1912,
+    "_chunk_end": 4324
+  },
+  {
+    "span_text": "heating finely",
+    "normalized_name": "heating finely",
+    "kind": "Procedure",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Apart from that, heating finely.",
+    "start_char": 2369,
+    "end_char": 2383,
+    "is_actionable": true,
+    "search_term": "heating finely",
+    "hints": [
+      "heating finely",
+      "heating gently",
+      "heating finally"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [
+      "General"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E11",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Apart from that, heating finely.",
+    "hint_probabilities": {
+      "heating finely": 1.0,
+      "heating gently": 0.6,
+      "heating finally": 0.5
+    },
+    "correctness_probability": 0.7,
+    "suggestion_probability": 0.7,
+    "query_expansion": [],
+    "_chunk_start": 1912,
+    "_chunk_end": 4324
+  },
+  {
+    "span_text": "remove the hair",
+    "normalized_name": "remove hair",
+    "kind": "Procedure",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "When you take the trimmer, you can just remove the hair and then apply only.",
+    "start_char": 2397,
+    "end_char": 2412,
+    "is_actionable": true,
+    "search_term": "remove hair",
+    "hints": [
+      "remove the hair",
+      "remove hair",
+      "shave hair"
+    ],
+    "family": null,
+    "domain": [
+      "dermatology"
+    ],
+    "category": [],
+    "inventory_category": [
+      "General"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E10",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "When you take the trimmer, you can just remove the hair and then apply only.",
+    "hint_probabilities": {
+      "remove the hair": 1.0,
+      "remove hair": 0.9,
+      "shave hair": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 1912,
+    "_chunk_end": 4324
+  },
+  {
+    "span_text": "trimmer",
+    "normalized_name": "trimmer",
+    "kind": "Procedure",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "When you take the trimmer you can just remove your hair.",
+    "start_char": 3105,
+    "end_char": 3112,
+    "is_actionable": true,
+    "search_term": "trimmer",
+    "hints": [
+      "trimmer",
+      "pet hair trimmer",
+      "clipping device"
+    ],
+    "family": null,
+    "domain": [
+      "dermatology"
+    ],
+    "category": [
+      "Medical Supplies",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medical Supplies"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E8",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "When you take the trimmer you can just remove your hair.",
+    "hint_probabilities": {
+      "trimmer": 1.0,
+      "pet hair trimmer": 0.85,
+      "clipping device": 0.8
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 2912
+  },
+  {
+    "span_text": "grooming",
+    "normalized_name": "grooming",
+    "kind": "Procedure",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Whenever you go for grooming, at that time you can.",
+    "start_char": 3441,
+    "end_char": 3449,
+    "is_actionable": true,
+    "search_term": "grooming",
+    "hints": [
+      "grooming",
+      "pet grooming",
+      "animal grooming"
+    ],
+    "family": null,
+    "domain": [
+      "dermatology"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E22",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Whenever you go for grooming, at that time you can.",
+    "hint_probabilities": {
+      "grooming": 1.0,
+      "pet grooming": 0.9,
+      "animal grooming": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 1912,
+    "_chunk_end": 4324
+  },
+  {
+    "span_text": "trimming",
+    "normalized_name": "trimming",
+    "kind": "Procedure",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "I had a plan to get improved little extra for wherever. Yes, trimming.",
+    "start_char": 3538,
+    "end_char": 3546,
+    "is_actionable": true,
+    "search_term": "trimming",
+    "hints": [
+      "trimming",
+      "fur trimming",
+      "coat trimming"
+    ],
+    "family": null,
+    "domain": [
+      "dermatology"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E23",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "I had a plan to get improved little extra for wherever. Yes, trimming.",
+    "hint_probabilities": {
+      "trimming": 1.0,
+      "fur trimming": 0.9,
+      "coat trimming": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 1912,
+    "_chunk_end": 4324
+  },
+  {
+    "span_text": "shaving off",
+    "normalized_name": "shaving",
+    "kind": "Procedure",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Not completely like shaving off, but a little.",
+    "start_char": 3584,
+    "end_char": 3595,
+    "is_actionable": true,
+    "search_term": "shaving",
+    "hints": [
+      "shaving off",
+      "shaving",
+      "shave"
+    ],
+    "family": null,
+    "domain": [
+      "dermatology"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E24",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Not completely like shaving off, but a little.",
+    "hint_probabilities": {
+      "shaving off": 1.0,
+      "shaving": 0.9,
+      "shave": 0.85
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 1912,
+    "_chunk_end": 4324
+  },
+  {
+    "span_text": "cleaning completely",
+    "normalized_name": "complete cleaning",
+    "kind": "Procedure",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Then you go for, better for go for cleaning completely and then examine properly.",
+    "start_char": 3778,
+    "end_char": 3797,
+    "is_actionable": true,
+    "search_term": "complete cleaning",
+    "hints": [
+      "cleaning completely",
+      "complete cleaning",
+      "thorough cleaning"
+    ],
+    "family": null,
+    "domain": [
+      "dermatology"
+    ],
+    "category": [
+      "Medication",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Medication"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E26",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Then you go for, better for go for cleaning completely and then examine properly.",
+    "hint_probabilities": {
+      "cleaning completely": 1.0,
+      "complete cleaning": 0.9,
+      "thorough cleaning": 0.85
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 1912,
+    "_chunk_end": 4324
+  },
+  {
+    "span_text": "examine properly",
+    "normalized_name": "proper examination",
+    "kind": "Procedure",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Then you go for, better for go for cleaning completely and then examine properly.",
+    "start_char": 3807,
+    "end_char": 3823,
+    "is_actionable": true,
+    "search_term": "proper examination",
+    "hints": [
+      "examine properly",
+      "proper examination",
+      "thorough examination"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [
+      "Diagnostic",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Diagnostic"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E27",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Then you go for, better for go for cleaning completely and then examine properly.",
+    "hint_probabilities": {
+      "examine properly": 1.0,
+      "proper examination": 0.9,
+      "thorough examination": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 1912,
+    "_chunk_end": 4324
+  },
+  {
+    "span_text": "infection process",
+    "normalized_name": "infection process",
+    "kind": "Diagnosis",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "It's the infection process like this.",
+    "start_char": 3686,
+    "end_char": 3703,
+    "is_actionable": true,
+    "search_term": "infection process",
+    "hints": [
+      "infection process",
+      "infection",
+      "inflammatory process"
+    ],
+    "family": null,
+    "domain": [
+      "dermatology"
+    ],
+    "category": [],
+    "inventory_category": [
+      "General"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E25",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "It's the infection process like this.",
+    "hint_probabilities": {
+      "infection process": 1.0,
+      "infection": 0.9,
+      "inflammatory process": 0.85
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 1912,
+    "_chunk_end": 4324
+  },
+  {
+    "span_text": "infection",
+    "normalized_name": "infection",
+    "kind": "Diagnosis",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "In other sizes the infection is.",
+    "start_char": 3850,
+    "end_char": 3859,
+    "is_actionable": true,
+    "search_term": "infection",
+    "hints": [
+      "infection",
+      "inflammation",
+      "skin infection"
+    ],
+    "family": null,
+    "domain": [
+      "dermatology"
+    ],
+    "category": [],
+    "inventory_category": [
+      "General"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E28",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "In other sizes the infection is.",
+    "hint_probabilities": {
+      "infection": 1.0,
+      "inflammation": 0.9,
+      "skin infection": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 1912,
+    "_chunk_end": 4324
+  },
+  {
+    "span_text": "excess oil secretion",
+    "normalized_name": "excess oil secretion",
+    "kind": "Diagnosis",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "That is because of excess oil secretion.",
+    "start_char": 3951,
+    "end_char": 3971,
+    "is_actionable": true,
+    "search_term": "excess oil secretion",
+    "hints": [
+      "excess oil secretion",
+      "seborrhea",
+      "excess sebum production"
+    ],
+    "family": null,
+    "domain": [
+      "dermatology"
+    ],
+    "category": [],
+    "inventory_category": [
+      "General"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E30",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "That is because of excess oil secretion.",
+    "hint_probabilities": {
+      "excess oil secretion": 1.0,
+      "seborrhea": 0.85,
+      "excess sebum production": 0.8
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 1912,
+    "_chunk_end": 4324
+  },
+  {
+    "span_text": "yearly vaccination",
+    "normalized_name": "yearly vaccination",
+    "kind": "Preventive",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "That's a yearly vaccination.",
+    "start_char": 807,
+    "end_char": 825,
+    "is_actionable": true,
+    "search_term": "yearly vaccination",
+    "hints": [
+      "yearly vaccination",
+      "annual vaccination",
+      "annual vaccine"
+    ],
+    "family": null,
+    "domain": [
+      "preventative_wellness"
+    ],
+    "category": [
+      "Vaccines",
+      "Vaccination"
+    ],
+    "inventory_category": [
+      "Vaccines"
+    ],
+    "service_category": [
+      "Vaccination"
+    ],
+    "service_type": "medical",
+    "entity_id": "E4",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "That's a yearly vaccination.",
+    "hint_probabilities": {
+      "yearly vaccination": 1.0,
+      "annual vaccination": 0.9,
+      "annual vaccine": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 2912
+  },
+  {
+    "span_text": "vaccine",
+    "normalized_name": "vaccine",
+    "kind": "Preventive",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "The fever is from the vaccine.",
+    "start_char": 1937,
+    "end_char": 1944,
+    "is_actionable": true,
+    "search_term": "vaccine",
+    "hints": [
+      "vaccine",
+      "vaccination",
+      "immunization"
+    ],
+    "family": null,
+    "domain": [
+      "preventative_wellness"
+    ],
+    "category": [
+      "Vaccines",
+      "Vaccination"
+    ],
+    "inventory_category": [
+      "Vaccines"
+    ],
+    "service_category": [
+      "Vaccination"
+    ],
+    "service_type": "medical",
+    "entity_id": "E2",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "The fever is from the vaccine.",
+    "hint_probabilities": {
+      "vaccine": 1.0,
+      "vaccination": 0.95,
+      "immunization": 0.9
+    },
+    "correctness_probability": 0.99,
+    "suggestion_probability": 0.99,
+    "query_expansion": [],
+    "_chunk_start": 1912,
+    "_chunk_end": 4324
+  },
+  {
+    "span_text": "ticks",
+    "normalized_name": "ticks",
+    "kind": "ParasiteControl",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "No ticks, right?",
+    "start_char": 4090,
+    "end_char": 4095,
+    "is_actionable": true,
+    "search_term": "ticks",
+    "hints": [
+      "ticks",
+      "tick infestation",
+      "tick parasites"
+    ],
+    "family": null,
+    "domain": [
+      "preventative_wellness"
+    ],
+    "category": [
+      "Preventive & Parasite Control",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Preventive & Parasite Control"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E32",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "No ticks, right?",
+    "hint_probabilities": {
+      "ticks": 1.0,
+      "tick infestation": 0.9,
+      "tick parasites": 0.85
+    },
+    "correctness_probability": 0.98,
+    "suggestion_probability": 0.98,
+    "query_expansion": [],
+    "_chunk_start": 1912,
+    "_chunk_end": 4324
+  },
+  {
+    "span_text": "feeding",
+    "normalized_name": "feeding",
+    "kind": "Diet",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "What's the feeding, sir?",
+    "start_char": 2396,
+    "end_char": 2403,
+    "is_actionable": true,
+    "search_term": "feeding",
+    "hints": [
+      "feeding",
+      "feeding schedule",
+      "feeding routine"
+    ],
+    "family": null,
+    "domain": [
+      "nutrition"
+    ],
+    "category": [],
+    "inventory_category": [
+      "General"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E9",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "What's the feeding, sir?",
+    "hint_probabilities": {
+      "feeding": 1.0,
+      "feeding schedule": 0.85,
+      "feeding routine": 0.8
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 2912
+  },
+  {
+    "span_text": "good food",
+    "normalized_name": "good food",
+    "kind": "Diet",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Or you can also try any good food like.",
+    "start_char": 2811,
+    "end_char": 2820,
+    "is_actionable": true,
+    "search_term": "good food",
+    "hints": [
+      "good food",
+      "quality food",
+      "nutritious food"
+    ],
+    "family": null,
+    "domain": [
+      "nutrition"
+    ],
+    "category": [
+      "Diet",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Diet"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E15",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Or you can also try any good food like.",
+    "hint_probabilities": {
+      "good food": 1.0,
+      "quality food": 0.9,
+      "nutritious food": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 1912,
+    "_chunk_end": 4324
+  },
+  {
+    "span_text": "pure",
+    "normalized_name": "pure",
+    "kind": "Diet",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Okay. Like a pure.",
+    "start_char": 2882,
+    "end_char": 2886,
+    "is_actionable": true,
+    "search_term": "pure",
+    "hints": [
+      "pure",
+      "pure food",
+      "pure diet"
+    ],
+    "family": null,
+    "domain": [
+      "nutrition"
+    ],
+    "category": [
+      "Diet",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Diet"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E16",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Okay. Like a pure.",
+    "hint_probabilities": {
+      "pure": 1.0,
+      "pure food": 0.85,
+      "pure diet": 0.8
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 1912,
+    "_chunk_end": 4324
+  },
+  {
+    "span_text": "put some daan in it",
+    "normalized_name": "put some daan in it",
+    "kind": "Diet",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "You can put some daan in it and then just try to incorporate some food.",
+    "start_char": 2913,
+    "end_char": 2932,
+    "is_actionable": true,
+    "search_term": "put some daan in it",
+    "hints": [
+      "put some daan in it",
+      "add some daan",
+      "put some grain"
+    ],
+    "family": null,
+    "domain": [
+      "nutrition"
+    ],
+    "category": [
+      "Diet",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Diet"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E17",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "You can put some daan in it and then just try to incorporate some food.",
+    "hint_probabilities": {
+      "put some daan in it": 1.0,
+      "add some daan": 0.8,
+      "put some grain": 0.7
+    },
+    "correctness_probability": 0.85,
+    "suggestion_probability": 0.85,
+    "query_expansion": [],
+    "_chunk_start": 1912,
+    "_chunk_end": 4324
+  },
+  {
+    "span_text": "commercial them",
+    "normalized_name": "commercial food",
+    "kind": "Diet",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "and then just try to incorporate some food and then commercial them.",
+    "start_char": 2985,
+    "end_char": 3000,
+    "is_actionable": true,
+    "search_term": "commercial food",
+    "hints": [
+      "commercial them",
+      "commercial food",
+      "commercial diet"
+    ],
+    "family": null,
+    "domain": [
+      "nutrition"
+    ],
+    "category": [
+      "Diet",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Diet"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E18",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "and then just try to incorporate some food and then commercial them.",
+    "hint_probabilities": {
+      "commercial them": 1.0,
+      "commercial food": 0.9,
+      "commercial diet": 0.8
+    },
+    "correctness_probability": 0.85,
+    "suggestion_probability": 0.85,
+    "query_expansion": [],
+    "_chunk_start": 1912,
+    "_chunk_end": 4324
+  },
+  {
+    "span_text": "trees",
+    "normalized_name": "treats",
+    "kind": "Diet",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "But here and there I give trees.",
+    "start_char": 3028,
+    "end_char": 3033,
+    "is_actionable": true,
+    "search_term": "treats",
+    "hints": [
+      "trees",
+      "treats",
+      "tree treats"
+    ],
+    "family": null,
+    "domain": [
+      "nutrition"
+    ],
+    "category": [
+      "Diet",
+      "Consultation"
+    ],
+    "inventory_category": [
+      "Diet"
+    ],
+    "service_category": [
+      "Consultation"
+    ],
+    "service_type": "medical",
+    "entity_id": "E19",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "But here and there I give trees.",
+    "hint_probabilities": {
+      "trees": 0.5,
+      "treats": 1.0,
+      "tree treats": 0.7
+    },
+    "correctness_probability": 0.8,
+    "suggestion_probability": 0.8,
+    "query_expansion": [],
+    "_chunk_start": 1912,
+    "_chunk_end": 4324
+  },
+  {
+    "span_text": "temperature",
+    "normalized_name": "temperature",
+    "kind": "VitalSign",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Check the temperature.",
+    "start_char": 97,
+    "end_char": 108,
+    "is_actionable": true,
+    "search_term": "temperature",
+    "hints": [
+      "temperature",
+      "body temperature",
+      "fever"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E1",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Check the temperature.",
+    "hint_probabilities": {
+      "temperature": 1.0,
+      "body temperature": 0.9,
+      "fever": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 2912
+  },
+  {
+    "span_text": "weight",
+    "normalized_name": "weight",
+    "kind": "VitalSign",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "What do you think of his weight for his age?",
+    "start_char": 604,
+    "end_char": 610,
+    "is_actionable": true,
+    "search_term": "weight",
+    "hints": [
+      "weight",
+      "body weight",
+      "animal weight"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E3",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "What do you think of his weight for his age?",
+    "hint_probabilities": {
+      "weight": 1.0,
+      "body weight": 0.9,
+      "animal weight": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 2912
+  },
+  {
+    "span_text": "scratching",
+    "normalized_name": "scratching",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "He has started scratching him.",
+    "start_char": 142,
+    "end_char": 152,
+    "is_actionable": true,
+    "search_term": "scratching",
+    "hints": [
+      "scratching",
+      "itching",
+      "pruritus"
+    ],
+    "family": null,
+    "domain": [
+      "dermatology"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E2",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "He has started scratching him.",
+    "hint_probabilities": {
+      "scratching": 1.0,
+      "itching": 0.9,
+      "pruritus": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 2912
+  },
+  {
+    "span_text": "mild fever",
+    "normalized_name": "mild fever",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Like mild fever or mild, mild notice for today or tomorrow.",
+    "start_char": 1855,
+    "end_char": 1865,
+    "is_actionable": true,
+    "search_term": "mild fever",
+    "hints": [
+      "mild fever",
+      "low grade fever",
+      "slight fever"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E10",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Like mild fever or mild, mild notice for today or tomorrow.",
+    "hint_probabilities": {
+      "mild fever": 1.0,
+      "low grade fever": 0.9,
+      "slight fever": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 0,
+    "_chunk_end": 2912
+  },
+  {
+    "span_text": "drink much water",
+    "normalized_name": "increased water intake",
+    "kind": "Symptom",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "But the thing is they want to drink much water.",
+    "start_char": 3080,
+    "end_char": 3096,
+    "is_actionable": true,
+    "search_term": "increased water intake",
+    "hints": [
+      "drink much water",
+      "increased water intake",
+      "drinks a lot of water"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E20",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "But the thing is they want to drink much water.",
+    "hint_probabilities": {
+      "drink much water": 1.0,
+      "increased water intake": 0.9,
+      "drinks a lot of water": 0.85
+    },
+    "correctness_probability": 0.9,
+    "suggestion_probability": 0.9,
+    "query_expansion": [],
+    "_chunk_start": 1912,
+    "_chunk_end": 4324
+  },
+  {
+    "span_text": "affected area",
+    "normalized_name": "affected area",
+    "kind": "Anatomy",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "apply the appointment on the affected area.",
+    "start_char": 2018,
+    "end_char": 2031,
+    "is_actionable": true,
+    "search_term": "affected area",
+    "hints": [
+      "affected area",
+      "affected skin area",
+      "affected site"
+    ],
+    "family": null,
+    "domain": [
+      "dermatology"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E4",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "apply the appointment on the affected area.",
+    "hint_probabilities": {
+      "affected area": 1.0,
+      "affected skin area": 0.9,
+      "affected site": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 1912,
+    "_chunk_end": 4324
+  },
+  {
+    "span_text": "tail",
+    "normalized_name": "tail",
+    "kind": "Anatomy",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "Only over the tail.",
+    "start_char": 3910,
+    "end_char": 3914,
+    "is_actionable": true,
+    "search_term": "tail",
+    "hints": [
+      "tail",
+      "animal tail",
+      "tail region"
+    ],
+    "family": null,
+    "domain": [
+      "dermatology"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E29",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "Only over the tail.",
+    "hint_probabilities": {
+      "tail": 1.0,
+      "animal tail": 0.9,
+      "tail region": 0.85
+    },
+    "correctness_probability": 0.98,
+    "suggestion_probability": 0.98,
+    "query_expansion": [],
+    "_chunk_start": 1912,
+    "_chunk_end": 4324
+  },
+  {
+    "span_text": "trimmer",
+    "normalized_name": "trimmer",
+    "kind": "Other",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "When you take the trimmer, you can just remove the hair and then apply only.",
+    "start_char": 2375,
+    "end_char": 2382,
+    "is_actionable": true,
+    "search_term": "trimmer",
+    "hints": [
+      "trimmer",
+      "hair trimmer",
+      "pet trimmer"
+    ],
+    "family": null,
+    "domain": [
+      "dermatology"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E9",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "When you take the trimmer, you can just remove the hair and then apply only.",
+    "hint_probabilities": {
+      "trimmer": 1.0,
+      "hair trimmer": 0.9,
+      "pet trimmer": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 1912,
+    "_chunk_end": 4324
+  },
+  {
+    "span_text": "feeding",
+    "normalized_name": "feeding",
+    "kind": "Other",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "What's the feeding, sir?",
+    "start_char": 2396,
+    "end_char": 2403,
+    "is_actionable": true,
+    "search_term": "feeding",
+    "hints": [
+      "feeding",
+      "feeding schedule",
+      "feeding routine"
+    ],
+    "family": null,
+    "domain": [
+      "nutrition"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E12",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "What's the feeding, sir?",
+    "hint_probabilities": {
+      "feeding": 1.0,
+      "feeding schedule": 0.9,
+      "feeding routine": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 1912,
+    "_chunk_end": 4324
+  },
+  {
+    "span_text": "feeder",
+    "normalized_name": "feeder",
+    "kind": "Other",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "It's a feeder.",
+    "start_char": 2416,
+    "end_char": 2422,
+    "is_actionable": true,
+    "search_term": "feeder",
+    "hints": [
+      "feeder",
+      "feeding device",
+      "food dispenser"
+    ],
+    "family": null,
+    "domain": [
+      "nutrition"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E13",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "It's a feeder.",
+    "hint_probabilities": {
+      "feeder": 1.0,
+      "feeding device": 0.9,
+      "food dispenser": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 1912,
+    "_chunk_end": 4324
+  },
+  {
+    "span_text": "water fountain water",
+    "normalized_name": "water fountain water",
+    "kind": "Other",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "So that's why we have water fountain water.",
+    "start_char": 3191,
+    "end_char": 3211,
+    "is_actionable": true,
+    "search_term": "water fountain water",
+    "hints": [
+      "water fountain water",
+      "filtered water",
+      "fountain water"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E21",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "So that's why we have water fountain water.",
+    "hint_probabilities": {
+      "water fountain water": 1.0,
+      "filtered water": 0.9,
+      "fountain water": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 1912,
+    "_chunk_end": 4324
+  },
+  {
+    "span_text": "yard",
+    "normalized_name": "yard",
+    "kind": "Other",
+    "roles": [],
+    "attributes": {},
+    "assertion_id": "CONF",
+    "supporting_text": "We have a yard outside.",
+    "start_char": 4069,
+    "end_char": 4073,
+    "is_actionable": true,
+    "search_term": "yard",
+    "hints": [
+      "yard",
+      "yard area",
+      "outdoor yard"
+    ],
+    "family": null,
+    "domain": [
+      "general"
+    ],
+    "category": [],
+    "inventory_category": [],
+    "service_category": [],
+    "service_type": null,
+    "entity_id": "E31",
+    "grounding_recommended": true,
+    "grounding_reason": null,
+    "certainty": null,
+    "grounding_policy": "NEVER",
+    "context_snippet": "We have a yard outside.",
+    "hint_probabilities": {
+      "yard": 1.0,
+      "yard area": 0.9,
+      "outdoor yard": 0.85
+    },
+    "correctness_probability": 0.95,
+    "suggestion_probability": 0.95,
+    "query_expansion": [],
+    "_chunk_start": 1912,
+    "_chunk_end": 4324
+  }
+]

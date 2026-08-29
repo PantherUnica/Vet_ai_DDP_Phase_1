@@ -1,0 +1,642 @@
+[
+  {
+    "span_text": "a little salt",
+    "normalized_name": "a little salt",
+    "display_name": "a little salt",
+    "kind": "Diet",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "VitalSign",
+    "match_method": "vital_sign_structured",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "salt",
+      "sodium chloride",
+      "table salt"
+    ],
+    "search_term": "salt"
+  },
+  {
+    "span_text": "appetite stimulant",
+    "normalized_name": "appetite stimulant",
+    "display_name": "appetite stimulant",
+    "kind": "Medication",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Medication",
+    "match_method": "unlinked",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "appetite stimulant",
+      "anorectic agent",
+      "appetite enhancer"
+    ],
+    "search_term": "appetite stimulant"
+  },
+  {
+    "span_text": "blood test",
+    "normalized_name": "blood test",
+    "display_name": "blood test",
+    "kind": "Diagnostic",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Diagnostic",
+    "match_method": "dual_sync_judge_rejected",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {
+      "suggestions": [
+        {
+          "name": "BLOOD TEST T4",
+          "match_score": 0.9538461538461538,
+          "recommendation": "MEDIUM",
+          "service_id": 912
+        },
+        {
+          "name": "BLOOD TEST CBC",
+          "match_score": 0.9428571428571428,
+          "recommendation": "MEDIUM",
+          "service_id": 909
+        },
+        {
+          "name": "BLOOD TEST FSH",
+          "match_score": 0.9428571428571428,
+          "recommendation": "MEDIUM",
+          "service_id": 910
+        },
+        {
+          "name": "BLOOD TEST 4DX",
+          "match_score": 0.9428571428571428,
+          "recommendation": "MEDIUM",
+          "service_id": 907
+        },
+        {
+          "name": "BLOOD TEST ACTH",
+          "match_score": 0.9333333333333333,
+          "recommendation": "MEDIUM",
+          "service_id": 908
+        }
+      ],
+      "primary_local_suggestion": {
+        "name": "BLOOD TEST T4",
+        "stock_id": null,
+        "service_id": 912
+      }
+    },
+    "hints": [
+      "blood test",
+      "blood panel",
+      "hematology test"
+    ],
+    "search_term": "blood test"
+  },
+  {
+    "span_text": "boiled chicken",
+    "normalized_name": "boiled chicken",
+    "display_name": "boiled chicken",
+    "kind": "Diet",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "VitalSign",
+    "match_method": "vital_sign_structured",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "boiled chicken",
+      "cooked chicken",
+      "chicken meat"
+    ],
+    "search_term": "boiled chicken"
+  },
+  {
+    "span_text": "cat",
+    "normalized_name": "cat",
+    "display_name": "cat",
+    "kind": "Other",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "other_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "cat",
+      "feline",
+      "domestic cat"
+    ],
+    "search_term": "cat"
+  },
+  {
+    "span_text": "changed her food only last week",
+    "normalized_name": "changed her food only last week",
+    "display_name": "changed her food only last week",
+    "kind": "Other",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "other_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "recent diet change",
+      "food change",
+      "diet modification"
+    ],
+    "search_term": "recent diet change"
+  },
+  {
+    "span_text": "chicken broth",
+    "normalized_name": "chicken broth",
+    "display_name": "chicken broth",
+    "kind": "Diet",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "VitalSign",
+    "match_method": "vital_sign_structured",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "chicken broth",
+      "broth",
+      "meat broth"
+    ],
+    "search_term": "chicken broth"
+  },
+  {
+    "span_text": "drops",
+    "normalized_name": "drops",
+    "display_name": "drops",
+    "kind": "Medication",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Medication",
+    "match_method": "dual_sync_judge_rejected",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {
+      "suggestions": [
+        {
+          "name": "NASELINI DROPS",
+          "match_score": 0.7904761904761904,
+          "recommendation": "MEDIUM",
+          "inventory_id": 40684,
+          "stock_id": 40684
+        },
+        {
+          "name": "LIV 52 DROPS",
+          "match_score": 0.7888888888888889,
+          "recommendation": "MEDIUM",
+          "inventory_id": 40885,
+          "stock_id": 40885
+        },
+        {
+          "name": "VEROL DROPS 15ML",
+          "match_score": 0.7837962962962962,
+          "recommendation": "MEDIUM",
+          "inventory_id": 39693,
+          "stock_id": 39693
+        },
+        {
+          "name": "Veko Otikoo Ear Drops 0.3% 15 ml",
+          "match_score": 0.7337499999999999,
+          "recommendation": "MEDIUM",
+          "inventory_id": 42380,
+          "stock_id": 42380
+        },
+        {
+          "name": "Cipla Oflox 0.3% 5 ml Eye/Ear Drops",
+          "match_score": 0.7250000000000001,
+          "recommendation": "MEDIUM",
+          "inventory_id": 42391,
+          "stock_id": 42391
+        }
+      ],
+      "primary_local_suggestion": {
+        "name": "NASELINI DROPS",
+        "stock_id": 40684,
+        "service_id": null
+      }
+    },
+    "hints": [
+      "oral drops",
+      "liquid drops",
+      "medication drops"
+    ],
+    "search_term": "oral drops"
+  },
+  {
+    "span_text": "fever",
+    "normalized_name": "fever",
+    "display_name": "fever",
+    "kind": "Diagnosis",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Diagnosis",
+    "match_method": "note_only_below_threshold",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "fever",
+      "pyrexia",
+      "high temperature"
+    ],
+    "search_term": "fever"
+  },
+  {
+    "span_text": "fever injection",
+    "normalized_name": "fever injection",
+    "display_name": "fever injection",
+    "kind": "Medication",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Medication",
+    "match_method": "unlinked",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "fever injection",
+      "antipyretic injection",
+      "fever treatment injection"
+    ],
+    "search_term": "fever injection"
+  },
+  {
+    "span_text": "fluids",
+    "normalized_name": "fluids",
+    "display_name": "fluids",
+    "kind": "Diet",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "VitalSign",
+    "match_method": "vital_sign_structured",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "fluids",
+      "fluid therapy",
+      "hydration"
+    ],
+    "search_term": "fluids"
+  },
+  {
+    "span_text": "house was painted recently",
+    "normalized_name": "house was painted recently",
+    "display_name": "house was painted recently",
+    "kind": "Other",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "other_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "recent environmental change",
+      "house painted",
+      "new paint smell"
+    ],
+    "search_term": "recent environmental change"
+  },
+  {
+    "span_text": "humidifier",
+    "normalized_name": "humidifier",
+    "display_name": "humidifier",
+    "kind": "Other",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "other_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "humidifier",
+      "air humidifier",
+      "room humidifier"
+    ],
+    "search_term": "humidifier"
+  },
+  {
+    "span_text": "liquid medicine",
+    "normalized_name": "liquid medicine",
+    "display_name": "liquid medicine",
+    "kind": "Medication",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Medication",
+    "match_method": "dual_sync_judge_rejected",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {
+      "suggestions": [
+        {
+          "name": "Lupin Lupic LD 5 mg+2 mg 15 ml Paediatric",
+          "match_score": 0.6585782638414217,
+          "recommendation": "MEDIUM",
+          "inventory_id": 42360,
+          "stock_id": 42360
+        }
+      ],
+      "primary_local_suggestion": {
+        "name": "Lupin Lupic LD 5 mg+2 mg 15 ml Paediatric",
+        "stock_id": 42360,
+        "service_id": null
+      }
+    },
+    "hints": [
+      "liquid medicine",
+      "oral liquid medication",
+      "liquid drug"
+    ],
+    "search_term": "liquid medicine"
+  },
+  {
+    "span_text": "lukewarm water",
+    "normalized_name": "lukewarm water",
+    "display_name": "lukewarm water",
+    "kind": "Diet",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "VitalSign",
+    "match_method": "vital_sign_structured",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "lukewarm water",
+      "warm water",
+      "tepid water"
+    ],
+    "search_term": "lukewarm water"
+  },
+  {
+    "span_text": "lying in one place",
+    "normalized_name": "lying in one place",
+    "display_name": "lying in one place",
+    "kind": "Symptom",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "non_billable_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "immobility",
+      "lying still",
+      "not moving"
+    ],
+    "search_term": "immobility"
+  },
+  {
+    "span_text": "not drinking any water",
+    "normalized_name": "not drinking any water",
+    "display_name": "not drinking any water",
+    "kind": "Symptom",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "non_billable_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "not drinking water",
+      "not drinking fluids",
+      "anorexia for water"
+    ],
+    "search_term": "not drinking water"
+  },
+  {
+    "span_text": "not eating",
+    "normalized_name": "not eating",
+    "display_name": "not eating",
+    "kind": "Symptom",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "non_billable_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "anorexia",
+      "loss of appetite",
+      "not eating"
+    ],
+    "search_term": "anorexia"
+  },
+  {
+    "span_text": "not vomiting",
+    "normalized_name": "not vomiting",
+    "display_name": "not vomiting",
+    "kind": "Symptom",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "non_billable_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "no vomiting",
+      "absence of vomiting",
+      "not throwing up"
+    ],
+    "search_term": "no vomiting"
+  },
+  {
+    "span_text": "quiet room",
+    "normalized_name": "quiet room",
+    "display_name": "quiet room",
+    "kind": "Other",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "other_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "quiet room",
+      "calm room",
+      "noise-free room"
+    ],
+    "search_term": "quiet room"
+  },
+  {
+    "span_text": "stopped eating",
+    "normalized_name": "stopped eating",
+    "display_name": "stopped eating",
+    "kind": "Symptom",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "non_billable_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "anorexia",
+      "loss of appetite",
+      "stopped eating"
+    ],
+    "search_term": "anorexia"
+  },
+  {
+    "span_text": "stress",
+    "normalized_name": "stress",
+    "display_name": "stress",
+    "kind": "Diagnosis",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Diagnosis",
+    "match_method": "note_only_below_threshold",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "stress",
+      "psychological stress",
+      "environmental stress"
+    ],
+    "search_term": "stress"
+  },
+  {
+    "span_text": "syringe",
+    "normalized_name": "syringe",
+    "display_name": "syringe",
+    "kind": "Procedure",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Procedure",
+    "match_method": "unlinked",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "syringe",
+      "oral syringe",
+      "medicine syringe"
+    ],
+    "search_term": "syringe"
+  },
+  {
+    "span_text": "temperature",
+    "normalized_name": "temperature",
+    "display_name": "temperature",
+    "kind": "VitalSign",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "VitalSign",
+    "match_method": "vital_sign_structured",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "body temperature",
+      "temperature",
+      "fever measurement"
+    ],
+    "search_term": "body temperature"
+  },
+  {
+    "span_text": "very low since yesterday",
+    "normalized_name": "very low since yesterday",
+    "display_name": "very low since yesterday",
+    "kind": "Symptom",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "non_billable_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "lethargy",
+      "low activity",
+      "decreased energy"
+    ],
+    "search_term": "lethargy"
+  },
+  {
+    "span_text": "viral",
+    "normalized_name": "viral",
+    "display_name": "viral",
+    "kind": "Diagnosis",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Diagnosis",
+    "match_method": "note_only_below_threshold",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "viral infection",
+      "virus",
+      "viral disease"
+    ],
+    "search_term": "viral infection"
+  },
+  {
+    "span_text": "water",
+    "normalized_name": "water",
+    "display_name": "water",
+    "kind": "Diet",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "VitalSign",
+    "match_method": "vital_sign_structured",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "water",
+      "drinking water",
+      "fluid intake"
+    ],
+    "search_term": "water"
+  },
+  {
+    "span_text": "wet food",
+    "normalized_name": "wet food",
+    "display_name": "wet food",
+    "kind": "Diet",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "VitalSign",
+    "match_method": "vital_sign_structured",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "wet food",
+      "moist food",
+      "soft food"
+    ],
+    "search_term": "wet food"
+  }
+]

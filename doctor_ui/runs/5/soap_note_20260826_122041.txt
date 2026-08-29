@@ -1,0 +1,14 @@
+{
+  "Subjective": "Cat presented with lethargy, anorexia, lying still, and not drinking water since yesterday. No vomiting reported. Recent diet change noted. Owner reports recent house painting causing stress to the cat.",
+  "Objective": "Temperature measured at 103.5°F indicating fever. Cat appears dull and inactive. No vomiting observed.",
+  "Assessment": "Fever likely due to viral infection or environmental stress from recent house painting. Anorexia and lethargy consistent with systemic illness or stress response.",
+  "Plan": "Administer fever injection and appetite stimulant. Keep cat in a quiet room away from paint smell and noise. Provide wet food with strong smell and lukewarm water or chicken broth with a little salt to encourage hydration. Use liquid medicine mixed in lukewarm water drops for ease of administration. Monitor appetite and activity. If no improvement in two days or increased lethargy, perform blood test to rule out other issues.",
+  "Conclusion": "Cat is febrile with anorexia and lethargy likely secondary to viral infection or stress. Supportive care initiated with close monitoring.",
+  "DifferentialDiagnosis": "Viral infection, environmental stress-induced illness, possible dietary intolerance due to recent food change.",
+  "KeyIssues": "Fever, anorexia, lethargy, dehydration risk, environmental stress from house painting.",
+  "AbnormalFindings": "Elevated body temperature (103.5°F), anorexia, lethargy, refusal to drink water.",
+  "CustomerInstructions": "Keep cat in a quiet, calm room away from paint smell and noise. Offer wet food with strong aroma and lukewarm water or chicken broth with salt. Administer prescribed fever injection and appetite stimulant. Use liquid medicine in lukewarm water drops for oral administration. Monitor for appetite and activity improvement. Contact clinic if no improvement in two days or if lethargy worsens.",
+  "Protocols": "Administer antipyretic injection and appetite stimulant as per standard dosing. Provide supportive care with hydration and nutrition. Schedule blood test if no clinical improvement within 48 hours.",
+  "Vitals": "Temperature: 103.5°F (fever)",
+  "Reminders": "Monitor hydration status closely. Avoid sudden dietary changes. Ensure environment is stress-free. Follow up in two days or sooner if condition worsens."
+}
