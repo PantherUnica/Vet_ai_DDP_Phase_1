@@ -42,7 +42,10 @@ if _env_file.exists():
         pass
 
 from doctor_ui import db  # noqa: E402
-from doctor_ui.components.soap_display import render_soap_template  # noqa: E402
+from doctor_ui.components.soap_display import (  # noqa: E402
+    load_pipeline_flags,
+    render_soap_template,
+)
 from doctor_ui.languages import (  # noqa: E402
     DEFAULT_LANGUAGE,
     label_to_stored,
@@ -208,6 +211,7 @@ def page_new_consultation() -> None:
                             )
                         )
                         st.session_state.soap_json = out["soap_json"]
+                        st.session_state.pipeline_flags = out.get("pipeline_flags") or {}
                         st.session_state.view = "results"
                         st.rerun()
                     except Exception as exc:
@@ -237,7 +241,11 @@ def page_results() -> None:
 
     soap_json = rec.get("soap_json_parsed") or st.session_state.get("soap_json")
     if soap_json:
-        render_soap_template(soap_json)
+        flags = (
+            st.session_state.get("pipeline_flags")
+            or load_pipeline_flags(rec.get("output_dir"))
+        )
+        render_soap_template(soap_json, flags_report=flags)
     elif rec.get("status") == "error":
         st.error(rec.get("error_message") or "Pipeline error")
     else:

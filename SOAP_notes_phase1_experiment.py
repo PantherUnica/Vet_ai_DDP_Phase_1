@@ -157,7 +157,7 @@ def _env_float(name: str, default: float) -> float:
 
 
 # Centralized grounding thresholds (used across streaming + non-streaming paths).
-GROUNDING_AUTO_BIND_THRESHOLD = _env_float("GROUNDING_AUTO_BIND_THRESHOLD", 0.92)
+GROUNDING_AUTO_BIND_THRESHOLD = _env_float("GROUNDING_AUTO_BIND_THRESHOLD", 0.85)
 GROUNDING_LLM_JUDGE_THRESHOLD = _env_float("GROUNDING_LLM_JUDGE_THRESHOLD", 0.55)
 
 # ==============================================================================
@@ -771,6 +771,11 @@ e. Avoid adding medical judgements:
 f. If no medically relevant information is available, output only no medically relevant information available.
 Step 7: Plan of Action
 Purpose: Extract the recommended plan for diagnostics, treatment, prescriptions and follow-ups and owner instructions based on the conversation and summarize the recommended plan for diagnostics, treatment, and follow-up and owner instructions as discussed in the conversation.
+**FORMAT (mandatory):** Plan MUST be a numbered list with ONE item per line (newline after each item). Example:
+1. Apply topical ointment to the affected area after cleaning
+2. Administer oral tablet as prescribed
+3. Recheck in three days if not improving
+Do NOT write Plan as a single paragraph with inline "1. … 2. … 3. …".
 Actions:
 a. Document all Recommendations:
 • Include treatments, medications, therapies, interventions, diagnostic tests as discussed in the conversation.
@@ -827,9 +832,12 @@ d. Differential Diagnosis Section:
 • Output exactly one heading in the format System-Condition (e.g., Gastrointestinal-Gastroenteritis.
 Step 10: Customer Instructions Extraction
 Purpose: Extract all the customer instructions given by the veterinarian to the customer following the treatment.
+**FORMAT (mandatory):** Numbered list, one instruction per line (1. / 2. / 3.).
+CustomerInstructions = at-home care the owner should do now (medication how-to, diet, environment, wound care).
+Do NOT put scheduled rechecks / future visits here — those go only in Reminders.
 Actions:
 a. Document all Instructions:
-• Include all customer instructions, recommendations given by the doctor, medical dosage instructions and advice, any specific care instructions, follow-up recommendations and next visit dates as discussed in the conversation.
+• Include all customer instructions, recommendations given by the doctor, medical dosage instructions and advice, any specific care instructions as discussed in the conversation.
 b. Include any customer instructions from the treatment protocol, if relevant and available.
 c. Ensure Accuracy:
 • Only include actions explicitly mentioned in the conversation.
@@ -852,7 +860,12 @@ b. Leave the template as it is, without making any changes, even if there are nu
 c. Ensure Accuracy:
 • Only include items explicitly mentioned in the conversation.
 Step 13: Reminders and Follow-up Section
-Purpose: Extract all the reminders, follow-ups as well any future course of actions to be done by the veterinarian or by the pet owner following the present consultation. Extract it and consolidate those aspects from the conversation.
+Purpose: Extract ALL follow-ups and reminders into a SINGLE field called Reminders (do not invent separate follow-up sections).
+**FORMAT (mandatory):** One numbered list only — put conditional "if needed" actions AND scheduled rechecks/tests/vaccines together, one item per line:
+1. Recheck skin in 2-3 days
+2. Return if symptoms worsen
+3. Vaccination booster in 3 months
+Do NOT output FollowUpInstructions or FollowUpReminders as separate fields (token waste / duplication).
 Actions:
 a. Document all reminders and follow-ups:
 • Include all follow-up recommendations and next visit dates, future diagnostic tests to be conducted, future surgeries planned or any other future course of action along with remarks against those as discussed in the conversation.
@@ -861,8 +874,13 @@ a. Document all reminders and follow-ups:
 b. Include any instructions from the treatment protocol, if relevant and available.
 c. Ensure Accuracy:
 • Only include actions explicitly mentioned in the conversation.
+• Deduplicate near-identical items (e.g. do not repeat the same recheck three ways).
 Step 14: Key Issues Section
 Purpose: Extract all the primary key clinical issues that were discussed in the conversation. Extract it and consolidate those aspects from the conversation.
+**FORMAT (mandatory):** Numbered list, one key issue per line:
+1. Primary issue with brief remark
+2. Next issue with brief remark
+Do NOT write Key Issues as a comma-separated paragraph.
 Actions:
 a. Document all key issues:
 • Include all the key issues that were discussed during the conversation with a remarks summary.
@@ -872,6 +890,7 @@ d. The key issues have to be clinically relevant and independent on their own, r
 e. The remarks can be similar to the overall SOAP note conclusion, but should be specific to the key issues, against which the remarks are mentioned.
 Step 15: Abnormal Findings
 Purpose: Identify any and all abnormal findings in the conversation or filled up vitals/protocols.
+**FORMAT (mandatory):** Numbered list, one finding per line (1. / 2. / 3.). Do NOT use a comma-separated paragraph.
 Actions:
 a. Document all Abnormal findings:
 • Include all abnormal findings discussed in the conversation.
@@ -938,18 +957,20 @@ Before generating the final SOAP note, ensure that no part of the transcript or 
   Subjective: Subjective content here,
   Objective: Objective content here,
   Assessment: Assessment content here,
-  Plan: Plan content here,
+  Plan: "1. First plan item\\n2. Second plan item\\n3. Third plan item",
   Conclusion: Conclusion content here,
   DifferentialDiagnosis: Differential Diagnosis content here,
-  KeyIssues: Key Issues content here,
-  AbnormalFindings: Abnormal Findings content here,
-  CustomerInstructions: Customer Instructions content here,
+  KeyIssues: "1. First key issue\\n2. Second key issue",
+  AbnormalFindings: "1. First abnormal finding\\n2. Second abnormal finding",
+  CustomerInstructions: "1. First at-home instruction\\n2. Second at-home instruction",
   Protocols: Protocols content here,
   Vitals: Vitals content here,
-  Reminders: Reminders content here
+  Reminders: "1. Recheck in 2-3 days\\n2. Return if worsening\\n3. Next vaccine as scheduled"
 }}
 
 **IMPORTANT:** Do NOT include the Transcript field in the JSON output. The transcript is saved separately and should not be part of the SOAP note.
+**IMPORTANT:** Plan, KeyIssues, AbnormalFindings, CustomerInstructions, and Reminders MUST use newline-separated numbered lists (not one long paragraph).
+**IMPORTANT:** Put ALL follow-up / reminder content only in Reminders (single section — no FollowUpInstructions / FollowUpReminders fields).
 
 Step 21: Final Reminders
 a. Assessment:
@@ -1516,6 +1537,8 @@ _SOAP_SECTION_KEYS = [
     "Protocols", "Vitals", "Reminders",
 ]
 
+_DEFAULT_SOAP_NOTE = {k: "" for k in _SOAP_SECTION_KEYS}
+
 
 def _parse_plain_text_soap_sections(raw: str, logger: Optional[logging.Logger] = None) -> Optional[dict]:
     """
@@ -1633,21 +1656,7 @@ def extract_soap_json(raw_response: str, logger: Optional[logging.Logger] = None
             return plain_dict
         if logger:
             logger.warning("⚠️ No JSON object start found in response; using default SOAP structure")
-        default_soap_note = {
-            "Subjective": "",
-            "Objective": "",
-            "Assessment": "",
-            "Plan": "",
-            "Conclusion": "",
-            "DifferentialDiagnosis": "",
-            "KeyIssues": "",
-            "AbnormalFindings": "",
-            "CustomerInstructions": "",
-            "Protocols": "",
-            "Vitals": "",
-            "Reminders": ""
-        }
-        return default_soap_note
+        return dict(_DEFAULT_SOAP_NOTE)
     
     # Remove any reasoning text before the start
     if start_index > 0:
@@ -1759,20 +1768,7 @@ def extract_soap_json(raw_response: str, logger: Optional[logging.Logger] = None
     
     # Final fallback: Create default SOAP note structure to prevent pipeline failure
     # This ensures the pipeline continues even if JSON extraction completely fails
-    default_soap_note = {
-        "Subjective": "",
-        "Objective": "",
-        "Assessment": "",
-        "Plan": "",
-        "Conclusion": "",
-        "DifferentialDiagnosis": "",
-        "KeyIssues": "",
-        "AbnormalFindings": "",
-        "CustomerInstructions": "",
-        "Protocols": "",
-        "Vitals": "",
-        "Reminders": ""
-    }
+    default_soap_note = dict(_DEFAULT_SOAP_NOTE)
     
     if logger:
         logger.info("✅ Default SOAP note structure created as fallback")
@@ -1801,20 +1797,7 @@ def extract_json_from_llm_response(response_text: str, logger: Optional[logging.
         logger.warning("⚠️  extract_soap_json returned None (unexpected) - creating default structure")
     
     # Create default structure as emergency fallback
-    default_soap_note = {
-        "Subjective": "",
-        "Objective": "",
-        "Assessment": "",
-        "Plan": "",
-        "Conclusion": "",
-        "DifferentialDiagnosis": "",
-        "KeyIssues": "",
-        "AbnormalFindings": "",
-        "CustomerInstructions": "",
-        "Protocols": "",
-        "Vitals": "",
-        "Reminders": ""
-    }
+    default_soap_note = dict(_DEFAULT_SOAP_NOTE)
     
     return json.dumps(default_soap_note, indent=2, ensure_ascii=False)
 
@@ -2562,20 +2545,7 @@ class FireworksProvider(LLMProvider):
                     self.logger.warning("⚠️  Creating default SOAP note structure as emergency fallback")
                     
                     # Emergency fallback: Create default structure
-                    soap_json_dict = {
-                        "Subjective": "",
-                        "Objective": "",
-                        "Assessment": "",
-                        "Plan": "",
-                        "Conclusion": "",
-                        "DifferentialDiagnosis": "",
-                        "KeyIssues": "",
-                        "AbnormalFindings": "",
-                        "CustomerInstructions": "",
-                        "Protocols": "",
-                        "Vitals": "",
-                        "Reminders": ""
-                    }
+                    soap_json_dict = dict(_DEFAULT_SOAP_NOTE)
                 else:
                     # Normalize to required schema keys (fill missing with empty strings)
                     for k in SOAP_NOTE_JSON_SCHEMA["required"]:
@@ -4718,17 +4688,33 @@ async def generate_soap_note_from_audio_async(
                 success = True
         except Exception as e:
             logger.warning(f"⚠️ Could not read SOAP note from file: {e}")
+
+    # Normalize Plan / Key Issues / Abnormal Findings / Customer + Follow-up lists
+    soap_json_for_flags: Dict[str, Any] = {}
+    if soap_note and soap_note.strip():
+        try:
+            from soap_section_formatter import format_soap_note_text, format_soap_dict
+            formatted = format_soap_note_text(soap_note, logger=logger)
+            if formatted and formatted != soap_note:
+                soap_note = formatted
+                logger.info("✅ SOAP list sections normalized to numbered one-item-per-line format")
+            try:
+                parsed = json.loads(soap_note) if isinstance(soap_note, str) else soap_note
+                if isinstance(parsed, dict):
+                    soap_json_for_flags = format_soap_dict(parsed)
+                    soap_note = json.dumps(soap_json_for_flags, indent=2, ensure_ascii=False)
+            except Exception:
+                pass
+        except Exception as fmt_err:
+            logger.warning(f"⚠️ SOAP section formatter skipped: {fmt_err}")
     
     # Save or verify SOAP note
     if soap_note and soap_note.strip():
-        if not original_file.exists() or original_file.stat().st_size == 0:
-            # File wasn't saved or is empty, save it now
-            if save_output(soap_note, str(original_file), logger):
-                logger.info(f"✅ Original SOAP note saved to: {original_file}")
-            else:
-                logger.error(f"❌ Failed to save original SOAP note to: {original_file}")
+        # Always rewrite after formatting so .txt/.json match UI
+        if save_output(soap_note, str(original_file), logger):
+            logger.info(f"✅ Original SOAP note saved to: {original_file}")
         else:
-            logger.info(f"✅ SOAP note already saved to: {original_file}")
+            logger.error(f"❌ Failed to save original SOAP note to: {original_file}")
     else:
         logger.warning(f"⚠️ SOAP note is empty or None - cannot save")
         if original_file.exists():
@@ -4755,6 +4741,26 @@ async def generate_soap_note_from_audio_async(
             _dn = (e.get("display_name") or "").strip()
             if not _dn or _dn == "0":
                 e["display_name"] = (e.get("normalized_name") or e.get("span_text") or "").strip() or e.get("span_text", "")
+
+    # Enrich unlinked entities with grounding candidate suggestions (Phase 2 dashboard)
+    try:
+        from grounding_suggestion_enrichment import enrich_unlinked_manifest_suggestions
+        grounding_records = None
+        gpath = output_dir_path / f"grounding_layer_output_{timestamp}.json"
+        if gpath.exists():
+            try:
+                with open(gpath, "r", encoding="utf-8") as gf:
+                    grounding_records = json.load(gf)
+            except Exception:
+                grounding_records = None
+        enrich_unlinked_manifest_suggestions(
+            entity_manifest or [],
+            grounding_records=grounding_records if isinstance(grounding_records, list) else None,
+            logger=logger,
+        )
+    except Exception as enrich_err:
+        if logger:
+            logger.debug(f"Suggestion enrichment skipped: {enrich_err}")
 
     # Always save entity manifest (even if empty) for debugging
     entity_manifest_file = output_dir_path / f"entity_manifest_{timestamp}.json"
@@ -5024,6 +5030,10 @@ async def generate_soap_note_from_audio_async(
             await asyncio.wait_for(phase2_task, timeout=300.0)
             if logger:
                 logger.info("✅ Phase 2 background task completed before pipeline exit")
+            try:
+                knowledge_atoms_result, _ok = phase2_task.result()
+            except Exception:
+                pass
         except asyncio.TimeoutError:
             if logger:
                 logger.warning("⚠️ Phase 2 background task timed out after 5 minutes; continuing anyway")
@@ -5034,11 +5044,39 @@ async def generate_soap_note_from_audio_async(
             if logger:
                 logger.warning(f"⚠️ Error waiting for Phase 2 task: {e}")
 
+    # Workflow health flags (STEP1 → Phase2) for doctor UI / QA
+    pipeline_flags_report: Dict[str, Any] = {}
+    try:
+        from pipeline_flags import build_and_save_pipeline_flags
+        if not soap_json_for_flags and soap_note:
+            try:
+                soap_json_for_flags = json.loads(soap_note) if isinstance(soap_note, str) else {}
+            except Exception:
+                soap_json_for_flags = {}
+        pipeline_flags_report = build_and_save_pipeline_flags(
+            output_dir_path,
+            soap_json=soap_json_for_flags if isinstance(soap_json_for_flags, dict) else {},
+            entity_manifest=entity_manifest,
+            knowledge_atoms=knowledge_atoms_result,
+            timestamp=timestamp,
+        )
+        if logger:
+            logger.info(
+                "🚩 Pipeline flags: overall=%s errors=%s warnings=%s",
+                pipeline_flags_report.get("overall"),
+                (pipeline_flags_report.get("counts") or {}).get("error"),
+                (pipeline_flags_report.get("counts") or {}).get("warning"),
+            )
+    except Exception as flag_err:
+        if logger:
+            logger.warning(f"⚠️ Could not build pipeline flags: {flag_err}")
+
     return {
         "soap_note": soap_note,
         "manifest": entity_manifest,
         "cleaned_text": cleaned_transcription,
-        "knowledge_atoms": knowledge_atoms_result  # Phase 2 results (if available)
+        "knowledge_atoms": knowledge_atoms_result,  # Phase 2 results (if available)
+        "pipeline_flags": pipeline_flags_report,
     }
 
 

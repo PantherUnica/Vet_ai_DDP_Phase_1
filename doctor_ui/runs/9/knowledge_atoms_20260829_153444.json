@@ -1,0 +1,812 @@
+{
+  "knowledge_atoms": [
+    {
+      "concept": "Skin Infection",
+      "kind": "Reason",
+      "assertion_id": "CONF",
+      "intent_context": "Presented",
+      "source_text": "Pet parent reports that Milo... has started scratching an affected area near the tail",
+      "section": "Subjective",
+      "attributes": {
+        "chief_complaint": "scratching an affected area near the tail",
+        "urgency": "Routine",
+        "duration": null,
+        "previous_history": null
+      },
+      "codes": {}
+    },
+    {
+      "concept": "Topical Ointment Application",
+      "kind": "Procedure",
+      "assertion_id": "CONF",
+      "intent_context": "Scheduled",
+      "source_text": "Apply prescribed topical ointment to the affected area after gently wiping with pet wipes or a copper and debo motor solution",
+      "section": "Plan",
+      "attributes": {
+        "status": "Planned"
+      },
+      "codes": {}
+    },
+    {
+      "concept": "Hair Trimming",
+      "kind": "Procedure",
+      "assertion_id": "CONF",
+      "intent_context": "Scheduled",
+      "source_text": "Trim hair around the affected area using a trimmer before ointment application",
+      "section": "Plan",
+      "attributes": {
+        "status": "Planned",
+        "suggestions": [
+          {
+            "name": "CAT DEWORMING",
+            "match_score": 0.782051282051282,
+            "recommendation": "MEDIUM",
+            "service_id": 812
+          }
+        ],
+        "primary_local_suggestion": {
+          "name": "CAT DEWORMING",
+          "stock_id": null,
+          "service_id": 812
+        }
+      },
+      "codes": {},
+      "kb_kind": "Procedure",
+      "match_method": "dual_sync_judge_rejected"
+    },
+    {
+      "concept": "Grooming",
+      "kind": "Procedure",
+      "assertion_id": "CONF",
+      "intent_context": "Performed",
+      "source_text": "Continue regular grooming every two weeks",
+      "section": "Plan",
+      "attributes": {
+        "status": "Recurring"
+      },
+      "codes": {},
+      "kb_kind": "Procedure",
+      "match_method": "unlinked"
+    },
+    {
+      "concept": "Tablet Medication",
+      "kind": "Medication",
+      "assertion_id": "CONF",
+      "intent_context": "Prescribed",
+      "source_text": "Administer one tablet medication as prescribed, dosage based on weight (5 kg)",
+      "section": "Plan",
+      "attributes": {
+        "dose": null,
+        "route": null,
+        "suggestions": [
+          {
+            "name": "LASIX TABLET",
+            "match_score": 0.8190235690235691,
+            "recommendation": "MEDIUM",
+            "inventory_id": 40900,
+            "stock_id": 40900
+          },
+          {
+            "name": "ALLERGIA TABLET",
+            "match_score": 0.7419191919191919,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41928,
+            "stock_id": 41928
+          },
+          {
+            "name": "Devbhoomi Fexorise-M 120 mg 10 x 10 Tablets",
+            "match_score": 0.6714200831847891,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42408,
+            "stock_id": 42408
+          },
+          {
+            "name": "CaniCare Fexorise-OD 120 mg 10 Tab",
+            "match_score": 0.6245791245791247,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42407,
+            "stock_id": 42407
+          },
+          {
+            "name": "FECAL DETERENT TABLET",
+            "match_score": 0.608946608946609,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41305,
+            "stock_id": 41305
+          }
+        ],
+        "primary_local_suggestion": {
+          "name": "LASIX TABLET",
+          "stock_id": 40900,
+          "service_id": null
+        }
+      },
+      "codes": {},
+      "kb_kind": "Medication",
+      "match_method": "dual_sync_judge_rejected"
+    },
+    {
+      "concept": "Feeding Regimen",
+      "kind": "Medicine",
+      "assertion_id": "RECUR",
+      "intent_context": "Prescribed",
+      "source_text": "Maintain current feeding regimen with possible introduction of high-quality commercial food mixed with natural items like daan",
+      "section": "Plan",
+      "attributes": {},
+      "codes": {}
+    },
+    {
+      "concept": "Water Intake",
+      "kind": "VitalSign",
+      "assertion_id": "CONF",
+      "intent_context": "Measured",
+      "source_text": "Water intake appears adequate using a water fountain",
+      "section": "Objective",
+      "attributes": {
+        "metric_name": "Water Intake",
+        "value": "Adequate",
+        "unit": null
+      },
+      "codes": {}
+    },
+    {
+      "concept": "Scratching near tail",
+      "kind": "Reason",
+      "assertion_id": "CONF",
+      "intent_context": "Presented",
+      "source_text": "Pet parent reports that Milo... has started scratching an affected area near the tail",
+      "section": "Subjective",
+      "attributes": {
+        "chief_complaint": "scratching an affected area near the tail",
+        "urgency": "Routine",
+        "duration": null,
+        "previous_history": null
+      },
+      "codes": {}
+    },
+    {
+      "concept": "Topical ointment",
+      "kind": "Medication",
+      "assertion_id": "CONF",
+      "intent_context": "Prescribed",
+      "source_text": "Apply prescribed topical ointment to the affected area",
+      "section": "Plan",
+      "attributes": {
+        "dose": null,
+        "route": "topical",
+        "suggestions": [
+          {
+            "name": "STAPHBAN OINTMENT 15GM",
+            "match_score": 0.7083916083916084,
+            "recommendation": "MEDIUM",
+            "inventory_id": 39855,
+            "stock_id": 39855
+          },
+          {
+            "name": "ZOLE-F OINTMENT 15GM",
+            "match_score": 0.6958333333333333,
+            "recommendation": "MEDIUM",
+            "inventory_id": 39555,
+            "stock_id": 39555
+          },
+          {
+            "name": "Anglo-French Muropirin Ointment IP 2% 1 Tube",
+            "match_score": 0.662878787878788,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42335,
+            "stock_id": 42335
+          },
+          {
+            "name": "Anglo-French Mupirocin Ointment IP 2% w/w",
+            "match_score": 0.662878787878788,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42457,
+            "stock_id": 42457
+          },
+          {
+            "name": "CIPLADINE OINTMENT 20G",
+            "match_score": 0.6608391608391608,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41610,
+            "stock_id": 41610
+          }
+        ],
+        "primary_local_suggestion": {
+          "name": "STAPHBAN OINTMENT 15GM",
+          "stock_id": 39855,
+          "service_id": null
+        }
+      },
+      "codes": {},
+      "kb_kind": "Medication",
+      "match_method": "dual_sync_judge_rejected"
+    },
+    {
+      "concept": "Feeding regimen",
+      "kind": "Reason",
+      "assertion_id": "CONF",
+      "intent_context": "Presented",
+      "source_text": "Maintain current feeding regimen with possible introduction of high-quality commercial food mixed with natural items like daan",
+      "section": "Plan",
+      "attributes": {
+        "chief_complaint": "feeding regimen with possible introduction of high-quality commercial food mixed with natural items like daan",
+        "urgency": "Routine",
+        "duration": null,
+        "previous_history": null
+      },
+      "codes": {}
+    },
+    {
+      "concept": "Water intake",
+      "kind": "Reason",
+      "assertion_id": "CONF",
+      "intent_context": "Presented",
+      "source_text": "Ensure adequate water intake using a water fountain",
+      "section": "Plan",
+      "attributes": {
+        "chief_complaint": "adequate water intake using a water fountain",
+        "urgency": "Routine",
+        "duration": null,
+        "previous_history": null
+      },
+      "codes": {}
+    },
+    {
+      "concept": "Trimming",
+      "kind": "Procedure",
+      "assertion_id": "CONF",
+      "intent_context": "Scheduled",
+      "source_text": "Trim hair around the affected area using a trimmer before ointment application",
+      "section": "Plan",
+      "attributes": {
+        "status": "Planned",
+        "suggestions": [
+          {
+            "name": "CAT DEWORMING",
+            "match_score": 0.782051282051282,
+            "recommendation": "MEDIUM",
+            "service_id": 812
+          }
+        ],
+        "primary_local_suggestion": {
+          "name": "CAT DEWORMING",
+          "stock_id": null,
+          "service_id": 812
+        }
+      },
+      "codes": {},
+      "kb_kind": "Procedure",
+      "match_method": "dual_sync_judge_rejected"
+    },
+    {
+      "concept": "Skin Infection Near Tail",
+      "kind": "Reason",
+      "assertion_id": "CONF",
+      "intent_context": "Presented",
+      "source_text": "Pet parent reports that Milo... has started scratching an affected area near the tail",
+      "section": "Subjective",
+      "attributes": {
+        "chief_complaint": "scratching an affected area near the tail",
+        "urgency": "Routine",
+        "duration": null,
+        "previous_history": null
+      },
+      "codes": {}
+    },
+    {
+      "concept": "Regular Grooming",
+      "kind": "Procedure",
+      "assertion_id": "CONF",
+      "intent_context": "Performed",
+      "source_text": "Continue regular grooming every two weeks",
+      "section": "Plan",
+      "attributes": {
+        "status": "Ongoing"
+      },
+      "codes": {},
+      "kb_kind": "Procedure",
+      "match_method": "unlinked"
+    },
+    {
+      "concept": "Follow-up if symptoms do not improve",
+      "kind": "Reminder",
+      "assertion_id": "CONF",
+      "intent_context": "Scheduled",
+      "source_text": "Follow up if symptoms do not improve or if new concerns arise",
+      "section": "Plan",
+      "attributes": {
+        "due_on": null,
+        "action_item": "Follow up if symptoms do not improve or if new concerns arise"
+      },
+      "codes": {}
+    },
+    {
+      "concept": "Weight",
+      "kind": "VitalSign",
+      "assertion_id": "CONF",
+      "intent_context": "Measured",
+      "source_text": "Weight reported as 5 kg",
+      "section": "Objective",
+      "attributes": {
+        "metric_name": "Weight",
+        "value": "5",
+        "unit": "kg",
+        "qualitative_flag": null
+      },
+      "codes": {},
+      "kb_kind": "VitalSign",
+      "match_method": "vital_sign_structured"
+    }
+  ],
+  "verification_dashboard": {
+    "procedures_services": [],
+    "medications_administered": [],
+    "medications_prescribed": [],
+    "diagnostics": [],
+    "other_products_retail": [],
+    "reminders_follow_ups": [
+      {
+        "item_name": "Topical Ointment Application",
+        "item_id": "[PROCEDURE-XXX]",
+        "due_date": "ASAP",
+        "remarks": "Apply prescribed topical ointment to the affected area after gently wiping with pet wipes or a copper and debo motor solution",
+        "intent_context": "Scheduled",
+        "kind": "Procedure"
+      },
+      {
+        "item_name": "Hair Trimming",
+        "item_id": "[PROCEDURE-XXX]",
+        "due_date": "ASAP",
+        "remarks": "Trim hair around the affected area using a trimmer before ointment application",
+        "intent_context": "Scheduled",
+        "kind": "Procedure"
+      },
+      {
+        "item_name": "Trimming",
+        "item_id": "[PROCEDURE-XXX]",
+        "due_date": "ASAP",
+        "remarks": "Trim hair around the affected area using a trimmer before ointment application",
+        "intent_context": "Scheduled",
+        "kind": "Procedure"
+      },
+      {
+        "item_name": "Follow-up if symptoms do not improve",
+        "item_id": "[REMINDER-XXX]",
+        "due_date": "ASAP",
+        "remarks": "Follow up if symptoms do not improve or if new concerns arise",
+        "intent_context": "Scheduled",
+        "kind": "Reminder"
+      }
+    ],
+    "vitals": [
+      {
+        "vital_name": "Water Intake",
+        "value": "Adequate"
+      },
+      {
+        "vital_name": "Weight",
+        "value": "5 kg"
+      }
+    ],
+    "module_4_unlinked_entities": [
+      {
+        "item_name": "Grooming",
+        "kind": "Procedure",
+        "intent_context": "Performed",
+        "intent": "Performed (Procedure)",
+        "status": "ACTION REQUIRED",
+        "reason": "MISSING_LOCAL_ID",
+        "remarks": "Mentioned as procedure; no matching inventory/service SKU found. Vet must select specific SKU for billing.",
+        "suggestions": [],
+        "service_id": null
+      },
+      {
+        "item_name": "Tablet Medication",
+        "kind": "Medicine",
+        "intent_context": "Prescribed",
+        "intent": "Prescribed (Medicine)",
+        "status": "ACTION REQUIRED",
+        "reason": "AMBIGUOUS_MATCH",
+        "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+        "suggestions": [
+          {
+            "name": "LASIX TABLET",
+            "match_score": 0.8190235690235691,
+            "recommendation": "MEDIUM",
+            "inventory_id": 40900,
+            "stock_id": 40900
+          },
+          {
+            "name": "ALLERGIA TABLET",
+            "match_score": 0.7419191919191919,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41928,
+            "stock_id": 41928
+          },
+          {
+            "name": "Devbhoomi Fexorise-M 120 mg 10 x 10 Tablets",
+            "match_score": 0.6714200831847891,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42408,
+            "stock_id": 42408
+          },
+          {
+            "name": "CaniCare Fexorise-OD 120 mg 10 Tab",
+            "match_score": 0.6245791245791247,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42407,
+            "stock_id": 42407
+          },
+          {
+            "name": "FECAL DETERENT TABLET",
+            "match_score": 0.608946608946609,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41305,
+            "stock_id": 41305
+          }
+        ],
+        "inventory_id": null,
+        "administered_prescribed": "Prescribed",
+        "fulfillment": "Internal",
+        "quantity": "",
+        "dosage": "",
+        "duration": "",
+        "frequency": "Custom",
+        "instructions": "",
+        "route": ""
+      },
+      {
+        "item_name": "Feeding Regimen",
+        "kind": "Medicine",
+        "intent_context": "Prescribed",
+        "intent": "Prescribed (Medicine)",
+        "status": "ACTION REQUIRED",
+        "reason": "MISSING_LOCAL_ID",
+        "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+        "suggestions": [],
+        "inventory_id": null,
+        "administered_prescribed": "Prescribed",
+        "fulfillment": "Internal",
+        "quantity": "",
+        "dosage": "",
+        "duration": "",
+        "frequency": "Custom",
+        "instructions": "",
+        "route": ""
+      },
+      {
+        "item_name": "Topical ointment",
+        "kind": "Medicine",
+        "intent_context": "Prescribed",
+        "intent": "Prescribed (Medicine)",
+        "status": "ACTION REQUIRED",
+        "reason": "AMBIGUOUS_MATCH",
+        "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+        "suggestions": [
+          {
+            "name": "STAPHBAN OINTMENT 15GM",
+            "match_score": 0.7083916083916084,
+            "recommendation": "MEDIUM",
+            "inventory_id": 39855,
+            "stock_id": 39855
+          },
+          {
+            "name": "ZOLE-F OINTMENT 15GM",
+            "match_score": 0.6958333333333333,
+            "recommendation": "MEDIUM",
+            "inventory_id": 39555,
+            "stock_id": 39555
+          },
+          {
+            "name": "Anglo-French Muropirin Ointment IP 2% 1 Tube",
+            "match_score": 0.662878787878788,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42335,
+            "stock_id": 42335
+          },
+          {
+            "name": "Anglo-French Mupirocin Ointment IP 2% w/w",
+            "match_score": 0.662878787878788,
+            "recommendation": "MEDIUM",
+            "inventory_id": 42457,
+            "stock_id": 42457
+          },
+          {
+            "name": "CIPLADINE OINTMENT 20G",
+            "match_score": 0.6608391608391608,
+            "recommendation": "MEDIUM",
+            "inventory_id": 41610,
+            "stock_id": 41610
+          }
+        ],
+        "inventory_id": null,
+        "administered_prescribed": "Prescribed",
+        "fulfillment": "Internal",
+        "quantity": "",
+        "dosage": "",
+        "duration": "",
+        "frequency": "Custom",
+        "instructions": "",
+        "route": "topical"
+      },
+      {
+        "item_name": "Regular Grooming",
+        "kind": "Procedure",
+        "intent_context": "Performed",
+        "intent": "Performed (Procedure)",
+        "status": "ACTION REQUIRED",
+        "reason": "MISSING_LOCAL_ID",
+        "remarks": "Mentioned as procedure; no matching inventory/service SKU found. Vet must select specific SKU for billing.",
+        "suggestions": [],
+        "service_id": null
+      }
+    ],
+    "module_5_clinical_history": [],
+    "streamlined_dashboard": {
+      "signalment_vitals": [
+        {
+          "name": "Water Intake",
+          "original_mention": "",
+          "status": "CONFIRMED",
+          "linked_id": null,
+          "suggestions": [],
+          "value": "Adequate",
+          "label": "Vitals"
+        },
+        {
+          "name": "Weight",
+          "original_mention": "",
+          "status": "CONFIRMED",
+          "linked_id": null,
+          "suggestions": [],
+          "value": "5 kg",
+          "label": "Vitals"
+        }
+      ],
+      "clinical_assessment": [],
+      "pharmacy_administered": [],
+      "pharmacy_prescribed": [
+        {
+          "name": "Tablet Medication",
+          "original_mention": "Tablet Medication",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [
+            {
+              "name": "LASIX TABLET",
+              "match_score": 0.8190235690235691,
+              "recommendation": "MEDIUM",
+              "inventory_id": 40900,
+              "stock_id": 40900
+            },
+            {
+              "name": "ALLERGIA TABLET",
+              "match_score": 0.7419191919191919,
+              "recommendation": "MEDIUM",
+              "inventory_id": 41928,
+              "stock_id": 41928
+            },
+            {
+              "name": "Devbhoomi Fexorise-M 120 mg 10 x 10 Tablets",
+              "match_score": 0.6714200831847891,
+              "recommendation": "MEDIUM",
+              "inventory_id": 42408,
+              "stock_id": 42408
+            },
+            {
+              "name": "CaniCare Fexorise-OD 120 mg 10 Tab",
+              "match_score": 0.6245791245791247,
+              "recommendation": "MEDIUM",
+              "inventory_id": 42407,
+              "stock_id": 42407
+            },
+            {
+              "name": "FECAL DETERENT TABLET",
+              "match_score": 0.608946608946609,
+              "recommendation": "MEDIUM",
+              "inventory_id": 41305,
+              "stock_id": 41305
+            }
+          ],
+          "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+          "reason": "AMBIGUOUS_MATCH",
+          "dosage": "",
+          "frequency": "Custom",
+          "duration": "",
+          "quantity": "",
+          "instructions": "",
+          "required_fields": [
+            "frequency",
+            "duration"
+          ],
+          "label": "Prescribed (Home Care)"
+        },
+        {
+          "name": "Feeding Regimen",
+          "original_mention": "Feeding Regimen",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [],
+          "remarks": "Generic product detected. Please select the specific clinic brand/SKU for fulfillment.",
+          "reason": "MISSING_LOCAL_ID",
+          "dosage": "",
+          "frequency": "Custom",
+          "duration": "",
+          "quantity": "",
+          "instructions": "",
+          "required_fields": [
+            "frequency",
+            "duration"
+          ],
+          "label": "Prescribed (Home Care)"
+        },
+        {
+          "name": "Topical ointment",
+          "original_mention": "Topical ointment",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [
+            {
+              "name": "STAPHBAN OINTMENT 15GM",
+              "match_score": 0.7083916083916084,
+              "recommendation": "MEDIUM",
+              "inventory_id": 39855,
+              "stock_id": 39855
+            },
+            {
+              "name": "ZOLE-F OINTMENT 15GM",
+              "match_score": 0.6958333333333333,
+              "recommendation": "MEDIUM",
+              "inventory_id": 39555,
+              "stock_id": 39555
+            },
+            {
+              "name": "Anglo-French Muropirin Ointment IP 2% 1 Tube",
+              "match_score": 0.662878787878788,
+              "recommendation": "MEDIUM",
+              "inventory_id": 42335,
+              "stock_id": 42335
+            },
+            {
+              "name": "Anglo-French Mupirocin Ointment IP 2% w/w",
+              "match_score": 0.662878787878788,
+              "recommendation": "MEDIUM",
+              "inventory_id": 42457,
+              "stock_id": 42457
+            },
+            {
+              "name": "CIPLADINE OINTMENT 20G",
+              "match_score": 0.6608391608391608,
+              "recommendation": "MEDIUM",
+              "inventory_id": 41610,
+              "stock_id": 41610
+            }
+          ],
+          "remarks": "Generic medicine detected. Select a specific billing variant from the suggestions below.",
+          "reason": "AMBIGUOUS_MATCH",
+          "dosage": "",
+          "frequency": "Custom",
+          "duration": "",
+          "quantity": "",
+          "instructions": "",
+          "required_fields": [
+            "frequency",
+            "duration"
+          ],
+          "label": "Prescribed (Home Care)"
+        }
+      ],
+      "diagnostics_labs_imaging": [],
+      "clinical_procedures_services": [
+        {
+          "name": "Grooming",
+          "original_mention": "Grooming",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [],
+          "remarks": "Mentioned as procedure; no matching inventory/service SKU found. Vet must select specific SKU for billing.",
+          "reason": "MISSING_LOCAL_ID"
+        },
+        {
+          "name": "Regular Grooming",
+          "original_mention": "Regular Grooming",
+          "status": "ACTION_REQUIRED",
+          "linked_id": null,
+          "suggestions": [],
+          "remarks": "Mentioned as procedure; no matching inventory/service SKU found. Vet must select specific SKU for billing.",
+          "reason": "MISSING_LOCAL_ID"
+        }
+      ],
+      "other_products_retail": [],
+      "preventive": [],
+      "patient_reminders": [],
+      "clinical_follow_ups": [
+        {
+          "name": "Topical Ointment Application",
+          "original_mention": "Topical Ointment Application",
+          "status": "DRAFTED",
+          "linked_id": "[PROCEDURE-XXX]",
+          "suggestions": [],
+          "due_date": "ASAP",
+          "remarks": "Apply prescribed topical ointment to the affected area after gently wiping with pet wipes or a copper and debo motor solution",
+          "is_operational": true,
+          "scheduling_data": {
+            "service_id": null,
+            "temporal_offset": "ASAP",
+            "recommended_date": null,
+            "priority": "Routine",
+            "item_id": "[PROCEDURE-XXX]"
+          },
+          "label": "Clinical Follow-up"
+        },
+        {
+          "name": "Hair Trimming",
+          "original_mention": "Hair Trimming",
+          "status": "DRAFTED",
+          "linked_id": "[PROCEDURE-XXX]",
+          "suggestions": [],
+          "due_date": "ASAP",
+          "remarks": "Trim hair around the affected area using a trimmer before ointment application",
+          "is_operational": true,
+          "scheduling_data": {
+            "service_id": null,
+            "temporal_offset": "ASAP",
+            "recommended_date": null,
+            "priority": "Routine",
+            "item_id": "[PROCEDURE-XXX]"
+          },
+          "label": "Clinical Follow-up"
+        },
+        {
+          "name": "Trimming",
+          "original_mention": "Trimming",
+          "status": "DRAFTED",
+          "linked_id": "[PROCEDURE-XXX]",
+          "suggestions": [],
+          "due_date": "ASAP",
+          "remarks": "Trim hair around the affected area using a trimmer before ointment application",
+          "is_operational": true,
+          "scheduling_data": {
+            "service_id": null,
+            "temporal_offset": "ASAP",
+            "recommended_date": null,
+            "priority": "Routine",
+            "item_id": "[PROCEDURE-XXX]"
+          },
+          "label": "Clinical Follow-up"
+        },
+        {
+          "name": "Follow-up if symptoms do not improve",
+          "original_mention": "Follow-up if symptoms do not improve",
+          "status": "DRAFTED",
+          "linked_id": "[REMINDER-XXX]",
+          "suggestions": [],
+          "due_date": "ASAP",
+          "remarks": "Follow up if symptoms do not improve or if new concerns arise",
+          "is_operational": true,
+          "scheduling_data": {
+            "service_id": null,
+            "temporal_offset": "ASAP",
+            "recommended_date": null,
+            "priority": "Routine",
+            "item_id": "[REMINDER-XXX]"
+          },
+          "label": "Clinical Follow-up"
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "session_id": "61bc4a58-21ca-4a80-8c17-4fc2872482bd",
+    "visit_id": "61bc4a58-21ca-4a80-8c17-4fc2872482bd",
+    "clinic_id": 1,
+    "mode": "minimal_parallel",
+    "model_provider": "openai",
+    "model_name": "gpt-4.1-mini",
+    "attempted_models": [
+      "gpt-4.1-mini"
+    ],
+    "kb_schema_loaded": true,
+    "parallel_batches": 5
+  }
+}

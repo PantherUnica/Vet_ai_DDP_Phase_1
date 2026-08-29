@@ -1,0 +1,712 @@
+[
+  {
+    "span_text": "affected area",
+    "normalized_name": "affected area",
+    "display_name": "affected area",
+    "kind": "Anatomy",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "non_billable_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "affected area",
+      "affected skin area",
+      "affected site"
+    ],
+    "search_term": "affected area"
+  },
+  {
+    "span_text": "apply the appointment",
+    "normalized_name": "apply the appointment",
+    "display_name": "apply the ointment",
+    "kind": "Procedure",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Procedure",
+    "match_method": "unlinked",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "apply the ointment",
+      "apply the appointment",
+      "apply the cream"
+    ],
+    "search_term": "apply the ointment"
+  },
+  {
+    "span_text": "cleaning completely",
+    "normalized_name": "cleaning completely",
+    "display_name": "complete cleaning",
+    "kind": "Procedure",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Procedure",
+    "match_method": "unlinked",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "complete cleaning",
+      "thorough cleaning",
+      "deep cleaning"
+    ],
+    "search_term": "complete cleaning"
+  },
+  {
+    "span_text": "copper and debo motor",
+    "normalized_name": "copper and debo motor",
+    "display_name": "copper and debo motor",
+    "kind": "Medication",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Medication",
+    "match_method": "unlinked",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "copper and debo motor",
+      "copper and dewormer",
+      "copper and debormotor"
+    ],
+    "search_term": "copper and debo motor"
+  },
+  {
+    "span_text": "daan",
+    "normalized_name": "daan",
+    "display_name": "daan",
+    "kind": "Diet",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "VitalSign",
+    "match_method": "vital_sign_structured",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "daan",
+      "grain daan",
+      "pet daan"
+    ],
+    "search_term": "daan"
+  },
+  {
+    "span_text": "drink much water",
+    "normalized_name": "drink much water",
+    "display_name": "drink much water",
+    "kind": "Symptom",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "non_billable_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "increased water intake",
+      "drinking a lot of water",
+      "polydipsia"
+    ],
+    "search_term": "increased water intake"
+  },
+  {
+    "span_text": "excess oil secretion",
+    "normalized_name": "excess oil secretion",
+    "display_name": "excess oil secretion",
+    "kind": "Diagnosis",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Diagnosis",
+    "match_method": "note_only_below_threshold",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "excess oil secretion",
+      "seborrhea",
+      "excess sebum production"
+    ],
+    "search_term": "excess oil secretion"
+  },
+  {
+    "span_text": "feeding",
+    "normalized_name": "feeding",
+    "display_name": "feeding",
+    "kind": "Diet",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "VitalSign",
+    "match_method": "vital_sign_structured",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "feeding",
+      "feeding schedule",
+      "feeding routine"
+    ],
+    "search_term": "feeding"
+  },
+  {
+    "span_text": "feeding",
+    "normalized_name": "feeding",
+    "display_name": "feeding",
+    "kind": "ReasonForVisit",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "ReasonForVisit",
+    "match_method": "note_only_below_threshold",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "feeding",
+      "feeding habits",
+      "feeding behavior"
+    ],
+    "search_term": "feeding"
+  },
+  {
+    "span_text": "good food",
+    "normalized_name": "good food",
+    "display_name": "good food",
+    "kind": "Diet",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "VitalSign",
+    "match_method": "vital_sign_structured",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "good food",
+      "quality food",
+      "nutritious food"
+    ],
+    "search_term": "good food"
+  },
+  {
+    "span_text": "grooming",
+    "normalized_name": "grooming",
+    "display_name": "grooming",
+    "kind": "Procedure",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Procedure",
+    "match_method": "unlinked",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "grooming",
+      "pet grooming",
+      "animal grooming"
+    ],
+    "search_term": "grooming"
+  },
+  {
+    "span_text": "hair",
+    "normalized_name": "hair",
+    "display_name": "hair",
+    "kind": "Anatomy",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "non_billable_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "hair",
+      "coat hair",
+      "fur"
+    ],
+    "search_term": "hair"
+  },
+  {
+    "span_text": "infection process",
+    "normalized_name": "infection process",
+    "display_name": "infection process",
+    "kind": "Diagnosis",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Diagnosis",
+    "match_method": "note_only_below_threshold",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "infection",
+      "infection process",
+      "skin infection"
+    ],
+    "search_term": "infection"
+  },
+  {
+    "span_text": "medicines",
+    "normalized_name": "medicines",
+    "display_name": "medicines",
+    "kind": "Medication",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "VitalSign",
+    "match_method": "vital_sign_structured",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "medications",
+      "medicines",
+      "drugs"
+    ],
+    "search_term": "medications"
+  },
+  {
+    "span_text": "mild fever",
+    "normalized_name": "mild fever",
+    "display_name": "mild fever",
+    "kind": "Symptom",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "non_billable_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "mild fever",
+      "low grade fever",
+      "slight fever"
+    ],
+    "search_term": "mild fever"
+  },
+  {
+    "span_text": "ointment",
+    "normalized_name": "ointment",
+    "display_name": "ointment",
+    "kind": "Medication",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Medication",
+    "match_method": "dual_sync_judge_rejected",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {
+      "suggestions": [
+        {
+          "name": "STAPHBAN OINTMENT 15GM",
+          "match_score": 0.7083916083916084,
+          "recommendation": "MEDIUM",
+          "inventory_id": 39855,
+          "stock_id": 39855
+        },
+        {
+          "name": "ZOLE-F OINTMENT 15GM",
+          "match_score": 0.6958333333333333,
+          "recommendation": "MEDIUM",
+          "inventory_id": 39555,
+          "stock_id": 39555
+        },
+        {
+          "name": "Anglo-French Muropirin Ointment IP 2% 1 Tube",
+          "match_score": 0.662878787878788,
+          "recommendation": "MEDIUM",
+          "inventory_id": 42335,
+          "stock_id": 42335
+        },
+        {
+          "name": "Anglo-French Mupirocin Ointment IP 2% w/w",
+          "match_score": 0.662878787878788,
+          "recommendation": "MEDIUM",
+          "inventory_id": 42457,
+          "stock_id": 42457
+        },
+        {
+          "name": "CIPLADINE OINTMENT 20G",
+          "match_score": 0.6608391608391608,
+          "recommendation": "MEDIUM",
+          "inventory_id": 41610,
+          "stock_id": 41610
+        }
+      ],
+      "primary_local_suggestion": {
+        "name": "STAPHBAN OINTMENT 15GM",
+        "stock_id": 39855,
+        "service_id": null
+      }
+    },
+    "hints": [
+      "ointment",
+      "topical ointment",
+      "skin ointment"
+    ],
+    "search_term": "ointment"
+  },
+  {
+    "span_text": "pet wipes",
+    "normalized_name": "pet wipes",
+    "display_name": "Zoetis Pet-Tabs 60 mg 3 Tab Dog",
+    "kind": "Medication",
+    "kb_concept_id": null,
+    "kb_preferred_name": "Zoetis Pet-Tabs 60 mg 3 Tab Dog",
+    "kb_kind": "Medication",
+    "match_method": "dual_sync_auto_bind_local",
+    "is_verified": true,
+    "similarity_score": 0.7666666666666666,
+    "local_stock_id": 42032,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "pet wipes",
+      "pet cleaning wipes",
+      "pet hygiene wipes"
+    ],
+    "search_term": "pet wipes"
+  },
+  {
+    "span_text": "pure",
+    "normalized_name": "pure",
+    "display_name": "pure",
+    "kind": "Diet",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "VitalSign",
+    "match_method": "vital_sign_structured",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "pure",
+      "pure food",
+      "pure diet"
+    ],
+    "search_term": "pure"
+  },
+  {
+    "span_text": "scratching",
+    "normalized_name": "scratching",
+    "display_name": "scratching",
+    "kind": "Symptom",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "non_billable_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "scratching",
+      "itching",
+      "pruritus"
+    ],
+    "search_term": "scratching"
+  },
+  {
+    "span_text": "tablet",
+    "normalized_name": "tablet",
+    "display_name": "tablet",
+    "kind": "Medication",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Medication",
+    "match_method": "dual_sync_judge_rejected",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {
+      "suggestions": [
+        {
+          "name": "LASIX TABLET",
+          "match_score": 0.8190235690235691,
+          "recommendation": "MEDIUM",
+          "inventory_id": 40900,
+          "stock_id": 40900
+        },
+        {
+          "name": "ALLERGIA TABLET",
+          "match_score": 0.7419191919191919,
+          "recommendation": "MEDIUM",
+          "inventory_id": 41928,
+          "stock_id": 41928
+        },
+        {
+          "name": "Devbhoomi Fexorise-M 120 mg 10 x 10 Tablets",
+          "match_score": 0.6714200831847891,
+          "recommendation": "MEDIUM",
+          "inventory_id": 42408,
+          "stock_id": 42408
+        },
+        {
+          "name": "CaniCare Fexorise-OD 120 mg 10 Tab",
+          "match_score": 0.6245791245791247,
+          "recommendation": "MEDIUM",
+          "inventory_id": 42407,
+          "stock_id": 42407
+        },
+        {
+          "name": "FECAL DETERENT TABLET",
+          "match_score": 0.608946608946609,
+          "recommendation": "MEDIUM",
+          "inventory_id": 41305,
+          "stock_id": 41305
+        }
+      ],
+      "primary_local_suggestion": {
+        "name": "LASIX TABLET",
+        "stock_id": 40900,
+        "service_id": null
+      }
+    },
+    "hints": [
+      "tablet",
+      "tablet medication",
+      "oral tablet"
+    ],
+    "search_term": "tablet"
+  },
+  {
+    "span_text": "tail",
+    "normalized_name": "tail",
+    "display_name": "tail",
+    "kind": "Anatomy",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "non_billable_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "tail",
+      "animal tail",
+      "pet tail"
+    ],
+    "search_term": "tail"
+  },
+  {
+    "span_text": "temperature",
+    "normalized_name": "temperature",
+    "display_name": "temperature",
+    "kind": "VitalSign",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "VitalSign",
+    "match_method": "vital_sign_structured",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "temperature",
+      "body temperature",
+      "fever"
+    ],
+    "search_term": "temperature"
+  },
+  {
+    "span_text": "ticks",
+    "normalized_name": "ticks",
+    "display_name": "ticks",
+    "kind": "ParasiteControl",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "ParasiteControl",
+    "match_method": "unlinked",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "ticks",
+      "tick infestation",
+      "tick parasites"
+    ],
+    "search_term": "ticks"
+  },
+  {
+    "span_text": "trees",
+    "normalized_name": "trees",
+    "display_name": "trees",
+    "kind": "Diet",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "VitalSign",
+    "match_method": "vital_sign_structured",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "trees",
+      "tree leaves",
+      "tree parts"
+    ],
+    "search_term": "trees"
+  },
+  {
+    "span_text": "trimmer",
+    "normalized_name": "trimmer",
+    "display_name": "trimmer",
+    "kind": "Procedure",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Procedure",
+    "match_method": "unlinked",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "trimmer",
+      "hair trimmer",
+      "pet trimmer"
+    ],
+    "search_term": "trimmer"
+  },
+  {
+    "span_text": "trimming",
+    "normalized_name": "trimming",
+    "display_name": "trimming",
+    "kind": "Procedure",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "Procedure",
+    "match_method": "dual_sync_judge_rejected",
+    "similarity_score": null,
+    "local_stock_id": null,
+    "local_service_id": null,
+    "assertion_id": "CONF",
+    "attributes": {
+      "suggestions": [
+        {
+          "name": "CAT DEWORMING",
+          "match_score": 0.782051282051282,
+          "recommendation": "MEDIUM",
+          "service_id": 812
+        }
+      ],
+      "primary_local_suggestion": {
+        "name": "CAT DEWORMING",
+        "stock_id": null,
+        "service_id": 812
+      }
+    },
+    "hints": [
+      "trimming",
+      "coat trimming",
+      "fur trimming"
+    ],
+    "search_term": "trimming"
+  },
+  {
+    "span_text": "vaccine",
+    "normalized_name": "vaccine",
+    "display_name": "VACCINATION KC",
+    "kind": "Preventive",
+    "kb_concept_id": null,
+    "kb_preferred_name": "VACCINATION KC",
+    "kb_kind": "Preventive",
+    "match_method": "dual_sync_local",
+    "is_verified": true,
+    "similarity_score": 0.8857142857142857,
+    "local_stock_id": 42299,
+    "local_service_id": 1014,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "vaccine",
+      "vaccination",
+      "immunization"
+    ],
+    "search_term": "vaccine"
+  },
+  {
+    "span_text": "water fountain water",
+    "normalized_name": "water fountain water",
+    "display_name": "water fountain water",
+    "kind": "Diet",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "VitalSign",
+    "match_method": "vital_sign_structured",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "water fountain water",
+      "fountain water",
+      "filtered water"
+    ],
+    "search_term": "water fountain water"
+  },
+  {
+    "span_text": "weight",
+    "normalized_name": "weight",
+    "display_name": "weight",
+    "kind": "VitalSign",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": "VitalSign",
+    "match_method": "vital_sign_structured",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "weight",
+      "body weight",
+      "animal weight"
+    ],
+    "search_term": "weight"
+  },
+  {
+    "span_text": "yard",
+    "normalized_name": "yard",
+    "display_name": "yard",
+    "kind": "Other",
+    "kb_concept_id": null,
+    "kb_preferred_name": null,
+    "kb_kind": null,
+    "match_method": "other_preserved",
+    "similarity_score": null,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "yard",
+      "yard area",
+      "outdoor yard"
+    ],
+    "search_term": "yard"
+  },
+  {
+    "span_text": "yearly vaccination",
+    "normalized_name": "yearly vaccination",
+    "display_name": "RABIVAX-S-VACCINE",
+    "kind": "Preventive",
+    "kb_concept_id": null,
+    "kb_preferred_name": "RABIVAX-S-VACCINE",
+    "kb_kind": "Preventive",
+    "match_method": "dual_sync_local",
+    "is_verified": true,
+    "similarity_score": 0.6696420790538438,
+    "local_stock_id": 40217,
+    "local_service_id": 1003,
+    "assertion_id": "CONF",
+    "attributes": {},
+    "hints": [
+      "yearly vaccination",
+      "annual vaccine",
+      "annual vaccination"
+    ],
+    "search_term": "yearly vaccination"
+  }
+]

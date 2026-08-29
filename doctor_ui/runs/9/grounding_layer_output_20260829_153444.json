@@ -1,0 +1,619 @@
+[
+  {
+    "span_text": "yearly vaccination",
+    "normalized_name": "yearly vaccination",
+    "kind": "Preventive",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "RABIVAX-S-VACCINE",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "preventative_wellness",
+        "definition": null,
+        "score": 0.6696420790538438
+      },
+      {
+        "rank": 2,
+        "source": "local",
+        "preferred_name": "VACCINATION RL",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "preventative_wellness",
+        "definition": null,
+        "score": 0.6596825396825396
+      },
+      {
+        "rank": 3,
+        "source": "local",
+        "preferred_name": "VACCINATION KC",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "preventative_wellness",
+        "definition": null,
+        "score": 0.6596825396825396
+      },
+      {
+        "rank": 4,
+        "source": "local",
+        "preferred_name": "VACCINATION CRP",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "preventative_wellness",
+        "definition": null,
+        "score": 0.6444444444444445
+      },
+      {
+        "rank": 5,
+        "source": "local",
+        "preferred_name": "VACCINATION CRP+R",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "preventative_wellness",
+        "definition": null,
+        "score": 0.6193464052287582
+      },
+      {
+        "rank": 6,
+        "source": "local",
+        "preferred_name": "VACCINATION C6 + R",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "preventative_wellness",
+        "definition": null,
+        "score": 0.6088888888888888
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": {
+      "selected_display_name": "RABIVAX-S-VACCINE",
+      "selected_concept_id": null,
+      "selected_kind": null,
+      "justification": null
+    },
+    "final_binding": {
+      "display_name": "RABIVAX-S-VACCINE",
+      "kb_concept_id": null,
+      "local_service_id": 1003,
+      "local_stock_id": 40217,
+      "match_method": "dual_sync_local",
+      "similarity_score": 0.6696420790538438
+    }
+  },
+  {
+    "span_text": "infection process",
+    "normalized_name": "infection process",
+    "kind": "Diagnosis",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "INJECTION PREMAXO",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "internal_medicine",
+        "definition": null,
+        "score": 0.8539969834087482
+      },
+      {
+        "rank": 2,
+        "source": "local",
+        "preferred_name": "INJECTION ACILOC",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "gastroenterology",
+        "definition": null,
+        "score": 0.837037037037037
+      },
+      {
+        "rank": 3,
+        "source": "local",
+        "preferred_name": "INJECTION DORAMEC",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "oncology",
+        "definition": null,
+        "score": 0.8291938997821351
+      },
+      {
+        "rank": 4,
+        "source": "local",
+        "preferred_name": "SKIN TEST",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "dermatology",
+        "definition": null,
+        "score": 0.8269841269841269
+      },
+      {
+        "rank": 5,
+        "source": "local",
+        "preferred_name": "INJECTION K",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "internal_medicine",
+        "definition": null,
+        "score": 0.8260249554367202
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "infection process",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "note_only_below_threshold",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "apply the appointment",
+    "normalized_name": "apply the appointment",
+    "kind": "Procedure",
+    "route": "dual_sync",
+    "candidates": [],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "apply the ointment",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "unlinked",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "grooming",
+    "normalized_name": "grooming",
+    "kind": "Procedure",
+    "route": "dual_sync",
+    "candidates": [],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "grooming",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "unlinked",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "trimmer",
+    "normalized_name": "trimmer",
+    "kind": "Procedure",
+    "route": "dual_sync",
+    "candidates": [],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "trimmer",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "unlinked",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "excess oil secretion",
+    "normalized_name": "excess oil secretion",
+    "kind": "Diagnosis",
+    "route": "dual_sync",
+    "candidates": [],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "excess oil secretion",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "note_only_below_threshold",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "cleaning completely",
+    "normalized_name": "cleaning completely",
+    "kind": "Procedure",
+    "route": "dual_sync",
+    "candidates": [],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "complete cleaning",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "unlinked",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "vaccine",
+    "normalized_name": "vaccine",
+    "kind": "Preventive",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "VACCINATION KC",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "preventative_wellness",
+        "definition": null,
+        "score": 0.8857142857142857
+      },
+      {
+        "rank": 2,
+        "source": "local",
+        "preferred_name": "VACCINATION TRICAT+R",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "preventative_wellness",
+        "definition": null,
+        "score": 0.8480000000000001
+      },
+      {
+        "rank": 3,
+        "source": "local",
+        "preferred_name": "VACCINATION DHPPI L4+R",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "preventative_wellness",
+        "definition": null,
+        "score": 0.8400000000000001
+      },
+      {
+        "rank": 4,
+        "source": "local",
+        "preferred_name": "VACCINATION BIOCAN DHPPI L4+R",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "preventative_wellness",
+        "definition": null,
+        "score": 0.8206896551724138
+      },
+      {
+        "rank": 5,
+        "source": "local",
+        "preferred_name": "VACCINATION RL",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "preventative_wellness",
+        "definition": null,
+        "score": 0.8057142857142857
+      },
+      {
+        "rank": 6,
+        "source": "local",
+        "preferred_name": "Nobivac Tricat Treo Vaccine",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "preventative_wellness",
+        "definition": null,
+        "score": 0.6081834215167549
+      },
+      {
+        "rank": 7,
+        "source": "local",
+        "preferred_name": "RABIVAX-S-VACCINE",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "preventative_wellness",
+        "definition": null,
+        "score": 0.559572192513369
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": {
+      "selected_display_name": "VACCINATION KC",
+      "selected_concept_id": null,
+      "selected_kind": null,
+      "justification": null
+    },
+    "final_binding": {
+      "display_name": "VACCINATION KC",
+      "kb_concept_id": null,
+      "local_service_id": 1014,
+      "local_stock_id": 42299,
+      "match_method": "dual_sync_local",
+      "similarity_score": 0.8857142857142857
+    }
+  },
+  {
+    "span_text": "feeding",
+    "normalized_name": "feeding",
+    "kind": "ReasonForVisit",
+    "route": "dual_sync",
+    "candidates": [],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "feeding",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "note_only_below_threshold",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "trimming",
+    "normalized_name": "trimming",
+    "kind": "Procedure",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "CAT DEWORMING",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "preventative_wellness",
+        "definition": null,
+        "score": 0.7456410256410256
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "trimming",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "dual_sync_judge_rejected",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "tablet",
+    "normalized_name": "tablet",
+    "kind": "Medication",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "LASIX TABLET",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "cardiology",
+        "definition": null,
+        "score": 0.7752188552188554
+      },
+      {
+        "rank": 2,
+        "source": "local",
+        "preferred_name": "ALLERGIA TABLET",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "dermatology",
+        "definition": null,
+        "score": 0.7135353535353535
+      },
+      {
+        "rank": 3,
+        "source": "local",
+        "preferred_name": "Devbhoomi Fexorise-M 120 mg 10 x 10 Tablets",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "dermatology",
+        "definition": null,
+        "score": 0.6571360665478313
+      },
+      {
+        "rank": 4,
+        "source": "local",
+        "preferred_name": "CaniCare Fexorise-OD 120 mg 10 Tab",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "dermatology",
+        "definition": null,
+        "score": 0.6196632996632998
+      },
+      {
+        "rank": 5,
+        "source": "local",
+        "preferred_name": "FECAL DETERENT TABLET",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "gastroenterology",
+        "definition": null,
+        "score": 0.6071572871572872
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "tablet",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "dual_sync_judge_rejected",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "ointment",
+    "normalized_name": "ointment",
+    "kind": "Medication",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "STAPHBAN OINTMENT 15GM",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "dermatology",
+        "definition": null,
+        "score": 0.6867132867132868
+      },
+      {
+        "rank": 2,
+        "source": "local",
+        "preferred_name": "ZOLE-F OINTMENT 15GM",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "dermatology",
+        "definition": null,
+        "score": 0.6766666666666666
+      },
+      {
+        "rank": 3,
+        "source": "local",
+        "preferred_name": "Anglo-French Muropirin Ointment IP 2% 1 Tube",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "dermatology",
+        "definition": null,
+        "score": 0.6503030303030304
+      },
+      {
+        "rank": 4,
+        "source": "local",
+        "preferred_name": "Anglo-French Mupirocin Ointment IP 2% w/w",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "dermatology",
+        "definition": null,
+        "score": 0.6503030303030304
+      },
+      {
+        "rank": 5,
+        "source": "local",
+        "preferred_name": "CIPLADINE OINTMENT 20G",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "dermatology",
+        "definition": null,
+        "score": 0.6486713286713287
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "ointment",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "dual_sync_judge_rejected",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "pet wipes",
+    "normalized_name": "pet wipes",
+    "kind": "Medication",
+    "route": "dual_sync",
+    "candidates": [
+      {
+        "rank": 1,
+        "source": "local",
+        "preferred_name": "Zoetis Pet-Tabs 60 mg 3 Tab Dog",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "nutrition",
+        "definition": null,
+        "score": 0.7666666666666666
+      },
+      {
+        "rank": 2,
+        "source": "local",
+        "preferred_name": "Pet Mankind Emikind Ondansetron 50 ml",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "gastroenterology",
+        "definition": null,
+        "score": 0.7933933933933934
+      },
+      {
+        "rank": 3,
+        "source": "local",
+        "preferred_name": "PetBen PEPTICARE 2.5% w/v 200 ml",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "dermatology",
+        "definition": null,
+        "score": 0.7825396825396825
+      },
+      {
+        "rank": 4,
+        "source": "local",
+        "preferred_name": "Zenex PetDerm",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "dermatology",
+        "definition": null,
+        "score": 0.7777777777777778
+      },
+      {
+        "rank": 5,
+        "source": "local",
+        "preferred_name": "Petclind 450 450 mg 1 x 10 Tab",
+        "concept_id": null,
+        "kind": null,
+        "domain_key": "internal_medicine",
+        "definition": null,
+        "score": 0.7336700336700337
+      }
+    ],
+    "reranking_applied": false,
+    "llm_judge": {
+      "selected_display_name": "Zoetis Pet-Tabs 60 mg 3 Tab Dog",
+      "selected_concept_id": null,
+      "selected_kind": null,
+      "justification": null
+    },
+    "final_binding": {
+      "display_name": "Zoetis Pet-Tabs 60 mg 3 Tab Dog",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": 42032,
+      "match_method": "dual_sync_auto_bind_local",
+      "similarity_score": 0.7666666666666666
+    }
+  },
+  {
+    "span_text": "ticks",
+    "normalized_name": "ticks",
+    "kind": "ParasiteControl",
+    "route": "dual_sync",
+    "candidates": [],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "ticks",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "unlinked",
+      "similarity_score": null
+    }
+  },
+  {
+    "span_text": "copper and debo motor",
+    "normalized_name": "copper and debo motor",
+    "kind": "Medication",
+    "route": "dual_sync",
+    "candidates": [],
+    "reranking_applied": false,
+    "llm_judge": null,
+    "final_binding": {
+      "display_name": "copper and debo motor",
+      "kb_concept_id": null,
+      "local_service_id": null,
+      "local_stock_id": null,
+      "match_method": "unlinked",
+      "similarity_score": null
+    }
+  }
+]

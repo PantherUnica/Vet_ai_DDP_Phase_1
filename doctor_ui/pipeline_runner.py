@@ -147,6 +147,14 @@ async def run_pipeline_for_consultation(
             consultation_language=consultation_language,
         )
         soap_json = _extract_soap_json(result, output_dir)
+        # Prefer formatter output if present in soap_json
+        try:
+            from soap_section_formatter import format_soap_dict
+
+            if soap_json:
+                soap_json = format_soap_dict(soap_json)
+        except Exception:
+            pass
         fail_msg = _soap_looks_failed(result.get("soap_note"), soap_json)
         if fail_msg:
             db.update_consultation(
@@ -158,7 +166,12 @@ async def run_pipeline_for_consultation(
             )
             raise RuntimeError(fail_msg)
         db.save_soap_result(consultation_id, soap_json, str(output_dir), status="complete")
-        return {"result": result, "soap_json": soap_json, "output_dir": str(output_dir)}
+        return {
+            "result": result,
+            "soap_json": soap_json,
+            "output_dir": str(output_dir),
+            "pipeline_flags": result.get("pipeline_flags") or {},
+        }
     except Exception as exc:
         # Avoid overwriting a more specific error already saved above
         rec = db.get_consultation(consultation_id)

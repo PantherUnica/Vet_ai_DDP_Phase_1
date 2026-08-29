@@ -1,0 +1,122 @@
+{
+  "ReasonForVisit": [
+    {
+      "span_text": "feeding"
+    }
+  ],
+  "Medication": [
+    {
+      "span_text": "tablet"
+    },
+    {
+      "span_text": "ointment"
+    },
+    {
+      "span_text": "pet wipes"
+    },
+    {
+      "span_text": "copper and debo motor"
+    },
+    {
+      "span_text": "medicines"
+    }
+  ],
+  "Procedure": [
+    {
+      "span_text": "apply the appointment"
+    },
+    {
+      "span_text": "trimmer"
+    },
+    {
+      "span_text": "trimmer"
+    },
+    {
+      "span_text": "grooming"
+    },
+    {
+      "span_text": "trimming"
+    },
+    {
+      "span_text": "cleaning completely"
+    }
+  ],
+  "Diagnostic": [],
+  "VitalSign": [
+    {
+      "span_text": "temperature"
+    },
+    {
+      "span_text": "weight"
+    }
+  ],
+  "Reminder": [],
+  "Symptom": [
+    {
+      "span_text": "scratching"
+    },
+    {
+      "span_text": "mild fever"
+    },
+    {
+      "span_text": "drink much water"
+    }
+  ],
+  "Diagnosis": [
+    {
+      "span_text": "infection process"
+    },
+    {
+      "span_text": "excess oil secretion"
+    }
+  ],
+  "Anatomy": [
+    {
+      "span_text": "affected area"
+    },
+    {
+      "span_text": "hair"
+    },
+    {
+      "span_text": "tail"
+    }
+  ],
+  "Diet": [
+    {
+      "span_text": "feeding"
+    },
+    {
+      "span_text": "good food"
+    },
+    {
+      "span_text": "pure"
+    },
+    {
+      "span_text": "daan"
+    },
+    {
+      "span_text": "trees"
+    },
+    {
+      "span_text": "water fountain water"
+    }
+  ],
+  "Preventive": [
+    {
+      "span_text": "yearly vaccination"
+    },
+    {
+      "span_text": "vaccine"
+    }
+  ],
+  "ParasiteControl": [
+    {
+      "span_text": "ticks"
+    }
+  ],
+  "Other": [
+    {
+      "span_text": "yard"
+    }
+  ]
+}

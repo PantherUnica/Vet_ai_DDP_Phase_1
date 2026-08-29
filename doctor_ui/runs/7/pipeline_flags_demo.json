@@ -1,0 +1,32 @@
+{
+  "overall": "degraded",
+  "generated_at": "2026-08-29T15:25:25",
+  "stage_summary": {
+    "STEP1": "ok",
+    "STEP2": "ok",
+    "GROUNDING": "degraded",
+    "STEP3": "ok",
+    "PHASE2": "degraded"
+  },
+  "flags": [
+    {
+      "step": "GROUNDING",
+      "severity": "warning",
+      "code": "HIGH_UNLINKED_RATE",
+      "message": "RAG grounding left 6/6 billable entities unlinked — inventory match weak.",
+      "detail": "unlinked_ratio=1.00"
+    },
+    {
+      "step": "PHASE2",
+      "severity": "warning",
+      "code": "BILLING_ACTION_REQUIRED",
+      "message": "Verification dashboard has 6 unlinked item(s) needing clinic SKU selection.",
+      "detail": "Fever Injection, Appetite Stimulant, Oral Drops, Blood Test, Wet Food"
+    }
+  ],
+  "counts": {
+    "error": 0,
+    "warning": 2,
+    "info": 0
+  }
+}

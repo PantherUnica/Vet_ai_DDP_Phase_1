@@ -50,6 +50,7 @@ CATEGORY_SOFT_GATE_MISMATCH_PENALTY = max(0.0, min(1.0, _cat_penalty))
 # Prevents cross-category hallucinations (e.g. "flea control" never sees "Accessories & Toys").
 USE_CATEGORY_HARD_GATE_LOCAL = os.getenv("CATEGORY_HARD_GATE_LOCAL", "true").lower() in ("1", "true", "yes")
 LOCAL_TRGM_RECALL_THRESHOLD = float(os.getenv("LOCAL_TRGM_RECALL_THRESHOLD", "0.30"))
+CATEGORY_HARD_GATE_RECALL_FALLBACK = os.getenv("CATEGORY_HARD_GATE_RECALL_FALLBACK", "true").lower() in ("1", "true", "yes")
 LOCAL_VECTOR_ON_DEMAND_EMBED = os.getenv("LOCAL_VECTOR_ON_DEMAND_EMBED", "true").lower() in ("1", "true", "yes")
 
 # Bucket groups (category aliasing): Brain NER category or kind -> list of DB category values (normalized lower).
@@ -563,6 +564,7 @@ def search_local_inventory_topk(
     hint_probabilities: Optional[Dict[str, float]] = None,
     query_expansion: Optional[List[str]] = None,
     category_hints: Optional[List[str]] = None,
+    recall_fallback_done: bool = False,
 ) -> List[Dict[str, Any]]:
     """
     LOCAL GUARD v2: Returns Top-K candidates instead of single match.
@@ -1099,7 +1101,41 @@ def search_local_inventory_topk(
             
             # Sort by final_score (includes domain + suggestion boost)
             all_candidates.sort(key=lambda x: x.get("final_score", 0.0), reverse=True)
-            return all_candidates[:top_k]
+            results = all_candidates[:top_k]
+            # Master Doc: prefer category gate, but if it yields zero hits, one recall retry without gate
+            if (
+                not results
+                and not recall_fallback_done
+                and CATEGORY_HARD_GATE_RECALL_FALLBACK
+                and USE_CATEGORY_HARD_GATE_LOCAL
+                and category_hints
+            ):
+                if logger:
+                    logger.info(
+                        "  🔁 Inventory category gate returned 0 hits for '%s' — retry without category hard gate",
+                        span_text,
+                    )
+                return search_local_inventory_topk(
+                    conn,
+                    span_text,
+                    entity_kind,
+                    clinic_id=clinic_id,
+                    logger=logger,
+                    threshold=threshold,
+                    top_k=top_k,
+                    client=client,
+                    embedding_cache=embedding_cache,
+                    precomputed_embedding=precomputed_embedding,
+                    domain_filter=domain_filter,
+                    suggestion_probability=suggestion_probability,
+                    search_term=search_term,
+                    hints=hints,
+                    hint_probabilities=hint_probabilities,
+                    query_expansion=query_expansion,
+                    category_hints=None,
+                    recall_fallback_done=True,
+                )
+            return results
                 
     except Exception as e:
         msg = str(e).lower()
@@ -1182,6 +1218,7 @@ def search_local_services_topk(
     query_expansion: Optional[List[str]] = None,
     category_hints: Optional[List[str]] = None,
     service_type: Optional[str] = None,
+    recall_fallback_done: bool = False,
 ) -> List[Dict[str, Any]]:
     """
     LOCAL GUARD v2: Returns Top-K service candidates instead of single match.
@@ -1538,7 +1575,41 @@ def search_local_services_topk(
         
         # Sort by final_score (includes domain + suggestion boost)
         all_candidates.sort(key=lambda x: x.get("final_score", 0.0), reverse=True)
-        return all_candidates[:top_k]
+        results = all_candidates[:top_k]
+        if (
+            not results
+            and not recall_fallback_done
+            and CATEGORY_HARD_GATE_RECALL_FALLBACK
+            and USE_CATEGORY_HARD_GATE_LOCAL
+            and category_hints
+        ):
+            if logger:
+                logger.info(
+                    "  🔁 Service category gate returned 0 hits for '%s' — retry without category hard gate",
+                    span_text,
+                )
+            return search_local_services_topk(
+                conn,
+                span_text,
+                entity_kind,
+                clinic_id=clinic_id,
+                logger=logger,
+                threshold=threshold,
+                top_k=top_k,
+                client=client,
+                embedding_cache=embedding_cache,
+                precomputed_embedding=precomputed_embedding,
+                domain_filter=domain_filter,
+                suggestion_probability=suggestion_probability,
+                search_term=search_term,
+                hints=hints,
+                hint_probabilities=hint_probabilities,
+                query_expansion=query_expansion,
+                category_hints=None,
+                service_type=service_type,
+                recall_fallback_done=True,
+            )
+        return results
                 
     except Exception as e:
         msg = str(e).lower()
