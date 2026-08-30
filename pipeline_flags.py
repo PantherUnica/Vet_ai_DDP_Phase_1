@@ -190,18 +190,23 @@ def build_pipeline_flags(
         stages["STEP2"] = "failing"
 
     brain = _load_json(_latest(out, "brain_ner_output_*.json"))
-    if isinstance(brain, dict):
-        ents = brain.get("entities") or brain.get("spans") or []
-        if isinstance(ents, list) and len(ents) == 0:
-            flags.append(
-                PipelineFlag(
-                    "STEP2",
-                    "warning",
-                    "NO_NER_ENTITIES",
-                    "STEP2 Brain NER returned no entities — grounding/RAG may be empty.",
-                )
+    brain_ents: List[Any] = []
+    if isinstance(brain, list):
+        brain_ents = brain
+    elif isinstance(brain, dict):
+        raw_ents = brain.get("entities") or brain.get("spans") or []
+        if isinstance(raw_ents, list):
+            brain_ents = raw_ents
+    if brain is not None and len(brain_ents) == 0:
+        flags.append(
+            PipelineFlag(
+                "STEP2",
+                "warning",
+                "NO_NER_ENTITIES",
+                "STEP2 Brain NER returned no entities — grounding/RAG may be empty.",
             )
-            stages["STEP2"] = "degraded"
+        )
+        stages["STEP2"] = "degraded"
 
     # --- GROUNDING / RAG ---
     manifest = entity_manifest
@@ -320,15 +325,29 @@ def build_pipeline_flags(
             )
 
     if not manifest and (cleaned or raw):
-        flags.append(
-            PipelineFlag(
-                "GROUNDING",
-                "warning",
-                "EMPTY_MANIFEST",
-                "Entity manifest is empty — RAG / inventory linking did not produce entities.",
+        if len(brain_ents) > 0:
+            # Brain NER ran but grounding never wrote a manifest — Master Doc quality regression
+            flags.append(
+                PipelineFlag(
+                    "GROUNDING",
+                    "error",
+                    "GROUNDING_PIPELINE_SKIPPED",
+                    f"Brain NER found {len(brain_ents)} entities but entity_manifest is empty — "
+                    "local RAG/inventory linking did not run (SKIP_BILLING_PIPELINE, missing grounding "
+                    "LLM client, or Postgres skip). Quality below Master Doc dual_sync path.",
+                )
             )
-        )
-        stages["GROUNDING"] = "degraded"
+            stages["GROUNDING"] = "failing"
+        else:
+            flags.append(
+                PipelineFlag(
+                    "GROUNDING",
+                    "warning",
+                    "EMPTY_MANIFEST",
+                    "Entity manifest is empty — RAG / inventory linking did not produce entities.",
+                )
+            )
+            stages["GROUNDING"] = "degraded"
 
     # --- STEP3 SOAP ---
     soap = soap_json
@@ -450,8 +469,18 @@ def build_pipeline_flags(
                 f"Phase 2 extracted {len(atoms_list)} knowledge atom(s).",
             )
         )
-    elif stages["GROUNDING"] != "failing" and not atoms_list and stages["STEP3"] != "failing":
-        if not dash:
+    elif not atoms_list and stages["STEP3"] != "failing":
+        if stages["GROUNDING"] == "failing":
+            flags.append(
+                PipelineFlag(
+                    "PHASE2",
+                    "warning",
+                    "PHASE2_SKIPPED_NO_MANIFEST",
+                    "Phase 2 skipped because entity_manifest was empty (depends on grounding).",
+                )
+            )
+            stages["PHASE2"] = "degraded"
+        elif not dash:
             flags.append(
                 PipelineFlag(
                     "PHASE2",

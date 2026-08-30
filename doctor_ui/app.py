@@ -282,6 +282,10 @@ def main() -> None:
         st.session_state.view = "new"
 
     st.sidebar.title("VetAI Doctor UI")
+    st.sidebar.caption(
+        "Results are saved under data/ (SQLite) and runs/ (full artifacts). "
+        "See DEPLOY.md for Docker / LAN deploy."
+    )
     nav = st.sidebar.radio(
         "Navigate",
         ["New Consultation", "Results", "History"],

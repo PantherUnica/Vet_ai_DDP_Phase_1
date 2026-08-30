@@ -1204,7 +1204,20 @@ def _entities_to_manifest(
             "grounding_recommended": True,
             "grounding_reason": None,
             "certainty": _float_certainty(e.get("confidence")),
-            "grounding_policy": "NEVER",
+            # Master Doc: billable kinds must be groundable (MUST/TRY). NEVER only for note-only skips.
+            "grounding_policy": (
+                "NEVER"
+                if str(kind or "").strip().lower() in {
+                    "anatomy", "symptom", "vitalsign", "signalment", "other", "identity"
+                }
+                else "MUST"
+                if str(kind or "").strip().lower() in {
+                    "medication", "medicine", "drug", "product", "vaccine",
+                    "procedure", "diagnostic", "diagnostictest", "preventive",
+                    "parasitecontrol", "diet", "nutrition", "service",
+                }
+                else "TRY"
+            ),
             "context_snippet": (e.get("context_sentence") or "").strip()[:200] or None,
         }
         # Store hint probabilities if available

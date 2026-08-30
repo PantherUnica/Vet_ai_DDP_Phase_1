@@ -18,7 +18,15 @@ if str(ROOT) not in sys.path:
 from doctor_ui import db  # noqa: E402
 from doctor_ui.languages import stored_to_deepgram  # noqa: E402
 
-RUNS_DIR = Path(__file__).resolve().parent / "runs"
+def get_runs_dir() -> Path:
+    """Persistent runs directory (override with VETAI_RUNS_DIR for deploy volumes)."""
+    raw = (os.getenv("VETAI_RUNS_DIR") or "").strip()
+    path = Path(raw) if raw else Path(__file__).resolve().parent / "runs"
+    path.mkdir(parents=True, exist_ok=True)
+    return path
+
+
+RUNS_DIR = get_runs_dir()
 logger = logging.getLogger("doctor_ui")
 
 _SOAP_PRIMARY_KEYS = (
@@ -40,13 +48,23 @@ def _postgres_reachable(host: str = "127.0.0.1", port: int = 5432, timeout: floa
 
 
 def _prepare_doctor_ui_pipeline_env() -> None:
-    """Skip inventory grounding / Phase 2 when local Postgres is down (common for UI testing)."""
+    """
+    Toggle inventory grounding / Phase 2 from Postgres reachability.
+    IMPORTANT: clear SKIP_* when DB is back — sticky true permanently skips Master Doc RAG.
+    """
     host = os.getenv("PGHOST", "127.0.0.1")
     try:
         port = int(os.getenv("PGPORT", "5432"))
     except ValueError:
         port = 5432
     if _postgres_reachable(host, port):
+        # Restore Master Doc path if a prior run set SKIP while PG was down
+        if os.getenv("SKIP_BILLING_PIPELINE", "").lower() in ("1", "true", "yes"):
+            os.environ.pop("SKIP_BILLING_PIPELINE", None)
+            logger.info("Postgres reachable — cleared SKIP_BILLING_PIPELINE (grounding enabled)")
+        if os.getenv("SKIP_PHASE2", "").lower() in ("1", "true", "yes"):
+            os.environ.pop("SKIP_PHASE2", None)
+            logger.info("Postgres reachable — cleared SKIP_PHASE2")
         return
     os.environ["SKIP_BILLING_PIPELINE"] = "true"
     os.environ["SKIP_PHASE2"] = "true"
@@ -126,7 +144,7 @@ async def run_pipeline_for_consultation(
     _prepare_doctor_ui_pipeline_env()
     from SOAP_notes_phase1_experiment import generate_soap_note_from_transcript_async
 
-    output_dir = RUNS_DIR / str(consultation_id)
+    output_dir = get_runs_dir() / str(consultation_id)
     output_dir.mkdir(parents=True, exist_ok=True)
 
     db.update_consultation(

@@ -8,6 +8,10 @@ SQL_dump_extracted/
 fireworks_api.txt
 API_Key.docx
 
+# Local persisted UI state (keep in deploy volumes; don't commit DBs)
+doctor_ui/data/*.db
+doctor_ui/runs/
+
 # Python
 __pycache__/
 *.py[cod]

@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.local
+
+# Local / heavy artifacts (bind-mount or named volumes in compose instead)
+doctor_ui/runs/
+doctor_ui/data/
+SQL_dump*/
+SQL_dump_extracted/
+.tmp_pgvector/
+input_audio_examples/
+input_audio_examples.zip
+*.wav
+*.mp3
+*.m4a
+
+# Git / IDE
+.git/
+.vscode/
+.idea/
+agent-transcripts/

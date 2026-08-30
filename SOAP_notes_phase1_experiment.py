@@ -4036,9 +4036,15 @@ async def generate_soap_note_from_audio_async(
                 combined_path_used = True
                 logger.info("⚡ STEP 2: SUPER-PASS (unified prompt) → BRAIN NER (enrich with hints/probabilities)")
 
-                # Use streaming-style grounding (shadow grounding is always enabled)
-                if combined_path_used and fireworks_client:
+                # Use streaming-style grounding (Master Doc dual_sync). Prefer Fireworks client when
+                # available; fall back to Super-Pass / OpenAI client so OpenAI-only deploys still ground.
+                grounding_llm_client = fireworks_client or super_pass_client
+                if combined_path_used and grounding_llm_client:
                     used_streaming_grounding = True
+                    if fireworks_client is None and logger:
+                        logger.info(
+                            "⚡ Grounding using Super-Pass/OpenAI client (Fireworks client unavailable) — Master Doc local RAG still runs"
+                        )
                     logger.info("⚡ Batch-parallel grounding: Brain NER (non-streaming) → local-only routing/search → parallel LLM judges → dispatch all entities")
                     # Import here so _dispatch_entity closure has process_single_entity_async in its enclosing scope.
                     try:
@@ -4145,7 +4151,7 @@ async def generate_soap_note_from_audio_async(
                                             span_text=span,
                                             context_window=context_window,
                                             speaker=None,
-                                            client=fireworks_client,
+                                            client=grounding_llm_client,
                                             logger=logger,
                                         )
                                     )
@@ -4173,7 +4179,7 @@ async def generate_soap_note_from_audio_async(
                                         cleaned_transcript=context_text,
                                         raw_transcript=context_text,
                                         conn=None,
-                                        client=fireworks_client,
+                                        client=grounding_llm_client,
                                         clinic_id=clinic_id,
                                         visit_id=visit_id,
                                         auto_bind_threshold=GROUNDING_AUTO_BIND_THRESHOLD,
@@ -4312,78 +4318,43 @@ async def generate_soap_note_from_audio_async(
                                 entities_for_grounding = initial_entities
                             if not shadow_grounding_used:
                                 use_batch_vector = os.getenv("KB_USE_BATCH_VECTOR_SEARCH", "true").strip().lower() in ("1", "true", "yes")
-                                if use_batch_vector and (entities_for_grounding or []) and fireworks_client:
+                                # Always dispatch local grounding (Master Doc). Embeddings use grounding_llm_client when available.
+                                if (entities_for_grounding or []) and grounding_llm_client:
                                     try:
-                                        from kb_ner_routing import sanitize_asr_errors, canonicalize_kind, classify_entity_route
-                                        from kb_ner_global_search import (
-                                            run_batch_global_vector_search,
-                                            map_ner_kind_to_kb_kind_filter,
-                                            REASON_ALLOWED_KB_KINDS,
-                                        )
-                                        from kb_ner_db import acquire_pg_conn, release_pg_conn
-                                        from kb_ner_embeddings import embed_texts
-                                        need_global = []
-                                        for idx0, ent_obj in enumerate(entities_for_grounding or []):
-                                            if not isinstance(ent_obj, dict):
-                                                continue
-                                            span_text = (ent_obj.get("span_text") or "").strip()
-                                            if not span_text:
-                                                continue
-                                            normalized_name = span_text.replace("[unclear]", "").strip() if "[unclear]" in span_text else span_text
-                                            normalized_name = sanitize_asr_errors(normalized_name)
-                                            kb_kind_raw = ent_obj.get("kb_kind") or ent_obj.get("kind", "Other")
-                                            canonical_kind = canonicalize_kind(kb_kind_raw)
-                                            route = classify_entity_route(canonical_kind, entity=ent_obj, logger=logger)
-                                            if route != "global_direct":
-                                                continue
-                                            search_term = (ent_obj.get("search_term") or "").strip() or normalized_name
-                                            if canonical_kind == "ReasonForVisit":
-                                                kind_filter = list(REASON_ALLOWED_KB_KINDS)
-                                            else:
-                                                kind_filter = map_ner_kind_to_kb_kind_filter(canonical_kind) or []
-                                            hints = ent_obj.get("hints")
-                                            domain_from_brain = ent_obj.get("domain")
-                                            suggestion_prob = ent_obj.get("suggestion_probability")
-                                            hint_probabilities = ent_obj.get("hint_probabilities")
-                                            if isinstance(domain_from_brain, str) and (domain_from_brain or "").strip().lower() not in ("", "general"):
-                                                domain_arg = [domain_from_brain.strip().lower()]
-                                            elif isinstance(domain_from_brain, list) and domain_from_brain:
-                                                domain_arg = [(d or "").strip().lower() for d in domain_from_brain if (d or "").strip().lower() and (d or "").strip().lower() != "general"]
-                                            else:
-                                                domain_arg = None
-                                            if isinstance(hints, list) and (span_text or search_term):
-                                                    need_global.append((idx0, search_term, kind_filter, span_text, hints[:3], domain_arg, suggestion_prob, hint_probabilities))
-                                            else:
-                                                    need_global.append((idx0, search_term, kind_filter, None, None, domain_arg, suggestion_prob, hint_probabilities))
-                                            # Default path only: no global KB (LOCAL_ONLY); skip run_batch_global_vector_search
-                                            unique_texts = list(dict.fromkeys((e.get("span_text") or "").strip() for e in (entities_for_grounding or []) if (e.get("span_text") or "").strip()))
-                                            if unique_texts:
-                                                try:
-                                                    _embeddings = embed_texts(unique_texts, client=fireworks_client, logger=logger)
+                                        if use_batch_vector:
+                                            try:
+                                                from kb_ner_embeddings import embed_texts
+                                                unique_texts = list(dict.fromkeys((e.get("span_text") or "").strip() for e in (entities_for_grounding or []) if (e.get("span_text") or "").strip()))
+                                                if unique_texts:
+                                                    _embeddings = embed_texts(unique_texts, client=grounding_llm_client, logger=logger)
                                                     if _embeddings and len(_embeddings) == len(unique_texts):
                                                         for _t, _v in zip(unique_texts, _embeddings):
                                                             if _v:
                                                                 streaming_embedding_cache[_t] = _v
                                                         if logger:
                                                             logger.info(f"  📊 Batch embeddings: {len(unique_texts)} unique terms (billing pipeline)")
-                                                except Exception as _e:
-                                                    if logger:
-                                                        logger.debug(f"  ⚠️  Batch embed pre-fill failed: {_e}")
+                                            except Exception as _e:
+                                                if logger:
+                                                    logger.debug(f"  ⚠️  Batch embed pre-fill failed: {_e}")
+                                        for idx0, ent in enumerate(entities_for_grounding or []):
+                                            await _dispatch_entity(ent, idx0)
+                                        if streaming_grounding_tasks:
+                                            try:
+                                                await asyncio.wait_for(
+                                                    asyncio.gather(*streaming_grounding_tasks, return_exceptions=True),
+                                                    timeout=60.0,
+                                                )
+                                            except asyncio.TimeoutError:
+                                                if logger:
+                                                    pending = [t for t in streaming_grounding_tasks if not t.done()]
+                                                    logger.warning(f"  ⚠️ Billing pipeline: timeout waiting for {len(pending)} grounding tasks")
                                     except Exception as e:
                                         if logger:
-                                            logger.debug(f"  ⚠️  Batch vector search / batch embed failed: {e}")
-                                    for idx0, ent in enumerate(entities_for_grounding or []):
-                                        await _dispatch_entity(ent, idx0)
-                                    if streaming_grounding_tasks:
-                                        try:
-                                            await asyncio.wait_for(
-                                                asyncio.gather(*streaming_grounding_tasks, return_exceptions=True),
-                                                timeout=60.0,
-                                            )
-                                        except asyncio.TimeoutError:
-                                            if logger:
-                                                pending = [t for t in streaming_grounding_tasks if not t.done()]
-                                                logger.warning(f"  ⚠️ Billing pipeline: timeout waiting for {len(pending)} grounding tasks")
+                                            logger.warning(f"  ⚠️  Billing grounding dispatch failed: {e}")
+                                elif logger:
+                                    logger.error(
+                                        "❌ CRITICAL: No grounding LLM client — cannot dispatch billable entities (Master Doc RAG skipped)"
+                                    )
                             stage_marks["grounding_done"] = time.perf_counter()
                             if logger:
                                 logger.info(f"  ✅ Billing pipeline complete: {len(streaming_entity_manifest)} entities in manifest")
@@ -4393,10 +4364,15 @@ async def generate_soap_note_from_audio_async(
                             if not shadow_grounding_used
                             and os.getenv("SKIP_BILLING_PIPELINE", "").lower()
                             not in ("1", "true", "yes")
+                            and used_streaming_grounding
                             else None
                         )
                         if os.getenv("SKIP_BILLING_PIPELINE", "").lower() in ("1", "true", "yes"):
                             logger.info("⏩ SKIP_BILLING_PIPELINE=true — inventory grounding skipped")
+                        if combined_path_used and not grounding_llm_client and logger:
+                            logger.error(
+                                "❌ CRITICAL: No Fireworks or Super-Pass client for grounding — entity_manifest will be empty"
+                            )
                         if not shadow_grounding_used:
                             super_pass_stream_task = None
                 

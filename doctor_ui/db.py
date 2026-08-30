@@ -3,12 +3,29 @@
 from __future__ import annotations
 
 import json
+import os
 import sqlite3
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-DB_PATH = Path(__file__).resolve().parent / "data" / "consultations.db"
+_DEFAULT_DATA_DIR = Path(__file__).resolve().parent / "data"
+
+
+def get_data_dir() -> Path:
+    """Persistent data directory (override with VETAI_DATA_DIR for deploy volumes)."""
+    raw = (os.getenv("VETAI_DATA_DIR") or "").strip()
+    path = Path(raw) if raw else _DEFAULT_DATA_DIR
+    path.mkdir(parents=True, exist_ok=True)
+    return path
+
+
+def get_db_path() -> Path:
+    return get_data_dir() / "consultations.db"
+
+
+# Back-compat for imports that read DB_PATH at module load
+DB_PATH = get_db_path()
 
 _SCHEMA = """
 CREATE TABLE IF NOT EXISTS consultations (
@@ -29,8 +46,9 @@ CREATE TABLE IF NOT EXISTS consultations (
 
 
 def _connect() -> sqlite3.Connection:
-    DB_PATH.parent.mkdir(parents=True, exist_ok=True)
-    conn = sqlite3.connect(str(DB_PATH))
+    db_path = get_db_path()
+    db_path.parent.mkdir(parents=True, exist_ok=True)
+    conn = sqlite3.connect(str(db_path))
     conn.row_factory = sqlite3.Row
     return conn
 

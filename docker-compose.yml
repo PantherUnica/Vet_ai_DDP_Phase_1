@@ -1,0 +1,50 @@
+# VetAI Doctor UI — deploy with persistent results
+# Usage (from repo root):
+#   copy .env.deploy.example to .env  (or reuse existing .env)
+#   docker compose up -d --build
+#
+# Results survive container restarts via volumes:
+#   vetai_data  -> consultations.db
+#   vetai_runs  -> full pipeline artifacts per consultation
+
+services:
+  doctor-ui:
+    build: .
+    image: vetai-doctor-ui:latest
+    container_name: vetai-doctor-ui
+    ports:
+      - "${VETAI_PORT:-8501}:8501"
+    env_file:
+      - .env
+    environment:
+      VETAI_DATA_DIR: /data
+      VETAI_RUNS_DIR: /runs
+      # Reach Postgres on the Windows/Linux host from inside Docker
+      PGHOST: ${PGHOST_DOCKER:-host.docker.internal}
+      PGPORT: ${PGPORT:-5432}
+      PGDATABASE: ${PGDATABASE:-super_pass}
+      PGUSER: ${PGUSER:-vivek}
+      # PGPASSWORD / API keys come from .env
+      STREAMLIT_SERVER_ADDRESS: 0.0.0.0
+      STREAMLIT_SERVER_PORT: "8501"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - vetai_data:/data
+      - vetai_runs:/runs
+      # Optional: bind-mount host folders instead of named volumes
+      # - ./doctor_ui/data:/data
+      # - ./doctor_ui/runs:/runs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:8501/_stcore/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  vetai_data:
+    name: vetai_data
+  vetai_runs:
+    name: vetai_runs
