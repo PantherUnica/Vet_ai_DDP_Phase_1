@@ -235,6 +235,7 @@ def run_clinical_entity_resolver(
     client: Any,
     model: Optional[str] = None,
     logger: Optional[logging.Logger] = None,
+    timing_out: Optional[Dict[str, Any]] = None,
 ) -> List[Dict[str, Any]]:
     """
     Run Clinical Entity Resolver on Brain NER output.
@@ -277,6 +278,9 @@ def run_clinical_entity_resolver(
         t0 = time.perf_counter()
         items = _run_cer_streaming(messages, client, model, logger=logger, max_tokens=8000)
         cer_latency_s = time.perf_counter() - t0
+        if timing_out is not None:
+            timing_out["latency_ms"] = int(round(cer_latency_s * 1000))
+            timing_out["attempted"] = True
         if logger:
             logger.info(f"  ⏱️ CER LLM call (streaming): {cer_latency_s:.1f}s ({len(compact)} entities)")
         if items is not None:
@@ -324,6 +328,9 @@ def run_clinical_entity_resolver(
             max_tokens=cer_max_tokens,
         )
         cer_latency_s = time.perf_counter() - t0
+        if timing_out is not None:
+            timing_out["latency_ms"] = int(round(cer_latency_s * 1000))
+            timing_out["attempted"] = True
         if logger:
             logger.info(f"  ⏱️ CER LLM call: {cer_latency_s:.1f}s ({len(compact)} entities)")
         first = (resp.choices or [None])[0] if getattr(resp, "choices", None) else None
@@ -400,6 +407,7 @@ async def run_clinical_entity_resolver_async(
     client: Any,
     model: Optional[str] = None,
     logger: Optional[logging.Logger] = None,
+    timing_out: Optional[Dict[str, Any]] = None,
 ) -> List[Dict[str, Any]]:
     """Async wrapper: run CER in a thread to avoid blocking the event loop."""
     import asyncio
@@ -409,4 +417,5 @@ async def run_clinical_entity_resolver_async(
         client,
         model,
         logger,
+        timing_out,
     )
