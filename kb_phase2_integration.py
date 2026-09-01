@@ -108,6 +108,15 @@ _SCHEMA_CACHE: dict = {
 }
 
 
+def _set_phase2_timing(timing_ref: Optional[Dict[str, Any]], **kwargs: Any) -> None:
+    if timing_ref is not None:
+        timing_ref.update(kwargs)
+
+
+def _elapsed_ms_since(start: float) -> int:
+    return max(0, int(round((time.perf_counter() - start) * 1000)))
+
+
 def _estimate_phase2_max_tokens(soap_chars: int, entity_count: int) -> int:
     """
     Continuous estimator for Phase 2 max_tokens_first.
@@ -1502,6 +1511,7 @@ async def extract_knowledge_atoms_async(
     enable_billing_matching: bool = False,
     early_atoms_task_ref: Optional[Dict[str, Any]] = None,
     run_timestamp: Optional[str] = None,
+    timing_ref: Optional[Dict[str, Any]] = None,
 ) -> Tuple[Dict[str, Any], bool]:
     """
     Optimized async Phase 2 Knowledge Atom extraction.
@@ -1551,7 +1561,9 @@ async def extract_knowledge_atoms_async(
     early_atoms: List[Dict[str, Any]] = []
     if early_atoms_task_ref and early_atoms_task_ref.get("task") is not None:
         try:
+            t_early = time.perf_counter()
             early_result, _ = await early_atoms_task_ref["task"]
+            _set_phase2_timing(timing_ref, early_subjective_objective_ms=_elapsed_ms_since(t_early))
             early_atoms = (early_result or {}).get("knowledge_atoms") or []
             if logger and early_atoms:
                 logger.info(f"  📋 Pre-Phase 2: merging {len(early_atoms)} early atoms (Subjective/Objective)")
@@ -1729,7 +1741,9 @@ async def extract_knowledge_atoms_async(
                     return await loop.run_in_executor(phase2_executor, _call_wrapper)
 
                 try:
+                    t_llm = time.perf_counter()
                     batch_results = await asyncio.gather(*[_call_one_batch(b) for b in batches])
+                    _set_phase2_timing(timing_ref, step1_atom_extraction_ms=_elapsed_ms_since(t_llm))
                 finally:
                     # Cleanup executor
                     phase2_executor.shutdown(wait=False)
@@ -1739,6 +1753,7 @@ async def extract_knowledge_atoms_async(
                     all_atoms.extend(parsed.get("knowledge_atoms", []) or [])
                 if early_atoms:
                     all_atoms = early_atoms + [a for a in all_atoms if (a.get("section") or "").strip() not in ("Subjective", "Objective", "Signalment")]
+                t_post = time.perf_counter()
                 all_atoms = _deduplicate_knowledge_atoms(all_atoms)
                 # Constraint injection: Plan gate, unlinked-only-if-in-plan, drop customer-instruction-only
                 soap_for_constraint = soap_for_prompt or soap_note_text or ""
@@ -1747,13 +1762,16 @@ async def extract_knowledge_atoms_async(
                 if all_atoms and entity_manifest:
                     all_atoms = _enrich_atoms_with_manifest_ids(all_atoms, entity_manifest)
                     knowledge_atoms["knowledge_atoms"] = all_atoms
+                _set_phase2_timing(timing_ref, step2_post_process_ms=_elapsed_ms_since(t_post))
                 atoms_list = all_atoms
                 # Phase 2 of knowledge atoms step: build verification dashboard from consolidated manifest + filtered atoms
                 if atoms_list:
+                    t_dash = time.perf_counter()
                     with pg_conn_ctx() as conn:
                         verification_dashboard = _build_verification_dashboard(
                             atoms_list, conn=conn, logger=logger, entity_manifest=entity_manifest
                         )
+                    _set_phase2_timing(timing_ref, step3_dashboard_ms=_elapsed_ms_since(t_dash))
                     knowledge_atoms["verification_dashboard"] = verification_dashboard
                     if logger:
                         logger.info(f"  📊 Verification dashboard built: {sum(len(v) for v in verification_dashboard.values())} items across 7 modules")
@@ -1799,6 +1817,7 @@ async def extract_knowledge_atoms_async(
                         f"(soap_chars={soap_len}, entities={entity_count}, "
                         f"floor={PHASE2_MAX_TOKENS}, ceil={PHASE2_MAX_TOKENS_LONG})"
                     )
+                t_llm = time.perf_counter()
                 knowledge_atoms = await asyncio.to_thread(
                     _call_phase2_llm_json,
                     client=client,
@@ -1809,6 +1828,7 @@ async def extract_knowledge_atoms_async(
                     temperature=PHASE2_TEMPERATURE,
                     logger=logger,
                 )
+                _set_phase2_timing(timing_ref, step1_atom_extraction_ms=_elapsed_ms_since(t_llm))
 
                 attempted_models = [PHASE2_MODEL]
 
@@ -1823,6 +1843,7 @@ async def extract_knowledge_atoms_async(
                                     f"  ⚠️ Phase 2 JSON parse failed on '{PHASE2_MODEL}'. "
                                     f"Escalating once to '{escalate_model}'..."
                                 )
+                            t_esc = time.perf_counter()
                             knowledge_atoms = await asyncio.to_thread(
                                 _call_phase2_llm_json,
                                 client=esc_client,
@@ -1833,6 +1854,11 @@ async def extract_knowledge_atoms_async(
                                 temperature=PHASE2_TEMPERATURE,
                                 logger=logger,
                             )
+                            prev = timing_ref.get("step1_atom_extraction_ms", 0) if timing_ref else 0
+                            _set_phase2_timing(
+                                timing_ref,
+                                step1_atom_extraction_ms=prev + _elapsed_ms_since(t_esc),
+                            )
                             attempted_models.append(escalate_model)
 
                 knowledge_atoms = _postprocess_phase2_json(knowledge_atoms) or {}
@@ -1840,6 +1866,7 @@ async def extract_knowledge_atoms_async(
                 atoms_list = knowledge_atoms.get("knowledge_atoms", []) or []
                 if early_atoms:
                     atoms_list = early_atoms + [a for a in atoms_list if (a.get("section") or "").strip() not in ("Subjective", "Objective", "Signalment")]
+                t_post = time.perf_counter()
                 atoms_list = _deduplicate_knowledge_atoms(atoms_list)
                 soap_for_constraint = soap_for_prompt or soap_note_text or ""
                 atoms_list = _apply_knowledge_atom_constraints(atoms_list, entity_manifest, soap_for_constraint, logger=logger)
@@ -1847,13 +1874,16 @@ async def extract_knowledge_atoms_async(
                 if atoms_list and entity_manifest:
                     atoms_list = _enrich_atoms_with_manifest_ids(atoms_list, entity_manifest)
                     knowledge_atoms["knowledge_atoms"] = atoms_list
+                _set_phase2_timing(timing_ref, step2_post_process_ms=_elapsed_ms_since(t_post))
 
                 # Phase 2 of knowledge atoms step: verification dashboard from consolidated manifest + filtered atoms
                 if atoms_list:
+                    t_dash = time.perf_counter()
                     with pg_conn_ctx() as conn:
                         verification_dashboard = _build_verification_dashboard(
                             atoms_list, conn=conn, logger=logger, entity_manifest=entity_manifest
                         )
+                    _set_phase2_timing(timing_ref, step3_dashboard_ms=_elapsed_ms_since(t_dash))
                     knowledge_atoms["verification_dashboard"] = verification_dashboard
                     if logger:
                         logger.info(f"  📊 Verification dashboard built: {sum(len(v) for v in verification_dashboard.values())} items across 7 modules")
@@ -1904,6 +1934,7 @@ async def extract_knowledge_atoms_async(
                     f"(soap_chars={soap_len}, entities={entity_count}, "
                     f"floor={PHASE2_MAX_TOKENS}, ceil={PHASE2_MAX_TOKENS_LONG})"
                 )
+            t_llm = time.perf_counter()
             knowledge_atoms = await asyncio.to_thread(
                 _call_phase2_llm_json,
                 client=client,
@@ -1914,12 +1945,14 @@ async def extract_knowledge_atoms_async(
                 temperature=PHASE2_TEMPERATURE,
                 logger=logger,
             )
+            _set_phase2_timing(timing_ref, step1_atom_extraction_ms=_elapsed_ms_since(t_llm))
             knowledge_atoms = _postprocess_phase2_json(knowledge_atoms)
             
             # Enrich atoms with inventory/service IDs from entity manifest
             atoms_list = knowledge_atoms.get("knowledge_atoms", []) or []
             if early_atoms:
                 atoms_list = early_atoms + [a for a in atoms_list if (a.get("section") or "").strip() not in ("Subjective", "Objective", "Signalment")]
+            t_post = time.perf_counter()
             atoms_list = _deduplicate_knowledge_atoms(atoms_list)
             # Constraint injection: Plan gate, unlinked-only-if-in-plan, drop customer-instruction-only
             soap_for_constraint = soap_for_prompt or soap_note_text or ""
@@ -1928,14 +1961,17 @@ async def extract_knowledge_atoms_async(
             if atoms_list and entity_manifest:
                 atoms_list = _enrich_atoms_with_manifest_ids(atoms_list, entity_manifest)
                 knowledge_atoms["knowledge_atoms"] = atoms_list
+            _set_phase2_timing(timing_ref, step2_post_process_ms=_elapsed_ms_since(t_post))
 
             # Phase 2 of knowledge atoms step: build verification dashboard from consolidated manifest + filtered atoms
             if atoms_list:
+                t_dash = time.perf_counter()
                 # Use Phase 1's connection pool for master table queries
                 with pg_conn_ctx() as conn:
                     verification_dashboard = _build_verification_dashboard(
                         atoms_list, conn=conn, logger=logger, entity_manifest=entity_manifest
                     )
+                _set_phase2_timing(timing_ref, step3_dashboard_ms=_elapsed_ms_since(t_dash))
                 knowledge_atoms["verification_dashboard"] = verification_dashboard
                 if logger:
                     logger.info(f"  📊 Verification dashboard built: {sum(len(v) for v in verification_dashboard.values())} items across 7 modules")
@@ -1966,6 +2002,7 @@ async def extract_knowledge_atoms_async(
                     logger.warning(f"  ⚠️ Could not save knowledge atoms: {e}")
         
         elapsed = asyncio.get_event_loop().time() - start_time
+        _set_phase2_timing(timing_ref, phase2_total_ms=int(round(elapsed * 1000)))
         atoms_len = len(knowledge_atoms.get("knowledge_atoms", []) or []) if isinstance(knowledge_atoms, dict) else 0
         is_failure = _looks_like_json_parse_failure(knowledge_atoms) if isinstance(knowledge_atoms, dict) else True
         if logger:

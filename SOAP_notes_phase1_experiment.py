@@ -801,13 +801,15 @@ a. Summarize Key Case Elements:
 • Begin with a concise restatement of the initial complaint and history provided by the owner, using only information already present in the Subjective section.
 • Clearly summarize physical findings, diagnostics (e.g., cytology), and any abnormal results, using only information already present in the Objective section.
 • Include a brief rationale behind the assessment or differential diagnosis, but only if this rationale is explicitly discussed in the conversation or pre-appointment summary. Do not invent or infer new reasoning.
+• CRITICAL — weave Plan into narrative prose: After summarizing assessment, integrate the main plan actions from the Plan section as flowing sentences (not a numbered list). Name specific medications, procedures, and diagnostics discussed or ordered. State follow-up/recheck timing and key at-home care expectations in 1-3 natural sentences.
 • Summarize treatments administered and medications prescribed, focusing on therapeutic intent, using only items already present in the Plan and Protocols/Vitals sections.
 • Incorporate owner instructions and follow-up plans (e.g., recheck appointments, monitoring guidance) using only items already present in the Plan, Customer Instructions, Reminders, and Key Issues.
 • Any statement about overall status (e.g., stable, improving, deteriorating, recovering, guarded prognosis) must be a direct paraphrase of wording already used in the Assessment or in the veterinarian’s own statements. If such wording is not clearly present, omit that status label instead of guessing.
 • Ensure every sentence in the Conclusion can be traced back to specific content in Subjective, Objective, Assessment, Plan, or other structured sections above.
+• Do NOT paste the numbered Plan list into Conclusion; integrate plan details naturally into prose.
 b. Maintain Clinical Structure and Professional Tone:
 • Use formal, concise medical language suitable for veterinary case documentation.
-• Follow a logical flow: Presentation → Findings → Assessment/Diagnosis → Treatment → Owner Instructions → Follow-up.
+• Follow a logical flow: Presentation → Findings → Assessment/Diagnosis → Treatment & Plan Actions → Owner Instructions → Follow-up.
 • Ensure the summary is stand-alone, medically informative, and easily scannable by a veterinary professional.
 • Since it is the vet who is going to pursue their own records, don't use tone and terminology saying the veterinarian chose to do this or that. Rather use wording which is appropriate for a clinical record.
 c. If no medically relevant information is available, output only no medically relevant information available. No need to describe or explain the nature of the non-medical relevant information. Instead simply output the result that no medically relevant information was available.
@@ -1409,6 +1411,21 @@ def build_optional_inputs_section(pre_appointment: str, protocols: str, vitals: 
         return ""
 
 
+CONCLUSION_SECTION_GUIDANCE = """
+CONCLUSION (mandatory):
+Write a cohesive stand-alone case summary in formal clinical prose (not a bullet list).
+Structure: presenting complaint/history → key findings → assessment/diagnosis → treatment and plan actions → follow-up/monitoring.
+
+CRITICAL — include Plan in the narrative:
+After summarizing assessment, weave in the main plan actions from the Plan section as flowing sentences:
+- name specific medications, procedures, and diagnostics discussed or ordered
+- state follow-up/recheck timing and key at-home care expectations
+Do NOT paste the numbered Plan list; integrate plan details naturally (1-3 sentences).
+Do NOT introduce facts not present in transcript, Brain NER, or other SOAP sections.
+Any overall status label (e.g., stable, improving) must paraphrase wording already in Assessment or the conversation; omit if not clearly stated.
+"""
+
+
 def build_soap_prompt_from_brain_ner(raw_transcript: str, optional_inputs: str, brain_ner_json: str) -> str:
     """
     Build SOAP prompt using Brain NER handoff only (no grounded-manifest injection/anchors).
@@ -1428,6 +1445,7 @@ def build_soap_prompt_from_brain_ner(raw_transcript: str, optional_inputs: str, 
         "- Respect `assertion_id` semantics (CONF/NEG/SUSP/HIST/HYPO/RECUR).\n"
         "- Keep SOAP clean text only: DO NOT output anchor tags or injected markup.\n"
         "- Do not invent facts beyond transcript + optional inputs + BRAIN_NER_JSON.\n\n"
+        f"{CONCLUSION_SECTION_GUIDANCE}\n"
         "Return ONLY valid JSON matching the SOAP schema.\n"
     )
 
@@ -3784,8 +3802,11 @@ async def generate_soap_note_from_audio_async(
     Pass raw_transcription to skip ASR (typed/manual STEP1). audio_file_path optional in that mode.
     """
     pipeline_start_time = time.time()
-    stage_perf_start = time.perf_counter()
-    stage_marks: Dict[str, float] = {}
+    from pipeline_timing import PipelineTimer, save_pipeline_timing
+
+    timer = PipelineTimer()
+    timer.mark("pipeline_start")
+    phase2_timing_ref: Dict[str, Any] = {}
     logger = logging.getLogger('soap_generator')
     skip_asr = raw_transcription is not None and raw_transcription.strip()
     logger.info("🎤 Async SOAP Note Generator (%s input)", "transcript" if skip_asr else "audio")
@@ -3833,7 +3854,7 @@ async def generate_soap_note_from_audio_async(
             ),
             audio_path=audio_file_path,
         )
-        stage_marks["transcription_done"] = time.perf_counter()
+        timer.mark("transcription_done")
     else:
         # If no audio file path provided, use the input folder
         if audio_file_path is None:
@@ -3933,7 +3954,7 @@ async def generate_soap_note_from_audio_async(
                 ),
                 audio_path=audio_file_path,
             )
-        stage_marks["transcription_done"] = time.perf_counter()
+        timer.mark("transcription_done")
 
     # --------------------------------------------------------------------------
     # STREAMING SUPER-PASS GROUNDING needs these BEFORE super-pass starts
@@ -4227,6 +4248,7 @@ async def generate_soap_note_from_audio_async(
                                 logger.info("🚀 CHUNK-PARALLEL MODE: Processing raw transcript in parallel chunks")
                             try:
                                 from kb_ner_chunk_parallel import process_chunks_parallel
+                                timer.mark("step2_super_pass_start")
                                 cleaned_transcription, initial_entities, _entities_by_kind = await process_chunks_parallel(
                                     raw_transcription,
                                     model=SUPER_PASS_MODEL,
@@ -4235,6 +4257,8 @@ async def generate_soap_note_from_audio_async(
                                     chunk_size=CHUNK_SIZE,
                                     overlap_size=CHUNK_OVERLAP,
                                 )
+                                timer.mark("step2_super_pass_done")
+                                timer.mark("step2_brain_ner_done")
                                 if not cleaned_transcription:
                                     cleaned_transcription = raw_transcription.strip()
                                 if logger:
@@ -4246,9 +4270,11 @@ async def generate_soap_note_from_audio_async(
                         else:
                             # Sequential processing (when chunk-parallel disabled or transcript too short)
                             # Step 2a: Super-Pass unified prompt (upstream) — cleaning + minimal NER (id, span_text, kind, attributes). No hints/probabilities.
+                            timer.mark("step2_super_pass_start")
                             cleaned_transcript, super_pass_entities, _entities_by_kind = await super_pass_cleaning_and_ner(
                                 raw_transcription, model=SUPER_PASS_MODEL, client=super_pass_client, logger=logger,
                             )
+                            timer.mark("step2_super_pass_done")
                             cleaned_transcription = cleaned_transcript or raw_transcription.strip()
                             # Step 2b: Brain NER (downstream) — enrich pre-extracted entities with hints, correctness/suggestion_probability, domain.
                             pre_extracted = [
@@ -4256,9 +4282,11 @@ async def generate_soap_note_from_audio_async(
                                 for i, e in enumerate(super_pass_entities or [])
                             ]
                             pre_extracted_json = json.dumps(pre_extracted, ensure_ascii=False)
+                            timer.mark("step2_brain_ner_start")
                             entity_manifest, _terms_not_grounded = await asyncio.to_thread(
                                 run_brain_call, cleaned_transcription, pre_extracted_json, SUPER_PASS_MODEL, super_pass_client, logger,
                             )
+                            timer.mark("step2_brain_ner_done")
                             initial_entities = list(entity_manifest or [])
                         # Save Brain NER output (pre-grounding) for inspection
                         brain_ner_file = output_dir_path / f"brain_ner_output_{timestamp}.json"
@@ -4278,15 +4306,18 @@ async def generate_soap_note_from_audio_async(
                         # Billing pipeline (CER + grounding) runs async, independent of SOAP. Only SOAP receives consolidated Brain NER (initial_entities).
                         async def _run_billing_pipeline_async():
                             """CER → batch prep → dispatch grounding. Runs in parallel with SOAP; result collected in streaming_entity_manifest."""
-                            stage_marks["billing_start"] = time.perf_counter()
+                            timer.mark("billing_start")
                             entities_for_grounding = initial_entities
                             enable_cer = os.getenv("ENABLE_CER", "true").strip().lower() in ("1", "true", "yes")
                             skip_cer_for_short = CER_SKIP_UNDER_CHARS > 0 and len(raw_transcription) <= CER_SKIP_UNDER_CHARS
-                            if skip_cer_for_short and logger:
-                                logger.info(
-                                    f"  ⏩ CER skipped for short transcript ({len(raw_transcription)} chars ≤ CER_SKIP_UNDER_CHARS={CER_SKIP_UNDER_CHARS}); using Brain NER entities for grounding"
-                                )
+                            if skip_cer_for_short:
+                                timer.set_flag("step2_cer_skipped", True)
+                                if logger:
+                                    logger.info(
+                                        f"  ⏩ CER skipped for short transcript ({len(raw_transcription)} chars ≤ CER_SKIP_UNDER_CHARS={CER_SKIP_UNDER_CHARS}); using Brain NER entities for grounding"
+                                    )
                             if enable_cer and (initial_entities or []) and not skip_cer_for_short:
+                                timer.set_flag("step2_cer_attempted", True)
                                 try:
                                     from kb_ner_clinical_entity_resolver import (
                                         run_clinical_entity_resolver_async,
@@ -4295,6 +4326,7 @@ async def generate_soap_note_from_audio_async(
                                     from kb_ner_clients import get_client_for_model
                                     cer_model_name = (os.getenv("CER_MODEL", CER_MODEL_DEFAULT) or CER_MODEL_DEFAULT).strip()
                                     cer_client = None
+                                    cer_timing_out: Dict[str, Any] = {}
                                     try:
                                         cer_client_result = get_client_for_model(cer_model_name, logger=logger)
                                         cer_client = cer_client_result[0] if isinstance(cer_client_result, tuple) else cer_client_result
@@ -4304,8 +4336,14 @@ async def generate_soap_note_from_audio_async(
                                         cer_client = super_pass_client or fireworks_client
                                     if cer_client:
                                         entities_for_grounding = await run_clinical_entity_resolver_async(
-                                            initial_entities, cer_client, model=cer_model_name, logger=logger
+                                            initial_entities,
+                                            cer_client,
+                                            model=cer_model_name,
+                                            logger=logger,
+                                            timing_out=cer_timing_out,
                                         )
+                                        if cer_timing_out.get("latency_ms") is not None:
+                                            timer.set_duration_ms("step2_cer", cer_timing_out["latency_ms"])
                                         if not entities_for_grounding:
                                             entities_for_grounding = initial_entities
                                     else:
@@ -4355,7 +4393,7 @@ async def generate_soap_note_from_audio_async(
                                     logger.error(
                                         "❌ CRITICAL: No grounding LLM client — cannot dispatch billable entities (Master Doc RAG skipped)"
                                     )
-                            stage_marks["grounding_done"] = time.perf_counter()
+                            timer.mark("grounding_done")
                             if logger:
                                 logger.info(f"  ✅ Billing pipeline complete: {len(streaming_entity_manifest)} entities in manifest")
 
@@ -4445,7 +4483,7 @@ async def generate_soap_note_from_audio_async(
     # Standalone cleaning path removed: pipeline always uses Super-Pass (cleaning + NER in one call).
 
     # STEP 2.3 & STEP 3: Launch grounding + SOAP generation in parallel (both use cleaned transcript)
-    stage_marks["superpass_done"] = time.perf_counter()
+    timer.mark("superpass_done")
     # In streaming mode, grounding started during super-pass streaming (or after Batch Intent if Clean-then-Intent).
     if used_streaming_grounding:
         # Ensure streaming super-pass finished so we have final (cleaned_transcription, initial_entities).
@@ -4490,7 +4528,7 @@ async def generate_soap_note_from_audio_async(
         )
     # Await SOAP first (SOAP pipeline latency = superpass_done → soap_done)
     soap_result = await soap_task
-    stage_marks["soap_done"] = time.perf_counter()
+    timer.mark("soap_done")
     if isinstance(soap_result, tuple) and len(soap_result) == 3:
         soap_note, success, generator = soap_result
     else:
@@ -4751,7 +4789,7 @@ async def generate_soap_note_from_audio_async(
     except Exception as e:
         logger.error(f"❌ Failed to save entity manifest: {e}")
     if billing_pipeline_task is None:
-        stage_marks["grounding_done"] = time.perf_counter()
+        timer.mark("grounding_done")
     
     # PHASE 2 + CONSTRAINT INJECTION:
     # Pre-Extraction: Start Phase 2 as soon as entity_manifest + SOAP are ready (don't wait for injection).
@@ -4759,8 +4797,9 @@ async def generate_soap_note_from_audio_async(
     # using pre-injection SOAP note (~2-3s earlier start). Set false to use post-injection SOAP for accuracy.
     phase2_task = None
     knowledge_atoms_result = None
-    stage_marks["phase2_start"] = None
-    stage_marks["phase2_done"] = None
+    timer.mark("injection_start")
+    timer.set_flag("step4_injection_skipped", True)
+    timer.mark("injection_done")
     phase2_start_with_soap_ready = os.getenv("PHASE2_START_WITH_SOAP_READY", "true").lower() in ("1", "true", "yes")
     skip_phase2 = os.getenv("SKIP_PHASE2", "").lower() in ("1", "true", "yes")
     if skip_phase2:
@@ -4790,10 +4829,11 @@ async def generate_soap_note_from_audio_async(
                         enable_billing_matching=phase2_enable_billing,
                         early_atoms_task_ref=early_phase2_task_ref,
                         run_timestamp=timestamp,
+                        timing_ref=phase2_timing_ref,
                     )
                 )
                 logger.info("🧬 Phase 2 Knowledge Atom extraction started (pre-extraction: parallel with constraint injection)")
-                stage_marks["phase2_start"] = time.perf_counter()
+                timer.mark("phase2_start")
             except ImportError as e:
                 logger.debug(f"Phase 2 integration not available: {e}")
             except Exception as e:
@@ -4847,10 +4887,11 @@ async def generate_soap_note_from_audio_async(
                         enable_billing_matching=phase2_enable_billing,
                         early_atoms_task_ref=early_phase2_task_ref,
                         run_timestamp=timestamp,
+                        timing_ref=phase2_timing_ref,
                     )
                 )
                 logger.info("🧬 Phase 2 Knowledge Atom extraction started (post-injection, using final SOAP note)")
-                stage_marks["phase2_start"] = time.perf_counter()
+                timer.mark("phase2_start")
             except ImportError as e:
                 logger.debug(f"Phase 2 integration not available: {e}")
             except Exception as e:
@@ -4863,7 +4904,7 @@ async def generate_soap_note_from_audio_async(
     if phase2_task is not None and phase2_blocking:
         try:
             knowledge_atoms_result, phase2_success = await phase2_task
-            stage_marks["phase2_done"] = time.perf_counter()
+            timer.mark("phase2_done")
             if phase2_success:
                 knowledge_atoms = knowledge_atoms_result.get('knowledge_atoms', [])
                 logger.info(f"✅ Phase 2 complete: {len(knowledge_atoms)} knowledge atoms extracted")
@@ -4959,50 +5000,11 @@ async def generate_soap_note_from_audio_async(
 
     total_time = time.time() - pipeline_start_time
     logger.info(f"✅ Async pipeline completed in {total_time:.2f}s")
-    # Stage-wise wall-clock contributions for latency audits.
-    try:
-        p0 = stage_perf_start
-        t_trans = stage_marks.get("transcription_done")
-        t_s2 = stage_marks.get("superpass_done")
-        t_soap = stage_marks.get("soap_done")
-        t_ground = stage_marks.get("grounding_done")
-        t_billing_start = stage_marks.get("billing_start")
-        t_p2s = stage_marks.get("phase2_start")
-        t_p2e = stage_marks.get("phase2_done")
-        p_end = time.perf_counter()
-
-        def _d(a, b):
-            if a is None or b is None:
-                return None
-            return max(0.0, float(b - a))
-
-        d_trans = _d(p0, t_trans)
-        d_super = _d(t_trans, t_s2)
-        d_soap_pipeline = _d(t_s2, t_soap)
-        d_billing_pipeline = _d(t_billing_start, t_ground) if t_billing_start is not None else _d(t_s2, t_ground)
-        d_ground_tail = _d(t_soap, t_ground)
-        d_phase2 = _d(t_p2s, t_p2e)
-        d_total = _d(p0, p_end)
-
-        logger.info(
-            "⏱️ Stage Wall-Clock (s): transcription=%s, superpass=%s, soap_pipeline=%s, billing_pipeline=%s, grounding_tail_after_soap=%s, phase2=%s, total=%s",
-            f"{d_trans:.2f}" if d_trans is not None else "n/a",
-            f"{d_super:.2f}" if d_super is not None else "n/a",
-            f"{d_soap_pipeline:.2f}" if d_soap_pipeline is not None else "n/a",
-            f"{d_billing_pipeline:.2f}" if d_billing_pipeline is not None else "n/a",
-            f"{d_ground_tail:.2f}" if d_ground_tail is not None else "n/a",
-            f"{d_phase2:.2f}" if d_phase2 is not None else "n/a",
-            f"{d_total:.2f}" if d_total is not None else "n/a",
-        )
-    except Exception:
-        pass
 
     # Wait for Phase 2 background task to complete before returning
     # This prevents cancellation when asyncio.run() closes the event loop
     if phase2_task is not None and not phase2_blocking:
         try:
-            # Wait for Phase 2 with a timeout (max 5 minutes) to avoid hanging forever
-            # If it times out, we still return (Phase 2 will continue in background if possible)
             await asyncio.wait_for(phase2_task, timeout=300.0)
             if logger:
                 logger.info("✅ Phase 2 background task completed before pipeline exit")
@@ -5010,6 +5012,7 @@ async def generate_soap_note_from_audio_async(
                 knowledge_atoms_result, _ok = phase2_task.result()
             except Exception:
                 pass
+            timer.mark("phase2_done")
         except asyncio.TimeoutError:
             if logger:
                 logger.warning("⚠️ Phase 2 background task timed out after 5 minutes; continuing anyway")
@@ -5019,6 +5022,39 @@ async def generate_soap_note_from_audio_async(
         except Exception as e:
             if logger:
                 logger.warning(f"⚠️ Error waiting for Phase 2 task: {e}")
+
+    timer.merge_phase2(phase2_timing_ref)
+    timer.mark("pipeline_end")
+    step1_asr_ms = None
+    try:
+        meta_path = output_dir_path / "step1_asr_metadata.json"
+        if meta_path.is_file():
+            step1_asr_ms = json.loads(meta_path.read_text(encoding="utf-8")).get("latency_ms")
+    except Exception:
+        pass
+    timer.set_metadata(
+        transcript_chars=len(raw_transcription or ""),
+        entity_count=len(entity_manifest or []),
+        source=source,
+    )
+    pipeline_timing_report = timer.build_report(source=source, step1_asr_ms=step1_asr_ms)
+    try:
+        save_pipeline_timing(output_dir_path, pipeline_timing_report, timestamp=timestamp)
+        if logger:
+            s = pipeline_timing_report.get("stages") or {}
+            logger.info(
+                "⏱️ Pipeline timing saved: total=%sms | STEP1=%s | STEP2=%s | GROUNDING=%s | STEP3=%s | PHASE2=%s",
+                pipeline_timing_report.get("total_ms"),
+                s.get("step1_transcription_ms"),
+                s.get("step2_total_ms"),
+                s.get("grounding_ms"),
+                s.get("step3_soap_ms"),
+                s.get("phase2_total_ms"),
+            )
+    except Exception as timing_err:
+        if logger:
+            logger.warning(f"⚠️ Could not save pipeline timing: {timing_err}")
+        pipeline_timing_report = {}
 
     # Workflow health flags (STEP1 → Phase2) for doctor UI / QA
     pipeline_flags_report: Dict[str, Any] = {}
@@ -5053,6 +5089,7 @@ async def generate_soap_note_from_audio_async(
         "cleaned_text": cleaned_transcription,
         "knowledge_atoms": knowledge_atoms_result,  # Phase 2 results (if available)
         "pipeline_flags": pipeline_flags_report,
+        "pipeline_timing": pipeline_timing_report,
     }
 
 

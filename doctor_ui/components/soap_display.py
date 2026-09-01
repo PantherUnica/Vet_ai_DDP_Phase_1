@@ -38,6 +38,46 @@ def _render_multiline(value: str) -> None:
         st.write(text)
 
 
+def render_pipeline_timing(timing_report: Optional[Dict[str, Any]]) -> None:
+    if not timing_report:
+        return
+    from pipeline_timing import format_duration_ms, timing_rows_for_display
+
+    total_ms = timing_report.get("total_ms")
+    st.subheader("Pipeline timing")
+    if total_ms is not None:
+        st.markdown(f"**Total:** {format_duration_ms(total_ms)}")
+    note = timing_report.get("parallel_note")
+    if note:
+        st.caption(note)
+
+    rows = timing_rows_for_display(timing_report)
+    if not rows:
+        return
+
+    lines = []
+    for row in rows:
+        indent = "&nbsp;" * (4 * int(row.get("indent") or 0))
+        label = row.get("label") or "?"
+        display = row.get("display") or "n/a"
+        if label.startswith("Total"):
+            continue
+        lines.append(f"{indent}**{label}:** {display}")
+
+    if lines:
+        st.markdown("  \n".join(lines), unsafe_allow_html=True)
+
+
+def load_pipeline_timing(output_dir: Optional[str]) -> Optional[Dict[str, Any]]:
+    if not output_dir:
+        return None
+    try:
+        from pipeline_timing import load_pipeline_timing as _load
+        return _load(output_dir)
+    except Exception:
+        return None
+
+
 def render_pipeline_flags(flags_report: Optional[Dict[str, Any]]) -> None:
     if not flags_report:
         return
@@ -99,10 +139,15 @@ def render_soap_template(
     soap_json: Dict[str, Any],
     *,
     flags_report: Optional[Dict[str, Any]] = None,
+    timing_report: Optional[Dict[str, Any]] = None,
 ) -> None:
     if not soap_json:
         st.warning("No SOAP note generated yet.")
         return
+
+    if timing_report:
+        render_pipeline_timing(timing_report)
+        st.divider()
 
     if flags_report:
         render_pipeline_flags(flags_report)

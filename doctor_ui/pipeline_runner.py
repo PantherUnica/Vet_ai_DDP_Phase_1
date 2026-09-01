@@ -189,6 +189,7 @@ async def run_pipeline_for_consultation(
             "soap_json": soap_json,
             "output_dir": str(output_dir),
             "pipeline_flags": result.get("pipeline_flags") or {},
+            "pipeline_timing": result.get("pipeline_timing") or {},
         }
     except Exception as exc:
         # Avoid overwriting a more specific error already saved above
