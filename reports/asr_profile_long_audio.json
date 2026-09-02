@@ -1,0 +1,19 @@
+{
+  "rows": [
+    {
+      "audio_file": "input_audio_examples\\Test_2_Long_audio.wav",
+      "provider": "deepgram",
+      "model": "nova-3",
+      "audio_path": "input_audio_examples\\Test_2_Long_audio.wav",
+      "file_mb": 64.748,
+      "format": "wav",
+      "duration_sec": 707.22,
+      "sample_rate_hz": 48000,
+      "channels": 1,
+      "latency_ms": 314092,
+      "char_count": 11254,
+      "latency_per_audio_minute_ms": 26647,
+      "http_attempts": 1
+    }
+  ]
+}

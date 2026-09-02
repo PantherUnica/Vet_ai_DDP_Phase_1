@@ -42,6 +42,10 @@ if _env_file.exists():
         pass
 
 from doctor_ui import db  # noqa: E402
+from doctor_ui.components.billing_display import (  # noqa: E402
+    load_verification_dashboard,
+    render_billing_forms,
+)
 from doctor_ui.components.soap_display import (  # noqa: E402
     load_pipeline_flags,
     load_pipeline_timing,
@@ -55,8 +59,12 @@ from doctor_ui.languages import (  # noqa: E402
 )
 from doctor_ui.pipeline_runner import (  # noqa: E402
     run_pipeline_for_consultation,
+    run_pipeline_from_audio,
     transcribe_audio_file,
 )
+from doctor_ui.pipeline_logging import configure_pipeline_console_logging  # noqa: E402
+
+configure_pipeline_console_logging()
 
 st.set_page_config(page_title="VetAI Doctor Notes", page_icon="🐾", layout="wide")
 db.init_db()
@@ -80,6 +88,10 @@ def _ensure_session() -> None:
         st.session_state.last_input_mode = "typed"
     if "last_audio_path" not in st.session_state:
         st.session_state.last_audio_path = None
+    if "step1_asr_ui_ms" not in st.session_state:
+        st.session_state.step1_asr_ui_ms = None
+    if "pending_voice_audio_path" not in st.session_state:
+        st.session_state.pending_voice_audio_path = None
 
 
 def page_new_consultation() -> None:
@@ -113,30 +125,51 @@ def page_new_consultation() -> None:
             "Upload voice note",
             type=["wav", "mp3", "m4a", "ogg", "webm", "flac"],
         )
+        voice_audio_path: str | None = None
         if uploaded:
             tmp = Path(tempfile.gettempdir()) / f"vetai_upload_{uploaded.name}"
             tmp.write_bytes(uploaded.getvalue())
-            if st.button("Transcribe upload", key="transcribe_upload"):
-                with st.spinner("Transcribing with Deepgram Nova-3..."):
-                    text = asyncio.run(
-                        transcribe_audio_file(str(tmp), consultation_language)
-                    )
-                    st.session_state.conversation_text = text
-                    st.session_state.last_input_mode = "voice"
-                    st.session_state.last_audio_path = str(tmp)
-                    st.rerun()
+            voice_audio_path = str(tmp)
+            st.session_state.pending_voice_audio_path = voice_audio_path
+            st.audio(uploaded)
         st.caption("Or use browser mic (Streamlit audio_input):")
         mic_audio = st.audio_input("Record voice note")
-        if mic_audio and st.button("Transcribe recording", key="transcribe_mic"):
+        if mic_audio:
             mic_path = Path(tempfile.gettempdir()) / "vetai_mic_recording.wav"
             mic_path.write_bytes(mic_audio.getvalue())
-            with st.spinner("Transcribing recording..."):
-                text = asyncio.run(
-                    transcribe_audio_file(str(mic_path), consultation_language)
-                )
+            voice_audio_path = str(mic_path)
+            st.session_state.pending_voice_audio_path = voice_audio_path
+
+        st.info(
+            "**Recommended:** Use **Generate SOAP from voice** below — one step, "
+            "ASR + pipeline with full timing. "
+            "Optional: transcribe first to edit the text before generating."
+        )
+        col_t1, col_t2 = st.columns(2)
+        with col_t1:
+            if voice_audio_path and st.button("Transcribe only (edit before SOAP)", key="transcribe_upload"):
+                import time as _time
+
+                t0 = _time.perf_counter()
+                with st.spinner("Transcribing with Deepgram..."):
+                    text, asr_meta = asyncio.run(
+                        transcribe_audio_file(voice_audio_path, consultation_language)
+                    )
                 st.session_state.conversation_text = text
                 st.session_state.last_input_mode = "voice"
-                st.session_state.last_audio_path = str(mic_path)
+                st.session_state.last_audio_path = voice_audio_path
+                st.session_state.step1_asr_ui_ms = asr_meta.get("latency_ms")
+                st.session_state.asr_meta = asr_meta
+                st.success(f"Transcribed in {_time.perf_counter() - t0:.1f}s — review text below, then Generate SOAP.")
+                st.rerun()
+        with col_t2:
+            if voice_audio_path and st.button(
+                "Generate SOAP from voice",
+                type="primary",
+                key="generate_from_voice",
+            ):
+                st.session_state._run_voice_audio_path = voice_audio_path
+                st.session_state._run_voice_direct = True
                 st.rerun()
 
     conversation = st.text_area(
@@ -147,6 +180,49 @@ def page_new_consultation() -> None:
     )
     input_mode = st.session_state.last_input_mode
     audio_path_saved = st.session_state.last_audio_path
+
+    # Single-click voice pipeline (ASR inside pipeline — STEP1 in timing JSON)
+    if st.session_state.pop("_run_voice_direct", False):
+        voice_path = st.session_state.pop("_run_voice_audio_path", None)
+        if voice_path and Path(voice_path).is_file():
+            if not st.session_state.consultation_id:
+                st.session_state.consultation_id = db.create_consultation(
+                    doctor_name=doctor_name,
+                    pet_name=pet_name,
+                    consultation_language=consultation_language,
+                    input_mode="voice",
+                    audio_path=voice_path,
+                    status="ready",
+                )
+            else:
+                db.update_consultation(
+                    st.session_state.consultation_id,
+                    doctor_name=doctor_name,
+                    pet_name=pet_name,
+                    consultation_language=consultation_language,
+                    audio_path=voice_path,
+                    input_mode="voice",
+                    status="ready",
+                )
+            with st.spinner("Transcribing + running full pipeline (STEP1–Phase2)..."):
+                try:
+                    out = asyncio.run(
+                        run_pipeline_from_audio(
+                            st.session_state.consultation_id,
+                            voice_path,
+                            consultation_language=consultation_language,
+                            doctor_name=doctor_name,
+                            pet_name=pet_name,
+                        )
+                    )
+                    st.session_state.soap_json = out["soap_json"]
+                    st.session_state.pipeline_flags = out.get("pipeline_flags") or {}
+                    st.session_state.pipeline_timing = out.get("pipeline_timing") or {}
+                    st.session_state.step1_asr_ui_ms = None
+                    st.session_state.view = "results"
+                    st.rerun()
+                except Exception as exc:
+                    st.error(f"Pipeline failed: {exc}")
 
     col_save, col_run = st.columns(2)
     with col_save:
@@ -209,6 +285,7 @@ def page_new_consultation() -> None:
                                 source=input_mode,
                                 audio_path=audio_path_saved,
                                 consultation_language=consultation_language,
+                                step1_asr_ui_ms=st.session_state.get("step1_asr_ui_ms"),
                             )
                         )
                         st.session_state.soap_json = out["soap_json"]
@@ -252,6 +329,14 @@ def page_results() -> None:
             or load_pipeline_timing(rec.get("output_dir"))
         )
         render_soap_template(soap_json, flags_report=flags, timing_report=timing)
+        st.divider()
+        dashboard = load_verification_dashboard(rec.get("output_dir"))
+        render_billing_forms(
+            dashboard,
+            flags_report=flags,
+            output_dir=rec.get("output_dir"),
+            conversation_text=rec.get("step1_raw_text") or "",
+        )
     elif rec.get("status") == "error":
         st.error(rec.get("error_message") or "Pipeline error")
     else:

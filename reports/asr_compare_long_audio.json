@@ -1,0 +1,42 @@
+{
+  "configs": [
+    {
+      "key": "deepgram:nova-3",
+      "provider": "deepgram",
+      "model": "nova-3",
+      "files": [
+        {
+          "audio": "input_audio_examples\\Test_2_Long_audio.wav",
+          "latency_ms": 251184,
+          "char_count": 11254,
+          "wer": 0.22554890219560877,
+          "cer": 0.10265777696593296,
+          "quality_ok_vs_baseline": null
+        }
+      ],
+      "mean_latency_ms": 251184.0,
+      "mean_wer": 0.22554890219560877,
+      "mean_cer": 0.10265777696593296
+    },
+    {
+      "key": "deepgram:nova-2",
+      "provider": "deepgram",
+      "model": "nova-2",
+      "files": [
+        {
+          "audio": "input_audio_examples\\Test_2_Long_audio.wav",
+          "latency_ms": 258698,
+          "char_count": 11111,
+          "wer": 0.24151696606786427,
+          "cer": 0.11946296465430634,
+          "quality_ok_vs_baseline": null
+        }
+      ],
+      "mean_latency_ms": 258698.0,
+      "mean_wer": 0.24151696606786427,
+      "mean_cer": 0.11946296465430634
+    }
+  ],
+  "files": [],
+  "recommendations": []
+}

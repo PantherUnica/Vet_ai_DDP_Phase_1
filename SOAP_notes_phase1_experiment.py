@@ -84,6 +84,24 @@ except Exception:
     extract_summary_block = None
     build_prompt_safe_transcript = None
 
+try:
+    from doctor_ui.vitals_schema import (
+        build_vitals_prompt_block,
+        normalize_vitals,
+        vitals_json_schema_properties,
+    )
+except ImportError:
+    build_vitals_prompt_block = None
+    normalize_vitals = None
+    vitals_json_schema_properties = None
+
+try:
+    from doctor_ui.diagnosis_schema import DIAGNOSIS_SECTION_GUIDANCE, migrate_legacy_diagnosis, diagnosis_text_for_storage
+except ImportError:
+    DIAGNOSIS_SECTION_GUIDANCE = ""
+    migrate_legacy_diagnosis = None
+    diagnosis_text_for_storage = None
+
 # Import SQL embeddings functionality
 # Note: sys and os are already imported at the top of the file (lines 49-50)
 # sql_embeddings.py is now in the same directory as this file
@@ -593,7 +611,7 @@ The {optional_inputs} section above may also include:
   * Example: If transcript mentions "Simparico" and GROUNDING_MANIFEST_JSON shows concept_preferred_name: "Simparica", you MUST write "Simparica" in the Assessment/Plan.
   * Do NOT use the surface_text from transcript if a concept_preferred_name is available.
   
-- For Assessment / Plan / DifferentialDiagnosis: 
+- For Assessment / Plan / PrimaryDiagnosis / SecondaryDiagnosis: 
   * **ALWAYS use concept_preferred_name** if concept_id is present (entity was successfully linked and normalized).
   * For unlinked entities (no concept_id), use the surface_text or a vaguer description.
   
@@ -674,7 +692,7 @@ Role:
 You are a knowledgeable veterinary assistant responsible for converting a pre-appointment complaint summary and a cleaned, attributed vet-pet parent conversation into a professional SOAP note format.
 Your task is to understand the transcript of a vet and a pet owner conversation and other relevant information from the provided materials and organize it into the SOAP notes (Subjective, Objective, Assessment, Plan) structure, ensuring accuracy and professionalism.
 Utilize a structured, step by step approach thought process and the SOAP note components to ensure all relevant medical details are accurately documented. Consider the pre-appointment complaint summary, if available, as a context for the conversation. Also consider any treatment protocol if available as a template, if relevant. If both the conversation and the complaint summary lack medically relevant content, return a null SOAP note.
-Global Rule: At no point may you introduce new clinical facts, diagnoses, exposures, medications, or timelines that are not explicitly present in the pre-appointment summary, protocols, vitals, conversation, or GROUNDING_MANIFEST_JSON. You must use the detected concepts from GROUNDING_MANIFEST_JSON to ground your Assessment, Plan, and DifferentialDiagnosis sections. If a concept in GROUNDING_MANIFEST_JSON has high confidence (>= 0.8) and a concept_id, use the canonical KB name. For low-confidence or unlinked concepts, use the surface_text or a vaguer description.
+Global Rule: At no point may you introduce new clinical facts, diagnoses, exposures, medications, or timelines that are not explicitly present in the pre-appointment summary, protocols, vitals, conversation, or GROUNDING_MANIFEST_JSON. You must use the detected concepts from GROUNDING_MANIFEST_JSON to ground your Assessment, Plan, PrimaryDiagnosis, and SecondaryDiagnosis sections. If a concept in GROUNDING_MANIFEST_JSON has high confidence (>= 0.8) and a concept_id, use the canonical KB name. For low-confidence or unlinked concepts, use the surface_text or a vaguer description.
 
 THE GOLDEN RULE (DATA FIDELITY): Maintain strict fidelity to all measurements, dosages, and routes mentioned in the transcript. Never summarize '5mg IV' into 'administered medication'. If the doctor said it, it must appear in the SOAP note exactly as spoken.
 
@@ -801,7 +819,7 @@ a. Summarize Key Case Elements:
 • Begin with a concise restatement of the initial complaint and history provided by the owner, using only information already present in the Subjective section.
 • Clearly summarize physical findings, diagnostics (e.g., cytology), and any abnormal results, using only information already present in the Objective section.
 • Include a brief rationale behind the assessment or differential diagnosis, but only if this rationale is explicitly discussed in the conversation or pre-appointment summary. Do not invent or infer new reasoning.
-• CRITICAL — weave Plan into narrative prose: After summarizing assessment, integrate the main plan actions from the Plan section as flowing sentences (not a numbered list). Name specific medications, procedures, and diagnostics discussed or ordered. State follow-up/recheck timing and key at-home care expectations in 1-3 natural sentences.
+• CRITICAL — comprehensive stand-alone summary: Conclusion MUST be substantially longer than other sections (~8-12 sentences / ~150-300 words). Cover presenting complaint/history, key findings, assessment/differentials, treatments and plan actions (woven in prose with specific meds/procedures), owner at-home care highlights, follow-up/monitoring, and notable abnormal findings if present.
 • Summarize treatments administered and medications prescribed, focusing on therapeutic intent, using only items already present in the Plan and Protocols/Vitals sections.
 • Incorporate owner instructions and follow-up plans (e.g., recheck appointments, monitoring guidance) using only items already present in the Plan, Customer Instructions, Reminders, and Key Issues.
 • Any statement about overall status (e.g., stable, improving, deteriorating, recovering, guarded prognosis) must be a direct paraphrase of wording already used in the Assessment or in the veterinarian’s own statements. If such wording is not clearly present, omit that status label instead of guessing.
@@ -813,25 +831,25 @@ b. Maintain Clinical Structure and Professional Tone:
 • Ensure the summary is stand-alone, medically informative, and easily scannable by a veterinary professional.
 • Since it is the vet who is going to pursue their own records, don't use tone and terminology saying the veterinarian chose to do this or that. Rather use wording which is appropriate for a clinical record.
 c. If no medically relevant information is available, output only no medically relevant information available. No need to describe or explain the nature of the non-medical relevant information. Instead simply output the result that no medically relevant information was available.
-Step 9: Final Differential Diagnosis Heading
+Step 9: Primary and Secondary Diagnosis
 Purpose:
-Provide a structured Differential Diagnosis heading that summarizes the main condition or system involved, even if the veterinarian does not explicitly say it as a heading.
+Provide structured primary and secondary diagnosis labels derived from the case. Primary is the main problem driving the visit; secondary is an optional contributing or complicating condition explicitly stated in the consultation.
 Rules:
-• The DifferentialDiagnosis must not introduce any new condition that is not already mentioned or clearly implied in the Assessment / Plan / conversation.
-• It is only a relabelling/structuring of existing information, not a new diagnosis.
-If no explicit condition is mentioned, identify the body system from the primary symptoms described and Only use 'Unknown-Not specified if symptoms are so vague or mixed that no single system can be reasonably identified.
+• Do not introduce any new condition not already mentioned or clearly implied in Assessment, Plan, or the conversation.
+• Format for each diagnosis: Plain clinical name (System-Condition), e.g. Atopic dermatitis (Dermatology-Atopic Dermatitis).
+• If only one condition is named, put it in PrimaryDiagnosis and leave SecondaryDiagnosis empty.
+• If nothing is clearly supported, PrimaryDiagnosis: Unknown-Not specified (Unknown-Not specified); SecondaryDiagnosis: "".
 Actions:
-a. Source for Differential Diagnosis:
-• Look only at the conditions, problems, or body systems already mentioned in the Assessment and Plan sections and in the veterinarian’s own words in the conversation.
-b. Select the Term:
-• If a specific condition is named (e.g., otitis externa, cranial cruciate rupture), map it to System-Condition (e.g., Dermatology-Otitis Externa, Orthopedic-Cruciate Rupture).
-• If only a system-level problem is mentioned (e.g., spinal problem, skin issues), use a broad label such as Neurology-Spinal Problem (unspecified) or Dermatology-Skin Problem (unspecified).
-• If only symptoms are described and no clear condition/system can be identified without guessing, use: Unknown-Not specified.
+a. Primary Diagnosis:
+• The main/real problem for this visit.
+• Map specific conditions to System-Condition (e.g. Dermatology-Otitis Externa). Use broad system labels only when no specific condition is named.
+b. Secondary Diagnosis (optional):
+• Contributing or supporting condition (e.g. infection secondary to chronic allergy, comorbidity).
+• Use only when explicitly stated or clearly framed as secondary/associated in the conversation.
+• Empty string if not stated.
 c. Avoid Adding New Information:
-• Do not invent a more specific condition than what is stated. (Example: if conversation only says back pain, do NOT write Neurology-Spinal Cord Injury.)
+• Do not invent a more specific condition than what is stated.
 • Do not introduce any system or condition not supported by the conversation.
-d. Differential Diagnosis Section:
-• Output exactly one heading in the format System-Condition (e.g., Gastrointestinal-Gastroenteritis.
 Step 10: Customer Instructions Extraction
 Purpose: Extract all the customer instructions given by the veterinarian to the customer following the treatment.
 **FORMAT (mandatory):** Numbered list, one instruction per line (1. / 2. / 3.).
@@ -961,12 +979,13 @@ Before generating the final SOAP note, ensure that no part of the transcript or 
   Assessment: Assessment content here,
   Plan: "1. First plan item\\n2. Second plan item\\n3. Third plan item",
   Conclusion: Conclusion content here,
-  DifferentialDiagnosis: Differential Diagnosis content here,
+  PrimaryDiagnosis: Primary diagnosis here (Plain name (System-Condition)),
+  SecondaryDiagnosis: Secondary diagnosis here or empty string,
   KeyIssues: "1. First key issue\\n2. Second key issue",
   AbnormalFindings: "1. First abnormal finding\\n2. Second abnormal finding",
   CustomerInstructions: "1. First at-home instruction\\n2. Second at-home instruction",
   Protocols: Protocols content here,
-  Vitals: Vitals content here,
+  Vitals: {{ "body_weight": "12.5 kg", "heart_rate": "112 bpm" }},
   Reminders: "1. Recheck in 2-3 days\\n2. Return if worsening\\n3. Next vaccine as scheduled"
 }}
 
@@ -979,10 +998,11 @@ a. Assessment:
 • Avoid adding medical judgements:
 • Avoid adding medical judgments, even if they seem obvious or reasonable, unless explicitly mentioned. Do not add new information or make medical judgments beyond the conversation.
 • In the Conclusion, do not use overall status labels such as stable, gradual recovery, deteriorating, etc., unless they are a direct paraphrase of wording already used by the veterinarian in the Assessment or conversation (e.g., getting better compared to yesterday).
-b. Differential Diagnosis:
-• Extract it only from conditions/systems already present in the Assessment / Plan or veterinarian’s statements.
+b. Primary and Secondary Diagnosis:
+• Extract only from conditions/systems already present in Assessment, Plan, or veterinarian statements.
 • Do not add new information or make medical judgments beyond the conversation.
-• If nothing is clearly supported, use: Unknown-Not specified.
+• PrimaryDiagnosis is mandatory; SecondaryDiagnosis is optional (empty string if none).
+• Format: Plain clinical name (System-Condition). If nothing supported, PrimaryDiagnosis: Unknown-Not specified (Unknown-Not specified).
 c. Avoid Hallucinations:
 • Do not introduce information not present in the pre-appointment complaint summary or conversation.
 d. Professional Tone:
@@ -990,8 +1010,9 @@ d. Professional Tone:
 e. Consistency:
 • Ensure that all sections align with the extracted information.
 f. Mandatory Fields:
-• Conclusion and Differential Diagnosis are mandatory. Differential Diagnosis should be in the format System-Condition.
-• For example: Dermatology-Atopic Dermatitis.
+• Conclusion is mandatory and must be comprehensive.
+• PrimaryDiagnosis is mandatory (format: Plain name (System-Condition)). SecondaryDiagnosis is optional (empty string if none).
+• For example PrimaryDiagnosis: Atopic dermatitis (Dermatology-Atopic Dermatitis).
 **End of Phase 1**
 """
 
@@ -999,6 +1020,9 @@ f. Mandatory Fields:
 # JSON schema: https://docs.fireworks.ai/structured-responses/structured-response-formatting
 # Grammar mode (alternative): https://docs.fireworks.ai/structured-responses/structured-output-grammar-based
 # Per Fireworks docs: include JSON instruction in prompt AND response_format; if finish_reason=="length", increase max_tokens.
+_VITALS_SCHEMA_PROPERTIES = (
+    vitals_json_schema_properties() if vitals_json_schema_properties else {}
+)
 SOAP_NOTE_JSON_SCHEMA: Dict[str, Any] = {
     "type": "object",
     "properties": {
@@ -1007,12 +1031,18 @@ SOAP_NOTE_JSON_SCHEMA: Dict[str, Any] = {
         "Assessment": {"type": "string"},
         "Plan": {"type": "string"},
         "Conclusion": {"type": "string"},
-        "DifferentialDiagnosis": {"type": "string"},
+        "PrimaryDiagnosis": {"type": "string"},
+        "SecondaryDiagnosis": {"type": "string"},
         "KeyIssues": {"type": "string"},
         "AbnormalFindings": {"type": "string"},
         "CustomerInstructions": {"type": "string"},
         "Protocols": {"type": "string"},
-        "Vitals": {"type": "string"},
+        "Vitals": {
+            "type": "object",
+            "properties": _VITALS_SCHEMA_PROPERTIES,
+            "required": list(_VITALS_SCHEMA_PROPERTIES.keys()),
+            "additionalProperties": False,
+        },
         "Reminders": {"type": "string"},
     },
     "required": [
@@ -1021,7 +1051,8 @@ SOAP_NOTE_JSON_SCHEMA: Dict[str, Any] = {
         "Assessment",
         "Plan",
         "Conclusion",
-        "DifferentialDiagnosis",
+        "PrimaryDiagnosis",
+        "SecondaryDiagnosis",
         "KeyIssues",
         "AbnormalFindings",
         "CustomerInstructions",
@@ -1036,7 +1067,7 @@ SOAP_NOTE_JSON_SCHEMA: Dict[str, Any] = {
 # LOGGING SETUP
 # ==============================================================================
 
-def setup_logging(output_dir: str) -> logging.Logger:
+def setup_logging(output_dir: str, console_level: int = logging.INFO, file_level: int = logging.DEBUG) -> logging.Logger:
     """Set up comprehensive logging configuration."""
     # Create output directory if it doesn't exist
     Path(output_dir).mkdir(parents=True, exist_ok=True)
@@ -1059,12 +1090,12 @@ def setup_logging(output_dir: str) -> logging.Logger:
     # File handler for detailed logs
     log_file = Path(output_dir) / f"soap_generator_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
     file_handler = logging.FileHandler(log_file, encoding='utf-8')
-    file_handler.setLevel(logging.DEBUG)
+    file_handler.setLevel(file_level)
     file_handler.setFormatter(detailed_formatter)
     
     # Console handler for important messages
     console_handler = logging.StreamHandler()
-    console_handler.setLevel(logging.INFO)
+    console_handler.setLevel(console_level)
     console_handler.setFormatter(simple_formatter)
     
     # Add handlers to logger
@@ -1412,17 +1443,32 @@ def build_optional_inputs_section(pre_appointment: str, protocols: str, vitals: 
 
 
 CONCLUSION_SECTION_GUIDANCE = """
-CONCLUSION (mandatory):
-Write a cohesive stand-alone case summary in formal clinical prose (not a bullet list).
-Structure: presenting complaint/history → key findings → assessment/diagnosis → treatment and plan actions → follow-up/monitoring.
+CONCLUSION (mandatory — comprehensive case summary):
+Write a thorough stand-alone executive summary in formal clinical prose (not a bullet list).
+Target length: ~8-12 sentences (~150-300 words). This section MUST be longer and more complete than Subjective, Objective, Assessment, or Plan.
 
-CRITICAL — include Plan in the narrative:
-After summarizing assessment, weave in the main plan actions from the Plan section as flowing sentences:
-- name specific medications, procedures, and diagnostics discussed or ordered
-- state follow-up/recheck timing and key at-home care expectations
-Do NOT paste the numbered Plan list; integrate plan details naturally (1-3 sentences).
+Cover ALL of the following in flowing narrative (when present in the case):
+- Presenting complaint and relevant history (from Subjective)
+- Key physical exam and diagnostic findings (from Objective)
+- Assessment, diagnoses, and differentials discussed (from Assessment)
+- Treatments, medications, procedures, and diagnostics ordered (from Plan — woven in prose with specific names)
+- Owner at-home care highlights (from CustomerInstructions)
+- Follow-up, rechecks, and monitoring (from Reminders)
+- Notable abnormal findings (from AbnormalFindings)
+
+Structure: presentation/history → findings → assessment → treatment & plan → owner care → follow-up.
+Do NOT paste numbered lists from other sections; integrate details naturally.
 Do NOT introduce facts not present in transcript, Brain NER, or other SOAP sections.
 Any overall status label (e.g., stable, improving) must paraphrase wording already in Assessment or the conversation; omit if not clearly stated.
+"""
+
+VITALS_SECTION_GUIDANCE = """
+VITALS (JSON object — use db_key names from the template below):
+- Output Vitals as a JSON object with all template db_keys present.
+- Fill ONLY vitals explicitly stated or measured in the consultation; use empty string "" for any vital not mentioned.
+- Do not guess values. Use empty string "" for any vital not mentioned (never use "Not assessed" unless the clinician explicitly said so).
+- Numeric vitals: include unit in the value string (e.g. "12.5 kg", "101.4 °F", "112 bpm").
+- Enum vitals: use clinician wording or an allowed label from the template.
 """
 
 
@@ -1430,6 +1476,8 @@ def build_soap_prompt_from_brain_ner(raw_transcript: str, optional_inputs: str, 
     """
     Build SOAP prompt using Brain NER handoff only (no grounded-manifest injection/anchors).
     """
+    vitals_block = build_vitals_prompt_block() if build_vitals_prompt_block else ""
+    vitals_template_section = f"\n{vitals_block}\n" if vitals_block else ""
     return (
         "ROLE: Senior Veterinary Clinician\n"
         "**INPUT 1 (CLEANED & REFINED TRANSCRIPT):**\n"
@@ -1445,6 +1493,9 @@ def build_soap_prompt_from_brain_ner(raw_transcript: str, optional_inputs: str, 
         "- Respect `assertion_id` semantics (CONF/NEG/SUSP/HIST/HYPO/RECUR).\n"
         "- Keep SOAP clean text only: DO NOT output anchor tags or injected markup.\n"
         "- Do not invent facts beyond transcript + optional inputs + BRAIN_NER_JSON.\n\n"
+        f"{VITALS_SECTION_GUIDANCE}"
+        f"{vitals_template_section}\n"
+        f"{DIAGNOSIS_SECTION_GUIDANCE}\n"
         f"{CONCLUSION_SECTION_GUIDANCE}\n"
         "Return ONLY valid JSON matching the SOAP schema.\n"
     )
@@ -1551,11 +1602,43 @@ def repair_json_simple(json_str: str) -> str:
 # SOAP section keys (same order as schema) for plain-text parsing
 _SOAP_SECTION_KEYS = [
     "Subjective", "Objective", "Assessment", "Plan", "Conclusion",
-    "DifferentialDiagnosis", "KeyIssues", "AbnormalFindings", "CustomerInstructions",
+    "PrimaryDiagnosis", "SecondaryDiagnosis", "KeyIssues", "AbnormalFindings", "CustomerInstructions",
     "Protocols", "Vitals", "Reminders",
 ]
 
-_DEFAULT_SOAP_NOTE = {k: "" for k in _SOAP_SECTION_KEYS}
+_DEFAULT_SOAP_NOTE = {
+    k: ({key: "" for key in (_VITALS_SCHEMA_PROPERTIES or {})} if k == "Vitals" else "")
+    for k in _SOAP_SECTION_KEYS
+}
+
+
+SOAP_LLM_SYSTEM_PROMPT = (
+    "You are a professional veterinary assistant specializing in SOAP note generation. "
+    "Return ONLY valid JSON matching the provided schema. "
+    "Do NOT include reasoning, thinking, markdown, or explanatory text. "
+    "Be concise for Subjective, Objective, Assessment, and Plan. "
+    "Conclusion MUST be a thorough, comprehensive stand-alone case summary (longer than other sections). "
+    "The first non-whitespace character of your response MUST be '{'."
+)
+
+
+def normalize_soap_json_dict(soap_json_dict: Optional[dict]) -> dict:
+    """Fill required keys and normalize Vitals to a dict of only filled db_keys."""
+    out = dict(soap_json_dict or {})
+    empty_vitals = {k: "" for k in (_VITALS_SCHEMA_PROPERTIES or {})}
+    for k in SOAP_NOTE_JSON_SCHEMA["required"]:
+        if k not in out or out[k] is None:
+            out[k] = dict(empty_vitals) if k == "Vitals" else ""
+    if normalize_vitals:
+        out["Vitals"] = normalize_vitals(out.get("Vitals"))
+    elif isinstance(out.get("Vitals"), dict):
+        out["Vitals"] = {k: str(v).strip() for k, v in out["Vitals"].items() if v}
+    else:
+        out["Vitals"] = {}
+    if migrate_legacy_diagnosis:
+        out = migrate_legacy_diagnosis(out)
+    out.pop("DifferentialDiagnosis", None)
+    return out
 
 
 def _parse_plain_text_soap_sections(raw: str, logger: Optional[logging.Logger] = None) -> Optional[dict]:
@@ -1566,7 +1649,10 @@ def _parse_plain_text_soap_sections(raw: str, logger: Optional[logging.Logger] =
     """
     if not raw or not raw.strip():
         return None
-    out = {k: "" for k in _SOAP_SECTION_KEYS}
+    out = {
+        k: ({key: "" for key in (_VITALS_SCHEMA_PROPERTIES or {})} if k == "Vitals" else "")
+        for k in _SOAP_SECTION_KEYS
+    }
     # Section headers: "Subjective:", "Objective:", etc. (case-insensitive)
     pattern = re.compile(
         r"^\s*(" + "|".join(re.escape(k) for k in _SOAP_SECTION_KEYS) + r")\s*:\s*",
@@ -1822,14 +1908,30 @@ def extract_json_from_llm_response(response_text: str, logger: Optional[logging.
 
 def extract_soap_sections(soap_note: str) -> dict:
     """
-    Extract DifferentialDiagnosis, Conclusion, and KeyIssues sections from the SOAP note.
-    Returns a dict with keys 'DifferentialDiagnosis', 'Conclusion', and 'KeyIssues'.
+    Extract diagnosis, Conclusion, and KeyIssues sections from the SOAP note.
+    Returns a dict with keys 'PrimaryDiagnosis', 'SecondaryDiagnosis', 'Conclusion', and 'KeyIssues'.
     """
+    if soap_note and soap_note.strip().startswith("{"):
+        try:
+            parsed = json.loads(soap_note)
+            if isinstance(parsed, dict):
+                if migrate_legacy_diagnosis:
+                    parsed = migrate_legacy_diagnosis(parsed)
+                return {
+                    "PrimaryDiagnosis": parsed.get("PrimaryDiagnosis", ""),
+                    "SecondaryDiagnosis": parsed.get("SecondaryDiagnosis", ""),
+                    "Conclusion": parsed.get("Conclusion", ""),
+                    "KeyIssues": parsed.get("KeyIssues", ""),
+                }
+        except json.JSONDecodeError:
+            pass
     sections = {}
     patterns = {
+        "PrimaryDiagnosis": r"PrimaryDiagnosis:\s*(.*?)(?:\n[A-Z][a-zA-Z ]+:|\Z)",
+        "SecondaryDiagnosis": r"SecondaryDiagnosis:\s*(.*?)(?:\n[A-Z][a-zA-Z ]+:|\Z)",
         "DifferentialDiagnosis": r"DifferentialDiagnosis:\s*(.*?)(?:\n[A-Z][a-zA-Z ]+:|\Z)",
         "Conclusion": r"Conclusion:\s*(.*?)(?:\n[A-Z][a-zA-Z ]+:|\Z)",
-        "KeyIssues": r"Key Issues?:\s*(.*?)(?:\n[A-Z][a-zA-Z ]+:|\Z)"
+        "KeyIssues": r"Key Issues?:\s*(.*?)(?:\n[A-Z][a-zA-Z ]+:|\Z)",
     }
     for key, pattern in patterns.items():
         match = re.search(pattern, soap_note, re.DOTALL)
@@ -1837,6 +1939,9 @@ def extract_soap_sections(soap_note: str) -> dict:
             sections[key] = match.group(1).strip()
         else:
             sections[key] = ""
+    if migrate_legacy_diagnosis:
+        sections = migrate_legacy_diagnosis(sections)
+    sections.pop("DifferentialDiagnosis", None)
     return sections
 
 
@@ -1865,11 +1970,20 @@ def store_soap_embeddings_in_database(soap_note: str, case_id: str = None) -> bo
         
         # Extract sections from SOAP note
         sections = extract_soap_sections(soap_note)
+        diag_storage = (
+            diagnosis_text_for_storage(sections)
+            if diagnosis_text_for_storage
+            else sections.get("PrimaryDiagnosis", "")
+        )
         
         # Prepare texts for batch embedding generation
         section_names = []
         section_texts = []
         for section_name, text in sections.items():
+            if section_name == "SecondaryDiagnosis":
+                continue
+            if section_name == "PrimaryDiagnosis":
+                text = diag_storage
             if text and text.strip():
                 section_names.append(section_name)
                 section_texts.append(text)
@@ -1906,9 +2020,9 @@ def store_soap_embeddings_in_database(soap_note: str, case_id: str = None) -> bo
         with conn.cursor() as cursor:
             # Map section names to database columns
             vector_column_map = {
-                "DifferentialDiagnosis": "differential_diagnosis_vector",
-                "Conclusion": "soap_summary_vector",  # Using soap_summary_vector for conclusion
-                "KeyIssues": "key_issues_vector"
+                "PrimaryDiagnosis": "differential_diagnosis_vector",
+                "Conclusion": "soap_summary_vector",
+                "KeyIssues": "key_issues_vector",
             }
             
             # Generate case_id if not provided
@@ -1934,7 +2048,7 @@ def store_soap_embeddings_in_database(soap_note: str, case_id: str = None) -> bo
                                 key_issues = EXCLUDED.key_issues,
                                 {vector_column} = EXCLUDED.{vector_column}
                         """, (case_id, 
-                              sections.get("DifferentialDiagnosis", ""), 
+                              diag_storage, 
                               sections.get("Conclusion", ""), 
                               sections.get("KeyIssues", ""),
                               embedding_str))
@@ -2179,12 +2293,7 @@ class OpenAIProvider(LLMProvider):
             "messages": [
                 {
                     "role": "system",
-                    "content": (
-                        "You are a professional veterinary assistant specializing in SOAP note generation. "
-                        "Return ONLY valid JSON matching the provided schema. "
-                        "Do NOT include reasoning, thinking, markdown, or explanatory text. "
-                        "The first non-whitespace character of your response MUST be '{'."
-                    )
+                    "content": SOAP_LLM_SYSTEM_PROMPT,
                 },
                 {
                     "role": "user",
@@ -2230,9 +2339,7 @@ class OpenAIProvider(LLMProvider):
                         soap_json_dict = extract_soap_json(raw_response, logger=self.logger)
                     if not isinstance(soap_json_dict, dict):
                         soap_json_dict = {}
-                    for k in SOAP_NOTE_JSON_SCHEMA["required"]:
-                        if k not in soap_json_dict or soap_json_dict[k] is None:
-                            soap_json_dict[k] = ""
+                    soap_json_dict = normalize_soap_json_dict(soap_json_dict)
                     soap_note = json.dumps(soap_json_dict, indent=2, ensure_ascii=False)
                     total_time = time.time() - start_time
                     self.logger.info("SOAP note generated successfully")
@@ -2473,13 +2580,7 @@ class FireworksProvider(LLMProvider):
             "messages": [
                 {
                     "role": "system",
-                    "content": (
-                        "You are a professional veterinary assistant specializing in SOAP note generation. "
-                        "Return ONLY valid JSON matching the provided schema. "
-                        "Do NOT include reasoning, thinking, markdown, or explanatory text. "
-                        "Be concise: keep each section brief and avoid unnecessary repetition. "
-                        "The first non-whitespace character of your response MUST be '{'."
-                    )
+                    "content": SOAP_LLM_SYSTEM_PROMPT,
                 },
                 {
                     "role": "user",
@@ -2565,10 +2666,7 @@ class FireworksProvider(LLMProvider):
                     # Emergency fallback: Create default structure
                     soap_json_dict = dict(_DEFAULT_SOAP_NOTE)
                 else:
-                    # Normalize to required schema keys (fill missing with empty strings)
-                    for k in SOAP_NOTE_JSON_SCHEMA["required"]:
-                        if k not in soap_json_dict or soap_json_dict[k] is None:
-                            soap_json_dict[k] = ""
+                    soap_json_dict = normalize_soap_json_dict(soap_json_dict)
                 
                 # Convert dict back to JSON string for consistency with existing code
                 soap_note = json.dumps(soap_json_dict, indent=2, ensure_ascii=False)
@@ -3794,6 +3892,7 @@ async def generate_soap_note_from_audio_async(
     source: str = "audio",
     consultation_language: Optional[str] = None,
     asr_language: Optional[str] = None,
+    step1_asr_ui_ms: Optional[int] = None,
 ):
     """
     Async pipeline: default path only (chunk-parallel or sequential Super-Pass + local streaming grounding).
@@ -3835,6 +3934,7 @@ async def generate_soap_note_from_audio_async(
     from benchmark_utils import save_step1_artifacts
 
     asr_result = None
+    asr_overlap_helper = None
 
     if skip_asr:
         raw_transcription = raw_transcription.strip()
@@ -3888,13 +3988,64 @@ async def generate_soap_note_from_audio_async(
 
         if TRANSCRIPTION_STREAMING and asr_provider == "fireworks":
             logger.info("🎤 STEP 1: STREAMING TRANSCRIPTION (Fireworks)")
+            overlap_enabled = os.getenv("ASR_STREAMING_OVERLAP", "true").lower() in ("1", "true", "yes")
+            try:
+                overlap_chars = int(os.getenv("ASR_EARLY_OVERLAP_CHARS", "1500"))
+            except ValueError:
+                overlap_chars = 1500
+            partial_path = output_dir_path / f"streaming_transcript_{timestamp}.txt"
+            overlap_logged = {"done": False}
+
+            try:
+                from kb_ner_clients import get_client_for_model
+                from kb_ner_chunk_parallel import IncrementalAsrSuperPass
+
+                _client_result = get_client_for_model(SUPER_PASS_MODEL)
+                if isinstance(_client_result, tuple):
+                    _overlap_client, _ = _client_result
+                else:
+                    _overlap_client = _client_result
+                asr_overlap_helper = IncrementalAsrSuperPass(
+                    model=SUPER_PASS_MODEL,
+                    client=_overlap_client,
+                    logger=logger,
+                    chunk_size=CHUNK_SIZE,
+                    overlap_size=CHUNK_OVERLAP,
+                )
+            except Exception as _overlap_init_err:
+                logger.warning("ASR streaming overlap disabled (client init failed): %s", _overlap_init_err)
+                asr_overlap_helper = None
+
+            def _on_stream_chunk(accumulated_text: str, _segments) -> None:
+                try:
+                    partial_path.write_text(accumulated_text or "", encoding="utf-8")
+                except Exception:
+                    pass
+                if asr_overlap_helper is not None:
+                    try:
+                        asr_overlap_helper.feed(accumulated_text or "", overlap_chars)
+                    except Exception:
+                        pass
+                if (
+                    overlap_enabled
+                    and not overlap_logged["done"]
+                    and len(accumulated_text or "") >= overlap_chars
+                ):
+                    overlap_logged["done"] = True
+                    logger.info(
+                        "⏱️ ASR streaming: %d chars received (overlap threshold %d) — "
+                        "early Super-Pass running; Brain NER after ASR completes",
+                        len(accumulated_text),
+                        overlap_chars,
+                    )
+
             raw_transcription = await loop.run_in_executor(
                 executor,
                 lambda: transcribe_audio_fireworks_streaming(
                     audio_file_path,
                     output_dir=output_dir_path,
                     timestamp=timestamp,
-                    on_transcript_chunk=None,
+                    on_transcript_chunk=_on_stream_chunk if overlap_enabled else None,
                     logger=logger,
                 ),
             )
@@ -4241,8 +4392,51 @@ async def generate_soap_note_from_audio_async(
                                 logger.debug(f"   📝 Created grounding task for entity '{ent.get('span_text','')}' (total tasks: {len(streaming_grounding_tasks)})")
 
                     if combined_path_used:
+                        overlap_early = None
+                        if asr_overlap_helper is not None:
+                            try:
+                                overlap_early = await asr_overlap_helper.finalize(raw_transcription)
+                                if overlap_early:
+                                    timer.set_metadata(asr_streaming_overlap_used=True)
+                            except Exception as _ov_err:
+                                if logger:
+                                    logger.warning("ASR overlap finalize failed, using full STEP2: %s", _ov_err)
+
+                        if overlap_early:
+                            cleaned_transcription, super_pass_entities = overlap_early
+                            timer.mark("step2_super_pass_start")
+                            timer.mark("step2_super_pass_done")
+                            cleaned_transcription = cleaned_transcription or raw_transcription.strip()
+                            pre_extracted = [
+                                {
+                                    "id": "e" + str(i + 1),
+                                    "span_text": e.get("span_text", ""),
+                                    "kind": e.get("kind", "Other"),
+                                    "attributes": e.get("attributes", {}),
+                                }
+                                for i, e in enumerate(super_pass_entities or [])
+                            ]
+                            pre_extracted_json = json.dumps(pre_extracted, ensure_ascii=False)
+                            timer.mark("step2_brain_ner_start")
+                            entity_manifest, _terms_not_grounded = await asyncio.to_thread(
+                                run_brain_call,
+                                cleaned_transcription,
+                                pre_extracted_json,
+                                SUPER_PASS_MODEL,
+                                super_pass_client,
+                                logger,
+                            )
+                            timer.mark("step2_brain_ner_done")
+                            initial_entities = list(entity_manifest or [])
+                            if logger:
+                                logger.info(
+                                    "✅ ASR overlap path: early Super-Pass + Brain NER on full transcript "
+                                    "(%d chars, %d entities)",
+                                    len(cleaned_transcription),
+                                    len(initial_entities),
+                                )
                         # Check if chunk-parallel processing is enabled
-                        if CHUNK_PARALLEL_ENABLED and len(raw_transcription) > CHUNK_SIZE:
+                        elif CHUNK_PARALLEL_ENABLED and len(raw_transcription) > CHUNK_SIZE:
                             # Chunk-Parallel Factory: Process chunks in parallel for sub-60s latency
                             if logger:
                                 logger.info("🚀 CHUNK-PARALLEL MODE: Processing raw transcript in parallel chunks")
@@ -5037,7 +5231,23 @@ async def generate_soap_note_from_audio_async(
         entity_count=len(entity_manifest or []),
         source=source,
     )
-    pipeline_timing_report = timer.build_report(source=source, step1_asr_ms=step1_asr_ms)
+    if step1_asr_ui_ms:
+        timer.set_metadata(step1_asr_ui_ms=step1_asr_ui_ms)
+    asr_profile = None
+    try:
+        meta_path = output_dir_path / "step1_asr_metadata.json"
+        if meta_path.is_file():
+            meta_json = json.loads(meta_path.read_text(encoding="utf-8"))
+            asr_profile = (meta_json.get("asr_profile") or meta_json)
+            if isinstance(meta_json.get("asr_profile"), dict):
+                timer.set_metadata(asr_profile=meta_json["asr_profile"])
+    except Exception:
+        pass
+    pipeline_timing_report = timer.build_report(
+        source=source,
+        step1_asr_ms=step1_asr_ms,
+        step1_asr_ui_ms=step1_asr_ui_ms,
+    )
     try:
         save_pipeline_timing(output_dir_path, pipeline_timing_report, timestamp=timestamp)
         if logger:
@@ -5101,8 +5311,9 @@ async def generate_soap_note_from_transcript_async(
     audio_path: Optional[str] = None,
     consultation_language: Optional[str] = None,
     asr_language: Optional[str] = None,
+    step1_asr_ui_ms: Optional[int] = None,
 ) -> dict:
-    """Run pipeline from STEP1 text (typed or pre-transcribed voice). Skips ASR."""
+    """Run pipeline from STEP1 text (typed or pre-transcribed voice). Skips ASR unless audio_path-only."""
     return await generate_soap_note_from_audio_async(
         audio_file_path=audio_path,
         output_dir=output_dir,
@@ -5110,6 +5321,7 @@ async def generate_soap_note_from_transcript_async(
         source=source,
         consultation_language=consultation_language,
         asr_language=asr_language,
+        step1_asr_ui_ms=step1_asr_ui_ms,
     )
 
 

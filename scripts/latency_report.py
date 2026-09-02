@@ -27,6 +27,9 @@ from pipeline_timing import format_duration_ms, load_pipeline_timing  # noqa: E4
 
 STAGE_KEYS = [
     "total_ms",
+    "user_perceived_total_ms",
+    "pipeline_only_ms",
+    "step1_asr_ui_ms",
     "step1_transcription_ms",
     "step2_total_ms",
     "step2_super_pass_ms",
@@ -72,6 +75,9 @@ def _flatten_report(run_dir: Path, report: Dict[str, Any]) -> Dict[str, Any]:
         "source": report.get("source"),
         "generated_at": report.get("generated_at"),
         "total_ms": report.get("total_ms"),
+        "user_perceived_total_ms": report.get("user_perceived_total_ms"),
+        "pipeline_only_ms": report.get("pipeline_only_ms"),
+        "step1_asr_ui_ms": report.get("step1_asr_ui_ms"),
         "critical_path_ms": report.get("critical_path_ms"),
         "step1_transcription_ms": stages.get("step1_transcription_ms"),
         "step2_total_ms": stages.get("step2_total_ms"),
@@ -107,14 +113,16 @@ def print_summary(rows: List[Dict[str, Any]]) -> None:
         return
 
     print(f"Runs with timing data: {len(rows)}\n")
-    print(f"{'Run':<40} {'Total':>10} {'STEP1':>10} {'STEP2':>10} {'GROUND':>10} {'STEP3':>10} {'PHASE2':>10}")
-    print("-" * 100)
+    print(f"{'Run':<40} {'Total':>10} {'ASR+Pipe':>10} {'STEP1':>10} {'STEP2':>10} {'GROUND':>10} {'STEP3':>10} {'PHASE2':>10}")
+    print("-" * 110)
     for row in rows:
         name = Path(row["run_dir"]).name
+        perceived = row.get("user_perceived_total_ms") or row.get("total_ms")
         print(
             f"{name:<40} "
             f"{format_duration_ms(row.get('total_ms')):>10} "
-            f"{format_duration_ms(row.get('step1_transcription_ms')):>10} "
+            f"{format_duration_ms(perceived):>10} "
+            f"{format_duration_ms(row.get('step1_transcription_ms') or row.get('step1_asr_ui_ms')):>10} "
             f"{format_duration_ms(row.get('step2_total_ms')):>10} "
             f"{format_duration_ms(row.get('grounding_ms')):>10} "
             f"{format_duration_ms(row.get('step3_soap_ms')):>10} "
@@ -138,6 +146,9 @@ def write_csv(rows: List[Dict[str, Any]], path: Path) -> None:
         "source",
         "generated_at",
         "total_ms",
+        "user_perceived_total_ms",
+        "pipeline_only_ms",
+        "step1_asr_ui_ms",
         "critical_path_ms",
         *STAGE_KEYS[1:],
         "entity_count",

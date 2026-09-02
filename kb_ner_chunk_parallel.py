@@ -12,11 +12,13 @@ Env: CHUNK_SINGLE_THRESHOLD, CHUNK_TARGET_SIZE, CHUNK_MIN_PARALLEL, CHUNK_MAX_PA
 """
 
 import asyncio
+import concurrent.futures
 import json
 import logging
 import math
 import os
 import re
+import threading
 from typing import List, Dict, Any, Tuple, Optional, Set
 
 from kb_ner_super_pass import super_pass_cleaning_and_ner, run_brain_call
@@ -782,3 +784,134 @@ async def process_chunks_parallel(
         logger.info("  ✅ Chunk-parallel processing complete")
     
     return merged_cleaned, deduplicated_entities, merged_entities_by_kind
+
+
+class IncrementalAsrSuperPass:
+    """
+    During streaming ASR, run Super-Pass on stable transcript prefixes while audio
+    is still being transcribed. Brain NER runs once on the merged cleaned text after
+    ASR completes (quality preserved).
+    """
+
+    def __init__(
+        self,
+        *,
+        model: str,
+        client: Any,
+        logger: Optional[logging.Logger] = None,
+        chunk_size: int = 4000,
+        overlap_size: int = 500,
+        tail_buffer: int = 800,
+        min_stable_chunk: int = 1200,
+    ) -> None:
+        self.model = model
+        self.client = client
+        self.logger = logger
+        self.chunk_size = chunk_size
+        self.overlap_size = overlap_size
+        self.tail_buffer = tail_buffer
+        self.min_stable_chunk = min_stable_chunk
+        self._lock = threading.Lock()
+        self._processed_end = 0
+        self._signalment = ""
+        self._chunk_specs: List[Tuple[int, int, str]] = []
+        self._results: List[Tuple[int, int, str, List[Dict[str, Any]]]] = []
+        self._futures: List[Any] = []
+        self._executor = concurrent.futures.ThreadPoolExecutor(max_workers=2)
+        self.started = False
+
+    def feed(self, partial_text: str, threshold_chars: int) -> None:
+        """Sync-safe: call from ASR streaming callback thread."""
+        if len(partial_text or "") < threshold_chars:
+            return
+        with self._lock:
+            if not self.started:
+                self.started = True
+                self._signalment = extract_signalment(partial_text)
+                if self.logger:
+                    self.logger.info(
+                        "⏱️ ASR streaming overlap: early Super-Pass on stable prefix "
+                        "(Brain NER after full transcript)"
+                    )
+            stable_end = max(0, len(partial_text) - self.tail_buffer)
+            while self._processed_end + self.min_stable_chunk <= stable_end:
+                chunk_start = max(0, self._processed_end - self.overlap_size) if self._processed_end else 0
+                chunk_end = min(self._processed_end + self.chunk_size, stable_end)
+                if chunk_end <= chunk_start:
+                    break
+                chunk_text = partial_text[chunk_start:chunk_end]
+                self._processed_end = chunk_end
+                spec = (chunk_start, chunk_end, chunk_text)
+                self._chunk_specs.append(spec)
+                self._futures.append(self._executor.submit(self._super_pass_sync, spec, partial_text))
+
+    def _super_pass_sync(
+        self,
+        spec: Tuple[int, int, str],
+        full_partial: str,
+    ) -> Tuple[int, int, str, List[Dict[str, Any]]]:
+        start_char, end_char, chunk_text = spec
+        chunk_with_header = inject_signalment_header(chunk_text, self._signalment)
+
+        def _run() -> Tuple[str, List[Dict[str, Any]], Dict[str, List[Dict[str, str]]]]:
+            return asyncio.run(
+                super_pass_cleaning_and_ner(
+                    chunk_with_header,
+                    model=self.model,
+                    client=self.client,
+                    logger=self.logger,
+                )
+            )
+
+        cleaned, entities, _ekb = _run()
+        return start_char, end_char, cleaned or chunk_text.strip(), list(entities or [])
+
+    async def finalize(self, full_text: str) -> Optional[Tuple[str, List[Dict[str, Any]]]]:
+        """Wait for in-flight Super-Pass work and process any remaining tail."""
+        if not self.started:
+            return None
+
+        for fut in self._futures:
+            try:
+                self._results.append(fut.result(timeout=CHUNK_WORKER_TIMEOUT_SEC))
+            except Exception as exc:
+                if self.logger:
+                    self.logger.warning("ASR overlap chunk failed: %s", exc)
+
+        self._executor.shutdown(wait=False)
+
+        remaining_start = self._processed_end
+        if remaining_start < len(full_text):
+            tail = full_text[remaining_start:]
+            if len(tail.strip()) >= 200:
+                tail_start = max(0, remaining_start - self.overlap_size)
+                spec = (tail_start, len(full_text), full_text[tail_start:])
+                try:
+                    self._results.append(await asyncio.to_thread(self._super_pass_sync, spec, full_text))
+                    self._chunk_specs.append(spec)
+                except Exception as exc:
+                    if self.logger:
+                        self.logger.warning("ASR overlap tail Super-Pass failed: %s", exc)
+
+        if not self._results:
+            return None
+
+        self._results.sort(key=lambda r: r[0])
+        chunks = [(s, e, full_text[s:e]) for s, e, _, _ in self._results]
+        cleaned_segments = [c for _, _, c, _ in self._results]
+        merged_cleaned = merge_cleaned_segments(chunks, cleaned_segments, self.overlap_size)
+        if not merged_cleaned:
+            merged_cleaned = full_text.strip()
+
+        all_entities: List[Dict[str, Any]] = []
+        for _, _, _, ents in self._results:
+            all_entities.extend(ents)
+
+        if self.logger:
+            self.logger.info(
+                "✅ ASR overlap Super-Pass finalize: %d early chunk(s), cleaned=%d chars, %d entities",
+                len(self._results),
+                len(merged_cleaned),
+                len(all_entities),
+            )
+        return merged_cleaned, all_entities

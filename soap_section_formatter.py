@@ -23,7 +23,6 @@ NUMBERED_SECTIONS = (
     "AbnormalFindings",
     "CustomerInstructions",
     "Reminders",
-    "DifferentialDiagnosis",
 )
 
 # Legacy keys merged into Reminders (not emitted in new SOAP schema)

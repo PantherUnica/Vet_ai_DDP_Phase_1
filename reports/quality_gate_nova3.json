@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "asr_current": {
+        "files_scored": 11,
+        "mean_wer": 0.36611765009617575,
+        "median_wer": 0.33783783783783783,
+        "mean_cer": 0.2384855960264434,
+        "median_cer": 0.14666666666666667,
+        "mean_latency_ms": 131255.63636363635
+      },
+      "asr_baseline": {
+        "files_scored": 11,
+        "mean_wer": 0.36611765009617575,
+        "median_wer": 0.33783783783783783,
+        "mean_cer": 0.2384855960264434,
+        "median_cer": 0.14666666666666667,
+        "mean_latency_ms": 131255.63636363635
+      }
+    }
+  ],
+  "failures": []
+}

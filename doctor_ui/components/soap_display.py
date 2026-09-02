@@ -20,11 +20,64 @@ PRIMARY_FIELDS = [
     ("Reminders / Follow-up", "Reminders"),
 ]
 
+def _resolve_diagnosis_fields(soap_json: Dict[str, Any]) -> Dict[str, str]:
+    """Return primary/secondary with legacy DifferentialDiagnosis fallback."""
+    try:
+        from doctor_ui.diagnosis_schema import migrate_legacy_diagnosis
+        data = migrate_legacy_diagnosis(soap_json)
+    except ImportError:
+        data = dict(soap_json or {})
+        if not (data.get("PrimaryDiagnosis") or "").strip():
+            legacy = (data.get("DifferentialDiagnosis") or "").strip()
+            if legacy:
+                data["PrimaryDiagnosis"] = legacy
+    return {
+        "PrimaryDiagnosis": (data.get("PrimaryDiagnosis") or "").strip(),
+        "SecondaryDiagnosis": (data.get("SecondaryDiagnosis") or "").strip(),
+    }
+
+
 ADDITIONAL_FIELDS = [
-    ("Differential Diagnosis", "DifferentialDiagnosis"),
     ("Protocols", "Protocols"),
     ("Vitals", "Vitals"),
 ]
+
+
+def render_diagnosis_fields(soap_json: Dict[str, Any]) -> None:
+    """Show primary and optional secondary diagnosis."""
+    diag = _resolve_diagnosis_fields(soap_json)
+    st.markdown("**Primary Diagnosis**")
+    if diag["PrimaryDiagnosis"]:
+        st.write(diag["PrimaryDiagnosis"])
+    else:
+        st.caption("Not recorded")
+    st.markdown("**Secondary Diagnosis**")
+    if diag["SecondaryDiagnosis"]:
+        st.write(diag["SecondaryDiagnosis"])
+    else:
+        st.caption("None recorded")
+
+
+def render_vitals_table(vitals_raw: Any) -> None:
+    """Render structured vitals as a table; legacy string fallback."""
+    try:
+        from doctor_ui.vitals_schema import vitals_rows_for_display
+    except ImportError:
+        vitals_rows_for_display = None
+
+    st.markdown("**Vitals**")
+    if vitals_rows_for_display:
+        rows = vitals_rows_for_display(vitals_raw)
+        if rows:
+            st.dataframe(rows, use_container_width=True, hide_index=True)
+            return
+    if isinstance(vitals_raw, str) and vitals_raw.strip():
+        _render_multiline(vitals_raw)
+        return
+    if isinstance(vitals_raw, dict) and vitals_raw:
+        _render_multiline(json.dumps(vitals_raw, indent=2, ensure_ascii=False))
+        return
+    st.caption("No vitals recorded in this consultation")
 
 
 def _render_multiline(value: str) -> None:
@@ -43,13 +96,27 @@ def render_pipeline_timing(timing_report: Optional[Dict[str, Any]]) -> None:
         return
     from pipeline_timing import format_duration_ms, timing_rows_for_display
 
-    total_ms = timing_report.get("total_ms")
     st.subheader("Pipeline timing")
-    if total_ms is not None:
-        st.markdown(f"**Total:** {format_duration_ms(total_ms)}")
+    perceived = timing_report.get("user_perceived_total_ms")
+    pipeline_ms = timing_report.get("total_ms")
+    if perceived is not None and perceived != pipeline_ms:
+        st.markdown(
+            f"**Total (ASR + pipeline):** {format_duration_ms(perceived)}  \n"
+            f"**Pipeline only:** {format_duration_ms(pipeline_ms)}"
+        )
+    elif pipeline_ms is not None:
+        st.markdown(f"**Total:** {format_duration_ms(pipeline_ms)}")
     note = timing_report.get("parallel_note")
     if note:
         st.caption(note)
+
+    asr_profile = (timing_report.get("metadata") or {}).get("asr_profile")
+    if asr_profile:
+        dur = asr_profile.get("duration_sec")
+        mb = asr_profile.get("file_mb")
+        fmt = asr_profile.get("format") or "?"
+        if dur is not None:
+            st.caption(f"Audio: {dur:.1f}s, {mb or '?'} MB, {fmt}")
 
     rows = timing_rows_for_display(timing_report)
     if not rows:
@@ -161,7 +228,11 @@ def render_soap_template(
             _render_multiline(str(value))
 
     with st.expander("Additional fields"):
+        render_diagnosis_fields(soap_json)
         for label, key in ADDITIONAL_FIELDS:
+            if key == "Vitals":
+                render_vitals_table(soap_json.get(key))
+                continue
             value = soap_json.get(key) or ""
             if value:
                 st.markdown(f"**{label}**")

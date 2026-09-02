@@ -445,7 +445,10 @@ def get_inventory_master_record(
                     COALESCE(trade_name, '') AS trade_name,
                     COALESCE(dosage_type, '') AS form,
                     COALESCE(NULLIF(sales_uom, ''), NULLIF(administered_uom, ''), '') AS unit,
-                    COALESCE(NULLIF(internal_description, ''), NULLIF(brief_description, ''), '') AS remarks
+                    COALESCE(NULLIF(internal_description, ''), NULLIF(brief_description, ''), '') AS remarks,
+                    COALESCE(batch_number, '') AS batch_number,
+                    COALESCE(sales_uom, '') AS sales_uom,
+                    COALESCE(administered_uom, '') AS administered_uom
                 FROM soap.inventory
                 WHERE stock_id = %s
                 LIMIT 1;
@@ -460,6 +463,9 @@ def get_inventory_master_record(
                     "form": row[3],  # Tablet, Liquid, Injection, etc.
                     "unit": row[4],  # tabs, ml, etc.
                     "remarks": row[5],
+                    "batch_number": row[6],
+                    "sales_uom": row[7],
+                    "administered_uom": row[8],
                 }
             return None
     except Exception as e:

@@ -73,7 +73,13 @@ class PipelineTimer:
         if phase2_timing:
             self._metadata["phase2_timing"] = phase2_timing
 
-    def build_report(self, *, source: str = "audio", step1_asr_ms: Optional[int] = None) -> Dict[str, Any]:
+    def build_report(
+        self,
+        *,
+        source: str = "audio",
+        step1_asr_ms: Optional[int] = None,
+        step1_asr_ui_ms: Optional[int] = None,
+    ) -> Dict[str, Any]:
         m = self._marks
         d = self._durations_ms
         f = self._flags
@@ -141,10 +147,21 @@ class PipelineTimer:
             "early_subjective_objective_ms": phase2_meta.get("early_subjective_objective_ms"),
         }
 
+        # UI ASR (Doctor UI transcribe-before-generate) vs in-pipeline STEP1
+        pipeline_only_ms = total_ms
+        user_perceived_ms = None
+        if step1_asr_ui_ms is not None and step1_asr_ui_ms > 0:
+            user_perceived_ms = (pipeline_only_ms or 0) + step1_asr_ui_ms
+        elif step1_ms is not None and step1_ms > 0 and source in ("audio", "voice"):
+            user_perceived_ms = pipeline_only_ms
+
         return {
             "generated_at": datetime.now().isoformat(timespec="seconds"),
             "source": source,
             "total_ms": total_ms,
+            "pipeline_only_ms": pipeline_only_ms,
+            "user_perceived_total_ms": user_perceived_ms,
+            "step1_asr_ui_ms": step1_asr_ui_ms if step1_asr_ui_ms else None,
             "critical_path_ms": critical_path_ms,
             "parallel_note": (
                 "grounding and step3_soap overlap after STEP2; "
@@ -249,8 +266,24 @@ def timing_rows_for_display(report: Dict[str, Any]) -> List[Dict[str, Any]]:
             "indent": indent,
         })
 
-    _add("total_ms", "Total", ms=report.get("total_ms"))
-    _add("step1_transcription_ms", "STEP1 — Transcription")
+    _add("total_ms", "Total (pipeline only)", ms=report.get("total_ms"))
+    ui_asr = report.get("step1_asr_ui_ms")
+    if ui_asr:
+        rows.append({
+            "label": "STEP1 — ASR (Doctor UI, before pipeline)",
+            "value_ms": ui_asr,
+            "display": format_duration_ms(ui_asr),
+            "indent": 0,
+        })
+    perceived = report.get("user_perceived_total_ms")
+    if perceived is not None and perceived != report.get("total_ms"):
+        rows.append({
+            "label": "Total (ASR + pipeline)",
+            "value_ms": perceived,
+            "display": format_duration_ms(perceived),
+            "indent": 0,
+        })
+    _add("step1_transcription_ms", "STEP1 — Transcription (in pipeline)")
     _add("step2_total_ms", "STEP2 — Clean + NER")
     _add("step2_super_pass_ms", "Super-Pass", indent=1)
     _add("step2_brain_ner_ms", "Brain NER", indent=1)
