@@ -396,6 +396,25 @@ def build_pipeline_flags(
         )
         stages["STEP3"] = "failing"
 
+    # Key Issues vs Abnormal Findings overlap (soft quality check)
+    ki_text = (soap.get("KeyIssues") or "") if isinstance(soap.get("KeyIssues"), str) else ""
+    af_text = (soap.get("AbnormalFindings") or "") if isinstance(soap.get("AbnormalFindings"), str) else ""
+    if ki_text.strip() and af_text.strip():
+        ki_tokens = set(re.findall(r"[a-z]{4,}", ki_text.lower()))
+        af_tokens = set(re.findall(r"[a-z]{4,}", af_text.lower()))
+        overlap = ki_tokens & af_tokens
+        if len(overlap) >= 2:
+            flags.append(
+                PipelineFlag(
+                    "STEP3",
+                    "warning",
+                    "KEY_ISSUES_ABNORMAL_OVERLAP",
+                    "Key Issues and Abnormal Findings share terms — owner-reported vs exam findings may be mixed.",
+                    ", ".join(sorted(overlap)[:8]),
+                )
+            )
+            stages["STEP3"] = "degraded"
+
     # --- PHASE2 ---
     atoms_payload = knowledge_atoms
     if atoms_payload is None:
@@ -415,6 +434,23 @@ def build_pipeline_flags(
             stages["PHASE2"] = "failing"
     elif isinstance(atoms_payload, list):
         atoms_list = atoms_payload
+
+    unrecognised_intents = [
+        str(a.get("concept") or "?")
+        for a in atoms_list
+        if isinstance(a, dict) and (a.get("intent_context") or "").strip() == "Intent not recognised"
+    ]
+    if unrecognised_intents:
+        flags.append(
+            PipelineFlag(
+                "PHASE2",
+                "warning",
+                "INTENT_NOT_RECOGNISED",
+                f"Phase 2: {len(unrecognised_intents)} atom(s) have unrecognised intent.",
+                ", ".join(unrecognised_intents[:8]),
+            )
+        )
+        stages["PHASE2"] = "degraded"
 
     dash = _load_json(_latest(out, "verification_dashboard_*.json")) or {}
     unlinked_mod = []

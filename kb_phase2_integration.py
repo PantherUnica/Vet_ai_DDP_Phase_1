@@ -1303,6 +1303,8 @@ def _postprocess_phase2_json(obj: Dict[str, Any]) -> Dict[str, Any]:
         if "codes" not in a or not isinstance(a.get("codes"), dict):
             a["codes"] = {}
         a.setdefault("intent_context", a.get("intent_context") or a.get("intent_type") or "")
+        if not (a.get("intent_context") or "").strip():
+            a["intent_context"] = "Intent not recognised"
         a.setdefault("source_text", a.get("source_text") or "")
         a.setdefault("section", a.get("section") or "")
         cleaned_atoms.append(a)
@@ -1395,17 +1397,18 @@ def _postprocess_phase2_json(obj: Dict[str, Any]) -> Dict[str, Any]:
 
 def _extract_clinical_core_soap(soap_note_text: str) -> str:
     """
-    Return only Subjective, Objective, Assessment, Plan (exclude Conclusion, Key Issues, Customer Instructions).
-    Reduces Phase 2 prompt size and extraction time (~25s -> ~12s).
+    Return Subjective, Objective, Assessment, Plan, plus Reminders for follow-up atom extraction.
+    Excludes Conclusion, Key Issues, Customer Instructions (except Reminders).
     """
     if not soap_note_text or not soap_note_text.strip():
         return soap_note_text or ""
     text = (soap_note_text or "").strip()
     core_sections = []
+    section_keys = ("Subjective", "Objective", "Assessment", "Plan", "Reminders")
     try:
         obj = json.loads(text)
         if isinstance(obj, dict):
-            for key in ("Subjective", "Objective", "Assessment", "Plan"):
+            for key in section_keys:
                 val = obj.get(key) or obj.get(key.lower(), "")
                 if isinstance(val, str) and val.strip():
                     core_sections.append(f"{key}:\n{val.strip()}")
@@ -1416,7 +1419,7 @@ def _extract_clinical_core_soap(soap_note_text: str) -> str:
     if PHASE2_AVAILABLE:
         try:
             sections = parse_soap_sections(text)
-            for key in ("Subjective", "Objective", "Assessment", "Plan"):
+            for key in section_keys:
                 val = (sections.get(key) or "").strip()
                 if val:
                     core_sections.append(f"{key}:\n{val}")
@@ -1425,6 +1428,19 @@ def _extract_clinical_core_soap(soap_note_text: str) -> str:
         except Exception:
             pass
     return text
+
+
+def _primary_diagnosis_from_soap(soap_note_text: str) -> str:
+    """Extract PrimaryDiagnosis string from SOAP JSON or text."""
+    if not soap_note_text:
+        return ""
+    try:
+        obj = json.loads(soap_note_text)
+        if isinstance(obj, dict):
+            return (obj.get("PrimaryDiagnosis") or "").strip()
+    except (json.JSONDecodeError, TypeError):
+        pass
+    return ""
 
 
 # ==============================================================================
@@ -1769,7 +1785,8 @@ async def extract_knowledge_atoms_async(
                     t_dash = time.perf_counter()
                     with pg_conn_ctx() as conn:
                         verification_dashboard = _build_verification_dashboard(
-                            atoms_list, conn=conn, logger=logger, entity_manifest=entity_manifest
+                            atoms_list, conn=conn, logger=logger, entity_manifest=entity_manifest,
+                            primary_diagnosis_text=_primary_diagnosis_from_soap(soap_note_text or ""),
                         )
                     _set_phase2_timing(timing_ref, step3_dashboard_ms=_elapsed_ms_since(t_dash))
                     knowledge_atoms["verification_dashboard"] = verification_dashboard
@@ -1881,7 +1898,8 @@ async def extract_knowledge_atoms_async(
                     t_dash = time.perf_counter()
                     with pg_conn_ctx() as conn:
                         verification_dashboard = _build_verification_dashboard(
-                            atoms_list, conn=conn, logger=logger, entity_manifest=entity_manifest
+                            atoms_list, conn=conn, logger=logger, entity_manifest=entity_manifest,
+                            primary_diagnosis_text=_primary_diagnosis_from_soap(soap_note_text or ""),
                         )
                     _set_phase2_timing(timing_ref, step3_dashboard_ms=_elapsed_ms_since(t_dash))
                     knowledge_atoms["verification_dashboard"] = verification_dashboard
@@ -1969,7 +1987,8 @@ async def extract_knowledge_atoms_async(
                 # Use Phase 1's connection pool for master table queries
                 with pg_conn_ctx() as conn:
                     verification_dashboard = _build_verification_dashboard(
-                        atoms_list, conn=conn, logger=logger, entity_manifest=entity_manifest
+                        atoms_list, conn=conn, logger=logger, entity_manifest=entity_manifest,
+                        primary_diagnosis_text=_primary_diagnosis_from_soap(soap_note_text or ""),
                     )
                 _set_phase2_timing(timing_ref, step3_dashboard_ms=_elapsed_ms_since(t_dash))
                 knowledge_atoms["verification_dashboard"] = verification_dashboard

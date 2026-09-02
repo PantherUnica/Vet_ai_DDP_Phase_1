@@ -38,6 +38,7 @@ _SOAP_PRIMARY_KEYS = (
     "Plan",
     "Conclusion",
     "KeyIssues",
+    "AbnormalFindings",
 )
 
 

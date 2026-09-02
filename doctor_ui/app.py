@@ -336,6 +336,7 @@ def page_results() -> None:
             flags_report=flags,
             output_dir=rec.get("output_dir"),
             conversation_text=rec.get("step1_raw_text") or "",
+            soap_json=soap_json,
         )
     elif rec.get("status") == "error":
         st.error(rec.get("error_message") or "Pipeline error")

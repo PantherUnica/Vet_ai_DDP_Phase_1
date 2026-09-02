@@ -5,22 +5,25 @@ from __future__ import annotations
 from typing import Any, Dict
 
 DIAGNOSIS_SECTION_GUIDANCE = """
-PRIMARY DIAGNOSIS (mandatory):
-- The main underlying condition driving this consultation (the real/root problem).
-- When the vet says "X secondary to Y", Y belongs here (not X).
-- Format: Plain clinical name (System-Condition)
-- Example: Atopic dermatitis (Dermatology-Atopic Dermatitis)
-- If only one condition is discussed, put it here and leave SecondaryDiagnosis empty.
-- If nothing is clearly supported, use: Unknown-Not specified (Unknown-Not specified)
+DIFFERENTIAL DIAGNOSIS — two sub-fields under this heading in the UI:
 
-SECONDARY DIAGNOSIS (optional):
-- A contributing or complicating condition that supports or explains the primary problem.
-- Use when the vet states "secondary to", "associated with", comorbidity, or an overlying infection on top of a chronic issue.
-- CRITICAL: If the vet says "X secondary to Y", then Y is PrimaryDiagnosis (underlying/root) and X is SecondaryDiagnosis (overlay/complication).
-- Same format as primary: Plain clinical name (System-Condition)
-- Use empty string "" if no secondary condition is explicitly stated.
-- Do NOT invent a secondary diagnosis.
-- Source only from Assessment, Plan, conversation, or Brain NER — do not add new conditions.
+PRIMARY DIAGNOSIS (mandatory, may be MULTIPLE):
+- Root/main condition(s) driving this consultation (the real problem(s) causing the visit).
+- When the vet says "X secondary to Y", Y belongs here (not X).
+- **FORMAT (mandatory):** Numbered list, one diagnosis per line:
+  1. Atopic dermatitis (Dermatology-Atopic Dermatitis)
+  2. Hip dysplasia (Orthopedic-Hip Dysplasia)
+- Each line: Plain clinical name (System-Condition)
+- If only one condition, use a single numbered line.
+- If nothing is clearly supported: 1. Unknown-Not specified (Unknown-Not specified)
+
+SECONDARY DIAGNOSIS (optional, may be MULTIPLE):
+- Contributing or complicating condition(s) supporting the primary problem(s).
+- Use when the vet states "secondary to", "associated with", comorbidity, or overlay infection on chronic issue.
+- CRITICAL: "X secondary to Y" → Y in PrimaryDiagnosis, X in SecondaryDiagnosis.
+- **FORMAT:** Same numbered-list format as Primary (or empty string "" if none).
+- Do NOT invent secondary diagnoses.
+- Source only from Assessment, Plan, conversation, or Brain NER.
 """
 
 

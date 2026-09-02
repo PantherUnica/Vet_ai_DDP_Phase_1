@@ -831,21 +831,26 @@ b. Maintain Clinical Structure and Professional Tone:
 • Ensure the summary is stand-alone, medically informative, and easily scannable by a veterinary professional.
 • Since it is the vet who is going to pursue their own records, don't use tone and terminology saying the veterinarian chose to do this or that. Rather use wording which is appropriate for a clinical record.
 c. If no medically relevant information is available, output only no medically relevant information available. No need to describe or explain the nature of the non-medical relevant information. Instead simply output the result that no medically relevant information was available.
-Step 9: Primary and Secondary Diagnosis
+Step 9: Differential Diagnosis (Primary and Secondary)
 Purpose:
-Provide structured primary and secondary diagnosis labels derived from the case. Primary is the main problem driving the visit; secondary is an optional contributing or complicating condition explicitly stated in the consultation.
+Provide structured differential diagnosis labels. Primary = root/main problem(s) driving the visit; Secondary = optional contributing/complicating condition(s).
 Rules:
 • Do not introduce any new condition not already mentioned or clearly implied in Assessment, Plan, or the conversation.
-• Format for each diagnosis: Plain clinical name (System-Condition), e.g. Atopic dermatitis (Dermatology-Atopic Dermatitis).
-• If only one condition is named, put it in PrimaryDiagnosis and leave SecondaryDiagnosis empty.
-• If nothing is clearly supported, PrimaryDiagnosis: Unknown-Not specified (Unknown-Not specified); SecondaryDiagnosis: "".
+• **FORMAT (mandatory):** Numbered list, one diagnosis per line (same style as Key Issues):
+  PrimaryDiagnosis example:
+  1. Atopic dermatitis (Dermatology-Atopic Dermatitis)
+  2. Hip dysplasia (Orthopedic-Hip Dysplasia)
+• Each line: Plain clinical name (System-Condition).
+• PrimaryDiagnosis may contain MULTIPLE entries when multiple root problems are discussed.
+• SecondaryDiagnosis uses the same numbered-list format (or empty string "" if none).
+• If nothing is clearly supported, PrimaryDiagnosis: 1. Unknown-Not specified (Unknown-Not specified); SecondaryDiagnosis: "".
 Actions:
 a. Primary Diagnosis:
-• The main/real problem for this visit.
-• Map specific conditions to System-Condition (e.g. Dermatology-Otitis Externa). Use broad system labels only when no specific condition is named.
+• The main/real problem(s) for this visit — can be more than one when clinically independent roots exist.
+• Map specific conditions to System-Condition (e.g. Dermatology-Otitis Externa).
 b. Secondary Diagnosis (optional):
-• Contributing or supporting condition (e.g. infection secondary to chronic allergy, comorbidity).
-• Use only when explicitly stated or clearly framed as secondary/associated in the conversation.
+• Contributing or supporting condition(s) (e.g. infection secondary to chronic allergy).
+• Use only when explicitly stated or clearly framed as secondary/associated.
 • Empty string if not stated.
 c. Avoid Adding New Information:
 • Do not invent a more specific condition than what is stated.
@@ -896,27 +901,35 @@ c. Ensure Accuracy:
 • Only include actions explicitly mentioned in the conversation.
 • Deduplicate near-identical items (e.g. do not repeat the same recheck three ways).
 Step 14: Key Issues Section
-Purpose: Extract all the primary key clinical issues that were discussed in the conversation. Extract it and consolidate those aspects from the conversation.
+Purpose: Extract owner-reported / pre-appointment clinical concerns — what the pet owner told the vet BEFORE or DURING the visit about visible problems.
 **FORMAT (mandatory):** Numbered list, one key issue per line:
 1. Primary issue with brief remark
 2. Next issue with brief remark
 Do NOT write Key Issues as a comma-separated paragraph.
 Actions:
-a. Document all key issues:
-• Include all the key issues that were discussed during the conversation with a remarks summary.
-b. Only include actions explicitly mentioned in the conversation.
-c. Ensure Accuracy.
-d. The key issues have to be clinically relevant and independent on their own, rather than signalment or single symptoms of the primary issues. If there are secondary issues, mention it separately as secondary issues linked to the primary issue against each primary issue.
-e. The remarks can be similar to the overall SOAP note conclusion, but should be specific to the key issues, against which the remarks are mentioned.
+a. Document owner-reported key issues:
+• Include concerns the owner described (limping, vomiting, scratching, appetite change, etc.).
+• Include pre-appointment complaint summary items when clinically relevant.
+b. EXCLUDE from Key Issues:
+• Exam findings the vet discovered (those go in Abnormal Findings).
+• Diagnostic test results (X-ray, lab, cytology) — those go in Abnormal Findings.
+• Vet-only observations not reported by the owner.
+c. Only include items explicitly mentioned in the conversation or pre-appointment summary.
+d. Key issues must be clinically independent — not signalment alone or a single symptom fragment.
+e. Do NOT duplicate the same issue in Abnormal Findings.
 Step 15: Abnormal Findings
-Purpose: Identify any and all abnormal findings in the conversation or filled up vitals/protocols.
+Purpose: Post-exam and diagnostic abnormalities — what the VET found on examination, imaging, labs, or clinical assessment.
 **FORMAT (mandatory):** Numbered list, one finding per line (1. / 2. / 3.). Do NOT use a comma-separated paragraph.
 Actions:
-a. Document all Abnormal findings:
-• Include all abnormal findings discussed in the conversation.
-• Abnormal findings can relate with reference to the issue at hand, any diagnostic test results discussed and any other aspects.
-b. Ensure Accuracy.
-c. Only include items explicitly mentioned in the conversation.
+a. Document vet-identified abnormal findings:
+• Physical exam abnormalities (murmur, lameness on palpation, skin lesions found on exam).
+• Diagnostic results (X-ray findings, lab values, cytology).
+• Clinical conclusions from tests or vet expertise linking cause to effect.
+b. EXCLUDE from Abnormal Findings:
+• Owner complaints already captured in Key Issues (do not duplicate).
+• Normal findings.
+c. Ensure Accuracy — only items explicitly mentioned in the conversation, vitals, or protocols.
+d. Do NOT duplicate the same issue in Key Issues.
 Step 16: Verification Step
 Review for Accuracy and Relevance
 Purpose: Ensure no invented or inferred content has been added.
@@ -979,8 +992,8 @@ Before generating the final SOAP note, ensure that no part of the transcript or 
   Assessment: Assessment content here,
   Plan: "1. First plan item\\n2. Second plan item\\n3. Third plan item",
   Conclusion: Conclusion content here,
-  PrimaryDiagnosis: Primary diagnosis here (Plain name (System-Condition)),
-  SecondaryDiagnosis: Secondary diagnosis here or empty string,
+  PrimaryDiagnosis: "1. Primary diagnosis (System-Condition)\\n2. Second primary if applicable",
+  SecondaryDiagnosis: "1. Secondary diagnosis (System-Condition)" or empty string,
   KeyIssues: "1. First key issue\\n2. Second key issue",
   AbnormalFindings: "1. First abnormal finding\\n2. Second abnormal finding",
   CustomerInstructions: "1. First at-home instruction\\n2. Second at-home instruction",

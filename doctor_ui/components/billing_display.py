@@ -4,13 +4,25 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 from copy import deepcopy
 from dataclasses import dataclass, field
 from functools import lru_cache
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
+_ROOT = Path(__file__).resolve().parents[2]
+if str(_ROOT) not in sys.path:
+    sys.path.insert(0, str(_ROOT))
+
 import streamlit as st
+
+from doctor_ui.reminder_utils import (
+    INTENT_NOT_RECOGNISED,
+    filter_actionable_reminder_items,
+    is_intent_recognised,
+    merge_reminder_sources,
+)
 
 _PRESCRIBED_INTENTS = frozenset({"Prescribed", "prescribed"})
 _ADMINISTERED_INTENTS = frozenset({"Administered", "administered"})
@@ -408,6 +420,99 @@ def _split_unlinked(dashboard: Dict[str, Any]) -> Dict[str, List[Dict[str, Any]]
     return out
 
 
+def _render_intent_badge(intent: Any) -> None:
+    text = str(intent or "").strip()
+    if not text or text == INTENT_NOT_RECOGNISED or not is_intent_recognised(text):
+        st.warning(f"Intent: {text or INTENT_NOT_RECOGNISED}")
+    else:
+        st.caption(f"Intent: {text}")
+
+
+def _render_match_score(item: Dict[str, Any]) -> None:
+    score = item.get("_auto_pick_score") or item.get("match_score")
+    if isinstance(score, (int, float)) and score:
+        st.caption(f"Match score: {score:.0%}")
+
+
+def _render_alternatives_table(alternatives: List[Dict[str, Any]]) -> None:
+    if not alternatives:
+        return
+    rows = []
+    for alt in alternatives[:3]:
+        sid = alt.get("stock_id") or alt.get("inventory_id")
+        svc = alt.get("service_id")
+        score = alt.get("match_score")
+        score_txt = f"{score:.0%}" if isinstance(score, (int, float)) else "—"
+        rows.append({
+            "Name": alt.get("name") or "—",
+            "stock_id": sid if sid is not None else "—",
+            "service_id": svc if svc is not None else "—",
+            "Match": score_txt,
+        })
+    if rows:
+        st.markdown("**Top 3 alternatives**")
+        st.dataframe(rows, use_container_width=True, hide_index=True)
+
+
+def _render_diagnostic_row(item: Dict[str, Any], key_prefix: str) -> None:
+    name = item.get("test_name") or item.get("item_name") or "Diagnostic"
+    st.markdown(f"**{name}**")
+    _render_id_banner(service_id=_service_id(item))
+    intent = item.get("intent_context")
+    if intent:
+        _render_intent_badge(intent)
+    c1, c2, c3 = st.columns(3)
+    with c1:
+        st.text_input("Lab / Radiology", value=item.get("lab_radiology") or "", key=f"{key_prefix}_lab")
+    with c2:
+        st.text_input("Date of test", value=item.get("date_of_test") or "", key=f"{key_prefix}_date")
+    with c3:
+        st.text_input("Done", value=item.get("done") or "", key=f"{key_prefix}_done")
+    st.text_input("Sample collected", value=item.get("sample_collected") or "", key=f"{key_prefix}_sample")
+    if item.get("remarks"):
+        st.text_area("Remarks", value=item.get("remarks") or "", key=f"{key_prefix}_remarks", height=68)
+
+
+def _render_clinical_history_row(item: Dict[str, Any], key_prefix: str) -> None:
+    name = item.get("condition_finding") or item.get("name") or "Finding"
+    st.markdown(f"**{name}**")
+    st.caption(
+        f"Status: {item.get('status') or '—'} · Add to: {item.get('confirm_and_add_to') or '—'}"
+    )
+    if item.get("chronological_summary"):
+        st.write(item.get("chronological_summary"))
+    elif item.get("source_text"):
+        st.caption(item.get("source_text"))
+
+
+def _render_reminder_row(item: Dict[str, Any], key_prefix: str) -> None:
+    name = item.get("item_name") or item.get("name") or "Follow-up"
+    st.markdown(f"**{name}**")
+    item_id = item.get("item_id") or item.get("linked_id")
+    try:
+        sid = int(item_id) if item_id and str(item_id).replace("-", "").isdigit() else None
+    except (TypeError, ValueError):
+        sid = None
+    if sid:
+        _render_id_banner(service_id=sid)
+    elif item_id:
+        st.caption(f"Item ID: {item_id}")
+    _render_intent_badge(item.get("intent_context"))
+    st.text_input("Due date", value=item.get("due_date") or "", key=f"{key_prefix}_due")
+    if item.get("remarks"):
+        st.text_area("Remarks", value=item.get("remarks") or "", key=f"{key_prefix}_remarks", height=68)
+
+    with st.expander("Schedule", expanded=False):
+        st.caption("Will notify email/phone on file when backend is connected.")
+        sched_date = st.date_input("Date", key=f"{key_prefix}_sched_date")
+        sched_time = st.time_input("Time", key=f"{key_prefix}_sched_time")
+        if st.button("Schedule reminder", key=f"{key_prefix}_sched_btn"):
+            st.success(
+                f"Scheduled for {sched_date} at {sched_time} — "
+                "will notify email/phone on file (backend pending)."
+            )
+
+
 def _render_id_banner(*, stock_id: Optional[int] = None, service_id: Optional[int] = None) -> None:
     parts = []
     if stock_id is not None:
@@ -457,6 +562,8 @@ def _render_procedure_row(item: Dict[str, Any], key_prefix: str, ctx: BillingCon
         else:
             st.text_input("Variant", value=variant_val, key=f"{key_prefix}_variant_txt")
     st.number_input("Billable qty", min_value=1, value=1, key=f"{key_prefix}_qty")
+    if item.get("remarks"):
+        st.text_area("Remarks (clinical context)", value=item.get("remarks") or "", key=f"{key_prefix}_remarks", height=68)
 
 
 def _render_inventory_row(item: Dict[str, Any], key_prefix: str, ctx: BillingContext) -> None:
@@ -478,6 +585,8 @@ def _render_inventory_row(item: Dict[str, Any], key_prefix: str, ctx: BillingCon
     st.markdown(f"**{display_name or 'Inventory item'}**")
     _render_id_banner(stock_id=stk)
     _render_auto_pick_note(item, "stock_id")
+    _render_match_score(item)
+    _render_alternatives_table(item.get("alternatives") or [])
     _status_caption(item, _missing_fields(item, ("quantity",)), auto_applied)
     _show_conversation_snippet(item)
 
@@ -523,6 +632,9 @@ def _render_administered_row(item: Dict[str, Any], key_prefix: str, ctx: Billing
     st.markdown(f"**{display_name or 'Administered item'}**")
     _render_id_banner(stock_id=stk)
     _render_auto_pick_note(item, "stock_id")
+    _render_match_score(item)
+    _render_alternatives_table(item.get("alternatives") or [])
+    _render_intent_badge(item.get("intent_context") or "Administered")
     _status_caption(item, missing, auto_applied)
     _show_conversation_snippet(item)
 
@@ -568,6 +680,9 @@ def _render_prescription_row(item: Dict[str, Any], key_prefix: str, ctx: Billing
     st.markdown(f"**{display_name or 'Medication'}**")
     _render_id_banner(stock_id=stk)
     _render_auto_pick_note(item, "stock_id")
+    _render_match_score(item)
+    _render_alternatives_table(item.get("alternatives") or [])
+    _render_intent_badge(item.get("intent_context") or "Prescribed")
     _status_caption(item, missing, auto_applied)
     _show_conversation_snippet(item)
 
@@ -601,6 +716,7 @@ def render_billing_forms(
     flags_report: Optional[Dict[str, Any]] = None,
     output_dir: Optional[str] = None,
     conversation_text: str = "",
+    soap_json: Optional[Dict[str, Any]] = None,
 ) -> None:
     """Render Phase 2 billing sections on the Results page."""
     st.subheader("Billing & Pharmacy (Phase 2)")
@@ -682,6 +798,50 @@ def render_billing_forms(
             st.divider()
             _render_prescription_row(item, f"rx_{i}", ctx)
 
+    diagnostics = list(dashboard.get("diagnostics") or [])
+    with st.expander("Diagnostics (Labs / Imaging)", expanded=bool(diagnostics)):
+        if not diagnostics:
+            st.caption("No diagnostics detected.")
+        for i, item in enumerate(diagnostics):
+            st.divider()
+            _render_diagnostic_row(item, f"diag_{i}")
+
+    vitals_p2 = list(dashboard.get("vitals") or [])
+    with st.expander("Vitals (Phase 2 atoms)", expanded=bool(vitals_p2)):
+        if not vitals_p2:
+            st.caption("No Phase 2 vitals atoms.")
+        else:
+            st.dataframe(vitals_p2, use_container_width=True, hide_index=True)
+
+    clinical_history = list(dashboard.get("module_5_clinical_history") or [])
+    with st.expander("Clinical History", expanded=bool(clinical_history)):
+        if not clinical_history:
+            st.caption("No clinical history entries.")
+        for i, item in enumerate(clinical_history):
+            st.divider()
+            _render_clinical_history_row(item, f"hist_{i}")
+
+    follow_ups_raw = merge_reminder_sources(
+        filter_actionable_reminder_items(dashboard.get("reminders_follow_ups") or []),
+        filter_actionable_reminder_items(stream.get("clinical_follow_ups") or []),
+    )
+    with st.expander("Reminders & Follow-ups (Actionable)", expanded=bool(follow_ups_raw)):
+        if not follow_ups_raw:
+            st.caption("No actionable reminders or follow-ups.")
+        for i, item in enumerate(follow_ups_raw):
+            st.divider()
+            _render_reminder_row(item, f"rem_{i}")
+
+    issue_recs = list(dashboard.get("issue_medicine_recommendations") or [])
+    with st.expander("Medicine recommendations (by clinical issue)", expanded=bool(issue_recs)):
+        if not issue_recs:
+            st.caption("No issue-based medicine recommendations (all issues have mentioned meds or Postgres was unavailable).")
+        for i, rec in enumerate(issue_recs):
+            st.divider()
+            st.markdown(f"**{rec.get('issue') or 'Clinical issue'}**")
+            _render_intent_badge(rec.get("intent_context") or "Recommended")
+            _render_alternatives_table(rec.get("recommendations") or [])
+
     st.download_button(
         "Download verification dashboard JSON",
         data=json.dumps(dashboard, indent=2, ensure_ascii=False),
@@ -725,6 +885,25 @@ def _self_check() -> None:
         ],
     })
     assert len(split["prescribed"]) == 1 and len(split["procedures"]) == 1
+
+    from doctor_ui.reminder_utils import filter_actionable_reminder_items, is_actionable_reminder_text
+    assert is_actionable_reminder_text("Recheck in 3 days")
+    assert not is_actionable_reminder_text("Return if worsening")
+    filtered = filter_actionable_reminder_items([
+        {"item_name": "Recheck", "intent_context": "Scheduled", "due_date": "3 days"},
+        {"item_name": "Watch appetite", "intent_context": "Reminder", "due_date": ""},
+    ])
+    assert len(filtered) == 1
+
+    sample_dash = {
+        "diagnostics": [{"test_name": "CBC", "service_id": 100, "lab_radiology": "LAB"}],
+        "vitals": [{"vital_name": "Weight", "value": "12 kg"}],
+        "module_5_clinical_history": [{"condition_finding": "Otitis", "status": "CONFIRMED"}],
+        "reminders_follow_ups": [{"item_name": "Recheck", "intent_context": "Scheduled", "due_date": "3 days"}],
+        "medications_prescribed": [{"item_name": "Med", "inventory_id": 1, "alternatives": [{"name": "Alt", "stock_id": 2, "match_score": 0.8}]}],
+        "issue_medicine_recommendations": [{"issue": "Pain", "intent_context": "Recommended", "recommendations": [{"name": "X", "stock_id": 3, "match_score": 0.7}]}],
+    }
+    assert sample_dash["diagnostics"] and sample_dash["issue_medicine_recommendations"]
 
 
 if __name__ == "__main__":

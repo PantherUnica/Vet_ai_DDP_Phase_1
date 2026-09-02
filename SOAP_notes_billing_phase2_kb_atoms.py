@@ -1831,6 +1831,215 @@ def generate_streamlined_dashboard(
     return out
 
 
+def _parse_primary_diagnosis_lines(text: str) -> List[str]:
+    """Extract numbered primary diagnosis lines from SOAP text."""
+    raw = (text or "").strip()
+    if not raw:
+        return []
+    lines = []
+    for line in raw.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        line = re.sub(r"^\d+[\.\)]\s*", "", line).strip()
+        if line and "unknown-not specified" not in line.lower():
+            lines.append(line)
+    if not lines and raw:
+        lines = [raw]
+    return lines
+
+
+def _norm_concept(value: str) -> str:
+    return " ".join((value or "").lower().split())
+
+
+def _alt_from_candidate(c: Dict[str, Any]) -> Dict[str, Any]:
+    sid = c.get("stock_id") or c.get("inventory_id")
+    score = c.get("match_score") or c.get("score") or 0
+    try:
+        score_f = float(score)
+    except (TypeError, ValueError):
+        score_f = 0.0
+    out: Dict[str, Any] = {
+        "name": c.get("name") or c.get("item_name") or c.get("trade_name") or "",
+        "match_score": round(score_f, 3),
+    }
+    if sid is not None:
+        try:
+            out["stock_id"] = int(sid)
+        except (TypeError, ValueError):
+            pass
+    svc = c.get("service_id")
+    if svc is not None:
+        try:
+            out["service_id"] = int(svc)
+        except (TypeError, ValueError):
+            pass
+    return out
+
+
+def _search_inventory_top3(
+    conn,
+    query: str,
+    *,
+    exclude_stock_id: Optional[int] = None,
+    clinic_id: Optional[int] = None,
+    logger: Optional[logging.Logger] = None,
+) -> List[Dict[str, Any]]:
+    if not conn or not (query or "").strip():
+        return []
+    try:
+        from kb_ner_local_search import search_local_inventory_topk
+        cid = clinic_id or int(os.getenv("CLINIC_ID", "1") or 1)
+        candidates = search_local_inventory_topk(
+            conn, query.strip(), "Medication", clinic_id=cid, top_k=6, logger=logger,
+        )
+    except Exception:
+        return []
+    alts: List[Dict[str, Any]] = []
+    for c in candidates or []:
+        sid = c.get("stock_id") or c.get("inventory_id")
+        if exclude_stock_id is not None and sid is not None:
+            try:
+                if int(sid) == int(exclude_stock_id):
+                    continue
+            except (TypeError, ValueError):
+                pass
+        alts.append(_alt_from_candidate(c))
+        if len(alts) >= 3:
+            break
+    return alts
+
+
+def _is_actionable_reminder(item: Dict[str, Any]) -> bool:
+    try:
+        from doctor_ui.reminder_utils import is_actionable_reminder_item
+        return is_actionable_reminder_item(item)
+    except ImportError:
+        intent = (item.get("intent_context") or "").strip()
+        due = (item.get("due_date") or "").strip()
+        return intent in ("Scheduled", "Future") or bool(due and due.upper() != "ASAP")
+
+
+def _collect_medicine_concepts(atoms_list: List[Dict[str, Any]]) -> set:
+    med_kinds = {
+        "Medicine", "Drug", "Medication", "Substance", "Vaccine", "Supplement", "Nutrition",
+    }
+    med_intents = {"Prescribed", "Administered", "Ordered"}
+    covered = set()
+    for atom in atoms_list or []:
+        kind = (atom.get("kind") or "").strip()
+        intent = (atom.get("intent_context") or atom.get("intent_type") or "").strip()
+        if kind in med_kinds and intent in med_intents:
+            concept = _norm_concept(atom.get("concept") or "")
+            if concept:
+                covered.add(concept)
+    return covered
+
+
+def _collect_clinical_issues(
+    dashboard: Dict[str, Any],
+    entity_manifest: Optional[List[Dict[str, Any]]],
+    primary_diagnosis_text: str = "",
+) -> List[str]:
+    issues: List[str] = []
+    seen = set()
+    for item in dashboard.get("module_5_clinical_history") or []:
+        target = (item.get("confirm_and_add_to") or "").strip()
+        if target not in ("Diagnosis List", "Objective Findings", "Active Problems"):
+            continue
+        name = (item.get("condition_finding") or "").strip()
+        key = _norm_concept(name)
+        if name and key not in seen:
+            seen.add(key)
+            issues.append(name)
+    for ent in entity_manifest or []:
+        if not isinstance(ent, dict):
+            continue
+        kind = (ent.get("kind") or ent.get("entity_kind") or "").strip()
+        if kind not in ("Diagnosis", "Condition", "Disease", "ReasonForVisit"):
+            continue
+        name = (
+            ent.get("kb_preferred_name") or ent.get("display_name")
+            or ent.get("span_text") or ent.get("surface_text") or ""
+        ).strip()
+        key = _norm_concept(name)
+        if name and key not in seen:
+            seen.add(key)
+            issues.append(name)
+    for line in _parse_primary_diagnosis_lines(primary_diagnosis_text):
+        key = _norm_concept(line.split("(")[0])
+        if key and key not in seen:
+            seen.add(key)
+            issues.append(line.split("(")[0].strip())
+    return issues
+
+
+def _enrich_medicine_recommendations(
+    dashboard: Dict[str, Any],
+    atoms_list: List[Dict[str, Any]],
+    conn=None,
+    entity_manifest: Optional[List[Dict[str, Any]]] = None,
+    primary_diagnosis_text: str = "",
+    logger: Optional[logging.Logger] = None,
+) -> None:
+    """Attach top-3 inventory alternatives to med rows; issue-based recs when no med mentioned."""
+    if not conn:
+        return
+    med_intents = {"Prescribed", "Administered", "Ordered"}
+    med_modules = ("medications_prescribed", "medications_administered")
+    for mod in med_modules:
+        for item in dashboard.get(mod) or []:
+            intent = (item.get("intent_context") or item.get("administered_prescribed") or "").strip()
+            if intent not in med_intents and mod == "medications_prescribed":
+                intent = "Prescribed"
+            elif intent not in med_intents and mod == "medications_administered":
+                intent = "Administered"
+            if intent not in med_intents:
+                continue
+            query = item.get("item_name") or item.get("name") or ""
+            stk = item.get("inventory_id") or item.get("stock_id")
+            try:
+                exclude = int(stk) if stk is not None else None
+            except (TypeError, ValueError):
+                exclude = None
+            alts = _search_inventory_top3(conn, query, exclude_stock_id=exclude, logger=logger)
+            if alts:
+                item["alternatives"] = alts
+                if not item.get("match_score") and alts:
+                    item["match_score"] = alts[0].get("match_score")
+
+    for item in dashboard.get("module_4_unlinked_entities") or []:
+        kind = (item.get("kind") or "").strip()
+        intent = (item.get("intent_context") or "").strip()
+        if kind not in ("Medicine", "Drug", "Medication", "Substance", "Vaccine", "Supplement") or intent not in med_intents:
+            continue
+        query = item.get("item_name") or ""
+        alts = item.get("suggestions") or []
+        if not alts:
+            alts_raw = _search_inventory_top3(conn, query, logger=logger)
+            if alts_raw:
+                item["alternatives"] = alts_raw
+        elif not item.get("alternatives"):
+            item["alternatives"] = [_alt_from_candidate(s) for s in alts[:3]]
+
+    covered = _collect_medicine_concepts(atoms_list)
+    issue_recs: List[Dict[str, Any]] = []
+    for issue in _collect_clinical_issues(dashboard, entity_manifest, primary_diagnosis_text):
+        issue_key = _norm_concept(issue)
+        if any(issue_key in c or c in issue_key for c in covered):
+            continue
+        recs = _search_inventory_top3(conn, issue, logger=logger)
+        if recs:
+            issue_recs.append({
+                "issue": issue,
+                "intent_context": "Recommended",
+                "recommendations": recs,
+            })
+    if issue_recs:
+        dashboard["issue_medicine_recommendations"] = issue_recs
+
+
 def _build_verification_dashboard(
     atoms_list: List[Dict[str, Any]],
     conn=None,
@@ -1838,6 +2047,7 @@ def _build_verification_dashboard(
     entity_manifest: Optional[List[Dict[str, Any]]] = None,  # NEW: For suggestions lookup
     pet_name: Optional[str] = None,
     signalment: Optional[Dict[str, Any]] = None,
+    primary_diagnosis_text: str = "",
 ) -> Dict[str, Any]:
     """
     Build verification dashboard JSON with strict ID-gate routing logic.
@@ -2483,11 +2693,8 @@ def _build_verification_dashboard(
             continue
         
         
-        # FALLBACK: If item has local_id but doesn't match above rules, check if it's a scheduled service (goes to reminders)
-        # This handles items with IDs that are scheduled for future (not performed today)
+        # FALLBACK: Plan item with ID but non-Performed intent — route by intent, not blind reminders
         if has_local_id and section == "Plan" and assertion_id == "CONF" and intent_context != "Performed":
-            # Scheduled service/medication goes to reminders (uses ID to pre-populate scheduler)
-            # Query appropriate master to get canonical name
             canonical_name = concept
             if has_service_id:
                 service_record = get_service_master_record(local_service_id, conn=conn, logger=logger)
@@ -2497,16 +2704,31 @@ def _build_verification_dashboard(
                 inventory_record = get_inventory_master_record(local_stock_id, conn=conn, logger=logger)
                 if inventory_record:
                     canonical_name = inventory_record.get("trade_name") or inventory_record.get("item_name") or concept
-            
-            reminder_item = {
-                "item_name": canonical_name or "",  # From appropriate Master
-                "item_id": local_service_id or local_stock_id or f"[{kind.upper()}-XXX]" if kind else "[UNKNOWN-XXX]",  # ID source determines which master to query
-                "due_date": "ASAP",
-                "remarks": f"Scheduled {kind.lower()} from Plan section" if kind else "Scheduled item from Plan section",
-                "intent_context": "Scheduled",
-                "kind": kind or "",
-            }
-            dashboard["reminders_follow_ups"].append(reminder_item)
+
+            if intent_context in ("Scheduled", "Future", "Recommended", "Reminder"):
+                reminder_item = {
+                    "item_name": canonical_name or "",
+                    "item_id": local_service_id or local_stock_id or f"[{kind.upper()}-XXX]" if kind else "[UNKNOWN-XXX]",
+                    "due_date": attributes.get("due_on") or attributes.get("has_due_on") or attributes.get("duration") or "ASAP",
+                    "remarks": attributes.get("action_item") or attributes.get("remarks") or atom.get("source_text", "") or "",
+                    "intent_context": intent_context or "Scheduled",
+                    "kind": kind or "",
+                }
+                dashboard["reminders_follow_ups"].append(reminder_item)
+            else:
+                unlinked_item = {
+                    "item_name": canonical_name or concept or "",
+                    "kind": kind or "Unknown",
+                    "intent_context": intent_context or "Intent not recognised",
+                    "intent": f"{intent_context or 'Intent not recognised'} ({kind or 'Unknown'})",
+                    "status": "ACTION REQUIRED",
+                    "reason": "UNRECOGNISED_INTENT" if not intent_context else "NON_PERFORMED_PLAN_ITEM",
+                    "remarks": atom.get("source_text", "") or f"Plan item with ID but intent '{intent_context or 'missing'}' — verify routing.",
+                    "suggestions": (atom.get("attributes") or {}).get("suggestions") or [],
+                    "service_id": local_service_id,
+                    "inventory_id": local_stock_id,
+                }
+                dashboard["module_4_unlinked_entities"].append(unlinked_item)
             continue
 
     # De-duplicate procedures_services by service_id (one line per service per visit for clean invoice)
@@ -2638,11 +2860,6 @@ def _build_verification_dashboard(
             raw_history, pet_name=effective_pet_name, logger=logger
         )
 
-    # Category-First Streamlined Dashboard: group by functional role (signalment_vitals, clinical_assessment, pharmacy, diagnostics_procedures, preventive, action_plan) with status CONFIRMED/DRAFTED/ACTION_REQUIRED
-    streamlined = generate_streamlined_dashboard(
-        dashboard, entity_manifest=entity_manifest, signalment=signalment, logger=logger
-    )
-
     # Dedupe module_4_unlinked_entities by (item_name normalized, kind) so vet sees each actionable item once
     m4 = dashboard.get("module_4_unlinked_entities", [])
     _seen_m4 = set()
@@ -2708,6 +2925,19 @@ def _build_verification_dashboard(
             "remarks": (item.get("remarks") or "") + " [Unlinked – ACTION REQUIRED: select service for billing]",
         })
 
+    # Actionable-only reminders + medicine enrichment
+    dashboard["reminders_follow_ups"] = [
+        r for r in (dashboard.get("reminders_follow_ups") or []) if _is_actionable_reminder(r)
+    ]
+    _enrich_medicine_recommendations(
+        dashboard, atoms_list, conn=conn, entity_manifest=entity_manifest,
+        primary_diagnosis_text=primary_diagnosis_text, logger=logger,
+    )
+
+    streamlined = generate_streamlined_dashboard(
+        dashboard, entity_manifest=entity_manifest, signalment=signalment, logger=logger
+    )
+
     # Ensure all modules are present (even if empty) and return with strict format (legacy + streamlined)
     return {
         "procedures_services": dashboard.get("procedures_services", []),
@@ -2719,6 +2949,7 @@ def _build_verification_dashboard(
         "vitals": dashboard.get("vitals", []),
         "module_4_unlinked_entities": dashboard.get("module_4_unlinked_entities", []),
         "module_5_clinical_history": dashboard.get("module_5_clinical_history", []),
+        "issue_medicine_recommendations": dashboard.get("issue_medicine_recommendations", []),
         "streamlined_dashboard": streamlined,
     }
 
@@ -2845,3 +3076,23 @@ def intent_filter(atoms: List[Dict[str, Any]]) -> Dict[str, List[Dict[str, Any]]
 class Phase2KnowledgeAtomMatcher:
     """Stub: Phase 3 matcher removed."""
     pass
+
+
+def _phase2_dashboard_self_check() -> None:
+    assert _is_actionable_reminder({"intent_context": "Scheduled", "item_name": "Recheck", "due_date": "3 days"})
+    assert not _is_actionable_reminder({"intent_context": "Reminder", "item_name": "Watch appetite"})
+    issues = _parse_primary_diagnosis_lines("1. Hip dysplasia (Ortho)\n2. Atopy")
+    assert len(issues) == 2
+    dashboard: Dict[str, Any] = {
+        "medications_prescribed": [],
+        "medications_administered": [],
+        "module_4_unlinked_entities": [],
+        "module_5_clinical_history": [],
+    }
+    _enrich_medicine_recommendations(dashboard, [], conn=None)
+    assert "issue_medicine_recommendations" not in dashboard
+
+
+if __name__ == "__main__":
+    _phase2_dashboard_self_check()
+    print("phase2 dashboard self-check ok")

@@ -44,16 +44,17 @@ ADDITIONAL_FIELDS = [
 
 
 def render_diagnosis_fields(soap_json: Dict[str, Any]) -> None:
-    """Show primary and optional secondary diagnosis."""
+    """Show differential diagnosis with primary and secondary numbered lists."""
     diag = _resolve_diagnosis_fields(soap_json)
+    st.markdown("**Differential Diagnosis**")
     st.markdown("**Primary Diagnosis**")
     if diag["PrimaryDiagnosis"]:
-        st.write(diag["PrimaryDiagnosis"])
+        _render_multiline(diag["PrimaryDiagnosis"])
     else:
         st.caption("Not recorded")
     st.markdown("**Secondary Diagnosis**")
     if diag["SecondaryDiagnosis"]:
-        st.write(diag["SecondaryDiagnosis"])
+        _render_multiline(diag["SecondaryDiagnosis"])
     else:
         st.caption("None recorded")
 
@@ -221,11 +222,23 @@ def render_soap_template(
         st.divider()
 
     st.subheader("Clinical Note")
+    from doctor_ui.reminder_utils import filter_actionable_reminders_text
+
     for label, key in PRIMARY_FIELDS:
         value = soap_json.get(key) or soap_json.get(key.lower()) or ""
-        if value:
+        if not value:
+            continue
+        if key == "Reminders":
+            filtered, hidden = filter_actionable_reminders_text(str(value))
+            if not filtered:
+                continue
             st.markdown(f"**{label}**")
-            _render_multiline(str(value))
+            _render_multiline(filtered)
+            if hidden:
+                st.caption(f"{hidden} informational reminder(s) hidden (passive monitoring / conditional only).")
+            continue
+        st.markdown(f"**{label}**")
+        _render_multiline(str(value))
 
     with st.expander("Additional fields"):
         render_diagnosis_fields(soap_json)
