@@ -75,7 +75,7 @@ import tempfile
 # Default Super-Pass model for cleaned transcript + Brain NER.
 # OpenAI gpt-4.1-mini (Fireworks llama-v3p3-70b is retired / account may be suspended).
 # Override with SUPER_PASS_MODEL if needed.
-os.environ.setdefault("SUPER_PASS_MODEL", "gpt-4.1-mini")
+os.environ.setdefault("SUPER_PASS_MODEL", "gpt-4.1-nano")
 
 # Long transcript safety helpers (summary blocks + prompt-safe excerpts)
 try:
@@ -127,7 +127,7 @@ except ImportError:
 # Override with env vars (SUPER_PASS_MODEL, SOAP_MODEL, BATCH_INTENT_MODEL, LLM_JUDGE_MODEL, PHASE2_MODEL) if needed.
 
 # Step 3 (SOAP Generation): gpt-4.1-mini
-os.environ.setdefault("SOAP_MODEL", "gpt-4.1-mini")
+os.environ.setdefault("SOAP_MODEL", "gpt-4.1-nano")
 if os.getenv("SOAP_GENERATOR_MODEL"):
     os.environ["SOAP_MODEL"] = os.getenv("SOAP_GENERATOR_MODEL", "").strip()
 os.environ.setdefault("SOAP_MODEL_PROVIDER", "openai")
@@ -145,15 +145,15 @@ if (
         os.environ.setdefault("EARLY_START_SOAP", "true")
 
 MODEL_PROVIDER = os.getenv("SOAP_MODEL_PROVIDER", "openai")
-MODEL_NAME = os.getenv("SOAP_MODEL", "gpt-4.1-mini")  # Step 3: SOAP Generation
+MODEL_NAME = os.getenv("SOAP_MODEL", "gpt-4.1-nano")  # Step 3: SOAP Generation
 
 # Step 2 (Cleaning/NER): aligned with SUPER_PASS_MODEL default (OpenAI)
-STEP_2_CLEANING_MODEL = os.getenv("SUPER_PASS_MODEL", "gpt-4.1-mini")
-STEP_2_3_NORMALIZER_MODEL = os.getenv("SUPER_PASS_MODEL", "gpt-4.1-mini")
-STEP_2_5_NER_MODEL = os.getenv("SUPER_PASS_MODEL", "gpt-4.1-mini")
+STEP_2_CLEANING_MODEL = os.getenv("SUPER_PASS_MODEL", "gpt-4.1-nano")
+STEP_2_3_NORMALIZER_MODEL = os.getenv("SUPER_PASS_MODEL", "gpt-4.1-nano")
+STEP_2_5_NER_MODEL = os.getenv("SUPER_PASS_MODEL", "gpt-4.1-nano")
 
 # Step 2 (Super-Pass): Combined Cleaning + NER in a single call
-SUPER_PASS_MODEL = os.getenv("SUPER_PASS_MODEL", "gpt-4.1-mini")
+SUPER_PASS_MODEL = os.getenv("SUPER_PASS_MODEL", "gpt-4.1-nano")
 
 # Chunk-Parallel Factory: Enable parallel chunk processing for sub-60s latency
 # Set CHUNK_PARALLEL_ENABLED=true to enable chunk-parallel processing
@@ -175,7 +175,7 @@ def _env_float(name: str, default: float) -> float:
 
 
 # Centralized grounding thresholds (used across streaming + non-streaming paths).
-GROUNDING_AUTO_BIND_THRESHOLD = _env_float("GROUNDING_AUTO_BIND_THRESHOLD", 0.85)
+GROUNDING_AUTO_BIND_THRESHOLD = _env_float("GROUNDING_AUTO_BIND_THRESHOLD", 0.92)
 GROUNDING_LLM_JUDGE_THRESHOLD = _env_float("GROUNDING_LLM_JUDGE_THRESHOLD", 0.55)
 
 # ==============================================================================

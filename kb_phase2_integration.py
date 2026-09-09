@@ -57,10 +57,10 @@ except ImportError as e:
 # ==============================================================================
 
 # Default Phase 2 model (can be overridden via env)
-os.environ.setdefault("PHASE2_MODEL", "gpt-4.1-mini")
+os.environ.setdefault("PHASE2_MODEL", "gpt-4.1-nano")
 os.environ.setdefault("PHASE2_MODEL_PROVIDER", "openai")
 
-PHASE2_MODEL = os.getenv("PHASE2_MODEL", "gpt-4.1-mini")
+PHASE2_MODEL = os.getenv("PHASE2_MODEL", "gpt-4.1-nano")
 PHASE2_MODEL_PROVIDER = os.getenv("PHASE2_MODEL_PROVIDER", "openai")
 
 # Phase 2 enable flag (can be disabled for testing)

@@ -1878,6 +1878,38 @@ def _alt_from_candidate(c: Dict[str, Any]) -> Dict[str, Any]:
     return out
 
 
+_ISSUE_REC_CATEGORY_HINTS = ["medication", "nutrition and supplements", "otc products"]
+_NAMED_MED_ALT_MIN_SCORE = 0.45
+_ISSUE_REC_MIN_SCORE = 0.55
+_NON_DIAGNOSTIC_KINDS = frozenset({
+    "Medicine", "Drug", "Medication", "Substance", "Vaccine", "Supplement", "Nutrition",
+    "ParasiteControl", "Preventive", "Diet",
+})
+_NON_DIAGNOSTIC_KINDS_CF = frozenset(k.casefold() for k in _NON_DIAGNOSTIC_KINDS)
+
+
+def _therapeutic_issue_query(issue: str) -> str:
+    """Expand a clinical issue into a pharmacy-oriented search query (not bare disease text)."""
+    raw = (issue or "").strip()
+    if not raw:
+        return ""
+    low = raw.lower()
+    suffixes: List[str] = []
+    if re.search(r"\b(hip|dysplasia|joint|arthritis|ortho\w*|patellar|luxation|stifle|osteo\w*)\b", low):
+        suffixes.append("joint pain medication supplement")
+    if re.search(r"\b(pain|analges\w*|nsaid)\b", low):
+        suffixes.append("pain medication")
+    if re.search(r"\b(obes\w*|weight|diet)\b", low):
+        suffixes.append("obesity diet weight management")
+    if re.search(r"\b(tick|flea|parasit\w*|deworm\w*|worm)\b", low):
+        suffixes.append("parasite control flea tick")
+    if re.search(r"\b(skin|dermat\w*|atop\w*|otitis|ear|itch\w*)\b", low):
+        suffixes.append("dermatology medication")
+    if not suffixes:
+        suffixes.append("medication treatment")
+    return f"{raw} {' '.join(suffixes)}".strip()
+
+
 def _search_inventory_top3(
     conn,
     query: str,
@@ -1885,27 +1917,40 @@ def _search_inventory_top3(
     exclude_stock_id: Optional[int] = None,
     clinic_id: Optional[int] = None,
     logger: Optional[logging.Logger] = None,
+    category_hints: Optional[List[str]] = None,
+    min_score: float = 0.0,
 ) -> List[Dict[str, Any]]:
     if not conn or not (query or "").strip():
         return []
     try:
         from kb_ner_local_search import search_local_inventory_topk
         cid = clinic_id or int(os.getenv("CLINIC_ID", "1") or 1)
+        kwargs: Dict[str, Any] = {
+            "clinic_id": cid,
+            "top_k": 8,
+            "logger": logger,
+        }
+        if category_hints:
+            kwargs["category_hints"] = list(category_hints)
         candidates = search_local_inventory_topk(
-            conn, query.strip(), "Medication", clinic_id=cid, top_k=6, logger=logger,
+            conn, query.strip(), "Medication", **kwargs,
         )
     except Exception:
         return []
     alts: List[Dict[str, Any]] = []
     for c in candidates or []:
-        sid = c.get("stock_id") or c.get("inventory_id")
+        alt = _alt_from_candidate(c)
+        score = float(alt.get("match_score") or 0)
+        if score < float(min_score or 0):
+            continue
+        sid = alt.get("stock_id")
         if exclude_stock_id is not None and sid is not None:
             try:
                 if int(sid) == int(exclude_stock_id):
                     continue
             except (TypeError, ValueError):
                 pass
-        alts.append(_alt_from_candidate(c))
+        alts.append(alt)
         if len(alts) >= 3:
             break
     return alts
@@ -1919,6 +1964,11 @@ def _is_actionable_reminder(item: Dict[str, Any]) -> bool:
         intent = (item.get("intent_context") or "").strip()
         due = (item.get("due_date") or "").strip()
         return intent in ("Scheduled", "Future") or bool(due and due.upper() != "ASAP")
+
+
+def _is_non_diagnostic_kind(kind: str) -> bool:
+    """True when Module 4 kind must never be promoted into diagnostics."""
+    return (kind or "").strip().casefold() in _NON_DIAGNOSTIC_KINDS_CF
 
 
 def _collect_medicine_concepts(atoms_list: List[Dict[str, Any]]) -> set:
@@ -1935,6 +1985,76 @@ def _collect_medicine_concepts(atoms_list: List[Dict[str, Any]]) -> set:
             if concept:
                 covered.add(concept)
     return covered
+
+
+def _medicine_coverage_blobs(
+    atoms_list: List[Dict[str, Any]],
+    dashboard: Dict[str, Any],
+) -> List[str]:
+    """Text blobs from prescribed/administered meds used to detect issue coverage."""
+    med_kinds = {
+        "Medicine", "Drug", "Medication", "Substance", "Vaccine", "Supplement", "Nutrition",
+    }
+    med_intents = {"Prescribed", "Administered", "Ordered"}
+    blobs: List[str] = []
+    for atom in atoms_list or []:
+        kind = (atom.get("kind") or "").strip()
+        intent = (atom.get("intent_context") or atom.get("intent_type") or "").strip()
+        if kind not in med_kinds or intent not in med_intents:
+            continue
+        parts = [
+            atom.get("concept"),
+            atom.get("source_text"),
+            str((atom.get("attributes") or {}).get("remarks") or ""),
+        ]
+        blob = _norm_concept(" ".join(str(p) for p in parts if p))
+        if blob:
+            blobs.append(blob)
+    for mod in ("medications_prescribed", "medications_administered"):
+        for item in dashboard.get(mod) or []:
+            parts = [
+                item.get("item_name"),
+                item.get("name"),
+                item.get("remarks"),
+                item.get("_source_text"),
+            ]
+            blob = _norm_concept(" ".join(str(p) for p in parts if p))
+            if blob:
+                blobs.append(blob)
+    return blobs
+
+
+def _issue_tokens(issue: str) -> set:
+    stop = {
+        "the", "and", "with", "from", "that", "this", "into", "for", "of", "a", "an",
+        "possible", "suspected", "likely", "mild", "severe", "chronic", "acute",
+    }
+    return {
+        t for t in re.findall(r"[a-z]{4,}", (issue or "").lower())
+        if t not in stop
+    }
+
+
+def _issue_covered_by_medicine(issue: str, covered_concepts: set, med_blobs: List[str]) -> bool:
+    """Skip issue recs when a named med already targets that issue (concept or source overlap)."""
+    issue_key = _norm_concept(issue)
+    if not issue_key:
+        return True
+    if any(issue_key in c or c in issue_key for c in covered_concepts):
+        return True
+    tokens = _issue_tokens(issue)
+    if not tokens:
+        return False
+    for blob in med_blobs:
+        hits = [t for t in tokens if t in blob]
+        if len(hits) >= 2:
+            return True
+        # Single-token issues (e.g. "dysplasia"): whole-word only, avoids loose substring hits
+        if len(tokens) == 1 and hits:
+            t = hits[0]
+            if re.search(rf"\b{re.escape(t)}\b", blob):
+                return True
+    return False
 
 
 def _collect_clinical_issues(
@@ -2003,7 +2123,10 @@ def _enrich_medicine_recommendations(
                 exclude = int(stk) if stk is not None else None
             except (TypeError, ValueError):
                 exclude = None
-            alts = _search_inventory_top3(conn, query, exclude_stock_id=exclude, logger=logger)
+            alts = _search_inventory_top3(
+                conn, query, exclude_stock_id=exclude, logger=logger,
+                min_score=_NAMED_MED_ALT_MIN_SCORE,
+            )
             if alts:
                 item["alternatives"] = alts
                 if not item.get("match_score") and alts:
@@ -2017,19 +2140,31 @@ def _enrich_medicine_recommendations(
         query = item.get("item_name") or ""
         alts = item.get("suggestions") or []
         if not alts:
-            alts_raw = _search_inventory_top3(conn, query, logger=logger)
+            alts_raw = _search_inventory_top3(
+                conn, query, logger=logger, min_score=_NAMED_MED_ALT_MIN_SCORE,
+            )
             if alts_raw:
                 item["alternatives"] = alts_raw
         elif not item.get("alternatives"):
-            item["alternatives"] = [_alt_from_candidate(s) for s in alts[:3]]
+            filtered = [
+                a for a in (_alt_from_candidate(s) for s in alts[:5])
+                if float(a.get("match_score") or 0) >= _NAMED_MED_ALT_MIN_SCORE
+            ]
+            if filtered:
+                item["alternatives"] = filtered[:3]
 
     covered = _collect_medicine_concepts(atoms_list)
+    med_blobs = _medicine_coverage_blobs(atoms_list, dashboard)
     issue_recs: List[Dict[str, Any]] = []
     for issue in _collect_clinical_issues(dashboard, entity_manifest, primary_diagnosis_text):
-        issue_key = _norm_concept(issue)
-        if any(issue_key in c or c in issue_key for c in covered):
+        if _issue_covered_by_medicine(issue, covered, med_blobs):
             continue
-        recs = _search_inventory_top3(conn, issue, logger=logger)
+        query = _therapeutic_issue_query(issue)
+        recs = _search_inventory_top3(
+            conn, query, logger=logger,
+            category_hints=_ISSUE_REC_CATEGORY_HINTS,
+            min_score=_ISSUE_REC_MIN_SCORE,
+        )
         if recs:
             issue_recs.append({
                 "issue": issue,
@@ -2908,6 +3043,9 @@ def _build_verification_dashboard(
                     "kind": "Preventive",
                 })
             continue
+        # Never promote medicines / parasite control / diets into diagnostics (even if imaging cues match)
+        if _is_non_diagnostic_kind(kind):
+            continue
         if not (is_diag_kind or is_imaging_like):
             continue
         # Avoid duplicate: only add if not already in diagnostics (by test_name)
@@ -3081,8 +3219,46 @@ class Phase2KnowledgeAtomMatcher:
 def _phase2_dashboard_self_check() -> None:
     assert _is_actionable_reminder({"intent_context": "Scheduled", "item_name": "Recheck", "due_date": "3 days"})
     assert not _is_actionable_reminder({"intent_context": "Reminder", "item_name": "Watch appetite"})
+    assert not _is_actionable_reminder({
+        "intent_context": "Scheduled",
+        "item_name": "Avoid high-impact exercises",
+    })
     issues = _parse_primary_diagnosis_lines("1. Hip dysplasia (Ortho)\n2. Atopy")
     assert len(issues) == 2
+    hip_q = _therapeutic_issue_query("Hip dysplasia")
+    assert "Hip dysplasia" in hip_q and "joint pain" in hip_q.lower()
+    assert "dermatology" in _therapeutic_issue_query("Atopy").lower()
+    assert "obesity" in _therapeutic_issue_query("Obesity").lower()
+    assert _is_non_diagnostic_kind("Medicine")
+    assert _is_non_diagnostic_kind("medicine")
+    assert _is_non_diagnostic_kind("ParasiteControl")
+    assert _is_non_diagnostic_kind("Diet")
+    assert not _is_non_diagnostic_kind("Diagnostic")
+    assert _issue_covered_by_medicine(
+        "Hip dysplasia",
+        set(),
+        ["carprofen prescribed for hip dysplasia"],
+    )
+    assert not _issue_covered_by_medicine(
+        "Chronic kidney disease",
+        set(),
+        ["heartworm disease prevention"],
+    )
+    # Low-score inventory hits must be dropped for issue recommendations
+    import kb_ner_local_search as _kb_mod  # noqa: WPS433
+    _orig_search = _kb_mod.search_local_inventory_topk
+    _kb_mod.search_local_inventory_topk = (  # type: ignore[assignment]
+        lambda *_a, **_k: [{"stock_id": 99, "item_name": "HEPA SUPPORT", "match_score": 0.40}]
+    )
+    try:
+        assert _search_inventory_top3(
+            object(),
+            hip_q,
+            category_hints=_ISSUE_REC_CATEGORY_HINTS,
+            min_score=_ISSUE_REC_MIN_SCORE,
+        ) == []
+    finally:
+        _kb_mod.search_local_inventory_topk = _orig_search  # type: ignore[assignment]
     dashboard: Dict[str, Any] = {
         "medications_prescribed": [],
         "medications_administered": [],

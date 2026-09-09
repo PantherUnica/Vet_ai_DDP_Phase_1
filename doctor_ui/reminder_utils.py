@@ -47,6 +47,17 @@ _NON_ACTIONABLE_PATTERNS = re.compile(
     re.IGNORECASE,
 )
 
+# Instruction-only: avoid / do-not — not schedulable unless also has a booking cue
+_AVOID_INSTRUCTION_PATTERNS = re.compile(
+    r"\b(avoid|do not|don't|should be avoided|must not|refrain from)\b",
+    re.IGNORECASE,
+)
+
+_SCHEDULE_CUES = re.compile(
+    r"\b(recheck|schedule|book|appointment|vaccin|in \d+|next (week|month|visit))\b",
+    re.IGNORECASE,
+)
+
 
 def normalise_intent(intent: Any) -> str:
     """Return stripped intent_context or empty string."""
@@ -98,13 +109,11 @@ def is_actionable_reminder_text(text: str) -> bool:
     line = (text or "").strip()
     if not line:
         return False
+    if _AVOID_INSTRUCTION_PATTERNS.search(line) and not _SCHEDULE_CUES.search(line):
+        return False
     if _ACTIONABLE_PATTERNS.search(line):
         # Conditional-only lines that also mention scheduling stay actionable
-        if _NON_ACTIONABLE_PATTERNS.search(line) and not re.search(
-            r"\b(recheck|schedule|book|appointment|vaccin|in \d+|next (week|month|visit))\b",
-            line,
-            re.IGNORECASE,
-        ):
+        if _NON_ACTIONABLE_PATTERNS.search(line) and not _SCHEDULE_CUES.search(line):
             return False
         return True
     if _NON_ACTIONABLE_PATTERNS.search(line):
@@ -114,6 +123,10 @@ def is_actionable_reminder_text(text: str) -> bool:
 
 def is_actionable_reminder_item(item: Dict[str, Any]) -> bool:
     """Filter structured Phase 2 reminder rows to actionable-only."""
+    text = _item_text(item)
+    # Avoid/do-not instructions are never actionable unless they also schedule something
+    if _AVOID_INSTRUCTION_PATTERNS.search(text) and not _SCHEDULE_CUES.search(text):
+        return False
     intent = normalise_intent(item.get("intent_context"))
     due = (item.get("due_date") or "").strip()
     if intent in ("Scheduled", "Future"):
@@ -123,7 +136,7 @@ def is_actionable_reminder_item(item: Dict[str, Any]) -> bool:
     item_id = item.get("item_id")
     if item_id and str(item_id).replace("-", "").isdigit():
         return True
-    return is_actionable_reminder_text(_item_text(item))
+    return is_actionable_reminder_text(text)
 
 
 def filter_actionable_reminders_text(text: str) -> Tuple[str, int]:
@@ -166,6 +179,9 @@ def _self_check() -> None:
     assert is_actionable_reminder_text("Schedule vaccination booster next month")
     assert not is_actionable_reminder_text("Return if symptoms worsen")
     assert not is_actionable_reminder_text("Watch appetite and water intake")
+    assert not is_actionable_reminder_text("Avoid high-impact exercises")
+    assert not is_actionable_reminder_text("Do not give treats for 24 hours")
+    assert is_actionable_reminder_text("Avoid stairs; recheck in 7 days")
 
     filtered, hidden = filter_actionable_reminders_text(
         "1. Recheck in 3 days\n2. Return if worsening\n3. Vaccine booster next month"
@@ -175,6 +191,10 @@ def _self_check() -> None:
 
     assert is_actionable_reminder_item({"intent_context": "Scheduled", "item_name": "Recheck"})
     assert not is_actionable_reminder_item({"intent_context": "Reminder", "item_name": "Watch appetite"})
+    assert not is_actionable_reminder_item({
+        "intent_context": "Scheduled",
+        "item_name": "Avoid high-impact exercises",
+    })
     assert not is_intent_recognised("")
     assert intent_display("") == INTENT_NOT_RECOGNISED
 
